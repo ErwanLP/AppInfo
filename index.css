@@ -1,0 +1,376 @@
+body
+{
+    padding: 12px;
+    /*  background-image: url("img/logo.png");
+     background-attachment: fixed; /* Le fond restera fixe */
+    /* background-repeat: no-repeat; /* Le fond ne sera pas r�p�t� */
+    /*  background-position: 5% 55% ; /* Le fond sera plac� en haut � droite */
+    text-align : center ;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 1600px;
+    background-color : #9DBAEC;
+    margin: auto; /* Pour centrer notre page */
+
+}
+
+/*HEADER*/
+
+header
+{
+    border: 2px solid black;
+    width: 1400px;
+    height: 100px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    background-image: url("img/banderole.jpg");
+    background-repeat: no-repeat;
+
+}
+
+/*NAVIGATION PRINCIPALE*/
+
+nav
+{
+    width: 975px; /* Tr�s important : donner une taille au menu */	
+    position: absolute;
+    top : 152px;
+    left : 50px;
+    height : 50px ;
+    border: 2px solid black;
+    margin-bottom: 20px; /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
+    background-color : white;
+}
+#connection
+{
+    width: 400px; /* Tr�s important : donner une taille au menu */	
+    position: absolute;
+    top : 152px;
+    left : 1050px;
+    height : 50px ;
+    border: 2px solid black;
+    margin-bottom: 20px; /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
+    background-color : white;
+}
+
+nav li
+{
+    display: inline-block;
+    margin-right: 0px;
+    width : 120px;
+    height : 20px;
+}
+
+/*#soiree
+{
+    background-image: url("img/ongletSoiree.png");
+    background-repeat: no-repeat;
+
+}*/
+
+#soiree:active
+{
+    background-image: url("img/ongletSoireeEnf.png");
+    background-repeat: no-repeat;
+
+}
+
+#bar
+{
+    background-image: url("img/ongletBar.png");
+    background-repeat: no-repeat;
+
+}
+
+#bar:active
+{
+    background-image: url("img/ongletBarEnf.png");
+    background-repeat: no-repeat;
+
+}
+
+#concert
+{
+    background-image: url("img/ongletConcert.png");
+    background-repeat: no-repeat;
+
+}
+
+#concert:active
+{
+    background-image: url("img/ongletConcertEnf.png");
+    background-repeat: no-repeat;
+
+}
+
+#restauration
+{
+    background-image: url("img/ongletRestauration.png");
+    background-repeat: no-repeat;
+
+}
+
+#restauration:active
+{
+    background-image: url("img/ongletRestaurationEnf.png");
+    background-repeat: no-repeat;
+
+}
+
+#spectacle
+{
+    background-image: url("img/ongletSpectacle.png");
+    background-repeat: no-repeat;
+
+}
+
+#spectacle:active
+{
+    background-image: url("img/ongletSpectacleEnf.png");
+    background-repeat: no-repeat;
+
+}
+
+#autre
+{
+    background-image: url("img/ongletAutre.png");
+    background-repeat: no-repeat;
+
+}
+
+#autre:active
+{
+    background-image: url("img/ongletAutreEnf.png");
+    background-repeat: no-repeat;
+
+}
+
+#connection li
+{
+    display: inline-block;
+    margin-right: 1px;
+    background-image: url("img/onglet.png");
+    background-repeat: no-repeat;
+    width : 100px;
+    height : 20px;
+}
+
+
+
+.elementmenu ul /* Toutes les listes � puces se trouvant dans un menu */
+{
+    padding-left: 10px; /* ... mais on modifie ensuite la marge de gauche, donc celle-l� fera finalement 20 pixels */
+    margin-bottom: 5px; /* M�me chose que tout � l'heure, on modifie ensuite juste margin-bottom, mais tous les autres sont � 0px */
+}   
+
+
+/*SECTION*/
+
+section
+{
+
+    /*border: 2px solid black;	*/
+    height : 700px;
+    width: 1400px;
+    position: absolute;
+    left : 50px;
+    top: 225px;
+
+}
+
+/*1-ARTICLE*/
+
+article
+{
+    background-color: white;
+    width : 1150px;
+    top : 0px;
+    left : 0px;
+    height : 700px;
+    border: 2px solid black;	
+   
+
+
+}
+
+#titreacticle
+{
+    background-color : #FEA466;
+    border: 2px solid black;	
+    position: absolute;
+    width : 1150px;
+    height: 100px;
+    left : -0px;
+    top : -1px;
+}
+
+
+.titresection
+{
+
+    width:1150px;
+    height : 50px ;
+    position: absolute;
+    top : 0px;
+    left : 0px;
+
+}
+
+#navinter{
+
+    width: 200px;
+    height : 500px ;
+    position: absolute;
+    bottom : 0px;
+    left : 0px;
+
+}
+
+#navinter li
+{
+    width : 180px;
+    height : 20px;
+    background-color: white;
+    margin-bottom: 5px;
+    border: 1px solid black;	
+
+
+}
+
+
+#navinter a
+{
+    text-decoration:none;
+    color: black;
+    font-style: italic;
+}
+
+/*1-1 PAGE*/
+
+#page
+{
+    border: 2px solid black;
+    width: 950px;
+    height : 600px ;
+    position: absolute;
+    right: 247px;
+    bottom: -3px;
+    background-color : silver;
+
+}
+
+#pageinscription
+{
+
+    width: 950px;
+    height : 600px ;
+    position: absolute;
+    left: 2px;
+    height : 600px;
+    top : 102px;
+    background-color : silver;
+    width : 1150px;
+   
+}
+
+#pageBDD{
+    width: 950px;
+    height : 600px ;
+    position: absolute;
+    left: 2px;
+    height : 600px;
+    top : 102px;
+    background-color : silver;
+    width : 1150px;
+    
+}
+
+#pageinscription
+{
+     overflow: auto;
+}
+
+
+.pagespectacle
+{
+    background-color : #FEA466;
+}
+
+
+/*2-ASIDE*/
+
+
+#agenda
+{
+    width: 225px;
+    height : 180px ;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border-radius: 10px 10px 10px 10px;
+    background-color : silver;
+
+
+}
+
+
+
+#map
+{
+    width: 225px;
+    height : 180px ;
+    position: absolute;
+    right: 0px;
+    top: 200px;
+    border-radius: 10px 10px 10px 10px;
+    background-color : silver;
+
+
+}
+
+
+#forum
+{
+    width: 225px;
+    height : 180px ;
+    position: absolute;
+    right: 0px;
+    top: 400px;
+    border-radius: 10px 10px 10px 10px;
+    background-color : silver;
+
+
+}
+
+
+
+#livreor
+{
+    width: 225px;
+    height : 100px ;
+    position: absolute;
+    right: 0px;
+    top: 600px;
+    border-radius: 10px 10px 10px 10px;
+    background-color : silver;
+
+
+}
+
+/*FOOTER*/
+
+
+footer
+{ 
+    width: 1400px;
+    border: 2px solid black;
+    position: absolute;
+    top: 950px;
+    height : 120px;
+    left : 50px;
+    margin-bottom:20px;
+    background-color : white;
+
+}
+
