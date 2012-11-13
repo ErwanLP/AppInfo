@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="index.css" />
-        <link rel="shortcut icon" type="image/x-icon" href="img/icone.png" />
-        <title>AppInfo</title>
-    </head>
+  <?php include("head.php"); ?>
     <body>
 
         <?php include("BDD.php"); ?>
@@ -17,9 +12,9 @@
         <section>
             <article>
                 <div id="titreacticle">
-                    <h2><span> Inscription</span></h2>
+                    <h2><span> Cr&eacute;ation Profil</span></h2>
                 </div>
-                <div id="pageinscription">
+                <div id="page">
 
                     <form method="post" action="traitement.php">
 
@@ -65,7 +60,7 @@
                         </fieldset>
                         <fieldset>
                             <legend>Preference:</legend>
-                            <p>Quel type d'e&acute;v&egrave;nement pr&eacute;f&eacute;rer vous ? :<br />
+                            <p>Quel type d &eacute;v&egrave;nement pr&eacute;f&eacute;rer vous ? :<br />
                                 <input type="checkbox" name="crome" id="crome" checked/> <label for="crome">Soir&eacute;e</label><br />
                                 <input type="checkbox" name="mozilla" id="mozilla" /> <label for="mozilla">Concert</label><br />
                                 <input type="checkbox" name="IE" id="IE" /> <label for="IE">Bar</label><br />

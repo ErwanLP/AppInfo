@@ -1,41 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="index.css" />
-        <link rel="shortcut icon" type="image/x-icon" href="img/icone.png" />
-        <title>AppInfo</title>
-    </head>
+
+
+    <?php include("head.php"); ?>
+
     <body>
 
-        <?php include("BDD.php"); ?>
 
-        <?php include("header.php"); ?>
+        <?php
+        /* empty
+         * header('Location:http://une.url.fr');
+         */
 
-        <?php include("nav.php"); ?>
+        session_start();
 
-        <section>
-            <article>
-                <div id="titreacticle">
-                    <h2><span> News</span></h2>
-                </div>
-                <div id="pageBDD">
+        include("BDD.php");
 
+        include("header.php");
 
-                    <?php
-                    $result = $bdd->query('SELECT * FROM participant WHERE 1');
-                    while ($data = $result->fetch()) {
-                        echo $data['nom'];
-                    }
-                    $result->closeCursor();
-                    ?>
-                </div>
-            </article>
-<?php include("aside.php"); ?>
-        </section>
+        include("nav.php");
+ 
+        include("acceuil.php");
 
-<?php include("footer.php"); ?>
+        include("footer.php");
+        ?>
 
 
     </body>
 </html>
+
+<!-- ne pas se co sur la base de donné en tant que admin
+ssl/ssh?*/
+!preg_match
+phpunit
+simpletest
+-->

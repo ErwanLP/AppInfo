@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="index.css" />
-        <link rel="shortcut icon" type="image/x-icon" href="img/icone.png" />
-        <title>AppInfo</title>
-    </head>
+
+  <?php include("head.php"); ?>
+
     <body>
 
         <?php include("header.php"); ?>
@@ -14,12 +11,12 @@
 
         <section>
             <article>
-                <div id="titreacticle">
-                    <h2><span> Connection</span></h2>
+                <div class="titreacticle">
+                    <h2><span>Connection</span></h2>
                 </div>
-                <div id="pageinscription">
+                <div class="page">
 
-                    <form method="post" action="traitementConnection.php">
+                    <form method="post" action="traitementConnection3.php">
 
                             <label for ="nomDeCompte">Nom de compte:</label>
                             <input type="text" name="nomDeCompte" id="nomDeCompte"  size="30" maxlength="10" autofocus required/><br/>

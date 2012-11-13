@@ -4,16 +4,14 @@
         <li id="bar"><a href="nav.php"></a></li>
         <li id ="concert"><a href=#></a></li>
         <li id ="restauration"><a href=#></a></li>
-        <li id  ="spectacle"><a href ="spectacle.php">test</a></li>
-        <li id ="autre"><a href=#></a></li>
+        <li id  ="spectacle"><a href ="event.php?onglet=spectacle">test</a></li>
+        <li id ="autre"><a href=creationEvenement.php>Cre&acute;ation Evenement</a></li>
     </ul>
 </nav>
-
-<div id="connection">
-    <ul>
-        <li><a href="index.php" >Acceuil</a></li> <!-- Liste des liens du sous-menu -->
-        <li><a href="inscription.php">Inscription</a></li>
-                <li><a href="connection.php">Connection</a></li>
-    </ul>
-
-</div>
+<?php
+        if (!empty($_SESSION['ID'])) {
+            include("navConnect.php");
+        } else {
+            include("navNonConnect.php");
+        }
+  ?>      
