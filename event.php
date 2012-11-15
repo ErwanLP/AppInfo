@@ -54,24 +54,25 @@
                         <div class ="evenement"><br/>
                             <img class = "imageflottante" alt="Photo de évenement" src= <?php echo $data['photoEvent'] ?>/>        
                             <h1><?php echo $data['nomEvent']; ?></h1>
-                            <p class="detail"> <strong>Adresse:</strong><?php echo $data['lieuEvent']; ?><br/>
+                            <p class="detail"> 
+                                <strong>Adresse:</strong><?php echo $data['lieuEvent']; ?><br/>
                                 <span><?php echo $data['lieuEvent']; ?></span> <br/>
                                 <strong>Date et Heure:</strong><?php echo $data['dateEvent']; ?><br/>
                                 <strong>Prix:</strong> 30€ 
                                 <strong>Description:</strong><?php echo $data['description']; ?></p>
-                            <img src="etoile.png" class="etoile" alt="Note" />
+                            <img src="img/etoile.png" class="etoile" alt="Note" />
                             <p id="note">(5,0 sur 5,0)</p>
                             <p id="bouton1">Voir Plus de Détails</p>
                             <p id="bouton2">Voir Commentaires</p>
                             <p id="bouton3">Réserver</p>
-  
+                        </div>
                         <?php
                     }
 
                     $result->closeCursor();
                     ?>
 
-                </div>
+
 
 
 

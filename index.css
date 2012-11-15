@@ -318,14 +318,13 @@ article
     height: 500px;
     background-color:  #d7d6d6;
     border: 2px solid black;
-    overflow: scroll;
+    overflow: auto;
 
 }
 
 
 
 .evenement h1{
-    position: absolute;
     text-align: center;
     width: 550px;
     top: 30px;
