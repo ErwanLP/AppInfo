@@ -9,7 +9,7 @@ body
     margin-top: 10px;
     margin-bottom: 20px;
     width:1470px;
-    background-image : url("img/testt3.jpg");
+    background-image : url("img/testt4.jpg");
     margin: auto;
     position:relative;/* Pour centrer notre page */
 
@@ -208,12 +208,14 @@ section
 
 article
 {
+    box-shadow: 0px 0px 10px azure;
+    border-radius: 50px;
     width : 1150px;
     top : 0px;
     left : 0px;
     height : 700px;
-    border: 2px solid black;	
-    background-color : #FEA466;
+    border: 2px solid white;	
+    background-color: royalblue;
 
 }
 
@@ -266,7 +268,11 @@ article
 
 .pageOnglet
 {
-    border: 2px solid black;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border: 1px solid white;
+    border-left: black;
+    border-top: black;
     width: 950px;
     height : 600px ;
     position: absolute;
@@ -280,7 +286,10 @@ article
 .page
 {
     background-image: url("img/essai.png");
-    border: 2px solid black;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border-top: 2px solid black;
+    border: 2px solid white;
     position: absolute;
     left: 0px;
     height : 624px;
@@ -449,6 +458,7 @@ article
 
 #agenda
 {
+    box-shadow: 0px 0px 10px azure;
     width: 225px;
     height : 180px ;
     position: absolute;
@@ -464,6 +474,7 @@ article
 
 #map
 {
+    box-shadow: 0px 0px 10px azure;
     width: 225px;
     height : 180px ;
     position: absolute;
@@ -478,6 +489,7 @@ article
 
 #forum
 {
+    box-shadow: 0px 0px 10px azure;
     width: 225px;
     height : 180px ;
     position: absolute;
@@ -493,6 +505,7 @@ article
 
 #livreor
 {
+    box-shadow: 0px 0px 10px azure;
     width: 225px;
     height : 100px ;
     position: absolute;
@@ -509,8 +522,12 @@ article
 
 footer
 { 
+    
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    box-shadow: 0px 0px 10px azure;
     width: 1400px;
-    border: 2px solid black;
+    border: 2px solid white;
     position: absolute;
     top: 950px;
     height : 120px;
