@@ -2,8 +2,8 @@
 <html>
     <?php include("head.php"); ?>
     <body>
-        
-        <?php     session_start(); ?>
+
+        <?php session_start(); ?>
 
         <?php include("header.php"); ?>
 
@@ -16,8 +16,8 @@
                 </div>
                 <div class="page">
 
-                    <form method="post" action="traitementInscription.php">
-
+                    <form class="center" method="post" action="traitementInscription.php">                       
+                        <pre>
                         <label for ="nomDeCompte">Nom de compte:</label>
                         <input type="text" name="nomDeCompte" id="nomDeCompte"  size="30" maxlength="20" autofocus required/><br/>
 
@@ -31,6 +31,8 @@
                         <input type="email" name="mailCompte" id="mailCompte" value="exemple@gmail.com" required/><br/>
 
                         <input type="submit" value="Envoyer" />
+                        </pre>
+
                     </form>
 
                 </div>
