@@ -5,13 +5,27 @@ body
      background-attachment: fixed; /* Le fond restera fixe */
     /* background-repeat: no-repeat; /* Le fond ne sera pas r�p�t� */
     /*  background-position: 5% 55% ; /* Le fond sera plac� en haut � droite */
-    text-align : center ;
+    text-align : center;
     margin-top: 10px;
     margin-bottom: 20px;
-    width: 1600px;
-    background-color : #9DBAEC;
-    margin: auto; /* Pour centrer notre page */
+    width:1470px;
+    background-image : url("img/testt3.jpg");
+    margin: auto;
+    position:relative;/* Pour centrer notre page */
 
+}
+
+.center
+{
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    text-align: left;
+    width: 500px;
+    top: 110px;
+    left: 320px;
+    padding: 8px;
+    position: absolute;
+    background-color:goldenrod;
 }
 
 /*HEADER*/
@@ -265,12 +279,13 @@ article
 
 .page
 {
+    background-image: url("img/essai.png");
     border: 2px solid black;
     position: absolute;
     left: 0px;
     height : 624px;
     top : 77px;
-    background-color : silver;
+    background-color: linen;
     width : 1150px;
 
 }
@@ -507,4 +522,3 @@ footer
     background-color : white;
 
 }
-
