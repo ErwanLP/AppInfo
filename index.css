@@ -354,10 +354,10 @@ article
 
 .evenement .imageflottante{
     position:absolute;
-    float: left;
-    margin: 50px;
+    left : 75px;
     width: 200px;
     height: 200px;
+    top : 100px;
     border: 2px solid orange;
 }
 
