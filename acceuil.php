@@ -7,10 +7,8 @@ if (!empty($_SESSION['ID'])) {
                 <h2><span> Acceuil</span></h2>
             </div>
             <div class="page">
-        <FORM>
-            <INPUT TYPE="button" VALUE="Je me connecte en tant que Participant" onClick="switchParticipant()">
-            <INPUT TYPE="button" VALUE="Je me connecte en tant que Organisateur" onClick="switchOrganisateur()">
-        </FORM>
+<a href="traitementswitch.php?switch=organisateur" >Me connecter en tant que organisateur</a>
+<a href="traitementswitch.php?switch=participant" >Me connecter en tant que participant</a>
             </div>
         </article>
         <?php include("aside.php"); ?>

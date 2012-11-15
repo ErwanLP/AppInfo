@@ -290,11 +290,145 @@ article
 /*1-4 EVENEMENT*/
 
 .evenement{
-    width: 934px;
-    background-color :chocolate;
-    border: 1px solid red;
-    overflow: auto;
+    position : absolute;
+    top : 5px;
+    left : 5px;
+    width: 950px;
+    height: 500px;
+    background-color:  #d7d6d6;
+    border: 2px solid black;
+    overflow: scroll;
 
+}
+
+
+
+h1{
+    position: absolute;
+    text-align: center;
+    width: 550px;
+    top: 30px;
+    right: 70px;
+    border: 2px groove gray;
+}
+
+strong{
+    font-weight: bold;
+    text-decoration: underline;        
+}
+
+span {
+
+    margin-left: 75px;
+}
+
+.detail {
+    position: absolute;
+    width: 530px;
+    right: 50px;
+    top: 150px;
+    font-family: Comic Sans MS;
+}
+
+
+.imageflottante{
+    position:absolute;
+    float: left;
+    margin: 50px;
+    width: 200px;
+    height: 200px;
+    border: 2px solid orange;
+}
+
+.etoile {
+    position: absolute;
+    top: 275px;
+    left: 370px;
+    border: 2px solid black;
+
+}
+
+#note {    
+    position: absolute;
+    top: 260px;
+    left: 500px;
+}
+
+#lien {
+    position: absolute;
+    width: 530px;
+    right: 50px;
+    top: 110px;
+    font-size: small
+}
+
+#bouton1 {
+    position: absolute;
+    left: 330px;
+    top: 330px;
+    width: 150px;
+    text-align: center;
+    color: white;
+    -moz-box-shadow: 0px 0px 10px #343434;
+    -webkit-box-shadow: 0px 0px 10px #343434;
+    -o-box-shadow: 0px 0px 10px #343434;
+    box-shadow: 0px 0px 10px #343434;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 2px outset #656565;
+    background:#cfcfcf;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cfcfcf", endColorstr="#343434");
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#cfcfcf), to(#343434));
+    background-image: -moz-linear-gradient(top center, #cfcfcf, #343434);
+    background-image: -o-linear-gradient(top, #cfcfcf, #343434);
+    font-family: Comic Sans MS;
+}
+
+#bouton2 {
+    position: absolute;
+    left: 530px;
+    top: 330px;
+    width: 150px;
+    text-align: center;
+    color: white;
+    -moz-box-shadow: 0px 0px 10px #343434;
+    -webkit-box-shadow: 0px 0px 10px #343434;
+    -o-box-shadow: 0px 0px 10px #343434;
+    box-shadow: 0px 0px 10px #343434;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 2px outset #656565;
+    background:#cfcfcf;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cfcfcf", endColorstr="#343434");
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#cfcfcf), to(#343434));
+    background-image: -moz-linear-gradient(top center, #cfcfcf, #343434);
+    background-image: -o-linear-gradient(top, #cfcfcf, #343434);
+    font-family: Comic Sans MS;
+}
+
+#bouton3 {
+    position: absolute;
+    right: 70px;
+    top: 330px;
+    width: 150px;
+    text-align: center;
+    color: white;
+    -moz-box-shadow: 0px 0px 10px #343434;
+    -webkit-box-shadow: 0px 0px 10px #343434;
+    -o-box-shadow: 0px 0px 10px #343434;
+    box-shadow: 0px 0px 10px #343434;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 2px outset #656565;
+    background:#cfcfcf;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cfcfcf", endColorstr="#343434");
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#cfcfcf), to(#343434));
+    background-image: -moz-linear-gradient(top center, #cfcfcf, #343434);
+    background-image: -o-linear-gradient(top, #cfcfcf, #343434);
+    font-family: Comic Sans MS;
 }
 
 
