@@ -316,6 +316,7 @@ article
 
 
 .evenement h1{
+       position: absolute;
     text-align: center;
     width: 550px;
     top: 30px;
