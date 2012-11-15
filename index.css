@@ -314,7 +314,7 @@ article
 /*1-4 EVENEMENT*/
 
 .evenement{
-    width: 950px;
+    width: 933px;
     height: 500px;
     background-color:  #d7d6d6;
     border: 2px solid black;
@@ -325,12 +325,13 @@ article
 
 
 .evenement h1{
-    position: absolute;
+  
     text-align: center;
     width: 550px;
     top: 30px;
-    right: 70px;
+    left: 300px;
     border: 2px groove gray;
+     position: relative;
 }
 
 .evenement strong{
@@ -344,7 +345,7 @@ article
 }
 
 .evenement .detail {
-    position: absolute;
+    position: relative;
     width: 530px;
     right: 50px;
     top: 150px;
@@ -353,7 +354,7 @@ article
 
 
 .evenement .imageflottante{
-    position:absolute;
+    position:relative;
     left : 75px;
     width: 200px;
     height: 200px;
