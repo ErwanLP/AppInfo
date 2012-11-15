@@ -9,7 +9,7 @@ body
     margin-top: 10px;
     margin-bottom: 20px;
     width:1470px;
-    background-image : url("img/testt3.jpg");
+    background-image : url("img/testt4.jpg");
     margin: auto;
     position:relative;/* Pour centrer notre page */
 
@@ -208,6 +208,7 @@ section
 
 article
 {
+    border-radius: 50px;
     width : 1150px;
     top : 0px;
     left : 0px;
@@ -280,6 +281,8 @@ article
 .page
 {
     background-image: url("img/essai.png");
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
     border: 2px solid black;
     position: absolute;
     left: 0px;
@@ -378,8 +381,12 @@ article
 
 footer
 { 
+    
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    box-shadow: 0px 0px 10px azure;
     width: 1400px;
-    border: 2px solid black;
+    border: 2px solid white;
     position: absolute;
     top: 950px;
     height : 120px;
