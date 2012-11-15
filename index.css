@@ -316,7 +316,7 @@ article
 .evenement{
     width: 933px;
     height: 500px;
-    background-color:  #d7d6d6;
+    background-color:  red;
     border: 2px solid black;
     overflow: auto;
 
@@ -325,15 +325,16 @@ article
 
 
 .evenement h1{
-  
-    text-align: center;
-    width: 550px;
-    top: 30px;
-    left: 300px;
-    border: 2px groove gray;
-     position: relative;
-}
 
+    position: absolute;
+    height : 50px;
+    width: 550px;
+    top: 0px;
+    left: 50px;    
+    border: 2px groove gray;
+
+}
+/*
 .evenement strong{
     font-weight: bold;
     text-decoration: underline;        
@@ -523,7 +524,7 @@ article
 
 footer
 { 
-    
+
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     box-shadow: 0px 0px 10px azure;

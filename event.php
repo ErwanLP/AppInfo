@@ -52,8 +52,9 @@
                     while ($data = $result->fetch()) {
                         ?>
                         <div class ="evenement"><br/>
+                                 <h1><?php echo $data['nomEvent']; ?></h1>
                             <img class = "imageflottante" alt="Photo de évenement" src= <?php echo $data['photoEvent'] ?>/>        
-                            <h1><?php echo $data['nomEvent']; ?></h1>
+                       
                             <p class="detail"> 
                                 <strong>Adresse:</strong><?php echo $data['lieuEvent']; ?><br/>
                                 <span><?php echo $data['lieuEvent']; ?></span> <br/>
