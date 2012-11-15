@@ -308,9 +308,6 @@ article
 /*1-4 EVENEMENT*/
 
 .evenement{
-    position : absolute;
-    top : 5px;
-    left : 5px;
     width: 950px;
     height: 500px;
     background-color:  #d7d6d6;
@@ -321,7 +318,7 @@ article
 
 
 
-h1{
+.evenement h1{
     position: absolute;
     text-align: center;
     width: 550px;
@@ -330,17 +327,17 @@ h1{
     border: 2px groove gray;
 }
 
-strong{
+.evenement strong{
     font-weight: bold;
     text-decoration: underline;        
 }
 
-span {
+.evenement span {
 
     margin-left: 75px;
 }
 
-.detail {
+.evenement .detail {
     position: absolute;
     width: 530px;
     right: 50px;
@@ -349,7 +346,7 @@ span {
 }
 
 
-.imageflottante{
+.evenement .imageflottante{
     position:absolute;
     float: left;
     margin: 50px;
@@ -358,7 +355,7 @@ span {
     border: 2px solid orange;
 }
 
-.etoile {
+.evenement .etoile {
     position: absolute;
     top: 275px;
     left: 370px;
@@ -366,13 +363,13 @@ span {
 
 }
 
-#note {    
+.evenement #note {    
     position: absolute;
     top: 260px;
     left: 500px;
 }
 
-#lien {
+.evenement #lien {
     position: absolute;
     width: 530px;
     right: 50px;
@@ -380,7 +377,7 @@ span {
     font-size: small
 }
 
-#bouton1 {
+.evenement #bouton1 {
     position: absolute;
     left: 330px;
     top: 330px;
@@ -403,7 +400,7 @@ span {
     font-family: Comic Sans MS;
 }
 
-#bouton2 {
+.evenement #bouton2 {
     position: absolute;
     left: 530px;
     top: 330px;
@@ -426,7 +423,7 @@ span {
     font-family: Comic Sans MS;
 }
 
-#bouton3 {
+.evenement #bouton3 {
     position: absolute;
     right: 70px;
     top: 330px;
