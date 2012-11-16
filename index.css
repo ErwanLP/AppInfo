@@ -53,7 +53,7 @@ header
 nav
 {
     border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    /*border-bottom-right-radius: 50px;*/
     box-shadow: 0px 0px 10px azure;
     width: 975px; /* Tr�s important : donner une taille au menu */	
     position: absolute;
@@ -97,9 +97,9 @@ nav
 
 .connec
 {
-    background-image: ;
+    background-image : url("img/cadenas.png");
     background-repeat: no-repeat;
-    background-position: 30px 60px;
+    background-position: 100px 50px;
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
     text-align: left;
@@ -113,17 +113,17 @@ nav
 
 .connection
 {
-    border-bottom-left-radius: 50px;
+    /*border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    box-shadow: 0px 0px 10px azure;
+    box-shadow: 0px 0px 10px azure;*/
     width: 400px; /* Tr�s important : donner une taille au menu */	
     position: absolute;
     top : 152px;
     left : 1050px;
     height : 50px ;
-    border: 2px solid white;
+    /*border: 2px solid white;*/
     margin-bottom: 20px; /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
-    background-color : tan;
+    /*background-color : tan;*/
 }
 
 nav li
@@ -222,8 +222,8 @@ nav li
 {
     display: inline-block;
     margin-right: 1px;
-    background-image: url("img/onglet.png");
-    background-repeat: no-repeat;
+    /*background-image: url("img/onglet.png");
+    background-repeat: no-repeat;*/
     width : 100px;
     height : 20px;
 }
