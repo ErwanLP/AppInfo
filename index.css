@@ -372,153 +372,137 @@ article
 /*1-4 EVENEMENT*/
 
 .evenement{
-    width: 950px;
-    height: 500px;
-    background-color:  #d7d6d6;
+    width: 933px;
+    height: 600px;
+    background-color:  silver;
     border: 2px solid black;
-    overflow: auto;
+   /* overflow: auto;*/
+    font-family: Comic Sans MS;
 
+}
+
+.texteEvent
+{
+    position: relative;
+    left : 100px;    
+}
+
+.evenement .imageflottante{
+    position:relative;
+    top : -400px;
+    left : -300px;
+  border: 2px solid black;
 }
 
 
 
-.evenement h1
-{
-    text-align: center;
-    width: 550px;
-    top: 30px;
-    right: 70px;
+
+.evenement h1{
+
+
+    height : 25px;
+    width: 550px;    
     border: 2px groove gray;
-}
-
-.evenement strong
-{
-    font-weight: bold;
-    text-decoration: underline;        
-}
-
-.evenement span
-{
-
-    margin-left: 75px;
-}
-
-.evenement .detail
-{
-    position: absolute;
-    width: 530px;
-    right: 50px;
-    top: 150px;
-    font-family: Comic Sans MS;
-}
-
-
-.evenement .imageflottante
-{
-    position:absolute;
-    float: left;
-    margin: 50px;
-    width: 200px;
-    height: 200px;
-    border: 2px solid orange;
-}
-
-.evenement .etoile
-{
-    position: absolute;
-    top: 275px;
-    left: 370px;
-    border: 2px solid black;
 
 }
 
-.evenement #note
-{    
-    position: absolute;
-    top: 260px;
-    left: 500px;
+
+.evenement strong{
+     
+font-weight: bold;
+text-decoration: underline;        
 }
 
-.evenement #lien
-{
-    position: absolute;
-    width: 530px;
-    right: 50px;
-    top: 110px;
-    font-size: small
+
+
+
+.evenement .etoile {
+
+border: 2px solid black;
+display: inline-block;
+
 }
 
-.evenement #bouton1
-{
-    position: absolute;
-    left: 330px;
-    top: 330px;
-    width: 150px;
-    text-align: center;
-    color: white;
-    -moz-box-shadow: 0px 0px 10px #343434;
-    -webkit-box-shadow: 0px 0px 10px #343434;
-    -o-box-shadow: 0px 0px 10px #343434;
-    box-shadow: 0px 0px 10px #343434;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    border: 2px outset #656565;
-    background:#cfcfcf;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cfcfcf", endColorstr="#343434");
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#cfcfcf), to(#343434));
-    background-image: -moz-linear-gradient(top center, #cfcfcf, #343434);
-    background-image: -o-linear-gradient(top, #cfcfcf, #343434);
-    font-family: Comic Sans MS;
+.evenement #note {    
+display: inline-block;
+position: relative;
+left : 25px;
 }
 
-.evenement #bouton2
-{
-    position: absolute;
-    left: 530px;
-    top: 330px;
-    width: 150px;
-    text-align: center;
-    color: white;
-    -moz-box-shadow: 0px 0px 10px #343434;
-    -webkit-box-shadow: 0px 0px 10px #343434;
-    -o-box-shadow: 0px 0px 10px #343434;
-    box-shadow: 0px 0px 10px #343434;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    border: 2px outset #656565;
-    background:#cfcfcf;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cfcfcf", endColorstr="#343434");
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#cfcfcf), to(#343434));
-    background-image: -moz-linear-gradient(top center, #cfcfcf, #343434);
-    background-image: -o-linear-gradient(top, #cfcfcf, #343434);
-    font-family: Comic Sans MS;
+
+.evenement #bouton1 {
+position: relative;
+left: -50px;
+display: inline-block;
+width: 150px;
+text-align: center;
+color: white;
+-moz-box-shadow: 0px 0px 10px #343434;
+-webkit-box-shadow: 0px 0px 10px #343434;
+-o-box-shadow: 0px 0px 10px #343434;
+box-shadow: 0px 0px 10px #343434;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+border: 2px outset #656565;
+background:#cfcfcf;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cfcfcf", endColorstr="#343434");
+background-image: -webkit-gradient(linear, left top, left bottom, from(#cfcfcf), to(#343434));
+background-image: -moz-linear-gradient(top center, #cfcfcf, #343434);
+background-image: -o-linear-gradient(top, #cfcfcf, #343434);
+font-family: Comic Sans MS;
 }
 
-.evenement #bouton3
-{
-    position: absolute;
-    right: 70px;
-    top: 330px;
-    width: 150px;
-    text-align: center;
-    color: white;
-    -moz-box-shadow: 0px 0px 10px #343434;
-    -webkit-box-shadow: 0px 0px 10px #343434;
-    -o-box-shadow: 0px 0px 10px #343434;
-    box-shadow: 0px 0px 10px #343434;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    border: 2px outset #656565;
-    background:#cfcfcf;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cfcfcf", endColorstr="#343434");
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#cfcfcf), to(#343434));
-    background-image: -moz-linear-gradient(top center, #cfcfcf, #343434);
-    background-image: -o-linear-gradient(top, #cfcfcf, #343434);
-    font-family: Comic Sans MS;
+.evenement #bouton2 {
+/*position: relative;
+left: 530px;
+top: 330px;*/
+display: inline-block;
+width: 150px;
+text-align: center;
+color: white;
+-moz-box-shadow: 0px 0px 10px #343434;
+-webkit-box-shadow: 0px 0px 10px #343434;
+-o-box-shadow: 0px 0px 10px #343434;
+box-shadow: 0px 0px 10px #343434;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+border: 2px outset #656565;
+background:#cfcfcf;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cfcfcf", endColorstr="#343434");
+background-image: -webkit-gradient(linear, left top, left bottom, from(#cfcfcf), to(#343434));
+background-image: -moz-linear-gradient(top center, #cfcfcf, #343434);
+background-image: -o-linear-gradient(top, #cfcfcf, #343434);
+font-family: Comic Sans MS;
 }
+
+.evenement #bouton3 {
+/*position: relative;
+right: 70px;
+top: 330px;*/
+position: relative;
+left: 50px;
+display: inline-block;
+width: 150px;
+text-align: center;
+color: white;
+-moz-box-shadow: 0px 0px 10px #343434;
+-webkit-box-shadow: 0px 0px 10px #343434;
+-o-box-shadow: 0px 0px 10px #343434;
+box-shadow: 0px 0px 10px #343434;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+border: 2px outset #656565;
+background:#cfcfcf;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cfcfcf", endColorstr="#343434");
+background-image: -webkit-gradient(linear, left top, left bottom, from(#cfcfcf), to(#343434));
+background-image: -moz-linear-gradient(top center, #cfcfcf, #343434);
+background-image: -o-linear-gradient(top, #cfcfcf, #343434);
+font-family: Comic Sans MS;
+}
+
 
 
 /*2-ASIDE*/
