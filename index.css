@@ -80,7 +80,7 @@ nav
     padding: 8px;
     position: absolute;
     background-color: tan;
-   
+
 }
 
 .inscr h1
@@ -96,9 +96,9 @@ nav
 
 .connec
 {
-    /*background-image: ;*/
+    background-image: url("img/cadenas.png");
     background-repeat: no-repeat;
-    background-position: 30px 60px;
+    background-position: 100px 50px;
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
     text-align: left;
@@ -119,17 +119,17 @@ nav
 
 .connection
 {
-   border-bottom-left-radius: 50px;
+    /*border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    box-shadow: 0px 0px 10px azure;
+    box-shadow: 0px 0px 10px azure;*/
     width: 400px; /* Tr�s important : donner une taille au menu */	
     position: absolute;
     top : 152px;
     left : 1050px;
     height : 50px ;
-   border: 2px solid white;
+    /*border: 2px solid white;*/
     margin-bottom: 20px; /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
-    background-color : tan;
+    /*background-color : tan;*/
 }
 
 
@@ -233,8 +233,8 @@ nav li
 {
     display: inline-block;
     margin-right: 1px;
-    background-image: url("img/onglet.png");
-    background-repeat: no-repeat;
+    /*background-image: url("img/onglet.png");
+    background-repeat: no-repeat;*/
     width : 100px;
     height : 20px;
 }
@@ -590,7 +590,7 @@ article
 
 footer
 { 
-    
+
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     box-shadow: 0px 0px 10px azure;
@@ -609,7 +609,7 @@ footer
 
 a:visited
 {
- color: crimson;   
+    color: crimson;   
 }
 
 .image 
@@ -629,4 +629,25 @@ a:visited
 .blanc
 {
     color: whitesmoke;
+}
+
+.rechercheSimple 
+{ color : blue;
+  font-style : italic;
+  text-decoration : underline;
+  margin-left : 700px;
+  font-family: Verdana, Trebuchet MS, Arial, sans-serif;
+}
+
+.rechercheAvancee
+{ font-size : 0.7em;
+  text-decoration : underline;
+  color : grey;
+  font-style : normal;
+
+}
+
+.inline
+{
+display : inline-block;
 }
