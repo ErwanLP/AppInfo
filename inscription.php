@@ -16,21 +16,22 @@
                 </div>
                 <div class="page">
 
-                    <form class="center" method="post" action="traitementInscription.php">                       
+                    <form class="inscr" method="post" action="traitementInscription.php">                       
                         <pre>
+                        <h1>Inscrivez-vous !</h1>
                         <label for ="nomDeCompte">Nom de compte:</label>
-                        <input type="text" name="nomDeCompte" id="nomDeCompte"  size="30" maxlength="20" autofocus required/><br/>
+                        <input style="alignment-baseline: before-edge;" type="text" name="nomDeCompte" id="nomDeCompte"  size="30" maxlength="20" autofocus required/><br/>
 
                         <label for="mdp">Votre mot de passe :</label>
-                        <input type="password" name="mdp" id="mdp" required/><br/>
+                        <input type="password" name="mdp" id="mdp" size="30" required/><br/>
 
-                        <label for="mdp2">Retaper mot de passe :</label>
-                        <input type="password" name="mdp2" id="mdp2" required/><br/>
+                        <label for="mdp2">Confirmer mot de passe :</label>
+                        <input type="password" name="mdp2" id="mdp2" size="30" required/><br/>
 
                         <label for="mailCompte">Votre email :</label>
-                        <input type="email" name="mailCompte" id="mailCompte" value="exemple@gmail.com" required/><br/>
+                        <input type="email" name="mailCompte" placeholder="exemple@operateur.com" id="mailCompte" size="30"  required/><br/>
 
-                        <input type="submit" value="Envoyer" />
+                        <input style="position:relative;left:50px;" type="submit" value="Envoyer" />
                         </pre>
 
                     </form>
