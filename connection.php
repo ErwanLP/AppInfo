@@ -22,8 +22,8 @@
                             <input type="text" name="nomDeCompte" id="nomDeCompte"  size="20" maxlength="10" autofocus required/><br/>
 
                             <label for="mdp">Votre mot de passe :</label>
-                            <input type="password" name="mdp" id="mdp" required/><br/>
-                     
+                            <input type="password" name="mdp" id="mdp" required/>
+                                                  <p><a href="">Mot de passe oublié</a></p>
                             <input style="position:relative;left:35px;" type="submit" value="Envoyer" />
                         </pre>
                     </form>

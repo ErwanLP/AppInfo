@@ -1,0 +1,20 @@
+.rechercheSimple 
+{ color : blue;
+  font-style : italic;
+  text-decoration : underline;
+  margin-left : 700px;
+  font family: Verdana, Trebuchet MS, Arial, sans-serif;
+}
+
+.rechercheAvancee
+{ font-size : 0.7em;
+  font-decoration : underline;
+  color : grey;
+  font-style : normal;
+
+}
+
+.inline
+{
+display : inline-block;
+}

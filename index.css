@@ -23,8 +23,7 @@ body
 
 header
 {
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
+    border-radius: 50px;
     box-shadow: 0px 0px 10px azure;
     border: 2px solid white;
     width: 1400px;
@@ -53,7 +52,7 @@ header
 nav
 {
     border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    /*border-bottom-right-radius: 50px;*/
     box-shadow: 0px 0px 10px azure;
     width: 975px; /* Tr�s important : donner une taille au menu */	
     position: absolute;
@@ -97,7 +96,7 @@ nav
 
 .connec
 {
-    background-image: ;
+    /*background-image: ;*/
     background-repeat: no-repeat;
     background-position: 30px 60px;
     border-top-left-radius: 50px;
@@ -111,9 +110,16 @@ nav
     background-color: tan;
 }
 
+.connec p
+{
+    margin-left: 225px;
+    text-decoration: underline;
+}
+
+
 .connection
 {
-    border-bottom-left-radius: 50px;
+   border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     box-shadow: 0px 0px 10px azure;
     width: 400px; /* Tr�s important : donner une taille au menu */	
@@ -121,10 +127,15 @@ nav
     top : 152px;
     left : 1050px;
     height : 50px ;
-    border: 2px solid white;
+   border: 2px solid white;
     margin-bottom: 20px; /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
     background-color : tan;
 }
+
+
+
+
+
 
 nav li
 {
@@ -605,12 +616,14 @@ a:visited
 {
     /*padding-top: 1px;*/
     text-align: center;
-    margin-right: 50%;
+    margin-left: 65px;
+    margin-right: 65px;
     box-shadow: 6px 6px 6px blueviolet;
-    border-radius: 30px / 30px;
-    font-size : 30px;
-    background-image : url("img/copie.png");
-    background-position: 50px 50px;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+    font-size: 30px;
+    background-image: url("img/copie.png");
+    /*background-position: 50px 50px;*/
 }
 
 .blanc
