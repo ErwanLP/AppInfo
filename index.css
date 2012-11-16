@@ -10,29 +10,23 @@ body
     margin-bottom: 20px;
     width:1470px;
     background-image : url("img/testt4.jpg");
+    /*background-repeat: no-repeat;*/
+    background-attachment: fixed;
     margin: auto;
     position:relative;/* Pour centrer notre page */
 
 }
 
-.center
-{
-    border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    text-align: left;
-    width: 500px;
-    top: 110px;
-    left: 320px;
-    padding: 8px;
-    position: absolute;
-    background-color:goldenrod;
-}
+
 
 /*HEADER*/
 
 header
 {
-    border: 2px solid black;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    box-shadow: 0px 0px 10px azure;
+    border: 2px solid white;
     width: 1400px;
     height: 100px;
     position: absolute;
@@ -58,25 +52,78 @@ header
 
 nav
 {
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: 0px 0px 10px azure;
     width: 975px; /* Tr�s important : donner une taille au menu */	
     position: absolute;
     top : 152px;
     left : 50px;
-    height : 50px ;
-    border: 2px solid black;
+    height : 50px;
+    border: 2px solid white;
     margin-bottom: 20px; /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
-    background-color : white;
+    background-color : tan;
 }
+
+/*INSCRIPTION*/
+
+.inscr
+{
+    background-image: url("img/inscription.gif");
+    background-repeat: no-repeat;
+    background-position: 10px 130px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    text-align: left;/*110 et 320*/
+    width: 500px;
+    top: 80px;
+    left: 320px;
+    padding: 8px;
+    position: absolute;
+    background-color: tan;
+   
+}
+
+.inscr h1
+{
+    text-align: center;
+    font-size: 20px;
+    text-shadow: 4px 4px 6px black;
+    font-family: Comic Sans MS, Arial Black, sans-serif;
+    font-weight: bold;
+}
+
+/*CONNECTION*/
+
+.connec
+{
+    background-image: ;
+    background-repeat: no-repeat;
+    background-position: 30px 60px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    text-align: left;
+    width: 500px;
+    top: 80px;
+    left: 320px;
+    padding: 8px;
+    position: absolute;
+    background-color: tan;
+}
+
 .connection
 {
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: 0px 0px 10px azure;
     width: 400px; /* Tr�s important : donner une taille au menu */	
     position: absolute;
     top : 152px;
     left : 1050px;
     height : 50px ;
-    border: 2px solid black;
+    border: 2px solid white;
     margin-bottom: 20px; /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
-    background-color : white;
+    background-color : tan;
 }
 
 nav li
@@ -528,4 +575,28 @@ footer
     margin-bottom:20px;
     background-color : white;
 
+}
+
+/*FONCTION BANIERE NEWS*/
+
+a:visited
+{
+ color: crimson;   
+}
+
+.image 
+{
+    /*padding-top: 1px;*/
+    text-align: center;
+    margin-right: 50%;
+    box-shadow: 6px 6px 6px blueviolet;
+    border-radius: 30px / 30px;
+    font-size : 30px;
+    background-image : url("img/copie.png");
+    background-position: 50px 50px;
+}
+
+.blanc
+{
+    color: whitesmoke;
 }
