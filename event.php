@@ -20,44 +20,11 @@
                     <h2><span>Spectacle</span></h2>
                 </div>
 
-                <?php
 
-
-//switch ($GET_onglet) {
-    //case"spectacle";
-                
-              //  if ($_GET['onglet'] == "spectacle"){
-        
-        /*        
-                
-           <!--   <div id="navinter">
-                    <ul>
-                        <li><a href="event.php?onglet=spectacle&sousOnglet=comedieMusicale" >Com&eacute;die Musicale</a></li> 
-                        <li><a href=#>Th&eacute;atre</a></li>
-                        <li><a href=#>Caf&eacute;</a></li>
-                        <li><a href=#>Cabaret</a></li>
-                        <li><a href=#>Dance</a></li>
-                        <li><a href=#>Son et lumi&egrave;re</a></li>
-                        <li><a href=# >Op&eacute;ra</a></li> 
-                        <li><a href=#>Cirque</a></li>
-                        <li ><a href=#>One Man Show</a></li>
-                        <li><a href=#>Spectacle de rue</a></li>
-
-                    </ul>
-                </div> 
-           -->*/
-                
-                    
-               // }
-      //  break;
-  //  default:
-      //  echo "Ne change pas d'URL gros nul !";
-//}
-?>
 
       
       
-      <!- <?php include("navinter.php"); ?> 
+      <?php include("navinter.php"); ?> 
 
                 <div class="pageOnglet">
 

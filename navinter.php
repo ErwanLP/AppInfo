@@ -14,7 +14,7 @@ switch ($_GET['onglet']) {
                 <li><a href="event.php?onglet=spectacle&sousOnglet=sonEtLumiere">Son et lumi&egrave;re</a></li>
                 <li><a href="event.php?onglet=spectacle&sousOnglet=opera">Op&eacute;ra</a></li> <!-- Liste des liens du sous-menu -->
                 <li><a href="event.php?onglet=spectacle&sousOnglet=cirque">Cirque</a></li>
-                <li ><a href="event.php?onglet=spectacle&sousOnglet=oneManShow">One Man Show</a></li>
+                <li><a href="event.php?onglet=spectacle&sousOnglet=oneManShow">One Man Show</a></li>
                 <li><a href="event.php?onglet=spectacle&sousOnglet=spectacleDeRue">Spectacle de rue</a></li>
             </ul>
         </div>
@@ -24,11 +24,11 @@ switch ($_GET['onglet']) {
         ?>
         <div class="navinter">
             <ul>
-                <li><a href="event.php?onglet=bar&sousOnglet=cafe" >CafÃ©</a></li> <!-- Liste des liens du sous-menu -->
-                <li><a href="event.php?onglet=bare&sousOnglet=pub">Pub</a></li>
+                <li><a href="event.php?onglet=bar&sousOnglet=cafe" >Caf&eacute;</a></li> <!-- Liste des liens du sous-menu -->
+                <li><a href="event.php?onglet=bar&sousOnglet=pub">Pub</a></li>
                 <li><a href="event.php?onglet=bar&sousOnglet=barAVin">Bar &agrave;  Vin</a></li>
                 <li><a href="event.php?onglet=bar&sousOnglet=brasserie">Brasserie</a></li>
-                <li><a href="event.php?onglet=bare&sousOnglet=salonDeThe">Salon de Th&eacute;</a></li>
+                <li><a href="event.php?onglet=bar&sousOnglet=salonDeThe">Salon de Th&eacute;</a></li>
                 <li><a href="event.php?onglet=bar&sousOnglet=lounge">Lounge</a></li>
             </ul>
         </div>
