@@ -308,7 +308,7 @@ article
 
 /* 1-2 NAV*/
 
-#navinter{
+.navinter{
 
     width: 200px;
     height : 500px ;
@@ -318,7 +318,7 @@ article
 
 }
 
-#navinter li
+.navinter li
 {
     width : 180px;
     height : 20px;
@@ -330,7 +330,7 @@ article
 }
 
 
-#navinter a
+.navinter a
 {
     text-decoration:none;
     color: black;
