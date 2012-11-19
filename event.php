@@ -9,7 +9,7 @@
         <?php include("header.php"); ?>
 
         <?php include("nav.php"); ?>
-        
+
         <?php include("Recherche.php"); ?>
 
 
@@ -17,14 +17,16 @@
 
             <article  class ="articleOnglet">  
                 <div class="titresection" class="titreArticle">
-                    <h2><span>Spectacle</span></h2>
+
+
+                    <h2><span><?php echo $_GET['onglet']; ?></span></h2>
                 </div>
 
 
 
-      
-      
-      <?php include("navinter.php"); ?> 
+
+
+                <?php include("navinter.php"); ?> 
 
                 <div class="pageOnglet">
 
@@ -45,7 +47,7 @@
                         ?>
                         <div class ="evenement"><br/>
                             <div class ="texteEvent">
-                                 <h1><?php echo $data['nomEvent']; ?></h1>
+                                <h1><?php echo $data['nomEvent']; ?></h1>
                                 <strong>Adresse:</strong><br/><?php echo $data['lieuEvent']; ?><br/><span><?php echo $data['lieuEvent']; ?></span><br/><br/>
                                 <strong>Date et Heure:</strong><br/><?php echo $data['dateEvent']; ?><br/><br/>
                                 <strong>Prix:</strong><br/>30€ <br/><br/>
