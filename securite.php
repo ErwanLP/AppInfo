@@ -10,6 +10,8 @@
         <?php include("header.php"); ?>
 
         <?php include("nav.php"); ?>
+        
+        <?php include("Recherche.php"); ?>
 
         <section>
             <article>

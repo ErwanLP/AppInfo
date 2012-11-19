@@ -19,6 +19,8 @@
         include("header.php");
 
         include("nav.php");
+        
+        include("Recherche.php");
  
         include("acceuil.php");
 
