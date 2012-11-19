@@ -9,7 +9,7 @@ body
     margin-top: 10px;
     margin-bottom: 20px;
     width:1470px;
-    background-image : url("img/testt4.jpg");
+    background-image : url("img/fondecran3.png");
     /*background-repeat: no-repeat;*/
     background-attachment: fixed;
     margin: auto;
@@ -31,7 +31,7 @@ header
     position: absolute;
     top: 50px;
     left: 50px;
-    background-image: url("img/banderole.jpg");
+    background-image: url("img/banniere3.png");
     background-repeat: no-repeat;
 
 }
@@ -634,7 +634,7 @@ a:visited
 
 .rechercheSimple 
 { 
-  padding-top: 50px;
+  /*padding-top: 50px;*/
   color : blue;
   font-style : italic;
   text-decoration : underline;
