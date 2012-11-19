@@ -10,16 +10,14 @@ if (!empty($_SESSION['ID'])) {
                 <a href="traitementswitch.php?switch=organisateur" >Me connecter en tant que organisateur</a> <!-- deux boutons -->
                 <a href="traitementswitch.php?switch=participant" >Me connecter en tant que participant</a>
 
-                <form method="post" action="traitement.php"> <!-- Recherche avancée -->
+                 <!-- <form method="post" action="traitement.php">
                     <fieldset>
                         <label class="rechercheSimple" for="recherche">Recherche :</label>
                         <input style="margin-left :10px;" type="search" name="recherche" id="recherche" size="30" maxlength="70" placeholder="Ex : 75006, bar, mairie de Paris">
                         <a class="rechercheAvancee" href="index.php?RA=on">Recherche Avancée</a>
                     </fieldset>
                     
-                    <?php 
                     
-                    if(!empty($_GET['RA'])){ ?>
                     <fieldset>
                         <pre>
             		<label for="genre">Genre :</label>   <select name="genre" id="genre">
@@ -102,8 +100,8 @@ if (!empty($_SESSION['ID'])) {
                         </pre>
                     </fieldset>
                     
-                    <?php } ?>
-                </form>
+                    
+                </form> -->
 
                 <div class="image">
                     <p class="blanc"> Bonjour chèrs internautes ! Voici les dernières news du site :<br />

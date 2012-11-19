@@ -49,18 +49,18 @@ header
 
 /*NAVIGATION PRINCIPALE*/
 
-nav
+
+
+.Recherche
 {
-    border-bottom-left-radius: 50px;
-    /*border-bottom-right-radius: 50px;*/
     box-shadow: 0px 0px 10px azure;
-    width: 975px; /* Tr�s important : donner une taille au menu */	
+    width: 450px;  /*Tr�s important : donner une taille au menu */	
     position: absolute;
     top : 152px;
-    left : 50px;
+    left: 770px;
     height : 50px;
     border: 2px solid white;
-    margin-bottom: 20px; /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
+    /*margin-bottom: 20px;*/ /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
     background-color : tan;
 }
 
@@ -124,8 +124,8 @@ nav
     box-shadow: 0px 0px 10px azure;*/
     width: 400px; /* Tr�s important : donner une taille au menu */	
     position: absolute;
-    top : 152px;
-    left : 1050px;
+    top : 160px;
+    left : 1120px;
     height : 50px ;
     /*border: 2px solid white;*/
     margin-bottom: 20px; /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
@@ -137,7 +137,7 @@ nav
 
 
 
-nav li
+.elementmenu li
 {
     display: inline-block;
     margin-right: 0px;
@@ -231,7 +231,9 @@ nav li
 
 .connection li
 {
-    display: inline-block;
+    
+    color: blue;
+    display: inline;
     margin-right: 1px;
     /*background-image: url("img/onglet.png");
     background-repeat: no-repeat;*/
@@ -239,11 +241,24 @@ nav li
     height : 20px;
 }
 
-
+.elementmenu
+{
+    border-bottom-left-radius: 50px;
+    /*border-bottom-right-radius: 50px;*/
+    box-shadow: 0px 0px 10px azure;
+    width: 700px; /* Tr�s important : donner une taille au menu */	
+    position: absolute;
+    top : 152px;
+    left : 50px;
+    height : 50px;
+    border: 2px solid white;
+    margin-bottom: 20px; /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
+    background-color : tan;
+}
 
 .elementmenu ul /* Toutes les listes � puces se trouvant dans un menu */
 {
-    padding-left: 10px; /* ... mais on modifie ensuite la marge de gauche, donc celle-l� fera finalement 20 pixels */
+    padding-left: 0px; /* ... mais on modifie ensuite la marge de gauche, donc celle-l� fera finalement 20 pixels */
     margin-bottom: 5px; /* M�me chose que tout � l'heure, on modifie ensuite juste margin-bottom, mais tous les autres sont � 0px */
 }   
 
@@ -615,16 +630,20 @@ a:visited
     color: whitesmoke;
 }
 
+/*FONCTION RECHERCE*/
+
 .rechercheSimple 
-{ color : blue;
+{ 
+  padding-top: 50px;
+  color : blue;
   font-style : italic;
   text-decoration : underline;
-  margin-left : 700px;
   font-family: Verdana, Trebuchet MS, Arial, sans-serif;
 }
 
 .rechercheAvancee
-{ font-size : 0.7em;
+{ 
+  font-size : 0.7em;
   text-decoration : underline;
   color : grey;
   font-style : normal;
