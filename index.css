@@ -296,12 +296,13 @@ article
 /*1-1- TITRE*/
 .titreArticle
 {
-    /*background-color : #FEA466;*/
-    /*border: 2px solid black;	*/
+    background-image : url("img/Titre_Accueil.png");
+    background-repeat: no-repeat;
+    
     position: absolute;
     width : 1150px;
     height: 75px;
-    left : 3px;
+    left : 40px;
     top : 1px;
 }
 
@@ -366,8 +367,8 @@ article
     border: 2px solid white;
     position: absolute;
     left: 0px;
-    height : 624px;
-    top : 77px;
+    height : 648px;
+    top : 51px;
     background-color: linen;
     width : 1150px;
 
