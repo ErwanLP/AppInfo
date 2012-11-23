@@ -9,7 +9,7 @@ body
     margin-top: 10px;
     margin-bottom: 20px;
     width:1470px;
-    background-image : url("img/fondecran3.png");
+    background-image : url("img/fondecran8.png");
     /*background-repeat: no-repeat;*/
     background-attachment: fixed;
     margin: auto;
@@ -358,7 +358,7 @@ article
 
 .page
 {
-    background-image: url("img/essai.png");
+    /*background-image: url("img/essai.png");*/
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
     border-top: 2px solid black;
@@ -367,7 +367,7 @@ article
     left: 0px;
     height : 624px;
     top : 77px;
-    background-color: linen;
+    background-color: tan;
     width : 1150px;
 
 }
