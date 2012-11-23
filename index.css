@@ -360,7 +360,7 @@ article
 
 .page
 {
-    /*background-image: url("img/essai.png");*/
+    background-image: url("img/essai.png");
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
     border-top: 2px solid black;
