@@ -9,7 +9,7 @@ body
     margin-top: 10px;
     margin-bottom: 20px;
     width:1470px;
-    background-image : url("img/fondecran3.png");
+    background-image : url("img/fondecran8.png");
     /*background-repeat: no-repeat;*/
     background-attachment: fixed;
     margin: auto;
@@ -58,7 +58,7 @@ header
     width: 450px;  /*Tr�s important : donner une taille au menu */	
     position: absolute;
     top : 163px;
-    left: 680px;
+    left: 750px;
     height : 35px;
     border: 2px solid white;
     /*margin-bottom: 20px;*/ /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
@@ -247,10 +247,10 @@ header
     border-bottom-left-radius: 50px;
     /*border-bottom-right-radius: 50px;*/
     box-shadow: 0px 0px 10px azure;
-    width: 600px; /* Tr�s important : donner une taille au menu */	
+    width: 700px; /* Tr�s important : donner une taille au menu */	
     position: absolute;
     top : 160px;
-    left : 50px;
+    left : 0px;
     height : 50px;
     border: 2px solid white;
     margin-bottom: 20px; /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
@@ -296,12 +296,13 @@ article
 /*1-1- TITRE*/
 .titreArticle
 {
-    /*background-color : #FEA466;*/
-    /*border: 2px solid black;	*/
+    background-image : url("img/Titre_Accueil.png");
+    background-repeat: no-repeat;
+    
     position: absolute;
     width : 1150px;
     height: 75px;
-    left : 3px;
+    left : 40px;
     top : 1px;
 }
 
@@ -366,8 +367,8 @@ article
     border: 2px solid white;
     position: absolute;
     left: 0px;
-    height : 624px;
-    top : 77px;
+    height : 648px;
+    top : 51px;
     background-color: linen;
     width : 1150px;
 
