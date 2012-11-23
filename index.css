@@ -58,7 +58,7 @@ header
     width: 450px;  /*Tr�s important : donner une taille au menu */	
     position: absolute;
     top : 163px;
-    left: 680px;
+    left: 750px;
     height : 35px;
     border: 2px solid white;
     /*margin-bottom: 20px;*/ /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
