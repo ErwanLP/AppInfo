@@ -53,12 +53,13 @@ header
 
 .Recherche
 {
+    padding-top: 10px;
     box-shadow: 0px 0px 10px azure;
     width: 450px;  /*Tr�s important : donner une taille au menu */	
     position: absolute;
-    top : 152px;
-    left: 770px;
-    height : 50px;
+    top : 163px;
+    left: 680px;
+    height : 35px;
     border: 2px solid white;
     /*margin-bottom: 20px;*/ /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
     background-color : tan;
@@ -96,9 +97,9 @@ header
 
 .connec
 {
-    background-image: url("img/cadenas.png");
+    background-image: url("img/cadenas1.png");
     background-repeat: no-repeat;
-    background-position: 100px 50px;
+    background-position: 80px 60px;
     border-top-left-radius: 50px;
     border-bottom-right-radius: 50px;
     text-align: left;
@@ -248,8 +249,8 @@ header
     box-shadow: 0px 0px 10px azure;
     width: 700px; /* Tr�s important : donner une taille au menu */	
     position: absolute;
-    top : 152px;
-    left : 50px;
+    top : 160px;
+    left : 0px;
     height : 50px;
     border: 2px solid white;
     margin-bottom: 20px; /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
@@ -308,7 +309,7 @@ article
 
 /* 1-2 NAV*/
 
-#navinter{
+.navinter{
 
     width: 200px;
     height : 500px ;
@@ -318,7 +319,7 @@ article
 
 }
 
-#navinter li
+.navinter li
 {
     width : 180px;
     height : 20px;
@@ -330,7 +331,7 @@ article
 }
 
 
-#navinter a
+.navinter a
 {
     text-decoration:none;
     color: black;
@@ -636,14 +637,15 @@ a:visited
 { 
   /*padding-top: 50px;*/
   color : blue;
+  font-size: 14px;
   font-style : italic;
-  text-decoration : underline;
+  font-weight: bolder;
   font-family: Verdana, Trebuchet MS, Arial, sans-serif;
 }
 
 .rechercheAvancee
 { 
-  font-size : 0.7em;
+  /*font-size : 0.7em;*/
   text-decoration : underline;
   color : grey;
   font-style : normal;

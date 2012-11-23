@@ -22,7 +22,7 @@
                         <pre>
                         <h1>Inscrivez-vous !</h1>
                         <label for ="nomDeCompte">Nom de compte:</label>
-                        <input style="alignment-baseline: before-edge;" type="text" name="nomDeCompte" id="nomDeCompte"  size="30" maxlength="20" autofocus required/><br/>
+                        <input style="alignment-baseline: before-edge;" type="text" name="nomDeCompte" id="nomDeCompte"  size="30" maxlength="15" autofocus required/><br/>
 
                         <label for="mdp">Votre mot de passe :</label>
                         <input type="password" name="mdp" id="mdp" size="30" required/><br/>

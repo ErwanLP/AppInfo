@@ -9,7 +9,7 @@
         <?php include("header.php"); ?>
 
         <?php include("nav.php"); ?>
-        
+
         <?php include("Recherche.php"); ?>
 
 
@@ -17,24 +17,16 @@
 
             <article  class ="articleOnglet">  
                 <div class="titresection" class="titreArticle">
-                    <h2><span>Spectacle</span></h2>
+
+
+                    <h2><span><?php echo $_GET['onglet']; ?></span></h2>
                 </div>
 
-                <div id="navinter">
-                    <ul>
-                        <li><a href="event.php?onglet=spectacle&sousOnglet=comedieMusicale" >Com&eacute;die Musicale</a></li> <!-- Liste des liens du sous-menu -->
-                        <li><a href=#>Th&eacute;atre</a></li>
-                        <li><a href=#>Caf&eacute;</a></li>
-                        <li><a href=#>Cabaret</a></li>
-                        <li><a href=#>Dance</a></li>
-                        <li><a href=#>Son et lumi&egrave;re</a></li>
-                        <li><a href=# >Op&eacute;ra</a></li> <!-- Liste des liens du sous-menu -->
-                        <li><a href=#>Cirque</a></li>
-                        <li ><a href=#>One Man Show</a></li>
-                        <li><a href=#>Spectacle de rue</a></li>
 
-                    </ul>
-                </div>
+
+
+
+                <?php include("navinter.php"); ?> 
 
                 <div class="pageOnglet">
 
@@ -55,7 +47,7 @@
                         ?>
                         <div class ="evenement"><br/>
                             <div class ="texteEvent">
-                                 <h1><?php echo $data['nomEvent']; ?></h1>
+                                <h1><?php echo $data['nomEvent']; ?></h1>
                                 <strong>Adresse:</strong><br/><?php echo $data['lieuEvent']; ?><br/><span><?php echo $data['lieuEvent']; ?></span><br/><br/>
                                 <strong>Date et Heure:</strong><br/><?php echo $data['dateEvent']; ?><br/><br/>
                                 <strong>Prix:</strong><br/>30€ <br/><br/>
