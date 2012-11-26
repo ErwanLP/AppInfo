@@ -4,7 +4,6 @@ if (!empty($_SESSION['ID'])) {
     <section>
         <article>
             <div class="titreArticleAccueil">
-                <!--<h2><span> Acceuil</span></h2>-->
             </div>
             <div class="page">
                 <a href="traitementswitch.php?switch=organisateur" >Me connecter en tant que organisateur</a> <!-- deux boutons -->
@@ -26,7 +25,6 @@ if (!empty($_SESSION['ID'])) {
     <section>
         <article>
             <div class="titreArticleAccueil">
-                <!--<h2><span> Acceuil</span></h2>-->
             </div>
             <div class="page">
 

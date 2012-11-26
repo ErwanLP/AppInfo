@@ -14,7 +14,6 @@
         <section>
             <article>
                 <div class="titreArticleInscription">
-                    <!--<h2><span> Inscription</span></h2>-->
                 </div>
                 <div class="page">
 

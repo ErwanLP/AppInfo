@@ -13,8 +13,7 @@
 
         <section>
             <article>
-                <div class="titreActicleRechercheAvancee">
-                    <!--<h2><span> Recherche Avancée</span></h2>-->
+                <div class="titreArticleRechercheAvancee">
                 </div>
                 <div class="page">
 

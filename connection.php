@@ -13,8 +13,7 @@
 
         <section>
             <article>
-                <div class="titreActicleConnexion">
-                    <!--<h2><span>Connection</span></h2>-->
+                <div class="titreArticleConnexion">
                 </div>
                 <div class="page">
 
