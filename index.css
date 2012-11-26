@@ -216,7 +216,7 @@ header
 
 }
 
-#autre
+/*#autre
 {
     background-image: url("img/ongletAutre.png");
     background-repeat: no-repeat;
@@ -228,7 +228,7 @@ header
     background-image: url("img/ongletAutreEnf.png");
     background-repeat: no-repeat;
 
-}
+}*/
 
 .connection li
 {
@@ -247,11 +247,11 @@ header
     border-bottom-left-radius: 50px;
     /*border-bottom-right-radius: 50px;*/
     box-shadow: 0px 0px 10px azure;
-    width: 700px; /* Tr�s important : donner une taille au menu */	
+    width: 680px; /* Tr�s important : donner une taille au menu */	
     position: absolute;
-    top : 160px;
-    left : 0px;
-    height : 50px;
+    top : 163px;
+    left : 50px;
+    height : 45px;
     border: 2px solid white;
     margin-bottom: 20px; /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
     background-color : tan;
@@ -284,7 +284,7 @@ article
 {
     box-shadow: 0px 0px 10px azure;
     border-radius: 50px;
-    width : 1150px;
+    width : 1400px;
     top : 0px;
     left : 0px;
     height : 700px;
@@ -294,19 +294,53 @@ article
 }
 
 /*1-1- TITRE*/
-.titreArticle
+.titreArticleAccueil
 {
     background-image : url("img/Titre_Accueil.png");
     background-repeat: no-repeat;
     
     position: absolute;
-    width : 1150px;
+    width : 1400px;
     height: 75px;
-    left : 40px;
+    left : 150px;
     top : 1px;
 }
 
+.titreArticleInscription
+{
+   background-image : url("img/Inscription.png");
+    background-repeat: no-repeat;
+    
+    position: absolute;
+    width : 1400px;
+    height: 75px;
+    left : 150px;
+    top : 1px; 
+}
 
+.titreArticleConnexion
+{
+   background-image : url("img/Connexion.png");
+    background-repeat: no-repeat;
+    
+    position: absolute;
+    width : 1400px;
+    height: 75px;
+    left : 150px;
+    top : 1px;
+}
+
+.titreArticleRechercheAvancee
+{
+   background-image : url("img/Recherce_Avancee.png");
+    background-repeat: no-repeat;
+    
+    position: absolute;
+    width : 1400px;
+    height: 75px;
+    left : 150px;
+    top : 1px;
+}
 
 /* 1-2 NAV*/
 
@@ -370,7 +404,7 @@ article
     height : 648px;
     top : 51px;
     background-color: linen;
-    width : 1150px;
+    width : 1400px;
 
 }
 
@@ -525,7 +559,7 @@ font-family: Comic Sans MS;
 /*2-ASIDE*/
 
 
-#agenda
+/* #agenda
 {
     box-shadow: 0px 0px 10px azure;
     width: 225px;
@@ -584,7 +618,7 @@ font-family: Comic Sans MS;
     background-color : silver;
 
 
-}
+} */
 
 /*FOOTER*/
 
@@ -617,7 +651,7 @@ a:visited
 {
     /*padding-top: 1px;*/
     text-align: center;
-    margin-left: 65px;
+    margin-left: 450px;
     margin-right: 65px;
     box-shadow: 6px 6px 6px blueviolet;
     border-top-left-radius: 200px;
