@@ -2,11 +2,11 @@
 session_start();
 
 $titre="Connexion";
-include("includes/identifiants.php");
-include("includes/debut.php");
-include("includes/menu.php");
-echo '<p><i>Vous êtes ici</i> : <a href="./index.php">forum</a> --> Connexion';
-?>
+//include("includes/identifiants.php");
+//include("includes/debut.php");
+//include("includes/menu.php");
+//echo '<p><i>Vous êtes ici</i> : <a href="./index.php">forum</a> --> Connexion';
+//?>
 
 <?php
 if (!isset($_POST['pseudo'])) 

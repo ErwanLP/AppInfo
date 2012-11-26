@@ -32,7 +32,7 @@
                         $result = $bdd->query('SELECT mailCompte FROM compte WHERE mailCompte = "' . $mailCompte . '"');
                         $booleantest = FALSE;
                         while ($data = $result->fetch()) {
-                            if (($data['mailCompte'] == $mailCompte) || ($mdp != $mdp2)) {
+                            if (($data['mailCompte'] == $mailCompte) || ($mdp != $mdp2) || (strlen($mdp)<6) || (strlen($mdp)>15)) {
                                 $booleantest = TRUE;
                             }
                         }
@@ -50,7 +50,7 @@
 
                             echo 'Vous etes inscrit';
                         } else {
-                            echo 'Le compte existe deja ou les mdp sont differents';
+                            echo 'Le compte existe deja ou les mdp sont differents ou le mdp est trop grand /trop petit';
                         }
                     } else {
                         echo 'Erreur !';

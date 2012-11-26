@@ -3,8 +3,8 @@ if (!empty($_SESSION['ID'])) {
     ?>
     <section>
         <article>
-            <div class="titreArticle">
-                <h2><span> Acceuil</span></h2>
+            <div class="titreArticleAccueil">
+                <!--<h2><span> Acceuil</span></h2>-->
             </div>
             <div class="page">
                 <a href="traitementswitch.php?switch=organisateur" >Me connecter en tant que organisateur</a> <!-- deux boutons -->
@@ -25,8 +25,8 @@ if (!empty($_SESSION['ID'])) {
     ?>
     <section>
         <article>
-            <div class="titreArticle">
-                <h2><span> Acceuil</span></h2>
+            <div class="titreArticleAccueil">
+                <!--<h2><span> Acceuil</span></h2>-->
             </div>
             <div class="page">
 
@@ -37,6 +37,9 @@ if (!empty($_SESSION['ID'])) {
                 }
                 $result->closeCursor();
                 ?>
+                <div class="arboressance">
+                    <p>arboressance</p>
+                </div>
                 <div class="image">
                     <p class="blanc"> Bonjour chèrs internautes ! Voici les dernières news du site :<br />
                     <table image="2"> <tr> <td> <marquee> <a href="page2.php"> Ce soir le Cabaret Le Moulin Rouge [..]</a> <a href="page3.php"> Au cercle d'or, spectacle exceptionnel [..]</a> </marquee> </td> </tr> </table> <!-- ici dynamique les dernières news s'affichent ici --> 
