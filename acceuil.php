@@ -31,12 +31,12 @@ if (!empty($_SESSION['ID'])) {
                 <?php
                 $result = $bdd->query('SELECT * FROM  compte WHERE 1');
                 while ($data = $result->fetch()) {
-                    echo $data['nomDeCompte'];
+                    /*echo $data['nomDeCompte'];*/
                 }
                 $result->closeCursor();
                 ?>
                 <div class="arboressance">
-                    <p>arboressance</p>
+                    <?php include ("arbre.php"); ?>
                 </div>
                 <div class="image">
                     <p class="blanc"> Bonjour chèrs internautes ! Voici les dernières news du site :<br />

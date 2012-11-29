@@ -16,10 +16,10 @@
         <section>
 
             <article  class ="articleOnglet">  
-                <div class="titresection" class="titreArticle">
+                <div class="titreArticleSpectacle">
 
 
-                    <h2><span><?php echo $_GET['onglet']; ?></span></h2>
+                    <!--<h2><span><?php echo $_GET['onglet']; ?></span></h2>-->
                 </div>
 
 

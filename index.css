@@ -1,6 +1,6 @@
 body
 {
-    padding: 12px;
+    /*padding: 12px;*/
     /*  background-image: url("img/logo.png");
      background-attachment: fixed; /* Le fond restera fixe */
     /* background-repeat: no-repeat; /* Le fond ne sera pas r�p�t� */
@@ -8,12 +8,13 @@ body
     text-align : center;
     margin-top: 10px;
     margin-bottom: 20px;
-    width:1470px;
+    width: 99%;
     background-image : url("img/test.png");
     /*background-repeat: no-repeat;*/
     background-attachment: scroll;
     margin: auto;
-    position:relative;/* Pour centrer notre page */
+    /*position:relative;*//* Pour centrer notre page */
+    border: black solid 1px;
 
 }
 
@@ -57,7 +58,7 @@ header
     box-shadow: 0px 0px 10px azure;
     width: 450px;  /*Tr�s important : donner une taille au menu */	
     position: absolute;
-    top : 163px;
+    top : 213px;
     left: 750px;
     height : 35px;
     border: 2px solid white;
@@ -77,7 +78,7 @@ header
     text-align: left;/*110 et 320*/
     width: 500px;
     top: 80px;
-    left: 320px;
+    left: 683px;
     padding: 8px;
     position: absolute;
     background-color: tan;
@@ -104,8 +105,8 @@ header
     border-bottom-right-radius: 50px;
     text-align: left;
     width: 500px;
-    top: 80px;
-    left: 320px;
+    top: 170px;
+    left: 683px;
     padding: 8px;
     position: absolute;
     background-color: tan;
@@ -126,7 +127,7 @@ header
     width: 400px; /* Tr�s important : donner une taille au menu */	
     position: absolute;
     top : 160px;
-    left : 1120px;
+    right : 0px;
     height : 50px ;
     /*border: 2px solid white;*/
     margin-bottom: 20px; /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
@@ -238,18 +239,16 @@ header
     margin-right: 1px;
     /*background-image: url("img/onglet.png");
     background-repeat: no-repeat;*/
-    width : 100px;
+    width : 100%;
     height : 20px;
 }
 
 .elementmenu
 {
-    border-bottom-left-radius: 50px;
-    /*border-bottom-right-radius: 50px;*/
     box-shadow: 0px 0px 10px azure;
     width: 680px; /* Tr�s important : donner une taille au menu */	
     position: absolute;
-    top : 163px;
+    top : 213px;
     left : 50px;
     height : 45px;
     border: 2px solid white;
@@ -268,13 +267,10 @@ header
 
 section
 {
-
-    /*border: 2px solid black;	*/
     height : 700px;
-    width: 1400px;
+    width: 99%;
     position: absolute;
-    left : 50px;
-    top: 225px;
+    top: 275px;
 
 }
 
@@ -283,13 +279,10 @@ section
 article
 {
     box-shadow: 0px 0px 10px azure;
-    border-radius: 50px;
-    width : 1400px;
-    top : 0px;
-    left : 0px;
+    width : 100%;
     height : 700px;
     border: 2px solid white;	
-    background-color: royalblue;
+    background-color: darkred;
 
 }
 
@@ -298,11 +291,21 @@ article
 {
     background-image : url("img/Titre_Accueil.png");
     background-repeat: no-repeat;
-    
     position: absolute;
     width : 1400px;
     height: 75px;
-    left : 150px;
+    left : 400px;
+    top : 1px;
+}
+
+.titreArticleSpectacle
+{
+    background-image : url("img/TitreSpectacle.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    width : 1400px;
+    height: 100px;
+    left : 400px;
     top : 1px;
 }
 
@@ -314,7 +317,7 @@ article
     position: absolute;
     width : 1400px;
     height: 75px;
-    left : 150px;
+    left: 400px;
     top : 1px; 
 }
 
@@ -326,7 +329,7 @@ article
     position: absolute;
     width : 1400px;
     height: 75px;
-    left : 150px;
+    left : 400px;
     top : 1px;
 }
 
@@ -338,7 +341,7 @@ article
     position: absolute;
     width : 1400px;
     height: 75px;
-    left : 150px;
+    left : 400px;
     top : 1px;
 }
 
@@ -377,8 +380,6 @@ article
 
 .pageOnglet
 {
-    border-bottom-right-radius: 50px;
-    border-top-left-radius: 50px;
     border: 1px solid white;
     border-left: black;
     border-top: black;
@@ -394,17 +395,13 @@ article
 
 .page
 {
-    background-image: url("img/essai.png");
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px;
     border-top: 2px solid black;
     border: 2px solid white;
     position: absolute;
-    left: 0px;
     height : 648px;
     top : 51px;
-    background-color: linen;
-    width : 1400px;
+    background-color: wheat;
+    width : 100%;
 
 }
 
@@ -626,16 +623,15 @@ font-family: Comic Sans MS;
 footer
 { 
 
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
+    /*border-top-left-radius: 50px;
+    border-top-right-radius: 50px;*/
     box-shadow: 0px 0px 10px azure;
-    width: 1400px;
+    width: 99%;
     border: 2px solid white;
     position: absolute;
-    top: 950px;
+    top: 1000px;
     height : 120px;
-    left : 50px;
-    margin-bottom:20px;
+    margin-bottom: 20px;
     background-color : white;
 
 }
@@ -651,14 +647,13 @@ a:visited
 {
     /*padding-top: 1px;*/
     text-align: center;
-    margin-left: 450px;
-    margin-right: 65px;
+    margin-left: 400px;
+    margin-right: 40px;
     box-shadow: 6px 6px 6px blueviolet;
     border-top-left-radius: 200px;
     border-top-right-radius: 200px;
     font-size: 30px;
     background-image: url("img/copie.png");
-    /*background-position: 50px 50px;*/
 }
 
 .blanc
@@ -690,4 +685,45 @@ a:visited
 .inline
 {
 display : inline-block;
+}
+
+
+/*ARBORESSANCE*/
+
+.navigation {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: #000;
+  color: #fff;
+  width: 200px;
+  font: 1.2em "Trebuchet MS", sans-serif;
+}
+.navigation a, .navigation span {
+  display: block;
+  padding: 4px 10px;
+  color: #fff;
+  text-decoration: none;
+  background: #000 url(menu-item.png) left bottom no-repeat;
+}
+.navigation .sousMenuBascule a, .navigation .sousMenuBascule span {
+  background-image: url(menu-item-deroule.png);
+}
+.navigation .open a, .navigation .open span {
+  background-image: url(menu-item-enroule.png);
+}
+.navigation a:hover, .navigation a:focus, .navigation a:active {
+  text-decoration: underline;
+}
+.navigation .sousMenu {
+  font-size: .8em;
+  background: #ccc url(subMenu.png) 0 0 repeat-x;
+  font-size: .9em;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #666;
+}
+.navigation ul.sousMenu a {
+  background: none;
+  padding: 3px 20px;
 }
