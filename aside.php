@@ -1,4 +1,4 @@
-<aside id="agenda">
+<!--<aside id="agenda">
     <h2><span> Agenda</span></h2>
     <?php /* include("sting.inc.php"); */ ?>
 </aside>
@@ -15,4 +15,4 @@
 
 <aside id="livreor">
     <h2><span>livre d'or</span></h2>
-</aside>
+</aside> -->
