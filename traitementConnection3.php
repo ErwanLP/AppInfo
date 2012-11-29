@@ -19,11 +19,31 @@ if (isset($_POST['nomDeCompte']) && isset($_POST['mdp'])) {
     if ($data2['mdp'] == $mdp) {
         $booleantest = TRUE;
         $_SESSION['ID'] = $data2['idCompte'];
+        $profilParticipant = $data2['profilParticipant'];
+        $profilOrganisateur = $data2['profilOrganisateur'];
     }
 
     if ($booleantest == TRUE) {
-
-        header('Location:index.php');
+        if ($_POST['profil'] == "participant") {          //PEUT ETRE REUTILISER POUR LE SWITCH
+            if ($profilParticipant == 1) {
+                $_SESSION['SWITCH'] = "participant";
+                header('Location:index.php');
+            } else {
+                $_SESSION['SWITCH'] = "pasdeprofilparticipant";
+                header('Location:index.php'); //redirection pasge de creation profil participant
+            }
+        }else{
+            if ($profilOrganisateur == 1) {
+                $_SESSION['SWITCH'] = "organisateur";
+                header('Location:index.php');
+            } else {
+                $_SESSION['SWITCH'] = "pasdeprofilorganisateur";
+                header('Location:index.php'); //redirection page de creation organisateur
+            }
+            
+            
+            
+        }
     } else {
 
         header('Location:connection.php');

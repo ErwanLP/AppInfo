@@ -8,7 +8,7 @@
         <?php include("header.php"); ?>
 
         <?php include("nav.php"); ?>
-        
+
         <?php include("Recherche.php"); ?>
 
         <section>
@@ -24,6 +24,9 @@
 
                             <label for="mdp">Votre mot de passe :</label>
                             <input type="password" name="mdp" id="mdp" required/>
+Se connecter en tant que :
+<label for="participant">Participant</label><input type="radio" name="profil" value="participant" id="participant" checked/> 
+<label for="organisateur">Organisateur</label><input type="radio" name="profil" value="organisateur" id="organisateur" /> 
                                                   <p><a href="">Mot de passe oublié</a></p>
                             <input style="position:relative;left:35px;" type="submit" value="Envoyer" />
                         </pre>
