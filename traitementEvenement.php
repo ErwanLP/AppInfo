@@ -19,6 +19,8 @@ if (isset($_POST['nomEvent']) && isset($_POST['lieuEvent']) && isset($_POST['des
             $booleantest = TRUE;
         }
     }
+    $result->closeCursor();
+    $result = null;
 
 
     if ($booleantest == FALSE) {
