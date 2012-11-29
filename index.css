@@ -14,8 +14,7 @@ body
     background-attachment: scroll;
     margin: auto;
     /*position:relative;*//* Pour centrer notre page */
-    border: black solid 1px;
-
+    /*border: black solid 1px;*/
 }
 
 
