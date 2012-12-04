@@ -43,6 +43,7 @@
                 while ($data = $result->fetch()) {
                     ?>
                     <div class ="evenement"><br/>
+
                         <div class ="texteEvent">
                             <h1><?php echo $data['nom']; ?></h1>
                             <strong>Adresse:</strong><br/><?php echo $data['lieu']; ?><br/><span><?php echo $data['lieu']; ?></span><br/><br/>
@@ -54,8 +55,7 @@
                             <p id="bouton2">Voir Commentaires</p>
                             <p id="bouton3">Réserver</p>
                         </div>
-                        <img class = "imageflottante" alt="Photo de évenement" src=  "imgUser/gad_elmaleh.jpeg"/>     
-
+                        <img class = "imageflottante" alt="Photo de évenement" src=  "imgUser/gad_elmaleh.jpeg"/>
                     </div>
                     <?php
                 }

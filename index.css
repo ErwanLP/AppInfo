@@ -524,18 +524,20 @@ article
 
 }
 
+.evenement .imageflottante{
+    position:relative;
+    top : 20px;
+    left : -300px;
+    border: 2px solid black;
+}
+/*
 .texteEvent
 {
     position: relative;
     left : 100px;    
 }
 
-.evenement .imageflottante{
-    position:relative;
-    top : -400px;
-    left : -300px;
-    border: 2px solid black;
-}
+
 
 
 
@@ -597,9 +599,7 @@ article
 }
 
 .evenement #bouton2 {
-    /*position: relative;
-    left: 530px;
-    top: 330px;*/
+ 
     display: inline-block;
     width: 150px;
     text-align: center;
@@ -621,9 +621,7 @@ article
 }
 
 .evenement #bouton3 {
-    /*position: relative;
-    right: 70px;
-    top: 330px;*/
+
     position: relative;
     left: 50px;
     display: inline-block;
