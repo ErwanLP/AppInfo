@@ -3,10 +3,10 @@ if (empty($_SESSION['ID'])) {
     ?>
     <section>
         <aside class ="new">
-            
-                <p> Bonjour chèrs internautes ! Voici les dernières news du site :
-                </p>
-              </aside>
+            <div class ="eventNew">
+               
+            </div>
+        </aside>
 
         <aside class ="navg">
             <?php include ("arbre.php"); ?>

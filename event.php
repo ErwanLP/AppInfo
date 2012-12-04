@@ -15,21 +15,9 @@
 
         <section>
 
-            <article  class ="articleOnglet">  
-                <div class="titreArticleSpectacle">
+            <article>  
 
-
-                    <!--<h2><span><?php echo $_GET['onglet']; ?></span></h2>-->
-                </div>
-
-
-
-
-
-                <?php include("navinter.php"); ?> 
-
-                <div class="pageOnglet">
-
+                <div   class ="articleOnglet">
                     <?php
                     $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                     if (!isset($_GET['sousOnglet'])) {
@@ -69,7 +57,7 @@
 
 
 
-
+                </div>
             </article>
             <?php include("aside.php"); ?>
         </section>
