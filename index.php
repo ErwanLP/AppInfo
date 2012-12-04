@@ -14,15 +14,13 @@
 
         session_start();
 
-        include("BDD.php");
-
         include("header.php");
 
         include("nav.php");
         
         include("Recherche.php");
  
-        include("acceuil.php");
+        include("section.php");
 
         include("footer.php");
         ?>

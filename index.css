@@ -14,6 +14,7 @@ body
     /*background-repeat: no-repeat;*/
     background-attachment: scroll;
     margin: auto;
+    /* heigth : 2000px;*/
     /*position:relative;*//* Pour centrer notre page */
     /*border: black solid 1px;*/
 }
@@ -52,7 +53,7 @@ header
 
 #container {
 
-    
+
     background-color: #666;
     position: absolute;
     top: 240px;
@@ -114,7 +115,7 @@ header
 
 #nav li:hover ul {
     left: auto;
-    
+
 }
 
 #nav li:hover ul, #nav li.sfhover ul {
@@ -335,10 +336,11 @@ border: 2px solid white;
 
 section
 {
-    height : 700px;
+    height : 1000px;
     width: 100%;
     position: absolute;
-    top: 275px;
+    top: 266px;
+    background-color : red;
 
 }
 
@@ -346,10 +348,13 @@ section
 
 article
 {
-    box-shadow: 0px 0px 10px azure;
-    width : 100%;
-    height : 700px;
-   /* border: 2px solid white;	*/
+    /*box-shadow: 0px 0px 10px azure;*/
+    width : 1500px;
+    height : 500px;
+    position: absolute;
+    right : 0px;
+    top : 250px;
+    /* border: 2px solid white;	*/
     background-color: darkred;
 
 }
@@ -625,46 +630,55 @@ article
 /*2-ASIDE*/
 
 
-/* #agenda
+.new
 {
-    box-shadow: 0px 0px 10px azure;
-    width: 225px;
-    height : 180px ;
+
+    width: 100%;
+    height : 250px ;
     position: absolute;
     right: 0px;
     top: 0px;
+    background-color : white;
+
+
+
+}
+
+.eventNew{
+    background-image: url("img/copie.png");
+    position: absolute;
+    height : 250px ;
+    width: 50%;
+    left : 25%;
+    box-shadow: 0px 0px 10px azure;
     border-radius: 10px 10px 10px 10px;
-    background-color : silver;
+
 
 
 }
 
 
 
-#map
+.navg
 {
-    box-shadow: 0px 0px 10px azure;
-    width: 225px;
-    height : 180px ;
     position: absolute;
-    right: 0px;
-    top: 200px;
-    border-radius: 10px 10px 10px 10px;
-    background-color : silver;
+    left: 50px;
+    top: 300px;
+
 
 
 }
 
 
-#forum
+.toporg
 {
-    box-shadow: 0px 0px 10px azure;
+
     width: 225px;
     height : 180px ;
     position: absolute;
-    right: 0px;
-    top: 400px;
-    border-radius: 10px 10px 10px 10px;
+    left: 50px;
+    top: 650px;
+
     background-color : silver;
 
 
@@ -684,7 +698,7 @@ article
     background-color : silver;
 
 
-} */
+} 
 
 /*FOOTER*/
 
@@ -698,9 +712,8 @@ footer
     width: 100%;
     /*border: 2px solid white;*/
     position: absolute;
-    top: 1000px;
+    top: 3000px;
     height : 120px;
-    margin-bottom: 20px;
     background-color : white;
 
 }
@@ -712,18 +725,7 @@ a:visited
     color: crimson;   
 }
 
-.image 
-{
-    /*padding-top: 1px;*/
-    text-align: center;
-    margin-left: 400px;
-    margin-right: 40px;
-    box-shadow: 6px 6px 6px blueviolet;
-    border-top-left-radius: 200px;
-    border-top-right-radius: 200px;
-    font-size: 30px;
-    background-image: url("img/copie.png");
-}
+
 
 .blanc
 {
