@@ -20,7 +20,7 @@
         <div id="container">
             <ul id="nav">
                 <li><a href ="event.php?onglet=spectacle">Spectacle</a>
-                    <ul id="list-style">
+                    <ul>
                         <li><a href="event.php?onglet=spectacle&sousOnglet=comedieMusicale" >Com&eacute;die Musicale</a></li>
                         <li><a href="event.php?onglet=spectacle&sousOnglet=theatre">Th&eacute;atre</a></li>
                         <li><a href="event.php?onglet=spectacle&sousOnglet=cafeTheatre">Caf&eacute; Th&eacute;atre</a></li>
