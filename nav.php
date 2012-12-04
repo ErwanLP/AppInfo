@@ -19,8 +19,8 @@
     <body>
         <div id="container">
             <ul id="nav">
-                <li><a href ="event.php?onglet=spectacle"><img src ="img/ongletSpectacle.png" alt="onglet" /></a>
-                    <ul>
+                <li><a href ="event.php?onglet=spectacle">Spectacle</a>
+                    <ul id="list-style">
                         <li><a href="event.php?onglet=spectacle&sousOnglet=comedieMusicale" >Com&eacute;die Musicale</a></li>
                         <li><a href="event.php?onglet=spectacle&sousOnglet=theatre">Th&eacute;atre</a></li>
                         <li><a href="event.php?onglet=spectacle&sousOnglet=cafeTheatre">Caf&eacute; Th&eacute;atre</a></li>
@@ -33,7 +33,7 @@
                         <li><a href="event.php?onglet=spectacle&sousOnglet=spectacleDeRue">Spectacle de rue</a></li>
                     </ul>
                 </li>
-                <li><a href ="">Exposition</a>
+                <li><a href ="#">Exposition</a>
                     <ul>
                         <li><a href="event.php?onglet=exposition&sousOnglet=conference" >Conf&eacute;rence</a></li> <!-- Liste des liens du sous-menu -->
                         <li><a href="event.php?onglet=exposition&sousOnglet=salleDesVentes">Salle des Ventes</a></li>
@@ -45,7 +45,7 @@
                         <li><a href="event.php?onglet=exposition&sousOnglet=galeries">Galeries</a></li>
                     </ul>
                 </li>
-                <li><a href="#"><img src ="img/ongletRestauration.png" alt="onglet" /></a>
+                <li><a href="#">Restauration</a>
                     <ul>
                         <li><a href="event.php?onglet=restauration&sousOnglet=cuisineTraditionnelle" >Cuisine traditionnelle</a></li> <!-- Liste des liens du sous-menu -->
                         <li><a href="event.php?onglet=restauration&sousOnglet=cuisienDuMonde">Cuisine du Monde</a></li>
@@ -56,7 +56,7 @@
                         <li><a href="event.php?onglet=restauration&sousOnglet=cantine">Cantine</a></li>
                     </ul>
                 </li>
-                <li><a href=# ><img src ="img/ongletSoiree.png" alt="onglet" /></a>
+                <li><a href="#" >Soiree</a>
                     <ul>
                         <li><a href="event.php?onglet=soiree&sousOnglet=soireeEtudiante" >Soir&eacute;e Etudiante</a></li>
                         <li><a href="event.php?onglet=soiree&sousOnglet=clubbing">Clubbing</a></li>
@@ -66,7 +66,7 @@
                         <li><a href="event.php?onglet=soiree&sousOnglet=afterParty">After Party</a></li>
                     </ul>
                 </li>
-                <li><a href="#"><img src ="img/ongletBar.png" alt="onglet" /></a>
+                <li><a href="#">Bar</a>
                     <ul>
                         <li><a href="event.php?onglet=bar&sousOnglet=cafe" >Caf&eacute;</a></li> <!-- Liste des liens du sous-menu -->
                         <li><a href="event.php?onglet=bar&sousOnglet=pub">Pub</a></li>
@@ -76,7 +76,7 @@
                         <li><a href="event.php?onglet=bar&sousOnglet=lounge">Lounge</a></li>
                     </ul>
                 </li>
-                <li><a href=#><img src ="img/ongletConcert.png" alt="onglet" /></a>
+                <li><a href="#">Concert</a>
                     <ul>
                         <li><a href="event.php?onglet=concert&sousOnglet=concertInterieur" >Concert Int&eacute;rieur</a></li> <!-- Liste des liens du sous-menu -->
                         <li><a href="event.php?onglet=concert&sousOnglet=concertExterieur">Concert Ext&eacute;rieur</a></li>
