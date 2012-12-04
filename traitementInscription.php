@@ -8,62 +8,90 @@
         <?php include("header.php"); ?>
 
         <?php include("nav.php"); ?>
-        
+
         <?php include("Recherche.php"); ?>
 
         <section>
             <article>
                 <div class="titreacticle">
-                    <h2><span>Traitement Connection</span></h2>
+                    <h2><span>Traitement Inscription</span></h2>
                 </div>
                 <div class="page">
                     <?php
+                    $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                     if (isset($_POST['nomDeCompte']) && isset($_POST['mailCompte']) && isset($_POST['mdp']) && isset($_POST['mdp2'])) {
-                        $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 
-                        /* echo 'Bonjour ' . $_POST['nomDeCompte']; */
-                        $nomDeCompte = $_POST['nomDeCompte'];
-                        $mdp = sha1($_POST['mdp'] . "erwan");
-                        $mdp2 = sha1($_POST['mdp2'] . "erwan");
-                        $mailCompte = $_POST['mailCompte'];
+                        //Variable
 
+                        $mdp = $_POST['mdp'];
+                        $mdp2 = $_POST['mdp2'];
+                        $bolmdp = false;
+                        $bolnom = true;
 
+                        //On tets le mdp si on bolmsp = true;
 
-                        $result = $bdd->query('SELECT mailCompte FROM compte WHERE mailCompte = "' . $mailCompte . '"');
-                        $booleantest = FALSE;
-                        while ($data = $result->fetch()) {
-                            if (($data['mailCompte'] == $mailCompte) || ($mdp != $mdp2) || (strlen($mdp)<6) || (strlen($mdp)>15)) {
-                                $booleantest = TRUE;
+                        if ($mdp == $mdp2 && strlen($mdp) > 5 && strlen($mdp) < 20 && (strtolower($mdp) != $mdp) && (strtoupper($mdp) != $mdp) &&  !is_int ($mdp)) {
+
+                            for ($j = 0; $j < 10; $j++) {
+
+                                if (strpos($mdp, "$j") != false) {
+                                    $bolmdp = true;
+                                    echo "bolmdp true";
+                                }
                             }
                         }
-                         $result->closeCursor();
-                         $result =null;
-                        if (!$booleantest) {
-          
+
+                        // si le mdp est bon un execute le code
+                        //variable execution
+
+                        $nomDeCompte = $_POST['nomDeCompte'];
+                        $mdp = sha1($mdp);
+                        $mdp2 = sha1($mdp2);
+                        $mailCompte = $_POST['mailCompte'];
+
+                        $result = $bdd->query('SELECT mailCompte FROM compte WHERE mailCompte = "' . $mailCompte . '"'); // on recharle l'utilisateur dans la BDD
+                        while ($data = $result->fetch()) {
+                            if (($data['mailCompte'] == $mailCompte)) {
+                                $bolnom = false; // on trouve l'utilisateur don il na aps le droit de s'inscrire
+                                echo "bolnom false";
+                            }
+                        }
+                        $result->closeCursor();
+                        $result = null;
+
+
+
+
+
+
+
+
+
+                        if ($bolnom && $bolmdp) { // si le compte n'existe aps deja
                             echo $nomDeCompte;
                             echo $mdp;
                             echo $mailCompte;
-                           $a = $bdd->query("INSERT INTO compte(nomDeCompte, mdp, mailCompte) VALUES ('$nomDeCompte','$mdp','$mailCompte')");
-                             echo ("INSERT INTO compte(nomDeCompte, mdp, mailCompte) VALUES ('$nomDeCompte','$mdp','$mailCompte')");
-      print_r($a);
-                            /*$bdd->query("INSERT INTO event(nomEvent, lieuEvent, description, dateEvent, typeEvent) VALUES ('$nomEvent','$lieuEvent','$description','$dateEvent','$typeEvent')");*/
+                            /* $a = */$bdd->query("INSERT INTO compte(nomDeCompte, mdp, mailCompte) VALUES ('$nomDeCompte','$mdp','$mailCompte')");
+                            //echo ("INSERT INTO compte(nomDeCompte, mdp, mailCompte) VALUES ('$nomDeCompte','$mdp','$mailCompte')");
+                            // print_r($a);
+                            /* $bdd->query("INSERT INTO event(nomEvent, lieuEvent, description, dateEvent, typeEvent) VALUES ('$nomEvent','$lieuEvent','$description','$dateEvent','$typeEvent')"); */
 
                             echo 'Vous etes inscrit';
                         } else {
-                            echo 'Le compte existe deja ou les mdp sont differents ou le mdp est trop grand /trop petit';
+                            echo 'Inscription impossible : le compte existe deja ou le mdp n est pas conforme';
                         }
                     } else {
-                        echo 'Erreur !';
+                        echo 'Erreur  les champs ne sont pas remplie';
                     }
                     ?>
 
 
                 </div>
             </article>
-            <?php include("aside.php"); ?>
+                    <?php include("aside.php"); ?>
         </section>
 
-        <?php include("footer.php"); ?>
+<?php include("footer.php"); ?>
 
 
     </body>

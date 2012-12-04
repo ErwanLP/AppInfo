@@ -3,13 +3,13 @@
     <?php include("head.php"); ?>
     <body>
 
-       <?php  session_start(); ?>
+        <?php session_start(); ?>
         <?php include("BDD.php"); ?>
 
         <?php include("header.php"); ?>
 
         <?php include("nav.php"); ?>
-        
+
         <?php include("Recherche.php"); ?>
 
         <section>
@@ -49,7 +49,6 @@
                                     <option value="cabaret">Cabaret</option>
                                     <option value="dance">Dance</option>
                                     <option value="sonEtLumiere">Son et lumière</option>
-                                    <option value="opera">Opéra</option>
                                     <option value="opera">Opéra</option>
                                     <option value="oneManShow">One Man Show</option>
                                     <option value="spectacleDeRue">Spectacle de rue</option>

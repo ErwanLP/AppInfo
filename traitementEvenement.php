@@ -9,6 +9,11 @@ if (isset($_POST['nomEvent']) && isset($_POST['lieuEvent']) && isset($_POST['des
     $description = $_POST['description'];
     $dateEvent = $_POST['dateEvent'];
     $typeEvent = $_POST['typeEvent'];
+    
+    if(($typeEvent == "comedieMusicale") or ($typeEvent == "theatre") or ($typeEvent == "cafe") or ($typeEvent == "cabaret") or ($typeEvent == "dance") or ($typeEvent == "sonEtLumiere") or ($typeEvent == "opera") or ($typeEvent == "oneManShow") or ($typeEvent == "spectacleDeRue")){
+        $themeEvent = "spectacle";
+        
+    }
 
 
 
@@ -19,6 +24,8 @@ if (isset($_POST['nomEvent']) && isset($_POST['lieuEvent']) && isset($_POST['des
             $booleantest = TRUE;
         }
     }
+    $resultEVT->closeCursor();
+    $resultEVT = null;
 
 
     if ($booleantest == FALSE) {
@@ -27,7 +34,9 @@ if (isset($_POST['nomEvent']) && isset($_POST['lieuEvent']) && isset($_POST['des
         echo $description;
         echo $dateEvent;
         echo $typeEvent;
-        $bdd->query("INSERT INTO event(nomEvent, lieuEvent, description, dateEvent, typeEvent) VALUES ('$nomEvent','$lieuEvent','$description','$dateEvent','$typeEvent')");
+        echo $themeEvent;
+        echo "INSERT INTO event(nomEvent, lieuEvent, description, dateEvent, typeEvent, themeEvent) VALUES ('$nomEvent','$lieuEvent','$description','$dateEvent','$typeEvent','$themeEvent')";
+        $bdd->query("INSERT INTO event(nomEvent, lieuEvent, description, dateEvent, typeEvent, themeEvent) VALUES ('$nomEvent','$lieuEvent','$description','$dateEvent','$typeEvent','$themeEvent')");
     } else {
 
         echo "L event compte existe deja";
