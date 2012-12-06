@@ -77,7 +77,7 @@ $result->closeCursor();
 
 <?php include("footer.php"); ?>
 
-
+               
 
     </body> 
 </html>

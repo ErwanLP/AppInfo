@@ -17,7 +17,7 @@ if (isset($_POST['nomEvent']) && isset($_POST['lieuEvent']) && isset($_POST['des
 
 
 
-    $resultEVT = $bdd->query('SELECT nomEvent FROM event WHERE nomEvent = "' . $nomEvent . '"');
+    $resultEVT = $bdd->query('SELECT nom FROM event WHERE nom = "' . $nomEvent . '"');
     $booleantest = FALSE;
     while ($data = $resultEVT->fetch()) {
         if ($data['nomEvent'] == $nomEvent) {
@@ -29,17 +29,12 @@ if (isset($_POST['nomEvent']) && isset($_POST['lieuEvent']) && isset($_POST['des
 
 
     if ($booleantest == FALSE) {
-        echo $nomEvent;
-        echo $lieuEvent;
-        echo $description;
-        echo $dateEvent;
-        echo $typeEvent;
-        echo $themeEvent;
-        echo "INSERT INTO event(nomEvent, lieuEvent, description, dateEvent, typeEvent, themeEvent) VALUES ('$nomEvent','$lieuEvent','$description','$dateEvent','$typeEvent','$themeEvent')";
-        $bdd->query("INSERT INTO event(nomEvent, lieuEvent, description, dateEvent, typeEvent, themeEvent) VALUES ('$nomEvent','$lieuEvent','$description','$dateEvent','$typeEvent','$themeEvent')");
+
+        $bdd->query("INSERT INTO event(nom, lieu, description, date, type, theme) VALUES ('$nomEvent','$lieuEvent','$description','$dateEvent','$typeEvent','$themeEvent')");
+        header('Location:index.php');
     } else {
 
-        echo "L event compte existe deja";
+        echo "L event existe deja";
     }
 } else {
     echo 'Erreur !';

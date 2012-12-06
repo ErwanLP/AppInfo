@@ -4,41 +4,20 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 $bdd->exec('SET NAMES utf8');
 //connection à la base de données
 
-$CDC = $_POST['recherche'];
-//la variable recherche importée par méthode post est mise dans la variable CDC
-$pieces = explode(" ", $CDC);
-//la chaine qui est une suite de mots séparés par des espaces est divisée en mots qui sont placés dans le tableau pieces
-$long = count($pieces);
-// on compte le nombre de mots/cases du tableau
-$requete = "WHERE";
-//début de la requête
-for ($i = 0; $i < $long; $i++) {
-    //début de la boucle du 1er au dernier mots de la chaine de caractères
+$theme = $_POST['genre'];
+$date = $_POST['date'];
+//$note = $_POST['note'];
+//$prix = $_POST['prix'];
+$ville = $_POST['ville'];
 
-    $requetei = ' (nom LIKE ' . "'" . '%' . $pieces[$i] . '%' . "'" . ' or lieu LIKE ' . "'" . '%' . $pieces[$i] . '%' . "')";
-    /* on regarde si un mot de la chaine de caractères est un nom d'event ou un lieu d'event */
-// on rajoute une extention a la requête
+//SELECT * FROM `event` WHERE theme = "spectacle" and lieu = "Sanssat"
 
-
-
-    if ($i > 0) {
-
-        $requete = $requete . ' and ';
-        //si on n'est plus au 1er passage de la boucle on est obliger de rajouter "and"
-    }
-    $requete = $requete . $requetei;
-    //si on est au premier passage de la boucle
-}
-
-
-
-//on affiche la requête en entière (pour verifier les erreurs)
-?><br/><?php
-//retour à la ligne
-
-$result = $bdd->query('SELECT * FROM event ' . $requete);
+$result = $bdd->query('SELECT * FROM event WHERE theme = "' . $theme . '" AND lieu = "' . $ville .'"');
+echo 'SELECT * FROM event WHERE theme = "' . $theme . '" AND lieu = "' . $ville .'"'
+     //   SELECT * FROM event WHERE theme = concert AND date = 2012-11-28 AND lieu = paris
 //envois de la requete sql
 // on ferme le curseur
+      
 ?>
 
 
@@ -72,16 +51,15 @@ $result = $bdd->query('SELECT * FROM event ' . $requete);
             </aside>
 
             <aside class ="new">
-       
+            
                 <div class ="eventNew">
-         <img class ="photonew" src ="img/new.jpg"/>
+    <img class ="photonew" src ="img/new.jpg"/>
                 </div>
             </aside>
 
             <article class ="articleevent">                  
 <?php
 while ($data = $result->fetch()) {
-
     include('articleevent.php');
 }
 
