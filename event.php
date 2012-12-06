@@ -45,7 +45,7 @@
                                 <p id="bouton2">Voir Commentaires</p>
                                 <p id="bouton3">Réserver</p>
                             </div>
-                            <img class = "imageflottante" alt="Photo de évenement" src=  "imgUser/gad_elmaleh.jpeg"/>     
+                            <img class = "imageflottante" alt='Photo de évenement" src=  "'. <?php echo $data['photo'] ?> .'"'/>     
 
                         </div>
                         <?php
