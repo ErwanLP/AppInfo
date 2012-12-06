@@ -2,6 +2,7 @@
 <?php
 $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 //connection à la base de données
+
 $CDC = $_POST['recherche'];
 //la variable recherche importée par méthode post est mise dans la variable CDC
 $pieces = explode(" ", $CDC);
@@ -37,6 +38,9 @@ for ($i = 0; $i < $long; $i++) {
 $result = $bdd->query('SELECT * FROM event ' . $requete);
 //envois de la requete sql
 // on ferme le curseur
+
+
+
 ?>
 
 

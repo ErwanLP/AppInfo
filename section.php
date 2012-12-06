@@ -9,10 +9,10 @@
         <?php include ("arbre.php"); ?>
     </aside>
 
-    <?php if ($_SESSION['SWITCH'] = "organisateur") {
+    <?php if($_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID']!= null){
         ?>
         <aside class ="EventsButton">
-            <a href="creationEvenement.php"> <img src="EventsButton.png" alt= "nom de ton image"> </a>        
+            <a href="creationEvenement.php"> <img src="img/EventsButton.png" alt= "nom de ton image"> </a>        
         </aside>
 
         <?php
