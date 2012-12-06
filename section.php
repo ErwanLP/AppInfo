@@ -1,52 +1,48 @@
-<?php
-if (empty($_SESSION['ID'])) {
-    ?>
-    <section>
-        <aside class ="new">
-            <div class ="eventNew">
-               
-            </div>
-        </aside>
+<section>
+    <aside class ="new">
+        <div class ="eventNew">
 
-        <aside class ="navg">
-            <?php include ("arbre.php"); ?>
-        </aside>
+        </div>
+    </aside>
 
-        <aside class ="toporg">
-        </aside>
+    <aside class ="navg">
+        <?php include ("arbre.php"); ?>
+    </aside>
 
-        <article>
-        </article>
-    </section>
-    <?php
-} else {
-    ?>
-    <section>
-        <aside class ="new">
-            <div class="image">
-                <p class="blanc"> Bonjour chèrs internautes ! Voici les dernières news du site :<br />
-                <table image="2"> <tr> <td> <marquee> <a href="page2.php"> Ce soir le Cabaret Le Moulin Rouge [..]</a> <a href="page3.php"> Au cercle d'or, spectacle exceptionnel [..]</a> </marquee> </td> </tr> </table> <!-- ici dynamique les dernières news s'affichent ici --> 
-                </p>
-            </div>
-        </aside>
+    <aside class ="toporg">
+        <br/>
+        <p> Top Organisateur: <br/><br/>
+            1 - organisateur <br/>
+            2 - organisateur <br/>
+            3 - organisateur <br/>
+            4 - organisateur <br/>
+            5 - organisateur <br/>
+            6 - organisateur <br/>
+            7 - organisateur <br/>
+            8 - organisateur <br/>
+            9 - organisateur <br/>
+            10 - organisateur <br/>
+        </p>
+    </aside>
 
-        <aside class ="navg">
-            <?php include ("arbre.php"); ?>
-        </aside>
-
-        <aside class ="toporg">
-        </aside>
-
-        <article>
-        </article>
-    </section>
-    <?php
-}
-?>   
-
-
-
-
+    <article>
+        <div class ="topevent">
+            <br/>
+            <p> Top Evenement: <br/><br/>
+                1 - Evenement <br/>
+                2 - Evenement <br/>
+                3 - Evenement <br/>
+                4 - Evenement <br/>
+                5 - Evenement <br/>
+                6 - Evenement <br/>
+                7 - Evenement <br/>
+                8 - Evenement <br/>
+                9 - Evenement <br/>
+                10 - Evenement <br/>
+            </p>
+        </div>
+    </article>
+</section>
 
 
 
