@@ -38,7 +38,7 @@
                     <li><a href="#" title="Aller à la page Restauration">Restauration</a>
                         <ul>
                             <li><a href="event.php?onglet=restauration&sousOnglet=cuisineTraditionnelle" >Cuisine traditionnelle</a></li> <!-- Liste des liens du sous-menu -->
-                            <li><a href="event.php?onglet=restauration&sousOnglet=cuisienDuMonde">Cuisine du Monde</a></li>
+                            <li><a href="event.php?onglet=restauration&sousOnglet=cuisineDuMonde">Cuisine du Monde</a></li>
                             <li><a href="event.php?onglet=restauration&sousOnglet=gastronomie">Gastronomie</a></li>
                             <li><a href="event.php?onglet=restauration&sousOnglet=brunch">Brunch</a></li>
                             <li><a href="event.php?onglet=restauration&sousOnglet=fastFood">Fast Food</a></li>
@@ -50,7 +50,7 @@
                         <ul>
                             <li><a href="event.php?onglet=soiree&sousOnglet=soireeEtudiante" >Soir&eacute;e Etudiante</a></li>
                             <li><a href="event.php?onglet=soiree&sousOnglet=clubbing">Clubbing</a></li>
-                            <li><a href="event.php?onglet=soiree&sousOnglet=afterworks">Afterworks</a></li>
+                            <li><a href="event.php?onglet=soiree&sousOnglet=afterworks">After Works</a></li>
                             <li><a href="event.php?onglet=soiree&sousOnglet=culturelle">Culturelle</a></li>
                             <li><a href="event.php?onglet=soiree&sousOnglet=teaParty">Tea Party</a></li>
                             <li><a href="event.php?onglet=soiree&sousOnglet=afterParty">After Party</a></li>
