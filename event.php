@@ -47,7 +47,7 @@
                         
                         <?php 
                        
-                        echo '<img class = "imageflottante" alt="Photo de évenement" src= "'.$data["photo"].'/>' 
+                        echo '<img class = "imageflottante" alt="Photo de évenement" src= "'.$data["photo"].'"/>' 
                                 ?>
 
                         <div class ="texteEvent">
