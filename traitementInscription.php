@@ -9,8 +9,7 @@
 
         <?php include("nav.php"); ?>
 
-        <?php include("Recherche.php"); ?>
-
+        
         <section>
             <article>
                 <div class="titreacticle">

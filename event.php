@@ -10,8 +10,7 @@
 
         <?php include("nav.php"); ?>
 
-        <?php include("Recherche.php"); ?>
-
+        
 
         <section>
             <aside class ="navg">

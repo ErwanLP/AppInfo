@@ -17,9 +17,7 @@
         include("header.php");
 
         include("nav.php");
-        
-        include("Recherche.php");
- 
+
         include("section.php");
 
         include("footer.php");
