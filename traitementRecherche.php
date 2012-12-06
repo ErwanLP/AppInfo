@@ -56,3 +56,5 @@ $result = null;
 // faire un fichier php avec un tableau avec tout les mots non voulus 
 
 -->
+
+

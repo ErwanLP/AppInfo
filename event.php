@@ -10,7 +10,7 @@
 
         <?php include("nav.php"); ?>
 
-        
+
 
         <section>
             <aside class ="navg">
@@ -42,14 +42,13 @@
                 while ($data = $result->fetch()) {
                     ?>
                     <div class ="evenement"><br/>
-                        
-                        
-                        
-                        <?php 
-                       
-                        echo '<img class = "imageflottante" alt="Photo de évenement" src= "'.$data["photo"].'"/>' 
-                                ?>
 
+
+
+                        <?php
+                        // echo '<img class = "imageflottante" alt="Photo de évenement" src= "'.$data["photo"].'"/>' 
+                        ?>
+                        <img class = "imageflottante" alt="Photo de évenement" src= "imgUser/gad_elmaleh.jpeg"/>
                         <div class ="texteEvent">
                             <h1><?php echo $data['nom']; ?></h1>
                             <strong>Adresse: </strong><?php echo $data['lieu']; ?><span><?php echo $data['lieu']; ?></span><br/>
@@ -61,13 +60,13 @@
                             <p id="bouton2">Voir Commentaires</p>
                             <p id="bouton3">Réserver</p>
                         </div>
-                        
-                    </div>
-                    <?php
-                }
 
-                $result->closeCursor();
-                ?>
+                    </div>
+    <?php
+}
+
+$result->closeCursor();
+?>
 
 
 
@@ -76,7 +75,7 @@
         </section>
 
 
-        <?php include("footer.php"); ?>
+<?php include("footer.php"); ?>
 
 
 
