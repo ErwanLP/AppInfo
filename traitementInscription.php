@@ -3,7 +3,7 @@
     <?php include("head.php"); ?>
     <body>
 
-        <?php include("BDD.php"); ?>
+        
 
         <?php include("header.php"); ?>
 
@@ -48,7 +48,7 @@
                         $mdp2 = sha1($mdp2);
                         $mailCompte = $_POST['mailCompte'];
 
-                        $result = $bdd->query('SELECT mailCompte FROM compte WHERE mailCompte = "' . $mailCompte . '"'); // on recharle l'utilisateur dans la BDD
+                        $result = $bdd->query('SELECT mail FROM compte WHERE mail = "' . $mailCompte . '"'); // on recharle l'utilisateur dans la BDD
                         while ($data = $result->fetch()) {
                             if (($data['mailCompte'] == $mailCompte)) {
                                 $bolnom = false; // on trouve l'utilisateur don il na aps le droit de s'inscrire
@@ -70,7 +70,7 @@
                             echo $nomDeCompte;
                             echo $mdp;
                             echo $mailCompte;
-                            /* $a = */$bdd->query("INSERT INTO compte(nomDeCompte, mdp, mailCompte) VALUES ('$nomDeCompte','$mdp','$mailCompte')");
+                            /* $a = */$bdd->query("INSERT INTO compte(nomDeCompte, mdp, mail) VALUES ('$nomDeCompte','$mdp','$mailCompte')");
                             //echo ("INSERT INTO compte(nomDeCompte, mdp, mailCompte) VALUES ('$nomDeCompte','$mdp','$mailCompte')");
                             // print_r($a);
                             /* $bdd->query("INSERT INTO event(nomEvent, lieuEvent, description, dateEvent, typeEvent) VALUES ('$nomEvent','$lieuEvent','$description','$dateEvent','$typeEvent')"); */
@@ -87,7 +87,7 @@
 
                 </div>
             </article>
-                    <?php include("aside.php"); ?>
+                    
         </section>
 
 <?php include("footer.php"); ?>
