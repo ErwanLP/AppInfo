@@ -10,8 +10,15 @@
 
         <?php include("nav.php"); ?>
 
-       
         <section>
+            <aside class ="new">
+                <div class ="eventNew">
+
+                </div>
+            </aside>
+            <aside class ="navg">
+                <?php include ("arbre.php"); ?>
+            </aside>
             <article>
                 <div class="titreacticle">
                     <h2><span> Cr&eacute;ation &Eacute;v&egrave;nement :</span></h2>
