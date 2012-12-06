@@ -9,6 +9,16 @@
         <?php include ("arbre.php"); ?>
     </aside>
 
+    <?php if ($_SESSION['SWITCH'] = "organisateur") {
+        ?>
+        <aside class ="EventsButton">
+            <a href="creationEvenement.php"> <img src="EventsButton.png" alt= "nom de ton image"> </a>        
+        </aside>
+
+        <?php
+    }
+    ?>
+
     <aside class ="toporg">
         <br/>
         <p> Top Organisateur: <br/><br/>

@@ -23,7 +23,7 @@
                 </div>
                 <div class="page">
 
-                    <form>
+                    <form method="post" action="traitementRA.php">
                         <fieldset>
                             <pre>
                     		<label for="genre">Genre :</label>   <select name="genre" id="genre">

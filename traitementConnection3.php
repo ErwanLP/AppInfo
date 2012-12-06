@@ -24,7 +24,7 @@ if (isset($_POST['nomDeCompte']) && isset($_POST['mdp'])) {
         // on regarde si le mdp rentré par l'utilisateur est égal a celui dans la base de données (en cripté)
         $booleantest = TRUE;
         // si la condition est realisée, la connection est valide
-        $_SESSION['ID'] = $data2['idCompte'];
+        $_SESSION['ID'] = $data2['ID'];
         // on créer une session pour l'utilisateur
         $profilParticipant = $data2['profilParticipant'];
                $profilOrganisateur = $data2['profilOrganisateur'];

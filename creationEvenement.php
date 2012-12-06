@@ -4,7 +4,7 @@
     <body>
 
         <?php session_start(); ?>
-        <?php include("BDD.php"); ?>
+   
 
         <?php include("header.php"); ?>
 
@@ -70,7 +70,7 @@
 
                 </div>
             </article>
-            <?php include("aside.php"); ?>
+       
         </section>
 
         <?php include("footer.php"); ?>

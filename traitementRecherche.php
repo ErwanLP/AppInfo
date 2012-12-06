@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 //connection à la base de données
@@ -28,21 +29,13 @@ for ($i = 0; $i < $long; $i++) {
 }
 
 
-echo 'SELECT * FROM event ' . $requete;
+
 //on affiche la requête en entière (pour verifier les erreurs)
 ?><br/><?php
 //retour à la ligne
 
 $result = $bdd->query('SELECT * FROM event ' . $requete);
 //envois de la requete sql
-
-while ($data = $result->fetch()) {
-    //boucle qui affiche les résultats
-    echo $data['nom'];
-    ?><br/><?php
-}
-$result->closeCursor();
-$result = null;
 // on ferme le curseur
 ?>
 
@@ -56,5 +49,75 @@ $result = null;
 // faire un fichier php avec un tableau avec tout les mots non voulus 
 
 -->
+
+
+<html>
+    <?php include("head.php"); ?>
+
+    <body>
+
+        <?php session_start(); ?>
+
+        <?php include("header.php"); ?>
+
+        <?php include("nav.php"); ?>
+
+
+
+        <section>
+            <aside class ="navg">
+                <?php include ("arbre.php"); ?>
+            </aside>
+
+            <aside class ="new">
+                <div class ="eventNew">
+
+                </div>
+            </aside>
+
+            <article class ="articleevent">                  
+                <?php
+                while ($data = $result->fetch()) {
+                    ?>
+                    <div class ="evenement"><br/>
+
+
+
+    <?php
+    // echo '<img class = "imageflottante" alt="Photo de évenement" src= "'.$data["photo"].'"/>' 
+    ?>
+                        <img class = "imageflottante" alt="Photo de évenement" src= "imgUser/gad_elmaleh.jpeg"/>
+                        <div class ="texteEvent">
+                            <h1><?php echo $data['nom']; ?></h1>
+                            <strong>Adresse: </strong><?php echo $data['lieu']; ?><span><?php echo $data['lieu']; ?></span><br/>
+                            <strong>Date et Heure :</strong><?php echo $data['date']; ?><br/>
+                            <strong>Prix: </strong>30€ <br/>
+                            <strong>Description: </strong> <?php echo $data['description']; ?><br/>
+                            <strong>Note: </strong><img src="img/etoile.png" class="etoile" alt="Note" /><p id="note">(5,0 sur 5,0)</p><br/>
+                            <p id="bouton1">Voir Plus de Détails</p>
+                            <p id="bouton2">Voir Commentaires</p>
+                            <p id="bouton3">Réserver</p>
+                        </div>
+
+                    </div>
+    <?php
+}
+
+$result->closeCursor();
+?>
+
+
+
+
+            </article>
+        </section>
+
+
+<?php include("footer.php"); ?>
+
+
+
+    </body> 
+</html>
 
 
