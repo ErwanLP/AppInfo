@@ -66,6 +66,8 @@ header
     height:25px;
     padding-top: 6px;
     padding-bottom: 6px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 #nav, #nav ul {
@@ -149,10 +151,10 @@ border: 2px solid white;
     text-align: left;/*110 et 320*/
     width: 500px;
     top: 80px;
-    left: 683px;
+    left: 300px;
     padding: 8px;
     position: absolute;
-    background-color: tan;
+    background-color: #666;
 
 }
 
@@ -176,11 +178,11 @@ border: 2px solid white;
     border-bottom-right-radius: 50px;
     text-align: left;
     width: 500px;
-    top: 170px;
-    left: 683px;
+    top: 80px;
+    left: 300px;
     padding: 8px;
     position: absolute;
-    background-color: tan;
+    background-color: #666;
 }
 
 .connec p
@@ -356,7 +358,7 @@ article
     right : 20%;
     top : 260px;
     /* border: 2px solid white;	*/
-    background-color: white;
+    background-color: #ebe2d9;
    box-shadow: 0px 0px 10px black;
 
 }
@@ -370,8 +372,8 @@ article
     right : 50px;
     top : 260px;
     /* border: 2px solid white;	*/
-    background-color: white;
-    /*overflow : auto;*/
+    background-color: #ebe2d9;
+    overflow : auto;
     box-shadow: 0px 0px 10px black;
 
 
@@ -665,7 +667,7 @@ article
     position: absolute;
     right: 0px;
     top: 0px;
-    background-color : white;
+    background-color : #ebe2d9;
     box-shadow: 0px 0px 10px black;
 
 
@@ -674,13 +676,16 @@ article
 
 .eventNew{
     /*background-image: url("img/copie.png");*/
-    background-image : url("img/new.jpg");
+    background-image : url("img/news.jpg");
+    background-repeat: no-repeat;
+    background-position: 45% 90%;
     position: absolute;
     height : 250px ;
     width: 50%;
     left : 25%;
     box-shadow: 0px 0px 10px black;
     border-radius: 10px 10px 10px 10px;
+    background-color: white;
 
 
 
