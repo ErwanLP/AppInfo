@@ -1,4 +1,38 @@
 <!DOCTYPE html>
+<?php
+$bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
+$bdd->exec('SET NAMES utf8');
+//connection à la base de données
+
+$theme = $_POST['genre'];
+$date = $_POST['date'];
+$note = $_POST['note'];
+$prix = $_POST['prix'];
+$ville = $_POST['ville'];
+
+//SELECT * FROM `event` WHERE theme = "spectacle" and lieu = "Sanssat"
+
+$result = $bdd->query('SELECT * FROM event WHERE theme = "'.$theme.' and date = "'.$date.' and lieu = '.$ville."'");
+echo $result;
+//envois de la requete sql
+// on ferme le curseur
+
+
+
+?>
+
+
+
+
+<!--if (($pieces[$i] != "le") || ($pieces[$i] != "la") || ($pieces[$i] != "les") || ($pieces[$i] != " ") || ($pieces[$i] != "de") || ($pieces[$i] != "du") || ($pieces[$i] != "des") || ($pieces[$i] != "au") || ($pieces[$i] != "evenement") || ($pieces[$i] != "soiree")) { // faire un fichier php avec un tableau avec tout les mot bidon 
+
+
+
+// faire un fichier php avec un tableau avec tout les mots non voulus 
+
+-->
+
+
 <html>
     <?php include("head.php"); ?>
 
@@ -25,32 +59,16 @@
 
             <article class ="articleevent">                  
                 <?php
-                $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
-                $bdd->exec('SET NAMES utf8');
-                if (!isset($_GET['onglet'])) { //si ya rien
-                    $result = $bdd->query('SELECT * FROM  event LIMIT 0 , 30');
-                }
-                if (isset($_GET['onglet']) && !isset($_GET['sousOnglet'])) { //si ya juste onglet
-                    $result = $bdd->query('SELECT  * FROM  event WHERE theme =  "' . $_GET['onglet'] . '"');
-                }
-
-
-                if (isset($_GET['sousOnglet'])) { //si ya un sous onglet
-                    $result = $bdd->query('SELECT  * FROM  event WHERE type =  "' . $_GET['sousOnglet'] . '"');
-                }
-
-
                 while ($data = $result->fetch()) {
                     ?>
                     <div class ="evenement"><br/>
 
-                        <div class ="tofevent">
 
-                        <?php
-                         echo '<img class = "imageflottante" alt="Photo de évenement" src= "'.$data["photo"].'" height="250" width="200"/>' 
-                        ?>
-                        </div>
-                       <!-- <img class = "imageflottante" alt="Photo de évenement" src= "imgUser/gad_elmaleh.jpeg"/> -->
+
+    <?php
+    // echo '<img class = "imageflottante" alt="Photo de évenement" src= "'.$data["photo"].'"/>' 
+    ?>
+                        <img class = "imageflottante" alt="Photo de évenement" src= "imgUser/gad_elmaleh.jpeg"/>
                         <div class ="texteEvent">
                             <h1><?php echo $data['nom']; ?></h1>
                             <strong>Adresse: </strong><?php echo $data['lieu']; ?><span><?php echo $data['lieu']; ?></span><br/>
@@ -83,3 +101,5 @@ $result->closeCursor();
 
     </body> 
 </html>
+
+

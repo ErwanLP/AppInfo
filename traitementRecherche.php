@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
+$bdd->exec('SET NAMES utf8');
 //connection à la base de données
 
 $CDC = $_POST['recherche'];
