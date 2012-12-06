@@ -41,8 +41,11 @@
 
                 while ($data = $result->fetch()) {
                     ?>
-                    <div class ="evenement"><br/>
-
+                    <div class ="evenement">
+                        
+                        <div class="color">
+                           
+                        </div>
 
 
                         <?php

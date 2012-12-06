@@ -11,9 +11,9 @@
 
         <section>
             <aside class ="new">
-            
+
                 <div class ="eventNew">
-    <img class ="photonew" src ="img/new.jpg"/>
+                    <img class ="photonew" src ="img/new.jpg"/>
                 </div>
             </aside>
             <aside class ="navg">
@@ -30,10 +30,10 @@
                             <input type="text" name="nomDeCompte" id="nomDeCompte"  size="20" maxlength="15" autofocus required/><br/>
 
                             <label for="mdp">Votre mot de passe :</label>
-                            <input type="password" name="mdp" id="mdp" required/>
-Se connecter en tant que :
-<label for="participant">Participant</label><input type="radio" name="profil" value="participant" id="participant" checked/> 
-<label for="organisateur">Organisateur</label><input type="radio" name="profil" value="organisateur" id="organisateur" /> 
+                            <input type="password" name="mdp" id="mdp" required/><br/>
+                         Se connecter en tant que :<br/>
+                              <label for="participant">Participant  </label><input type="radio" name="profil" value="participant" id="participant" checked/> 
+                              <label for="organisateur">Organisateur </label><input type="radio" name="profil" value="organisateur" id="organisateur" /> 
                                                   <p><a href="">Mot de passe oublié</a></p>
                             <input style="position:relative;left:35px;" type="submit" value="Envoyer" />
                         </pre>

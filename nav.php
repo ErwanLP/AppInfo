@@ -56,7 +56,7 @@
                         <li><a href="event.php?onglet=restauration&sousOnglet=cantine">Cantine</a></li>
                     </ul>
                 </li>
-                <li><a href="#" >Soiree</a>
+                <li><a href="#" >Soir&eacute;e</a>
                     <ul>
                         <li><a href="event.php?onglet=soiree&sousOnglet=soireeEtudiante" >Soir&eacute;e Etudiante</a></li>
                         <li><a href="event.php?onglet=soiree&sousOnglet=clubbing">Clubbing</a></li>

@@ -25,18 +25,19 @@
     ?>
 
     <aside class ="toporg">
-        <br/>
-        <p> Top Organisateur: <br/><br/>
-            1 - organisateur <br/>
-            2 - organisateur <br/>
-            3 - organisateur <br/>
-            4 - organisateur <br/>
-            5 - organisateur <br/>
-            6 - organisateur <br/>
-            7 - organisateur <br/>
-            8 - organisateur <br/>
-            9 - organisateur <br/>
-            10 - organisateur <br/>
+        <div class="titreToporg">
+        <p> Top Organisateur: 
+        </div><br/>
+            1 - COMEXPOSIUM <br/>
+            2 - FeteInfo <br/>
+            3 - Kompass <br/>
+            4 - Night-Fever-Animation <br/>
+            5 - JeffNight <br/>
+            6 - Initial-Isefac <br/>
+            7 - FlunchJobs <br/>
+            8 - SCOexpo <br/>
+            9 - Animafac <br/>
+            10 - France Festivals <br/>
         </p>
     </aside>
 
