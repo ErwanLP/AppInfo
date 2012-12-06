@@ -1,4 +1,8 @@
 <section>
+    <?php
+    $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
+    $bdd->exec('SET NAMES utf8');
+    ?>
     <aside class ="new">
         <div class ="eventNew">
 
@@ -9,7 +13,7 @@
         <?php include ("arbre.php"); ?>
     </aside>
 
-    <?php if($_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID']!= null){
+    <?php if ($_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
         ?>
         <aside class ="EventsButton">
             <a href="creationEvenement.php"> <img src="img/EventsButton.png" alt= "nom de ton image"> </a>        
@@ -37,19 +41,44 @@
 
     <article>
         <div class ="topevent">
-            <br/>
-            <p> Top Evenement: <br/><br/>
-                1 - Evenement <br/>
-                2 - Evenement <br/>
-                3 - Evenement <br/>
-                4 - Evenement <br/>
-                5 - Evenement <br/>
-                6 - Evenement <br/>
-                7 - Evenement <br/>
-                8 - Evenement <br/>
-                9 - Evenement <br/>
-                10 - Evenement <br/>
-            </p>
+            <?php
+            $result = $bdd->query('SELECT * FROM event ORDER BY note DESC LIMIT 0 , 10');
+            $compte = 1;
+            ?><br/><br><br/>            <img src="img/TitreTopEvent.png"/> <br/><br/><?php
+            while ($data = $result->fetch()) {
+                /*  echo $compte ." ->". $data['nom'];
+                  ?><br/><?php
+                  echo '<img src= "' . $data["photo"] . '" height="50" width="40"/>';
+                  $compte++;
+                  ?><br/><?php */
+                echo '<img src= "' . $data["photo"] . '" height="100" width="80"/>';
+                echo "   ";
+            }
+            $result->closeCursor();
+            $result = $bdd->query('SELECT * FROM event ORDER BY note DESC LIMIT 0 , 10');
+            ?><br/><br/><?php
+            while ($data2 = $result->fetch()) {
+                ?><br/><?php
+            echo $compte . " ->" . $data2['nom'];
+
+
+            $compte++;
+        }
+        $result->closeCursor();
+        $result = $bdd->query('SELECT * FROM event ORDER BY note DESC LIMIT 0 , 10');
+            ?><br/><br/><?php
+            while ($data = $result->fetch()) {
+                /*  echo $compte ." ->". $data['nom'];
+                  ?><br/><?php
+                  echo '<img src= "' . $data["photo"] . '" height="50" width="40"/>';
+                  $compte++;
+                  ?><br/><?php */
+                echo '<img src= "' . $data["photo"] . '" height="100" width="80"/>';
+                echo "   ";
+            }
+            $result->closeCursor();
+            ?>
+
         </div>
     </article>
 </section>
