@@ -337,7 +337,7 @@ border: 2px solid white;
 
 section
 {
-    height : 1000px;
+    /*height : 1000px;*/
     width: 100%;
     position: absolute;
     top: 278px;
