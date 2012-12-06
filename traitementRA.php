@@ -51,8 +51,9 @@ echo 'SELECT * FROM event WHERE theme = "' . $theme . '" AND lieu = "' . $ville 
             </aside>
 
             <aside class ="new">
+            
                 <div class ="eventNew">
-
+    <img class ="photonew" src ="img/new.jpg"/>
                 </div>
             </aside>
 

@@ -357,7 +357,7 @@ article
     top : 260px;
     /* border: 2px solid white;	*/
     background-color: white;
-   box-shadow: 0px 0px 10px black;
+    box-shadow: 0px 0px 10px black;
 
 }
 
@@ -545,8 +545,8 @@ article
 .tofevent{
     width : 100px;
     height : 200px;
-    
-    
+
+
 }
 
 
@@ -557,8 +557,8 @@ article
 
     height : 25px;
     width: 550px;  
-       text-decoration: underline; 
-       position: relative;
+    text-decoration: underline; 
+    position: relative;
     left : 50px; 
 }
 
@@ -566,7 +566,7 @@ article
 .evenement strong{
 
     font-weight: bold;
-        
+
 }
 
 
@@ -610,7 +610,7 @@ article
 }
 
 .evenement #bouton2 {
- 
+
     display: inline-block;
     position: relative;
     left : 20px;
@@ -679,15 +679,29 @@ article
 
 .eventNew{
     /*background-image: url("img/copie.png");*/
-    background-image : url("img/new.jpg");
+    background-image : url("img/muse.png");
+    background-repeat: no-repeat;
+    background-position:right;
     position: absolute;
     height : 250px ;
     width: 50%;
-    left : 25%;
+    right :25%;
     box-shadow: 0px 0px 10px black;
     border-radius: 10px 10px 10px 10px;
 
 
+
+}
+
+.photonew{
+
+    position: absolute;
+    height : 100% ;
+    width: 25%;
+    left : 0px;
+
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 
 }
 
@@ -704,12 +718,12 @@ article
 }
 
 .EventsButton{
-        
+
     position: absolute;
     right: 50px;
     top: 700px;
 
-    
+
 }
 
 

@@ -5,6 +5,7 @@
     ?>
     <aside class ="new">
         <div class ="eventNew">
+            <img class ="photonew" src ="img/new.jpg"/>
 
         </div>
     </aside>
@@ -40,11 +41,12 @@
     </aside>
 
     <article>
-        <div class ="topevent">
+      <!--  <div class ="topevent"> -->
+      <div>
             <?php
             $result = $bdd->query('SELECT * FROM event ORDER BY note DESC LIMIT 0 , 10');
             $compte = 1;
-            ?><br/><br><br/>            <img src="img/TitreTopEvent.png"/> <br/><br/><?php
+            ?><br/><br><br/>            <img src="img/TitreTopEvent.png"/> <br/><img src ="img/barre.jpg"/><br/><br/> <br/><?php
             while ($data = $result->fetch()) {
                 /*  echo $compte ." ->". $data['nom'];
                   ?><br/><?php

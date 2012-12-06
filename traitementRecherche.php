@@ -72,8 +72,9 @@ $result = $bdd->query('SELECT * FROM event ' . $requete);
             </aside>
 
             <aside class ="new">
+       
                 <div class ="eventNew">
-
+         <img class ="photonew" src ="img/new.jpg"/>
                 </div>
             </aside>
 
