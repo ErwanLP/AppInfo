@@ -9,8 +9,6 @@
 
         <?php include("nav.php"); ?>
 
-        <?php include("Recherche.php"); ?>
-
         <section>
             <article>
                 <div class="titreArticleRechercheAvancee">
@@ -103,7 +101,6 @@
                     </form>
                 </div>
             </article>
-            <?php include("aside.php"); ?>
         </section>
 
         <?php include("footer.php"); ?>

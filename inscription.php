@@ -9,8 +9,7 @@
 
         <?php include("nav.php"); ?>
         
-        <?php include("Recherche.php"); ?>
-
+        
         <section>
             <article>
                 <div class="titreArticleInscription">
@@ -39,7 +38,6 @@
 
                 </div>
             </article>
-            <?php include("aside.php"); ?>
         </section>
 
         <?php include("footer.php"); ?>

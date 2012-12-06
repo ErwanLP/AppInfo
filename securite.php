@@ -4,14 +4,12 @@
     <?php include("head.php"); ?>
     <body>
 
-       <?php  session_start(); ?>
+        <?php session_start(); ?>
         <?php include("BDD.php"); ?>
 
         <?php include("header.php"); ?>
 
         <?php include("nav.php"); ?>
-        
-        <?php include("Recherche.php"); ?>
 
         <section>
             <article>
@@ -26,7 +24,7 @@
 
                             <label for="description">Description Event:</label><br />
                             <textarea name="description" id="description" >Comment va se passer l'Evenement...</textarea><br/>
- 
+
                         </fieldset>
 
                         <input type="submit" value="Envoyer" />
