@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php if (isset($_SESSION['ID'])) { ?>
+<?php if (true) { ?>
 
 
     <html>
