@@ -42,7 +42,13 @@
                 while ($data = $result->fetch()) {
                     ?>
                     <div class ="evenement"><br/>
-                        <img class = "imageflottante" alt="Photo de évenement" src=  "imgUser/gad_elmaleh.jpeg"/>
+                        
+                        
+                        
+                        <?php 
+                       
+                        echo '<img class = "imageflottante" alt="Photo de évenement" src= "'.$data["photo"].'/>' 
+                                ?>
 
                         <div class ="texteEvent">
                             <h1><?php echo $data['nom']; ?></h1>
