@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <?php include("head.php"); ?>
+    <?php include("head.php"); ?>
     <body>
 
         <?php include("BDD.php"); ?>
@@ -8,9 +8,17 @@
         <?php include("header.php"); ?>
 
         <?php include("nav.php"); ?>
-        
-       
+
+
         <section>
+            <aside class ="new">
+                <div class ="eventNew">
+
+                </div>
+            </aside>
+            <aside class ="navg">
+                <?php include ("arbre.php"); ?>
+            </aside>
             <article>
                 <div id="titreacticle">
                     <h2><span> Cr&eacute;ation Profil</span></h2>

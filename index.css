@@ -197,8 +197,8 @@ border: 2px solid white;
     box-shadow: 0px 0px 10px azure;*/
     width: 400px; /* Tr�s important : donner une taille au menu */	
     position: absolute;
-    top : 160px;
-    right : 0px;
+    top : 180px;
+    left : 1540px;
     height : 50px ;
     /*border: 2px solid white;*/
     margin-bottom: 20px; /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
@@ -410,7 +410,7 @@ article
     position: absolute;
     width : 1400px;
     height: 75px;
-    left: 400px;
+    left: 10px;
     top : 1px; 
 }
 
@@ -422,7 +422,7 @@ article
     position: absolute;
     width : 1400px;
     height: 75px;
-    left : 400px;
+    left : 10px;
     top : 1px;
 }
 
@@ -434,7 +434,7 @@ article
     position: absolute;
     width : 1400px;
     height: 75px;
-    left : 400px;
+    left : 10px;
     top : 1px;
 }
 
