@@ -10,6 +10,14 @@
         <?php include("nav.php"); ?>
 
         <section>
+            <aside class ="new">
+                <div class ="eventNew">
+
+                </div>
+            </aside>
+            <aside class ="navg">
+                <?php include ("arbre.php"); ?>
+            </aside>
             <article>
                 <div class="titreArticleRechercheAvancee">
                 </div>
