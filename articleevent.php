@@ -1,7 +1,9 @@
 <div class ="evenement"><br/>
 
 
+    <div class="color">
 
+    </div>
     <div class ="tofevent">
 
         <?php

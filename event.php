@@ -40,8 +40,11 @@
 
 
                 while ($data = $result->fetch()) {
+                    
+                    
+                    include("articleevent.php");
                     ?>
-                    <div class ="evenement">
+                  <!--  <div class ="evenement">
                         
                         <div class="color">
                            
@@ -64,7 +67,9 @@
                             <p id="bouton3">Réserver</p>
                         </div>
 
-                    </div>
+                    </div> -->
+                  
+                  
     <?php
 }
 
