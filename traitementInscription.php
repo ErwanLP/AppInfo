@@ -44,8 +44,8 @@
                         //variable execution
 
                         $nomDeCompte = $_POST['nomDeCompte'];
-                        $mdp = sha1($mdp);
-                        $mdp2 = sha1($mdp2);
+                        $mdp = sha1($mdp . "erwan");
+                        $mdp2 = sha1($mdp2 . "erwan");
                         $mailCompte = $_POST['mailCompte'];
 
                         $result = $bdd->query('SELECT mail FROM compte WHERE mail = "' . $mailCompte . '"'); // on recharle l'utilisateur dans la BDD
