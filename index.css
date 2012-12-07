@@ -868,6 +868,15 @@ a:visited
     display : inline-block;
 }
 
+/*RECHERCHE AVANCEE*/
+
+.couleurTexte span{
+    
+    
+    background-color: lightgray;
+    font-size: 15px;
+    color: black;
+}
 
 /*ARBORESSANCE*/
 
