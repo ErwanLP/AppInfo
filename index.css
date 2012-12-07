@@ -208,7 +208,7 @@ border: 2px solid white;
     width: 400px; /* Tr�s important : donner une taille au menu */	
     position: absolute;
     top : 350px;
-    left : 1540px;
+    left : 1520px;
     height : 50px ;
     /*border: 2px solid white;*/
     margin-bottom: 20px; /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
