@@ -8,7 +8,7 @@
 </aside>
 
 <aside id="forum">
-    <h2><span>forum</span></h2>
+    <h2><span><a href="forum/indexForum.php">forum</a></span></h2>
 </aside>
 
 
