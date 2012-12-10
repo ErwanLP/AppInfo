@@ -12,7 +12,7 @@
         <section>
             <aside class ="new">
                 <div class ="eventNew">
-
+<img class ="photonew" src ="img/new.jpg"/>
                 </div>
             </aside>
             <aside class ="navg">
@@ -23,18 +23,18 @@
                 </div>
                 <div class="page">
 
-                    <form method="post" action="traitementRA.php">
-                        <fieldset>
-                            <pre>
-                    		<label for="genre">Genre :</label>   <select name="genre" id="genre">
+                    <form class="couleurTexte"method="post" action="traitementRA.php">
+                        
+                            <pre></br></br>
+<label for="genre"><span>Genre :</span></label><select name="genre" id="genre">
                     <option value="soiree">Soir&eacute;e</option>
                     <option value="bar">Bar</option>
                     <option value="concert">Concert</option>
                     <option value="restauration">Restauration</option>
                     <option value="exposition">Exposition</option>
                     <option value="autre">Autre</option>
-                    		</select>	<label for="ville">     Ville :</label>  <input type="text" name="ville" id="ville" placeholder="Ex : Paris" size="20" maxlength="15">
-                    		<label for="date">Date :</label>   <input type="date" name="date" placeholder="JJ/MM/AAAA" id="date" size="10" maxlength="10"> <label for="heureDebut">     Evenement ayant lieu entre : </label><select name="heureDebut" id="heureDebut">
+                    		</select>          <label for="ville"><span>Ville :</span></label><input type="text" name="ville" id="ville" placeholder="Ex : Paris" size="20" maxlength="15">
+                     <label for="date"><span>Date :</span></label><input type="date" name="date" placeholder="JJ/MM/AAAA" id="date" size="10" maxlength="10">               <label for="heureDebut"><span>Evenement ayant lieu entre : </span></label><select name="heureDebut" id="heureDebut">
                     	<option value="0">00h</option>
                     	<option value="1">01h</option>
                     	<option value="2">02h</option>
@@ -85,9 +85,9 @@
                     	<option value="22">22h</option>
                     	<option value="23">23h</option>
                     </select>
-                    <label for="compare">		Notes </label><select name="compare" id="compare">
+<label for="compare"><span>Notes </span></label><select name="compare" id="compare">
                     	<option value="egalplus">&#8805;</option>
-                    	<option value="plus">></option>
+                    	<option value="plus"></option>
                     	<option value="egal">=</option>
                     	<option value="moinsegal">&#8804;</option>
                     	<option value="moins"><</option>
@@ -99,12 +99,13 @@
                     	<option value="3">3</option>
                     	<option value="4">4</option>
                     	<option value="5">5</option>
-                    </select><label for="prix">	Prix : </label><input type="range" name="prix" id="prix" min="0" max="500" step="5" size="4" maxlength="3" value="0"/> <div class="inline" id="prixDiv" value="10"></div> euros
-                    		<label for="placeDispo">Place disponible : </label><input type="number" name="placeDispo" id="placeDispo" maxlength="4" size="4"/>	
-                    <input type="submit" value="Valider"/>
+                    </select><label for="prix">	<span>Prix :</span> </label><input type="range" name="prix" id="prix" min="0" max="500" step="5" size="4" maxlength="3" value="0"/> <div class="inline" id="prixDiv" value="10"></div> euros
+ <label for="placeDispo"><span>Place disponible : </sapn></label><input type="number" name="placeDispo" id="placeDispo" maxlength="4" size="4"/>	
+                    
+<input type="submit" value="Valider"/>
                     <script src="javascript1.js"></script>
                             </pre>
-                        </fieldset>
+                       
 
                     </form>
                 </div>
