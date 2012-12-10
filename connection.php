@@ -8,13 +8,19 @@
         <?php include("header.php"); ?>
 
         <?php include("nav.php"); ?>
-        
-        <?php include("Recherche.php"); ?>
 
         <section>
+            <aside class ="new">
+
+                <div class ="eventNew">
+                    <img class ="photonew" src ="img/new.jpg"/>
+                </div>
+            </aside>
+            <aside class ="navg">
+                <?php include ("arbre.php"); ?>
+            </aside>
             <article>
-                <div class="titreacticle">
-                    <h2><span>Connection</span></h2>
+                <div class="titreArticleConnexion">
                 </div>
                 <div class="page">
 
@@ -24,7 +30,10 @@
                             <input type="text" name="nomDeCompte" id="nomDeCompte"  size="20" maxlength="15" autofocus required/><br/>
 
                             <label for="mdp">Votre mot de passe :</label>
-                            <input type="password" name="mdp" id="mdp" required/>
+                            <input type="password" name="mdp" id="mdp" required/><br/>
+                         Se connecter en tant que :<br/>
+                              <label for="participant">Participant  </label><input type="radio" name="profil" value="participant" id="participant" checked/> 
+                              <label for="organisateur">Organisateur </label><input type="radio" name="profil" value="organisateur" id="organisateur" /> 
                                                   <p><a href="">Mot de passe oublié</a></p>
                             <input style="position:relative;left:35px;" type="submit" value="Envoyer" />
                         </pre>
@@ -32,7 +41,6 @@
 
                 </div>
             </article>
-            <?php include("aside.php"); ?>
         </section>
 
         <?php include("footer.php"); ?>

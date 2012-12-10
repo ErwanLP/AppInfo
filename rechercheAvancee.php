@@ -9,16 +9,21 @@
 
         <?php include("nav.php"); ?>
 
-        <?php include("Recherche.php"); ?>
-
         <section>
+            <aside class ="new">
+                <div class ="eventNew">
+
+                </div>
+            </aside>
+            <aside class ="navg">
+                <?php include ("arbre.php"); ?>
+            </aside>
             <article>
-                <div class="titreacticle">
-                    <h2><span> Recherche Avancée</span></h2>
+                <div class="titreArticleRechercheAvancee">
                 </div>
                 <div class="page">
 
-                    <form>
+                    <form method="post" action="traitementRA.php">
                         <fieldset>
                             <pre>
                     		<label for="genre">Genre :</label>   <select name="genre" id="genre">
@@ -104,7 +109,6 @@
                     </form>
                 </div>
             </article>
-            <?php include("aside.php"); ?>
         </section>
 
         <?php include("footer.php"); ?>
