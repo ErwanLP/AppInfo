@@ -90,6 +90,7 @@
             </li>
             <li class="sousMenuBascule"><span>Forum</span>
                 <ul class="sousMenu">
+                    <li><a href="#" title="Aller à la page Acceuil">Acceuil</a></li>
                     <li><a href="#" title="Aller à la page Discution Générale">Discution g&eacute;n&eacute;rale</a></li>
                     <li><a href="#" title="Aller à la page Evénement">&Eacute;v&eacute;nement</a></li>
                     <li><a href="#" title="Aller à la page Organisateur">Organisateur</a></li>

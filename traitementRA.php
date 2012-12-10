@@ -13,7 +13,7 @@ $ville = $_POST['ville'];
 //SELECT * FROM `event` WHERE theme = "spectacle" and lieu = "Sanssat"
 
 $result = $bdd->query('SELECT * FROM event WHERE theme = "' . $theme . '" AND lieu = "' . $ville .'"');
-echo 'SELECT * FROM event WHERE theme = "' . $theme . '" AND lieu = "' . $ville .'"'
+//echo 'SELECT * FROM event WHERE theme = "' . $theme . '" AND lieu = "' . $ville .'"'
      //   SELECT * FROM event WHERE theme = concert AND date = 2012-11-28 AND lieu = paris
 //envois de la requete sql
 // on ferme le curseur
