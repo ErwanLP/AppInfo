@@ -19,7 +19,7 @@
 
             <aside class ="new">
                 <div class ="eventNew">
-                    <img class ="photonew" src ="img/new.jpg"/>
+<img class ="photonew" src ="img/new.jpg"/>
                 </div>
             </aside>
 
