@@ -1,0 +1,64 @@
+/* 
+    Document   : forumMan
+    Created on : 29 nov. 2012, 01:36:58
+    Author     : BOLZAworld
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.tableSouhait
+{
+    display:none;
+}
+table,th,td
+{
+opacity: 0.98;
+/*border-collapse: collapse;*/
+text-align: center;
+height: 100px;
+background-position:  center;
+margin-bottom: 20px;
+border: 4px solid black;
+margin-top: 50px;
+margin-left: 5%;
+padding: 5px;
+background-color: rgb(237,224,213);
+width: 90%;
+border-radius:10px;
+}
+div
+{
+    text-align:center;
+}
+.boutonNewTopic
+{ 
+  width: 100px;
+  height: 25px;
+  border: 2px solid blueviolet;/*#b0b0b0;*/ 
+  /*margin: 5px 6px 15px 6px; */
+  float:right;
+}
+body
+{
+    background-image: url("includes/images/doYouEventLogo.png");
+    background-attachment: fixed; /* Le fond restera fixe */
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+#message
+{
+    border:3px solid appworkspace;
+    border-radius:10px;
+    border-color: blue;
+}
+.categorie,.discutiongenerale,.event,.aideEtSujet,.organisation,.souhait1,.presentation,.taverne1,.presentation,.contenuMessage,.caption,.commentaire,.titreSujet
+{
+    text-shadow: 3px 4px 5px black;
+    font-size: 25px;
+    font-weight: bold;
+}
+.discutiongenerale1,.presentation1,.souhait,.auteur,.commentaireEtdate,.topic,.date,.dateDecreation,.dernierMessage,.message,.sujet,.taverne,.photo
+{
+    text-shadow:2px 3px 4px black;
+    font-size: 25px;
+}
