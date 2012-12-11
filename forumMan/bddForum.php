@@ -2,7 +2,7 @@
 <?php
 try
 {
-$bdd = new PDO('mysql:host=localhost;dbname=forumman', 'root', '');
+$bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 }
 catch (Exception $e)
 {

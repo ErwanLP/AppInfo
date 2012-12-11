@@ -19,6 +19,6 @@ include('bddForum.php');
         <td class="presentation"><a href="presentation.php">Presentation</a></td>
     </tr>
   </table>
-    <?php include('footer.php');?>
+    <?php include('../footer.php');?>
 </body>
 </html>

@@ -19,6 +19,6 @@ include('bddForum.php');
         <td>j'aime le rugby</td>
     </tr>
 </table>
-    <?php include('footer.php');?>
+    <?php include('../footer.php');?>
 </body>
 </html>

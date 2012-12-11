@@ -1,10 +1,10 @@
 <?php
-$titre='Organisation';
+$titre='Organisateur';
 include('start.php');
 include('bddForum.php');
 ?>
   <body>
-        <table class="organisation">
+        <table class="organisateur">
             <tr>
               <th>titre des sujets</th>
               <th>createur</th>
@@ -19,6 +19,6 @@ include('bddForum.php');
               <td>la vie est un jeu</td>
             </tr>
     </table>
-      <?php include('footer.php');?>
+      <?php include('../footer.php');?>
   </body>
 </html>
