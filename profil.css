@@ -7,7 +7,8 @@
     top : 300px;
     background-color: #ebe2d9;
     overflow : auto;
-    box-shadow: 0px 0px 10px black;    
+    box-shadow: 0px 0px 10px black; 
+    text-align: justify;
 }
 fieldset{
     background: whitesmoke;
@@ -32,6 +33,7 @@ fieldset{
     height: 930px;
     right: 97px;
     top: 620px;
+    overflow : auto;
     background-color: whitesmoke;
     border: solid grey 1px;
 
@@ -39,7 +41,7 @@ fieldset{
 ul#simple-menu
 {
     list-style-type:none;
-    width:100%;
+    width:67%;
     position:relative;
     height:40px;
     font-family:"Trebuchet MS",Arial,sans-serif;
@@ -93,8 +95,8 @@ ul#simple-menu li a.current:hover
     position: absolute;
     padding: 20px;
     width: 29%;
-    right: 140px;
-    top: 720px;
+    right: 145px;
+    top: 1150px;
     font-size: 20px;
     text-align: justify;
 }
@@ -114,9 +116,10 @@ strong{
     position: absolute;
     padding: 20px;
     width: 29%;
-    right: 700px;
-    top: 720px;
+    right: 775px;
+    top: 1150px;
     font-size: 20px;
+    text-align: justify;
 }
 #infoPro{
     position: absolute;
@@ -131,13 +134,14 @@ strong{
     padding: 20px;
     width: 60%;
     right: 140px;
-    top: 700px;
-    font-size: 20px;  
+    top: 1100px;
+    font-size: 20px;    
+    text-align: justify;
 }
 #amis fieldset {
     margin: 10px;
 }
-img{
+#description img, #amis img{
     margin: 15px;
 }
 #nom1 {

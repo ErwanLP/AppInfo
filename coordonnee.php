@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <?php include("profil.php"); ?>
 <html>
-    <body>
-        <div>
+    <body>        
+        <div id="coordonnee">
             <p id="infoPerso">
                 <!--<span class="titre">Informations Personnelles</span><br/><br/><br/>-->
                 <strong>Pseudo :</strong> alex95410<br/><br/>
@@ -16,14 +16,14 @@
                 <strong>Téléphone portable :</strong>  0669331681<br/><br/>
                 <strong>Site Web :</strong>  http://alexlebgdu95410.skyrock.com
             </p>
-            <!-- <p id="infoPro">
+            <!--<p id="infoPro">
                 <span class="titre">Informations Professionelles</span><br/><br/><br/>
                 <strong>Société :</strong> Martin&Co<br/><br/>
                 <strong>Adresse :</strong>  21 rue d'ici - 95410 - GROSLAY<br/><br/>
                 <strong>Activité :</strong> Organisation d'événements<br/><br/>
                 <strong>Profession :</strong> PDG<br/><br/>
 
-            </p> -->
+            </p>-->
             <p id="preference">
                 <strong>Loisirs :</strong> Tennis, Foot, Basket<br/><br/>
                 <strong>Préférence événements :</strong> Soirée Etudiante, Tea Party, Son et Lumière, Sculpture<br/><br/>
