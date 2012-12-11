@@ -973,7 +973,7 @@ a:visited
 a, a:visited {
 	text-decoration:none;
 	outline:none;
-	color:#54a6de;
+	/*color:#54a6de;*/
 }
 
 a:hover{
