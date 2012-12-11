@@ -22,7 +22,7 @@
             <article>
                 <div class="titreArticleInscription">
                 </div>
-                <!--  <div class="page">
+                  <div class="page">
   
                       <form class="inscr" method="post" action="traitementInscription.php">                       
                           <pre>
@@ -44,15 +44,15 @@
   
                       </form>
   
-                  </div> -->
-                <div id="formContainer">
+                  </div> 
+              <!--  <div id="formContainer">
                     <form id="login" method="post" action="./">
                        
                         <input type="text" name="loginEmail" id="loginEmail" value="Email" />
                         <input type="password" name="loginPass" id="loginPass" value="pass" />
                         <input type="submit" name="submit" value="Login" />
                     </form>
-                </div>              
+                </div>    -->          
             </article>
         </section>
 
