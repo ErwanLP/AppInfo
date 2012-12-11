@@ -1064,13 +1064,14 @@ a:visited
     left: auto;
 }
 
-
+/*------------------------------------------------------------------------------------------*/
 /*INSCRIPTION */
+/*------------------------------------------------------------------------------------------*/
 
 a, a:visited {
 	text-decoration:none;
 	outline:none;
-	color:#54a6de;
+	/*color:#54a6de;*/
 }
 
 a:hover{
@@ -1141,12 +1142,12 @@ a:hover{
 }
 
 #login{
-	background:url('../img/login_form_bg.jpg') no-repeat;
+	background:url('img/login_form_bg.jpg') no-repeat;
 	z-index:100;
 }
 
 #recover{
-	background:url('../img/recover_form_bg.jpg') no-repeat;
+	background:url('/img/recover_form_bg.jpg') no-repeat;
 	z-index:1;
 	opacity:0;
 	

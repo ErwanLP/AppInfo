@@ -52,10 +52,7 @@
                         <input type="password" name="loginPass" id="loginPass" value="pass" />
                         <input type="submit" name="submit" value="Login" />
                     </form>
-                </div>
-                <!-- JavaScript includes -->
-                <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-                <script src="assets/js/script.js"></script>
+                </div>              
             </article>
         </section>
 
