@@ -6,10 +6,16 @@
 </head>
 <body>
 <header></header>
+    
+    <?php include("head.php"); ?>
 
-<?php include("elementmenu.php"); ?>
+        <?php session_start(); ?>
 
-<?php include("sidebarleftfloatleft.php"); ?>
+        <?php include("header.php"); ?>
+
+        <?php include("nav.php"); ?>
+        
+
 
 <div class="sidebar-left-floatleft">
 <h1>Configurer</h1>
@@ -71,7 +77,7 @@ Ton sexe est une information privée, il ne sera pas affiché sur le site </p>
 <!-- Pseudo -->
 <div class=info>
 <label for=pseudo class="col_third_floatleft">Pseudo :</label>
-<imput type="text" id="pseudo" name="pseudo" class="text" value="guito-le-taureau-bourré-du-sud"/>
+<input type="text" id="pseudo" name="pseudo" class="text" value="guito-le-taureau-bourré-du-sud"/>
 
 <!-- Prénom -->
 <div class="info">
