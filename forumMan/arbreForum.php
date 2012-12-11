@@ -147,16 +147,4 @@
     </body>
 </html>
 
-<!--
-<ul>
-                            <li><a href="event.php?onglet=spectacle&sousOnglet=comedieMusicale" >Com&eacute;die Musicale</a></li>
-                            <li><a href="event.php?onglet=spectacle&sousOnglet=theatre">Th&eacute;atre</a></li>
-                            <li><a href="event.php?onglet=spectacle&sousOnglet=cafeTheatre">Caf&eacute; Th&eacute;atre</a></li>
-                            <li><a href="event.php?onglet=spectacle&sousOnglet=cabaret">Cabaret</a></li>
-                            <li><a href="event.php?onglet=spectacle&sousOnglet=danse">Danse</a></li>
-                            <li><a href="event.php?onglet=spectacle&sousOnglet=sonEtLumiere">Son et lumi&egrave;re</a></li>
-                            <li><a href="event.php?onglet=spectacle&sousOnglet=opera">Op&eacute;ra</a></li>
-                            <li><a href="event.php?onglet=spectacle&sousOnglet=cirque">Cirque</a></li>
-                            <li><a href="event.php?onglet=spectacle&sousOnglet=oneManShow">One Man Show</a></li>
-                            <li><a href="event.php?onglet=spectacle&sousOnglet=spectacleDeRue">Spectacle de rue</a></li>
-                        </ul>-->
+
