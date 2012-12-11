@@ -14,7 +14,6 @@
 
         include("nav.php");
 
-        include("section.php");
 
         include("footer.php");
         ?>

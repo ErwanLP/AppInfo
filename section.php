@@ -26,7 +26,8 @@
 
     <aside class ="toporg">
         <div class="titreToporg">
-        <p> Top Organisateur: 
+        <p> Top Organisateur:</p>
+ 
         </div><br/>
             1 - COMEXPOSIUM <br/>
             2 - FeteInfo <br/>
@@ -38,7 +39,7 @@
             8 - SCOexpo <br/>
             9 - Animafac <br/>
             10 - France Festivals <br/>
-        </p>
+       
     </aside>
 
     <article>
