@@ -965,3 +965,19 @@ a:visited
 .sousMenu li:hover ul, .sousMenu li.sfhover ul {
     left: auto;
 }
+
+/*------------------------------------------------------------------------------------------*/
+/*INSCRIPTION */
+/*------------------------------------------------------------------------------------------*/
+
+a, a:visited {
+	text-decoration:none;
+	outline:none;
+	/*color:#54a6de;*/
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+

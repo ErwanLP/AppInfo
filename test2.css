@@ -1015,3 +1015,8 @@ position: absolute;
 left : 300px;
 top:250px;
 }
+
+sup
+{
+    color:red;
+}
