@@ -21,6 +21,9 @@
                 <div class ="eventNew">
                     <img class ="photonew" src ="img/new.jpg"/>
                 </div>
+                
+                 <?php include("connexion.php"); ?>
+                
             </aside>
 
             <article class ="articleevent">                  
