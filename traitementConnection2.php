@@ -16,7 +16,7 @@
         <section>
             <article>
                 <div class="titreacticle">
-                    <h2><span>Traitement Connection</span></h2>
+                    <h2><span>Traitement Connexion</span></h2>
                 </div>
                 <div class="page">
 

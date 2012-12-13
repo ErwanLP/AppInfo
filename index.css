@@ -53,7 +53,7 @@ header
 
 /*NAVIGATION PRINCIPALE*/
 
-#container {
+.container {
 
 
     background-color: #666;
@@ -143,6 +143,59 @@ border: 2px solid white;
 
 /*INSCRIPTION*/
 
+
+.aa {
+ background-color:#FAFAFA;
+ padding:10px;
+ width:280px;
+ }
+.ab {
+ padding:0 20px 20px 20px;
+ margin-bottom:10px;
+ border:1px solid #DF3F3F;
+ }
+.ac {
+ color:#DF3F3F;
+ font-weight:bold
+ }
+.ad {
+ margin-top:10px;
+ display:block;
+ }
+.ad.inline {
+ display:inline;
+ margin-right:50px;
+ }
+.aa input, textarea, select, option {
+ background-color:#FFF3F3;
+ }
+.aa input, textarea, select {
+ padding:3px;
+ border:1px solid #F5C5C5;
+ border-radius:5px;
+ width:200px;
+ box-shadow:1px 1px 2px #C0C0C0 inset;
+ }
+.aa select {
+ margin-top:10px;
+ }
+.aa input[type=radio] {
+ background-color:transparent;
+ border:none;
+ width:10px;
+ }
+.aa input[type=submit], input[type=reset] {
+ width:100px;
+ margin-left:5px;
+ box-shadow:1px 1px 1px #D83F3D;
+ cursor:pointer;
+ }
+
+
+
+
+
+
 .inscr
 {
     border: 1px solid black;
@@ -182,6 +235,19 @@ border: 2px solid white;
 
 /*CONNECTION*/
 
+.connec {
+    position: absolute;
+    border: 1px solid #202020;
+    background-color: #666;
+    border-radius: 10px;
+    text-align: left;
+    width: 400px;
+    height: 220px;
+    margin-left: 1460px;
+    margin-top:15px;
+    box-shadow: 0px 0px 15px #666;
+}
+
 /*.connec
 {
     background-image: url("img/cadenas1.png");
@@ -197,13 +263,27 @@ border: 2px solid white;
     position: absolute;
     background-color: #666;
     color: white;
-}
+}*/
 
 .connec p
 {
-    margin-left: 225px;
-    text-decoration: underline;
-}*/
+    color: #d0d0ff;
+    text-shadow: 0px 0px 10px #d0d0ff;
+    padding-left: 60px;
+}
+
+.connec p a {
+    
+    color: #ff6040;
+    text-shadow: none;
+}
+
+.connec h2 {
+    
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 15px white;
+}
 
 
 .connection
@@ -851,22 +931,11 @@ a:visited
 
 .rechercheSimple
 {
-    color : blue;
-    font-size: 14px;
-    font-style : italic;
+    color: white;
+    text-shadow: 0px 0px 15px white;
     font-weight: bolder;
     font-family: Verdana, Trebuchet MS, Arial, sans-serif;
-    margin-left: 300px;
-}
-
-.rechercheAvancee
-{
-    /*font-size : 0.7em;*/
-    text-decoration : underline;
-    color : grey;
-    font-style : normal;
-    /*margin-left: 200px;*/
-
+    margin-left: 40px;
 }
 
 .inline
@@ -966,222 +1035,12 @@ a:visited
     left: auto;
 }
 
-/*------------------------------------------------------------------------------------------*/
-/*INSCRIPTION */
-/*------------------------------------------------------------------------------------------*/
-
 a, a:visited {
-	text-decoration:none;
-	outline:none;
-	/*color:#54a6de;*/
+    text-decoration:none;
+    outline:none;
+    /*color:#54a6de;*/
 }
 
 a:hover{
-	text-decoration:underline;
-}
-
-
-
-/*----------------------------
-	Styling the forms
------------------------------*/
-
-
-#formContainer{
-	width:288px;
-	height:321px;
-	margin:0 auto;
-	position:relative;
-	z-index:1;
-	
-	-moz-perspective: 800px;
-	-webkit-perspective: 800px;
-	perspective: 800px;
-}
-
-#formContainer form{
-	width:100%;
-	height:100%;
-	position:absolute;
-	top:0;
-	left:0;
-	
-	/* Enabling 3d space for the transforms */
-	-moz-transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
-	
-	/* When the forms are flipped, they will be hidden */
-	-moz-backface-visibility: hidden;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-	
-	/* Enabling a smooth animated transition */
-	-moz-transition:0.8s;
-	-webkit-transition:0.8s;
-	transition:0.8s;
-	
-	/* Configure a keyframe animation for Firefox */
-	-moz-animation: pulse 2s infinite;
-	
-	/* Configure it for Chrome and Safari */
-	-webkit-animation: pulse 2s infinite;
-}
-
-
-/* Firefox Keyframe Animation */
-@-moz-keyframes pulse{
-	0%{		box-shadow:0 0 1px #008aff;}
-	50%{	box-shadow:0 0 8px #008aff;}
-	100%{	box-shadow:0 0 1px #008aff;}
-}
-
-/* Webkit keyframe animation */
-@-webkit-keyframes pulse{
-	0%{		box-shadow:0 0 1px #008aff;}
-	50%{	box-shadow:0 0 10px #008aff;}
-	100%{	box-shadow:0 0 1px #008aff;}
-}
-
-#login{
-	background:url('img/login_form_bg.jpg') no-repeat;
-	z-index:100;
-}
-
-#recover{
-	background:url('/img/recover_form_bg.jpg') no-repeat;
-	z-index:1;
-	opacity:0;
-	
-	/* Rotating the recover password form by default */
-	-moz-transform:rotateY(180deg);
-	-webkit-transform:rotateY(180deg);
-	transform:rotateY(180deg);
-}
-
-#formContainer.flipped #login{
-	
-	opacity:0;
-	
-	/**
-	 * Rotating the login form when the
-	 * flipped class is added to the container
-	 */
-	
-	-moz-transform:rotateY(-180deg);
-	-webkit-transform:rotateY(-180deg);
-	transform:rotateY(-180deg);
-}
-
-#formContainer.flipped #recover{
-	
-	opacity:1;
-	
-	/* Rotating the recover div into view */
-	-moz-transform:rotateY(0deg);
-	-webkit-transform:rotateY(0deg);
-	transform:rotateY(0deg);
-}
-
-
-/*----------------------------
-	Inputs, Buttons & Links
------------------------------*/
-
-
-#login .flipLink,
-#recover .flipLink{
-	
-	/* The blue ribbon links */
-	
-	height: 65px;
-    overflow: hidden;
-    position: absolute;
-    right: 0;
-    text-indent: -9999px;
-    top: 0;
-    width: 65px;
-}
-
-#recover .flipLink{
-	right:auto;
-	left:0;
-}
-
-#login:after{
-	/* The "Click here" tooltip */
-	width:98px;
-	height:16px;
-	content:'';
-	/*background:url('../img/click_here.png') no-repeat;*/
-	position:absolute;
-	right:-120px;
-	top:22px;
-}
-
-input[type=text],input[type=password]{
-	/* The text fields */
-	font: 15px 'Segoe UI',Arial,sans-serif;
-	border: none;
-	background:none;
-	height: 36px;
-	left: 26px;
-	position: absolute;
-	top: 176px;
-	width: 234px;
-	text-indent: 8px;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-	color:#eee;
-	outline:none;
-}
-
-#loginPass{
-	top: 215px;
-}
-
-#recoverEmail{
-	top:215px;
-}
-
-input[type=submit]{
-	
-	/* Submit button */
-	
-	opacity:0.9;
-	position:absolute;
-	top:262px;
-	left:25px;
-	width: 239px;
-	height:36px;
-	cursor:pointer;
-	border-radius:6px;
-	box-shadow:0 1px 1px #888;
-	border:none;
-	color:#fff;
-	font:14px/36px 'Segoe UI Light','Segoe UI',Arial,sans-serif;
-	
-	/* CSS3 Gradients */
-	
-	background-image: linear-gradient(bottom, rgb(80,102,127) 50%, rgb(87,109,136) 50%, rgb(106,129,155) 100%);
-	background-image: -o-linear-gradient(bottom, rgb(80,102,127) 50%, rgb(87,109,136) 50%, rgb(106,129,155) 100%);
-	background-image: -moz-linear-gradient(bottom, rgb(80,102,127) 50%, rgb(87,109,136) 50%, rgb(106,129,155) 100%);
-	background-image: -webkit-linear-gradient(bottom, rgb(80,102,127) 50%, rgb(87,109,136) 50%, rgb(106,129,155) 100%);
-	background-image: -ms-linear-gradient(bottom, rgb(80,102,127) 50%, rgb(87,109,136) 50%, rgb(106,129,155) 100%);
-	
-	background-image: -webkit-gradient(
-		linear,
-		left bottom,
-		left top,
-		color-stop(0.5, rgb(80,102,127)),
-		color-stop(0.5, rgb(87,109,136)),
-		color-stop(1, rgb(106,129,155))
-	);
-}
-
-input[type=submit]:hover{
-	opacity:1;
-}
-
-input::-webkit-input-placeholder {
-    color:#eee;
+    text-decoration:underline;
 }

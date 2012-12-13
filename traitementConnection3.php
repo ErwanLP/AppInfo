@@ -60,8 +60,8 @@ if (isset($_POST['nomDeCompte']) && isset($_POST['mdp'])) {
         }
     } else {
 
-        header('Location:connection.php');
-        // si la connection n'aboutit pas , on redirige l'utilisateur vers la page de connection
+        header('Location:connexion.php');
+        // si la connection n'aboutit pas , on redirige l'utilisateur vers la page de connexion
     }
 }
 ?>

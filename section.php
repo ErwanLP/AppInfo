@@ -6,8 +6,15 @@
     <aside class ="new">
         <div class ="eventNew">
             <img class ="photonew" src ="img/new.jpg"/>
-
         </div>
+
+
+        <?php
+        if (!isset($_SESSION['ID'])) {
+            include("connexion.php");
+        }
+        ?>
+
     </aside>
 
     <aside class ="navg">
@@ -20,30 +27,31 @@
             <a href="creationEvenement.php"> <img src="img/EventsButton.png" alt= "nom de ton image"> </a>        
         </aside>
 
+
         <?php
     }
     ?>
 
     <aside class ="toporg">
         <div class="titreToporg">
-        <p> Top Organisateur: 
+            <p> Top Organisateur: 
         </div><br/>
-            1 - COMEXPOSIUM <br/>
-            2 - FeteInfo <br/>
-            3 - Kompass <br/>
-            4 - Night-Fever-Animation <br/>
-            5 - JeffNight <br/>
-            6 - Initial-Isefac <br/>
-            7 - FlunchJobs <br/>
-            8 - SCOexpo <br/>
-            9 - Animafac <br/>
-            10 - France Festivals <br/>
+        1 - COMEXPOSIUM <br/>
+        2 - FeteInfo <br/>
+        3 - Kompass <br/>
+        4 - Night-Fever-Animation <br/>
+        5 - JeffNight <br/>
+        6 - Initial-Isefac <br/>
+        7 - FlunchJobs <br/>
+        8 - SCOexpo <br/>
+        9 - Animafac <br/>
+        10 - France Festivals <br/>
         </p>
     </aside>
 
     <article>
-      <!--  <div class ="topevent"> -->
-      <div>
+        <!--  <div class ="topevent"> -->
+        <div>
             <?php
             $result = $bdd->query('SELECT * FROM event ORDER BY note DESC LIMIT 0 , 10');
             $compte = 1;

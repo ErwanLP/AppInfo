@@ -141,7 +141,7 @@
                         this.className=this.className.replace(new RegExp(" afficher\b"), "");
                     }
                 }
-            }
+            };
             if (window.attachEvent) window.attachEvent("onload", afficher);
         </script>
     </body>

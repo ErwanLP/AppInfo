@@ -17,8 +17,9 @@
         <link rel="stylesheet" media="screen, print, handheld" type="text/css" href="index.css" />  
     </head>
     <body>
-        <div id="container">
+        <div class="container">
             <ul id="nav">
+                <li><a href="index.php">Accueil</a></li>
                 <li><a href ="event.php?onglet=spectacle">Spectacle</a>
                     <ul>
                         <li><a href="event.php?onglet=spectacle&sousOnglet=comedieMusicale" >Com&eacute;die Musicale</a></li>
@@ -84,10 +85,10 @@
                     </ul>
                 </li>
             </ul>
-            <form class = "container" method="post" action="traitementRecherche.php"> <!-- RECHERCHE  -->
+            <form method="post" action="traitementRecherche.php"> <!-- RECHERCHE  -->
                 <label class="rechercheSimple" for="recherche">Recherche :</label>
-                <input style="margin-left :10px;" type="search" name="recherche" id="recherche" size="30" maxlength="70" placeholder="Ex : 75006, bar, mairie de Paris">
-                <a  class="rechercheAvancee" href="rechercheAvancee.php?RA=on">Recherche Avancée</a>
+                <input style="margin-left :10px;" type="search" name="recherche" id="recherche" size="30" maxlength="70" placeholder="Ex : 75006, bar, mairie de Paris"><input style="margin-left:5px;" type="submit" value="Go"/>
+                <a  style="color:#ff6040;padding-left:10px;font-family: Verdana, Trebuchet MS, Arial, sans-serif;" href="rechercheAvancee.php?RA=on">Recherche Avancée</a>
             </form>
         </div>
 
