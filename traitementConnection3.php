@@ -27,13 +27,20 @@ if (isset($_POST['nomDeCompte']) && isset($_POST['mdp'])) {
         $_SESSION['ID'] = $data2['ID'];
         // on créer une session pour l'utilisateur
         $profilParticipant = $data2['profilParticipant'];
-               $profilOrganisateur = $data2['profilOrganisateur'];
-               //on va regarder si l'utilisateur possède un profil Participant ou Organisateur
+        $profilOrganisateur = $data2['profilOrganisateur'];
+        //on va regarder si l'utilisateur possède un profil Participant ou Organisateur
+        $godMode = $data2['godMode'];
     }
 
     if ($booleantest == TRUE) {  //PEUT ETRE REUTILISER POUR LE SWITCH
         //si la connection est valide
-        if ($_POST['profil'] == "participant") {  
+       
+        if ($godMode == 1) {
+            echo 'IN GOD MODE';
+            header('Location:godMode.php');
+        } else {
+            
+        if ($_POST['profil'] == "participant") {
             // si l'utilisateur a choisi de se connecter en tant que participant
             if ($profilParticipant == 1) {
                 //si l'utilisateur à un profil participant
@@ -43,9 +50,9 @@ if (isset($_POST['nomDeCompte']) && isset($_POST['mdp'])) {
                 //on le redirige dans la page principale qui est dynamique par rapport à l'acteur qui la voie
             } else {
                 $_SESSION['SWITCH'] = "pasdeprofilparticipant";
-                header('Location:index.php'); //redirection à la page de création profil Participant
+               header('Location:index.php'); //redirection à la page de création profil Participant
             }
-        }else{
+        } else {
             // si l'utilisateur a choisi de se connecter en tant qu'organisateur
             if ($profilOrganisateur == 1) {
                 $_SESSION['SWITCH'] = "organisateur";
@@ -54,9 +61,7 @@ if (isset($_POST['nomDeCompte']) && isset($_POST['mdp'])) {
                 $_SESSION['SWITCH'] = "pasdeprofilorganisateur";
                 header('Location:index.php'); //redirection page de création Organisateur
             }
-            
-            
-            
+        }
         }
     } else {
 
