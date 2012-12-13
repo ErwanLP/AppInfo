@@ -6,6 +6,18 @@
         <link rel="stylesheet" href="test2.css">
     </head>
     <body>
+        <?php
+
+        session_start();
+
+        include("header.php");
+
+        include("nav.php");
+
+
+        include("footer.php");
+        ?>
+
         <div class="sidebar-left-floatleft">
             <h1>Configurer</h1>
             <ul id="sidebar-accordion" class="menu-sidebar-left phylac-top-left box-gradient">
