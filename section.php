@@ -1,6 +1,6 @@
 <section>
     <?php
-    $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
+    $bdd = new PDO('mysql:host=localhost:8888;dbname=appinfo', 'root', '');
     $bdd->exec('SET NAMES utf8');
     ?>
     <aside class ="new">

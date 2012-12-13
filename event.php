@@ -19,13 +19,14 @@
 
             <aside class ="new">
                 <div class ="eventNew">
-<img class ="photonew" src ="img/new.jpg"/>
+                    <img class ="photonew" src ="img/new.jpg"/>
                 </div>
             </aside>
 
             <article class ="articleevent">                  
                 <?php
-                $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
+                $bdd= new PDO("localhost", "root", "root","AppInfo") or die("Erreur de connexion à MySQL"); 
+
                 if (!isset($_GET['onglet'])) { //si ya rien
                     $result = $bdd->query('SELECT * FROM  event LIMIT 0 , 30');
                 }
@@ -51,9 +52,9 @@
                           </div>
 
 
-                    <?php
-                    // echo '<img class = "imageflottante" alt="Photo de évenement" src= "'.$data["photo"].'"/>' 
-                    ?>
+    <?php
+    // echo '<img class = "imageflottante" alt="Photo de évenement" src= "'.$data["photo"].'"/>' 
+    ?>
                           <img class = "imageflottante" alt="Photo de évenement" src= "imgUser/gad_elmaleh.jpeg"/>
                           <div class ="texteEvent">
                               <h1><?php echo $data['nom']; ?></h1>
@@ -70,11 +71,11 @@
                       </div> -->
 
 
-                    <?php
-                }
+    <?php
+}
 
-                $result->closeCursor();
-                ?>
+$result->closeCursor();
+?>
 
 
 
@@ -83,7 +84,7 @@
         </section>
 
 
-        <?php include("footer.php"); ?>
+<?php include("footer.php"); ?>
 
 
 

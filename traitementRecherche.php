@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
-$bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
+mysql_connect("localhost", "root", "root") or die("Erreur de connexion à MySQL"); 
+
 $bdd->exec('SET NAMES utf8');
 //connection à la base de données
 
