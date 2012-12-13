@@ -1,7 +1,7 @@
 <header>
    
 </header>
-<div id ="ID">
+<!--<div id ="ID">
     <?php
     if (!empty($_SESSION['ID'])) {
         echo "connecté";
@@ -16,4 +16,4 @@
     }
 
     ?>
-</div>
+</div>-->

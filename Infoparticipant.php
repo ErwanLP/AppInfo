@@ -3,13 +3,20 @@
     <head>
         <title>Mes paramètres</title>
         <link rel="stylesheet" href="test2.css">
+        <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <header></header>
+        <?php
 
-        <?php include("elementmenu.php"); ?>
+        session_start();
 
-        <?php include("sidebarleftfloatleft.php"); ?>
+        include("header.php");
+
+        include("nav.php");
+
+
+        include("footer.php");
+        ?>
 
         <div class="sidebar-left-floatleft">
             <h1>Configurer</h1>
@@ -24,7 +31,7 @@
                 <li><a class="menu-accordion" href="Mes_amis.html" title="Mes amis">Mes amis</a></li>
                 <li><a class="menu-accordion" href="Mesmessages.html" title="Ma messagerie">Ma messagerie</a></li>
                 <li><a class="menu-accordion" href="Mesalertes.html" title="Alertes">Alertes</a></li>
-                <li><a class="menu-accordion" href="Live.html" title="Live">Live</a><ul></li>
+                <li><a class="menu-accordion" href="Live.html" title="Live">Live</a><ul>
             </ul>
         </div>
         <div class="floatright-main">
@@ -54,9 +61,11 @@
                             //]]>
                         </script>
 
+
+
                         <!-- Sexe -->
                         <div class="info">
-                            <span class="col_third_floatleft"><span class="required">Tu es : </span></span>
+                            <span class="col_third_floatleft"><span class="required">Tu es<sup>*</sup> : </span></span>
                             <span class="radio-checkbox">
                                 <input type="radio" id="femme" name="genre" class="radio" value="0" /> <label for="female" class="radio">Une femme</label>
                             </span>
@@ -70,12 +79,12 @@
                         </div>
                         <!-- Pseudo -->
                         <div class=info>
-                            <label for=pseudo class="col_third_floatleft">Pseudo :</label>
-                            <imput type="text" id="pseudo" name="pseudo" class="text" value="guito-le-taureau-bourré-du-sud"/>
+                            <label for=pseudo class="col_third_floatleft">Pseudo<sup>*</sup> :</label>
+                            <input type="text" id="pseudo" name="pseudo" class="text" value="guito-le-taureau-bourré-du-sud"/>
 
                             <!-- Prénom -->
                             <div class="info">
-                                <label for="prenom" class="col_third_floatleft">Prénom :</label>
+                                <label for="prenom" class="col_third_floatleft">Prénom<sup>*</sup> :</label>
                                 <input type="text" id="prenom" name="prenom" class="text" value="florian" />
 
                                 <p class="infobulle msg_info msg_info_simple" id="infobulle_firstname">
@@ -85,7 +94,7 @@
 
                             <!-- Nom -->
                             <div class="info">
-                                <label for="nom" class="col_third_floatleft">Nom :</label>
+                                <label for="nom" class="col_third_floatleft">Nom<sup>*</sup> :</label>
                                 <input type="text" id="nom" name="nom" class="text" value="guitoger" />
 
                                 <p class="infobulle msg_info msg_info_simple" id="infobulle_lastname">
@@ -102,7 +111,7 @@
 
                             <!-- Date de naissance -->
                             <div class="info">
-                                <label class="col_third_floatleft" for="dateDeNaissance" data-fieldgroup="date"><span class="required">Date de naissance :</span></label>
+                                <label class="col_third_floatleft" for="dateDeNaissance" data-fieldgroup="date"><span class="required">Date de naissance<sup>*</sup> :</span></label>
                                 <input type="text" id="anniversaire" name="anniversaire" maxlength="2" class="text day" value="19"/>
                                 <select id="mois" name="mois" class="month select">
                                     <option value="">-- mois --</option>
@@ -128,12 +137,12 @@
 
                             <!-- Lieu de naissance -->
                             <div class=info>
-                                <label for=lieuDeNaissance class="col_third_floatleft">Pseudo :</label>
-                                <imput type="text" id="lieuDeNaissance" name="lieuDeNaissance" class="text" value="Paris"/>
+                                <label for=lieuDeNaissance class="col_third_floatleft">Lieu de Naissance<sup>*</sup> :</label>
+                                <input type="text" id="lieuDeNaissance" name="lieuDeNaissance" class="text" value="Paris"/>
 
                                 <!-- Email -->
                                 <div class="clear_bloc info">
-                                    <label class="col_third_floatleft" for="email"><span class="required">Email :</span></label>
+                                    <label class="col_third_floatleft" for="email"><span class="required">Email<sup>*</sup> :</span></label>
                                     <input type="text" id="email" name="email" class="text" value="florian.guitoger@gmail.com" />
 
                                     <p class="clear_bloc infobulle msg_info msg_info_simple" id="infobulle_email">
@@ -143,12 +152,12 @@
 
                                 <!-- Profession -->
                                 <div class=info>
-                                    <label for=profession class="col_third_floatleft">Pseudo :</label>
-                                    <imput type="text" id="profession" name="profession" class="text" value="Etudiant"/>
+                                    <label for=profession class="col_third_floatleft">Profession :</label>
+                                    <input type="text" id="profession" name="profession" class="text" value="Etudiant"/>
 
                                     <!-- Adresse -->
                                     <div class="info">
-                                        <label for="adresse" class="col_third_floatleft">Adresse postale :</label>
+                                        <label for="adresse" class="col_third_floatleft">Adresse postale<sup>*</sup> :</label>
                                         <input type="text" id="adresse" name="adresse" class="text" value="82,rue d&#039;australie" />
                                     </div>
 
@@ -161,20 +170,20 @@
 
                                     <!-- Code Postal -->
                                     <div class="info">
-                                        <label class="col_third_floatleft" for="pcode"><span class="required">Code postal :</span></label>
+                                        <label class="col_third_floatleft" for="pcode"><span class="required">Code postal<sup>*</sup> :</span></label>
                                         <input type="text" id="pcode" name="pcode" class="text" value="95500" />
 
                                     </div>
 
                                     <!-- Ville -->
                                     <div class="info">
-                                        <label for="ville" class="col_third_floatleft">Ville :</label>
+                                        <label for="ville" class="col_third_floatleft">Ville<sup>*</sup> :</label>
                                         <input type="text" id="ville" name="ville" class="text" value="gonesse" />
                                     </div>
 
                                     <!-- Pays -->
                                     <div class="info">
-                                        <label class="col_third_floatleft" for="pays"><span class="required">Pays :</span></label>
+                                        <label class="col_third_floatleft" for="pays"><span class="required">Pays<sup>*</sup> :</span></label>
                                         <select class="select" id="country" name="pays">
                                             <option value="AF">Afghanistan</option>
                                             <option value="ZA">Afrique du Sud</option>
@@ -437,7 +446,7 @@
 
                                     <!-- Téléphone Mobile -->
                                     <div class="info">
-                                        <label for="NumeroPortable" class="col_third_floatleft">Mobile :</label>
+                                        <label for="NumeroPortable" class="col_third_floatleft">Mobile<sup>*</sup> :</label>
                                         <input type="text" id="NumeroPortable" name="NumeroPortable" class="text" value="0612345789" />
                                         <p class="infobulle msg_info msg_info_simple" id="infobulle_mobilephone">
                                             Pour recevoir des infos publicitaires sur ton téléphone mobile tu dois saisir ici ton numéro. </p>
@@ -452,7 +461,7 @@
                                     </br>
                                     <!-- Langue -->
                                     <div class="info">
-                                        <label class="col_third_floatleft" for="langage"><span class="required">Version et langue :</span></label>
+                                        <label class="col_third_floatleft" for="langage"><span class="required">Version et langue<sup>*</sup> :</span></label>
                                         <select class="select" id="lang" name="locale">
                                             <option selected="selected" value="fr_FR">France</option>
                                             <option value="en_GB">International (anglais)</option>
@@ -463,114 +472,122 @@
 
                                     <!-- Site Web -->
                                     <div class="info">
-                                        <input type="checkbox" name="siteWeb" id="siteWeb" class="text" value="www.florianguitogerlebourre.com" />
+                                        <label for="siteWeb" class="col_third_floatleft">Site Web :</label>
+                                        <input type="text" name="siteWeb" id="siteWeb" class="text" value="www.florianguitogerlebourre.com" />
+                                    </div>
 
-                                        <!--loisirs/hobbies-->
-                                        <div class="info">
-                                            <label class="col_third_floatleft" for="loisirs/hobbies"></span></label>
-                                            <p>Loisirs/hobbies:</p><textarea name="loisirs/hobbies" cols=60 rows=15>
-                                            </textarea>
+                                    <!--loisirs/hobbies-->
+                                    <div class="info">
+                                        <label class="col_third_floatleft" for="loisirs/hobbies"></span></label>
+                                        <p>Loisirs/hobbies:</p><textarea name="loisirs/hobbies" cols=60 rows=15>
+                                        </textarea>
+                                    </div>
+
+                                    <!--Description-->
+                                    <div class="info">
+                                        <label class="col_third_floatleft" for="description"></span></label>
+                                        <p>Description:</p><textarea name="description" cols=60 rows=15>
+                                        </textarea>
+                                    </div>
+
+                                    <div class="info">
+                                        <input type="button" onClick="modification()" value="Envoyer">
+                                        <input type="reset" value="Effacer">
+                                    </div>
+                                    </fieldset>
+
+
+
+                                    <fieldset id="Modificationmdp" class="disabled">
+                                        <legend class="h2"><span>Changer mon mot de passe</span></legend>
+                                        <div> <p class="clear_bloc msg_info">Ne remplis les trois champs ci-dessous que si tu souhaites changer de mot de passe.</p>
+
+                                            <!-- Ancien: Mot de passe -->
+                                            <div class="clear_bloc row">
+                                                <label class="col_third_floatleft" for="ancienMdp"><span class="required">Ancien mot de passe<sup>*</sup> :</span></label>
+                                                <input autocomplete="off" type="password" id="ancienMdp" name="ancienMdp" class="text" value="" />
+
+                                                <p class="infobulle msg_info msg_info_simple" id="infobulle_oldpassword">
+                                                    Saisis ton ancien mot de passe pour pouvoir le modifier. </p>
+
+                                            </div>
+
+                                            <!-- Nouveau: Mot de passe -->
+                                            <div class="row">
+                                                <label class="col_third_floatleft" for="nouveauMdp"><strong class="required">Nouveau mot de passe<sup>*</sup> :</strong></label>
+                                                <input autocomplete="off" type="password" id="nouveauMdp" name="nouveauMdp" class="text" value="" />
+
+                                                <p class="infobulle msg_info msg_info_simple" id="infobulle_nouveauMdp">
+                                                    Ton mot de passe doit contenir de 6 à 16 caractères et ne doit pas comporter d'espace. </p>
+                                            </div>
+
+                                            <!-- Nouveau: Mot de passe Confirmation -->
+                                            <div class="row">
+                                                <label class="col_third_floatleft" for="Mdpconfimer"><span class="required">Vérifier le nouveau mot de passe<sup>*</sup> :</span></label>
+                                                <input autocomplete="off" type="password" id="Mdpconfime" name="Mdpconfimer" class="text" value="" />
+
+                                                <p class="infobulle msg_info msg_info_simple" id="infobulle_Mdpconfime">
+                                                    Saisis à nouveau ton mot de passe pour le confirmer. </p>
+
+                                            </div>
                                         </div>
 
-                                        <!--Description-->
-                                        <div class="info">
-                                            <label class="col_third_floatleft" for="description"></span></label>
-                                            <p>Description:</p><textarea name="description" cols=60 rows=15>
-                                            </textarea>
-                                        </div>
+
 
                                         <div class="info">
-                                            <input type="button" onClick="modification()" value="Envoyer">
+                                            <input type="button" onClick="modification_1()" value="Envoyer">
                                             <input type="reset" value="Effacer">
                                         </div>
-                                        </fieldset>
-
-                                        <fieldset id="Modificationmdp" class="disabled">
-                                            <legend class="h2"><span>Changer mon mot de passe</span></legend>
-                                            <div> <p class="clear_bloc msg_info">Ne remplis les trois champs ci-dessous que si tu souhaites changer de mot de passe.</p>
-
-                                                <!-- Ancien: Mot de passe -->
-                                                <div class="clear_bloc row">
-                                                    <label class="col_third_floatleft" for="ancienMdp"><span class="required">Ancien mot de passe :</span></label>
-                                                    <input autocomplete="off" type="password" id="ancienMdp" name="ancienMdp" class="text" value="" />
-
-                                                    <p class="infobulle msg_info msg_info_simple" id="infobulle_oldpassword">
-                                                        Saisis ton ancien mot de passe pour pouvoir le modifier. </p>
-
-                                                </div>
-
-                                                <!-- Nouveau: Mot de passe -->
-                                                <div class="row">
-                                                    <label class="col_third_floatleft" for="nouveauMdp"><strong class="required">Nouveau mot de passe :</strong></label>
-                                                    <input autocomplete="off" type="password" id="nouveauMdp" name="nouveauMdp" class="text" value="" />
-
-                                                    <p class="infobulle msg_info msg_info_simple" id="infobulle_nouveauMdp">
-                                                        Ton mot de passe doit contenir de 6 à 16 caractères et ne doit pas comporter d'espace. </p>
-                                                </div>
-
-                                                <!-- Nouveau: Mot de passe Confirmation -->
-                                                <div class="row">
-                                                    <label class="col_third_floatleft" for="Mdpconfimer"><span class="required">Vérifier le nouveau mot de passe :</span></label>
-                                                    <input autocomplete="off" type="password" id="Mdpconfime" name="Mdpconfimer" class="text" value="" />
-
-                                                    <p class="infobulle msg_info msg_info_simple" id="infobulle_Mdpconfime">
-                                                        Saisis à nouveau ton mot de passe pour le confirmer. </p>
-
-                                                </div>
-                                            </div>
-
-                                            <div class="info">
-                                                <input type="button" onClick="modification_1()" value="Envoyer">
-                                                <input type="reset" value="Effacer">
-                                            </div>
 
 
-                                        </fieldset>
+                                    </fieldset>
 
-                                        </br>
+                                    </br>
 
-                                        </body>
 
-                                        <script>
+                                    </body>
 
-                                            sfHover = function() {
-                                                var sfEls = document.getElementById("sidebar-accordion").getElementsByTagName("li");
-                                                for (var i=0; i<sfEls.length; i++) {
-                                                    sfEls[i].onmouseover=function() {
-                                                        this.className+=" sfhover";
-                                                    }
-                                                    sfEls[i].onmouseout=function() {
-                                                        this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
-                                                    }
+
+                                    <script>
+
+                                        sfHover = function() {
+                                            var sfEls = document.getElementById("sidebar-accordion").getElementsByTagName("li");
+                                            for (var i=0; i<sfEls.length; i++) {
+                                                sfEls[i].onmouseover=function() {
+                                                    this.className+=" sfhover";
+                                                }
+                                                sfEls[i].onmouseout=function() {
+                                                    this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
                                                 }
                                             }
-                                            if (window.attachEvent) window.attachEvent("onload", sfHover);
+                                        }
+                                        if (window.attachEvent) window.attachEvent("onload", sfHover);
 
-                                            //var modification
+                                        //var modification
 
-                                            function modification() {
-                                                if (confirm('Voulez vous enregistrer vos modifications, cliquez sur "OK" si c\'est le cas.')) {
-                                                    alert('Les modifications ont été enregistrés.');
-                                                    myForm = document.getElementById("personalData");
-                                                    myForm .submit();
+                                        function modification() {
+                                            if (confirm('Voulez vous enregistrer vos modifications, cliquez sur "OK" si c\'est le cas.')) {
+                                                alert('Les modifications ont été enregistrés.');
+                                                myForm = document.getElementById("personalData");
+                                                myForm .submit();
 
-                                                }
-                                                else {
-                                                    alert("Aucune modification a été enregistré.");
-                                                }
                                             }
-                                            //var modification_1
-
-                                            function modification_1() {
-                                                if (confirm('Voulez vous enregistrer vos modifications, cliquez sur "OK" si c\'est le cas.')) {
-                                                    alert('Les modifications ont été enregistrés.');
-                                                    myForm = document.getElementById("personalData");
-                                                    myForm .submit();
-
-                                                }
-                                                else {
-                                                    alert("Aucune modification a été enregistré.");
-                                                }
+                                            else {
+                                                alert("Aucune modification a été enregistré.");
                                             }
-                                        </script>
-                                        </html>
+                                        }
+                                        //var modification_1
+
+                                        function modification_1() {
+                                            if (confirm('Voulez vous enregistrer vos modifications, cliquez sur "OK" si c\'est le cas.')) {
+                                                alert('Les modifications ont été enregistrés.');
+                                                myForm = document.getElementById("personalData");
+                                                myForm .submit();
+
+                                            }
+                                            else {
+                                                alert("Aucune modification a été enregistré.");
+                                            }
+                                        }
+                                    </script>
+                                    </html>
