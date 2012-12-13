@@ -12,8 +12,11 @@
         <section>
             <aside class ="new">
                 <div class ="eventNew">
-<img class ="photonew" src ="img/new.jpg"/>
+                    <img class ="photonew" src ="img/new.jpg"/>
                 </div>
+                
+                 <?php include("connexion.php"); ?>
+                
             </aside>
             <aside class ="navg">
                 <?php include ("arbre.php"); ?>
@@ -24,8 +27,8 @@
                 <div class="page">
 
                     <form class="couleurTexte"method="post" action="traitementRA.php">
-                        
-                            <pre></br></br>
+
+                        <pre></br></br>
 <label for="genre"><span>Genre :</span></label><select name="genre" id="genre">
                     <option value="soiree">Soir&eacute;e</option>
                     <option value="bar">Bar</option>
@@ -104,8 +107,8 @@
                     
 <input type="submit" value="Valider"/>
                     <script src="javascript1.js"></script>
-                            </pre>
-                       
+                        </pre>
+
 
                     </form>
                 </div>

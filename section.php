@@ -6,8 +6,15 @@
     <aside class ="new">
         <div class ="eventNew">
             <img class ="photonew" src ="img/new.jpg"/>
-
         </div>
+
+
+        <?php
+        if (!isset($_SESSION['ID'])) {
+            include("connexion.php");
+        }
+        ?>
+
     </aside>
 
     <aside class ="navg">
@@ -19,6 +26,7 @@
         <aside class ="EventsButton">
             <a href="creationEvenement.php"> <img src="img/EventsButton.png" alt= "nom de ton image"> </a>        
         </aside>
+
 
         <?php
     }
