@@ -1,180 +1,175 @@
 <!DOCTYPE html>
-<?php include("profil.php"); ?>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="test2.css">
-    </head>
-    <body>
-        <div class="sidebar-left-floatleft">
-            <h1>Configurer</h1>
-            <ul id="sidebar-accordion" class="menu-sidebar-left phylac-top-left box-gradient">
-                <li ><a class="menu-accordion" href="Mesinfosperso.html" title="Mon compte" onclick="window.open(this.href); return false;"><img src="img/boutonMonCompteDroit.png" /></a>
-                    <ul class="active">
-                        <li ><a href="Mesinfosperso.html" title="Mes infos persos" onclick="window.open(this.href); return false;"><img src="img/boutonMesInfosPerso.png" /></a></li>
-                        <li ><a href="#Modificationmdp" title="Modification du mot de passe" onclick="window.open(this.href); return false;"><img src="img/boutonModificationMDP.png" /></a></li>
-                    </ul>
-                </li>
-                <li><a class="menu-accordion" href="parametreprofil.html" title="Mon profil" onclick="window.open(this.href); return false;"><img src="img/boutonMonProfilArr.png" /></a></li>
-                <li><a class="menu-accordion" href="Mes_amis.html" title="Mes amis" onclick="window.open(this.href); return false;"><img src="img/boutonMesAmisArr.png" /></a></li>
-                <li><a class="menu-accordion" href="Mesmessages.html" title="Ma messagerie" onclick="window.open(this.href); return false;"><img src="img/boutonModificationMDP.png" /></a></li>
-                <li><a class="menu-accordion" href="Mesalertes.html" title="Alertes" onclick="window.open(this.href); return false;"><img src="img/boutonModificationMDP.png" /></a></li>
-                <li><a class="menu-accordion" href="Live.html" title="Live" onclick="window.open(this.href); return false;"><img src="img/boutonLivesDroit.png" /></a></li>
-            </ul>
-        </div>
-        <div class="floatright-main">
-            <h1>Mes infos persos</h1>
-            <form id="frm-accordion" method="post" action="inscription.php" id="gestioncompte">
+    <?php include("profil.php"); ?>
+    <title>Mes paramétres</title>
+    <link rel="stylesheet" href="profil.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="test2.css">
+</head>
+<body>
+    <header></header>
+    <div class="sidebar-left-floatleft">
+        <h1>Configurer</h1>
+        <ul id="sidebar-accordion" class="menu-sidebar-left phylac-top-left box-gradient">
+            <li class="active rollin"><a class="menu-accordion" href="Infoparticipant.php" title="Mon compte" onclick="window.open(this.href); return false;"><img src="img/boutonMonCompteArr.png" /></a></li>                         
+            <li><a class="menu-accordion" href="parametreprofil.php" title="Mon profil" onclick="window.open(this.href); return false;"><img src="img/boutonMonProfilArr.png" /></a></li>
+            <li><a class="menu-accordion" href="Mes_amis.php" title="Mes amis" onclick="window.open(this.href); return false;"><img src="img/boutonMesAmisArr.png" /></a></li>
+            <li><a class="menu-accordion" href="Mesmessages.php" title="Ma messagerie"></a></li>
+            <li><a class="menu-accordion" href="Mesalertes.php" title="Alertes"></a></li>
+            <li><a class="menu-accordion" href="Live.php" title="Live" onclick="window.open(this.href); return false;"><img src="img/boutonLivesArr.png" /></a></li>            
 
-                <fieldset id="personalData" class="rollin">
-                    <input type="hidden" id="bypass_email" name="bypass_email" value="0" />
+        </ul>
+    </div>
 
-                    <legend class="h2"><span>Mes données personnelles</span></legend>
-                    <div> <p class="clear_bloc msg_info">Bientôt tu pourras retrouver facilement tes amis sur Doyouevents en saisissant leur email, nom ou prénom. Pour les aider à te retrouver, choisis « oui » ou « non » en bas du formulaire et n'oublie pas de compléter tes informations</p>
-                        <script type="text/javascript">
-                            // <![CDATA[
 
-                            // Alerting sur la recherche au cas où certains champs ne seraient pas remplis
-                            var message = document.getElementById("messageRecherche");
-                            function Alert(isChecked)
+    <script type="text/javascript">
+
+        (function($) {    
+            $("#sidebar-accordion").accordion();
+        })(jQuery);
+
+    </script>	<div class="floatright-main">
+        <h2>Mes infos persos</h2>
+        <form id="frm-accordion" method="post" action="/m/account/" id="gestioncompte">
+
+            <fieldset id="personalData" class="rollin">
+                <input type="hidden" id="Email_" name="Email_" value="0" />
+
+                <legend class="h2"><span>Mes données personnelles</span></legend>
+                <div> 		            <p class="clear_bloc msg_info">Bientôt tu pourras retrouver facilement tes amis sur Doyouevents en saisissant leur email, nom ou prénom. Pour les aider à te retrouver, choisis « oui » ou « non » en bas du formulaire et n'oublie pas de compléter tes informations</p>
+                    <script type="text/javascript">
+                        // <![CDATA[
+        
+                        // Alerting sur la recherche au cas o� certains champs ne seraient pas remplis
+                        var message = document.getElementById("messageRecherche");
+                        function showSearchAlert(isChecked)
+                        {
+                            var elm0 = document.getElementById("prenom"), elm1 = document.getElementById("nom");                
+                            if(!elm0 || !elm1 || !message)
                             {
-                                var elm0 = document.getElementById("prenom"), elm1 = document.getElementById("nom");
-                                if(!elm0 || !elm1 || !message)
-                                {
-                                    return false;
-                                }
-                                message.style.display = (isChecked && (elm0.value == '' || elm1.value == '')) ? "block" : "none";
-                            }
+                                return false;
+                            }        
+                            message.style.display = (isChecked && (elm0.value == '' || elm1.value == '')) ? "block" : "none";
+                        }
+        
+                        //]]>
+                    </script>
 
-                            //]]>
-                        </script>
+
+
+                    <!-- Email -->
+                    <div class="clear_bloc info">
+                        <label class="col_third floatleft" for="email"><span class="required">Email<sup>*</sup> :</span></label>
+                        <input type="text" id="email" name="email" class="text" value="florian.guitoger@gmail.com" />
+
+                        <p class="clear_bloc infobulle msg_info msg_info_simple" id="infobulle_email">
+                            Cette information nous sert à te renvoyer ton mot de passe en cas d'oubli. Elle n'est pas affichée sur le site.                </p>                            
+
+
                     </div>
 
-
-
                     <!-- Sexe -->
-                    <div class="info">
-                        <span class="col_third_floatleft"><span class="required">Tu es<sup>*</sup> : </span></span>
+                    <div class="in
+                         fo">
+                        <span class="col_third floatleft"><span class="required">Tu es<sup>*</sup>: </span></span>
                         <span class="radio-checkbox">
-                            <input type="radio" id="femme" name="genre" class="radio" value="0" /> <label for="female" class="radio">Une femme</label>
+                            <input type="radio" id="femme" name="genre" class="radio" value="2" /> <label for="femme" class="radio">Une femme</label>
                         </span>
                         <span class="radio-checkbox">
-                            <input type="radio" id="homme" name="genre" class="radio" value="1" checked="checked"/> <label for="male" class="radio">Un homme</label>
+                            <input type="radio" id="homme" name="genre" class="radio" value="1" checked="checked"/> <label for="homme" class="radio">Un homme</label>
                         </span>
 
                         <p class="infobulle msg_info msg_info_simple" id="infobulle_gender">
-                            Ton sexe est une information privée, il ne sera pas affiché sur le site </p>
+                            Ton sexe est une information privée, il ne sera pas affiché sur le site                </p>
 
                     </div>
-                    <!-- Pseudo -->
+                      <!-- Pseudo -->
                     <div class=info>
                         <label for=pseudo class="col_third_floatleft">Pseudo<sup>*</sup> :</label>
                         <input type="text" id="pseudo" name="pseudo" class="text" value="guito-le-taureau-bourré-du-sud"/>
                     </div>
                     <!-- Prénom -->
                     <div class="info">
-                        <label for="prenom" class="col_third_floatleft">Prénom<sup>*</sup> :</label>
-                        <input type="text" id="prenom" name="prenom" class="text" value="florian" />
+                        <label for="Prenom" class="col_third floatleft">Prénom<sup>*</sup> :</label>
+                        <input type="text" id="Prenom" name="Prenom" class="text" value="florian" />
 
-                        <p class="infobulle msg_info msg_info_simple" id="infobulle_firstname">
-                            <strong>Aide tes amis à te retrouver</strong>, mets ton vrai prénom. </p>
+                        <p class="infobulle msg_info msg_info_simple" id="infobulle_prenom">
+                            <strong>Aide tes amis à te retrouver</strong>, mets ton vrai prénom.                </p>                            
 
                     </div>
 
                     <!-- Nom -->
                     <div class="info">
-                        <label for="nom" class="col_third_floatleft">Nom<sup>*</sup> :</label>
-                        <input type="text" id="nom" name="nom" class="text" value="guitoger" />
+                        <label for="Nom" class="col_third floatleft">Nom<sup>*</sup> :</label>
+                        <input type="text" id="Nom" name="Nom" class="text" value="guitoger" />
 
-                        <p class="infobulle msg_info msg_info_simple" id="infobulle_lastname">
-                            <strong>Aide tes amis à te retrouver</strong>, mets ton vrai nom. </p>
+                        <p class="infobulle msg_info msg_info_simple" id="infobulle_nom">
+                            <strong>Aide tes amis à te retrouver</strong>, mets ton vrai nom.                </p>
 
                     </div>
 
                     <!--Masquer Nom -->
                     <div class="info">
-                        <input type="checkbox" name="MasquerNom" id="MasquerNom" value="0" />
+                        <input type="checkbox" name="MasquerNom" id="MasquerNom" value="0"  />
                         <label for="MasquerNom"><strong>Masquer mon Nom</strong></label>
-                    </div>
-                    <br/>
-
+                    </div> 
                     <!-- Date de naissance -->
                     <div class="info">
-                        <label class="col_third_floatleft" for="dateDeNaissance" data-fieldgroup="date"><span class="required">Date de naissance<sup>*</sup> :</span></label>
+                        <label class="col_third floatleft" for="ann�e" data-fieldgroup="birth"><span class="required">Date de naissance<sup>*</sup> :</span></label>
                         <input type="text" id="anniversaire" name="anniversaire" maxlength="2" class="text day" value="19"/>
                         <select id="mois" name="mois" class="month select">
                             <option value="">-- mois --</option>
-                            <option value="1">Janvier</option>
-                            <option value="2">Février</option>
-                            <option value="3">Mars</option>
-                            <option value="4">Avril</option>
-                            <option value="5">Mai</option>
-                            <option value="6">Juin</option>
-                            <option value="7">Juillet</option>
+                            <option  value="1">Janvier</option>
+                            <option  value="2">Février</option>
+                            <option  value="3">Mars</option>
+                            <option  value="4">Avril</option>
+                            <option  value="5">Mai</option>
+                            <option  value="6">Juin</option>
+                            <option  value="7">Juillet</option>
                             <option selected="selected" value="8">Août</option>
-                            <option value="9">Septembre</option>
-                            <option value="10">Octobre</option>
-                            <option value="11">Novembre</option>
-                            <option value="12">Décembre</option>
+                            <option  value="9">Septembre</option>
+                            <option  value="10">Octobre</option>
+                            <option  value="11">Novembre</option>
+                            <option  value="12">Décembre</option>
                         </select>
-                        <input type="text" id="année" name="année" maxlength="4" class="text year" value="1992"/>
+                        <input type="text" id="ann�e" name="ann�e" maxlength="4" class="text year" value="1992"/>
 
                         <p class="infobulle msg_info msg_info_simple" id="infobulle_birth_group">
-                            Ta date de naissance ne sera pas affichée sur le site. En revanche, nous sommes obligés de te la demander pour des raisons légales. </p>
+                            Ta date de naissance ne sera pas affichée sur le site. En revanche, nous sommes obligés de te la demander pour des raisons légales.                </p>
 
                     </div>
 
-                    <!-- Lieu de naissance -->
-                    <div class=info>
-                        <label for=lieuDeNaissance class="col_third_floatleft">Lieu de Naissance<sup>*</sup> :</label>
-                        <input type="text" id="lieuDeNaissance" name="lieuDeNaissance" class="text" value="Paris"/>
-                    </div>
-                    <!-- Email -->
-                    <div class="clear_bloc info">
-                        <label class="col_third_floatleft" for="email"><span class="required">Email<sup>*</sup> :</span></label>
-                        <input type="text" id="email" name="email" class="text" value="florian.guitoger@gmail.com" />
-
-                        <p class="clear_bloc infobulle msg_info msg_info_simple" id="infobulle_email">
-                            Cette information nous sert à te renvoyer ton mot de passe en cas d'oubli. Elle n'est pas affichée sur le site. </p>
-
-                    </div>
-
-                    <!-- Profession -->
-                    <div class=info>
-                        <label for=profession class="col_third_floatleft">Profession :</label>
-                        <input type="text" id="profession" name="profession" class="text" value="Etudiant"/>
-                    </div>
                     <!-- Adresse -->
                     <div class="info">
-                        <label for="adresse" class="col_third_floatleft">Adresse postale<sup>*</sup> :</label>
+                        <label for="adresse" class="col_third floatleft">Adresse postale<sup>*</sup> :</label>
                         <input type="text" id="adresse" name="adresse" class="text" value="82,rue d&#039;australie" />
                     </div>
 
                     <!-- Masquer Adresse -->
                     <div class="info">
-                        <input type="checkbox" name="MasquerAdresse" id="MasquerAdresse" value="0" />
+                        <input type="checkbox" name="MasquerAdresse" id="MasquerAdresse" value="0"  />
                         <label for="MasquerAdresse"><strong>Masquer mon adresse</strong></label>
                     </div>
-                    <br/>
+
 
                     <!-- Code Postal -->
                     <div class="info">
-                        <label class="col_third_floatleft" for="pcode"><span class="required">Code postal<sup>*</sup> :</span></label>
+                        <label class="col_third floatleft" for="pcode"><span class="required">Code postal<sup>*</sup> :</span></label>
                         <input type="text" id="pcode" name="pcode" class="text" value="95500" />
 
                     </div>
 
                     <!-- Ville -->
                     <div class="info">
-                        <label for="ville" class="col_third_floatleft">Ville<sup>*</sup> :</label>
+                        <label for="ville" class="col_third floatleft">Ville<sup>*</sup> :</label>
                         <input type="text" id="ville" name="ville" class="text" value="gonesse" />
                     </div>
 
                     <!-- Pays -->
                     <div class="info">
-                        <label class="col_third_floatleft" for="pays"><span class="required">Pays<sup>*</sup> :</span></label>
-                        <select class="select" id="country" name="pays">
-                            <option value="AF">Afghanistan</option>
+                        <label class="col_third floatleft" for="Pays"><span class="required">Pays<sup>*</sup> :</span></label>
+                        <select class="select" id="country" name="country">
+                           <option value="AF">Afghanistan</option>
                             <option value="ZA">Afrique du Sud</option>
                             <option value="AX">Åland</option>
                             <option value="AL">Albanie</option>
@@ -429,6 +424,21 @@
 
                     <!-- Téléphone Fixe -->
                     <div class="info">
+                        <label for="telephone" class="col_third floatleft">T�l�phone fixe :</label>
+                        <input type="text" id="telephone" name="telephone" class="text" value="0123456987" />
+                    </div>
+
+                    <!-- T�l�phone Mobile -->
+                    <div class="info">
+                        <label for="mobilephone" class="col_third floatleft">Mobile<sup>*</sup> :</label>
+                        <input type="text" id="telephoneMobile" name="telephoneMobile" class="text" value="0612345789" />
+                        <p class="infobulle msg_info msg_info_simple" id="infobulle_mobilephone">
+                            Pour recevoir des infos publicitaires sur ton t�l�phone mobile tu dois saisir ici ton num�ro.                </p>
+
+                    </div>
+
+                   <!-- Téléphone Fixe -->
+                    <div class="info">
                         <label for="telephoneFixe" class="col_third_floatleft">Téléphone fixe :</label>
                         <input type="text" id="telephonefixe" name="telephonefixe" class="text" value="0123456987" />
                     </div>
@@ -485,96 +495,119 @@
                     </div>
                 </fieldset>
 
+                    <script type="text/javascript">
+                        // <![CDATA[
+
+                        // Accord�on configs
+                        $("#frm-accordion").accordion({
+                            clickable : 'fieldset > legend'
+                        });
+
+                        var current_ts = "1352193298";
+                        var formCompte = {}, formPassword = {};
+
+                        /* 
+                         * Gestion des Doyouevent
+                         */
+     
+                        // formulaire "Mes donn�es personnelles"
+                        formCompte = new DoyoueventForm(
+                        document.getElementById("personalData"),
+                        false,
+                        {
+                            email: {
+                                empty: "Tu n\'as pas saisi ton adresse email.",
+                                invalid: "Ton adresse email n\'est pas correcte."
+                            },
+                            gender: {
+                                invalid: "Ton sexe n\'est pas renseign�."
+                            },
+                            birth_group: {
+                                empty: "Ta date de naissance est invalide.",
+                                invalid: "Ta date de naissance est invalide.",
+                                tooYoung: "L\'inscription n\'est autoris�e qu\'aux 12 ans et plus!"
+                            },
+                            country: {
+                                empty: "Ton pays n\'est pas renseign�.",
+                                invalid: "Ton pays est invalide."
+                            },
+                            pcode: {
+                                empty: "Tu n\'as pas tap� ton code postal.",
+                                invalid: "Ton code postal est invalide."
+                            }
+                        }
+                    );        
+    
+    
+
+    
+                        // Gestion des infobulles
+                        if (formCompte && formCompte.container)
+                        {            
+                            formCompte.forEachElements(formCompte.container.getElementsByTagName("label"), function(elm, name, label) {
+                                oInfo = new DoyoueventInfobulle(elm, name);
+                            });        
+                        }
+                        if (formPassword && formPassword.container)
+                        {            
+                            formPassword.forEachElements(formPassword.container.getElementsByTagName("label"), function(elm, name, label) {
+                                oInfo = new DoyoueventInfobulle(elm, name);
+                            });
+                        }	
 
 
-                <fieldset id="Modificationmdp" class="disabled">
-                    <legend class="h2"><span>Changer mon mot de passe</span></legend>
-                    <div> <p class="clear_bloc msg_info">Ne remplis les trois champs ci-dessous que si tu souhaites changer de mot de passe.</p>
+                        formSubscribe = new DoyoueventForm(
+                        document.getElementById("changepseudo"),
+                        false,
+                        {
+                            pseudo: {
+                                empty: "Tu n\'as pas saisi ton pseudo.",
+                                empty_typing: "",
+                                taken: {
+                                    "default": "Ce pseudo est d�j� pris.",
+                                    "suggestion": "<strong>Ce pseudo est d�j� pris.</strong><br />Tu peux en choisir un autre ou utiliser un de ces pseudos :<br /><span class='list'></span>"
+                                },
+                                invalid: {
+                                    "default": "Ce pseudo est invalide.",
+                                    "suggestion": "<strong>Ce pseudo est invalide.</strong><br />Tu peux en choisir un autre ou utiliser un de ces pseudos :<br /><span class='list'></span>"
+                                },
+                                free: "Ce pseudo est <strong>disponible<\/strong>."
+                            }
+                        },
+                        ['pseudo']
+                    );
 
-                        <!-- Ancien: Mot de passe -->
-                        <div class="clear_bloc row">
-                            <label class="col_third_floatleft" for="ancienMdp"><span class="required">Ancien mot de passe<sup>*</sup> :</span></label>
-                            <input autocomplete="off" type="password" id="ancienMdp" name="ancienMdp" class="text" value="" />
+                        pseudoInfo = new DoyoueventInfobulle(document.getElementById("pseudo"), "pseudo");
 
-                            <p class="infobulle msg_info msg_info_simple" id="infobulle_oldpassword">
-                                Saisis ton ancien mot de passe pour pouvoir le modifier. </p>
+	
+                        $('#jsResetPseudo').click(function () {
+                            $('#jsSubmitLock').removeClass("hide");
+                        })
+    
+                        //]]>	
 
-                        </div>
+                    </script>
 
-                        <!-- Nouveau: Mot de passe -->
-                        <div class="row">
-                            <label class="col_third_floatleft" for="nouveauMdp"><strong class="required">Nouveau mot de passe<sup>*</sup> :</strong></label>
-                            <input autocomplete="off" type="password" id="nouveauMdp" name="nouveauMdp" class="text" value="" />
+                    <script>
+                        var start = 'Bonjour ', name, end = ' !', result;
+                        name = prompt('Quel est votre Pr�nom?');
+                        result = start + name + end;
+                        alert(result);
 
-                            <p class="infobulle msg_info msg_info_simple" id="infobulle_nouveauMdp">
-                                Ton mot de passe doit contenir de 6 à 16 caractères et ne doit pas comporter d'espace. </p>
-                        </div>
+                        //var modification
 
-                        <!-- Nouveau: Mot de passe Confirmation -->
-                        <div class="row">
-                            <label class="col_third_floatleft" for="Mdpconfimer"><span class="required">Vérifier le nouveau mot de passe<sup>*</sup> :</span></label>
-                            <input autocomplete="off" type="password" id="Mdpconfime" name="Mdpconfimer" class="text" value="" />
+                        function modification() {
+                            if (confirm('Voulez vous enregistrer vos modifications, cliquez sur "OK" si c\'est le cas.')) {
+                                alert('Les modifications ont �t� enregistr�s.');
+                                myForm = document.getElementById("personalData");
+                                myForm .submit();
 
-                            <p class="infobulle msg_info msg_info_simple" id="infobulle_Mdpconfime">
-                                Saisis à nouveau ton mot de passe pour le confirmer. </p>
+                            }
+                            else {
+                                alert("Aucune modification a �t� enregistr�.");
+                            }
+              
 
-                        </div>
-                    </div>
-
-
-
-                    <div class="info">
-                        <input type="button" onClick="modification_1()" value="Envoyer">
-                        <input type="reset" value="Effacer">
-                    </div>
-
-
-                </fieldset>
-
-                <br/>
-            </form>
-        </div>
-        <script>
-
-            sfHover = function() {
-                var sfEls = document.getElementById("sidebar-accordion").getElementsByTagName("li");
-                for (var i=0; i<sfEls.length; i++) {
-                    sfEls[i].onmouseover=function() {
-                        this.className+=" sfhover";
-                    }
-                    sfEls[i].onmouseout=function() {
-                        this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
-                    }
-                }
-            }
-            if (window.attachEvent) window.attachEvent("onload", sfHover);
-
-            //var modification
-
-            function modification() {
-                if (confirm('Voulez vous enregistrer vos modifications, cliquez sur "OK" si c\'est le cas.')) {
-                    alert('Les modifications ont été enregistrés.');
-                    myForm = document.getElementById("personalData");
-                    myForm .submit();
-
-                }
-                else {
-                    alert("Aucune modification a été enregistré.");
-                }
-            }
-            //var modification_1
-
-            function modification_1() {
-                if (confirm('Voulez vous enregistrer vos modifications, cliquez sur "OK" si c\'est le cas.')) {
-                    alert('Les modifications ont été enregistrés.');
-                    myForm = document.getElementById("personalData");
-                    myForm .submit();
-
-                }
-                else {
-                    alert("Aucune modification a été enregistré.");
-                }
-            }
-        </script>
-    </body>
-</html>
+                    </script>
+                    </body>
+                    </html>

@@ -1,6 +1,6 @@
 #description {
     padding: 50px;
-    width : 67%;
+    width : 76%;
     height : 1200px;
     position: absolute;
     right : 50px;
@@ -13,7 +13,7 @@
 fieldset{
     background: whitesmoke;
 }
-#nom {
+#nom4 {
     position: absolute;
     font-size: 50px;
     font-weight: bold;
@@ -27,9 +27,9 @@ fieldset{
     left: 300px;
     top : 130px;        
 }
-#menu {
+.menu {
     position: absolute;
-    width: 67%;
+    width: 76%;
     height: 930px;
     right: 97px;
     top: 620px;
@@ -41,7 +41,7 @@ fieldset{
 ul#simple-menu
 {
     list-style-type:none;
-    width:67%;
+    width:76%;
     position:relative;
     height:40px;
     font-family:"Trebuchet MS",Arial,sans-serif;
