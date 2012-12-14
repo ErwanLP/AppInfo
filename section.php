@@ -10,10 +10,16 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', 'root');
             <img class ="photonew" src ="img/new.jpg"/>
         </div>
 
-
         <?php
         if (!isset($_SESSION['ID'])) {
             include("connexion.php");
+        }
+        if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
+            ?>
+            <div class="positionBouton">
+                <a href="creationEvenement.php"><img src ="img/ampouleCreerEvenement.png"/></a>
+            </div>
+            <?php
         }
         ?>
 
@@ -23,33 +29,22 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', 'root');
         <?php include ("arbre.php"); ?>
     </aside>
 
-    <?php if ($_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
-        ?>
-        <aside class ="EventsButton">
-            <a href="creationEvenement.php"> <img src="img/EventsButton.png" alt= "nom de ton image"> </a>        
-        </aside>
-
-
-        <?php
-    }
-    ?>
-
     <aside class ="toporg">
         <div class="titreToporg">
-        <p> Top Organisateur:</p>
- 
+            <p> Top Organisateur:</p>
+
         </div><br/>
-            1 - COMEXPOSIUM <br/>
-            2 - FeteInfo <br/>
-            3 - Kompass <br/>
-            4 - Night-Fever-Animation <br/>
-            5 - JeffNight <br/>
-            6 - Initial-Isefac <br/>
-            7 - FlunchJobs <br/>
-            8 - SCOexpo <br/>
-            9 - Animafac <br/>
-            10 - France Festivals <br/>
-       
+        1 - COMEXPOSIUM <br/>
+        2 - FeteInfo <br/>
+        3 - Kompass <br/>
+        4 - Night-Fever-Animation <br/>
+        5 - JeffNight <br/>
+        6 - Initial-Isefac <br/>
+        7 - FlunchJobs <br/>
+        8 - SCOexpo <br/>
+        9 - Animafac <br/>
+        10 - France Festivals <br/>
+
     </aside>
 
     <article>
@@ -58,7 +53,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', 'root');
             <?php
             $result = $bdd->query('SELECT nom,note,photo FROM event ORDER BY note DESC LIMIT 0 , 12');
             $compte = 1;
-            ?><br/><br><br/><img src="img/TitreTopEvent.png"/> <br/><img src ="img/barre.jpg"/><br/><br/> <br/><?php
+            ?><br/><br><br/><img src="img/TitreTopEventv1.1.png"/> <br/><img src ="img/SousTopEventv1.1.png"/><br/><br/> <br/><?php
             $resultat = array();
             $i = 0;
             while ($data = $result->fetch()) {

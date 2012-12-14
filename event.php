@@ -21,9 +21,20 @@
                 <div class ="eventNew">
                     <img class ="photonew" src ="img/new.jpg"/>
                 </div>
-                
-                 <?php include("connexion.php"); ?>
-                
+
+                <?php
+                if (!isset($_SESSION['ID'])) {
+                    include("connexion.php");
+                }
+                if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
+                    ?>
+                    <div class="positionBouton">
+                        <a href="creationEvenement.php"><img src ="img/BoutonCreerEvent.png"/></a>
+                    </div>
+                    <?php
+                }
+                ?>
+
             </aside>
 
             <article class ="articleevent">                  

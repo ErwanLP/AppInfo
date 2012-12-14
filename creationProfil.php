@@ -13,8 +13,22 @@
         <section>
             <aside class ="new">
                 <div class ="eventNew">
-
+                    <img class ="photonew" src ="img/new.jpg"/>
                 </div>
+
+                <?php
+                if (!isset($_SESSION['ID'])) {
+                    include("connexion.php");
+                }
+                if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
+                    ?>
+                    <div class="positionBouton">
+                        <a href="creationEvenement.php"><img src ="img/BoutonCreerEvent.png"/></a>
+                    </div>
+                    <?php
+                }
+                ?>
+
             </aside>
             <aside class ="navg">
                 <?php include ("arbre.php"); ?>
