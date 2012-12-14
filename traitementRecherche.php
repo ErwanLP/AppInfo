@@ -54,11 +54,11 @@ $result = $bdd->query('SELECT * FROM event ' . $requete);
 
 
 <html>
-<?php include("head.php"); ?>
+    <?php include("head.php"); ?>
 
     <body>
 
-<?php session_start(); ?>
+        <?php session_start(); ?>
 
         <?php include("header.php"); ?>
 
@@ -68,25 +68,37 @@ $result = $bdd->query('SELECT * FROM event ' . $requete);
 
         <section>
             <aside class ="navg">
-<?php include ("arbre.php"); ?>
+                <?php include ("arbre.php"); ?>
             </aside>
 
             <aside class ="new">
-       
                 <div class ="eventNew">
-         <img class ="photonew" src ="img/new.jpg"/>
+                    <img class ="photonew" src ="img/new.jpg"/>
                 </div>
+
+                <?php
+                if (!isset($_SESSION['ID'])) {
+                    include("connexion.php");
+                }
+                if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
+                    ?>
+                    <div class="positionBouton">
+                        <a href="creationEvenement.php"><img src ="img/BoutonCreerEvent.png"/></a>
+                    </div>
+                    <?php
+                }
+                ?>
             </aside>
 
             <article class ="articleevent">                  
-<?php
-while ($data = $result->fetch()) {
+                <?php
+                while ($data = $result->fetch()) {
 
-    include('articleevent.php');
-}
+                    include('articleevent.php');
+                }
 
-$result->closeCursor();
-?>
+                $result->closeCursor();
+                ?>
 
 
 
@@ -95,7 +107,7 @@ $result->closeCursor();
         </section>
 
 
-<?php include("footer.php"); ?>
+        <?php include("footer.php"); ?>
 
 
 

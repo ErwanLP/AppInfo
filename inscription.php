@@ -15,9 +15,9 @@
                     <img class ="photonew" src ="img/new.jpg"/>
                 </div>
 
-                <?php 
-                if(isset($_SESSION['ID'])){
-                include("connexion.php"); 
+                <?php
+                if (!isset($_SESSION['ID'])) {
+                    include("connexion.php");
                 }
                 ?>
 
@@ -30,66 +30,47 @@
                 </div>
 
 
-                <form class="aa" action="toto.php" method="post" >
-
-                    <fieldset class="ab">
-                        <legend class="ac"> A propos des CSS : </legend>
-                        <p>Savez-vous ce que veut dire CSS ? : </p>
-                        <input type="radio" name="CSS" value="oui" id="oui"
-                               checked="checked" />
-                        <label class="ad" for="oui" class="inline">oui</label>
-                        <input type="radio" name="CSS" value="non" id="non" />
-                        <label class="ad" for="non" class="inline">non</label>
-
-                        <label class="ad" for="utilise">Si oui, les utilisez-vous plutôt : </label>
-                        <select name="utilise" id="utilise">
-                            <option value="toujours"> toujours</option>
-                            <option value="parfois"> parfois</option>
-                            <option value="jamais"> jamais</option>
-                        </select>
+                <form class="contenuInscription" action="traitementInscription.php" method="post" >
+                    <fieldset class="fieldset">
+                        <legend class="titreInscription"><p style="text-align:center;"> Inscription </p></legend>
+                        <p> <span>*</span> Nom de compte : </p>
+                        <input type="text" size="20" name="nomDeCompte" maxlength="40" id="nomDeCompte" autofocus required />
+                        <p> <span>*</span> Votre mot de passe : </p>
+                        <input type="password" size="20" name="mdp" maxlength="40" id="mdp" required />
+                        <p> <span>*</span> Confirmer mot de passe : </p>
+                        <input type="password" size="20" name="mdp2" maxlength="40" id="mdp2" required />
+                        <p> <span>*</span> Votre adresse email : </p>
+                        <input type="email" size="20" name="mailCompte" placeholder="exemple@operateur.com" maxlength="40" id="mailCompte" required />
+                        <p>
+                            <input type="submit" value="Envoyer" />
+                            <input type="reset" value="Effacer" />
+                        </p>
                     </fieldset>
-
-                    <fieldset class="ab">
-                        <legend class="ac">Vos coordonnées :</legend>
-                        <label class="ad" for="email">Votre email :</label>
-                        <input type="text" name="email" size="20" 
-                               maxlength="40" value="email" id="email" />
-
-                        <label class="ad" for="comments">Vos commentaires :</label>
-                        <textarea name="comments" id="comments" cols="20" rows="4">
-                        </textarea>
-                    </fieldset>
-
-                    <p>
-                        <input type="submit" value="Envoyer" />
-                        <input type="reset" value="Annuler" />
-                    </p>
-
                 </form>
 
-               <!-- <div class="page">
-
-                    <form class="inscr" method="post" action="traitementInscription.php">                       
-                        <pre>
-                          <h1>Inscrivez-vous !</h1>
-                          <label for ="nomDeCompte"><span>Nom de compte:</span></label>
-                          <input style="alignment-baseline: before-edge;" type="text" name="nomDeCompte" id="nomDeCompte"  size="30" maxlength="15" autofocus required/><br/>
-  
-                          <label for="mdp"><span>Votre mot de passe :</span></label>
-                          <input type="password" name="mdp" id="mdp" size="30" required/><br/>
-  
-                          <label for="mdp2"><span>Confirmer mot de passe :</span></label>
-                          <input type="password" name="mdp2" id="mdp2" size="30" required/><br/>
-  
-                          <label for="mailCompte"><span>Votre email :</span></label>
-                          <input type="email" name="mailCompte" placeholder="exemple@operateur.com" id="mailCompte" size="30"  required/><br/>
-  
-                          <input style="position:relative;left:50px;" type="submit" value="Envoyer" />
-                        </pre>
-
-                    </form>
-
-                </div>-->
+                <!-- <div class="page">
+ 
+                     <form class="inscr" method="post" action="traitementInscription.php">                       
+                         <pre>
+                           <h1>Inscrivez-vous !</h1>
+                           <label for ="nomDeCompte"><span>Nom de compte:</span></label>
+                           <input style="alignment-baseline: before-edge;" type="text" name="nomDeCompte" id="nomDeCompte"  size="30" maxlength="15" autofocus required/><br/>
+   
+                           <label for="mdp"><span>Votre mot de passe :</span></label>
+                           <input type="password" name="mdp" id="mdp" size="30" required/><br/>
+   
+                           <label for="mdp2"><span>Confirmer mot de passe :</span></label>
+                           <input type="password" name="mdp2" id="mdp2" size="30" required/><br/>
+   
+                           <label for="mailCompte"><span>Votre email :</span></label>
+                           <input type="email" name="mailCompte" placeholder="exemple@operateur.com" id="mailCompte" size="30"  required/><br/>
+   
+                           <input style="position:relative;left:50px;" type="submit" value="Envoyer" />
+                         </pre>
+ 
+                     </form>
+ 
+                 </div>-->
 
             </article>
         </section>
