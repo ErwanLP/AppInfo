@@ -90,11 +90,11 @@
             </li>
             <li class="sousMenuBascule"><span>Forum</span>
                 <ul class="sousMenu">
-                    <li><a href="forumMan/index.php" title="Aller à la page Acceuil">Acceuil</a></li>
-                    <li><a href="forumMan/discutionGenerale.php" title="Aller à la page Discution Générale">Discution g&eacute;n&eacute;rale</a></li>
-                    <li><a href="forumMan/event.php" title="Aller à la page Evénement">&Eacute;v&eacute;nement</a></li>
-                    <li><a href="forumMan/organisateur.php" title="Aller à la page Organisateur">Organisateur</a></li>
-                    <li><a href="forumMan/aideEtSupport.php" title="Aller à la page Aide et Support">Aide et Support</a></li>
+                    <li><a href="indexForum.php" title="Aller à la page Acceuil">Acceuil</a></li>
+                    <li><a href="discutionGenerale.php" title="Aller à la page Discution Générale">Discution g&eacute;n&eacute;rale</a></li>
+                    <li><a href="eventForum.php" title="Aller à la page Evénement">&Eacute;v&eacute;nement</a></li>
+                    <li><a href="organisateur.php" title="Aller à la page Organisateur">Organisateur</a></li>
+                    <li><a href="aideEtSupport.php" title="Aller à la page Aide et Support">Aide et Support</a></li>
                 </ul>
             </li>
         </ul>
