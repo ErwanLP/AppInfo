@@ -19,7 +19,7 @@
                                          <li><a href="MesAmisMaquer.php" title="Amis masqués" onclick="window.open(this.href); return false;"><img src="img/boutonAmisMasqués.png" /></a></li>
                                       </ul>
                            
-                            <li><a class="menu-accordion" href="Live.php" title="Live" onclick="window.open(this.href); return false;"><img src="img/boutonLivesArr.png" />Live</a></li>
+                            <li><a class="menu-accordion" href="Live.php" title="Live" onclick="window.open(this.href); return false;"><img src="img/boutonLivesArr.png" /></a></li>
                 </ul>
 </div>
 <script type="text/javascript">

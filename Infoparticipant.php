@@ -11,15 +11,15 @@
             <ul id="sidebar-accordion" class="menu-sidebar-left phylac-top-left box-gradient">
                 <li ><a class="menu-accordion" href="Mesinfosperso.html" title="Mon compte" onclick="window.open(this.href); return false;"><img src="img/boutonMonCompteDroit.png" /></a>
                     <ul class="active">
-                        <li ><a href="Mesinfosperso.html" title="Mes infos persos" onclick="window.open(this.href); return false;"><img src="img/boutonMesInfosPerso.png" /></a></li>
+                        <li ><a href="Infoparticiapnt.php" title="Mes infos persos" onclick="window.open(this.href); return false;"><img src="img/boutonMesInfosPerso.png" /></a></li>
                         <li ><a href="#Modificationmdp" title="Modification du mot de passe" onclick="window.open(this.href); return false;"><img src="img/boutonModificationMDP.png" /></a></li>
                     </ul>
                 </li>
-                <li><a class="menu-accordion" href="parametreprofil.html" title="Mon profil" onclick="window.open(this.href); return false;"><img src="img/boutonMonProfilArr.png" /></a></li>
-                <li><a class="menu-accordion" href="Mes_amis.html" title="Mes amis" onclick="window.open(this.href); return false;"><img src="img/boutonMesAmisArr.png" /></a></li>
+                <li><a class="menu-accordion" href="parametreprofil.php" title="Mon profil" onclick="window.open(this.href); return false;"><img src="img/boutonMonProfilArr.png" /></a></li>
+                <li><a class="menu-accordion" href="Mes_amis.php" title="Mes amis" onclick="window.open(this.href); return false;"><img src="img/boutonMesAmisArr.png" /></a></li>
                 <li><a class="menu-accordion" href="Mesmessages.html" title="Ma messagerie" onclick="window.open(this.href); return false;"><img src="img/boutonModificationMDP.png" /></a></li>
                 <li><a class="menu-accordion" href="Mesalertes.html" title="Alertes" onclick="window.open(this.href); return false;"><img src="img/boutonModificationMDP.png" /></a></li>
-                <li><a class="menu-accordion" href="Live.html" title="Live" onclick="window.open(this.href); return false;"><img src="img/boutonLivesDroit.png" /></a></li>
+                <li><a class="menu-accordion" href="Live.php" title="Live" onclick="window.open(this.href); return false;"><img src="img/boutonLivesDroit.png" /></a></li>
             </ul>
         </div>
         <div class="floatright-main">

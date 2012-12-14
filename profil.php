@@ -37,7 +37,7 @@
                     <li><a href="coordonnee.php" title="Coordonnées">Mes Infos</a></li>                
                     <li><a href="amis.php" title="Mes Amis">Mes Amis</a></li>
                     <li><a href="mesEvents.php" title="Mes Evénements">Mes Evénements</a></li>
-                    <li><a href="Infoparticipant.php" title="Paramètres">Paramètres</a></li>
+                    <li><a href="test1.php" title="Paramètres">Paramètres</a></li>
                 </ul>
             </div>
         </section>
