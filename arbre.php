@@ -90,11 +90,19 @@
             </li>
             <li class="sousMenuBascule"><span>Forum</span>
                 <ul class="sousMenu">
+<<<<<<< HEAD
+                    <li><a href="indexForum.php" title="Aller à la page Acceuil">Acceuil</a></li>
+                    <li><a href="discutionGenerale.php" title="Aller à la page Discution Générale">Discution g&eacute;n&eacute;rale</a></li>
+                    <li><a href="eventForum.php" title="Aller à la page Evénement">&Eacute;v&eacute;nement</a></li>
+                    <li><a href="organisateur.php" title="Aller à la page Organisateur">Organisateur</a></li>
+                    <li><a href="aideEtSupport.php" title="Aller à la page Aide et Support">Aide et Support</a></li>
+=======
                     <li><a href="#" title="Aller à la page Acceuil">Accueil</a></li>
                     <li><a href="#" title="Aller à la page Discution Générale">Discution g&eacute;n&eacute;rale</a></li>
                     <li><a href="#" title="Aller à la page Evénement">&Eacute;v&eacute;nement</a></li>
                     <li><a href="#" title="Aller à la page Organisateur">Organisateur</a></li>
                     <li><a href="#" title="Aller à la page Aide et Support">Aide et Support</a></li>
+>>>>>>> branch 'master' of https://github.com/ErwanLP/AppInfo.git
                 </ul>
             </li>
         </ul>

@@ -1,9 +1,33 @@
 <?php
-$titre='souhait';
+session_start();
+$titre = 'souhait';
 include('start.php');
 include('bddForum.php');
 ?>
+<?php /* include("head.php"); */ ?>
 <body>
+
+
+    <?php
+    /* empty
+     * header('Location:http://une.url.fr');
+     */
+    include("header.php");
+
+    include("nav.php");
+    ?>
+    
+        <section>
+     <aside class ="new">
+        <div class ="eventNew">
+            <img class ="photonew" src ="img/new.jpg"/>
+
+        </div>
+    </aside>
+
+    <aside class ="navg">
+        <?php include ("arbre.php"); ?>
+    </aside>
 <a href="ajouterSujet.php"><img src="includes/images/boutonNewTopic.png" class="boutonNewTopic" alt="ajouter un sujet" title="noveauTopic" /></a>
 <br/>
 
@@ -19,7 +43,7 @@ $tab_info_souhait[$var_tab_info_array][2]=$donnees["date_creation"];
 $var_tab_info_array++;
 }
 ?> 
-<table>
+<table class="pposition">
         <tr>
             <th colspan="4" class="souhait">Souhait</th>
         </tr>
@@ -44,6 +68,6 @@ $var_tab_info_array++;
         
 </table>
 
-
+    <?php include('footer.php');?>
  </body>
 </html>

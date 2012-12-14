@@ -1,9 +1,33 @@
 <?php
-$titre='taverne';
+session_start();
+$titre = 'taverne';
 include('start.php');
 include('bddForum.php');
 ?>
+<?php /* include("head.php"); */ ?>
 <body>
+
+
+    <?php
+    /* empty
+     * header('Location:http://une.url.fr');
+     */
+    include("header.php");
+
+    include("nav.php");
+    ?>
+    
+        <section>
+     <aside class ="new">
+        <div class ="eventNew">
+            <img class ="photonew" src ="img/new.jpg"/>
+
+        </div>
+    </aside>
+
+    <aside class ="navg">
+        <?php include ("arbre.php"); ?>
+    </aside>
     <table>
         <tr>
             <th colspan="4">Taverne</th>
@@ -21,7 +45,7 @@ include('bddForum.php');
             <td>on ne vous aime pas</td>
         </tr>
 </table>
-        
-<?php include('../footer.php');?>
+        </section>       
+<?php include('footer.php');?>
 </body>
 </html>
