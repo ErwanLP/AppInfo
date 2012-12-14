@@ -6,30 +6,28 @@
         <link rel="stylesheet" href="test2.css">
     </head>
     <body>
-        <div class="sidebar-left-floatleft">
+        <div class="menuParametres">
             <h1>Configurer</h1>
-            <ul id="sidebar-accordion" class="menu-sidebar-left phylac-top-left box-gradient">
-                <li ><a class="menu-accordion" href="Mesinfosperso.html" title="Mon compte" onclick="window.open(this.href); return false;"><img src="img/boutonMonCompteDroit.png" /></a>
+            <ul id="menuParametre">
+                <li ><a class="menuParametre" href="Infoparticipant.php" title="Mon compte" ><img src="img/boutonMonCompteDroit.png" /></a>
                     <ul class="active">
-                        <li ><a href="Infoparticiapnt.php" title="Mes infos persos" onclick="window.open(this.href); return false;"><img src="img/boutonMesInfosPerso.png" /></a></li>
-                        <li ><a href="#Modificationmdp" title="Modification du mot de passe" onclick="window.open(this.href); return false;"><img src="img/boutonModificationMDP.png" /></a></li>
+                        <li ><a href="Infoparticipant.php" title="Mes infos persos" ><img src="img/boutonMesInfosPerso.png" /></a></li>
+                        <li ><a href="#Modificationmdp" title="Modification du mot de passe"><img src="img/boutonModificationMDP.png" /></a></li>
                     </ul>
                 </li>
-                <li><a class="menu-accordion" href="parametreprofil.php" title="Mon profil" onclick="window.open(this.href); return false;"><img src="img/boutonMonProfilArr.png" /></a></li>
-                <li><a class="menu-accordion" href="Mes_amis.php" title="Mes amis" onclick="window.open(this.href); return false;"><img src="img/boutonMesAmisArr.png" /></a></li>
-                <li><a class="menu-accordion" href="Mesmessages.html" title="Ma messagerie" onclick="window.open(this.href); return false;"><img src="img/boutonModificationMDP.png" /></a></li>
-                <li><a class="menu-accordion" href="Mesalertes.html" title="Alertes" onclick="window.open(this.href); return false;"><img src="img/boutonModificationMDP.png" /></a></li>
-                <li><a class="menu-accordion" href="Live.php" title="Live" onclick="window.open(this.href); return false;"><img src="img/boutonLivesDroit.png" /></a></li>
+                <li><a class="menuParametre" href="parametreprofil.php" title="Mon profil" ><img src="img/boutonMonProfilArr.png" /></a></li>
+                <li><a class="menuParametre" href="Mes_amis.php" title="Mes amis"><img src="img/boutonMesAmisArr.png" /></a></li>
+                <li><a class="menuParametre" href="Live.php" title="Live" ><img src="img/boutonLivesDroit.png" /></a></li>
             </ul>
         </div>
-        <div class="floatright-main">
+        <div class="titreParametre">
             <h1>Mes infos persos</h1>
-            <form id="frm-accordion" method="post" action="inscription.php" id="gestioncompte">
+            <form  method="post" action="inscription.php" id="gestioncompte">
 
-                <fieldset id="personalData" class="rollin">
+                <fieldset id="infopersonnel" class="rollin">
                     <input type="hidden" id="bypass_email" name="bypass_email" value="0" />
 
-                    <legend class="h2"><span>Mes données personnelles</span></legend>
+                    <legend><span>Mes données personnelles</span></legend>
                     <div> <p class="clear_bloc msg_info">Bientôt tu pourras retrouver facilement tes amis sur Doyouevents en saisissant leur email, nom ou prénom. Pour les aider à te retrouver, choisis « oui » ou « non » en bas du formulaire et n'oublie pas de compléter tes informations</p>
                         <script type="text/javascript">
                             // <![CDATA[
@@ -54,7 +52,7 @@
 
                     <!-- Sexe -->
                     <div class="info">
-                        <span class="col_third_floatleft"><span class="required">Tu es<sup>*</sup> : </span></span>
+                        <span class="infoPerso"><span class="required">Tu es<sup>*</sup> : </span></span>
                         <span class="radio-checkbox">
                             <input type="radio" id="femme" name="genre" class="radio" value="0" /> <label for="female" class="radio">Une femme</label>
                         </span>
@@ -62,31 +60,31 @@
                             <input type="radio" id="homme" name="genre" class="radio" value="1" checked="checked"/> <label for="male" class="radio">Un homme</label>
                         </span>
 
-                        <p class="infobulle msg_info msg_info_simple" id="infobulle_gender">
+                        <p class="infobulle msg_info" id="infobulle_genre">
                             Ton sexe est une information privée, il ne sera pas affiché sur le site </p>
 
                     </div>
                     <!-- Pseudo -->
                     <div class=info>
-                        <label for=pseudo class="col_third_floatleft">Pseudo<sup>*</sup> :</label>
+                        <label for=pseudo class="infoPerso">Pseudo<sup>*</sup> :</label>
                         <input type="text" id="pseudo" name="pseudo" class="text" value="guito-le-taureau-bourré-du-sud"/>
                     </div>
                     <!-- Prénom -->
                     <div class="info">
-                        <label for="prenom" class="col_third_floatleft">Prénom<sup>*</sup> :</label>
+                        <label for="prenom" class="infoPerso">Prénom<sup>*</sup> :</label>
                         <input type="text" id="prenom" name="prenom" class="text" value="florian" />
 
-                        <p class="infobulle msg_info msg_info_simple" id="infobulle_firstname">
+                        <p class="infobulle msg_info" id="infobulle_prenom">
                             <strong>Aide tes amis à te retrouver</strong>, mets ton vrai prénom. </p>
 
                     </div>
 
                     <!-- Nom -->
                     <div class="info">
-                        <label for="nom" class="col_third_floatleft">Nom<sup>*</sup> :</label>
+                        <label for="nom" class="infoPerso">Nom<sup>*</sup> :</label>
                         <input type="text" id="nom" name="nom" class="text" value="guitoger" />
 
-                        <p class="infobulle msg_info msg_info_simple" id="infobulle_lastname">
+                        <p class="infobulle msg_info" id="infobulle_nom">
                             <strong>Aide tes amis à te retrouver</strong>, mets ton vrai nom. </p>
 
                     </div>
@@ -100,9 +98,9 @@
 
                     <!-- Date de naissance -->
                     <div class="info">
-                        <label class="col_third_floatleft" for="dateDeNaissance" data-fieldgroup="date"><span class="required">Date de naissance<sup>*</sup> :</span></label>
-                        <input type="text" id="anniversaire" name="anniversaire" maxlength="2" class="text day" value="19"/>
-                        <select id="mois" name="mois" class="month select">
+                        <label class="infoPerso" for="dateDeNaissance" data-fieldgroup="date"><span class="required">Date de naissance<sup>*</sup> :</span></label>
+                        <input type="text" id="anniversaire" name="anniversaire" maxlength="2" class="dateAnniv" value="19"/>
+                        <select id="mois" name="mois" class="choix mois">
                             <option value="">-- mois --</option>
                             <option value="1">Janvier</option>
                             <option value="2">Février</option>
@@ -117,36 +115,36 @@
                             <option value="11">Novembre</option>
                             <option value="12">Décembre</option>
                         </select>
-                        <input type="text" id="année" name="année" maxlength="4" class="text year" value="1992"/>
+                        <input type="text" id="année" name="année" maxlength="4" class="anneeAnniv" value="1992"/>
 
-                        <p class="infobulle msg_info msg_info_simple" id="infobulle_birth_group">
+                            <p class="infobulle msg_info" id="infobulle_annee">
                             Ta date de naissance ne sera pas affichée sur le site. En revanche, nous sommes obligés de te la demander pour des raisons légales. </p>
 
                     </div>
 
                     <!-- Lieu de naissance -->
                     <div class=info>
-                        <label for=lieuDeNaissance class="col_third_floatleft">Lieu de Naissance<sup>*</sup> :</label>
+                        <label class="infoPerso" for=lieuDeNaissance class="col_third_floatleft">Lieu de Naissance<sup>*</sup> :</label>
                         <input type="text" id="lieuDeNaissance" name="lieuDeNaissance" class="text" value="Paris"/>
                     </div>
                     <!-- Email -->
                     <div class="clear_bloc info">
-                        <label class="col_third_floatleft" for="email"><span class="required">Email<sup>*</sup> :</span></label>
+                        <label class="infoPerso" for="email"><span class="required">Email<sup>*</sup> :</span></label>
                         <input type="text" id="email" name="email" class="text" value="florian.guitoger@gmail.com" />
 
-                        <p class="clear_bloc infobulle msg_info msg_info_simple" id="infobulle_email">
+                        <p class="infobulle msg_info" id="infobulle_email">
                             Cette information nous sert à te renvoyer ton mot de passe en cas d'oubli. Elle n'est pas affichée sur le site. </p>
 
                     </div>
 
                     <!-- Profession -->
                     <div class=info>
-                        <label for=profession class="col_third_floatleft">Profession :</label>
+                        <label for=profession class="infoPerso">Profession :</label>
                         <input type="text" id="profession" name="profession" class="text" value="Etudiant"/>
                     </div>
                     <!-- Adresse -->
                     <div class="info">
-                        <label for="adresse" class="col_third_floatleft">Adresse postale<sup>*</sup> :</label>
+                        <label for="adresse" class="infoPerso">Adresse postale<sup>*</sup> :</label>
                         <input type="text" id="adresse" name="adresse" class="text" value="82,rue d&#039;australie" />
                     </div>
 
@@ -159,21 +157,21 @@
 
                     <!-- Code Postal -->
                     <div class="info">
-                        <label class="col_third_floatleft" for="pcode"><span class="required">Code postal<sup>*</sup> :</span></label>
+                        <label class="infoPerso" for="pcode"><span class="required">Code postal<sup>*</sup> :</span></label>
                         <input type="text" id="pcode" name="pcode" class="text" value="95500" />
 
                     </div>
 
                     <!-- Ville -->
                     <div class="info">
-                        <label for="ville" class="col_third_floatleft">Ville<sup>*</sup> :</label>
+                        <label for="ville" class="infoPerso">Ville<sup>*</sup> :</label>
                         <input type="text" id="ville" name="ville" class="text" value="gonesse" />
                     </div>
 
                     <!-- Pays -->
                     <div class="info">
-                        <label class="col_third_floatleft" for="pays"><span class="required">Pays<sup>*</sup> :</span></label>
-                        <select class="select" id="country" name="pays">
+                        <label class="infoPerso" for="pays"><span class="required">Pays<sup>*</sup> :</span></label>
+                        <select class="choix" id="country" name="pays">
                             <option value="AF">Afghanistan</option>
                             <option value="ZA">Afrique du Sud</option>
                             <option value="AX">Åland</option>
@@ -429,15 +427,15 @@
 
                     <!-- Téléphone Fixe -->
                     <div class="info">
-                        <label for="telephoneFixe" class="col_third_floatleft">Téléphone fixe :</label>
+                        <label for="telephoneFixe" class="infoPerso">Téléphone fixe :</label>
                         <input type="text" id="telephonefixe" name="telephonefixe" class="text" value="0123456987" />
                     </div>
 
                     <!-- Téléphone Mobile -->
                     <div class="info">
-                        <label for="NumeroPortable" class="col_third_floatleft">Mobile<sup>*</sup> :</label>
+                        <label for="NumeroPortable" class="infoPerso">Mobile<sup>*</sup> :</label>
                         <input type="text" id="NumeroPortable" name="NumeroPortable" class="text" value="0612345789" />
-                        <p class="infobulle msg_info msg_info_simple" id="infobulle_mobilephone">
+                        <p class="infobulle msg_info" id="infobulle_portable">
                             Pour recevoir des infos publicitaires sur ton téléphone mobile tu dois saisir ici ton numéro. </p>
 
                     </div>
@@ -450,31 +448,31 @@
                     <br/>
                     <!-- Langue -->
                     <div class="info">
-                        <label class="col_third_floatleft" for="langage"><span class="required">Version et langue<sup>*</sup> :</span></label>
-                        <select class="select" id="lang" name="locale">
+                        <label class="infoPerso" for="langage"><span class="required">Version et langue<sup>*</sup> :</span></label>
+                        <select class="choix" id="lang" name="locale">
                             <option selected="selected" value="fr_FR">France</option>
                             <option value="en_GB">International (anglais)</option>
 
                         </select>
-                        <p class="infobulle msg_info msg_info_simple" id="infobulle_locale">La langue qui sera utilisée sur l'ensemble des textes et contenu du site.</p>
+                        <p class="infobulle msg_info" id="infobulle_langue">La langue qui sera utilisée sur l'ensemble des textes et contenu du site.</p>
                     </div>
 
                     <!-- Site Web -->
                     <div class="info">
-                        <label for="siteWeb" class="col_third_floatleft">Site Web :</label>
+                        <label for="siteWeb" class="infoPerso">Site Web :</label>
                         <input type="text" name="siteWeb" id="siteWeb" class="text" value="www.florianguitogerlebourre.com" />
                     </div>
 
                     <!--loisirs/hobbies-->
                     <div class="info">
-                        <label class="col_third_floatleft" for="loisirs/hobbies"></span></label>
+                        <label class="infoPerso" for="loisirs/hobbies"></label>
                         <p>Loisirs/hobbies:</p><textarea name="loisirs/hobbies" cols=60 rows=15>
                         </textarea>
                     </div>
 
                     <!--Description-->
                     <div class="info">
-                        <label class="col_third_floatleft" for="description"></span></label>
+                        <label class="infoPerso" for="description"></label>
                         <p>Description:</p><textarea name="description" cols=60 rows=15>
                         </textarea>
                     </div>
@@ -489,33 +487,33 @@
 
                 <fieldset id="Modificationmdp" class="disabled">
                     <legend class="h2"><span>Changer mon mot de passe</span></legend>
-                    <div> <p class="clear_bloc msg_info">Ne remplis les trois champs ci-dessous que si tu souhaites changer de mot de passe.</p>
+                    <div> <p >Ne remplis les trois champs ci-dessous que si tu souhaites changer de mot de passe.</p>
 
                         <!-- Ancien: Mot de passe -->
-                        <div class="clear_bloc row">
-                            <label class="col_third_floatleft" for="ancienMdp"><span class="required">Ancien mot de passe<sup>*</sup> :</span></label>
+                        <div class="effacerMdp">
+                            <label class="infoPerso" for="ancienMdp"><span class="required">Ancien mot de passe<sup>*</sup> :</span></label>
                             <input autocomplete="off" type="password" id="ancienMdp" name="ancienMdp" class="text" value="" />
 
-                            <p class="infobulle msg_info msg_info_simple" id="infobulle_oldpassword">
+                            <p class="infobulle msg_info " id="infobulle_ancienMdp">
                                 Saisis ton ancien mot de passe pour pouvoir le modifier. </p>
 
                         </div>
 
                         <!-- Nouveau: Mot de passe -->
-                        <div class="row">
-                            <label class="col_third_floatleft" for="nouveauMdp"><strong class="required">Nouveau mot de passe<sup>*</sup> :</strong></label>
+                        <div class="mdp">
+                            <label class="infoPerso" for="nouveauMdp"><strong class="required">Nouveau mot de passe<sup>*</sup> :</strong></label>
                             <input autocomplete="off" type="password" id="nouveauMdp" name="nouveauMdp" class="text" value="" />
 
-                            <p class="infobulle msg_info msg_info_simple" id="infobulle_nouveauMdp">
+                            <p class="infobulle msg_info" id="infobulle_nouveauMdp">
                                 Ton mot de passe doit contenir de 6 à 16 caractères et ne doit pas comporter d'espace. </p>
                         </div>
 
                         <!-- Nouveau: Mot de passe Confirmation -->
-                        <div class="row">
-                            <label class="col_third_floatleft" for="Mdpconfimer"><span class="required">Vérifier le nouveau mot de passe<sup>*</sup> :</span></label>
+                        <div class="mdp">
+                            <label class="infoPerso" for="Mdpconfimer"><span class="required">Vérifier le nouveau mot de passe<sup>*</sup> :</span></label>
                             <input autocomplete="off" type="password" id="Mdpconfime" name="Mdpconfimer" class="text" value="" />
 
-                            <p class="infobulle msg_info msg_info_simple" id="infobulle_Mdpconfime">
+                            <p class="infobulle msg_info" id="infobulle_Mdpconfime">
                                 Saisis à nouveau ton mot de passe pour le confirmer. </p>
 
                         </div>
