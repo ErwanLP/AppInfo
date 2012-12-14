@@ -60,7 +60,7 @@
             $result->closeCursor();
             //print_r($resultat);
             ?>
-            <table>
+            <table style="margin-left : 100px;">
                 <tr>
                     <td rowspan="3"><?php echo '<img src= "' . $resultat[0]["photo"] . '" height="200" width="160"/>'; ?></td>
                     <td><?php echo $compte++ ?></td>
