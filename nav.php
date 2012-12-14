@@ -9,16 +9,15 @@
     </ul>
 </nav> -->
 
-
-<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" media="screen, print, handheld" type="text/css" href="index.css" />  
     </head>
     <body>
-        <div id="container">
+        <div class="container">
             <ul id="nav">
+                <li><a href="index.php">Accueil</a></li>
                 <li><a href ="event.php?onglet=spectacle">Spectacle</a>
                     <ul>
                         <li><a href="event.php?onglet=spectacle&sousOnglet=comedieMusicale" >Com&eacute;die Musicale</a></li>
@@ -84,53 +83,35 @@
                     </ul>
                 </li>
             </ul>
-            <form class = "container" method="post" action="traitementRecherche.php"> <!-- RECHERCHE  -->
+            <form method="post" action="traitementRecherche.php"> <!-- RECHERCHE  -->
                 <label class="rechercheSimple" for="recherche">Recherche :</label>
-                <input style="margin-left :10px;" type="search" name="recherche" id="recherche" size="30" maxlength="70" placeholder="Ex : 75006, bar, mairie de Paris">
-                <a  class="rechercheAvancee" href="rechercheAvancee.php?RA=on">Recherche Avancée</a>
+                <input style="margin-left :10px;" type="search" name="recherche" id="recherche" size="30" maxlength="70" placeholder="Ex : 75006, bar, mairie de Paris"><input style="margin-left:5px;" type="submit" value="Go"/>
+                <a  style="color:#ff6040;padding-left:10px;font-family: Verdana, Trebuchet MS, Arial, sans-serif;" href="rechercheAvancee.php?RA=on">Recherche Avancée</a>
             </form>
         </div>
 
-        <script type="text/javascript">
-            sfHover = function() {
-                var sfEls = document.getElementById("nav").getElementsByTagName("li");
-                for (var i=0; i<sfEls.length; i++) {
-                    sfEls[i].onmouseover=function() {
-                        this.className+=" sfhover";
-                    }
-                    sfEls[i].onmouseout=function() {
-                        this.className=this.className.replace(new RegExp(" sfhover\b"), "");
-                    }
+    <script type="text/javascript">
+        sfHover = function() {
+            var sfEls = document.getElementById("nav").getElementsByTagName("li");
+            for (var i=0; i<sfEls.length; i++) {
+                sfEls[i].onmouseover=function() {
+                    this.className+=" sfhover";
+                }
+                sfEls[i].onmouseout=function() {
+                    this.className=this.className.replace(new RegExp(" sfhover\b"), "");
                 }
             }
-            if (window.attachEvent) window.attachEvent("onload", sfHover);
-        </script>
-    </body>
+        }
+        if (window.attachEvent) window.attachEvent("onload", sfHover);
+    </script>
+    
+    <?php
+    if (!empty($_SESSION['ID'])) {
+        include("navConnect.php");
+    } else {
+        include("navNonConnect.php");
+    }
+    ?>
+    
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php
-if (!empty($_SESSION['ID'])) {
-    include("navConnect.php");
-} else {
-    include("navNonConnect.php");
-}
-?>      
