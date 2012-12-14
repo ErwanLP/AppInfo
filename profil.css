@@ -1,18 +1,19 @@
 #description {
     padding: 50px;
-    width : 67%;
+    width : 76%;
     height : 1200px;
     position: absolute;
     right : 50px;
     top : 300px;
     background-color: #ebe2d9;
     overflow : auto;
-    box-shadow: 0px 0px 10px black;    
+    box-shadow: 0px 0px 10px black; 
+    text-align: justify;
 }
 fieldset{
     background: whitesmoke;
 }
-#nom {
+#nom4 {
     position: absolute;
     font-size: 50px;
     font-weight: bold;
@@ -26,12 +27,13 @@ fieldset{
     left: 300px;
     top : 130px;        
 }
-#menu {
+.menu {
     position: absolute;
-    width: 67%;
+    width: 76%;
     height: 930px;
     right: 97px;
     top: 620px;
+    overflow : auto;
     background-color: whitesmoke;
     border: solid grey 1px;
 
@@ -39,7 +41,7 @@ fieldset{
 ul#simple-menu
 {
     list-style-type:none;
-    width:100%;
+    width:76%;
     position:relative;
     height:40px;
     font-family:"Trebuchet MS",Arial,sans-serif;
@@ -92,9 +94,9 @@ ul#simple-menu li a.current:hover
 #preference{
     position: absolute;
     padding: 20px;
-    width: 29%;
-    right: 140px;
-    top: 720px;
+    width: 38%;
+    right: 145px;
+    top: 1150px;
     font-size: 20px;
     text-align: justify;
 }
@@ -113,15 +115,16 @@ strong{
 #infoPerso{
     position: absolute;
     padding: 20px;
-    width: 29%;
-    right: 700px;
-    top: 720px;
+    width: 38%;
+    right: 775px;
+    top: 1150px;
     font-size: 20px;
+    text-align: justify;
 }
 #infoPro{
     position: absolute;
     padding: 20px;
-    width: 28%;
+    width: 30%;
     right: 150px;
     top: 700px;
     font-size: 20px;
@@ -129,15 +132,16 @@ strong{
 #amis{
     position: absolute;
     padding: 20px;
-    width: 60%;
+    width: 70%;
     right: 140px;
-    top: 700px;
-    font-size: 20px;  
+    top: 1100px;
+    font-size: 20px;    
+    text-align: justify;
 }
 #amis fieldset {
     margin: 10px;
 }
-img{
+#description img, #amis img{
     margin: 15px;
 }
 #nom1 {
