@@ -117,7 +117,7 @@ strong{
     padding: 20px;
     width: 38%;
     right: 775px;
-    top: 1150px;
+    top: 950px;
     font-size: 20px;
     text-align: justify;
 }
@@ -187,5 +187,11 @@ strong{
     top : 630px;        
 }
 
-
-
+#mesEvents{
+    position: absolute;
+    top: 1100px;
+    right: 140px;
+    overflow: auto;
+    width: 71%;
+    height: 849px;
+}
