@@ -1,10 +1,35 @@
 <?php
-$titre='ajouter un sujet';
+session_start();
+$titre = 'index du forum';
 include('start.php');
 include('bddForum.php');
 ?>
-
+<?php /* include("head.php"); */ ?>
 <body>
+
+
+    <?php
+    /* empty
+     * header('Location:http://une.url.fr');
+     */
+    include("header.php");
+
+    include("nav.php");
+    ?>
+    
+        <section>
+     <aside class ="new">
+        <div class ="eventNew">
+            <img class ="photonew" src ="img/new.jpg"/>
+
+        </div>
+    </aside>
+
+    <aside class ="navg">
+        <?php include ("arbre.php"); ?>
+    </aside>
+
+
 <?php
 if (!isset($_POST['titre']) && empty($_POST['titre'])) {
   ?>
@@ -66,6 +91,6 @@ else if ($i==0) {
 }
     }
 ?>
- <?php include('../footer.php');?>  
+ <?php include('footer.php');?>  
 </body>
 </html>

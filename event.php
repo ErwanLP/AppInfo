@@ -21,14 +21,25 @@
                 <div class ="eventNew">
                     <img class ="photonew" src ="img/new.jpg"/>
                 </div>
-                
-                 <?php include("connexion.php"); ?>
-                
+
+                <?php
+                if (!isset($_SESSION['ID'])) {
+                    include("connexion.php");
+                }
+                if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
+                    ?>
+                    <div class="positionBouton">
+                        <a href="creationEvenement.php"><img src ="img/BoutonCreerEvent.png"/></a>
+                    </div>
+                    <?php
+                }
+                ?>
+
             </aside>
 
             <article class ="articleevent">                  
                 <?php
-                $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
+$bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', 'root'); 
                 if (!isset($_GET['onglet'])) { //si ya rien
                     $result = $bdd->query('SELECT * FROM  event LIMIT 0 , 30');
                 }
@@ -39,7 +50,7 @@
 
                 if (isset($_GET['sousOnglet'])) { //si ya un sous onglet
                     $result = $bdd->query('SELECT  * FROM  event WHERE type =  "' . $_GET['sousOnglet'] . '"');
-                }
+            }
 
 
                 while ($data = $result->fetch()) {
@@ -54,9 +65,9 @@
                           </div>
 
 
-                    <?php
-                    // echo '<img class = "imageflottante" alt="Photo de évenement" src= "'.$data["photo"].'"/>' 
-                    ?>
+    <?php
+    // echo '<img class = "imageflottante" alt="Photo de évenement" src= "'.$data["photo"].'"/>' 
+    ?>
                           <img class = "imageflottante" alt="Photo de évenement" src= "imgUser/gad_elmaleh.jpeg"/>
                           <div class ="texteEvent">
                               <h1><?php echo $data['nom']; ?></h1>
@@ -73,11 +84,11 @@
                       </div> -->
 
 
-                    <?php
-                }
+    <?php
+}
 
-                $result->closeCursor();
-                ?>
+$result->closeCursor();
+?>
 
 
 
@@ -86,7 +97,7 @@
         </section>
 
 
-        <?php include("footer.php"); ?>
+<?php include("footer.php"); ?>
 
 
 

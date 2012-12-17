@@ -1,7 +1,7 @@
 body
 {
     /*padding: 12px;*/
-    background-image: url("img/bannierev2.40.png");
+    background-image: url("img/bannierev2.41.png");
     /*background-attachment: fixed; /* Le fond restera fixe */
     background-repeat: no-repeat; /* Le fond ne sera pas r�p�t� */
     /*  background-position: 5% 55% ; /* Le fond sera plac� en haut � droite */
@@ -58,7 +58,7 @@ header
 
     background-color: #666;
     position: absolute;
-    top: 400px;
+    top: 330px;
     z-index:1;
     width: 100%;
     /*background: #F4ECD9;*/
@@ -144,52 +144,78 @@ border: 2px solid white;
 /*INSCRIPTION*/
 
 
-.aa {
- background-color:#FAFAFA;
- padding:10px;
- width:280px;
- }
-.ab {
- padding:0 20px 20px 20px;
- margin-bottom:10px;
- border:1px solid #DF3F3F;
- }
-.ac {
- color:#DF3F3F;
- font-weight:bold
- }
-.ad {
- margin-top:10px;
- display:block;
- }
-.ad.inline {
- display:inline;
- margin-right:50px;
- }
-.aa input, textarea, select, option {
- background-color:#FFF3F3;
- }
-.aa input, textarea, select {
- padding:3px;
- border:1px solid #F5C5C5;
- border-radius:5px;
- width:200px;
- box-shadow:1px 1px 2px #C0C0C0 inset;
- }
-.aa select {
- margin-top:10px;
- }
-.aa input[type=radio] {
- background-color:transparent;
- border:none;
- width:10px;
- }
-.aa input[type=submit], input[type=reset] {
- width:100px;
- margin-left:5px;
- box-shadow:1px 1px 1px #D83F3D;
- cursor:pointer;
- }
+.contenuInscription {
+    position: absolute;
+    background-color: #ebe2d9;
+    padding: 0px 10px 10px 10px;
+    width: 400px;
+    margin-left: 350px;
+    margin-top: 100px;
+}
+
+.contenuInscription span {
+
+    color: red;
+}
+
+.fieldset {
+    padding:0 20px 20px 20px;
+    /*margin-bottom:10px;*/
+    border:5px double #666;
+    background-color: white;
+}
+.titreInscription {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.contenuInscription input[type=text], textarea, select, option {
+    background-color:#F5FFED;
+    /*#FFF3F3;*/
+}
+
+.contenuInscription input[type=text], textarea, select {
+    padding:3px;
+    border:1px solid  #cebd8b;
+    border-radius:5px;
+    width:200px;
+    box-shadow:1px 1px 2px #C0C0C0 inset;
+}
+
+.contenuInscription input[type=password], textarea, select, option {
+    background-color:#F5FFED;
+    /*#FFF3F3;*/
+}
+
+.contenuInscription input[type=password], textarea, select {
+    padding:3px;
+    border:1px solid #cebd8b;
+    border-radius:5px;
+    width:200px;
+    box-shadow:1px 1px 2px #C0C0C0 inset;
+}
+
+.contenuInscription input[type=email], textarea, select, option {
+    background-color:#F5FFED;
+    /*#FFF3F3;*/
+}
+
+.contenuInscription input[type=email], textarea, select {
+    padding:3px;
+    border:1px solid #cebd8b;
+    border-radius:5px;
+    width:200px;
+    box-shadow:1px 1px 2px #C0C0C0 inset;
+}
+
+.contenuInscription input[type=submit], input[type=reset] {
+    margin-top: 10px;
+    width:100px;
+    box-shadow:0px 0px 1px black;
+    cursor:pointer;
+}
 
 
 
@@ -236,7 +262,7 @@ border: 2px solid white;
 /*CONNECTION*/
 
 .connec {
-    position: absolute;
+    position: relative;
     border: 1px solid #202020;
     background-color: #666;
     border-radius: 10px;
@@ -248,22 +274,10 @@ border: 2px solid white;
     box-shadow: 0px 0px 15px #666;
 }
 
-/*.connec
+.connec input[type=submit]
 {
-    background-image: url("img/cadenas1.png");
-    background-repeat: no-repeat;
-    background-position: 70px 100px;
-    border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    text-align: left;
-    width: 500px;
-    top: 120px;
-    left: 300px;
-    padding: 8px;
-    position: absolute;
-    background-color: #666;
-    color: white;
-}*/
+    cursor: pointer;
+}
 
 .connec p
 {
@@ -273,13 +287,13 @@ border: 2px solid white;
 }
 
 .connec p a {
-    
+
     color: #ff6040;
     text-shadow: none;
 }
 
 .connec h2 {
-    
+
     text-align: center;
     color: white;
     text-shadow: 0px 0px 15px white;
@@ -293,8 +307,8 @@ border: 2px solid white;
     box-shadow: 0px 0px 10px azure;*/
     width: 400px; /* Tr�s important : donner une taille au menu */
     position: absolute;
-    top : 350px;
-    left : 1520px;
+    top : 280px;
+    left : 1537px;
     height : 50px ;
     /*border: 2px solid white;*/
     margin-bottom: 20px; /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
@@ -436,8 +450,15 @@ section
     height : 1500px;
     width: 100%;
     position: absolute;
-    top: 398px;
+    top: 328px;
     background-color : white;
+
+}
+
+.positionBouton {
+
+    position: absolute;
+    margin-left: 90px;
 
 }
 
@@ -905,7 +926,7 @@ footer
     width: 100%;
     /*border: 2px solid white;*/
     position: absolute;
-    top: 2000px;
+    top: 1930px;
     height : 120px;
     background-color : #666;
     border-top: 1px solid black;
@@ -944,6 +965,93 @@ a:visited
 }
 
 /*RECHERCHE AVANCEE*/
+
+.contenuRA {
+    position: absolute;
+    background-color: #ebe2d9;
+    padding: 0px 10px 10px 10px;
+    width: 700px;
+    margin-left: 250px;
+    margin-top: 100px;
+}
+
+.contenuRA span {
+
+    color: red;
+}
+
+.fieldsetRA {
+    padding:0 20px 20px 20px;
+    /*margin-bottom:10px;*/
+    border:5px double #666;
+    background-color: white;
+}
+.titreRA {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.contenuRA input[type=text], textarea, select, option {
+    background-color:#F5FFED;
+    /*#FFF3F3;*/
+}
+
+.contenuRA input[type=text], textarea, select {
+    padding:3px;
+    border:1px solid  #cebd8b;
+    border-radius:5px;
+    width:150px;
+    box-shadow:1px 1px 2px #C0C0C0 inset;
+}
+
+.contenuRA input[type=date], textarea, select, option {
+    background-color:#F5FFED;
+    /*#FFF3F3;*/
+}
+
+.contenuRA input[type=date], textarea {
+    padding:3px;
+    border:1px solid  #cebd8b;
+    border-radius:5px;
+    width:90px;
+    box-shadow:1px 1px 2px #C0C0C0 inset;
+}
+
+.contenuRA input[type=range], textarea, select, option {
+    background-color:#F5FFED;
+    /*#FFF3F3;*/
+}
+
+.contenuRA input[type=range], textarea {
+    padding:3px;
+    border:1px solid  #cebd8b;
+    border-radius:5px;
+    width:30px;
+    box-shadow:1px 1px 2px #C0C0C0 inset;
+}
+
+.contenuRA input[type=number], textarea, select, option {
+    background-color:#F5FFED;
+    /*#FFF3F3;*/
+}
+
+.contenuRA input[type=number], textarea {
+    padding:3px;
+    border:1px solid  #cebd8b;
+    border-radius:5px;
+    width:40px;
+    box-shadow:1px 1px 2px #C0C0C0 inset;
+}
+
+.contenuRA input[type=submit], input[type=reset] {
+    margin-top: 10px;
+    width:70px;
+    box-shadow:0px 0px 1px black;
+    cursor:pointer;
+}
+
 
 .couleurTexte span{
 
