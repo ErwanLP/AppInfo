@@ -65,8 +65,8 @@ if (isset($_POST['nomDeCompte']) && isset($_POST['mdp'])) {
         }
     } else {
 
-        header('Location:connexion.php');
-        // si la connection n'aboutit pas , on redirige l'utilisateur vers la page de connexion
+        header('Location:index.php');
+        // si la connection n'aboutit pas , on redirige l'utilisateur vers la page de index
     }
 }
 ?>
