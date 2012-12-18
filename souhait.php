@@ -34,7 +34,7 @@ include('bddForum.php');
 <?php
 $tab_info_souhait = array();
 $var_tab_info_array = 0;
-$req=$bdd->query('SELECT * FROM topic ORDER BY id DESC');
+$req=$bdd->query('SELECT * FROM topicforum ORDER BY id DESC');
 while ($donnees=$req->fetch()) {
 $tab_info_souhait[$var_tab_info_array][0]=$donnees["nom"];
 $tab_info_souhait[$var_tab_info_array][1]=$donnees["commentaire"];
