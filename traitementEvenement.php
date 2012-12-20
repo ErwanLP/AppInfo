@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_POST['nomEvent']) && isset($_POST['lieuEvent']) && isset($_POST['description']) && isset($_POST['dateEvent']) /* && ($_POST['typeEvent'] != NULL) */) {
-    $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
+  $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', 'root'); 
 
 
     $nomEvent = $_POST['nomEvent'];

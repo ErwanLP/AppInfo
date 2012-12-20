@@ -2,7 +2,7 @@
 
 //PARTIE SECURITE INSERTION DANS LA BDD
 
-$bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
+$bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', 'root'); 
 //Connection à la base de données
 $description = $_POST['description'];
 
