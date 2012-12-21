@@ -1,6 +1,6 @@
 <?php
 session_start();
-$titre = 'nouveau Comentaire';
+$titre = 'nouveau Commentaire';
 include('start.php');
 include('bddForum.php');
 ?>
@@ -31,7 +31,7 @@ include('bddForum.php');
         <?php
         $tab_info_commentaire = array();
         $var_tab_info_array = 0;
-        $req = $bdd->query('SELECT * FROM forum_message ORDER BY id DESC');
+        $req = $bdd->query('SELECT * FROM forummessage ORDER BY id ');
         while ($donnees = $req->fetch()) {
             $tab_info_commentaire[$var_tab_info_array][0] = $donnees["message"];
             $tab_info_commentaire[$var_tab_info_array][1] = $donnees["date_creation"];
@@ -87,7 +87,7 @@ include('bddForum.php');
         $i++;
     } else if ($i == 0) {
 
-        $req = $bdd->prepare('INSERT INTO forum_message (date_creation,message)
+        $req = $bdd->prepare('INSERT INTO forummessage (date_creation,message)
         VALUES (:date_creation,:message)');
         $req->execute(array(
             'date_creation' => $date_creation,
@@ -97,7 +97,7 @@ include('bddForum.php');
     }
 }
 ?>
-    </section>
+    
 <?php include('footer.php');
         ?>        
 </body>
