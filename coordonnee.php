@@ -1,5 +1,6 @@
-<!--<html>
-    <body>   -->     
+<?php include("profil.php"); ?>
+<html>
+    <body>   
         <div id="coordonnee">
             <p id="infoPerso">
                 <!--<span class="titre">Informations Personnelles</span><br/><br/><br/>-->
@@ -35,5 +36,5 @@
                 Alex95410, c'est l'idiot du village global.  
             </p>
         </div> 
-    <!--</body>
-</html>-->
+    </body>
+</html>

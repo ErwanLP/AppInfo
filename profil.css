@@ -58,7 +58,7 @@ ul#simple-menu li
 }
 
 
-ul#simple-menu li a
+ul#simple-menu li input
 {
     display:block;
     float:left;
@@ -68,25 +68,28 @@ ul#simple-menu li a
     text-decoration:none;
     padding:0px 17px 0px 18px;
     height:40px;
+    font-family:"Trebuchet MS",Arial,sans-serif;
+    font-size:25px;
+    font-weight:bold;
 }
 
-ul#simple-menu li a.right
+ul#simple-menu li input.right
 {
     padding-right:10px;
 }
 
-ul#simple-menu li a:hover
+ul#simple-menu li input:hover
 {
     background:#2E4560;
 }
 
-ul#simple-menu li a.current
+ul#simple-menu li input.current
 {
     color:#2E4560;
     background:#fff;
 }
 
-ul#simple-menu li a.current:hover
+ul#simple-menu li input.current:hover
 {
     color:#2E4560;
     background:#fff;
@@ -96,7 +99,7 @@ ul#simple-menu li a.current:hover
     padding: 20px;
     width: 38%;
     right: 145px;
-    top: 1150px;
+    top: 703px;
     font-size: 20px;
     text-align: justify;
 }
@@ -117,7 +120,7 @@ strong{
     padding: 20px;
     width: 38%;
     right: 775px;
-    top: 950px;
+    top: 703px;
     font-size: 20px;
     text-align: justify;
 }
@@ -134,7 +137,7 @@ strong{
     padding: 20px;
     width: 70%;
     right: 140px;
-    top: 1100px;
+    top: 703px;
     font-size: 20px;    
     text-align: justify;
 }
@@ -189,7 +192,7 @@ strong{
 
 #mesEvents{
     position: absolute;
-    top: 1100px;
+    top: 703px;
     right: 140px;
     overflow: auto;
     width: 71%;

@@ -4,22 +4,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="profil.css">
-        <script>
-            function visiblite(valeur){ 
-                var coordonnee1 = document.getElementById(coordonnee);
-                var amis1 = document.getElementById(amis);
-                var mesEvents1 = document.getElementById(mesEvents);
-                if (valeur=="Mes Infos"){
-                    coordonnee1.style.dysplay="";
-                    amis1.style.dysplay="none";
-                }else if(valeur=="Mes amis"){
-                    coordonnee1.style.dysplay="none";
-                    amis1.style.dysplay="";                    
-                }else if(valeur=="Mes Evénements"){
-                    mesEvents1.style.dysplay="";
-                }
-            }
-        </script>
     </head>
     <body>
         <?php
@@ -51,11 +35,13 @@
             </div>
             <div class="menu">
                 <ul id="simple-menu">
-                    <li><input type="button" value="Mes Infos" onclick="visibilite(this.value);"/></li>
-                    <li><input type="button" value="Mes amis" onclick="visibilite(this.value);"/></li> 
-                    <li><a onclick="visibilite(this.title)" title="Mes Amis">Mes Amis</a></li>
-                    <li><a onclick="visibilite(this.title)" title="Mes Evénements">Mes Evénements</a></li>
-                    <li><a href="test1.php" title="Paramètres">Paramètres</a></li>
+                    <li><input type="button" onclick="afficherc();" value="Mes Infos"/></li>
+                    <li><input type="button" onclick="affichera();" value="Mes Amis"/></li>
+                    <li><input type="button" onclick="afficherme();" value="Mes Events"/></li>
+                    <li><input type="button" onclick="self.location.href='test1.php'; cacher();" value="Paramètres"/></li>
+                    <!--<li><a href="#" title="Mes Infos">Mes Infos</a></li>
+                    <li><a href="#" title="Mes Amis">Mes Amis</a></li>
+                    <li><a href="test1.php" title="Paramètres">Paramètres</a></li>-->
                 </ul>
             </div>
 
@@ -94,7 +80,7 @@
                     Alex95410, c'est l'idiot du village global.  
                 </p>
             </div>
-            <div id="amis">
+            <div id="amis"style="display:none;">
                 <fieldset>
                     <a href="img/jerry.jpg"><img src="img/jerry_mini.jpg" alt="Jerry" title="Cliquez pour agrandir" style="border: solid black 2px"/></a>
                     <p id="nom1">Jerry BOLZASTREET</p>
@@ -111,7 +97,7 @@
                     <p id="lieu3">France, Gonesse</p>
                 </fieldset>
             </div>
-            <div id="mesEvents"style="display: none">
+            <div id="mesEvents" style="display:none;">
                 <?php
                 $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                 if (!isset($_GET['onglet'])) { //si ya rien
@@ -166,6 +152,23 @@
             </div>
 
         </section>
-        <?php include("footer.php"); ?>        
+        <?php include("footer.php"); ?>
+        <script type="text/javascript">
+            function afficherc(){ 
+                document.getElementById("coordonnee").style.display="";
+                document.getElementById("amis").style.display="none";
+                document.getElementById("mesEvents").style.display="none";
+            }
+            function affichera(){ 
+                document.getElementById("amis").style.display="";
+                document.getElementById("coordonnee").style.display="none";
+                document.getElementById("mesEvents").style.display="none";
+            }
+            function afficherme(){ 
+                document.getElementById("mesEvents").style.display="";
+                document.getElementById("coordonnee").style.display="none";
+                document.getElementById("amis").style.display="none";
+            }
+        </script>
     </body>
 </html>
