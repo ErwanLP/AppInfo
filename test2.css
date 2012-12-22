@@ -1,5 +1,5 @@
     /*droite*/
-.sidebar-left-floatleft
+.menuParametres
 {
 list-style : none;
 width: 225px;
@@ -8,7 +8,7 @@ position: absolute;
 right: 1450px;
 top:1100px;
 }
-#sidebar-accordion
+#menuParametre
 {
 list-style : none;
 }
@@ -21,15 +21,15 @@ list-style : none;
 
 /*milieu*/
 
-.floatright-main
+.titreParametre  
 {
 overflow: auto;
 text-align : center ;
 width: 55%;
 height : 849px ;
 position: absolute;
-right: 100px;
-top:1100px;
+right: 280px;
+top: 703px;
 }
 .rollin1
 {
@@ -37,11 +37,11 @@ text-align : center ;
 width: 900px;
 height : 1000px ;
 position: absolute;
-left : 300px;
-top:200px;
+right: 450px;
+top:1100px;
 }
 
-.col_third_floatleft
+.infoPerso
 {
 
 left:400px;
@@ -55,8 +55,8 @@ text-align : center ;
 width: 700px;
 height : 675px ;
 position: absolute;
-left : 300px;
-top:250px;
+right : 450px;
+top:1150px;
 }
 .rollin3
 {
@@ -64,8 +64,8 @@ text-align : center ;
 width: 700px;
 height : 150px ;
 position: absolute;
-left : 300px;
-top:250px;
+right:  450px;
+top:1150px;
 }
 
 .rollin4
@@ -74,8 +74,8 @@ top:250px;
 width: 700px;
 height : 200px ;
 position: absolute;
-left : 300px;
-top:250px;
+right: 450px;
+top:1350px;
 }
 
 .rollin5
@@ -84,8 +84,8 @@ text-align : center ;
 width: 700px;
 height : 230px ;
 position: absolute;
-left : 300px;
-top:250px;
+right : 450px;
+top:1530px;
 }
 
 .rollin6
@@ -94,8 +94,8 @@ text-align : center ;
 width: 700px;
 height : 400px ;
 position: absolute;
-left : 300px;
-top:250px;
+right : 450px;
+top:1100px;
 }
 
 sup
