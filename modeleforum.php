@@ -1,9 +1,5 @@
 <?php
 
-function getAllTopic($bdd) {
-    return $bdd->query('SELECT * FROM topicforum ORDER BY id');
-}
-
 function getAllMessageForum($bdd) {
     return $bdd->query('SELECT * FROM messageforum ORDER BY id');
 }

@@ -39,7 +39,7 @@
 
             <article class ="articleevent">                  
                 <?php
-$bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', ''); 
+                $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                 if (!isset($_GET['onglet'])) { //si ya rien
                     $result = $bdd->query('SELECT * FROM  event LIMIT 0 , 30');
                 }
@@ -50,7 +50,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 
                 if (isset($_GET['sousOnglet'])) { //si ya un sous onglet
                     $result = $bdd->query('SELECT  * FROM  event WHERE type =  "' . $_GET['sousOnglet'] . '"');
-            }
+                }
 
 
                 while ($data = $result->fetch()) {
@@ -65,9 +65,9 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                           </div>
 
 
-    <?php
-    // echo '<img class = "imageflottante" alt="Photo de évenement" src= "'.$data["photo"].'"/>' 
-    ?>
+                    <?php
+                    // echo '<img class = "imageflottante" alt="Photo de évenement" src= "'.$data["photo"].'"/>' 
+                    ?>
                           <img class = "imageflottante" alt="Photo de évenement" src= "imgUser/gad_elmaleh.jpeg"/>
                           <div class ="texteEvent">
                               <h1><?php echo $data['nom']; ?></h1>
@@ -84,11 +84,11 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                       </div> -->
 
 
-    <?php
-}
+                    <?php
+                }
 
-$result->closeCursor();
-?>
+                $result->closeCursor();
+                ?>
 
 
 
@@ -97,7 +97,7 @@ $result->closeCursor();
         </section>
 
 
-<?php include("footer.php"); ?>
+        <?php include("footer.php"); ?>
 
 
 
