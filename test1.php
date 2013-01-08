@@ -36,8 +36,8 @@
             <div class="menu">
                 <ul id="simple-menu">
                     <li><input type="button" onclick="self.location.href='profil.php';" value="Mes Infos"/></li>
-                    <li><input type="button" onclick="self.location.href='profil.php';" value="Mes Amis"/></li>
-                    <li><input type="button" onclick="self.location.href='profil.php';" value="Mes Events"/></li>
+                    <li><input type="button" onclick="self.location.href='amis.php';" value="Mes Amis"/></li>
+                    <li><input type="button" onclick="self.location.href='mesEvents.php';" value="Mes Events"/></li>
                     <li><input type="button" onclick="self.location.href='test1.php';" value="Paramètres"/>
                         <ul class="sousmenu">
                             <li><a href="Infoparticipant.php" title="Mon compte" onclick="self.location.href='Infoparticipant.php';"></a></li>                         
