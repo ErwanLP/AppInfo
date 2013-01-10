@@ -1,0 +1,70 @@
+#livre {
+    
+    background-image: url("img/livre.jpg");
+    width: 1150px;
+    height : 740px;
+    background-repeat: no-repeat;
+    
+}
+
+#gauche {
+    position: absolute;
+    width: 460px;
+    height: 740px;
+    top: 360px;
+    left: 510px;
+    border: solid black 1px;
+}
+#droite {
+    position: absolute;
+    width: 460px;
+    height: 740px;
+    top: 360px;
+    left: 1040px;
+    border: solid black 1px;
+}
+
+@font-face {
+    font-family: 'mathilde';
+    src: url('mathilde.otf') format('opentype');
+}
+
+.com {
+    width: 460px;
+    overflow : auto;
+    font-family: mathilde;    
+    font-size: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.pseudo {
+    color: #640000;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 14px;
+}
+.date {
+    color: firebrick;
+    font-family: Comic Sans MS;
+    font-size: 14px;
+}
+.heure {
+    color: green;
+    font-family: Comic Sans MS;
+    font-size: 14px;
+}
+#livrepost {
+    text-align: center;
+    position: relative;
+    top:170px;
+    border: solid black 1px;
+      
+}
+#livrepost textarea {
+    width: 500px;
+}
+#pageLivreOr {
+    position: relative;
+    top: 760px;
+    left:auto;
+}
