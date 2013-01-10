@@ -23,7 +23,7 @@
                 <div class ="eventNew">
                     <img class ="photonew" src ="img/new.jpg"/>
                 </div>
-            </aside>
+            </aside>        
             <div id="description">
                 <fieldset>
                     <a href="img/avatar.jpg"><img src="img/avatar_mini.jpg" alt="Avatar" title="Cliquez pour agrandir" style="border: solid black 2px"/></a>
