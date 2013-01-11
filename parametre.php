@@ -127,6 +127,13 @@
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <!--Pseudo<sup>*</sup><label for=pseudo class="infoPerso">Pseudo<sup>*</sup> :</label>--> Pseudo<sup>*</sup> : <input type="text" id="pseudo" name="pseudo" class="text" value="<?php echo $data['pseudo'];?>"/>
                             </div>
+                            
+                            <!--Avatar-->
+                            <div class=info><br/>
+                                <!--<label for=avatar>Ajouter une photo(Jpeg,png,jpg)<sup>*</sup>:</label>-->
+                               Ajouter une photo(jpeg,png)<sup>*</sup> : <input type='file' name='avatar'/>
+                            </div>
+                            
                             <!-- Prenom -->
                             <div class="info"><br/>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -645,104 +652,8 @@
 
 
                             <script type="text/javascript">
-                                // <![CDATA[
-
-                                // Accordion configs
-                                $("#frm-accordion").accordion({
-                                    clickable : 'fieldset > legend'
-                                });
-
-                                var current_ts = "1352193298";
-                                var formCompte = {}, formPassword = {};
-
-                                /* 
-                                 * Gestion des Doyouevent
-                                 */
-     
-                                // formulaire "Mes données personnelles"
-                                formCompte = new DoyoueventForm(
-                                document.getElementById("personalData"),
-                                false,
-                                {
-                                    email: {
-                                        empty: "Tu n\'as pas saisi ton adresse email.",
-                                        invalid: "Ton adresse email n\'est pas correcte."
-                                    },
-                                    gender: {
-                                        invalid: "Ton sexe n\'est pas renseigné."
-                                    },
-                                    birth_group: {
-                                        empty: "Ta date de naissance est invalide.",
-                                        invalid: "Ta date de naissance est invalide.",
-                                        tooYoung: "L\'inscription n\'est autorisée qu\'aux personnes ayant au minimum 12 ans !"
-                                    },
-                                    country: {
-                                        empty: "Ton pays n\'est pas renseigné.",
-                                        invalid: "Ton pays est invalide."
-                                    },
-                                    pcode: {
-                                        empty: "Tu n\'as pas tapé ton code postal.",
-                                        invalid: "Ton code postal est invalide."
-                                    }
-                                }
-                            );        
-    
-    
-
-    
-                                // Gestion des infobulles
-                                if (formCompte && formCompte.container)
-                                {            
-                                    formCompte.forEachElements(formCompte.container.getElementsByTagName("label"), function(elm, name, label) {
-                                        oInfo = new DoyoueventInfobulle(elm, name);
-                                    });        
-                                }
-                                if (formPassword && formPassword.container)
-                                {            
-                                    formPassword.forEachElements(formPassword.container.getElementsByTagName("label"), function(elm, name, label) {
-                                        oInfo = new DoyoueventInfobulle(elm, name);
-                                    });
-                                }	
-
-
-                                formSubscribe = new DoyoueventForm(
-                                document.getElementById("changepseudo"),
-                                false,
-                                {
-                                    pseudo: {
-                                        empty: "Tu n\'as pas saisi ton pseudo.",
-                                        empty_typing: "",
-                                        taken: {
-                                            "default": "Ce pseudo est déjà pris.",
-                                            "suggestion": "<strong>Ce pseudo est déjà pris.</strong><br />Tu peux en choisir un autre ou utiliser un de ces pseudos :<br /><span class='list'></span>"
-                                        },
-                                        invalid: {
-                                            "default": "Ce pseudo est invalide.",
-                                            "suggestion": "<strong>Ce pseudo est invalide.</strong><br />Tu peux en choisir un autre ou utiliser un de ces pseudos :<br /><span class='list'></span>"
-                                        },
-                                        free: "Ce pseudo est <strong>disponible</strong>."
-                                    }
-                                },
-                                ['pseudo']
-                            );
-
-                                pseudoInfo = new DoyoueventInfobulle(document.getElementById("pseudo"), "pseudo");
-
-	
-                                $('#jsResetPseudo').click(function () {
-                                    $('#jsSubmitLock').removeClass("hide");
-                                })
-    
-                                //]]>	
-
-                            </script>
-
-                            <script>
-                                var start = 'Bonjour ', name, end = ' !', result;
-                                name = prompt('Quel est votre Prénom?');
-                                result = start + name + end;
-                                alert(result);
-
+                              
+                                
                                 //var modification
 
                                 function modification() {
@@ -755,11 +666,9 @@
                                     else {
                                         alert("Aucune modification n'a été enregistrée.");
                                     }
-              
+                                   }
 
                             </script>
-                            <script type="text/javascript">
-                
-                            </script>
+                           
                             </body>
                             </html>
