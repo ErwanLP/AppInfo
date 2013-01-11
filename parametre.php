@@ -114,7 +114,7 @@
                                 <!--<span class="infoPerso"><span class="required">Tu es<sup>*</sup> : </span></span>-->
                                 <span class="radio-checkbox">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    Tu es<sup>*</sup> : &nbsp;&nbsp;<input type="radio" id="femme" name="genre" class="radio" value="0" /> <label for="female" class="radio">Une femme</label>&nbsp;&nbsp;&nbsp;
+                                    Tu es<sup>*</sup> : &nbsp; &nbsp;&nbsp;<input type="radio" id="femme" name="genre" class="radio" value="0" /> <label for="female" class="radio">Une femme</label>&nbsp;&nbsp;&nbsp;
                                 </span>
                                 <span class="radio-checkbox">
                                     <input type="radio" id="homme" name="genre" class="radio" value="1" checked="checked"/> <label for="male" class="radio">Un homme</label>
@@ -125,13 +125,21 @@
                             <!-- Pseudo -->
                             <div class=info><br/>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <!--Pseudo<sup>*</sup><label for=pseudo class="infoPerso">Pseudo<sup>*</sup> :</label>--> Pseudo<sup>*</sup> : <input type="text" id="pseudo" name="pseudo" class="text" value="<?php echo $data['pseudo'];?>"/>
+                                <!--Pseudo<sup>*</sup><label for=pseudo class="infoPerso">Pseudo<sup>*</sup> :</label>-->
+                                Pseudo<sup>*</sup> :  &nbsp; <input type="text" id="pseudo" name="pseudo" class="text" value="<?php echo $data['pseudo'];?>"/>
                             </div>
+                            
+                            <!--Avatar-->
+                            <div class=info><br/>
+                                <!--<label for=avatar>Ajouter une photo(Jpeg,png,jpg)<sup>*</sup>:</label>-->
+                               Ajouter une photo(jpeg,png)<sup>*</sup> :  &nbsp; <input type='file' name='avatar'/>
+                            </div>
+                            
                             <!-- Prenom -->
                             <div class="info"><br/>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <!--<label for="prenom" class="infoPerso">Prenom<sup>*</sup> :</label>-->
-                                Prénom<sup>*</sup> : <input type="text" id="prenom" name="prenom" class="text" value="<?php echo $data['prenom'];?>" />
+                                Prénom<sup>*</sup> :  &nbsp; <input type="text" id="prenom" name="prenom" class="text" value="<?php echo $data['prenom'];?>" />
 
 
                             </div>
@@ -140,7 +148,7 @@
                             <div class="info"><br/>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <!--<label for="nom" class="infoPerso">Nom<sup>*</sup> :</label>-->
-                                Nom<sup>*</sup> : <input type="text" id="nom" name="nom" class="text" value="<?php echo $data['nom'];?>" />
+                                Nom<sup>*</sup> :  &nbsp; <input type="text" id="nom" name="nom" class="text" value="<?php echo $data['nom'];?>" />
 
 
 
@@ -151,169 +159,23 @@
 
                             <!-- Date de naissance -->
                             <div class="info"><br/>
+                                
                                 <!--<label class="infoPerso" for="dateDeNaissance" data-fieldgroup="date"><span class="required">Date de naissance<sup>*</sup> :</span></label>-->
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date de naissance<sup>*</sup> : 
-                                <select id="jour" name="jour" class="choix jour">
-                                    <option value="">------- jours ---------</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="1">4</option>
-                                    <option value="2">5</option>
-                                    <option value="3">6</option>
-                                    <option value="1">7</option>
-                                    <option value="2">8</option>
-                                    <option value="3">9</option>
-                                    <option value="1">10</option>
-                                    <option value="2">11</option>
-                                    <option value="3">12</option>
-                                    <option value="1">13</option>
-                                    <option value="2">14</option>
-                                    <option value="3">15</option>
-                                    <option value="1">16</option>
-                                    <option value="2">17</option>
-                                    <option value="3">18</option>
-                                    <option value="1" selected="selected">19</option>
-                                    <option value="2">20</option>
-                                    <option value="3">21</option>
-                                    <option value="1">22</option>
-                                    <option value="2">23</option>
-                                    <option value="3">24</option>
-                                    <option value="1">25</option>
-                                    <option value="2">26</option>
-                                    <option value="3">27</option>
-                                    <option value="1">28</option>
-                                    <option value="2">29</option>
-                                    <option value="3">30</option>
-                                    <option value="1">31</option>
+                                      Date De Naissance<sup>*</sup>  : &nbsp; <input type="text" id="nom" name="nom" class="text" value="<?php echo $data['dateDeNaissance'];?>" />
 
-                                </select>&nbsp;
-                                <select id="mois" name="mois" class="choix mois">
-                                    <option value="mois">------- mois ---------</option>
-                                    <option value="1">Janvier</option>
-                                    <option value="2">Février</option>
-                                    <option value="3">Mars</option>
-                                    <option value="4">Avril</option>
-                                    <option value="5">Mai</option>
-                                    <option value="6">Juin</option>
-                                    <option value="7">Juillet</option>
-                                    <option value="8">Août</option>
-                                    <option value="9">Septembre</option>
-                                    <option value="10">Octobre</option>
-                                    <option value="11">Novembre</option>
-                                    <option value="12" selected="selected">Décembre</option>
-                                </select>&nbsp;
-
-                                <select id="année" name="année" class="choix année">
-                                    <option value="année">-------années---------</option>
-                                    <option value="1921">1921</option>
-                                    <option value="1922">1922</option>
-                                    <option value="1923">1923</option>
-                                    <option value="1924">1924</option>
-                                    <option value="1925">1925</option>
-                                    <option value="1926">1926</option>
-                                    <option value="1927">1927</option>
-                                    <option value="1928">1928</option>
-                                    <option value="1929">1929</option>
-                                    <option value="1930">1930</option>
-                                    <option value="1931">1931</option>
-                                    <option value="1932">1932</option>
-                                    <option value="1933">1933</option>
-                                    <option value="1934">1934</option>
-                                    <option value="1935">1935</option>
-                                    <option value="1936">1936</option>
-                                    <option value="1937">1937</option>
-                                    <option value="1938">1938</option>
-                                    <option value="1939">1939</option>
-                                    <option value="1940">1940</option>
-                                    <option value="1941">1941</option>
-                                    <option value="1942">1942</option>
-                                    <option value="1943">1943</option>
-                                    <option value="1944">1944</option>
-                                    <option value="1945">1945</option>
-                                    <option value="1946">1946</option>
-                                    <option value="1947">1947</option>
-                                    <option value="1948">1948</option>
-                                    <option value="1949">1949</option>
-                                    <option value="1950">1950</option>
-                                    <option value="1951">1951</option>
-                                    <option value="1952">1952</option>
-                                    <option value="1953">1953</option>
-                                    <option value="1954">1954</option>
-                                    <option value="1955">1955</option>
-                                    <option value="1956">1956</option>
-                                    <option value="1957">1957</option>
-                                    <option value="1958">1958</option>
-                                    <option value="1959">1959</option>
-                                    <option value="1960">1960</option>
-                                    <option value="1961">1961</option>
-                                    <option value="1962">1962</option>
-                                    <option value="1963">1963</option>
-                                    <option value="1964">1964</option>
-                                    <option value="1965">1965</option>
-                                    <option value="1966">1966</option>
-                                    <option value="1967">1967</option>
-                                    <option value="1968">1968</option>
-                                    <option value="1969">1969</option>
-                                    <option value="1970">1970</option>
-                                    <option value="1971">1971</option>
-                                    <option value="1972">1972</option>
-                                    <option value="1973">1973</option>
-                                    <option value="1974">1974</option>
-                                    <option value="1975">1975</option>
-                                    <option value="1976">1976</option>
-                                    <option value="1977">1977</option>
-                                    <option value="1978">1978</option>
-                                    <option value="1979">1979</option>
-                                    <option value="1980">1980</option>
-                                    <option value="1981">1981</option>
-                                    <option value="1982">1982</option>
-                                    <option value="1983">1983</option>
-                                    <option value="1984">1984</option>
-                                    <option value="1985">1985</option>
-                                    <option value="1986">1986</option>
-                                    <option value="1987">1987</option>
-                                    <option value="1988">1988</option>
-                                    <option value="1989">1989</option>
-                                    <option value="1990">1990</option>
-                                    <option value="1991">1991</option>
-                                    <option value="1992" selected="selected">1992</option>
-                                    <option value="1993">1993</option>
-                                    <option value="1994">1994</option>
-                                    <option value="1995">1995</option>
-                                    <option value="1996">1996</option>
-                                    <option value="1997">1997</option>
-                                    <option value="1998">1998</option>
-                                    <option value="1999">1999</option>
-                                    <option value="2000">2000</option>
-                                    <option value="2001">2001</option>
-                                    <option value="2002">2002</option>
-                                    <option value="2003">2003</option>
-                                    <option value="2004">2004</option>
-                                    <option value="2005">2005</option>
-                                    <option value="2006">2006</option>
-                                    <option value="2007">2007</option>
-                                    <option value="2008">2008</option>
-                                    <option value="2009">2009</option>
-                                    <option value="2010">2010</option>
-                                    <option value="2011">2011</option>
-                                    <option value="2012">2012</option>
-                                    <option value="2013">2013</option>
-                                </select>
-
-
-                            </div>
+                                
+                                
 
                             <!-- Lieu de naissance -->
                             <div class=info><br/>
                                 <!--<label class="infoPerso" for=lieuDeNaissance class="col_third_floatleft">Lieu de Naissance<sup>*</sup> :</label>-->
-                                Lieu de naissance<sup>*</sup> : <input type="text" id="lieuDeNaissance" name="lieuDeNaissance" class="text" value="<?php echo $data['lieuNaissance'];?>"/>
+                                Lieu de naissance<sup>*</sup> : &nbsp; <input type="text" id="lieuDeNaissance" name="lieuDeNaissance" class="text" value="<?php echo $data['lieuNaissance'];?>"/>
                             </div>
                             <!-- Email -->
                             <div class="info"><br/>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <!--<label class="infoPerso" for="email"><span class="required">Email<sup>*</sup> :</span></label>-->
-                                Email<sup>*</sup> : <input type="text" id="email" name="email" class="text" value="<?php echo $data['mail'];?>" />
+                                Email<sup>*</sup> : &nbsp; <input type="text" id="email" name="email" class="text" value="<?php echo $data['mail'];?>" />
 
 
 
@@ -323,13 +185,13 @@
                             <div class=info><br/>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <!-- <label for=profession class="infoPerso">Profession :</label>-->
-                                Profession : <input type="text" id="profession" name="profession" class="text" value="<?php echo $data['profession'];?>"/>
+                                Profession : &nbsp; <input type="text" id="profession" name="profession" class="text" value="<?php echo $data['profession'];?>"/>
                             </div>
                             <!-- Adresse -->
                             <div class="info"><br/>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <!--<label for="adresse" class="infoPerso">Adresse postale<sup>*</sup> :</label>-->
-                                Adresse<sup>*</sup> : <input type="text" id="adresse" name="adresse" class="text" value="<?php echo $data['adresse'];?>" />
+                                Adresse<sup>*</sup> : &nbsp; <input type="text" id="adresse" name="adresse" class="text" value="<?php echo $data['adresse'];?>" />
                             </div>
 
 
@@ -338,7 +200,7 @@
                             <div class="info"><br/>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <!--<label class="infoPerso" for="pcode"><span class="required">Code postal<sup>*</sup> :</span></label>-->
-                                Code postal<sup>*</sup> : <input type="text" id="pcode" name="pcode" class="text" value="<?php echo $data['codePostal'];?>" />
+                                Code postal<sup>*</sup> : &nbsp; <input type="text" id="pcode" name="pcode" class="text" value="<?php echo $data['codePostal'];?>" />
 
                             </div>
 
@@ -346,7 +208,7 @@
                             <div class="info"><br/>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <!--<label for="ville" class="infoPerso">Ville<sup>*</sup> :</label>-->
-                                Villes<sup>*</sup> : <input type="text" id="villes" name="villes" class="text" value="<?php echo $data['villes'];?>" />
+                                Villes<sup>*</sup> : &nbsp; <input type="text" id="villes" name="villes" class="text" value="<?php echo $data['villes'];?>" />
                             </div>
 
                             <!-- Pays -->
@@ -587,14 +449,14 @@
                             <div class="info"><br/>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <!--<label for="telephoneFixe" class="infoPerso">Téléphone fixe :</label>-->
-                                Téléphone fixe : <input type="text" id="telephoneFixe" name="TelephoneFixe" class="text" value="<?php echo $data['telephoneFixe'];?>" />
+                                Téléphone fixe : &nbsp; <input type="text" id="telephoneFixe" name="TelephoneFixe" class="text" value="<?php echo $data['telephoneFixe'];?>" />
                             </div>
 
                             <!-- Téléphone Mobile -->
                             <div class="info"><br/>
                                &nbsp;
                                 <!--<label for="NumeroPortable" class="infoPerso">Mobile<sup>*</sup> :</label>-->
-                               Téléphone Mobile<sup>*</sup> : <input type="text" id="numeroPortable" name="TelephoneMobile" class="text" value="<?php echo $data['telephoneMobile'];?>" />
+                               Téléphone Mobile<sup>*</sup> : &nbsp; <input type="text" id="numeroPortable" name="TelephoneMobile" class="text" value="<?php echo $data['telephoneMobile'];?>" />
 
 
 
@@ -603,7 +465,7 @@
                                 <div class="info"><br/>
                                     &nbsp;&nbsp;&nbsp;
                                     <!--<label class="infoPerso" for="langage"><span class="required">Version et langue<sup>*</sup> :</span></label>-->
-                                    Versions et langues<sup>*</sup> : <select class="choix" id="lang" name="locale">
+                                    Versions et langues<sup>*</sup> : &nbsp; <select class="choix" id="lang" name="locale">
                                         <option selected="selected" value="fr_FR">France</option>
                                         <option value="en_GB">International (anglais)</option>
 
@@ -616,20 +478,20 @@
                                 <div class="info"><br/>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <!--<label for="siteWeb" class="infoPerso">Site Web :</label>-->
-                                    Site Web : <input type="text" name="siteWeb" id="siteWeb" class="text" value="<?php echo $data['siteWeb'];?>" />
+                                    Site Web : &nbsp; <input type="text" name="siteWeb" id="siteWeb" class="text" value="<?php echo $data['siteWeb'];?>" />
                                 </div>
 
                                 <!--loisirs-->
                                 <div class="info"><br/>
                                     <!--<label class="infoPerso" for="loisirs"></label>-->
-                                    <p>Loisirs :</p><textarea name="loisirs" style="width: 700px;height: 150px"><?php echo $data['loisirs'];?>
+                                    <p>Loisirs : &nbsp; </p><textarea name="loisirs" style="width: 700px;height: 150px"><?php echo $data['loisirs'];?>
                                     </textarea>
                                 </div>
 
                                 <!--Description-->
                                 <div class="info"><br/>
                                     <!--<label class="infoPerso" for="description"></label>-->
-                                    <p>Description :</p><textarea name="description" style="width: 700px;height: 150px"><?php echo $data['description'];?></textarea>
+                                    <p>Description : &nbsp; </p><textarea name="description" style="width: 700px;height: 150px"><?php echo $data['description'];?></textarea>
                                 </div>
 
                                 <div class="info"><br/>
@@ -645,104 +507,8 @@
 
 
                             <script type="text/javascript">
-                                // <![CDATA[
-
-                                // Accordion configs
-                                $("#frm-accordion").accordion({
-                                    clickable : 'fieldset > legend'
-                                });
-
-                                var current_ts = "1352193298";
-                                var formCompte = {}, formPassword = {};
-
-                                /* 
-                                 * Gestion des Doyouevent
-                                 */
-     
-                                // formulaire "Mes données personnelles"
-                                formCompte = new DoyoueventForm(
-                                document.getElementById("personalData"),
-                                false,
-                                {
-                                    email: {
-                                        empty: "Tu n\'as pas saisi ton adresse email.",
-                                        invalid: "Ton adresse email n\'est pas correcte."
-                                    },
-                                    gender: {
-                                        invalid: "Ton sexe n\'est pas renseigné."
-                                    },
-                                    birth_group: {
-                                        empty: "Ta date de naissance est invalide.",
-                                        invalid: "Ta date de naissance est invalide.",
-                                        tooYoung: "L\'inscription n\'est autorisée qu\'aux personnes ayant au minimum 12 ans !"
-                                    },
-                                    country: {
-                                        empty: "Ton pays n\'est pas renseigné.",
-                                        invalid: "Ton pays est invalide."
-                                    },
-                                    pcode: {
-                                        empty: "Tu n\'as pas tapé ton code postal.",
-                                        invalid: "Ton code postal est invalide."
-                                    }
-                                }
-                            );        
-    
-    
-
-    
-                                // Gestion des infobulles
-                                if (formCompte && formCompte.container)
-                                {            
-                                    formCompte.forEachElements(formCompte.container.getElementsByTagName("label"), function(elm, name, label) {
-                                        oInfo = new DoyoueventInfobulle(elm, name);
-                                    });        
-                                }
-                                if (formPassword && formPassword.container)
-                                {            
-                                    formPassword.forEachElements(formPassword.container.getElementsByTagName("label"), function(elm, name, label) {
-                                        oInfo = new DoyoueventInfobulle(elm, name);
-                                    });
-                                }	
-
-
-                                formSubscribe = new DoyoueventForm(
-                                document.getElementById("changepseudo"),
-                                false,
-                                {
-                                    pseudo: {
-                                        empty: "Tu n\'as pas saisi ton pseudo.",
-                                        empty_typing: "",
-                                        taken: {
-                                            "default": "Ce pseudo est déjà pris.",
-                                            "suggestion": "<strong>Ce pseudo est déjà pris.</strong><br />Tu peux en choisir un autre ou utiliser un de ces pseudos :<br /><span class='list'></span>"
-                                        },
-                                        invalid: {
-                                            "default": "Ce pseudo est invalide.",
-                                            "suggestion": "<strong>Ce pseudo est invalide.</strong><br />Tu peux en choisir un autre ou utiliser un de ces pseudos :<br /><span class='list'></span>"
-                                        },
-                                        free: "Ce pseudo est <strong>disponible</strong>."
-                                    }
-                                },
-                                ['pseudo']
-                            );
-
-                                pseudoInfo = new DoyoueventInfobulle(document.getElementById("pseudo"), "pseudo");
-
-	
-                                $('#jsResetPseudo').click(function () {
-                                    $('#jsSubmitLock').removeClass("hide");
-                                })
-    
-                                //]]>	
-
-                            </script>
-
-                            <script>
-                                var start = 'Bonjour ', name, end = ' !', result;
-                                name = prompt('Quel est votre Prénom?');
-                                result = start + name + end;
-                                alert(result);
-
+                              
+                                
                                 //var modification
 
                                 function modification() {
@@ -755,11 +521,9 @@
                                     else {
                                         alert("Aucune modification n'a été enregistrée.");
                                     }
-              
+                                   }
 
                             </script>
-                            <script type="text/javascript">
-                
-                            </script>
+                           
                             </body>
                             </html>
