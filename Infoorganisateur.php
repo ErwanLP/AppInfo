@@ -3,7 +3,7 @@
 <html>
     <head>
         <title>Mes paramètres</title>
-        <link rel="stylesheet" href="test2.css">
+        <link rel="stylesheet" href="parametre.css">
         <link rel="stylesheet" href="index.css">
     </head>
     <body>

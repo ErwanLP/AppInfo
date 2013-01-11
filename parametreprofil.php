@@ -3,31 +3,28 @@
 <html>
 <head>
 <title>Mes paramétres profil</title>
-<link rel="stylesheet" href="test2.css">
+<link rel="stylesheet" href="parametre.css">
 </head>
 <body>
 
-<?php include("elementmenu.php"); ?>
 
-<?php include("sidebarleftfloatleft.php"); ?>
-
-<div class="sidebar-left-floatleft">
+<div class="menuParametres">
 <h1>Configurer</h1>
-    <ul id="sidebar-accordion" class="menu-sidebar-left phylac-top-left box-gradient">
-            <li class="active rollin"><a class="menu-accordion" href="Infoparticipant.php" title="Mon compte" onclick="window.open(this.href); return false;"><img src="img/boutonMonCompteArr.png" /></a></li>                         
-            <li><a class="menu-accordion" href="parametreprofil.php" title="Mon profil" onclick="window.open(this.href); return false;"><img src="img/boutonMonProfilArr.png" /></a></li>
-                   <ul>
-                                         <li class="active"><a href="parametreprofil.php" title="Paramétres" onclick="window.open(this.href); return false;"><img src="img/boutonParametres.png" /></a></li>
-                                         <li><a href="Messagerie/Alertes.php" title="Messagerie/Alertes" onclick="window.open(this.href); return false;"><img src="img/boutonMessagerieAlerte.png" /></a></li>
-                                      </ul>
-            <li><a class="menu-accordion" href="Mes_amis.php" title="Mes amis" onclick="window.open(this.href); return false;"><img src="img/boutonMesAmisArr.png" /></a></li>
-            <li><a class="menu-accordion" href="Live.php" title="Live" onclick="window.open(this.href); return false;"><img src="img/boutonLivesArr.png" /></a></li>            
+    <ul id="menuParametre">
+            <li><a class="menuParametre" href="Infoparticipant.php" title="Mon compte"><img src="img/boutonMonCompteArr.png" /></a></li>                         
+            <li><a class="menuParametre" href="parametreprofil.php" title="Mon profil"><img src="img/boutonMonProfilArr.png" /></a></li>
+            
+                                         <li ><a href="parametreprofil.php" title="Paramétres"><img src="img/boutonParametres.png" /></a></li>
+                                         <li><a href="Mesmessages.php" title="Messagerie/Alertes"><img src="img/boutonMessagerieAlerte.png" /></a></li>
+                                      
+            <li><a class="menuParametre" href="Mes_amis.php" title="Mes amis"><img src="img/boutonMesAmisArr.png" /></a></li>
+            <li><a class="menuParametre" href="Live.php" title="Live"><img src="img/boutonLivesArr.png" /></a></li>            
 
                 </ul>
 </div>
 
 
-<div class="floatright-main">
+<div class="titreParametre ">
 <h2>Mon profil</h2>
 </div>
 
@@ -35,15 +32,15 @@
 <fieldset class="rollin2">
 
 <fieldset class="rollin">
-            <legend class="h2"><span>Acc�s profil :</span></legend>
-            <div>             <p class="bloc"><em>Qui peut acc�der � mon profil ?</em></p>
+            <legend class="h2"><span>Accès profil :</span></legend>
+            <div>             <p class="bloc"><em>Qui peut accéder à mon profil ?</em></p>
             <div class="profil radio-checkbox">
                 <input class="radio" type="radio" id="tous" name="consultation_profil" value="0" checked="checked"/>
                 <label for="tous">Tous les utilisateurs</label>
             </div>
             <div class="profil radio-checkbox">
                 <input class="radio" type="radio" id="seulement_profil_Doyouevent" name="consultation_profil" value="1" />
-                <label for="seulement_profil_Doyouevent">Tous les utilisateurs connect�s sur Doyouevent</label>
+                <label for="seulement_profil_Doyouevent">Tous les utilisateurs connectés sur Doyouevent</label>
             </div>
             <div class="profil radio-checkbox">
                 <input class="radio" type="radio" id="seulement_profil_amis" name="consultation_profil" value="2" />
@@ -55,7 +52,7 @@
         <fieldset class="rollin">
             <legend class="h2"><span>Mes commentaires profil :</span></legend>
         <div>         
-        <div class="=profil radio-checkbox">
+        <div class= "profil radio-checkbox">
             <input type="checkbox" name="commentaire_profil" id="profilCommentaire" value="1" checked="checked" />
             <label for="profilCommentaire"><strong>Activer les commentaires sur mon profil</strong></label>
         </div>
@@ -79,7 +76,7 @@
    <legend class="h2"><span>A propos de moi :</span></legend>
        
                         <div class="profil radio-checkbox ">
-                        <label class="col_third floatleft" for="A propos de moi"></span></label> 
+                        <label class="col_third floatleft" for="Description"></label> 
                         <p>Description:</p><textarea name="Description" cols=60 rows=15>
                         </textarea>
                         </div>
@@ -99,13 +96,13 @@
 
 function modification_2() {
  if (confirm('Voulez vous enregistrer vos modifications, cliquez sur "OK" si c\'est le cas.')) {
-    alert('Les modifications ont �t� enregistr�s.');
+    alert('Les modifications ont été enregistrés.');
 	myForm = document.getElementById("personalData");
         myForm .submit();
 
 }
 else {
-    alert("Aucune modification a �t� enregistr�.");
+    alert("Aucune modification a été enregistré.");
 }
 }
 

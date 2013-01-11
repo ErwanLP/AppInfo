@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
-$bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
+$bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', 'root');   
+
 $bdd->exec('SET NAMES utf8');
 //connection à la base de données
 
@@ -83,7 +84,7 @@ $result = $bdd->query('SELECT * FROM event ' . $requete);
                 if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
                     ?>
                     <div class="positionBouton">
-                        <a href="creationEvenement.php"><img src ="img/ampouleCreerEvenement.png"/></a>
+                        <a href="creationEvenement.php"><img src ="img/BoutonCreerEvent.png"/></a>
                     </div>
                     <?php
                 }

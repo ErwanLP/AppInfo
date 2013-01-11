@@ -1,7 +1,6 @@
-<!DOCTYPE html>
 <?php include("profil.php"); ?>
 <html>
-    <body>        
+    <body>   
         <div id="coordonnee">
             <p id="infoPerso">
                 <!--<span class="titre">Informations Personnelles</span><br/><br/><br/>-->

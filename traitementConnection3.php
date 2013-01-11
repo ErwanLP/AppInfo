@@ -4,7 +4,7 @@ if (isset($_POST['nomDeCompte']) && isset($_POST['mdp'])) {
     //on regarde si les variables nom de Compte et mdp envoyées par la methode post sont bien sont bien présentent
     session_start();
     //debut de la session
-    $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
+$bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', 'root'); 
     //connection à la base de données
     $nomDeCompte = $_POST['nomDeCompte'];
     //la variable nomDeCompte importée par méthode post est mise dans la variable nomDeCompte    
@@ -66,6 +66,7 @@ if (isset($_POST['nomDeCompte']) && isset($_POST['mdp'])) {
     } else {
 
         header('Location:index.php');
+
         // si la connection n'aboutit pas , on redirige l'utilisateur vers la page de connexion
     }
 }
