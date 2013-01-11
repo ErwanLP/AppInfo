@@ -77,13 +77,7 @@
                     <strong>Préférence événements :</strong><?php echo " ".$data['preference'];?><br/><br/>
                     <strong>Description :</strong><br/><br/>
                     <?php echo " ".$data['description'];?>
-                    Alex95410, la haine ! Alex95410 a 15 ans, en général. Si ce n'est dans la vie, c'est son âge mental. 
-                    Alex95410 a les cheveux longs, il écoute de la techno et il ne conçoit pas un hiver sans sa semaine de ski aux Menuires.
-                    Alex95410 est un rebel, la preuve, il fume des oinjs, et il porte toujours son uniforme d'anticonformiste comme tous les autres Kikoos. 
-                    Alex95410, il est kevl, et il évite soigneusement de réflechir à quelque sujet que ce soit, de peur de froisser sa belle kevl attitude ! 
-                    Donc, Alex95410 est kon komme une brelle, mais ça ne l'empêche pas de la ramener sur internet. Et bien sûr Alex95410, il sait pas ékrir !!! 
-                    Alors il met des smileys partout, et des !!! et des k, etc... Comme ça, non seulement Alex95410 n'a rien à dire, mais il le dit mal. 
-                    Alex95410, c'est l'idiot du village global.  
+                    
                 </p>
             </div>
             <div id="amis"style="display:none;">
