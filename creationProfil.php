@@ -71,7 +71,7 @@
                                     <option value="italie">Italie</option>
                                     <option value="royaume-uni">Royaume-Uni</option>
                                 </optgroup>
-                                <optgroup label="Am�rique">
+                                <optgroup label="Amérique">
                                     <option value="canada">Canada</option>
                                     <option value="etats-unis">Etats-Unis</option>
                                 </optgroup>
