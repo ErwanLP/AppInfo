@@ -31,10 +31,17 @@
             </aside>
             <div id="description">
                 <fieldset>
-                    <a href="img/avatar.jpg"><img src="img/avatar_mini.jpg" alt="Avatar" title="Cliquez pour agrandir" style="border: solid black 2px"/></a>
-                    <p id="nom4">Alexis MARTIN</p>
-                    <p id="lieu">France, Groslay</p>
-                </fieldset>
+                        <a href="img/avatar.jpg"><img src="img/avatar_mini.jpg" alt="Avatar" title="Cliquez pour agrandir" style="border: solid black 2px"/></a>                   
+                        <?php
+                        $result = $bdd->query('SELECT * FROM participant');
+                        $data = $result->fetch();
+                        ?>
+                        <p id="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];
+                        ?></p>
+                        <p id="lieu"><?php echo $data['pays'] . ", " . $data['villes'];
+                        ?></p>
+                    </fieldset>
+
 
             </div>
             <div class="menu">

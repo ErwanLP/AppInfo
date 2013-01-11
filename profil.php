@@ -44,7 +44,7 @@
                         <li><input type="button" onclick="afficherc();" value="Mes Infos"/></li>
                         <li><input type="button" onclick="affichera();" value="Mes Amis"/></li>
                         <li><input type="button" onclick="afficherme();" value="Mes Events"/></li>
-                        <li><input type="button" onclick="self.location.href='test1.php';" value="Paramètres"/></li>
+                        <li><input type="button" onclick="self.location.href='parametre.php';" value="Paramètres"/></li>
                         <!--<li><a href="#" title="Mes Infos">Mes Infos</a></li>
                         <li><a href="#" title="Mes Amis">Mes Amis</a></li>
                         <li><a href="test1.php" title="Paramètres">Paramètres</a></li>-->
