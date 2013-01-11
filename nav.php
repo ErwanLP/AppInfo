@@ -115,23 +115,7 @@
                 </ul>
 
             </div>
-            <?php
-        }
-
-        if (window.attachEvent) window.attachEvent("onload", sfHover);
-    </script>
-    
-    <?php
-    if (!empty($_SESSION['ID'])) {
-        if(isset($_SESSION['SWITCH']) AND ($_SESSION['SWITCH'] == "pasdeprofilorganisateur" OR $_SESSION['SWITCH'] == "pasdeprofilparticipant") AND $_SESSION['ID'] != null){
-        include("navSansProfil.php");
-        }else{
-            include("navConnect.php");
-        }
-    } else {
-        include("navNonConnect.php");
-    }
-    ?>
-    
+           
+    <?php } ?>
 </body>
 </html>
