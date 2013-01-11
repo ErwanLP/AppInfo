@@ -1,4 +1,4 @@
-    /*droite*/
+/*     /*droite*/
 .menuParametres
 {
 list-style : none;
@@ -18,7 +18,14 @@ padding-right: 20px;
 border: 5px solid black;
 list-style : none;
 }
-
+/* 
++    Document   : test2
++    Created on : 11 janv. 2013, 20:28:13
++    Author     : alexismartin
++    Description:
++        Purpose of the stylesheet follows.
++*/
+ 
 /*milieu*/
 
 .titreParametre  
@@ -30,7 +37,9 @@ height : 849px ;
 position: absolute;
 right: 280px;
 top: 703px;
-}
+root { 
+    display: block;
+ }
 .rollin1
 {
 text-align : center ;
@@ -40,7 +49,7 @@ position: absolute;
 right: 450px;
 top:1100px;
 }
-
+ 
 .infoPerso
 {
 
@@ -97,7 +106,6 @@ position: absolute;
 right : 450px;
 top:1100px;
 }
-
 sup
 {
     color:red;

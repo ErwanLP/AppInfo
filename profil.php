@@ -13,7 +13,7 @@
 
         include("nav.php");
 
-        $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
+        $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', 'root');
         ?>
 
 
@@ -45,14 +45,14 @@
                     <li><input type="button" onclick="afficherc();" value="Mes Infos"/></li>
                     <li><input type="button" onclick="affichera();" value="Mes Amis"/></li>
                     <li><input type="button" onclick="afficherme();" value="Mes Events"/></li>
-                    <li><input type="button" onclick="self.location.href='test1.php'; cacher();" value="Paramètres"/></li>
+                    <li><input type="button" onclick="self.location.href='parametre.php'; cacher();" value="Paramètres"/></li>
                     <!--<li><a href="#" title="Mes Infos">Mes Infos</a></li>
                     <li><a href="#" title="Mes Amis">Mes Amis</a></li>
                     <li><a href="test1.php" title="Paramètres">Paramètres</a></li>-->
                 </ul>
             </div>
 
-            <div id="coordonnee">
+            <div id="coordonnee"> 
                 <p id="infoPerso">
                     <!--<span class="titre">Informations Personnelles</span><br/><br/><br/>-->
                     <strong>Pseudo :</strong><?php echo " ".$data['pseudo'];?><br/><br/>
