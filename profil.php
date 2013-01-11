@@ -44,11 +44,8 @@
                         <li><input type="button" onclick="afficherc();" value="Mes Infos"/></li>
                         <li><input type="button" onclick="affichera();" value="Mes Amis"/></li>
                         <li><input type="button" onclick="afficherme();" value="Mes Events"/></li>
+                        <li><input type="button" onclick="afficherm();" value="Ma Messagerie"/></li>
                         <li><input type="button" onclick="self.location.href='parametre.php';" value="Paramètres"/></li>
-                        <!--<li><a href="#" title="Mes Infos">Mes Infos</a></li>
-                        <li><a href="#" title="Mes Amis">Mes Amis</a></li>
-                        <li><a href="test1.php" title="Paramètres">Paramètres</a></li>-->
-                    </ul>
                 </div>
                 <div id="coordonnee">
                     <p id="infoPerso">
@@ -172,6 +169,11 @@
             }
             function afficherme(){ 
                 document.getElementById("mesEvents").style.display="";
+                document.getElementById("coordonnee").style.display="none";
+                document.getElementById("amis").style.display="none";
+            }
+            function afficherm(){ 
+                document.getElementById("mesEvents").style.display="none";
                 document.getElementById("coordonnee").style.display="none";
                 document.getElementById("amis").style.display="none";
             }
