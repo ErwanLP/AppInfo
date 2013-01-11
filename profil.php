@@ -33,7 +33,7 @@
                     ?>
                     <p id="nom4"><?php echo $data['nom']."  ".$data['prenom'];
                     ?></p>
-                    <p id="lieu"><?php echo $data['pays'].", ".$data['ville'];
+                    <p id="lieu"><?php echo $data['pays'].", ".$data['villes'];
                     ?></p>
                 </fieldset>
 
@@ -56,7 +56,13 @@
                     <strong>Pseudo :</strong><?php echo " ".$data['pseudo'];?><br/><br/>
                     <strong>Prénom :</strong><?php echo " ".$data['prenom'];?><br/><br/>
                     <strong>Nom :</strong><?php echo " ".$data['nom'];?><br/><br/>
-                    <strong>Sexe :</strong><?php echo " ".$data['sexe'];?><br/><br/>
+                    <strong>Sexe :</strong><?php
+                    if($data['sexe'] == 1){
+                        echo " Homme";
+                    } else {
+                        echo " Femme";
+                    }
+                    ?><br/><br/>                    
                     <strong>Date de naissance :</strong><?php echo " ".$data['dateDeNaissance'];?><br/><br/>
                     <strong>Adresse :</strong><?php echo " ".$data['adresse']." - ".$data['codePostal']." - ".$data['villes'];?><br/><br/>
                     <strong>E-mail :</strong><?php echo " ".$data['mail'];?><br/><br/>
@@ -73,6 +79,7 @@
     
                 </p>-->
                 <p id="preference">
+                    <strong>Profession :</strong><?php echo " ".$data['profession'];?><br/><br/>
                     <strong>Loisirs :</strong><?php echo " ".$data['loisirs'];?><br/><br/>
                     <strong>Préférence événements :</strong><?php echo " ".$data['preference'];?><br/><br/>
                     <strong>Description :</strong><br/><br/>
