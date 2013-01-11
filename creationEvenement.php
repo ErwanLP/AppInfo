@@ -27,7 +27,7 @@
                     if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
                         ?>
                         <div class="positionBouton">
-                            <a href="creationEvenement.php"><img src ="img/BoutonCreerEvent.png"/></a>
+                            <a href="creationEvenement.php"><img src ="img/ampouleCreerEvenement.png"/></a>
                         </div>
                         <?php
                     }
@@ -39,7 +39,7 @@
                 </aside>
                 <article>
                     <div class="titreacticle">
-                        <h2><span> Cr&eacute;ation &Eacute;v&egrave;nement :</span></h2>
+                        <h2><span> Cr&eacute;ation Ev&egrave;nement :</span></h2>
                     </div>
                     <div class="page">
 

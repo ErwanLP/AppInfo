@@ -7,7 +7,7 @@
     <body>
 
         <ul class="navigation">
-            <li class="sousMenuBascule"><span>&Eacute;v&eacute;nement</span>
+            <li class="sousMenuBascule"><span>Ev&egrave;nement</span>
                 <ul class="sousMenu">
                     <li><a href="event.php?onglet=spectacle">Spectacle</a>
                         <ul>
@@ -75,14 +75,43 @@
                     </li>
                 </ul>
             </li>
-            <li class="sousMenuBascule"><span>&Eacute;v&eacute;nement r&eacute;cent</span>
+            <?php
+            if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
+            ?>
+            <li class="sousMenuBascule"><span>Mes Ev&egrave;nement</span>
+                <ul class="sousMenu">
+                    <li>
+                        <?php 
+                        
+                       // $result = $bdd->query(SELECT nom.event)
+                        
+                        
+                        ?>
+                        
+                        
+                    </li>
+                </ul>
+            </li>
+            <?php 
+            }else if(isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "participant" AND $_SESSION['ID'] != null) {
+            ?>
+            <li class="sousMenuBascule"><span>Mes Ev&egrave;nement</span>
+                <ul class="sousMenu">
+                    <li>Afficher ici les evenements auxquelles il est inscrit</li>
+                </ul>
+            </li>
+            <?php
+            }
+            ?> 
+            
+            <li class="sousMenuBascule"><span>Ev&egrave;nement r&eacute;cent</span>
                 <ul class="sousMenu">
                     <li><a href="#" title="Aller à la page #">La bal de Paris</a></li>
                     <li><a href="#" title="Aller à la page #">La patinoire dansante</a></li>
                     <li><a href="#" title="Aller à la page #">Gad en concert</a></li>
                 </ul>
             </li>
-            <li class="sousMenuBascule"><span>Top &Eacute;v&eacute;nement</span>
+            <li class="sousMenuBascule"><span>Top Ev&egrave;nement</span>
                 <ul class="sousMenu">
                     <li><a href="#" title="Aller à la page #">Le musée de l'horreur</a></li>
                     <li><a href="#" title="Aller à la page #">Les restos du coeur</a></li>
@@ -90,19 +119,11 @@
             </li>
             <li class="sousMenuBascule"><span>Forum</span>
                 <ul class="sousMenu">
-<<<<<<< HEAD
-                    <li><a href="indexForum.php" title="Aller à la page Acceuil">Acceuil</a></li>
-                    <li><a href="discutionGenerale.php" title="Aller à la page Discution Générale">Discution g&eacute;n&eacute;rale</a></li>
-                    <li><a href="eventForum.php" title="Aller à la page Evénement">&Eacute;v&eacute;nement</a></li>
-                    <li><a href="organisateur.php" title="Aller à la page Organisateur">Organisateur</a></li>
+                    <li><a href="indexForum.php" title="Aller à la page Acceuil">Accueil</a></li>
+                    <li><a href="souhait.php" title="Aller à la section Souhait">Souhait</a></li>
+                    <li><a href="taverne.php" title="Aller à la section Taverne">Taverne</a></li>
+                    <li><a href="presentation.php" title="Aller à la section Présentation">Pr&eacute;sentation</a></li>
                     <li><a href="aideEtSupport.php" title="Aller à la page Aide et Support">Aide et Support</a></li>
-=======
-                    <li><a href="#" title="Aller à la page Acceuil">Accueil</a></li>
-                    <li><a href="#" title="Aller à la page Discution Générale">Discution g&eacute;n&eacute;rale</a></li>
-                    <li><a href="#" title="Aller à la page Evénement">&Eacute;v&eacute;nement</a></li>
-                    <li><a href="#" title="Aller à la page Organisateur">Organisateur</a></li>
-                    <li><a href="#" title="Aller à la page Aide et Support">Aide et Support</a></li>
->>>>>>> branch 'master' of https://github.com/ErwanLP/AppInfo.git
                 </ul>
             </li>
         </ul>
@@ -154,17 +175,3 @@
         </script>
     </body>
 </html>
-
-<!--
-<ul>
-                            <li><a href="event.php?onglet=spectacle&sousOnglet=comedieMusicale" >Com&eacute;die Musicale</a></li>
-                            <li><a href="event.php?onglet=spectacle&sousOnglet=theatre">Th&eacute;atre</a></li>
-                            <li><a href="event.php?onglet=spectacle&sousOnglet=cafeTheatre">Caf&eacute; Th&eacute;atre</a></li>
-                            <li><a href="event.php?onglet=spectacle&sousOnglet=cabaret">Cabaret</a></li>
-                            <li><a href="event.php?onglet=spectacle&sousOnglet=danse">Danse</a></li>
-                            <li><a href="event.php?onglet=spectacle&sousOnglet=sonEtLumiere">Son et lumi&egrave;re</a></li>
-                            <li><a href="event.php?onglet=spectacle&sousOnglet=opera">Op&eacute;ra</a></li>
-                            <li><a href="event.php?onglet=spectacle&sousOnglet=cirque">Cirque</a></li>
-                            <li><a href="event.php?onglet=spectacle&sousOnglet=oneManShow">One Man Show</a></li>
-                            <li><a href="event.php?onglet=spectacle&sousOnglet=spectacleDeRue">Spectacle de rue</a></li>
-                        </ul>-->

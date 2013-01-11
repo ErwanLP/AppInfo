@@ -5,69 +5,88 @@ include('start.php');
 include('bddForum.php');
 ?>
 <?php /* include("head.php"); */ ?>
-<body>
 
 
-    <?php
-    /* empty
-     * header('Location:http://une.url.fr');
-     */
-    include("header.php");
+<?php
+include("header.php");
 
-    include("nav.php");
-    ?>
-    
-        <section>
-     <aside class ="new">
+include("nav.php");
+?>
+
+<section>
+    <aside class ="new">
         <div class ="eventNew">
             <img class ="photonew" src ="img/new.jpg"/>
-
         </div>
+
+        <?php
+        if (!isset($_SESSION['ID'])) {
+            include("connexion.php");
+        }
+        if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
+            ?>
+            <div class="positionBouton">
+                <a href="creationEvenement.php"><img src ="img/ampouleCreerEvenement.png"/></a>
+            </div>
+            <?php
+        }
+        ?>
+
     </aside>
 
     <aside class ="navg">
         <?php include ("arbre.php"); ?>
     </aside>
-<a href="ajouterSujet.php"><img src="includes/images/boutonNewTopic.png" class="boutonNewTopic" alt="ajouter un sujet" title="noveauTopic" /></a>
-<br/>
 
-<?php
-$tab_info_souhait = array();
-$var_tab_info_array = 0;
-$req=$bdd->query('SELECT * FROM topic ORDER BY id DESC');
-while ($donnees=$req->fetch()) {
-$tab_info_souhait[$var_tab_info_array][0]=$donnees["nom"];
-$tab_info_souhait[$var_tab_info_array][1]=$donnees["commentaire"];
+    <article>
 
-$tab_info_souhait[$var_tab_info_array][2]=$donnees["date_creation"];
-$var_tab_info_array++;
-}
-?> 
-<table class="pposition">
-        <tr>
-            <th colspan="4" class="souhait">Souhait</th>
-        </tr>
-        <tr>
-           <td class="sujet">sujet</td>
-           <td class="dernierMessage">Dernier message</td>
-           <td class="auteur">Auteur</td>
-           <td class="dateDecreation">date de création</td>
-           
-        </tr>
-     <?php for($a=0;$a<count($tab_info_souhait);$a++){
-     
-     ?>
-        <tr>
-            <td class="contenuMessage"><a href="nouveauCommentaire.php"><?php echo $tab_info_souhait[$a][0]; ?></a></td>
-            <td class="message"><?php echo $tab_info_souhait[$a][1]; ?></td>
-            <td class="auteur">Mohamed</td>
-            <td class="date"><?php echo $tab_info_souhait[$a][2]; ?></td>
-            
-        </tr>
-        <?php }?>
-        
-</table>
+        <div class="creerTopic">
+            <a href="ajouterSujet.php" alt="ajouter un sujet" title="Créer un nouveau sujet"> Ajouter un sujet</a>
+        </div>
 
-    <?php include('footer.php');?>
- </body>
+        <div class="backPage">
+            <a href="indexForum.php" alt="retour à l'accueil du forum" title="Retour à l'accueil du forum"> Retour </a>
+        </div>
+
+        <?php
+        $tab_info_souhait = array();
+        $var_tab_info_array = 0;
+        $req = $bdd->query('SELECT topicforum.* FROM topicforum, souscategorieforum WHERE souscategorieforum.ID = 1 AND topicforum.id_souscategorie = souscategorieforum.ID');
+        while ($donnees = $req->fetch()) {
+            $tab_info_souhait[$var_tab_info_array][0] = $donnees["nom"];
+            $tab_info_souhait[$var_tab_info_array][1] = $donnees["commentaire"];
+
+            $tab_info_souhait[$var_tab_info_array][2] = $donnees["date_creation"];
+            $tab_info_souhait[$var_tab_info_array][3] = $donnees["id"];
+            $var_tab_info_array++;
+        }
+        ?>
+
+        <div class="navigationForum">
+            <div class="sousMenuBasculeForum">
+                <span> Souhait </span>
+                <div class="sousMenuForumBeta">
+                    <table class="affichageTableau">
+                        <tr class="barreDeTitre">
+                            <th class="sujet"> Sujet </th>
+                            <th class="dernierMessage"> Dernier message </th>
+                            <th class="auteur"> Auteur </th>
+                            <th class="dateDecreation"> Date de cr&eacute;ation </th>
+                        </tr>
+                        <?php for ($a = 0; $a < count($tab_info_souhait); $a++) {
+                            ?>
+                            <tr class="affichageSujet">
+                                <td class="contenuMessage"><a href="commentaireForum.php?idTopic=<?php echo $tab_info_souhait[$a][3]?>&titreTopic=<?php echo $tab_info_souhait[$a][0]?>"><?php echo $tab_info_souhait[$a][0]; ?></a></td>
+                                <td class="message"><?php echo $tab_info_souhait[$a][1]; ?></td>
+                                <td class="auteur">Mohamed</td>
+                                <td class="date"><?php echo $tab_info_souhait[$a][2]; ?></td>
+                            </tr>
+                        <?php } ?>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>
+<?php include('footer.php'); ?>
 </html>

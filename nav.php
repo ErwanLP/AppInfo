@@ -1,14 +1,3 @@
-<!--<nav class = "elementmenu" >
-    <ul>
-        <li id="soiree"><a href="nav.php" ><img src ="img/ongletSoiree.png" alt="onglet" /></a></li>
-        <li id="bar"><a href="nav.php"></a></li>
-        <li id ="concert"><a href=#></a></li>
-        <li id ="restauration"><a href=#></a></li>
-        <li id  ="spectacle"><a href ="event.php?onglet=spectacle">test</a></li>
-        <li id ="autre"><a href=creationEvenement.php>Cre&acute;ation Evenement</a></li>
-    </ul>
-</nav> -->
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -107,7 +96,11 @@
     
     <?php
     if (!empty($_SESSION['ID'])) {
-        include("navConnect.php");
+        if(isset($_SESSION['SWITCH']) AND ($_SESSION['SWITCH'] == "pasdeprofilorganisateur" OR $_SESSION['SWITCH'] == "pasdeprofilparticipant") AND $_SESSION['ID'] != null){
+        include("navSansProfil.php");
+        }else{
+            include("navConnect.php");
+        }
     } else {
         include("navNonConnect.php");
     }

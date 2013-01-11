@@ -300,7 +300,7 @@ border: 2px solid white;
 }
 
 
-.connection
+.connexion
 {
     /*border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
@@ -315,8 +315,39 @@ border: 2px solid white;
     /*background-color : tan;*/
 }
 
+.connexion li
+{
 
+    color: blue;
+    display: inline;
+    margin-right: 1px;
+    /*background-image: url("img/onglet.png");
+    background-repeat: no-repeat;*/
+    width : 100%;
+    height : 20px;
+}
 
+.connexionSansProfil
+{
+    width: 580px;
+    position: absolute;
+    top : 289px;
+    left : 1348px;
+    height : 50px ;
+    margin-bottom: 20px;
+}
+
+.connexionSansProfil li
+{
+
+    color: blue;
+    display: inline;
+    margin-right: 1px;
+    /*background-image: url("img/onglet.png");
+    background-repeat: no-repeat;*/
+    width : 100%;
+    height : 20px;
+}
 
 
 
@@ -412,17 +443,7 @@ border: 2px solid white;
 
 }*/
 
-.connection li
-{
 
-    color: blue;
-    display: inline;
-    margin-right: 1px;
-    /*background-image: url("img/onglet.png");
-    background-repeat: no-repeat;*/
-    width : 100%;
-    height : 20px;
-}
 
 /*.elementmenu
 {
@@ -468,13 +489,14 @@ article
 {
     /*box-shadow: 0px 0px 10px azure;*/
     width : 60%;
-    height : 1200px;
+    height : 1250px;
     position: absolute;
     right : 20%;
     top : 320px;
     /* border: 2px solid white;	*/
     background-color: #ebe2d9;
     box-shadow: 0px 0px 10px black;
+    overflow: auto;
 
 }
 
@@ -787,6 +809,7 @@ article
 
 /*2-ASIDE*/
 
+/*NEWS*/
 
 .new
 {
@@ -964,6 +987,257 @@ a:visited
     display : inline-block;
 }
 
+/*FORUM*/
+
+.affichageTableau {
+
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    /*border: 1px solid black;*/
+}
+
+.affichageTableau th {
+    
+    border: 1px solid #666;
+}
+
+.affichageTableau td {
+    
+    border: 1px solid #666;
+    padding: 10px;
+}
+
+.barreDeTitre {
+
+    box-shadow: 0px 1px 2px #666;
+    border-bottom: 1px solid black;
+    color:red;
+    background-color: #7297b7;
+}
+
+.affichageSujet {
+
+    border-top: 1px solid #666;
+}
+
+/*NAVIGATION FORUM*/
+
+.navigationForum {
+
+
+    margin-left:68px;
+    position:absolute;
+    width: 1000px;
+    top:80px;
+}
+
+.sousMenuBasculeForum {
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 1px solid black;
+    background-color: #666;
+    padding-top: 10px;
+}
+
+
+.sousMenuBasculeForum a {
+
+    color: white;
+    font-size: 22px;
+}
+
+.sousMenuBasculeForum span {
+    
+    color: white;
+    font-size: 22px;
+}
+/*.navigationForum a {
+    display: block;
+    padding: 5px 10px;
+    color: black;
+    text-decoration: none;
+    text-align: left;
+    width: 145%;
+}*/
+
+/*.navigationForum .sousMenuBasculeForum span {
+    display: block;
+    height:35px;
+    font-size: 25px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 4px 10px;
+    color: white;
+    text-decoration: none;
+}*/
+
+.navigationForum .sousMenuForumBeta {
+
+    list-style: none;
+    background-color: white;
+    border-top: 1px solid black;
+    margin-top: 10px;
+}
+
+.navigationForum .sousMenuForumBeta a {
+
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navigationForum .sousMenuForumAlpha {
+
+    list-style: none;
+    background-color: white;
+    border-top: 1px solid black;
+    margin-top: 10px;
+}
+
+.navigationForum .sousMenuForumAlpha a {
+
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nouveauCommentaire {
+    
+    margin-top: 30px;
+}
+
+.nouveauCommentaire textarea {
+    
+    width: 400px;
+    height: 150px;
+    padding: 3px;
+    border: 1px solid  #cebd8b;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px #C0C0C0 inset;
+}
+
+.creerTopic {
+    
+    border: 4px double black;
+    width: 200px;
+    height: 30px;
+    position: absolute;
+    margin-left: 860px;
+    margin-top: 30px;
+    padding-top: 5px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+}
+
+.creerTopic a:hover, creerTopic a:active {
+    color: #7297b7;
+}
+
+.backPage {
+    
+    border: 4px double black;
+    width: 200px;
+    height: 30px;
+    position: absolute;
+    margin-left: 68px;
+    margin-top: 28px;
+    padding-top: 5px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+}
+
+.backPage a:hover, backPage a:active {
+    color: #7297b7;
+}
+
+.titreTopic {
+    
+    border: 2px solid black;
+    margin-top: 80px;
+    width: 400px;
+    height: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 370px;
+    border-radius: 10px;
+    background-color: #C0D5FF;
+    
+}
+
+.titreTopic strong {
+    
+    position: relative;
+    top: 25px;
+    font-size: 2em;
+    color: black;
+}
+
+.containerMessageForum {
+   
+    margin-top: 130px;
+    
+}
+
+.messageForum {
+    
+    list-style: none;
+    border-bottom: 1px solid black;
+    
+}
+
+.positionMessageForum {
+    
+    border: 2px solid black;
+    height: 200px;
+    width: 900px;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.positionCommentaire {
+    
+    border-left: 1px dashed black;
+    border-right: 1px solid black;
+    padding: 15px 10px 10px 10px;
+    margin-top: -152px;
+    margin-left: 250px;
+    margin-right: -1px;
+    background-color: white;
+    text-align: left;
+    height: 146px;
+    overflow-y: auto
+}
+
+.titreMessageForum {
+    
+    border-bottom: 1px dashed black;
+    width: 900px;
+    
+    
+}
+
+.positionTitreForum {
+    
+    text-align: right;
+    clear: both;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+
+.positionTitreForum strong {
+    
+    float: left;
+    color: red;
+}
 /*RECHERCHE AVANCEE*/
 
 .contenuRA {
@@ -971,17 +1245,11 @@ a:visited
     background-color: #ebe2d9;
     padding: 0px 10px 10px 10px;
     width: 700px;
-    margin-left: 250px;
-    margin-top: 100px;
-}
-
-.contenuRA span {
-
-    color: red;
+    margin-left: 200px;
 }
 
 .fieldsetRA {
-    padding:0 20px 20px 20px;
+    padding:20px 20px 10px 20px;
     /*margin-bottom:10px;*/
     border:5px double #666;
     background-color: white;
@@ -1059,6 +1327,209 @@ a:visited
     background-color: lightgray;
     font-size: 15px;
     color: black;
+}
+
+/*CREATION PROFIL PARTICIPANT*/
+
+.contenuCPP {
+    position: absolute;
+    background-color: #ebe2d9;
+    padding: 0px 10px 10px 10px;
+    width: 700px;
+    margin-left: 200px;
+}
+
+.contenuCPP span {
+
+    color: red;
+}
+
+.fieldsetCPP {
+    padding:0 20px 20px 20px;
+    border:5px double #666;
+    background-color: white;
+}
+.titreCPP {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.contenuCPP input[type=text], textarea, select, option {
+    background-color:#F5FFED;
+    /*#FFF3F3;*/
+}
+
+.contenuCPP input[type=text], textarea, select {
+    padding:3px;
+    border:1px solid  #cebd8b;
+    border-radius:5px;
+    width:120px;
+    box-shadow:1px 1px 2px #C0C0C0 inset;
+}
+
+.contenuCPP input[type=tel], textarea, select, option {
+    background-color:#F5FFED;
+    /*#FFF3F3;*/
+}
+
+.contenuCPP input[type=tel], textarea {
+    padding:3px;
+    border:1px solid  #cebd8b;
+    border-radius:5px;
+    width:120px;
+    box-shadow:1px 1px 2px #C0C0C0 inset;
+}
+
+.contenuCPP input[type=date], textarea, select, option {
+    background-color:#F5FFED;
+    /*#FFF3F3;*/
+}
+
+.contenuCPP input[type=date], textarea {
+    padding:3px;
+    border:1px solid  #cebd8b;
+    border-radius:5px;
+    width:120px;
+    box-shadow:1px 1px 2px #C0C0C0 inset;
+}
+
+.contenuCPP input[type=url], textarea, select, option {
+    background-color:#F5FFED;
+    /*#FFF3F3;*/
+}
+
+.contenuCPP input[type=url], textarea {
+    padding:3px;
+    border:1px solid  #cebd8b;
+    border-radius:5px;
+    width:180px;
+    box-shadow:1px 1px 2px #C0C0C0 inset;
+}
+
+.contenuCPP input[type=submit], input[type=reset] {
+    margin-top: 10px;
+    width:70px;
+    box-shadow:0px 0px 1px black;
+    cursor:pointer;
+}
+
+
+.couleurTexte span{
+
+
+    background-color: lightgray;
+    font-size: 15px;
+    color: black;
+}
+
+.tailleDescription {
+
+    width: 300px;
+    height: 150px;
+}
+
+/*CREATION PROFIL ORGANISATEUR*/
+
+.contenuCPO {
+    position: absolute;
+    background-color: #ebe2d9;
+    padding: 0px 10px 10px 10px;
+    width: 700px;
+    margin-left: 200px;
+}
+
+.contenuCPO span {
+
+    color: red;
+}
+
+.fieldsetCPO {
+    padding:0 20px 20px 20px;
+    border:5px double #666;
+    background-color: white;
+}
+.titreCPO {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.contenuCPO input[type=text], textarea, select, option {
+    background-color:#F5FFED;
+    /*#FFF3F3;*/
+}
+
+.contenuCPO input[type=text], textarea, select {
+    padding:3px;
+    border:1px solid  #cebd8b;
+    border-radius:5px;
+    width:120px;
+    box-shadow:1px 1px 2px #C0C0C0 inset;
+}
+
+.contenuCPO input[type=tel], textarea, select, option {
+    background-color:#F5FFED;
+    /*#FFF3F3;*/
+}
+
+.contenuCPO input[type=tel], textarea {
+    padding:3px;
+    border:1px solid  #cebd8b;
+    border-radius:5px;
+    width:120px;
+    box-shadow:1px 1px 2px #C0C0C0 inset;
+}
+
+.contenuCPO input[type=date], textarea, select, option {
+    background-color:#F5FFED;
+    /*#FFF3F3;*/
+}
+
+.contenuCPO input[type=date], textarea {
+    padding:3px;
+    border:1px solid  #cebd8b;
+    border-radius:5px;
+    width:120px;
+    box-shadow:1px 1px 2px #C0C0C0 inset;
+}
+
+.contenuCPO input[type=url], textarea, select, option {
+    background-color:#F5FFED;
+    /*#FFF3F3;*/
+}
+
+.contenuCPO input[type=url], textarea {
+    padding:3px;
+    border:1px solid  #cebd8b;
+    border-radius:5px;
+    width:180px;
+    box-shadow:1px 1px 2px #C0C0C0 inset;
+}
+
+.contenuCPO input[type=submit], input[type=reset] {
+    margin-top: 10px;
+    width:70px;
+    box-shadow:0px 0px 1px black;
+    cursor:pointer;
+}
+
+
+
+.couleurTexte span{
+
+
+    background-color: lightgray;
+    font-size: 15px;
+    color: black;
+}
+
+.tailleDescription {
+
+    width: 300px;
+    height: 150px;
 }
 
 /*ARBORESSANCE*/
