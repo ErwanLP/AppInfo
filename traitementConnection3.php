@@ -50,7 +50,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                 //on le redirige dans la page principale qui est dynamique par rapport à l'acteur qui la voie
             } else {
                 $_SESSION['SWITCH'] = "pasdeprofilparticipant";
-               header('Location:index.php'); //redirection à la page de création profil Participant
+               header('Location:creationProfilParticipant.php'); //redirection à la page de création profil Participant
             }
         } else {
             // si l'utilisateur a choisi de se connecter en tant qu'organisateur
@@ -59,14 +59,15 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                 header('Location:index.php');
             } else {
                 $_SESSION['SWITCH'] = "pasdeprofilorganisateur";
-                header('Location:index.php'); //redirection page de création Organisateur
+                header('Location:creationProfilOrganisateur.php'); //redirection page de création Organisateur
             }
         }
         }
     } else {
 
         header('Location:index.php');
-        // si la connection n'aboutit pas , on redirige l'utilisateur vers la page de index
+
+        // si la connection n'aboutit pas , on redirige l'utilisateur vers la page de connexion
     }
 }
 ?>

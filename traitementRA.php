@@ -61,7 +61,7 @@ $result = $bdd->query('SELECT * FROM event WHERE theme = "' . $theme . '" AND li
                 if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
                     ?>
                     <div class="positionBouton">
-                        <a href="creationEvenement.php"><img src ="img/BoutonCreerEvent.png"/></a>
+                        <a href="creationEvenement.php"><img src ="img/ampouleCreerEvenement.png"/></a>
                     </div>
                     <?php
                 }

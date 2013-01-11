@@ -9,9 +9,6 @@ include('bddForum.php');
 
 
     <?php
-    /* empty
-     * header('Location:http://une.url.fr');
-     */
     include("header.php");
 
     include("nav.php");
@@ -21,33 +18,75 @@ include('bddForum.php');
         <aside class ="new">
             <div class ="eventNew">
                 <img class ="photonew" src ="img/new.jpg"/>
-
             </div>
+
+            <?php
+            if (!isset($_SESSION['ID'])) {
+                include("connexion.php");
+            }
+            if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
+                ?>
+                <div class="positionBouton">
+                    <a href="creationEvenement.php"><img src ="img/ampouleCreerEvenement.png"/></a>
+                </div>
+                <?php
+            }
+            ?>
+
         </aside>
 
         <aside class ="navg">
             <?php include ("arbre.php"); ?>
         </aside>
-        <a href="ajouterSujet.php"><img class="boutonNewTopic" src="includes/images/boutonNewTopic.png" alt="ajouter un sujet" title="noveauTopic"/></a>
-        <br/>
-        <table class="pposition">
-            <tr>
-                <th colspan="4" class="presentation">Presentation</th>
-            </tr>
-            <tr>
-                <th class="topic">topic</th>
-                <th class="auteur">Auteur</th>
-                <th class="dateDecreation">date de creation</th>
-                <th class="dernierMessage">Dernier message</th>
-            </tr>
-            <tr>
-                <td class="contenuMessage"><a href="nouveauCommentaire.php">je veux angelina jolie a la soiree</a></td>
-                <td class="auteur">Mohamed</td>
-                <td class="dateDecreation">12/12/12</td>
-                <td>on ne vous aime pas</td>
-            </tr>
-        </table>
-    </section>       
+
+        <article>
+
+            <div class="creerTopic">
+                <a href="ajouterSujet.php" alt="ajouter un sujet" title="Créer un nouveau sujet"> Ajouter un sujet</a>
+            </div>
+
+            <div class="backPage">
+                <a href="indexForum.php" alt="retour à l'accueil du forum" title="Retour à l'accueil du forum"> Retour </a>
+            </div>
+
+            <?php
+            $tab_info_presentation = array();
+            $var_tab_info_array = 0;
+            $req = $bdd->query('SELECT topicforum.* FROM topicforum, souscategorieforum WHERE souscategorieforum.ID = 3 AND topicforum.id_souscategorie = souscategorieforum.ID');
+            while ($donnees = $req->fetch()) {
+                $tab_info_presentation[$var_tab_info_array][0] = $donnees["nom"];
+                $tab_info_presentation[$var_tab_info_array][1] = $donnees["commentaire"];
+
+                $tab_info_presentation[$var_tab_info_array][2] = $donnees["date_creation"];
+                $var_tab_info_array++;
+            }
+            ?>
+
+            <div class="navigationForum">
+                <div class="sousMenuBasculeForum">
+                    <span> Pr&eacute;sentation </span>
+                    <div class="sousMenuForumBeta">
+                        <table class="affichageTableau">
+                            <tr class="barreDeTitre">
+                                <th class="sujet"> Sujet </th>
+                                <th class="dernierMessage"> Dernier message </th>
+                                <th class="auteur"> Auteur </th>
+                                <th class="dateDecreation"> Date de cr&eacute;ation </th>
+                            </tr>
+                            <?php for ($a = 0; $a < count($tab_info_presentation); $a++) {
+                                ?>
+                                <tr class="affichageSujet">
+                                    <td class="contenuMessage"><a href="commentaireForum.php?titreTopic=<?php echo $tab_info_presentation[$a][0]?>"><?php echo $tab_info_presentation[$a][0]; ?></a></td>
+                                    <td class="message"><?php echo $tab_info_presentation[$a][1]; ?></td>
+                                    <td class="auteur">Mohamed</td>
+                                    <td class="date"><?php echo $tab_info_presentation[$a][2]; ?></td>
+                                </tr>
+                            <?php } ?>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
     <?php include('footer.php'); ?>
-</body>
 </html>
