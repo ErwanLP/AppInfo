@@ -1,14 +1,3 @@
-<!--<nav class = "elementmenu" >
-    <ul>
-        <li id="soiree"><a href="nav.php" ><img src ="img/ongletSoiree.png" alt="onglet" /></a></li>
-        <li id="bar"><a href="nav.php"></a></li>
-        <li id ="concert"><a href=#></a></li>
-        <li id ="restauration"><a href=#></a></li>
-        <li id  ="spectacle"><a href ="event.php?onglet=spectacle">test</a></li>
-        <li id ="autre"><a href=creationEvenement.php>Cre&acute;ation Evenement</a></li>
-    </ul>
-</nav> -->
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -90,28 +79,43 @@
             </form>
         </div>
 
-    <script type="text/javascript">
-        sfHover = function() {
-            var sfEls = document.getElementById("nav").getElementsByTagName("li");
-            for (var i=0; i<sfEls.length; i++) {
-                sfEls[i].onmouseover=function() {
-                    this.className+=" sfhover";
-                }
-                sfEls[i].onmouseout=function() {
-                    this.className=this.className.replace(new RegExp(" sfhover\b"), "");
+        <script type="text/javascript">
+            sfHover = function() {
+                var sfEls = document.getElementById("nav").getElementsByTagName("li");
+                for (var i=0; i<sfEls.length; i++) {
+                    sfEls[i].onmouseover=function() {
+                        this.className+=" sfhover";
+                    }
+                    sfEls[i].onmouseout=function() {
+                        this.className=this.className.replace(new RegExp(" sfhover\b"), "");
+                    }
                 }
             }
-        }
-        if (window.attachEvent) window.attachEvent("onload", sfHover);
-    </script>
-    
-    <?php
-    if (!empty($_SESSION['ID'])) {
-        include("navConnect.php");
-    } else {
-        include("navNonConnect.php");
-    }
-    ?>
-    
+            if (window.attachEvent) window.attachEvent("onload", sfHover);
+        </script>
+
+        <?php
+        if (!empty($_SESSION['ID'])) {
+            ?>
+            <div class = "connection">
+                <ul>
+                    <li><a href="traitSwitch.php"><img src="img/switch.png" style="margin-right: 20px;"/></a></li>
+                    <li><a href=profil.php>Mon compte</a> |</li>
+                    <li><a href="deconnection.php">Deconnexion</a></li>
+                </ul>
+
+            </div>
+            <?php
+        } else {
+            ?>
+            <div class ="connection">
+                <ul>
+                    <li><a href="index.php" >Accueil</a> |</li> 
+                    <li><a href="inscription.php">Inscription</a> |</li>
+                </ul>
+
+            </div>
+           
+    <?php } ?>
 </body>
 </html>

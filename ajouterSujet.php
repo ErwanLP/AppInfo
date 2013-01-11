@@ -70,11 +70,11 @@ $nom=($_POST['titre']);
 
 //vérification du titre du sujet et du commentaire
 if (strlen($nom) < 3) {
-    echo'erreurTitre="votre titre est très court"';   
+    echo'erreurTitre="votre titre est trop court"';   
  $i++;
 }
 else if (strlen($_POST['commentaire'])<4 && strlen($_POST['commentaire'])>300) {
-    echo'$erreurCommentaire="votre commentaire est soit très long,soit très court"';
+    echo'$erreurCommentaire="votre commentaire est soit trop long,soit trop court"';
     $i++;
 }
 else if ($i==0) {
