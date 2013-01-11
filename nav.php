@@ -1,14 +1,3 @@
-<!--<nav class = "elementmenu" >
-    <ul>
-        <li id="soiree"><a href="nav.php" ><img src ="img/ongletSoiree.png" alt="onglet" /></a></li>
-        <li id="bar"><a href="nav.php"></a></li>
-        <li id ="concert"><a href=#></a></li>
-        <li id ="restauration"><a href=#></a></li>
-        <li id  ="spectacle"><a href ="event.php?onglet=spectacle">test</a></li>
-        <li id ="autre"><a href=creationEvenement.php>Cre&acute;ation Evenement</a></li>
-    </ul>
-</nav> -->
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -126,8 +115,7 @@
                 </ul>
 
             </div>
-            <?php
-        }
-        ?>
-
-        
+           
+    <?php } ?>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <html>
 <head>
 <title>Mes paramétres profil</title>
-<link rel="stylesheet" href="test2.css">
+<link rel="stylesheet" href="parametre.css">
 </head>
 <body>
 
@@ -13,10 +13,10 @@
     <ul id="menuParametre">
             <li><a class="menuParametre" href="Infoparticipant.php" title="Mon compte"><img src="img/boutonMonCompteArr.png" /></a></li>                         
             <li><a class="menuParametre" href="parametreprofil.php" title="Mon profil"><img src="img/boutonMonProfilArr.png" /></a></li>
-                   <ul>
+            
                                          <li ><a href="parametreprofil.php" title="Paramétres"><img src="img/boutonParametres.png" /></a></li>
                                          <li><a href="Mesmessages.php" title="Messagerie/Alertes"><img src="img/boutonMessagerieAlerte.png" /></a></li>
-                                      </ul>
+                                      
             <li><a class="menuParametre" href="Mes_amis.php" title="Mes amis"><img src="img/boutonMesAmisArr.png" /></a></li>
             <li><a class="menuParametre" href="Live.php" title="Live"><img src="img/boutonLivesArr.png" /></a></li>            
 

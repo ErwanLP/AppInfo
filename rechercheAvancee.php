@@ -22,7 +22,7 @@
                 if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
                     ?>
                     <div class="positionBouton">
-                        <a href="creationEvenement.php"><img src ="img/BoutonCreerEvent.png"/></a>
+                        <a href="creationEvenement.php"><img src ="img/ampouleCreerEvenement.png"/></a>
                     </div>
                     <?php
                 }
@@ -33,12 +33,13 @@
                 <?php include ("arbre.php"); ?>
             </aside>
             <article>
-                <div class="titreArticleRechercheAvancee">
+                <div id="titreacticle">
+                    <h2><span style="color:#2040c0;"> Recherche avanc&eacute;e </span></h2>
                 </div>
                 <div class="page">
                     <form class="contenuRA" action="traitementRA.php" method="post" >
                         <fieldset class="fieldsetRA">
-                            <legend class="titreRA"><p style="text-align:center;"> Recherche Avancée </p></legend>
+                            <!--<legend class="titreRA"><p style="text-align:center;"> Recherche Avancée </p></legend>-->
                             <label for="genre"> Genre : </label><select name="genre" id="genre">
                                 <option value="soiree">Soir&eacute;e</option>
                                 <option value="bar">Bar</option>
@@ -102,7 +103,7 @@
                                 <option value="23">23h</option>
                             </select><br/><br/>
                             <label style="color:#ff6040;text-decoration:underline;" for="date"> Date : </label><br/><br/><input type="date" name="date" placeholder="JJ/MM/AAAA" id="date" size="10" maxlength="10"><br/><br/>
-                            <label style="margin-right:10px;" for="compare"> Notes </label><select name="compare" id="compare">
+                            <!--<label style="margin-right:10px;" for="compare"> Notes </label><select name="compare" id="compare">
                                 <option value="egalplus">&#8805;</option>
                                 <option value="plus">></option>
                                 <option value="egal">=</option>
@@ -117,7 +118,7 @@
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                            </select><br/><br/>
+                            </select><br/><br/>-->
                             <label style="padding-right:5px;margin-left:20px;" for="prix"> Prix :</label><input type="range" name="prix" id="prix" min="0" max="500" step="5" size="4" maxlength="4" placeholder="0"/> <div class="inline" id="prixDiv" value="10"></div> euros
                             <label style="margin-left:30px;"for="placeDispo"> Place(s) disponible(s) :</label>
                             <input type="number" name="placeDispo" id="placeDispo" maxlength="5" size="4"/><br/><br/>
