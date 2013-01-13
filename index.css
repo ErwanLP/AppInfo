@@ -1710,21 +1710,21 @@ a:hover{
     box-shadow: 0px 0px 10px black; 
     text-align: justify;
 }
-fieldset{
+#description fieldset{
     background: whitesmoke;
 }
 #nom4 {
     position: absolute;
     font-size: 50px;
     font-weight: bold;
-    left: 300px;
+    left: 350px;
     top : 40px;        
 }
 #lieu {
     position: absolute;
     font-size: 25px;
     font-style: italic;
-    left: 300px;
+    left: 350px;
     top : 130px;        
 }
 .menu {
