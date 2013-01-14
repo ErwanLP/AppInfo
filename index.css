@@ -1698,7 +1698,7 @@ a:hover{
 
 /****Profil*****/
 
-#description {
+.description {
     padding: 50px;
     width : 76%;
     height : 1200px;
@@ -1710,7 +1710,7 @@ a:hover{
     box-shadow: 0px 0px 10px black; 
     text-align: justify;
 }
-#description fieldset{
+.description fieldset{
     background: whitesmoke;
 }
 .nom4 {
@@ -1845,7 +1845,7 @@ strong{
 #amis fieldset, #abonnement fieldset{
     margin: 10px;
 }
-#description img, #amis img, #abonnement img{
+.description img, #amis img, #abonnement img{
     margin: 15px;
 }
 .nom1 {

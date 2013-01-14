@@ -17,7 +17,7 @@
                 </div>
                 <div class="page">
                     <?php
-                   $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', 'root'); 
+                   $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', ''); 
                     if (isset($_POST['nomDeCompte']) && isset($_POST['mailCompte']) && isset($_POST['mdp']) && isset($_POST['mdp2'])) {
 
                         //Variable

@@ -25,7 +25,7 @@
                 </div>
             </aside>
             <?php if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "participant" AND $_SESSION['ID'] != null) { ?>
-                <div id="description">
+                <div class="description">
                     <fieldset>
                         <img src="img/avatar_mini.jpg" alt="Avatar" title="Avatar" style="border: solid black 2px"/>                  
                         <?php
@@ -46,7 +46,7 @@
                         <li><input type="button" onclick="afficherab();" value="Mes Abonnements"/></li>
                         <li><input type="button" onclick="afficherme();" value="Mes Events"/></li>
                         <li><input type="button" onclick="afficherm();" value="Ma Messagerie"/></li>
-                        <li><input type="button" onclick="self.location.href='parametre.php';" value="Paramètres"/></li>
+                        <li><input type="button" onclick="self.location.href='parametreparticipant.php';" value="Paramètres"/></li>
                     </ul>
                 </div>
                 <div id="coordonnee">
@@ -178,16 +178,16 @@
                 </div>
             <?php } ?>
             <?php if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) { ?>
-                <div id="description">
+                <div class="description">
                     <fieldset>
                         <img src="img/logo.png" width="200" height="200" alt="Logo" style="border: solid black 2px"/>                  
                         <?php
                         $result = $bdd->query('SELECT * FROM organisateur WHERE ID = ' . $_SESSION['ID'] . ' ');
                         $data = $result->fetch();
                         ?>
-                        <p id="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];
+                        <p class="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];
                         ?></p>
-                        <p id="lieu"><?php echo $data['nomSociete'] . ", " . $data['pays'];
+                        <p class="lieu4"><?php echo $data['nomSociete'] . ", " . $data['pays'];
                         ?></p>
                     </fieldset>
 
@@ -197,7 +197,7 @@
                         <li><input type="button" onclick="afficherc();" value="Mes Infos"/></li>
                         <li><input type="button" onclick="afficherme();" value="Mes Events"/></li>
                         <li><input type="button" onclick="afficherm();" value="Ma Messagerie"/></li>
-                        <li><input type="button" onclick="self.location.href='parametre.php';" value="Paramètres"/></li>
+                        <li><input type="button" onclick="self.location.href='parametreorganisateur.php';" value="Paramètres"/></li>
                     </ul>
                 </div>
                 <div id="coordonnee">
