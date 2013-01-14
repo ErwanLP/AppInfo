@@ -11,7 +11,7 @@
 
         include("nav.php");
 
-        $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
+        $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', 'root');
         ?>
 
 

@@ -49,8 +49,7 @@
                     <li><input type="button" onclick="self.location.href='profil.php';" value="Mes Amis"/></li>
                     <li><input type="button" onclick="self.location.href='profil.php';" value="Mes Events"/></li>
                     <li><input type="button" onclick="self.location.href='test1.php';" value="Paramètres"/>
-                        <ul class="sousmenu">
-                            <li><a href="Infoparticipant.php" title="Mon compte" onclick="self.location.href='Infoparticipant.php';"></a></li>                         
+                        <ul class="sousmenu">                       
                             <li><a href="parametreprofil.php" title="Mon profil" onclick="self.location.href='parametreprofil.php';"></a></li>
                             <li><a href="Mes_amis.php" title="Mes amis" onclick="self.location.href='Mes_amis.php';"></a></li>
                             <li><a href="Live.php" title="Live" onclick="self.location.href='Live.php';"></a></li>
@@ -105,7 +104,7 @@
 
 
 
-                            <?php
+                           <?php
                             $ID = $_SESSION['ID'];
 
                             $result = $bdd->query('SELECT * FROM  participant WHERE participant.id = "' . $ID . '"');
@@ -162,7 +161,7 @@
                                 <!-- Date de naissance -->
                                 <div class="info"><br/>
                                     <!--<label class="infoPerso" for="dateDeNaissance" data-fieldgroup="date"><span class="required">Date de naissance<sup>*</sup> :</span></label>-->
-                                    Date De Naissance<sup>*</sup>  : &nbsp; <input type="text" id="nom" name="nom" class="text" value="<?php echo $data['dateDeNaissance']; ?>" />
+                                    Date de naissance : &nbsp; <input type="text" id="nom" name="nom" class="text" value="<?php echo $data['dateDeNaissance']; ?>" />
 
 
 
@@ -170,7 +169,7 @@
                                     <!-- Lieu de naissance -->
                                     <div class=info><br/>
                                         <!--<label class="infoPerso" for=lieuDeNaissance class="col_third_floatleft">Lieu de Naissance<sup>*</sup> :</label>-->
-                                        Lieu de naissance<sup>*</sup> : &nbsp; <input type="text" id="lieuDeNaissance" name="lieuDeNaissance" class="text" value="<?php echo $data['lieuNaissance']; ?>"/>
+                                        Lieu de naissance : &nbsp; <input type="text" id="lieuDeNaissance" name="lieuDeNaissance" class="text" value="<?php echo $data['lieuNaissance']; ?>"/>
                                     </div>
                                     <!-- Email -->
                                     <div class="info"><br/>
@@ -192,7 +191,7 @@
                                     <div class="info"><br/>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <!--<label for="adresse" class="infoPerso">Adresse postale<sup>*</sup> :</label>-->
-                                        Adresse<sup>*</sup> : &nbsp; <input type="text" id="adresse" name="adresse" class="text" value="<?php echo $data['adresse']; ?>" />
+                                        Adresse &nbsp; : &nbsp; <input type="text" id="adresse" name="adresse" class="text" value="<?php echo $data['adresse']; ?>" />
                                     </div>
 
 
@@ -201,7 +200,7 @@
                                     <div class="info"><br/>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <!--<label class="infoPerso" for="pcode"><span class="required">Code postal<sup>*</sup> :</span></label>-->
-                                        Code postal<sup>*</sup> : &nbsp; <input type="text" id="pcode" name="pcode" class="text" value="<?php echo $data['codePostal']; ?>" />
+                                        Code postal &nbsp; : &nbsp; <input type="text" id="pcode" name="pcode" class="text" value="<?php echo $data['codePostal']; ?>" />
 
                                     </div>
 
@@ -450,14 +449,14 @@
                                     <div class="info"><br/>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <!--<label for="telephoneFixe" class="infoPerso">Téléphone fixe :</label>-->
-                                        Téléphone fixe : &nbsp; <input type="text" id="telephoneFixe" name="TelephoneFixe" class="text" value="<?php echo $data['telephoneFixe']; ?>" />
+                                        Téléphone fixe : &nbsp; <input type="text" id="telephoneFixe" name="TelephoneFixe" class="text" value="<?php echo $data['telephoneFixe']; ?>"/>
                                     </div>
 
                                     <!-- Téléphone Mobile -->
                                     <div class="info"><br/>
                                         &nbsp;
                                          <!--<label for="NumeroPortable" class="infoPerso">Mobile<sup>*</sup> :</label>-->
-                                        Téléphone Mobile<sup>*</sup> : &nbsp; <input type="text" id="numeroPortable" name="TelephoneMobile" class="text" value="<?php echo $data['telephoneMobile']; ?>" />
+                                        Téléphone Mobile<sup>*</sup> : &nbsp; <input type="text" id="numeroPortable" name="TelephoneMobile" class="text" value="<?php echo $data['telephoneMobile']; ?>"/>
 
 
 
@@ -479,20 +478,20 @@
                                         <div class="info"><br/>
                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             <!--<label for="siteWeb" class="infoPerso">Site Web :</label>-->
-                                            Site Web : &nbsp; <input type="text" name="siteWeb" id="siteWeb" class="text" value="<?php echo $data['siteWeb']; ?>" />
+                                            Site Web : &nbsp; <input type="text" name="siteWeb" id="siteWeb" class="text" value="<?php echo $data['siteWeb'];?>"/>
                                         </div>
 
                                         <!--loisirs-->
                                         <div class="info"><br/>
                                             <!--<label class="infoPerso" for="loisirs"></label>-->
-                                            <p>Loisirs : &nbsp; </p><textarea name="loisirs" style="width: 700px;height: 150px"><?php echo $data['loisirs']; ?>
+                                            <p>Loisirs : &nbsp; </p><textarea name="loisirs" style="width: 700px;height: 150px"><?php echo $data['loisirs'];?>
                                             </textarea>
                                         </div>
 
                                         <!--Description-->
                                         <div class="info"><br/>
                                             <!--<label class="infoPerso" for="description"></label>-->
-                                            <p>Description : &nbsp; </p><textarea name="description" style="width: 700px;height: 150px"><?php echo $data['description']; ?></textarea>
+                                            <p>Description : &nbsp; </p><textarea name="description" style="width: 700px;height: 150px"><?php echo $data['description'];?></textarea>
                                         </div>
 
                                         <div class="info"><br/>
@@ -504,7 +503,7 @@
                                     </div>
                                 <?php } ?>
                                 </section>
-                                <?php include("footer.php"); ?>
+                                <?php include("footer.php");?>
 
 
                                 <script type="text/javascript">
