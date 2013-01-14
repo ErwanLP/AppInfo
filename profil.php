@@ -211,7 +211,7 @@
                     </p>
                     <p id="preference">
                         <strong>Société :</strong><?php echo " " . $data['nomSociete']; ?><br/><br/>
-                        <strong>Adresse de la société :</strong><?php echo " " . $data['adresseSociete'] . " - " . $data['codePostalSociete'] . " - " . $data['villeSociete']; ?><br/><br/>
+                        <strong>Adresse de la société :</strong><?php echo " " . $data['adresseSociete'] . " - " . $data['codePostalSociete'] . " - " . $data['ville']; ?><br/><br/>
                         <strong>Site Web :</strong><?php echo " " . $data['siteWeb']; ?><br/><br/>  
                         <strong>Téléphone societe :</strong><?php echo " " . $data['telephoneSociete']; ?><br/><br/>                        
                         <strong>Activité :</strong><?php echo " " . $data['activite']; ?><br/><br/>
