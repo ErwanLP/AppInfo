@@ -98,7 +98,16 @@
                 </div>
                 <div id="abonnement"style="display:none;">
                     <?php
-                    $result2 = $bdd->query('SELECT * FROM organisateur,abonnement WHERE organisateur.ID = abonnement.ID_organisateur AND abonnement.ID_participant = ' . $_SESSION['ID'] . '');
+                    if (isset($_GET['action'])) {
+                        $action = $_GET['action'];
+
+                        if ($action == "delete") {
+                            $idasup = $_GET['id'];
+                            $bdd->query('DELETE FROM abonnement WHERE abonnement.ID_organisateur = '.$idasup.' AND abonnement.ID_participant = ' . $_SESSION['ID'] . '');
+                        }
+                    }
+
+                    $result2 = $bdd->query('SELECT organisateur.* FROM organisateur,abonnement WHERE abonnement.ID_organisateur = organisateur.ID AND abonnement.ID_participant = ' . $_SESSION['ID'] . '');
                     while ($data2 = $result2->fetch()) {
                         ?>
                         <fieldset>
@@ -107,13 +116,8 @@
                         ?></p>
                             <p class="lieu4"><?php echo $data2['nomSociete'] . ", " . $data2['pays'];
                         ?></p>
-                            <?php
-                            $action = $_GET['action'];
-                            if($action == "delete"){
-                                $bdd->query('DELETE FROM organisateur, abonnement WHERE organisateur.ID = abonnement.ID_organisateur AND abonnement.ID_participant = ' . $_SESSION['ID'] . '');
-                            }
-                            ?>
-                            <a href="profil.php?action=delete"><img src="img/croixsupp.png" alt="Supprimer" id="supprimer"/></a>
+                               <?php $asup = $data2['ID']; ?>
+                            <a href="profil.php?action=delete&id='<?php echo $asup ?>'"><img src="img/croixsupp.png" alt="Supprimer" id="supprimer"/></a>
                         </fieldset>
                         <?php
                     }
