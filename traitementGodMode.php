@@ -1,7 +1,7 @@
 <?php
 
 $action = $_GET['action'];
-$bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
+$bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', 'root');
 
 switch ($action) {
     case "ban":

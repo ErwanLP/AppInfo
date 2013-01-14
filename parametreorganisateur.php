@@ -1,167 +1,224 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <title>Mes paramètres</title>
-        <link rel="stylesheet" href="parametre.css">
+    <head>   
+        <title>Mes Paramètres</title>
+        <link rel="stylesheet" href="profil.css">
         <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="parametre.css">
     </head>
     <body>
         <?php
-        /* empty
-         * header('Location:http://une.url.fr');
-         */
-
         session_start();
+        include("head.php");
 
         include("header.php");
 
         include("nav.php");
 
-        include("section.php");
-
-        include("footer.php");
+        $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', 'root');
         ?>
 
+
+        <section>
+            <aside class ="navg">
+                <?php include ("arbre.php"); ?>
+            </aside>
+            <aside class ="new">
+                <div class ="eventNew">
+                    <img class ="photonew" src ="img/new.jpg"/>
+                </div>
+            </aside>
+            <div id="description">
+                <fieldset>
+                    <a href="img/avatar.jpg"><img src="img/avatar_mini.jpg" alt="Avatar" title="Cliquez pour agrandir" style="border: solid black 2px"/></a>                   
+                    <?php
+                    $result = $bdd->query('SELECT * FROM participant');
+                    $data = $result->fetch();
+                    ?>
+                    <p id="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];
+                    ?></p>
+                    <p id="lieu"><?php echo $data['pays'] . ", " . $data['villes'];
+                    ?></p>
+                </fieldset>
+
+
+            </div>
+            <div class="menu">
+                <ul id="simple-menu">
+                    <li><input type="button" onclick="self.location.href='profil.php';" value="Mes Infos"/></li>
+                    <li><input type="button" onclick="self.location.href='profil.php';" value="Mes Amis"/></li>
+                    <li><input type="button" onclick="self.location.href='profil.php';" value="Mes Events"/></li>
+                    <li><input type="button" onclick="self.location.href='test1.php';" value="Paramètres"/>
+                        <ul class="sousmenu">
+                            <li><a href="Infoorganisateur.php" title="Mon compte" onclick="self.location.href='Infoorganisateur.php';"></a></li>                         
+                            <li><a href="parametreprofil.php" title="Mon profil" onclick="self.location.href='parametreprofil.php';"></a></li>
+                            <li><a href="Mes_amis.php" title="Mes amis" onclick="self.location.href='Mes_amis.php';"></a></li>
+                            <li><a href="Live.php" title="Live" onclick="self.location.href='Live.php';"></a></li>
+                        </ul>
+                    </li>
+                    <!--<li><a href="#" title="Mes Infos">Mes Infos</a></li>
+                    <li><a href="#" title="Mes Amis">Mes Amis</a></li>
+                    <li><a href="test1.php" title="Paramètres">Paramètres</a></li>-->
+                </ul>
+            </div>
+
+
+            <!--<div class="menuParametres">
+                <h1>Configurer</h1>
+                <ul id="menuParametre">
+                    <li><a class="menuParametre" href="Infoparticipant.php" title="Mon compte" onclick="window.open(this.href); return false;"></a></li>                         
+                    <li><a class="menuParametre" href="parametreprofil.php" title="Mon profil" onclick="window.open(this.href); return false;"></a></li>
+                    <li><a class="menuParametre" href="Mes_amis.php" title="Mes amis" onclick="window.open(this.href); return false;"></a></li>
+                    <li><a class="menuParametre" href="Live.php" title="Live" onclick="window.open(this.href); return false;"></a></li>            
+
+                </ul>
+            </div>-->
+
+
+            <div class="titreParametre">          
+                <form  method="post" action="/m/account/" id="gestioncompte"><br/><br/><br/>
+
+                    <fieldset id="fieldset1" >
+
+                        <input type="hidden" id="Email_" name="Email_" value="0" />
+
+                        <legend><div class="title">Informations personnelles</div></legend>
+                        <div> 		            
+                            <script type="text/javascript">
+                                // <![CDATA[
         
-        <div class="sidebar-left-floatleft">
-            <h1>Configurer</h1>
-            <ul id="sidebar-accordion" class="menu-sidebar-left phylac-top-left box-gradient">
-                <li class="active rollin"><a class="menu-accordion" href="InfoPro.html" title="Mon compte">Mon compte</a>
-                    <ul>
-                        <li class="active"><a href="Mesinfosperso_pro.html" title="Mes infos persos">Mes infos persos</a></li>
-                        <li class="active"><a href="#Modificationmdp" title="Modification du mot de passe">Modification du mots de passe</a></li>
-                    </ul>
-                </li>
-                <li><a class="menu-accordion" href="parametreprofil_pro.html" title="Mon profil">Mon profil</a></li>
-                <li><a class="menu-accordion" href="Mes_amis_pro.html" title="Mes amis">Mes amis</a></li>
-                <li><a class="menu-accordion" href="Mesmessages_pro.html" title="Ma messagerie">Ma messagerie</a></li>
-                <li><a class="menu-accordion" href="Mesalertes_pro.html" title="Alertes">Alertes</a></li>
-                <li><a class="menu-accordion" href="Live_pro.html" title="Live">Live</a><ul></li>
-            </ul>
-        </div>
-        <div class="floatright-main">
-            <h2>Mes infos persos</h2>
-            <form id="frm-accordion" method="post" action="/m/account/" id="gestioncompte">
-
-                <fieldset id="personalData" class="rollin">
-                    <input type="hidden" id="bypass_email" name="bypass_email" value="0" />
-
-                    <legend> class="h2"><span>Mes données personnelles</span></legend>
-                    <div>
-
-                        <script type="text/javascript">
-                            // <![CDATA[
-
-                            // Alerting sur la recherche au cas où certains champs ne seraient pas remplis
-                            var message = document.getElementById("messageRecherche");
-                            function showSearchAlert(isChecked)
-                            {
-                                var elm0 = document.getElementById("prenom"), elm1 = document.getElementById("nom");
-                                if(!elm0 || !elm1 || !message)
+                                // Alerte sur la recherche au cas où certains champs ne seraient pas remplis
+                                var message = document.getElementById("messageRecherche");
+                                function showSearchAlert(isChecked)
                                 {
-                                    return false;
+                                    var elm0 = document.getElementById("prenom"), elm1 = document.getElementById("nom");                
+                                    if(!elm0 || !elm1 || !message)
+                                    {
+                                        return false;
+                                    }        
+                                    message.style.display = (isChecked && (elm0.value == '' || elm1.value == '')) ? "block" : "none";
                                 }
-                                message.style.display = (isChecked && (elm0.value == '' || elm1.value == '')) ? "block" : "none";
-                            }
-
-                            //]]>
-                        </script>
-
-                        <!-- Sexe -->
-                        <div class="info">
-                            <span class="col_third_floatleft"><span class="required">Tu es<sup>*</sup> : </span></span>
-                            <span class="radio-checkbox">
-                                <input type="radio" id="femme" name="genre" class="radio" value="0" /> <label for="female" class="radio">Une femme</label>
-                            </span>
-                            <span class="radio-checkbox">
-                                <input type="radio" id="homme" name="genre" class="radio" value="1" checked="checked"/> <label for="male" class="radio">Un homme</label>
-                            </span>
-
-
-                            <!-- Email -->
-                            <div class="clear_bloc info">
-                                <label class="col_third floatleft" for="email"><span class="required">Email<sup>*</sup> :</span></label>
-                                <input type="text" id="email" name="email" class="text" value="mathieu.lefebvre@gmail.com" />
-
-                            </div>
-                            </br>
-
-                            <!-- Pseudo -->
-                            <div class=info>
-                                <label for=pseudo class="col_third_floatleft">Pseudo<sup>*</sup> :</label>
-                                <input type="text" id="pseudo" name="pseudo" class="text" value="guito-le-taureau-bourré-du-sud"/>
-
-                            </div>
-                            </br>
+        
+                                //]]>
+                            </script><br/>
 
 
 
 
-                            <!-- Prénom -->
-                            <div class="info">
-                                <label for="prénom" class="col_third floatleft">Prénom<sup>*</sup> :</label>
-                                <input type="text" id="prenom" name="prenom" class="text" value="Mathieu" />
+                            <?php
+                            $ID = $_SESSION['ID'];
 
-                            </div>
-                            </br>
-                            <!-- Nom -->
-                            <div class="info">
-                                <label for="Nom" class="col_third floatleft">Nom<sup>*</sup> :</label>
-                                <input type="text" id="Nom" name="Nom" class="text" value="Lefebvre" />
-                                </p>
+                            $result = $bdd->query('SELECT * FROM  participant WHERE participant.id = "' . $ID . '"');
 
-                            </div>
-                            </br
-                           
-                            </br>
-                            <!--Avatar-->
-                            <div class=info>
-                                <label for=avatar>Ajouter une photo(Jpeg,png,jpg), max=2 Mo<sup>*</sup>:</label><input type='file' name='avatar'/>
-                            </div>
-                            </br>
-                            <!-- Représentant -->
-                            <div class="info">
-                                <label for="representant" class="col_third floatleft">Représentant de<sup>*</sup> :</label>
-                                <input type="text" id="representant" name="representant" class="text" value="Over Games " />
-                                </br>
-                                <!-- Information sur la société -->
-                                <div class=info>
-                                    <label for=infoSociete class="col_third_floatleft">Pseudo<sup>*</sup> :</label>
-                                    <imput type="text" id="infoSociete" name="infoSociete" class="text" value="la plus belle société C.A:10000000000000000000000000000000000$"/>
+                            while ($data = $result->fetch()) {
+                                ?>
+
+
+                                <!-- Sexe -->
+                                <div class="info"><br/>
+                                    <!--<span class="infoPerso"><span class="required">Tu es<sup>*</sup> : </span></span>-->
+                                    <span class="radio-checkbox">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        Tu es<sup>*</sup> : &nbsp;&nbsp;<input type="radio" id="femme" name="genre" class="radio" value="0" /> <label for="female" class="radio">Une femme</label>&nbsp;&nbsp;&nbsp;
+                                    </span>
+                                    <span class="radio-checkbox">
+                                        <input type="radio" id="homme" name="genre" class="radio" value="1" checked="checked"/> <label for="male" class="radio">Un homme</label>
+                                    </span>
+
+
+                                </div>
+                                <!-- Pseudo -->
+                                <div class=info><br/>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <!--Pseudo<sup>*</sup><label for=pseudo class="infoPerso">Pseudo<sup>*</sup> :</label>-->
+                                    Pseudo<sup>*</sup> :  &nbsp; <input type="text" id="pseudo" name="pseudo" class="text" value="<?php echo $data['pseudo']; ?>"/>
+                                </div>
+
+                                <!--Avatar-->
+                                <div class=info><br/>
+                                    <!--<label for=avatar>Ajouter une photo(Jpeg,png,jpg)<sup>*</sup>:</label>-->
+                                    Ajouter une photo(jpeg,png)<sup>*</sup> :  &nbsp; <input type='file' name='avatar'/>
+                                </div>
+
+                                <!-- Prenom -->
+                                <div class="info"><br/>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <!--<label for="prenom" class="infoPerso">Prenom<sup>*</sup> :</label>-->
+                                    Prénom<sup>*</sup> :  &nbsp; <input type="text" id="prenom" name="prenom" class="text" value="<?php echo $data['prenom']; ?>" />
+
+
+                                </div>
+
+                                <!-- Nom -->
+                                <div class="info"><br/>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <!--<label for="nom" class="infoPerso">Nom<sup>*</sup> :</label>-->
+                                    Nom<sup>*</sup> :  &nbsp; <input type="text" id="nom" name="nom" class="text" value="<?php echo $data['nom']; ?>" />
+                                </div>
+
+
+
+
+                                <!-- Date de naissance -->
+                                <div class="info"><br/>
+                                    <!--<label class="infoPerso" for="dateDeNaissance" data-fieldgroup="date"><span class="required">Date de naissance<sup>*</sup> :</span></label>-->
+                                    Date de naissance &nbsp;  : &nbsp; <input type="text" id="nom" name="nom" class="text" value="<?php echo $data['dateDeNaissance']; ?>" />
+
+
+
+
+                                    <!-- Lieu de naissance -->
+                                    <div class=info><br/>
+                                        <!--<label class="infoPerso" for=lieuDeNaissance class="col_third_floatleft">Lieu de Naissance<sup>*</sup> :</label>-->
+                                        Lieu de naissance &nbsp; : &nbsp; <input type="text" id="lieuDeNaissance" name="lieuDeNaissance" class="text" value="<?php echo $data['lieuNaissance']; ?>"/>
+                                    </div>
+                                    <!-- Email -->
+                                    <div class="info"><br/>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <!--<label class="infoPerso" for="email"><span class="required">Email<sup>*</sup> :</span></label>-->
+                                        Email<sup>*</sup> : &nbsp; <input type="text" id="email" name="email" class="text" value="<?php echo $data['mail']; ?>" />
+
+
+
+                                    </div>
+
+                                    <!-- Profession -->
+                                    <div class=info><br/>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <!-- <label for=profession class="infoPerso">Profession :</label>-->
+                                        Profession : &nbsp; <input type="text" id="profession" name="profession" class="text" value="<?php echo $data['profession']; ?>"/>
+                                    </div>
                                     <!-- Adresse -->
-                                    <div class="info">
-                                        <label for="addresse" class="col_third floatleft">Adresse postale<sup>*</sup> :</label>
-                                        <input type="text" id="addresse" name="addresse" class="text" value="82, avenue des champs de pomme de terre" />
+                                    <div class="info"><br/>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <!--<label for="adresse" class="infoPerso">Adresse postale<sup>*</sup> :</label>-->
+                                        Adresse &nbsp; : &nbsp; <input type="text" id="adresse" name="adresse" class="text" value="<?php echo $data['adresse']; ?>" />
                                     </div>
-                                    </br>
-                                    <!-- Masquer Adresse -->
-                                    <div class="info">
-                                        <input type="checkbox" name="MasquerAdresse" id="MasquerAdresse" value="0" />
-                                        <label for="MasquerAdresse"><strong>Masquer mon numéro de téléphone</strong></label>
-                                    </div>
-                                    </br>
+
+
 
                                     <!-- Code Postal -->
-                                    <div class="info">
-                                        <label class="col_third floatleft" for="pcode"><span class="required">Code postal<sup>*</sup> :</span></label>
-                                        <input type="text" id="pcode" name="pcode" class="text" value="75016" />
+                                    <div class="info"><br/>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <!--<label class="infoPerso" for="pcode"><span class="required">Code postal<sup>*</sup> :</span></label>-->
+                                        Code postal &nbsp; : &nbsp; <input type="text" id="pcode" name="pcode" class="text" value="<?php echo $data['codePostal']; ?>" />
 
                                     </div>
-                                    </br>
-                                    <!-- Ville -->
-                                    <div class="info">
-                                        <label for="ville" class="col_third floatleft">Ville<sup>*</sup> :</label>
-                                        <input type="text" id="ville" name="ville" class="text" value="Paris" />
+
+                                    <!-- Villes -->
+                                    <div class="info"><br/>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <!--<label for="ville" class="infoPerso">Ville<sup>*</sup> :</label>-->
+                                        Villes<sup>*</sup> : &nbsp; <input type="text" id="villes" name="villes" class="text" value="<?php echo $data['villes']; ?>" />
                                     </div>
-                                    </br>
+
                                     <!-- Pays -->
-                                    <div class="info">
-                                        <label class="col_third floatleft" for="pays"><span class="required">Pays<sup>*</sup> :</span></label>
-                                        <select class="select" id="country" name="pays">
+                                    <div class="info"><br/>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <!--<label class="infoPerso" for="pays"><span class="required">Pays<sup>*</sup> :</span></label>-->
+                                        Pays<sup>*</sup> : <select class="choix" id="country" name="pays">
                                             <option value="AF">Afghanistan</option>
                                             <option value="ZA">Afrique du Sud</option>
-                                            <option value="AX">Åland</option>
                                             <option value="AL">Albanie</option>
                                             <option value="DZ">Algérie</option>
                                             <option value="DE">Allemagne</option>
@@ -205,8 +262,7 @@
                                             <option value="CY">Chypre</option>
                                             <option value="CO">Colombie</option>
                                             <option value="KM">Comores</option>
-                                            <option value="CG">Congo</option>
-                                            <option value="CD">Congo, République du</option>
+                                            <option value="CD">République du Congo</option>
                                             <option value="KR">Corée</option>
                                             <option value="KP">Corée du Nord</option>
                                             <option value="CR">Costa Rica</option>
@@ -219,7 +275,7 @@
                                             <option value="DM">Dominique (la)</option>
                                             <option value="EG">Égypte</option>
                                             <option value="AE">Émirats Arabes Unis</option>
-                                            <option value="EC">Équateur (République de l&#039;)</option>
+                                            <option value="EC">Équateur</option>
                                             <option value="ER">Érythrée</option>
                                             <option value="ES">Espagne</option>
                                             <option value="EE">Estonie</option>
@@ -229,11 +285,10 @@
                                             <option value="RU">Fédération de Russie</option>
                                             <option value="FJ">Fidji</option>
                                             <option value="FI">Finlande</option>
-                                            <option selected="selected" value="FR">France</option>
+                                            <option value="FR" selected="selected">France</option>
                                             <option value="GA">Gabon</option>
                                             <option value="GM">Gambie</option>
                                             <option value="GE">Géorgie</option>
-                                            <option value="GS">Géorgie du Sud et Sandwich du Sud (ÎIes)</option>
                                             <option value="GH">Ghana</option>
                                             <option value="GI">Gibraltar</option>
                                             <option value="GR">Grèce</option>
@@ -253,22 +308,14 @@
                                             <option value="HK">Hong Kong</option>
                                             <option value="HU">Hongrie</option>
                                             <option value="CX">Île Christmas</option>
-                                            <option value="AC">Île de l&#039;Ascension</option>
-                                            <option value="IM">Île de Man</option>
-                                            <option value="NF">Île de Norfolk</option>
-                                            <option value="MU">Île Maurice</option>
-                                            <option value="BV">Îles Bouvet</option>
+                                            <option value="AC">Île de l&#039;Ascension</option>                              
+                                            <option value="MU">Île Maurice</option>        
                                             <option value="KY">Îles Caïmans</option>
-                                            <option value="CC">Îles Cocos-Keeling</option>
                                             <option value="CK">Îles Cook</option>
                                             <option value="FO">Îles Féroé</option>
-                                            <option value="HM">Îles Heard et Mc Donald</option>
                                             <option value="FK">Îles Malouines</option>
                                             <option value="MH">Îles Marshall</option>
                                             <option value="SB">Îles Salomon</option>
-                                            <option value="TK">Îles Tokelau</option>
-                                            <option value="TC">Îles Turks et Caïcos</option>
-                                            <option value="SJ">Île Svalbard et Jan Mayen</option>
                                             <option value="VI">Îles Vierges américaines</option>
                                             <option value="VG">Îles Vierges britanniques</option>
                                             <option value="IN">Inde</option>
@@ -279,25 +326,21 @@
                                             <option value="IS">Islande</option>
                                             <option value="IL">Israël</option>
                                             <option value="IT">Italie</option>
-                                            <option value="LY">Jamahiriya arabe libyenne (Lybie)</option>
+                                            <option value="LY">Lybie</option>
                                             <option value="JM">Jamaïque</option>
                                             <option value="JP">Japon</option>
-                                            <option value="JE">Jersey</option>
                                             <option value="JO">Jordanie</option>
                                             <option value="KZ">Kazakhstan</option>
                                             <option value="KE">Kenya</option>
-                                            <option value="KG">Kirghizistan</option>
-                                            <option value="KI">Kiribati</option>
-                                            <option value="KW">Koweït</option>
-                                            <option value="LS">Lesotho</option>
+                                            <option value="KG">Kirghizistan</option>                                 
+                                            <option value="KW">Koweït</option>                                 
                                             <option value="LV">Lettonie</option>
                                             <option value="LB">Liban</option>
                                             <option value="LR">Liberia</option>
                                             <option value="LI">Liechtenstein</option>
                                             <option value="LT">Lituanie</option>
                                             <option value="LU">Luxembourg</option>
-                                            <option value="MO">Macao</option>
-                                            <option value="MK">Macédoine, Ex-République yougoslave de</option>
+                                            <option value="MK">Macédoine</option>
                                             <option value="MG">Madagascar</option>
                                             <option value="MY">Malaisie</option>
                                             <option value="MW">Malawi</option>
@@ -311,15 +354,12 @@
                                             <option value="YT">Mayotte</option>
                                             <option value="MX">Mexique</option>
                                             <option value="FM">Micronésie</option>
-                                            <option value="MD">Moldova (République de)</option>
+                                            <option value="MD">Moldova</option>
                                             <option value="MC">Monaco</option>
                                             <option value="MN">Mongolie</option>
                                             <option value="ME">Monténégro</option>
-                                            <option value="MS">Montserrat</option>
                                             <option value="MZ">Mozambique</option>
-                                            <option value="MM">Myanmar (Union de)</option>
                                             <option value="NA">Namibie</option>
-                                            <option value="NR">Nauru (République de)</option>
                                             <option value="NP">Népal</option>
                                             <option value="NI">Nicaragua</option>
                                             <option value="NE">Niger</option>
@@ -333,9 +373,9 @@
                                             <option value="UZ">Ouzbékistän</option>
                                             <option value="PK">Pakistan</option>
                                             <option value="PW">Palau</option>
-                                            <option value="PS">Palestine (territoire occupé)</option>
+                                            <option value="PS">Palestine</option>
                                             <option value="PA">Panama</option>
-                                            <option value="PG">Papouasie Nouvelle-Guinée</option>
+                                            <option value="PG">Papouasie,Nouvelle-Guinée</option>
                                             <option value="PY">Paraguay</option>
                                             <option value="NL">Pays-Bas</option>
                                             <option value="PE">Pérou</option>
@@ -378,7 +418,6 @@
                                             <option value="SD">Soudan</option>
                                             <option value="SS">Soudan du Sud</option>
                                             <option value="LK">Sri Lanka</option>
-                                            <option value="KN">St Christopher et Nevis (Îles)</option>
                                             <option value="SE">Suède</option>
                                             <option value="CH">Suisse</option>
                                             <option value="SR">Suriname</option>
@@ -390,18 +429,13 @@
                                             <option value="TF">Terres Australes françaises (DOM-TOM)</option>
                                             <option value="IO">Territoires Britanniques de l&#039;océan Indien</option>
                                             <option value="TH">Thaïlande</option>
-                                            <option value="TL">Timor Oriental</option>
                                             <option value="TG">Togo</option>
                                             <option value="TO">Tonga</option>
                                             <option value="TT">Trinité-et-Tobago</option>
                                             <option value="TN">Tunisie</option>
-                                            <option value="TM">Turkménistan</option>
-                                            <option value="TR">Turquie</option>
-                                            <option value="TV">Tuvalu (Îles)</option>
                                             <option value="UA">Ukraine</option>
                                             <option value="UY">Uruguay</option>
-                                            <option value="VU">Vanuatu (République de)</option>
-                                            <option value="VE">Venezuela (République Bolivarienne du)</option>
+                                            <option value="VE">Venezuela</option>
                                             <option value="VN">Vietnam</option>
                                             <option value="WF">Wallis et Futuna</option>
                                             <option value="YE">Yémen</option>
@@ -412,118 +446,86 @@
 
                                     </div>
 
-
-                                    <!-- Site Web -->
-                                    <div class="info">
-                                        <label for="Site Web" class="col_third floatleft">Site Web<sup>*</sup> :</label>
-                                        <input type="text" id="Site Web" name="Site Web" class="text" value="http:///www.overgames.com" />
-                                    </div>
-
-
-                                    <!-- Profession -->
-                                    <div class=info>
-                                        <label for=profession class="col_third_floatleft">Profession :</label>
-                                        <input type="text" id="profession" name="profession" class="text" value="Etudiant"/>
-                                    </div>
-
                                     <!-- Téléphone Fixe -->
-                                    <div class="info">
-                                        <label for="telephone" class="col_third floatleft">Téléphone fixe :</label>
-                                        <input type="text" id="telephone" name="telephone" class="text" value="0123456987" />
+                                    <div class="info"><br/>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <!--<label for="telephoneFixe" class="infoPerso">Téléphone fixe :</label>-->
+                                        Téléphone fixe : &nbsp; <input type="text" id="telephoneFixe" name="TelephoneFixe" class="text" value="<?php echo $data['telephoneFixe']; ?>"/>
                                     </div>
-                                    </br>
 
                                     <!-- Téléphone Mobile -->
-                                    <div class="info">
-                                        <label for="mobilephone" class="col_third floatleft">Mobile<sup>*</sup> :</label>
-                                        <input type="text" id="mobilephone" name="mobilephone" class="text" value="0665478931" />
-                                        </br>
+                                    <div class="info"><br/>
+                                        &nbsp;
+                                         <!--<label for="NumeroPortable" class="infoPerso">Mobile<sup>*</sup> :</label>-->
+                                        Téléphone Mobile<sup>*</sup> : &nbsp; <input type="text" id="numeroPortable" name="TelephoneMobile" class="text" value="<?php echo $data['telephoneMobile']; ?>"/>
 
-                                        <!--loisirs/-->
-                                        <div class="info">
-                                            <label class="col_third_floatleft" for="loisirs/hobbies"></span></label>
-                                            <p>Loisirs/hobbies:</p><textarea name="loisirs/hobbies" cols=60 rows=15>
-                                            </textarea>
+
+
+
+                                        <!-- Langue -->
+                                        <div class="info"><br/>
+
+                                          <!--<label class="infoPerso" for="langage"><span class="required">Version et langue<sup>*</sup> :</span></label>-->
+                                            Versions et langues<sup>*</sup> : &nbsp; <select class="choix" id="lang" name="locale">
+                                                <option selected="selected" value="fr_FR">France</option>
+                                                <option value="en_GB">International (anglais)</option>
+
+                                            </select>
+
                                         </div>
-                                        </br>
 
-                                        <!--Préférence d'événements-->
-                                        <div class="info">
-                                            <label class="col_third_floatleft" for="preferenceEvent"></span></label>
-                                            <p>Préférence d'événements:</p><textarea name="preferenceEvent" cols=60 rows=15>
-                                            </textarea>
+                                        <!-- Site Web -->
+
+                                        <div class="info"><br/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <!--<label for="siteWeb" class="infoPerso">Site Web :</label>-->
+                                            Site Web &nbsp;&nbsp;: &nbsp;&nbsp; <input type="text" name="siteWeb" id="siteWeb" class="text" value="<?php echo $data['siteWeb']; ?>"/>
                                         </div>
-                                        <!--Description-->
-                                        <div class="info">
-                                            <label class="col_third floatleft" for="Description"></span></label>
-                                            <p>Description:</p><textarea name="Description" cols=60 rows=15>
-                                            </textarea>
-                                        </div>
-                                        </br>
+                                        <!-- Info Société -->
+                                        <div class="info"><br/>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+                                            <!--<label for="prenom" class="infoPerso">Info Société<sup>*</sup> :</label>-->
+                                            Info Société &nbsp; :  &nbsp; <input type="text" id="infoSociete" name="infoSociete" class="text" value="<?php echo $data['infoSociete']; ?>" />
 
-                                        <div class="info">
-                                            <input type="button" onClick="modification_0()" value="Envoyer">
-                                            <input type="reset" value="Effacer">
-                                        </div>
-                                        </br>
-                                        </fieldset>
-                                        </form>
-
-                                        </fieldset>
+                                            <!-- Représentant -->
+                                            <div class="info"><br/>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <!--<label for="representant" class="infoPerso">Représentant<sup>*</sup> :</label>-->
+                                                Représentant &nbsp; :  &nbsp; <input type="text" id="representant" name="representant" class="text" value="<?php echo $data['representant']; ?>" />
 
 
 
-                                        <fieldset id="Modificationmdp" class="disabled">
-                                            <legend class="h2"><span>Changer mon mot de passe</span></legend>
-                                            <div> <p class="clear_bloc msg_info">Ne remplis les trois champs ci-dessous que si tu souhaites changer de mot de passe.</p>
-
-                                                <!-- Ancien: Mot de passe -->
-                                                <div class="clear_bloc row">
-                                                    <label class="col_third_floatleft" for="ancienMdp"><span class="required">Ancien mot de passe<sup>*</sup> :</span></label>
-                                                    <input autocomplete="off" type="password" id="ancienMdp" name="ancienMdp" class="text" value="" />
-
-                                                    <p class="infobulle msg_info msg_info_simple" id="infobulle_oldpassword">
-                                                        Saisis ton ancien mot de passe pour pouvoir le modifier. </p>
-
+                                                <!--loisirs-->
+                                                <div class="info"><br/>
+                                                    <!--<label class="infoPerso" for="representant"></label>-->
+                                                    <p>Loisirs : &nbsp; </p><textarea name="loisirs" style="width: 700px;height: 150px"><?php echo $data['loisirs']; ?>
+                                                    </textarea>
                                                 </div>
 
-                                                <!-- Nouveau: Mot de passe -->
-                                                <div class="row">
-                                                    <label class="col_third_floatleft" for="nouveauMdp"><strong class="required">Nouveau mot de passe<sup>*</sup> :</strong></label>
-                                                    <input autocomplete="off" type="password" id="nouveauMdp" name="nouveauMdp" class="text" value="" />
-
-                                                    <p class="infobulle msg_info msg_info_simple" id="infobulle_nouveauMdp">
-                                                        Ton mot de passe doit contenir de 6 à 16 caractères et ne doit pas comporter d'espace. </p>
+                                                <!--Description-->
+                                                <div class="info"><br/>
+                                                    <!--<label class="infoPerso" for="description"></label>-->
+                                                    <p>Description : &nbsp; </p><textarea name="description" style="width: 700px;height: 150px"><?php echo $data['description']; ?></textarea>
                                                 </div>
 
-                                                <!-- Nouveau: Mot de passe Confirmation -->
-                                                <div class="row">
-                                                    <label class="col_third_floatleft" for="Mdpconfimer"><span class="required">Vérifier le nouveau mot de passe<sup>*</sup> :</span></label>
-                                                    <input autocomplete="off" type="password" id="Mdpconfime" name="Mdpconfimer" class="text" value="" />
-
-                                                    <p class="infobulle msg_info msg_info_simple" id="infobulle_Mdpconfime">
-                                                        Saisis à nouveau ton mot de passe pour le confirmer. </p>
-
+                                                <div class="info"><br/>
+                                                    <input type="button" onClick="modification()" value="Envoyer" style="width:80px;height: 70px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <input type="reset" value="Effacer" style="width:80px;height: 70px">
                                                 </div>
+                                                </fieldset>
+                                                </form>
                                             </div>
+                                        <?php } ?>
+                                        </section>
+                                        <?php include("footer.php"); ?>
 
 
+                                        <script type="text/javascript">
+                              
+                                
+                                            //var modification
 
-                                            <div class="info">
-                                                <input type="button" onClick="modification_1()" value="Envoyer">
-                                                <input type="reset" value="Effacer">
-                                            </div>
-
-
-                                        </fieldset>
-
-                                        </br>
-
-                                        <script>
-
-                                            //var modification_0
-
-                                            function modification_0() {
+                                            function modification() {
                                                 if (confirm('Voulez vous enregistrer vos modifications, cliquez sur "OK" si c\'est le cas.')) {
                                                     alert('Les modifications ont été enregistrés.');
                                                     myForm = document.getElementById("personalData");
@@ -531,22 +533,11 @@
 
                                                 }
                                                 else {
-                                                    alert("Aucune modification a été enregistré.");
+                                                    alert("Aucune modification n'a été enregistrée.");
                                                 }
                                             }
-                                            //var modification_1
 
-                                            function modification_1() {
-                                                if (confirm('Voulez vous enregistrer vos modifications, cliquez sur "OK" si c\'est le cas.')) {
-                                                    alert('Les modifications ont été enregistrés.');
-                                                    myForm = document.getElementById("personalData");
-                                                    myForm .submit();
-
-                                                }
-                                                else {
-                                                    alert("Aucune modification a été enregistré.");
-                                                }
-                                            }
                                         </script>
+
                                         </body>
                                         </html>
