@@ -98,7 +98,7 @@
             </div>
             <div id="mesEvents" style="display:none;">
                 <?php
-                $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
+                $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', 'root');
                 if (!isset($_GET['onglet'])) { //si ya rien
                     $result = $bdd->query('SELECT * FROM  event LIMIT 0 , 30');
                 }
