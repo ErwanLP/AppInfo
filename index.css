@@ -1710,21 +1710,21 @@ a:hover{
     box-shadow: 0px 0px 10px black; 
     text-align: justify;
 }
-fieldset{
+#description fieldset{
     background: whitesmoke;
 }
-#nom4 {
+.nom4 {
     position: absolute;
     font-size: 50px;
     font-weight: bold;
-    left: 300px;
+    left: 350px;
     top : 40px;        
 }
-#lieu {
+.lieu4 {
     position: absolute;
     font-size: 25px;
     font-style: italic;
-    left: 300px;
+    left: 350px;
     top : 130px;        
 }
 .menu {
@@ -1832,7 +1832,7 @@ strong{
     top: 700px;
     font-size: 20px;
 }
-#amis{
+#amis, #abonnement{
     position: absolute;
     padding: 20px;
     width: 70%;
@@ -1840,21 +1840,22 @@ strong{
     top: 703px;
     font-size: 20px;    
     text-align: justify;
+    overflow: auto;
 }
-#amis fieldset {
+#amis fieldset, #abonnement fieldset{
     margin: 10px;
 }
-#description img, #amis img{
+#description img, #amis img, #abonnement img{
     margin: 15px;
 }
-#nom1 {
+.nom1 {
     position: absolute;
     font-size: 35px;
     font-weight: bold;
     left: 350px;
     top : 70px;        
 }
-#lieu1 {
+.lieu1 {
     position: absolute;
     font-size: 20px;
     font-style: italic;
@@ -1897,5 +1898,10 @@ strong{
     overflow: auto;
     width: 71%;
     height: 849px;
+}
+#supprimer{
+    position: absolute;
+    right: 50px;
+    
 }
 
