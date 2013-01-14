@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', ''); 
 $bdd->exec('SET NAMES utf8');
@@ -31,12 +30,10 @@ $result = $bdd->query('SELECT * FROM event WHERE theme = "' . $theme . '" AND li
 -->
 
 
-<html>
-    <?php include("head.php"); ?>
+<?php session_start(); ?>
+    <?php include("start.php"); ?>
 
-    <body>
-
-        <?php session_start(); ?>
+        
 
         <?php include("header.php"); ?>
 
@@ -82,13 +79,4 @@ $result = $bdd->query('SELECT * FROM event WHERE theme = "' . $theme . '" AND li
 
             </article>
         </section>
-
-
-        <?php include("footer.php"); ?>
-
-
-
-    </body> 
-</html>
-
-
+ <?php include("footer.php"); ?>

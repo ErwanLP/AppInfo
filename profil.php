@@ -1,11 +1,4 @@
-<html>
-    <head>  
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" href="profil.css">
-    </head>
-    <body>
-        <?php
+ <?php
         session_start();
         include("head.php");
 
@@ -153,7 +146,7 @@
             </div>
 
         </section>
-<?php include("footer.php"); ?>
+
         <script type="text/javascript">
             function afficherc(){ 
                 document.getElementById("coordonnee").style.display="";
@@ -171,5 +164,4 @@
                 document.getElementById("amis").style.display="none";
             }
         </script>
-    </body>
-</html>
+ <?php include("footer.php"); ?>

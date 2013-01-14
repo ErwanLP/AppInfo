@@ -27,7 +27,7 @@ function getTopicSouhaitParticipant($bdd, $nom, $commentaire, $pseudo) {
             ORDER BY topicforum.date_creation');
 }
 
-function getTopicTaverneOrganisateur($bdd,$nom,$commentaire,$pseudo) {
+function getTopicTaverneOrganisateur($bdd, $nom, $commentaire, $pseudo) {
     return $bdd->query('SELECT nom,date_creation,commentaire,pseudo FROM organisateur,topicforum,categorieforum,souscategorieforum
            WHERE topicforum.id_organisateur=organisateur.id
             AND organisateur.pseudo=' . $pseudo . '
@@ -38,7 +38,7 @@ function getTopicTaverneOrganisateur($bdd,$nom,$commentaire,$pseudo) {
             ORDER BY topicforum.date_creation');
 }
 
-function getTopicTaverneParticipant($bdd,$nom,$commentaire,$pseudo) {
+function getTopicTaverneParticipant($bdd, $nom, $commentaire, $pseudo) {
     return $bdd->query('SELECT nom,date_creation,commentaire,pseudo FROM participant,topicforum,categorieforum,souscategorieforum
            WHERE topicforum.id_participant=participant.id
             AND participant.pseudo=' . $pseudo . '
@@ -49,7 +49,7 @@ function getTopicTaverneParticipant($bdd,$nom,$commentaire,$pseudo) {
             ORDER BY topicforum.date_creation');
 }
 
-function getTopicPresentationOrganisateur($bdd,$nom,$commentaire,$pseudo) {
+function getTopicPresentationOrganisateur($bdd, $nom, $commentaire, $pseudo) {
     return $bdd->query('SELECT nom,date_creation,commentaire,pseudo FROM organisateur,topicforum,categorieforum,souscategorieforum
            WHERE topicforum.id_organisateur=organisateur.id
             AND organisateur.pseudo=' . $pseudo . '
@@ -58,7 +58,6 @@ function getTopicPresentationOrganisateur($bdd,$nom,$commentaire,$pseudo) {
             AND topicforum.nom=' . $nom . '
             AND topicforum.commentaire=' . $commentaire . '
             ORDER BY topicforum.date_creation');
-
 }
 
 ?>

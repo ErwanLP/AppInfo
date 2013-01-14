@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-
 <?php if (true) { ?>
 
 
-    <html>
-        <?php include("head.php"); ?>
-        <body>
-
-            <?php session_start(); ?>
+    
+        <?php include("start.php"); ?>
+        <?php session_start(); ?>
 
 
             <?php include("header.php"); ?>
@@ -90,15 +86,9 @@
                 </article>
 
             </section>
-
-            <?php include("footer.php"); ?>
-
-
-        </body>
-    </html>
-
-    <?php
+<?php
 } else {
     header('Location:index.php');
 }
 ?>
+ <?php include("footer.php"); ?>

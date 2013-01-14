@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-
-<html>
-    <head>
-        <title>Mes paramètres</title>
-        <link rel="stylesheet" href="parametre.css">
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <?php
+<?php
         /* empty
          * header('Location:http://une.url.fr');
          */

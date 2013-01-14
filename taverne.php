@@ -6,8 +6,6 @@ include('bddForum.php');
 ?>
 <?php /* include("head.php"); */ ?>
 
-
-
 <?php
 include("header.php");
 
@@ -45,7 +43,7 @@ include("nav.php");
         <div class="creerTopic">
             <a href="ajouterSujet.php" alt="ajouter un sujet" title="Créer un nouveau sujet"> Ajouter un sujet </a>
         </div>
-        
+
         <div class="backPage">
             <a href="indexForum.php" alt="retour à l'accueil du forum" title="Retour à l'accueil du forum"> Retour </a>
         </div>
@@ -77,7 +75,7 @@ include("nav.php");
                         <?php for ($a = 0; $a < count($tab_info_taverne); $a++) {
                             ?>
                             <tr class="affichageSujet">
-                                <td class="contenuMessage"><a href="commentaireForum.php?titreTopic=<?php echo $tab_info_taverne[$a][0]?>"><?php echo $tab_info_taverne[$a][0]; ?></a></td>
+                                <td class="contenuMessage"><a href="commentaireForum.php?titreTopic=<?php echo $tab_info_taverne[$a][0] ?>"><?php echo $tab_info_taverne[$a][0]; ?></a></td>
                                 <td class="message"><?php echo $tab_info_taverne[$a][1]; ?></td>
                                 <td class="auteur">Mohamed</td>
                                 <td class="date"><?php echo $tab_info_taverne[$a][2]; ?></td>
@@ -89,4 +87,3 @@ include("nav.php");
         </div>
 </section>       
 <?php include('footer.php'); ?>
-</html>

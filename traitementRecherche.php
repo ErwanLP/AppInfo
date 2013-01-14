@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <?php
 $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');   
 
@@ -106,13 +106,4 @@ $result = $bdd->query('SELECT * FROM event ' . $requete);
 
             </article>
         </section>
-
-
-        <?php include("footer.php"); ?>
-
-
-
-    </body> 
-</html>
-
-
+<?php include("footer.php");?>
