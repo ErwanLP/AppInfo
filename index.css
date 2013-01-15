@@ -1636,8 +1636,8 @@ a:hover{
 
     background-image: url("img/livre.jpg");
     position: absolute;
-    top: 320px;
-    left: 500px;
+    top: 340px;
+    left: 400px;
     width: 1200px;
     height : 886px;
     background-repeat: no-repeat;
@@ -1691,7 +1691,7 @@ a:hover{
     text-align: center;
     position: absolute;
     top:1230px;
-    left: 860px;
+    left: 740px;
 
 }
 #livrepost textarea {
