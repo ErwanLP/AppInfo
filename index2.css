@@ -1,0 +1,53 @@
+/* 
+    Document   : index2
+    Created on : 8 janv. 2013, 10:09:24
+    Author     : Dream
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+/*A COPIER LORS DE LA LIVRAISON DES PAGES... */
+
+.imageDetail
+{
+    margin-left:50px;
+    margin-top:50px;
+}
+
+.titreDetailEvent
+{
+   font-size: 50px;
+   font-family: "Arial Black", Arial, sans-serif;
+   position: relative;
+   left: 500px;
+   bottom: 560px;
+}
+
+.sousTitreThemeDetail
+{
+   font-size: 30px;
+   font-family: Arial, sans-serif;
+   position: relative;
+   left: 500px;
+   bottom: 615px;
+}
+
+.sousTitreLieuDetail
+{
+   font-size: 30px;
+   font-family: Arial, sans-serif;
+   position: relative;
+   left: 500px;
+   bottom: 630px; 
+}
+
+/* FIN DU CONTENU A COPIER */
