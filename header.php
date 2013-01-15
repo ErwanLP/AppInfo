@@ -1,6 +1,3 @@
-<header>
-
-</header>
 <div id ="ID">
     <?php
     if (!empty($_SESSION['ID'])) {

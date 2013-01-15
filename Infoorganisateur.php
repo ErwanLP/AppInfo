@@ -3,7 +3,7 @@
 <html>
     <head>
         <title>Mes paramètres</title>
-        <link rel="stylesheet" href="test2.css">
+        <link rel="stylesheet" href="parametre.css">
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
@@ -47,7 +47,7 @@
                 <fieldset id="personalData" class="rollin">
                     <input type="hidden" id="bypass_email" name="bypass_email" value="0" />
 
-                    <legend class="h2"><span>Mes données personnelles</span></legend>
+                    <legend> class="h2"><span>Mes données personnelles</span></legend>
                     <div>
 
                         <script type="text/javascript">
@@ -112,12 +112,8 @@
                                 </p>
 
                             </div>
-                            </br>
-                            <!--Masquer Nom -->
-                            <div class="info">
-                                <input type="checkbox" name="MasquerNom" id="MasquerNom" value="1" />
-                                <label for="MasquerNom"><strong>Masquer mon Nom</strong></label>
-                            </div>
+                            </br
+                           
                             </br>
                             <!--Avatar-->
                             <div class=info>
@@ -443,7 +439,7 @@
                                         <input type="text" id="mobilephone" name="mobilephone" class="text" value="0665478931" />
                                         </br>
 
-                                        <!--loisirs/hobbies-->
+                                        <!--loisirs/-->
                                         <div class="info">
                                             <label class="col_third_floatleft" for="loisirs/hobbies"></span></label>
                                             <p>Loisirs/hobbies:</p><textarea name="loisirs/hobbies" cols=60 rows=15>

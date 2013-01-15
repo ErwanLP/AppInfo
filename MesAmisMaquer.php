@@ -3,7 +3,7 @@
 <html>
     <head>
         <title>Mes Amis</title>
-        <link rel="stylesheet" href="test2.css">
+        <link rel="stylesheet" href="parametre.css">
     </head>
     <body>
         <div class="menuParametres">

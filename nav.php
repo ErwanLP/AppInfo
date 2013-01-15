@@ -1,14 +1,3 @@
-<!--<nav class = "elementmenu" >
-    <ul>
-        <li id="soiree"><a href="nav.php" ><img src ="img/ongletSoiree.png" alt="onglet" /></a></li>
-        <li id="bar"><a href="nav.php"></a></li>
-        <li id ="concert"><a href=#></a></li>
-        <li id ="restauration"><a href=#></a></li>
-        <li id  ="spectacle"><a href ="event.php?onglet=spectacle">test</a></li>
-        <li id ="autre"><a href=creationEvenement.php>Cre&acute;ation Evenement</a></li>
-    </ul>
-</nav> -->
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -90,28 +79,18 @@
             </form>
         </div>
 
-    <script type="text/javascript">
-        sfHover = function() {
-            var sfEls = document.getElementById("nav").getElementsByTagName("li");
-            for (var i=0; i<sfEls.length; i++) {
-                sfEls[i].onmouseover=function() {
-                    this.className+=" sfhover";
-                }
-                sfEls[i].onmouseout=function() {
-                    this.className=this.className.replace(new RegExp(" sfhover\b"), "");
-                }
-            }
-        }
-        if (window.attachEvent) window.attachEvent("onload", sfHover);
-    </script>
+        
     
     <?php
     if (!empty($_SESSION['ID'])) {
-        include("navConnect.php");
+        if(isset($_SESSION['SWITCH']) AND ($_SESSION['SWITCH'] == "pasdeprofilorganisateur" OR $_SESSION['SWITCH'] == "pasdeprofilparticipant") AND $_SESSION['ID'] != null){
+        include("navSansProfil.php");
+        }else{
+            include("navConnect.php");
+        }
     } else {
         include("navNonConnect.php");
     }
     ?>
-    
 </body>
 </html>

@@ -6,7 +6,7 @@
 
     <body>
 
-        
+
         <?php
         /* empty
          * header('Location:http://une.url.fr');
@@ -23,7 +23,7 @@
         include("footer.php");
         ?>
 
-        
+
     </body>
 </html>
 

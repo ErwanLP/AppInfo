@@ -18,7 +18,7 @@
         <strong>Prix: </strong>30€ <br/>
         <strong>Description: </strong> <?php echo $data['description']; ?><br/>
         <strong>Note: </strong><img src="img/etoile.png" class="etoile" alt="Note" /><p id="note">(<?php echo $data['note']; ?> sur 5)</p><br/>
-        <p id="bouton1" ><a href=<?php echo "eventDetaille.php?id=".$data['ID'] ?>>Voir Plus de Détails</a></p>
+        <p id="bouton1">Voir Plus de Détails</p>
         <p id="bouton2">Voir Commentaires</p>
         <p id="bouton3">Réserver</p>
     </div>
