@@ -133,6 +133,7 @@ include("nav.php");
             ?>
         </div>
     </div>
+    <?php if (isset($_SESSION['SWITCH']) AND $_SESSION['ID'] != null){ ?>
     <form method="post" action="livredor.php">
         <p id="livrepost">
             <label for="commentaire">
@@ -140,10 +141,13 @@ include("nav.php");
             </label>
             <br /><br />
             Pseudo : <input name="pseudo" required /><br /><br />
+            
             <textarea name="message" id="commentaire" rows="10" cols="50"placeholder="Ecrivez votre texte en 400 caractères maximum" onkeyup="javascript:MaxLengthTextarea(this, 400);" required></textarea><br/>
             <input type="submit" value="Envoyer" /> <input type="reset" value="Effacer" />
+               
         </p>
     </form>
+         <?php }?>
 </section>
 <?php include("footer.php"); ?>
 <script type="text/javascript">
