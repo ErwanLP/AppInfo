@@ -51,21 +51,6 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
         <!--  <div class ="topevent"> -->
         <div>
             <?php
-            if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
-            ?>
-            <div>
-                bonjour, mettre ici les evenements des organisateurs<!-- METTRE ICI LES EVENTS DE LORGANISATEUR-->
-            </div>
-            <?php 
-            }else if(isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "participant" AND $_SESSION['ID'] != null) {
-            ?>
-            <div>
-                bonjour, mettre ici les evenements auxquels est inscrit le participant<!-- METTRE ICI LES EVENTS AUQUELS LE PARTICIPANT EST INSCRIT-->
-            </div>
-            <?php
-            }
-            ?>
-            <?php
             $result = $bdd->query('SELECT nom,note,photo FROM event ORDER BY note DESC LIMIT 0 , 12');
             $compte = 1;
             ?><br/><br><br/><img src="img/TitreTopEventv1.1.png"/> <br/><img src ="img/SousTopEventv1.1.png"/><br/><br/> <br/><?php

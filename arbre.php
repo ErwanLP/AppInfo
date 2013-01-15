@@ -75,15 +75,15 @@
                     </li>
                 </ul>
             </li>
-            <?php
-            if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
+            <!--<?php
+            //if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
             ?>
             <li class="sousMenuBascule"><span>Mes Ev&egrave;nement</span>
                 <ul class="sousMenu">
                     <li>
                         <?php 
                         
-                       // $result = $bdd->query(SELECT nom.event)
+                       
                         
                         
                         ?>
@@ -93,7 +93,7 @@
                 </ul>
             </li>
             <?php 
-            }else if(isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "participant" AND $_SESSION['ID'] != null) {
+            //}else if(isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "participant" AND $_SESSION['ID'] != null) {
             ?>
             <li class="sousMenuBascule"><span>Mes Ev&egrave;nement</span>
                 <ul class="sousMenu">
@@ -101,8 +101,8 @@
                 </ul>
             </li>
             <?php
-            }
-            ?> 
+            //}
+            ?>-->
             
             <li class="sousMenuBascule"><span>Ev&egrave;nement r&eacute;cent</span>
                 <ul class="sousMenu">
