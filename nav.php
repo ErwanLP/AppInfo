@@ -79,43 +79,18 @@
             </form>
         </div>
 
-        <script type="text/javascript">
-            sfHover = function() {
-                var sfEls = document.getElementById("nav").getElementsByTagName("li");
-                for (var i=0; i<sfEls.length; i++) {
-                    sfEls[i].onmouseover=function() {
-                        this.className+=" sfhover";
-                    }
-                    sfEls[i].onmouseout=function() {
-                        this.className=this.className.replace(new RegExp(" sfhover\b"), "");
-                    }
-                }
-            }
-            if (window.attachEvent) window.attachEvent("onload", sfHover);
-        </script>
-
-        <?php
-        if (!empty($_SESSION['ID'])) {
-            ?>
-            <div class = "connection">
-                <ul>
-                    <li><a href="traitSwitch.php"><img src="img/switch.png" style="margin-right: 20px;"/></a></li>
-                    <li><a href=profil.php>Mon compte</a> |</li>
-                    <li><a href="deconnection.php">Deconnexion</a></li>
-                </ul>
-
-            </div>
-            <?php
-        } else {
-            ?>
-            <div class ="connection">
-                <ul>
-                    <li><a href="index.php" >Accueil</a> |</li> 
-                    <li><a href="inscription.php">Inscription</a> |</li>
-                </ul>
-
-            </div>
-           
-    <?php } ?>
+        
+    
+    <?php
+    if (!empty($_SESSION['ID'])) {
+        if(isset($_SESSION['SWITCH']) AND ($_SESSION['SWITCH'] == "pasdeprofilorganisateur" OR $_SESSION['SWITCH'] == "pasdeprofilparticipant") AND $_SESSION['ID'] != null){
+        include("navSansProfil.php");
+        }else{
+            include("navConnect.php");
+        }
+    } else {
+        include("navNonConnect.php");
+    }
+    ?>
 </body>
 </html>

@@ -75,6 +75,16 @@ SELECT organisateur.pseudo, forummessage.message, forummessage.date_creation
 FROM forummessage, organisateur, topicforum 
 WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topicforum . '" ) AND organisateur.ID = forummessage.id_organisateur
 ) ORDER BY date_creation');
+
+        /* REQUETE QUI MARCHE AUSSI : */
+
+        /* SELECT forummessage.message, forummessage.date_creation, participant.pseudo AS participant, organisateur.pseudo AS orga
+          FROM forummessage
+          LEFT OUTER JOIN participant ON participant.ID = forummessage.id_participant
+          LEFT OUTER JOIN  organisateur ON organisateur.ID = forummessage.id_organisateur
+          WHERE id_topic=1
+          ORDER BY date_creation */
+
         while ($donnees = $req->fetch()) {
             $tab_info_commentaire[$var_tab_info_array][0] = $donnees["message"];
             $tab_info_commentaire[$var_tab_info_array][1] = $donnees["date_creation"];
@@ -108,60 +118,60 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
 
             <div class="navigationForum"> 
                 <div class="containerMessageForum">
-    <?php
-    for ($a = 0; $a < count($tab_info_commentaire); $a++) {
-        //while ($data = $req1->fetch()) {
-        ?>
+                    <?php
+                    for ($a = 0; $a < count($tab_info_commentaire); $a++) {
+                        //while ($data = $req1->fetch()) {
+                        ?>
                         <div class="positionMessageForum">
                             <div class="titreMessageForum">
-                                <p class="positionTitreForum"><strong><?php echo $tab_info_commentaire[$a][2]; ?>
-                                    </strong>Posté le : <?php echo substr($tab_info_commentaire[$a][1], 0, 10); ?> &agrave; <?php echo substr($tab_info_commentaire[$a][1], 10); ?></p>
+                                <p class="positionTitreForum">
+                                    <strong><?php echo $tab_info_commentaire[$a][2]; ?></strong>Posté le : <?php echo substr($tab_info_commentaire[$a][1], 0, 10); ?> &agrave; <?php echo substr($tab_info_commentaire[$a][1], 10); ?></p>
                             </div>
-        <?php echo' <img  style="position:relative;left:-325px;top:13px;" src="img/jerry.jpg" height="150" width="200" /> '; ?>
+                            <?php echo' <img  style="position:relative;left:-325px;top:13px;" src="img/jerry.jpg" height="150" width="200" /> '; ?>
                             <div class="positionCommentaire">
-                            <?php echo $tab_info_commentaire[$a][0]; ?> 
+                                <?php echo $tab_info_commentaire[$a][0]; ?> 
                             </div>
                         </div>
-    <?php } ?>
+                    <?php } ?>
                 </div>
 
-    <?php
-    if (isset($_SESSION['SWITCH']) AND $_SESSION['ID'] != null) {
-        include("nouveauCommentaire1.php");
-    }
-    ?>
+                <?php
+                if (isset($_SESSION['SWITCH']) AND $_SESSION['ID'] != null) {
+                    include("nouveauCommentaire1.php");
+                }
+                ?>
 
             </div>
 
-    <?php
-} else {
-    $i = 0;
-    $erreurCommentaire = 'NULL';
-    $date_creation = date("Y-m-d H:i:s");
-    $message = $_POST['message'];
-    if (strlen($_POST['message']) < 2) {
-        $erreurCommentaire = "Votre commentaire est trop court!";
-        ?>
+            <?php
+        } else {
+            $i = 0;
+            $erreurCommentaire = 'NULL';
+            $date_creation = date("Y-m-d H:i:s");
+            $message = $_POST['message'];
+            if (strlen($_POST['message']) < 2) {
+                $erreurCommentaire = "Votre commentaire est trop court!";
+                ?>
                 <br/>
                 <br/>
-        <?php
-        echo'Votre commentaire est trop court!';
-        $i++;
-    } else if ($i == 0) {
+                <?php
+                echo'Votre commentaire est trop court!';
+                $i++;
+            } else if ($i == 0) {
 
-        $req = $bdd->prepare('INSERT INTO forummessage (date_creation,message)
+                $req = $bdd->prepare('INSERT INTO forummessage (date_creation,message)
         VALUES (:date_creation,:message)');
-        $req->execute(array(
-            'date_creation' => $date_creation,
-            'message' => $message));
+                $req->execute(array(
+                    'date_creation' => $date_creation,
+                    'message' => $message));
+                ?>
+                <br/>
+                <br/>
+                <?php
+                echo "Votre commentaire a bien été pris en compte";
+            }
+        }
         ?>
-                <br/>
-                <br/>
-        <?php
-        echo "Votre commentaire a bien été pris en compte";
-    }
-}
-?>
     </article>
 </section>
 <?php include('footer.php');
