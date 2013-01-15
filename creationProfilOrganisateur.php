@@ -40,24 +40,27 @@
                 </div>
                 <div id="page">
 
-                    <form class="contenuCPO" method="post" action="traitement.php">
+                    <form class="contenuCPO" method="post" action="traitementCreationProfilOrganisateur.php">
                         <fieldset class="fieldsetCPO">
                             <legend class="titreCPO"><p style="text-align:center;"> Informations à saisir </p></legend>
-                            <label for="nomO"> <span>*</span> Nom du repr&eacute;sentant : </label></br></br>
-                            <input type="text" name="nomO" id="nomO" size="23" maxlength="20"></br></br>
-                            <label for="prenomO"> <span>*</span> Pr&eacute;nom du repr&eacute;sentant : </label></br></br>
-                            <input type="text" name="prenomO" id="prenomO" size="23" maxlength="20"></br></br>
-                            <label for="pseudoO"> <span>*</span> Pseudo : </label></br></br>
-                            <input type="text" name="pseudoO" id="pseudoO" size="23" maxlength="20"></br></br>
-                            <label for="nomSociete"> <span>*</span> Nom de la soci&eacute;t&eacute; : </label></br></br>
-                            <input type="text" name="adresseO" id="adresseO" size="23" maxlength="20"></br></br>
-                            <label for="adresseSociete"> <span>*</span> Adresse de la soci&eacute;t&eacute; : </label></br></br>
-                            <input type="text" name="adresseO" id="adresseO" size="23" maxlength="20"></br></br>
-                            <label for="numeroSociete"> <span>*</span> Num&eacute;ro de t&eacute;l&eacute;phone : </label></br></br>
-                            <input type="tel" name="telO" id="telO" size="23" maxlength="20"/><br/></br>
-                            <label for="url"> <span>*</span> Site internet de la soci&eacute;t&eacute; : </label></br></br>
-                            <input type="url" name="url" id="url" size="40" maxlength="40"/><br/></br>
-                            <label for="pays"> <span>*</span> Dans quel pays se trouve votre si&egrave;ge social ? </label></br></br>
+                            <label for="nomO"> <span>*</span> Nom du repr&eacute;sentant : </label><br/><br/>
+                            <input type="text" name="nomO" id="nomO" size="23" maxlength="20"><br/><br/>
+                            <label for="prenomO"> <span>*</span> Pr&eacute;nom du repr&eacute;sentant : </label><br/><br/>
+                            <input type="text" name="prenomO" id="prenomO" size="23" maxlength="20"><br/><br/>
+                            <label for="pseudoO"> <span>*</span> Pseudo : </label><br/><br/>
+                            <input type="text" name="pseudoO" id="pseudoO" size="23" maxlength="20"><br/><br/>
+                            <label for="sexe"> <span>*</span> Votre sexe : </label><br/><br/>
+                            <input type="radio" name="personne" value="1" id="homme" > <label for="homme"> Homme</label><br/>
+                            <input style="margin-right:4px;" type="radio" name="personne" value="0" id="femme" > <label style="margin-right:5px; "for="femme">Femme</label><br/><br/>
+                            <label for="nomSociete"> <span>*</span> Nom de la soci&eacute;t&eacute; : </label><br/><br/>
+                            <input type="text" name="nomSocieteO" id="nomSocieteO" size="23" maxlength="25"></br></br>
+                            <label for="adresseSociete"> <span>*</span> Adresse de la soci&eacute;t&eacute; : </label><br/><br/>
+                            <input type="text" name="adresseO" id="adresseO" size="23" maxlength="35"></br></br>
+                            <label for="numeroSociete"> <span>*</span> Num&eacute;ro de t&eacute;l&eacute;phone de la soci&eacute;t&eacute; : </label><br/><br/>
+                            <input type="tel" name="telSociete" id="telSociete" size="23" maxlength="20"><br/><br/>
+                            <label for="url"> <span>*</span> Site internet de la soci&eacute;t&eacute; : </label><br/><br/>
+                            <input type="url" name="url" id="url" size="40" maxlength="40"><br/><br/>
+                            <label for="pays"> <span>*</span> Dans quel pays se trouve votre si&egrave;ge social ? </label><br/><br/>
                             <select name="pays" id="pays">
                                     <option value="France" selected="selected">France </option>
                                     <option value="Afghanistan">Afghanistan </option>
@@ -289,30 +292,12 @@
                                     <option value="Zambie">Zambie </option>
                                     <option value="Zimbabwe">Zimbabwe </option>
                                     <option value="royaume-uni">Royaume-Uni</option>
-                            </select></br></br>
-                            <label for="description"> Informations Soci&eacute;t&eacute; : </label></br></br>
-                            <textarea class="tailleDescription" name="description" id="description" size="200" maxlength="800"></textarea><br/></br>
-                            <input type="submit" value="Cr&eacute;er" />
-                            <input type="reset" value="Effacer" />
+                            </select><br/><br/>
+                            <label for="description"> Informations Soci&eacute;t&eacute; : </label><br/><br/>
+                            <textarea class="tailleDescription" name="description" id="descriptionCreerProfilOrganisateur" size="200" maxlength="800"></textarea><br/><br/>
+                            <input type="submit" value="Cr&eacute;er" >
+                            <input type="reset" value="Effacer" >
                         </fieldset>
-                        <!--<fieldset>
-                            <legend>Preference:</legend>
-                            <p>Quel type d &eacute;v&egrave;nement pr&eacute;f&eacute;rer vous ? :<br />
-                                <input type="checkbox" name="crome" id="crome" checked/> <label for="crome">Soir&eacute;e</label><br />
-                                <input type="checkbox" name="mozilla" id="mozilla" /> <label for="mozilla">Concert</label><br />
-                                <input type="checkbox" name="IE" id="IE" /> <label for="IE">Bar</label><br />
-                                <input type="checkbox" name="safari" id="safari" /> <label for="safari">Restauration</label><br/>
-                                <input type="checkbox" name="opera" id="opera" /> <label for="opera">Spectacle</label><br />
-                                <input type="checkbox" name="autre" id="autre" /> <label for="safari">Exposition</label>
-                            </p>
-                            <p>	Votre sexe :<br /> 
-                                <input type="radio" name="personne" value="etudiant" id="homme" /> <label for="homme">Homme</label><br />
-                                <input type="radio" name="personne" value="etudiantisep" id="femme" /> <label for="femme">Femme</label><br />
-
-                            </p>
-                        </fieldset>-->
-
-
                     </form>
                 </div>
             </article>
