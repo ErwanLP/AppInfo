@@ -15,16 +15,7 @@ if (isset($_POST['nomO']) && isset($_POST['prenomO']) && isset($_POST['pseudoO']
     $adresse = $_POST['adresseO'];
     $telSociete = $_POST['telSociete'];
     $siteWeb = $_POST['url'];
-    $telMobileO = NULL;
-    $mail = NULL;
-    $codePostal = NULL;
-    $ville = NULL;
-    $logo = NULL;
-    $activite = NULL;
-    $date = NULL;
-    $profession = NULL;
-    
-    
+      
     $bdd->query("INSERT INTO organisateur (ID, pays, pseudo, prenom, nom, sexe, nomSociete, adresseSociete, siteWeb, telephoneSociete ) VALUES ('$idSession','$pays','$pseudo','$prenom','$nom','$personne','$nomSociete','$adresse','$siteWeb','$telSociete')");
 
     $bdd->query('UPDATE compte SET profilOrganisateur = 1 WHERE ID = "' . $idSession . '"');
