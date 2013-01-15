@@ -67,7 +67,7 @@ function formDebEvent($lang) {
                                 <label for="heureDebut">Heure de d&eacute;but :</label>
                                 <input type="time" name="heureDebut" id="heureDebut" required /><br/>
                                 <label for="heureFin">Heure de fin :</label>
-                                <input type="date" name="heureFin" id="heureFin" required /><br/></br>
+                                <input type="time" name="heureFin" id="heureFin" required /><br/></br>
                                 <label>Jour(s) d\'ouverture(s) pendant la semaine</label></br>
                                 <label for="lundi">L</label><input type="checkbox" name="lundi" id="lundi" /> 
                                 <label for="mardi">Ma</label><input type="checkbox" name="mardi" id="mardi" />
@@ -120,7 +120,7 @@ Choose a picture for your event on your hard disk.</br>
         echo '</select></br></br>
 Choisissez une image pour votre &eacute;v&egrave;nement sur votre disque dur.</br>
 <label for="image">Fichier :</label>
-<INPUT id="image" name="image" TYPE="file" size="30"></br>
+<input id="image" name="image" type="file" size="30"></br>
                             </fieldset>
 
                             <input type="submit" value="Envoyer" />
