@@ -2,7 +2,7 @@
 
 session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
-if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['pseudo']) && (isset($_POST['personne'])) && isset($_POST['pays'])) {
+if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['pseudo']) && isset($_POST['personne']) && isset($_POST['pays'])) {
 
 
     $nom = $_POST['nom'];
@@ -56,6 +56,12 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['pseudo']) &
         $mail = $data['mail'];
     }$result->closeCursor();
     
-    $bdd->query("INSERT INTO participant (nom, prenom, pseudo, lieuNaissance, pays, villes, adresse, codePostal, description, sexe, telephoneFixe, telephoneMobile, dateDeNaissance, mail, siteWeb, avatar, profession, loisirs, preference ) VALUES ('$nom','$prenom','$pseudo','$lieuNaissance','$pays','$ville','$adresse','$codePostal','$description','$personne','$telFixe','$telMobile','$date','$mail','$siteWeb','$avatar','$profession','$loisir','$preference')");
+    $bdd->query("INSERT INTO participant (ID, nom, prenom, pseudo, lieuNaissance, pays, villes, adresse, codePostal, description, sexe, telephoneFixe, telephoneMobile, dateDeNaissance, mail, siteWeb, avatar, profession, loisirs, preference ) VALUES ('$idSession','$nom','$prenom','$pseudo','$lieuNaissance','$pays','$ville','$adresse','$codePostal','$description','$personne','$telFixe','$telMobile','$date','$mail','$siteWeb','$avatar','$profession','$loisir','$preference')");
+
+    $bdd->query('UPDATE compte SET profilParticipant = 1 WHERE ID = "' . $idSession . '"');
+    
+    $_SESSION['SWITCH'] = "participant";
+    
+    header('Location:index.php');
 }
 ?>
