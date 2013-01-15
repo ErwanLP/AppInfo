@@ -35,7 +35,7 @@ function formDebEvent($lang) {
                                 <label for="heureDebut">Start time :</label>
                                 <input type="time" name="heureDebut" id="heureDebut" required /><br/>
                                 <label for="heureFin">End time :</label>
-                                <input type="date" name="heureFin" id="heureFin" required /><br/></br>
+                                <input type="time" name="heureFin" id="heureFin" required /><br/></br>
                                 <label>Opening weeks days</label></br>
                                 <label for="lundi">M</label><input type="checkbox" name="lundi" id="lundi" /> 
                                 <label for="mardi">Tu</label><input type="checkbox" name="mardi" id="mardi" />
