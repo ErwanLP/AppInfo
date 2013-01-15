@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+$bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 if (isset($_SESSION['ID'])) {
 
     $ID = $_SESSION['ID'];
