@@ -126,6 +126,7 @@
                     <li><a href="aideEtSupport.php" title="Aller à la page Aide et Support">Aide et Support</a></li>
                 </ul>
             </li>
+            <li class="sousMenuBascule"><a href="livredor.php"><span>Livre d'Or</span></a>
         </ul>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <script type="text/javascript">
