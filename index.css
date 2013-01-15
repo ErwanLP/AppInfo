@@ -19,7 +19,13 @@ body
     /*position:relative;*//* Pour centrer notre page */
     /*border: black solid 1px;*/
 }
-
+/*Création évènement*/
+.champDescriptionEvent{
+    font-size: 18px;
+    width:600px;
+    height:300px;
+    resize: none;
+}
 
 
 /*HEADER*/

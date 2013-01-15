@@ -14,7 +14,15 @@
     <div class ="texteEvent">
         <h1><?php echo $data['nom']; ?></h1>
         <strong>Adresse: </strong><?php echo $data['lieu']; ?><span><?php echo $data['lieu']; ?></span><br/>
-        <strong>Date et Heure :</strong><?php echo $data['date']; ?><br/>
+        
+        <?php 
+        if($data['dateFin']=="0000-00-00"){
+            echo '<strong>L\'&eacute;v&egrave;nement &agrave; lieu le :</strong>';
+            echo $data['dateDebut'].'</br><strong>A partir de :</strong>'.$data['heureDebut'].'<strong> jusqu\'&agrave; :</strong>'.$data['heureFin'].'</br>';
+        }else{
+            echo '<strong>L\'&eacute;v&egrave;nement &agrave; lieu du :</strong>';
+            echo $data['dateDebut'].'<strong> au </strong>'.$data['dateFin'].'</br><strong>A partir de :</strong>'.$data['heureDebut'].'<strong> jusqu\'&agrave; :</strong>'.$data['heureFin'].'</br>';
+        }?>
         <strong>Prix: </strong>30€ <br/>
         <strong>Description: </strong> <?php echo $data['description']; ?><br/>
         <strong>Note: </strong><img src="img/etoile.png" class="etoile" alt="Note" /><p id="note">(<?php echo $data['note']; ?> sur 5)</p><br/>
