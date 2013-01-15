@@ -43,14 +43,14 @@
                         <fieldset class="fieldsetCPP">
                             <legend class="titreCPP"><p style="text-align:center;"> Informations Personnelles </p></legend>
                             <label for="nom"> <span>*</span> Votre nom : </label><br/><br/>
-                            <input type="text" name="nom" id="nom" size="23" maxlength="20"><br/><br/>
+                            <input type="text" name="nom" id="nom" size="23" maxlength="20" required><br/><br/>
                             <label for="prenom"> <span>*</span> Votre pr&eacute;nom : </label><br/><br/>
-                            <input type="text" name="prenom" id="prenom" size="23" maxlength="20"><br/><br/>
+                            <input type="text" name="prenom" id="prenom" size="23" maxlength="20" required><br/><br/>
                             <label for="pseudo"> <span>*</span> Votre pseudo : </label><br/><br/>
-                            <input type="text" name="pseudo" id="pseudo" size="23" maxlength="20"><br/><br/>
+                            <input type="text" name="pseudo" id="pseudo" size="23" maxlength="20" required><br/><br/>
                             <label for="sexe"> <span>*</span> Votre sexe : </label><br/><br/>
-                            <input type="radio" name="personne" value="1" id="homme" > <label for="homme"> Homme</label><br/>
-                            <input style="margin-right:4px;" type="radio" name="personne" value="0" id="femme" > <label style="margin-right:5px; "for="femme">Femme</label><br/><br/>
+                            <input type="radio" name="personne" value="1" id="homme" required> <label for="homme"> Homme</label><br/>
+                            <input style="margin-right:4px;" type="radio" name="personne" value="0" id="femme" required> <label style="margin-right:5px; "for="femme">Femme</label><br/><br/>
                             <label for="date"> Votre date de naissance :</label><br/><br/>
                             <input type="date" name="date" id="date" size="23" maxlength="20"><br/><br/>
                             <label for="lieuNaissance"> Votre lieu de naissance : </label><br/><br/>
@@ -60,7 +60,7 @@
                             <label for="url"> Votre site web : </label><br/><br/>
                             <input type="url" name="url" id="url" size="40" maxlength="40"><br/><br/>
                             <label for="pays"> <span>*</span> Dans quel pays habitez-vous ? </label><br/><br/>
-                            <select name="pays" id="pays">
+                            <select name="pays" id="pays" required>
                                 <optgroup label="Europe">
                                     <option value="france">France</option>
                                     <option value="espagne">Espagne</option>

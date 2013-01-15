@@ -125,7 +125,7 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
                         <div class="positionMessageForum">
                             <div class="titreMessageForum">
                                 <p class="positionTitreForum">
-                                    <strong><?php echo $tab_info_commentaire[$a][2]; ?></strong>Posté le : <?php echo substr($tab_info_commentaire[$a][1], 0, 10); ?> &agrave; <?php echo substr($tab_info_commentaire[$a][1], 10); ?></p>
+                                    <strong><a href="" ><?php echo $tab_info_commentaire[$a][2]; ?></a></strong>Posté le : <?php echo substr($tab_info_commentaire[$a][1], 0, 10); ?> &agrave; <?php echo substr($tab_info_commentaire[$a][1], 10); ?></p>
                             </div>
                             <?php echo' <img  style="position:relative;left:-325px;top:13px;" src="img/jerry.jpg" height="150" width="200" /> '; ?>
                             <div class="positionCommentaire">
