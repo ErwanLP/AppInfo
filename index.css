@@ -319,6 +319,7 @@ border: 2px solid white;
     /*border: 2px solid white;*/
     margin-bottom: 20px; /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
     /*background-color : tan;*/
+    list-style: none
 }
 
 .connexion li
@@ -1157,12 +1158,13 @@ a:visited
     color: black;
 }
 
-.creerTopic a:hover, creerTopic a:active {
+
+.creerTopic,a:hover, creerTopic a:active {
     color: #7297b7;
 }
 
-.backPage {
-
+.backPage,.pagePréc {
+    
     border: 4px double black;
     width: 200px;
     height: 30px;
@@ -1175,7 +1177,7 @@ a:visited
     color: black;
 }
 
-.backPage a:hover, backPage a:active {
+.backPage,.pagePréc a:hover, backPage a:active {
     color: #7297b7;
 }
 
@@ -1202,9 +1204,7 @@ a:visited
 }
 
 .containerMessageForum {
-
-    margin-top: 130px;
-
+   margin-top: 130px;
 }
 
 .messageForum {

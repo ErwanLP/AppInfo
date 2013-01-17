@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+
 <?php
-$bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');   
+$bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 
 $bdd->exec('SET NAMES utf8');
 //connection à la base de données
@@ -54,65 +54,55 @@ $result = $bdd->query('SELECT * FROM event ' . $requete);
 -->
 
 
-<html>
-    <?php include("head.php"); ?>
-
-    <body>
-
-        <?php session_start(); ?>
-
-        <?php include("header.php"); ?>
-
-        <?php include("nav.php"); ?>
-
-
-
-        <section>
-            <aside class ="navg">
-                <?php include ("arbre.php"); ?>
-            </aside>
-
-            <aside class ="new">
-                <div class ="eventNew">
-                    <img class ="photonew" src ="img/new.jpg"/>
-                </div>
-
-                <?php
-                if (!isset($_SESSION['ID'])) {
-                    include("connexion.php");
-                }
-                if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
-                    ?>
-                    <div class="positionBouton">
-                        <a href="creationEvenement.php"><img src ="img/BoutonCreerEvent.png"/></a>
-                    </div>
-                    <?php
-                }
-                ?>
-            </aside>
-
-            <article class ="articleevent">                  
-                <?php
-                while ($data = $result->fetch()) {
-
-                    include('articleevent.php');
-                }
-
-                $result->closeCursor();
-                ?>
+<?php session_start(); ?>
+<?php include("start.php"); ?>
 
 
 
 
-            </article>
-        </section>
+<?php include("header.php"); ?>
 
-
-        <?php include("footer.php"); ?>
+<?php include("nav.php"); ?>
 
 
 
-    </body> 
-</html>
+<section>
+    <aside class ="navg">
+        <?php include ("arbre.php"); ?>
+    </aside>
+
+    <aside class ="new">
+        <div class ="eventNew">
+            <img class ="photonew" src ="img/new.jpg"/>
+        </div>
+
+        <?php
+        if (!isset($_SESSION['ID'])) {
+            include("connexion.php");
+        }
+        if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
+            ?>
+            <div class="positionBouton">
+                <a href="creationEvenement.php"><img src ="img/ampouleCreerEvenement.png"/></a>
+            </div>
+            <?php
+        }
+        ?>
+    </aside>
+
+    <article class ="articleevent">                  
+        <?php
+        while ($data = $result->fetch()) {
+
+            include('articleevent.php');
+        }
+
+        $result->closeCursor();
+        ?>
 
 
+
+
+    </article>
+</section>
+<?php include("footer.php"); ?>

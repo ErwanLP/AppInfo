@@ -2,7 +2,7 @@
 session_start();
 $titre = 'nouveau Comentaire';
 include('start.php');
-include('bddForum.php');
+include('BDD.php');
 ?>
 <?php /* include("head.php"); */ ?>
 
@@ -38,9 +38,12 @@ include("nav.php");
     </aside>
 
     <article>
+        <div class="pagePréc">
+            <a href="souhait.php" alt="page précédente" title="retour à la page précédente">Page précédente</a>
+        </div>
 
         <div class="backPage">
-            <a href="indexForum.php" alt="retour à l'accueil forum" title="Retour à l'accueil forum"> Accueil </a>
+            <a href="indexForum.php" alt="retour à l'accueil forum" title="Retour à l'accueil forum">Retour à Accueil </a>
         </div>
 
         <div class="titreTopic">
@@ -176,5 +179,3 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
 </section>
 <?php include('footer.php');
 ?>        
-</html>
-

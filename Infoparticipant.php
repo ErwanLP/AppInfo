@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<?php include("profil.php"); ?>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="parametre.css">
-    </head>
-    <body>
+
         <div class="menuParametres">
             <h1>Configurer</h1>
             <ul id="menuParametre">
@@ -574,5 +567,4 @@
                 }
             }
         </script>
-    </body>
-</html>
+    

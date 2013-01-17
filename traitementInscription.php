@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <?php include("head.php"); ?>
-    <body>
 
-        
-
+    <?php include("start.php"); ?>
+    
         <?php include("header.php"); ?>
 
         <?php include("nav.php"); ?>
@@ -58,14 +54,9 @@
                         $result->closeCursor();
                         $result = null;
 
-
-
-
-
-
-
-
-
+                        
+                        
+                        
                         if ($bolnom && $bolmdp) { // si le compte n'existe aps deja
                             echo $nomDeCompte;
                             echo $mdp;
@@ -91,24 +82,4 @@
         </section>
 
 <?php include("footer.php"); ?>
-
-
-    </body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

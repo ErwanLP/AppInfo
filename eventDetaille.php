@@ -1,9 +1,7 @@
 
-<!DOCTYPE html>
-<html>
-    <?php include("head.php"); ?>
+    <?php include("start.php"); ?>
 
-    <body>
+   
 
         <?php session_start(); ?>
         
@@ -55,12 +53,7 @@
 }$reponse->closeCursor();
         ?>
     </div>
-    
-</div>
-                  
-
-
-
+   
 
             </article>
         </section>
@@ -70,5 +63,3 @@
 
 
 
-    </body> 
-</html>
