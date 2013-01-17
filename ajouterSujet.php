@@ -1,8 +1,8 @@
 <?php
 session_start();
-$titre = 'index du forum';
+$titre = 'ajouter un sujet';
 include('start.php');
-include('bddForum.php');
+include('BDD.php');
 ?>
 <?php /* include("head.php"); */ ?>
 

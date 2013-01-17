@@ -5,8 +5,6 @@ include('start.php');
 include('bddForum.php');
 ?>
 <?php /* include("head.php"); */ ?>
-
-
 <?php
 include("header.php");
 
@@ -46,7 +44,7 @@ include("nav.php");
         </div>
 
         <div class="backPage">
-            <a href="indexForum.php" alt="retour à l'accueil du forum" title="Retour à l'accueil du forum"> Retour </a>
+            <a href="indexForum.php" alt="retour à l'accueil du forum" title="Retour à l'accueil du forum"> Retour à l'accueil</a>
         </div>
 
         <?php
@@ -77,7 +75,7 @@ include("nav.php");
                         <?php for ($a = 0; $a < count($tab_info_souhait); $a++) {
                             ?>
                             <tr class="affichageSujet">
-                                <td class="contenuMessage"><a href="commentaireForum.php?idTopic=<?php echo $tab_info_souhait[$a][3]?>&titreTopic=<?php echo $tab_info_souhait[$a][0]?>"><?php echo $tab_info_souhait[$a][0]; ?></a></td>
+                                <td class="contenuMessage"><a href="commentaireForum.php?idTopic=<?php echo $tab_info_souhait[$a][3] ?>&titreTopic=<?php echo $tab_info_souhait[$a][0] ?>"><?php echo $tab_info_souhait[$a][0]; ?></a></td>
                                 <td class="message"><?php echo $tab_info_souhait[$a][1]; ?></td>
                                 <td class="auteur">Mohamed</td>
                                 <td class="date"><?php echo $tab_info_souhait[$a][2]; ?></td>
@@ -90,4 +88,4 @@ include("nav.php");
     </article>
 </section>
 <?php include('footer.php'); ?>
-</html>
+

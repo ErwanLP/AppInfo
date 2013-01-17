@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-
 <?php if (true) { ?>
 
 
-    <html>
-        <?php include("head.php");
-        include("vue.creationEvenement");
-        $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', ''); ?>
-        <body>
-
-    <?php session_start(); ?>
+    
+        <?php include("start.php"); ?>
+        <?php session_start(); ?>
 
 
             <?php include("header.php"); ?>
@@ -29,7 +23,7 @@
                     if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
                         ?>
                         <div class="positionBouton">
-                            <a href="creationEvenement.php"><img src ="img/BoutonCreerEvent.png"/></a>
+                            <a href="creationEvenement.php"><img src ="img/ampouleCreerEvenement.png"/></a>
                         </div>
                         <?php
                     }
@@ -61,15 +55,9 @@ formFinEvent($lang);
                 </article>
 
             </section>
-
-    <?php include("footer.php"); ?>
-
-
-        </body>
-    </html>
-
-    <?php
+<?php
 } else {
     header('Location:index.php');
 }
 ?>
+ <?php include("footer.php"); ?>
