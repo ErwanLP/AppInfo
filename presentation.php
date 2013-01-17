@@ -82,8 +82,7 @@ include("nav.php");
                     </table>
                 </div>
             </div>
-        </div>
-    </article>
-</section>
-<?php include('footer.php'); ?>
-</html>
+        </article>
+    </section>
+    <?php include('footer.php'); ?>
+

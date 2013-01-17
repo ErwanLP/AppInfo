@@ -39,28 +39,28 @@
                     <p style="margin-top:10px;"> Actuellement, vous ne disposez pas de profil participant. Nous vous invitons à remplir les champs suivants :</p>
                 </div>
                 <div id="page">
-                    <form class="contenuCPP" method="post" action="traitement.php">
+                    <form class="contenuCPP" method="post" action="traitementCreationProfilParticipant.php">
                         <fieldset class="fieldsetCPP">
                             <legend class="titreCPP"><p style="text-align:center;"> Informations Personnelles </p></legend>
-                            <label for="nom"> <span>*</span> Votre nom : </label></br></br>
-                            <input type="text" name="nom" id="nom" size="23" maxlength="20"></br></br>
-                            <label for="prenom"> <span>*</span> Votre pr&eacute;nom : </label></br></br>
-                            <input type="text" name="prenom" id="prenom" size="23" maxlength="20"></br></br>
-                            <label for="pseudo"> <span>*</span> Votre pseudo : </label></br></br>
-                            <input type="text" name="pseudo" id="pseudo" size="23" maxlength="20"></br></br>
-                            <label for="sexe"> <span>*</span> Votre sexe : </br></br>
-                            <input type="radio" name="personne" value="Homme" id="homme" /> <label for="homme"> Homme</label><br />
-                            <input style="margin-right:4px;"type="radio" name="personne" value="Femme" id="femme" /> <label style="margin-right:5px;"for="femme">Femme</label><br /><br />
-                            <label for="date"> Votre date de naissance :</label></br></br>
-                            <input type="date" name="date" id="date" size="23" maxlength="20"/><br/></br>
-                            <label for="lieuNaissance"> Votre lieu de naissance : </label></br></br>
-                            <input type="text" name="lieuNaissance" id="lieuNaissance" size="23" maxlength="20"></br></br>
-                            <label for="url"> Votre numero de telephone :</label></br></br>
-                            <input type="tel" name="tel" id="tel" size="23" maxlength="20"/><br/></br>
-                            <label for="url"> Votre site web : </label></br></br>
-                            <input type="url" name="url" id="url" size="40" maxlength="40"/><br/></br>
-                            <label for="pays"> <span>*</span> Dans quel pays habitez-vous ? </label></br></br>
-                            <select name="pays" id="pays">
+                            <label for="nom"> <span>*</span> Votre nom : </label><br/><br/>
+                            <input type="text" name="nom" id="nom" size="23" maxlength="20" required><br/><br/>
+                            <label for="prenom"> <span>*</span> Votre pr&eacute;nom : </label><br/><br/>
+                            <input type="text" name="prenom" id="prenom" size="23" maxlength="20" required><br/><br/>
+                            <label for="pseudo"> <span>*</span> Votre pseudo : </label><br/><br/>
+                            <input type="text" name="pseudo" id="pseudo" size="23" maxlength="20" required><br/><br/>
+                            <label for="sexe"> <span>*</span> Votre sexe : </label><br/><br/>
+                            <input type="radio" name="personne" value="1" id="homme" required> <label for="homme"> Homme</label><br/>
+                            <input style="margin-right:4px;" type="radio" name="personne" value="0" id="femme" required> <label style="margin-right:5px; "for="femme">Femme</label><br/><br/>
+                            <label for="date"> Votre date de naissance :</label><br/><br/>
+                            <input type="date" name="date" id="date" size="23" maxlength="20"><br/><br/>
+                            <label for="lieuNaissance"> Votre lieu de naissance : </label><br/><br/>
+                            <input type="text" name="lieuNaissance" id="lieuNaissance" size="23" maxlength="20"><br/><br/>
+                            <label for="url"> Votre num&eacute;ro de t&eacute;l&eacute;phone fixe:</label><br/><br/>
+                            <input type="telFixe" name="telFixe" id="telFixe" size="23" maxlength="20"><br/><br/>
+                            <label for="url"> Votre site web : </label><br/><br/>
+                            <input type="url" name="url" id="url" size="40" maxlength="40"><br/><br/>
+                            <label for="pays"> <span>*</span> Dans quel pays habitez-vous ? </label><br/><br/>
+                            <select name="pays" id="pays" required>
                                 <optgroup label="Europe">
                                     <option value="france">France</option>
                                     <option value="espagne">Espagne</option>
@@ -75,30 +75,12 @@
                                     <option value="chine">Chine</option>
                                     <option value="japon">Japon</option>
                                 </optgroup>
-                            </select></br></br>
-                            <label for="description"> Votre Description:</label></br></br>
-                            <textarea class="tailleDescription" name="description" id="description" size="200" maxlength="800"></textarea><br/></br>
-                            <input type="submit" value="Cr&eacute;er" />
-                            <input type="reset" value="Effacer" />
+                            </select><br/><br/>
+                            <label for="description"> Votre Description:</label><br/><br/>
+                            <textarea class="tailleDescription" name="description" id="descriptionCreerProfilParticipant" size="200" maxlength="800"></textarea><br/><br/>
+                            <input type="submit" value="Cr&eacute;er" >
+                            <input type="reset" value="Effacer" >
                         </fieldset>
-                        <!--<fieldset>
-                            <legend>Preference:</legend>
-                            <p>Quel type d &eacute;v&egrave;nement pr&eacute;f&eacute;rer vous ? :<br />
-                                <input type="checkbox" name="crome" id="crome" checked/> <label for="crome">Soir&eacute;e</label><br />
-                                <input type="checkbox" name="mozilla" id="mozilla" /> <label for="mozilla">Concert</label><br />
-                                <input type="checkbox" name="IE" id="IE" /> <label for="IE">Bar</label><br />
-                                <input type="checkbox" name="safari" id="safari" /> <label for="safari">Restauration</label><br/>
-                                <input type="checkbox" name="opera" id="opera" /> <label for="opera">Spectacle</label><br />
-                                <input type="checkbox" name="autre" id="autre" /> <label for="safari">Exposition</label>
-                            </p>
-                            <p>	Votre sexe :<br /> 
-                                <input type="radio" name="personne" value="etudiant" id="homme" /> <label for="homme">Homme</label><br />
-                                <input type="radio" name="personne" value="etudiantisep" id="femme" /> <label for="femme">Femme</label><br />
-
-                            </p>
-                        </fieldset>-->
-
-                        
                     </form>
                 </div>
             </article>

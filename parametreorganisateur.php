@@ -15,7 +15,7 @@
 
         include("nav.php");
 
-        $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', 'root');
+        $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
         ?>
 
 
@@ -28,16 +28,16 @@
                     <img class ="photonew" src ="img/new.jpg"/>
                 </div>
             </aside>
-            <div id="description">
+            <div class="description">
                 <fieldset>
-                    <a href="img/avatar.jpg"><img src="img/avatar_mini.jpg" alt="Avatar" title="Cliquez pour agrandir" style="border: solid black 2px"/></a>                   
+                    <img src="img/logo.png" width="200" height="200" alt="Logo" style="border: solid black 2px"/>                  
                     <?php
-                    $result = $bdd->query('SELECT * FROM participant');
-                    $data = $result->fetch();
+                    $result2 = $bdd->query('SELECT * FROM organisateur WHERE ID = ' . $_SESSION['ID'] . ' ');
+                    $data = $result2->fetch();
                     ?>
-                    <p id="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];
+                    <p class="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];
                     ?></p>
-                    <p id="lieu"><?php echo $data['pays'] . ", " . $data['villes'];
+                    <p class="lieu4"><?php echo $data['nomSociete'] . ", " . $data['pays'];
                     ?></p>
                 </fieldset>
 
@@ -46,9 +46,9 @@
             <div class="menu">
                 <ul id="simple-menu">
                     <li><input type="button" onclick="self.location.href='profil.php';" value="Mes Infos"/></li>
-                    <li><input type="button" onclick="self.location.href='profil.php';" value="Mes Amis"/></li>
                     <li><input type="button" onclick="self.location.href='profil.php';" value="Mes Events"/></li>
-                    <li><input type="button" onclick="self.location.href='test1.php';" value="Paramètres"/>
+                    <li><input type="button" onclick="self.location.href='profil.php';" value="Ma Messagerie"/></li>
+                    <li><input type="button" onclick="self.location.href='parametreorganisateur.php';" value="Paramètres"/>
                         <ul class="sousmenu">
                             <li><a href="Infoorganisateur.php" title="Mon compte" onclick="self.location.href='Infoorganisateur.php';"></a></li>                         
                             <li><a href="parametreprofil.php" title="Mon profil" onclick="self.location.href='parametreprofil.php';"></a></li>
@@ -108,7 +108,8 @@
                             <?php
                             $ID = $_SESSION['ID'];
 
-                            $result = $bdd->query('SELECT * FROM  participant WHERE participant.id = "' . $ID . '"');
+                            $result = $bdd->query('SELECT * FROM  organisateur WHERE organisateur.ID = ' . $ID . '');
+                            echo 'SELECT * FROM  organisateur WHERE organisateur.ID = ' . $ID . '';
 
                             while ($data = $result->fetch()) {
                                 ?>
@@ -119,7 +120,7 @@
                                     <!--<span class="infoPerso"><span class="required">Tu es<sup>*</sup> : </span></span>-->
                                     <span class="radio-checkbox">
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        Tu es<sup>*</sup> : &nbsp;&nbsp;<input type="radio" id="femme" name="genre" class="radio" value="0" /> <label for="female" class="radio">Une femme</label>&nbsp;&nbsp;&nbsp;
+                                        Tu es<sup>*</sup> : &nbsp;&nbsp;<input type="radio" id="femme" name="genre" class="radio" value="<?php echo $data['sexe']; ?>" /> <label for="female" class="radio">Une femme</label>&nbsp;&nbsp;&nbsp;
                                     </span>
                                     <span class="radio-checkbox">
                                         <input type="radio" id="homme" name="genre" class="radio" value="1" checked="checked"/> <label for="male" class="radio">Un homme</label>
@@ -162,16 +163,8 @@
                                 <!-- Date de naissance -->
                                 <div class="info"><br/>
                                     <!--<label class="infoPerso" for="dateDeNaissance" data-fieldgroup="date"><span class="required">Date de naissance<sup>*</sup> :</span></label>-->
-                                    Date de naissance &nbsp;  : &nbsp; <input type="text" id="nom" name="nom" class="text" value="<?php echo $data['dateDeNaissance']; ?>" />
+                                    Date de naissance  : &nbsp; <input type="text" id="nom" name="nom" class="text" value="<?php echo $data['dateDeNaissance']; ?>" />
 
-
-
-
-                                    <!-- Lieu de naissance -->
-                                    <div class=info><br/>
-                                        <!--<label class="infoPerso" for=lieuDeNaissance class="col_third_floatleft">Lieu de Naissance<sup>*</sup> :</label>-->
-                                        Lieu de naissance &nbsp; : &nbsp; <input type="text" id="lieuDeNaissance" name="lieuDeNaissance" class="text" value="<?php echo $data['lieuNaissance']; ?>"/>
-                                    </div>
                                     <!-- Email -->
                                     <div class="info"><br/>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -188,35 +181,34 @@
                                         <!-- <label for=profession class="infoPerso">Profession :</label>-->
                                         Profession : &nbsp; <input type="text" id="profession" name="profession" class="text" value="<?php echo $data['profession']; ?>"/>
                                     </div>
-                                    <!-- Adresse -->
+                                    <!-- Adresse société-->
                                     <div class="info"><br/>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;
                                         <!--<label for="adresse" class="infoPerso">Adresse postale<sup>*</sup> :</label>-->
-                                        Adresse &nbsp; : &nbsp; <input type="text" id="adresse" name="adresse" class="text" value="<?php echo $data['adresse']; ?>" />
+                                        Adresse société &nbsp; : &nbsp; <input type="text" id="adresseSociete" name="adresseSociete" class="text" value="<?php echo $data['adresseSociete']; ?>" />
                                     </div>
 
 
 
-                                    <!-- Code Postal -->
+                                    <!-- Code Postal société -->
                                     <div class="info"><br/>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <!--<label class="infoPerso" for="pcode"><span class="required">Code postal<sup>*</sup> :</span></label>-->
-                                        Code postal &nbsp; : &nbsp; <input type="text" id="pcode" name="pcode" class="text" value="<?php echo $data['codePostal']; ?>" />
+                                        <!--<label class="codePostalSociete" for="pcode"><span class="required">Code postal société<sup>*</sup> :</span></label>-->
+                                        Code postal société &nbsp; : &nbsp; <input type="text" id="codePostalSociete" name="codePostalSociete" class="text" value="<?php echo $data['codePostalSociete']; ?>" />
 
                                     </div>
 
-                                    <!-- Villes -->
+                                    <!-- Ville -->
                                     <div class="info"><br/>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <!--<label for="ville" class="infoPerso">Ville<sup>*</sup> :</label>-->
-                                        Villes<sup>*</sup> : &nbsp; <input type="text" id="villes" name="villes" class="text" value="<?php echo $data['villes']; ?>" />
+                                        Ville<sup>*</sup> : &nbsp; <input type="text" id="ville" name="ville" class="text" value="<?php echo $data['ville']; ?>" />
                                     </div>
 
                                     <!-- Pays -->
                                     <div class="info"><br/>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <!--<label class="infoPerso" for="pays"><span class="required">Pays<sup>*</sup> :</span></label>-->
-                                        Pays<sup>*</sup> : <select class="choix" id="country" name="pays">
+                                        Pays<sup>*</sup> :&nbsp; <select class="choix" id="country" name="pays">
                                             <option value="AF">Afghanistan</option>
                                             <option value="ZA">Afrique du Sud</option>
                                             <option value="AL">Albanie</option>
@@ -450,23 +442,23 @@
                                     <div class="info"><br/>
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <!--<label for="telephoneFixe" class="infoPerso">Téléphone fixe :</label>-->
-                                        Téléphone fixe : &nbsp; <input type="text" id="telephoneFixe" name="TelephoneFixe" class="text" value="<?php echo $data['telephoneFixe']; ?>"/>
+                                        Téléphone fixe : &nbsp;&nbsp; <input type="text" id="telephoneFixe" name="TelephoneFixe" class="text" value="<?php echo $data['telephoneFixe']; ?>"/>
                                     </div>
 
                                     <!-- Téléphone Mobile -->
                                     <div class="info"><br/>
                                         &nbsp;
                                          <!--<label for="NumeroPortable" class="infoPerso">Mobile<sup>*</sup> :</label>-->
-                                        Téléphone Mobile<sup>*</sup> : &nbsp; <input type="text" id="numeroPortable" name="TelephoneMobile" class="text" value="<?php echo $data['telephoneMobile']; ?>"/>
+                                        Téléphone Mobile<sup>*</sup> : &nbsp;&nbsp; <input type="text" id="numeroPortable" name="TelephoneMobile" class="text" value="<?php echo $data['telephoneMobile']; ?>"/>
 
 
 
 
                                         <!-- Langue -->
                                         <div class="info"><br/>
-
-                                          <!--<label class="infoPerso" for="langage"><span class="required">Version et langue<sup>*</sup> :</span></label>-->
-                                            Versions et langues<sup>*</sup> : &nbsp; <select class="choix" id="lang" name="locale">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                                                  <!--<label class="infoPerso" for="langage"><span class="required">Version et langue<sup>*</sup> :</span></label>-->
+                                            Langues<sup>*</sup> : &nbsp; <select class="choix" id="lang" name="locale">
                                                 <option selected="selected" value="fr_FR">France</option>
                                                 <option value="en_GB">International (anglais)</option>
 
@@ -481,63 +473,43 @@
                                             <!--<label for="siteWeb" class="infoPerso">Site Web :</label>-->
                                             Site Web &nbsp;&nbsp;: &nbsp;&nbsp; <input type="text" name="siteWeb" id="siteWeb" class="text" value="<?php echo $data['siteWeb']; ?>"/>
                                         </div>
-                                        <!-- Info Société -->
+                                        <!-- Nom Société -->
                                         <div class="info"><br/>
                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
                                             <!--<label for="prenom" class="infoPerso">Info Société<sup>*</sup> :</label>-->
-                                            Info Société &nbsp; :  &nbsp; <input type="text" id="infoSociete" name="infoSociete" class="text" value="<?php echo $data['infoSociete']; ?>" />
+                                            Nom Société &nbsp; :  &nbsp; <input type="text" id="nomSociete" name="nomSociete" class="text" value="<?php echo $data['nomSociete']; ?>" />
 
-                                            <!-- Représentant -->
+
                                             <div class="info"><br/>
-                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <!--<label for="representant" class="infoPerso">Représentant<sup>*</sup> :</label>-->
-                                                Représentant &nbsp; :  &nbsp; <input type="text" id="representant" name="representant" class="text" value="<?php echo $data['representant']; ?>" />
-
-
-
-                                                <!--loisirs-->
-                                                <div class="info"><br/>
-                                                    <!--<label class="infoPerso" for="representant"></label>-->
-                                                    <p>Loisirs : &nbsp; </p><textarea name="loisirs" style="width: 700px;height: 150px"><?php echo $data['loisirs']; ?>
-                                                    </textarea>
-                                                </div>
-
-                                                <!--Description-->
-                                                <div class="info"><br/>
-                                                    <!--<label class="infoPerso" for="description"></label>-->
-                                                    <p>Description : &nbsp; </p><textarea name="description" style="width: 700px;height: 150px"><?php echo $data['description']; ?></textarea>
-                                                </div>
-
-                                                <div class="info"><br/>
-                                                    <input type="button" onClick="modification()" value="Envoyer" style="width:80px;height: 70px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                    <input type="reset" value="Effacer" style="width:80px;height: 70px">
-                                                </div>
-                                                </fieldset>
-                                                </form>
+                                                <input type="button" onClick="modification()" value="Envoyer" style="width:80px;height: 70px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="reset" value="Effacer" style="width:80px;height: 70px">
                                             </div>
-                                        <?php } ?>
-                                        </section>
-                                        <?php include("footer.php"); ?>
+                                            </fieldset>
+                                            </form>
+                                        </div>
+                                    <?php } ?>
+                                    </section>
+                                    <?php include("footer.php"); ?>
 
 
-                                        <script type="text/javascript">
+                                    <script type="text/javascript">
                               
                                 
-                                            //var modification
+                                        //var modification
 
-                                            function modification() {
-                                                if (confirm('Voulez vous enregistrer vos modifications, cliquez sur "OK" si c\'est le cas.')) {
-                                                    alert('Les modifications ont été enregistrés.');
-                                                    myForm = document.getElementById("personalData");
-                                                    myForm .submit();
+                                        function modification() {
+                                            if (confirm('Voulez vous enregistrer vos modifications, cliquez sur "OK" si c\'est le cas.')) {
+                                                alert('Les modifications ont été enregistrés.');
+                                                myForm = document.getElementById("personalData");
+                                                myForm .submit();
 
-                                                }
-                                                else {
-                                                    alert("Aucune modification n'a été enregistrée.");
-                                                }
                                             }
+                                            else {
+                                                alert("Aucune modification n'a été enregistrée.");
+                                            }
+                                        }
 
-                                        </script>
+                                    </script>
 
-                                        </body>
-                                        </html>
+                                    </body>
+                                    </html>

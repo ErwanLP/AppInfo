@@ -7,7 +7,7 @@
 
         include("nav.php");
 
-        $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', ' ');
+        $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
         ?>
 
 
@@ -20,18 +20,18 @@
                     <img class ="photonew" src ="img/new.jpg"/>
                 </div>
             </aside>
-            <div id="description">
+            <div class="description">
                 <fieldset>
-                        <a href="img/avatar.jpg"><img src="img/avatar_mini.jpg" alt="Avatar" title="Cliquez pour agrandir" style="border: solid black 2px"/></a>                   
-                        <?php
-                        $result = $bdd->query('SELECT * FROM participant');
-                        $data = $result->fetch();
-                        ?>
-                        <p id="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];
-                        ?></p>
-                        <p id="lieu"><?php echo $data['pays'] . ", " . $data['villes'];
-                        ?></p>
-                    </fieldset>
+                    <img src="img/avatar_mini.jpg" alt="Avatar" title="Avatar" style="border: solid black 2px"/>                  
+                    <?php
+                    $result2 = $bdd->query('SELECT * FROM participant WHERE ID = ' . $_SESSION['ID'] . ' ');
+                    $data = $result2->fetch();
+                    ?>
+                    <p class="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];
+                    ?></p>
+                    <p class="lieu4"><?php echo $data['pays'] . ", " . $data['villes'];
+                    ?></p>
+                </fieldset>
 
 
             </div>
@@ -39,7 +39,9 @@
                 <ul id="simple-menu">
                     <li><input type="button" onclick="self.location.href='profil.php';" value="Mes Infos"/></li>
                     <li><input type="button" onclick="self.location.href='profil.php';" value="Mes Amis"/></li>
+                    <li><input type="button" onclick="self.location.href='profil.php';" value="Mes Abonnements"/></li>
                     <li><input type="button" onclick="self.location.href='profil.php';" value="Mes Events"/></li>
+                    <li><input type="button" onclick="self.location.href='profil.php';" value="Ma Messagerie"/></li>
                     <li><input type="button" onclick="self.location.href='test1.php';" value="Paramètres"/>
                         <ul class="sousmenu">                       
                             <li><a href="parametreprofil.php" title="Mon profil" onclick="self.location.href='parametreprofil.php';"></a></li>
@@ -96,7 +98,7 @@
 
 
 
-                           <?php
+                            <?php
                             $ID = $_SESSION['ID'];
 
                             $result = $bdd->query('SELECT * FROM  participant WHERE participant.id = "' . $ID . '"');
@@ -198,16 +200,16 @@
 
                                     <!-- Villes -->
                                     <div class="info"><br/>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <!--<label for="ville" class="infoPerso">Ville<sup>*</sup> :</label>-->
-                                        Villes<sup>*</sup> : &nbsp; <input type="text" id="villes" name="villes" class="text" value="<?php echo $data['villes']; ?>" />
+                                        Ville<sup>*</sup> : &nbsp; <input type="text" id="villes" name="villes" class="text" value="<?php echo $data['villes']; ?>" />
                                     </div>
 
                                     <!-- Pays -->
                                     <div class="info"><br/>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <!--<label class="infoPerso" for="pays"><span class="required">Pays<sup>*</sup> :</span></label>-->
-                                        Pays<sup>*</sup> : <select class="choix" id="country" name="pays">
+                                        Pays<sup>*</sup> :&nbsp;&nbsp; <select class="choix" id="country" name="pays">
                                             <option value="AF">Afghanistan</option>
                                             <option value="ZA">Afrique du Sud</option>
                                             <option value="AL">Albanie</option>
@@ -452,38 +454,25 @@
 
 
 
-
-                                        <!-- Langue -->
-                                        <div class="info"><br/>
-                                            &nbsp;&nbsp;&nbsp;
-                                            <!--<label class="infoPerso" for="langage"><span class="required">Version et langue<sup>*</sup> :</span></label>-->
-                                            Versions et langues<sup>*</sup> : &nbsp; <select class="choix" id="lang" name="locale">
-                                                <option selected="selected" value="fr_FR">France</option>
-                                                <option value="en_GB">International (anglais)</option>
-
-                                            </select>
-
-                                        </div>
-
                                         <!-- Site Web -->
 
                                         <div class="info"><br/>
                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             <!--<label for="siteWeb" class="infoPerso">Site Web :</label>-->
-                                            Site Web : &nbsp; <input type="text" name="siteWeb" id="siteWeb" class="text" value="<?php echo $data['siteWeb'];?>"/>
+                                            Site Web : &nbsp; <input type="text" name="siteWeb" id="siteWeb" class="text" value="<?php echo $data['siteWeb']; ?>"/>
                                         </div>
 
                                         <!--loisirs-->
                                         <div class="info"><br/>
                                             <!--<label class="infoPerso" for="loisirs"></label>-->
-                                            <p>Loisirs : &nbsp; </p><textarea name="loisirs" style="width: 700px;height: 150px"><?php echo $data['loisirs'];?>
+                                            <p>Loisirs : &nbsp; </p><textarea name="loisirs" style="width: 700px;height: 150px"><?php echo $data['loisirs']; ?>
                                             </textarea>
                                         </div>
 
                                         <!--Description-->
                                         <div class="info"><br/>
                                             <!--<label class="infoPerso" for="description"></label>-->
-                                            <p>Description : &nbsp; </p><textarea name="description" style="width: 700px;height: 150px"><?php echo $data['description'];?></textarea>
+                                            <p>Description : &nbsp; </p><textarea name="description" style="width: 700px;height: 150px"><?php echo $data['description']; ?></textarea>
                                         </div>
 
                                         <div class="info"><br/>
@@ -495,7 +484,7 @@
                                     </div>
                                 <?php } ?>
                                 </section>
-                                <?php include("footer.php");?>
+                                <?php include("footer.php"); ?>
 
 
                                 <script type="text/javascript">

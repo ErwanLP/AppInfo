@@ -78,6 +78,16 @@ SELECT organisateur.pseudo, forummessage.message, forummessage.date_creation
 FROM forummessage, organisateur, topicforum 
 WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topicforum . '" ) AND organisateur.ID = forummessage.id_organisateur
 ) ORDER BY date_creation');
+
+        /* REQUETE QUI MARCHE AUSSI : */
+
+        /* SELECT forummessage.message, forummessage.date_creation, participant.pseudo AS participant, organisateur.pseudo AS orga
+          FROM forummessage
+          LEFT OUTER JOIN participant ON participant.ID = forummessage.id_participant
+          LEFT OUTER JOIN  organisateur ON organisateur.ID = forummessage.id_organisateur
+          WHERE id_topic=1
+          ORDER BY date_creation */
+
         while ($donnees = $req->fetch()) {
             $tab_info_commentaire[$var_tab_info_array][0] = $donnees["message"];
             $tab_info_commentaire[$var_tab_info_array][1] = $donnees["date_creation"];
@@ -117,8 +127,8 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
                         ?>
                         <div class="positionMessageForum">
                             <div class="titreMessageForum">
-                                <p class="positionTitreForum"><strong><?php echo $tab_info_commentaire[$a][2]; ?>
-                                    </strong>Posté le : <?php echo substr($tab_info_commentaire[$a][1], 0, 10); ?> &agrave; <?php echo substr($tab_info_commentaire[$a][1], 10); ?></p>
+                                <p class="positionTitreForum">
+                                    <strong><a href="" ><?php echo $tab_info_commentaire[$a][2]; ?></a></strong>Posté le : <?php echo substr($tab_info_commentaire[$a][1], 0, 10); ?> &agrave; <?php echo substr($tab_info_commentaire[$a][1], 10); ?></p>
                             </div>
                             <?php echo' <img  style="position:relative;left:-325px;top:13px;" src="img/jerry.jpg" height="150" width="200" /> '; ?>
                             <div class="positionCommentaire">

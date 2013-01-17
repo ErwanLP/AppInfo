@@ -16,37 +16,40 @@
                     <li><a href="event.php?onglet=spectacle&sousOnglet=spectacleDeRue">Spectacle de rue</a></li>
                 </ul>
             </li>
-            <li><a href="#" title="Aller à la page Exposition">Exposition</a>
-                <ul>
-                    <li><a href="event.php?onglet=exposition&sousOnglet=conference" >Conf&eacute;rence</a></li> <!-- Liste des liens du sous-menu -->
-                    <li><a href="event.php?onglet=exposition&sousOnglet=salleDesVentes">Salle des Ventes</a></li>
-                    <li><a href="event.php?onglet=exposition&sousOnglet=sculture">Sculture</a></li>
-                    <li><a href="event.php?onglet=exposition&sousOnglet=expositionMusicale">Exposition Musicale</a></li>
-                    <li><a href="event.php?onglet=exposition&sousOnglet=expositionCulturelle">Exposition Culturelle</a></li>
-                    <li><a href="event.php?onglet=exposition&sousOnglet=expositionPeinture">Exposition Peinture</a></li>
-                    <li><a href="event.php?onglet=exposition&sousOnglet=musee">Mus&eacute;e</a></li> <!-- Liste des liens du sous-menu -->
-                    <li><a href="event.php?onglet=exposition&sousOnglet=galeries">Galeries</a></li>
+            <!--<?php
+            //if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
+            ?>
+            <li class="sousMenuBascule"><span>Mes Ev&egrave;nement</span>
+                <ul class="sousMenu">
+                    <li>
+                        <?php 
+                        
+                       
+                        
+                        
+                        ?>
+                        
+                        
+                    </li>
                 </ul>
             </li>
-            <li><a href="#" title="Aller à la page Restauration">Restauration</a>
-                <ul>
-                    <li><a href="event.php?onglet=restauration&sousOnglet=cuisineTraditionnelle" >Cuisine traditionnelle</a></li> <!-- Liste des liens du sous-menu -->
-                    <li><a href="event.php?onglet=restauration&sousOnglet=cuisineDuMonde">Cuisine du Monde</a></li>
-                    <li><a href="event.php?onglet=restauration&sousOnglet=gastronomie">Gastronomie</a></li>
-                    <li><a href="event.php?onglet=restauration&sousOnglet=brunch">Brunch</a></li>
-                    <li><a href="event.php?onglet=restauration&sousOnglet=fastFood">Fast Food</a></li>
-                    <li><a href="event.php?onglet=restauration&sousOnglet=creperie">Cr&eacute;perie</a></li>
-                    <li><a href="event.php?onglet=restauration&sousOnglet=cantine">Cantine</a></li>
+            <?php 
+            //}else if(isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "participant" AND $_SESSION['ID'] != null) {
+            ?>
+            <li class="sousMenuBascule"><span>Mes Ev&egrave;nement</span>
+                <ul class="sousMenu">
+                    <li>Afficher ici les evenements auxquelles il est inscrit</li>
                 </ul>
             </li>
-            <li><a href="#" title="Aller à la page Soirée">Soir&eacute;e</a>
-                <ul>
-                    <li><a href="event.php?onglet=soiree&sousOnglet=soireeEtudiante" >Soir&eacute;e Etudiante</a></li>
-                    <li><a href="event.php?onglet=soiree&sousOnglet=clubbing">Clubbing</a></li>
-                    <li><a href="event.php?onglet=soiree&sousOnglet=afterworks">After Works</a></li>
-                    <li><a href="event.php?onglet=soiree&sousOnglet=culturelle">Culturelle</a></li>
-                    <li><a href="event.php?onglet=soiree&sousOnglet=teaParty">Tea Party</a></li>
-                    <li><a href="event.php?onglet=soiree&sousOnglet=afterParty">After Party</a></li>
+            <?php
+            //}
+            ?>-->
+            
+            <li class="sousMenuBascule"><span>Ev&egrave;nement r&eacute;cent</span>
+                <ul class="sousMenu">
+                    <li><a href="#" title="Aller à la page #">La bal de Paris</a></li>
+                    <li><a href="#" title="Aller à la page #">La patinoire dansante</a></li>
+                    <li><a href="#" title="Aller à la page #">Gad en concert</a></li>
                 </ul>
             </li>
             <li><a href="#" title="Aller à la page Bar">Bar</a>
@@ -64,6 +67,11 @@
                     <li><a href="event.php?onglet=concert&sousOnglet=concertInterieur" >Concert Int&eacute;rieur</a></li> <!-- Liste des liens du sous-menu -->
                     <li><a href="event.php?onglet=concert&sousOnglet=concertExterieur">Concert Ext&eacute;rieur</a></li>
                     <li><a href="event.php?onglet=concert&sousOnglet=festival">Festival</a></li>
+                </ul>
+            </li>
+            <li class="sousMenuBascule"><span>Exprimez-vous</span>
+                <ul class="sousMenu">
+                    <li><a href="livredor.php" title="Aller à page Livre d'Or"> Livre D'Or</a></li>
                 </ul>
             </li>
         </ul>

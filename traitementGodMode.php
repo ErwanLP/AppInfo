@@ -1,14 +1,14 @@
 <?php
 
 $action = $_GET['action'];
-$bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', 'root');
+$bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 
 switch ($action) {
     case "ban":
         $pseudo = $_POST['pseudo'];
         $choix = $_POST['choix'];
         if ($choix = "profil") {
-            $bdd->query('DELETE FROM participant WHERE pseudo = "' . $pseudo . '"');
+            $bdd->query('DELETE FROM participant WHERE pseudo = "' . $pseudo . '"'); //pansé a changer la table compte
         } else {
             $bdd->query('');
         }
