@@ -54,12 +54,11 @@ $result = $bdd->query('SELECT * FROM event ' . $requete);
 -->
 
 
-<html>
-    <?php include("head.php"); ?>
+<?php session_start(); ?>
+    <?php include("start.php"); ?>
 
-    <body>
 
-        <?php session_start(); ?>
+        
 
         <?php include("header.php"); ?>
 

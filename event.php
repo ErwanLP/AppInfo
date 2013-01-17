@@ -84,17 +84,9 @@
 
         $result->closeCursor();
         ?>
-
-
-
-
     </article>
 </section>
-
-
 <?php include("footer.php"); ?>
 
 
 
-</body> 
-</html>

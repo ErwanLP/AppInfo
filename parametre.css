@@ -108,25 +108,7 @@ sup
     text-align:center;
 
 }
-
-
-.legend1
-
-{
-    margin-bottom:0px;
-    margin-left:16px;
-    border:3px solid green;
-    -moz-border-radius:20px;
-    -webkit-border-radius:20px;	
-    border-radius:20px;	
-    box-shadow: 10px 10px 10px #C0C0C0;
-}
-
-legend
-{
-    font-size:29px;
-    box-shadow: 10px 20px 15px #C0C0C0;
-}         
+      
 
 #fieldset1
 {
@@ -135,5 +117,6 @@ legend
     -webkit-border-radius:25px;	
     border-radius:25px;	
     box-shadow: 20px 20px 20px black;
+   
 
 }

@@ -12,7 +12,7 @@
                 <li><a class="menuParametre" href="Mes_amis.php" title="Mes amis"><img src="img/boutonMesAmisArr.png" /></a></li>
                 <li><a class="menuParametre" href="Live.php" title="Live" ><img src="img/boutonLivesDroit.png" /></a></li>
             </ul>
-        </div>
+        </div>   
         <div class="titreParametre">
             <h1>Mes infos persos</h1>
             <form  method="post" action="inscription.php" id="gestioncompte">

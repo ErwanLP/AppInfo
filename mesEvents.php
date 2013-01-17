@@ -1,12 +1,4 @@
-<html>
-    <head>  
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" href="profil.css">
-    </head>
-    <body>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         <div id="mesEvents">
           <?php
                 $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
@@ -225,15 +217,13 @@
                 document.getElementById("amis").style.display="none";
             }
         </script>
->>>>>>> branch 'master' of https://github.com/ErwanLP/AppInfo.git
-=======
-        <?php
-        session_start();
-        include("head.php");
+<?php
+     //   session_start();
+       // include("head.php");
 
-        include("header.php");
+       // include("header.php");
 
-        include("nav.php");
+        //include("nav.php");
         ?>
 
 
@@ -373,7 +363,7 @@
             </div>
 
         </section>
-        <?php include("footer.php"); ?>
+        
         <script type="text/javascript">
             function afficherc(){ 
                 document.getElementById("coordonnee").style.display="";
@@ -391,6 +381,4 @@
                 document.getElementById("amis").style.display="none";
             }
         </script>
->>>>>>> branch 'master' of https://github.com/ErwanLP/AppInfo.git
-    </body>
-</html>
+<?php include("footer.php"); ?>

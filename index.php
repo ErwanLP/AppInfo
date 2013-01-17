@@ -1,10 +1,12 @@
-<?php include("start.php"); ?>
+<?php session_start();
+include("start.php"); 
+include("BDD.php");?>
 <?php
         /* empty
          * header('Location:http://une.url.fr');
          */
 
-        session_start();
+        
 
         include("header.php");
 

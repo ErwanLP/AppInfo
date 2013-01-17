@@ -1,13 +1,7 @@
-<html>
-    <head>  
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" href="profil.css">
-    </head>
-    <body>
+
         <?php
         session_start();
-        include("head.php");
+        include("start.php");
 
         include("header.php");
 
@@ -98,7 +92,7 @@
             </div>
             <div id="mesEvents" style="display:none;">
                 <?php
-                $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
+                $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', 'root');
                 if (!isset($_GET['onglet'])) { //si ya rien
                     $result = $bdd->query('SELECT * FROM  event LIMIT 0 , 30');
                 }
@@ -151,7 +145,7 @@
             </div>
 
         </section>
-        <?php include("footer.php"); ?>
+       
         <script type="text/javascript">
             function afficherc(){ 
                 document.getElementById("coordonnee").style.display="";
@@ -169,5 +163,4 @@
                 document.getElementById("amis").style.display="none";
             }
         </script>
-    </body>
-</html>
+  <?php include("footer.php"); ?>
