@@ -2,7 +2,7 @@
 session_start();
 $titre = 'nouveau Comentaire';
 include('start.php');
-include('bddForum.php');
+include('BDD.php');
 ?>
 <?php /* include("head.php"); */ ?>
 
@@ -38,9 +38,12 @@ include("nav.php");
     </aside>
 
     <article>
+        <div class="pagePréc">
+            <a href="souhait.php" alt="page précédente" title="retour à la page précédente">Page précédente</a>
+        </div>
 
         <div class="backPage">
-            <a href="indexForum.php" alt="retour à l'accueil forum" title="Retour à l'accueil forum"> Accueil </a>
+            <a href="indexForum.php" alt="retour à l'accueil forum" title="Retour à l'accueil forum">Retour à Accueil </a>
         </div>
 
         <div class="titreTopic">
@@ -125,7 +128,7 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
                         <div class="positionMessageForum">
                             <div class="titreMessageForum">
                                 <p class="positionTitreForum">
-                                    <strong><?php echo $tab_info_commentaire[$a][2]; ?></strong>Posté le : <?php echo substr($tab_info_commentaire[$a][1], 0, 10); ?> &agrave; <?php echo substr($tab_info_commentaire[$a][1], 10); ?></p>
+                                    <strong><a href="" ><?php echo $tab_info_commentaire[$a][2]; ?></a></strong>Posté le : <?php echo substr($tab_info_commentaire[$a][1], 0, 10); ?> &agrave; <?php echo substr($tab_info_commentaire[$a][1], 10); ?></p>
                             </div>
                             <?php echo' <img  style="position:relative;left:-325px;top:13px;" src="img/jerry.jpg" height="150" width="200" /> '; ?>
                             <div class="positionCommentaire">
@@ -176,5 +179,3 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
 </section>
 <?php include('footer.php');
 ?>        
-</html>
-

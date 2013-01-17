@@ -1,11 +1,7 @@
-<html>
-    <head>  
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body>
-        <?php
+<?php
+
         session_start();
-        include("head.php");
+       // include("start.php");
 
         include("header.php");
 
@@ -25,7 +21,7 @@
                 </div>
             </aside>
             <?php if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "participant" AND $_SESSION['ID'] != null) { ?>
-                <div class="description">
+                <div id="description">
                     <fieldset>
                         <img src="img/avatar_mini.jpg" alt="Avatar" title="Avatar" style="border: solid black 2px"/>                  
                         <?php
@@ -46,7 +42,7 @@
                         <li><input type="button" onclick="afficherab();" value="Mes Abonnements"/></li>
                         <li><input type="button" onclick="afficherme();" value="Mes Events"/></li>
                         <li><input type="button" onclick="afficherm();" value="Ma Messagerie"/></li>
-                        <li><input type="button" onclick="self.location.href='parametreparticipant.php';" value="Paramètres"/></li>
+                        <li><input type="button" onclick="self.location.href='parametre.php';" value="Paramètres"/></li>
                     </ul>
                 </div>
                 <div id="coordonnee">
@@ -98,16 +94,7 @@
                 </div>
                 <div id="abonnement"style="display:none;">
                     <?php
-                    if (isset($_GET['action'])) {
-                        $action = $_GET['action'];
-
-                        if ($action == "delete") {
-                            $idasup = $_GET['id'];
-                            $bdd->query('DELETE FROM abonnement WHERE abonnement.ID_organisateur = '.$idasup.' AND abonnement.ID_participant = ' . $_SESSION['ID'] . '');
-                        }
-                    }
-
-                    $result2 = $bdd->query('SELECT organisateur.* FROM organisateur,abonnement WHERE abonnement.ID_organisateur = organisateur.ID AND abonnement.ID_participant = ' . $_SESSION['ID'] . '');
+                    $result2 = $bdd->query('SELECT * FROM organisateur,abonnement WHERE organisateur.ID = abonnement.ID_organisateur AND abonnement.ID_participant = ' . $_SESSION['ID'] . '');
                     while ($data2 = $result2->fetch()) {
                         ?>
                         <fieldset>
@@ -116,8 +103,13 @@
                         ?></p>
                             <p class="lieu4"><?php echo $data2['nomSociete'] . ", " . $data2['pays'];
                         ?></p>
-                               <?php $asup = $data2['ID']; ?>
-                            <a href="profil.php?action=delete&id='<?php echo $asup ?>'"><img src="img/croixsupp.png" alt="Supprimer" id="supprimer"/></a>
+                            <?php
+                            $action = $_GET['action'];
+                            if($action == "delete"){
+                                $bdd->query('DELETE FROM organisateur, abonnement WHERE organisateur.ID = abonnement.ID_organisateur AND abonnement.ID_participant = ' . $_SESSION['ID'] . '');
+                            }
+                            ?>
+                            <a href="profil.php?action=delete"><img src="img/croixsupp.png" alt="Supprimer" id="supprimer"/></a>
                         </fieldset>
                         <?php
                     }
@@ -178,16 +170,16 @@
                 </div>
             <?php } ?>
             <?php if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) { ?>
-                <div class="description">
+                <div id="description">
                     <fieldset>
                         <img src="img/logo.png" width="200" height="200" alt="Logo" style="border: solid black 2px"/>                  
                         <?php
                         $result = $bdd->query('SELECT * FROM organisateur WHERE ID = ' . $_SESSION['ID'] . ' ');
                         $data = $result->fetch();
                         ?>
-                        <p class="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];
+                        <p id="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];
                         ?></p>
-                        <p class="lieu4"><?php echo $data['nomSociete'] . ", " . $data['pays'];
+                        <p id="lieu"><?php echo $data['nomSociete'] . ", " . $data['pays'];
                         ?></p>
                     </fieldset>
 
@@ -197,7 +189,7 @@
                         <li><input type="button" onclick="afficherc();" value="Mes Infos"/></li>
                         <li><input type="button" onclick="afficherme();" value="Mes Events"/></li>
                         <li><input type="button" onclick="afficherm();" value="Ma Messagerie"/></li>
-                        <li><input type="button" onclick="self.location.href='parametreorganisateur.php';" value="Paramètres"/></li>
+                        <li><input type="button" onclick="self.location.href='parametre.php';" value="Paramètres"/></li>
                     </ul>
                 </div>
                 <div id="coordonnee">
@@ -211,7 +203,7 @@
                     </p>
                     <p id="preference">
                         <strong>Société :</strong><?php echo " " . $data['nomSociete']; ?><br/><br/>
-                        <strong>Adresse de la société :</strong><?php echo " " . $data['adresseSociete'] . " - " . $data['codePostalSociete'] . " - " . $data['ville']; ?><br/><br/>
+                        <strong>Adresse de la société :</strong><?php echo " " . $data['adresseSociete'] . " - " . $data['codePostalSociete'] . " - " . $data['villeSociete']; ?><br/><br/>
                         <strong>Site Web :</strong><?php echo " " . $data['siteWeb']; ?><br/><br/>  
                         <strong>Téléphone societe :</strong><?php echo " " . $data['telephoneSociete']; ?><br/><br/>                        
                         <strong>Activité :</strong><?php echo " " . $data['activite']; ?><br/><br/>
@@ -273,7 +265,7 @@
                 </div>
             <?php } ?>
         </section>
-        <?php include("footer.php"); ?>
+
         <script type="text/javascript">
             function afficherc(){ 
                 document.getElementById("coordonnee").style.display="";
@@ -306,5 +298,4 @@
                 document.getElementById("abonnement").style.display="none";
             }
         </script>
-    </body>
-</html>
+ <?php include("footer.php"); ?>

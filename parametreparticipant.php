@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html>
-    <head>   
-        <title>Mes Paramètres</title>
-        <link rel="stylesheet" href="profil.css">
-        <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" href="parametre.css">
-    </head>
-    <body>
+
         <?php
         session_start();
-        include("head.php");
+        include("start.php");
 
         include("header.php");
 
@@ -512,7 +504,5 @@
                                         }
                                     }
 
-                                </script>
-
-                                </body>
-                                </html>
+                            </script>
+                          

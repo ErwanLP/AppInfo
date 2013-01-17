@@ -8,7 +8,7 @@ switch ($action) {
         $pseudo = $_POST['pseudo'];
         $choix = $_POST['choix'];
         if ($choix = "profil") {
-            $bdd->query('DELETE FROM participant WHERE pseudo = "' . $pseudo . '"');
+            $bdd->query('DELETE FROM participant WHERE pseudo = "' . $pseudo . '"'); //pansé a changer la table compte
         } else {
             $bdd->query('');
         }

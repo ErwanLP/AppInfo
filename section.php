@@ -1,8 +1,5 @@
 <section>
     <?php
-
-$bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', ''); 
-
     $bdd->exec('SET NAMES utf8');
     ?>
     <aside class ="new">
@@ -50,21 +47,6 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
     <article>
         <!--  <div class ="topevent"> -->
         <div>
-            <?php
-            if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
-            ?>
-            <div>
-                bonjour, mettre ici les evenements des organisateurs<!-- METTRE ICI LES EVENTS DE LORGANISATEUR-->
-            </div>
-            <?php 
-            }else if(isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "participant" AND $_SESSION['ID'] != null) {
-            ?>
-            <div>
-                bonjour, mettre ici les evenements auxquels est inscrit le participant<!-- METTRE ICI LES EVENTS AUQUELS LE PARTICIPANT EST INSCRIT-->
-            </div>
-            <?php
-            }
-            ?>
             <?php
             $result = $bdd->query('SELECT nom,note,photo FROM event ORDER BY note DESC LIMIT 0 , 12');
             $compte = 1;

@@ -1,49 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <?php include("profil.php"); ?>
+    <title>Mes paramétres</title>
+    <link rel="stylesheet" href="profil.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="test2.css">
+</head>
+<body>
+    <header></header>
+    <div class="menuParametres">
+        <h1>Configurer</h1>
+        <ul id="menuParametre">
+            <li><a class="menuParametre" href="Infoparticipant.php" title="Mon compte" onclick="window.open(this.href); return false;"><img src="img/boutonMonCompteArr.png" /></a></li>                         
+            <li><a class="menuParametre" href="parametreprofil.php" title="Mon profil" onclick="window.open(this.href); return false;"><img src="img/boutonMonProfilArr.png" /></a></li>
+            <li><a class="menuParametre" href="Mes_amis.php" title="Mes amis" onclick="window.open(this.href); return false;"><img src="img/boutonMesAmisArr.png" /></a></li>
+            <li><a class="menuParametre" href="Live.php" title="Live" onclick="window.open(this.href); return false;"><img src="img/boutonLivesArr.png" /></a></li>            
 
-        <div class="menuParametres">
-            <h1>Configurer</h1>
-            <ul id="menuParametre">
-                <li ><a class="menuParametre" href="Infoparticipant.php" title="Mon compte" ><img src="img/boutonMonCompteDroit.png" /></a>
-                    <ul class="active">
-                        <li ><a href="Infoparticipant.php" title="Mes infos persos" ><img src="img/boutonMesInfosPerso.png" /></a></li>
-                        <li ><a href="#Modificationmdp" title="Modification du mot de passe"><img src="img/boutonModificationMDP.png" /></a></li>
-                    </ul>
-                </li>
-                <li><a class="menuParametre" href="parametreprofil.php" title="Mon profil" ><img src="img/boutonMonProfilArr.png" /></a></li>
-                <li><a class="menuParametre" href="Mes_amis.php" title="Mes amis"><img src="img/boutonMesAmisArr.png" /></a></li>
-                <li><a class="menuParametre" href="Live.php" title="Live" ><img src="img/boutonLivesDroit.png" /></a></li>
-            </ul>
-        </div>   
-        <div class="titreParametre">
-            <h1>Mes infos persos</h1>
-            <form  method="post" action="inscription.php" id="gestioncompte">
+        </ul>
+    </div>
 
-                <fieldset id="infopersonnel" class="rollin">
-                    <input type="hidden" id="bypass_email" name="bypass_email" value="0" />
 
-                    <legend><span>Mes données personnelles</span></legend>
-                    <div> <p class="clear_bloc msg_info">Bientôt tu pourras retrouver facilement tes amis sur Doyouevents en saisissant leur email, nom ou prénom. Pour les aider à te retrouver, choisis « oui » ou « non » en bas du formulaire et n'oublie pas de compléter tes informations</p>
-                        <script type="text/javascript">
-                            // <![CDATA[
+   	<div class="titreParametre">
+        <h2>Mes infos persos</h2>
+        <form  method="post" action="/m/account/" id="gestioncompte">
 
-                            // Alerting sur la recherche au cas où certains champs ne seraient pas remplis
-                            var message = document.getElementById("messageRecherche");
-                            function Alert(isChecked)
+            <fieldset id="infoPersonnelle" class="rollin">
+                <input type="hidden" id="Email_" name="Email_" value="0" />
+
+                <legend><span>Mes données personnelles</span></legend>
+                <div> 		            <p >Bientôt tu pourras retrouver facilement tes amis sur Doyouevents en saisissant leur email, nom ou prénom. Pour les aider à te retrouver, choisis « oui » ou « non » en bas du formulaire et n'oublie pas de compléter tes informations</p>
+                    <script type="text/javascript">
+                        // <![CDATA[
+        
+                        // Alerting sur la recherche au cas o� certains champs ne seraient pas remplis
+                        var message = document.getElementById("messageRecherche");
+                        function showSearchAlert(isChecked)
+                        {
+                            var elm0 = document.getElementById("prenom"), elm1 = document.getElementById("nom");                
+                            if(!elm0 || !elm1 || !message)
                             {
-                                var elm0 = document.getElementById("prenom"), elm1 = document.getElementById("nom");
-                                if(!elm0 || !elm1 || !message)
-                                {
-                                    return false;
-                                }
-                                message.style.display = (isChecked && (elm0.value == '' || elm1.value == '')) ? "block" : "none";
-                            }
+                                return false;
+                            }        
+                            message.style.display = (isChecked && (elm0.value == '' || elm1.value == '')) ? "block" : "none";
+                        }
+        
+                        //]]>
+                    </script>
 
-                            //]]>
-                        </script>
+
+
+                    <!-- Email -->
+                    <div class="info">
+                        <label class="infoPerso" for="email"><span class="required">Email<sup>*</sup> :</span></label>
+                        <input type="text" id="email" name="email" class="text" value="florian.guitoger@gmail.com" />
+
+                        <p class="infobulle msg_info" id="infobulle_email">
+                            Cette information nous sert à te renvoyer ton mot de passe en cas d'oubli. Elle n'est pas affichée sur le site.                </p>                            
+
+
                     </div>
 
-
-
-                    <!-- Sexe -->
+                      <!-- Sexe -->
                     <div class="info">
                         <span class="infoPerso"><span class="required">Tu es<sup>*</sup> : </span></span>
                         <span class="radio-checkbox">
@@ -478,93 +495,119 @@
 
 
 
-                <fieldset id="Modificationmdp" class="disabled">
-                    <legend class="h2"><span>Changer mon mot de passe</span></legend>
-                    <div> <p >Ne remplis les trois champs ci-dessous que si tu souhaites changer de mot de passe.</p>
+                    <script type="text/javascript">
+                        // <![CDATA[
 
-                        <!-- Ancien: Mot de passe -->
-                        <div class="effacerMdp">
-                            <label class="infoPerso" for="ancienMdp"><span class="required">Ancien mot de passe<sup>*</sup> :</span></label>
-                            <input autocomplete="off" type="password" id="ancienMdp" name="ancienMdp" class="text" value="" />
+                        // Accord�on configs
+                        $("#frm-accordion").accordion({
+                            clickable : 'fieldset > legend'
+                        });
 
-                            <p class="infobulle msg_info " id="infobulle_ancienMdp">
-                                Saisis ton ancien mot de passe pour pouvoir le modifier. </p>
+                        var current_ts = "1352193298";
+                        var formCompte = {}, formPassword = {};
 
-                        </div>
-
-                        <!-- Nouveau: Mot de passe -->
-                        <div class="mdp">
-                            <label class="infoPerso" for="nouveauMdp"><strong class="required">Nouveau mot de passe<sup>*</sup> :</strong></label>
-                            <input autocomplete="off" type="password" id="nouveauMdp" name="nouveauMdp" class="text" value="" />
-
-                            <p class="infobulle msg_info" id="infobulle_nouveauMdp">
-                                Ton mot de passe doit contenir de 6 à 16 caractères et ne doit pas comporter d'espace. </p>
-                        </div>
-
-                        <!-- Nouveau: Mot de passe Confirmation -->
-                        <div class="mdp">
-                            <label class="infoPerso" for="Mdpconfimer"><span class="required">Vérifier le nouveau mot de passe<sup>*</sup> :</span></label>
-                            <input autocomplete="off" type="password" id="Mdpconfime" name="Mdpconfimer" class="text" value="" />
-
-                            <p class="infobulle msg_info" id="infobulle_Mdpconfime">
-                                Saisis à nouveau ton mot de passe pour le confirmer. </p>
-
-                        </div>
-                    </div>
-
-
-
-                    <div class="info">
-                        <input type="button" onClick="modification_1()" value="Envoyer">
-                        <input type="reset" value="Effacer">
-                    </div>
-
-
-                </fieldset>
-
-                <br/>
-            </form>
-        </div>
-        <script>
-
-            sfHover = function() {
-                var sfEls = document.getElementById("sidebar-accordion").getElementsByTagName("li");
-                for (var i=0; i<sfEls.length; i++) {
-                    sfEls[i].onmouseover=function() {
-                        this.className+=" sfhover";
-                    }
-                    sfEls[i].onmouseout=function() {
-                        this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
-                    }
-                }
-            }
-            if (window.attachEvent) window.attachEvent("onload", sfHover);
-
-            //var modification
-
-            function modification() {
-                if (confirm('Voulez vous enregistrer vos modifications, cliquez sur "OK" si c\'est le cas.')) {
-                    alert('Les modifications ont été enregistrés.');
-                    myForm = document.getElementById("personalData");
-                    myForm .submit();
-
-                }
-                else {
-                    alert("Aucune modification a été enregistré.");
-                }
-            }
-            //var modification_1
-
-            function modification_1() {
-                if (confirm('Voulez vous enregistrer vos modifications, cliquez sur "OK" si c\'est le cas.')) {
-                    alert('Les modifications ont été enregistrés.');
-                    myForm = document.getElementById("personalData");
-                    myForm .submit();
-
-                }
-                else {
-                    alert("Aucune modification a été enregistré.");
-                }
-            }
-        </script>
+                        /* 
+                         * Gestion des Doyouevent
+                         */
+     
+                        // formulaire "Mes donn�es personnelles"
+                        formCompte = new DoyoueventForm(
+                        document.getElementById("personalData"),
+                        false,
+                        {
+                            email: {
+                                empty: "Tu n\'as pas saisi ton adresse email.",
+                                invalid: "Ton adresse email n\'est pas correcte."
+                            },
+                            gender: {
+                                invalid: "Ton sexe n\'est pas renseign�."
+                            },
+                            birth_group: {
+                                empty: "Ta date de naissance est invalide.",
+                                invalid: "Ta date de naissance est invalide.",
+                                tooYoung: "L\'inscription n\'est autoris�e qu\'aux 12 ans et plus!"
+                            },
+                            country: {
+                                empty: "Ton pays n\'est pas renseign�.",
+                                invalid: "Ton pays est invalide."
+                            },
+                            pcode: {
+                                empty: "Tu n\'as pas tap� ton code postal.",
+                                invalid: "Ton code postal est invalide."
+                            }
+                        }
+                    );        
     
+    
+
+    
+                        // Gestion des infobulles
+                        if (formCompte && formCompte.container)
+                        {            
+                            formCompte.forEachElements(formCompte.container.getElementsByTagName("label"), function(elm, name, label) {
+                                oInfo = new DoyoueventInfobulle(elm, name);
+                            });        
+                        }
+                        if (formPassword && formPassword.container)
+                        {            
+                            formPassword.forEachElements(formPassword.container.getElementsByTagName("label"), function(elm, name, label) {
+                                oInfo = new DoyoueventInfobulle(elm, name);
+                            });
+                        }	
+
+
+                        formSubscribe = new DoyoueventForm(
+                        document.getElementById("changepseudo"),
+                        false,
+                        {
+                            pseudo: {
+                                empty: "Tu n\'as pas saisi ton pseudo.",
+                                empty_typing: "",
+                                taken: {
+                                    "default": "Ce pseudo est d�j� pris.",
+                                    "suggestion": "<strong>Ce pseudo est d�j� pris.</strong><br />Tu peux en choisir un autre ou utiliser un de ces pseudos :<br /><span class='list'></span>"
+                                },
+                                invalid: {
+                                    "default": "Ce pseudo est invalide.",
+                                    "suggestion": "<strong>Ce pseudo est invalide.</strong><br />Tu peux en choisir un autre ou utiliser un de ces pseudos :<br /><span class='list'></span>"
+                                },
+                                free: "Ce pseudo est <strong>disponible<\/strong>."
+                            }
+                        },
+                        ['pseudo']
+                    );
+
+                        pseudoInfo = new DoyoueventInfobulle(document.getElementById("pseudo"), "pseudo");
+
+	
+                        $('#jsResetPseudo').click(function () {
+                            $('#jsSubmitLock').removeClass("hide");
+                        })
+    
+                        //]]>	
+
+                    </script>
+
+                    <script>
+                        var start = 'Bonjour ', name, end = ' !', result;
+                        name = prompt('Quel est votre Pr�nom?');
+                        result = start + name + end;
+                        alert(result);
+
+                        //var modification
+
+                        function modification() {
+                            if (confirm('Voulez vous enregistrer vos modifications, cliquez sur "OK" si c\'est le cas.')) {
+                                alert('Les modifications ont �t� enregistr�s.');
+                                myForm = document.getElementById("personalData");
+                                myForm .submit();
+
+                            }
+                            else {
+                                alert("Aucune modification a �t� enregistr�.");
+                            }
+              
+
+                    </script>
+                    </body>
+                    </html>
