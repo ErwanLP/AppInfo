@@ -74,6 +74,11 @@
                     <li><a href="livredor.php" title="Aller à page Livre d'Or"> Livre D'Or</a></li>
                 </ul>
             </li>
+            <li class="sousMenuBascule"><span>Exprimez-vous</span>
+                <ul class="sousMenu">
+                    <li><a href="livredor.php" title="Aller à page Livre d'Or"> Livre D'Or</a></li>
+                </ul>
+            </li>
         </ul>
     </li>
     <?php
