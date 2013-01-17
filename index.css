@@ -319,6 +319,7 @@ border: 2px solid white;
     /*border: 2px solid white;*/
     margin-bottom: 20px; /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
     /*background-color : tan;*/
+    list-style: none
 }
 
 .connexion li
