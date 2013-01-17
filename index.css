@@ -993,6 +993,26 @@ a:visited
     display : inline-block;
 }
 
+
+
+/*MESSAGERIE*/
+
+.message{
+    
+    width : 700px;
+    /*height: 150px;*/
+    overflow : auto;
+    padding : 20px;
+    border:1px solid #cebd8b;
+    margin :  20px;
+    
+    
+    
+    
+    
+}
+
+
 /*FORUM*/
 
 .affichageTableau {
