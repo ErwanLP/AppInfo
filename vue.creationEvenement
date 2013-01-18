@@ -18,7 +18,7 @@ function formDebEvent($lang) {
 
         echo '<div class="page">
 
-                        <form method="post" action="traitementEvenement.php">
+                        <form method="post" action="traitementEvenement.php" enctype="multipart/form-data">
 
                             <fieldset>
                                 <legend>Event\'s informations</legend>
@@ -36,6 +36,10 @@ function formDebEvent($lang) {
                                 <input type="time" name="heureDebut" id="heureDebut" required /><br/>
                                 <label for="heureFin">End time :</label>
                                 <input type="time" name="heureFin" id="heureFin" required /><br/></br>
+                                <label for="prix">Price :</label>
+                                <input type="number" name="prix" id="prix" /><br/>
+                                <label for="nbDePersonne">Number of places :</label>
+                                <input type="number" name="nbDePersonne" id="nbDePersonne"/><br/><br/>
                                 <label>Opening weeks days</label></br>
                                 <label for="lundi">M</label><input type="checkbox" name="lundi" id="lundi" /> 
                                 <label for="mardi">Tu</label><input type="checkbox" name="mardi" id="mardi" />
@@ -68,6 +72,10 @@ function formDebEvent($lang) {
                                 <input type="time" name="heureDebut" id="heureDebut" required /><br/>
                                 <label for="heureFin">Heure de fin :</label>
                                 <input type="time" name="heureFin" id="heureFin" required /><br/></br>
+                                <label for="prix">Prix :</label>
+                                <input type="number" name="prix" id="prix" /><br/>
+                                <label for="nbDePersonne">Nombre de places :</label>
+                                <input type="number" name="nbDePersonne" id="nbDePersonne"/><br/><br/>
                                 <label>Jour(s) d\'ouverture(s) pendant la semaine</label></br>
                                 <label for="lundi">L</label><input type="checkbox" name="lundi" id="lundi" /> 
                                 <label for="mardi">Ma</label><input type="checkbox" name="mardi" id="mardi" />
@@ -109,7 +117,7 @@ function formFinEvent($lang) {
         echo' </select></br></br>
 Choose a picture for your event on your hard disk.</br>
 <label for="image">File :</label>
-<INPUT id="image" name="image" TYPE="file" size="30"></br>
+<INPUT id="image" name="image" TYPE="file" size="30" required></br>
                             </fieldset>
 
                             <input type="submit" value="Send" />
@@ -120,7 +128,7 @@ Choose a picture for your event on your hard disk.</br>
         echo '</select></br></br>
 Choisissez une image pour votre &eacute;v&egrave;nement sur votre disque dur.</br>
 <label for="image">Fichier :</label>
-<input id="image" name="image" type="file" size="30"></br>
+<input id="image" name="image" type="file" size="30" required></br>
                             </fieldset>
 
                             <input type="submit" value="Envoyer" />

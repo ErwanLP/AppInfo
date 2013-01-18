@@ -41,10 +41,10 @@
                 </aside>
                 <article>
                     <?php
-                    $lang = 'en';
+                    $lang = 'fr';
 titreFormEvent($lang);
 $theme = $bdd->query('SELECT * FROM theme');
-$lang = 'en';
+$lang = 'fr';
 formDebEvent($lang);
 //print_r($theme);
 while ($donnees = $theme->fetch()) {

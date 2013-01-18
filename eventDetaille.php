@@ -44,14 +44,34 @@
                 
     <div>
         <?php
-        $id=$_GET['id'];
-        echo $id;
-        $reponse = $bdd->query('SELECT * FROM event WHERE event.ID='.$id);
-        //echo $reponse['nom'];
+        $ID=$_GET['ID'];
+        echo $ID;
+        $reponse = $bdd->query('SELECT * FROM event WHERE event.ID='.$ID);
         while ($donnees = $reponse->fetch())
 {
-	echo '<br/>'.$donnees['nom'] . '<br />';
-        echo '<a href="miseEnformeEventDetaille.php">Clicquer ici</a>';
+	echo '<div class = "imageDetail">
+
+			<img alt="Photo de l\'évenement" src= "'.$donnees['photo'].'" title="Nom de l\'&eacute;v&egrave;nement." height="300" width="240"/>
+             
+		</div>
+		<div>	
+			<p class="titreDetailEvent">'.$donnees['nom'].'</p>
+             
+			<p class="sousTitreThemeDetail">'.$donnees['theme'].' - '.$donnees['type'].'</p>
+             
+			<p class="sousTitreLieuDetail">Adresse de l\'&eacute;v&egrave;nement : </br>8 avenue Notre Dame des Champs</br>75006 Paris</p>
+         
+		</div>
+          
+		  
+		<div>
+            
+			<p class="sousTitreLieuDetail">Date de l\'&eacute;v&egrave;nement : 12/12/12 </br>Budget : 15 €<span style="margin-left:50px;">Places dispo : 47</br>Lu - Ma - Me - Je - Ve - Sa - Di</p>         		
+		</div>
+
+		<div>
+			<p class="evenementDetailDescription"><span style="margin-left:70px;"></span></p>
+		</div>';
 }$reponse->closeCursor();
         ?>
     </div>
