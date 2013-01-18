@@ -1,14 +1,13 @@
 <?php
 
         session_start();
-       // include("start.php");
-
+       include("start.php");
+       include("BDD.php");
         include("header.php");
 
         include("nav.php");
 
-        $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
-        ?>
+            ?>
 
 
         <section>

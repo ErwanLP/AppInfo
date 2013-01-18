@@ -2,12 +2,12 @@
         <?php
         session_start();
         include("start.php");
-
+        include("BDD.php");
         include("header.php");
 
         include("nav.php");
 
-        $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
+        
         ?>
 
 
@@ -484,7 +484,7 @@
                                     </div>
                                 <?php } ?>
                                 </section>
-                                <?php include("footer.php"); ?>
+                              
 
 
                                 <script type="text/javascript">

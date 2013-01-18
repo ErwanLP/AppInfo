@@ -1,6 +1,6 @@
 <?php
 session_start();
-$titre = 'nouveau Comentaire';
+$titre = 'nouveau Commentaire';
 include('start.php');
 include('BDD.php');
 ?>

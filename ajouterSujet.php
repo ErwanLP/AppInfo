@@ -42,7 +42,7 @@ include("nav.php");
         ?>
         <article>
             <div>
-                <form method="post" action="ajouterSujet.php">
+                <form method="post" action=".php">
                     <table>
                         <caption class="titreNouveauSujet">Veuillez ajouter votre sujet :</caption>
                         <tr>
@@ -57,7 +57,9 @@ include("nav.php");
                         </tr>
                     </table>
                     <input style="margin-left:-60px;" type="reset" value="Effacer">
-                    <input type="submit" value="Valider">
+                    <input type="submit" value="Valider" onclick="history.back()">
+
+
                 </form>
             </div>
             <?php
