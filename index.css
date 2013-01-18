@@ -57,15 +57,16 @@ header
 
 /*Event detaille*/
 .imageDetail
-{
+{       text-align: left;
+        position : relative;
 	margin-left:40px;
-	margin-right:10px;
+	margin-top:40px;
 }
 .titreDetailEvent
 {
 	position: relative;
    	left: 320px;
-   	bottom: 340px;
+   	bottom: 440px;
 	font-size: 32px;
 	font-weight:bold;
 	color:#105CA0;
@@ -75,7 +76,7 @@ header
 {
 	position: relative;
    	left: 320px;
-   	bottom: 360px;
+   	bottom: 460px;
 	font-size: 24px;
 	font-weight:bold;
 	color:#408CD0;
@@ -85,7 +86,7 @@ header
 {
 	position: relative;
    	left: 330px;
-   	bottom: 360px;
+   	bottom: 460px;
 	font-size: 24px;
 	font-weight:bold;
 	color:#006090;
@@ -96,7 +97,7 @@ header
 	max-width:800px;
 	position: relative;
    	left: 40px;
-   	bottom: 340px;
+   	bottom: 440px;
 	font-size: 22px;
 	color:#003060;
 }
@@ -363,6 +364,7 @@ border: 2px solid white;
     /*border: 2px solid white;*/
     margin-bottom: 20px; /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
     /*background-color : tan;*/
+    list-style: none
 }
 
 .connexion li
@@ -1037,6 +1039,26 @@ a:visited
     display : inline-block;
 }
 
+
+
+/*MESSAGERIE*/
+
+.message{
+    
+    width : 700px;
+    /*height: 150px;*/
+    overflow : auto;
+    padding : 20px;
+    border:1px solid #cebd8b;
+    margin :  20px;
+    
+    
+    
+    
+    
+}
+
+
 /*FORUM*/
 
 .affichageTableau {
@@ -1181,12 +1203,13 @@ a:visited
     color: black;
 }
 
-.creerTopic a:hover, creerTopic a:active {
+
+.creerTopic,a:hover, creerTopic a:active {
     color: #7297b7;
 }
 
-.backPage {
-
+.backPage,.pagePréc {
+    
     border: 4px double black;
     width: 200px;
     height: 30px;
@@ -1199,7 +1222,7 @@ a:visited
     color: black;
 }
 
-.backPage a:hover, backPage a:active {
+.backPage,.pagePréc a:hover, backPage a:active {
     color: #7297b7;
 }
 
@@ -1226,9 +1249,7 @@ a:visited
 }
 
 .containerMessageForum {
-
-    margin-top: 130px;
-
+   margin-top: 130px;
 }
 
 .messageForum {

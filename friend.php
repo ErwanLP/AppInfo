@@ -21,12 +21,13 @@ if (isset($_GET['target'])) {
     if ($target == "aff") { // afficher demande ajout amis
         $result = $bdd->query('SELECT * FROM demandefriend WHERE id_demande ="' . $ID . '"');
         echo 'SELECT * FROM demandefriend WHERE id_demande ="' . $ID . '"';
+        echo "<br/>";
         while ($data = $result->fetch()) {
             echo $data['id_demandeur'];
             echo " souhaite devenir votre ami(e)s" . "<br/>" ;
-            echo "<a href ='friend.php?target=acp&accep=true&demandeur=".$data['id_demandeur']."'>Accepter</a>" ;
+            echo "<a href ='friend.php?target=acp&accept=true&demandeur=".$data['id_demandeur']."'>Accepter</a>" ;
             echo "<br/>";
-            echo "<a href ='friend.php?target=acp&accep=false&demandeur=".$data['id_demandeur']."'>Refuser</a>";
+            echo "<a href ='friend.php?target=acp&accept=false&demandeur=".$data['id_demandeur']."'>Refuser</a>";
             echo "<br/><br/>";
         }$result->closeCursor();
     }
@@ -34,8 +35,9 @@ if (isset($_GET['target'])) {
     if ($target == "acp") { // accepter ou reffuser une demande en  amis
         $accept = $_GET['accept'];
         $demandeur = $_GET['demandeur'];
-        if ($accept == true) {
+        if ($accept == "true") {
             $bdd->query("INSERT INTO friend (id_f1, id_f2) VALUES (" . $demandeur . "," . $ID . ")");
+            echo "inserer en ami";
         }
         $bdd->query("DELETE FROM demandefriend WHERE id_demandeur=".$demandeur." AND id_demande =".$ID."");
         echo "DELETE FROM demandefriend WHERE id_demandeur=".$demandeur." AND id_demande =".$ID."";

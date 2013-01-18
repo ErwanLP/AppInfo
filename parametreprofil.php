@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<?php include("profil.php"); ?>
-<html>
-<head>
-<title>Mes paramétres profil</title>
-<link rel="stylesheet" href="parametre.css">
-</head>
-<body>
 
+<?php include("profil.php"); ?>
+
+$titre='Mes paramétres';
 
 <div class="menuParametres">
 <h1>Configurer</h1>
@@ -107,5 +102,3 @@ else {
 }
 
 </script>
-</body>
-</html>

@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
-    <?php include("head.php"); ?>
-    <body>
-
-        <?php session_start(); ?>
+ <?php session_start(); ?>
+    <?php include("start.php"); ?>
+    
+       
 
         <?php include("header.php"); ?>
 
@@ -134,5 +132,3 @@
 
         <?php include("footer.php"); ?>
 
-    </body>
-</html>

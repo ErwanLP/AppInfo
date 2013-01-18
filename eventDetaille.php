@@ -6,8 +6,8 @@
     <body>
 
         <?php session_start(); ?>
-        
-        <?php include("BDD.php");?>
+
+        <?php include("BDD.php"); ?>
 
         <?php include("header.php"); ?>
 
@@ -41,43 +41,48 @@
             </aside>
 
             <article class ="articleevent">                  
-                
-    <div>
-        <?php
-        $ID=$_GET['ID'];
-        echo $ID;
-        $reponse = $bdd->query('SELECT * FROM event WHERE event.ID='.$ID);
-        while ($donnees = $reponse->fetch())
-{
-	echo '<div class = "imageDetail">
 
-			<img alt="Photo de l\'évenement" src= "'.$donnees['photo'].'" title="Nom de l\'&eacute;v&egrave;nement." height="300" width="240"/>
-             
-		</div>
-		<div>	
-			<p class="titreDetailEvent">'.$donnees['nom'].'</p>
-             
-			<p class="sousTitreThemeDetail">'.$donnees['theme'].' - '.$donnees['type'].'</p>
-             
-			<p class="sousTitreLieuDetail">Adresse de l\'&eacute;v&egrave;nement : </br>8 avenue Notre Dame des Champs</br>75006 Paris</p>
-         
-		</div>
-          
-		  
-		<div>
-            
-			<p class="sousTitreLieuDetail">Date de l\'&eacute;v&egrave;nement : 12/12/12 </br>Budget : 15 €<span style="margin-left:50px;">Places dispo : 47</br>Lu - Ma - Me - Je - Ve - Sa - Di</p>         		
-		</div>
+                <div>
+                    <?php
+                    $ID = $_GET['ID'];
+                    echo $ID;
+                    $reponse = $bdd->query('SELECT * FROM event WHERE event.ID=' . $ID);
+                    while ($donnees = $reponse->fetch()) {
+                        ?><div class = "imageDetail" >
 
-		<div>
-			<p class="evenementDetailDescription"><span style="margin-left:70px;"></span></p>
-		</div>';
-}$reponse->closeCursor();
-        ?>
-    </div>
-    
-</div>
-                  
+                            <img alt="Photo de l'évènement" src= "<?php echo $donnees['photo'] ?>" title="Nom de l\'&eacute;v&egrave;nement." height="420" width="280"/>
+
+                        </div>
+                        <div class ="imageDetail">	
+                            <p class="titreDetailEvent"><?php echo $donnees['nom']; ?></p>
+
+                            <p class="sousTitreThemeDetail"><?php echo $donnees['theme'] . ' - ' . $donnees['type']; ?></p>
+
+                            <p class="sousTitreLieuDetail">Adresse de l'&eacute;v&egrave;nement : </br><?php echo $donnees['lieu']; ?></p>
+
+                        </div>
+
+
+                        <div class ="imageDetail">
+
+                            <p class="sousTitreLieuDetail"><?php if ($donnees['dateFin'] == "0000-00-00") {
+                        ?> Ev&egrave;nement ayant lieu le : <?php echo $donnees['dateDebut']; ?>
+                                <?php } else {
+                                    ?> Ev&egrave;nement ayant lieu du  <?php echo $donnees['dateDebut']; ?> au <?php echo $donnees['dateFin']; ?>
+                                <?php }
+                                ?>
+                                </br></br>Budget : <?php echo $donnees['prix']; ?> €<span style="margin-left:50px;">Places dispo : <?php echo $donnees['placesRestantes']; ?></br></br>Lu - Ma - Me - Je - Ve - Sa - Di</p>         		
+                        </div>
+
+                        <div class ="imageDetail">
+                            <p class="evenementDetailDescription"><span style="margin-left:70px;"><?php echo $donnees['description']; ?></span></p>
+                        </div> <?php
+                        }$reponse->closeCursor();
+                            ?>
+                </div>
+
+                </div>
+
 
 
 
@@ -86,7 +91,7 @@
         </section>
 
 
-<?php include("footer.php"); ?>
+        <?php include("footer.php"); ?>
 
 
 

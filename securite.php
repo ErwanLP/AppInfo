@@ -1,9 +1,7 @@
 
-<!DOCTYPE html>
-<html>
-    <?php include("head.php"); ?>
-    <body>
 
+    <?php include("start.php"); ?>
+   
         <?php session_start(); ?>
         <?php include("BDD.php"); ?>
 
@@ -36,7 +34,3 @@
         </section>
 
         <?php include("footer.php"); ?>
-
-
-    </body>
-</html>
