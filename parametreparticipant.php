@@ -42,7 +42,7 @@
                     <li><input type="button" onclick="self.location.href='profil.php';" value="Mes Abonnements"/></li>
                     <li><input type="button" onclick="self.location.href='profil.php';" value="Mes Events"/></li>
                     <li><input type="button" onclick="self.location.href='profil.php';" value="Ma Messagerie"/></li>
-                    <li><input type="button" onclick="self.location.href='test1.php';" value="Paramètres"/>
+                    <li><input type="button" onclick="self.location.href='parametreparticipant.php';" value="Paramètres"/>
                         <ul class="sousmenu">                       
                             <li><a href="parametreprofil.php" title="Mon profil" onclick="self.location.href='parametreprofil.php';"></a></li>
                             <li><a href="Mes_amis.php" title="Mes amis" onclick="self.location.href='Mes_amis.php';"></a></li>
@@ -484,9 +484,7 @@
                                     </div>
                                 <?php } ?>
                                 </section>
-                              
-
-
+                    
                                 <script type="text/javascript">
                               
                                 
@@ -505,4 +503,4 @@
                                     }
 
                             </script>
-                          
+                          <?php include("footer.php"); ?>

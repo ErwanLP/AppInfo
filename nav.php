@@ -15,7 +15,7 @@
                 <li><a href="event.php?onglet=spectacle&sousOnglet=spectacleDeRue">Spectacle de rue</a></li>
             </ul>
         </li>
-        <li><a href ="#">Exposition</a>
+        <li><a href ="event.php?onglet=exposition">Exposition</a>
             <ul>
                 <li><a href="event.php?onglet=exposition&sousOnglet=conference" >Conf&eacute;rence</a></li> <!-- Liste des liens du sous-menu -->
                 <li><a href="event.php?onglet=exposition&sousOnglet=salleDesVentes">Salle des Ventes</a></li>
@@ -27,7 +27,7 @@
                 <li><a href="event.php?onglet=exposition&sousOnglet=galeries">Galeries</a></li>
             </ul>
         </li>
-        <li><a href="#">Restauration</a>
+        <li><a href="event.php?onglet=restauration">Restauration</a>
             <ul>
                 <li><a href="event.php?onglet=restauration&sousOnglet=cuisineTraditionnelle" >Cuisine traditionnelle</a></li> <!-- Liste des liens du sous-menu -->
                 <li><a href="event.php?onglet=restauration&sousOnglet=cuisienDuMonde">Cuisine du Monde</a></li>
@@ -38,7 +38,7 @@
                 <li><a href="event.php?onglet=restauration&sousOnglet=cantine">Cantine</a></li>
             </ul>
         </li>
-        <li><a href="#" >Soir&eacute;e</a>
+        <li><a href="event.php?onglet=soiree" >Soir&eacute;e</a>
             <ul>
                 <li><a href="event.php?onglet=soiree&sousOnglet=soireeEtudiante" >Soir&eacute;e Etudiante</a></li>
                 <li><a href="event.php?onglet=soiree&sousOnglet=clubbing">Clubbing</a></li>
@@ -48,7 +48,7 @@
                 <li><a href="event.php?onglet=soiree&sousOnglet=afterParty">After Party</a></li>
             </ul>
         </li>
-        <li><a href="#">Bar</a>
+        <li><a href="event.php?onglet=bar">Bar</a>
             <ul>
                 <li><a href="event.php?onglet=bar&sousOnglet=cafe" >Caf&eacute;</a></li> <!-- Liste des liens du sous-menu -->
                 <li><a href="event.php?onglet=bar&sousOnglet=pub">Pub</a></li>
@@ -58,7 +58,7 @@
                 <li><a href="event.php?onglet=bar&sousOnglet=lounge">Lounge</a></li>
             </ul>
         </li>
-        <li><a href="#">Concert</a>
+        <li><a href="event.php?onglet=concert">Concert</a>
             <ul>
                 <li><a href="event.php?onglet=concert&sousOnglet=concertInterieur" >Concert Int&eacute;rieur</a></li> <!-- Liste des liens du sous-menu -->
                 <li><a href="event.php?onglet=concert&sousOnglet=concertExterieur">Concert Ext&eacute;rieur</a></li>
@@ -73,41 +73,14 @@
     </form>
 </div>
 
-<script type="text/javascript">
-    sfHover = function() {
-        var sfEls = document.getElementById("nav").getElementsByTagName("li");
-        for (var i=0; i<sfEls.length; i++) {
-            sfEls[i].onmouseover=function() {
-                this.className+=" sfhover";
-            }
-            sfEls[i].onmouseout=function() {
-                this.className=this.className.replace(new RegExp(" sfhover\b"), "");
-            }
-        }
-    }
-    if (window.attachEvent) window.attachEvent("onload", sfHover);
-</script>
-
 <?php
 if (!empty($_SESSION['ID'])) {
-    ?>
-    <div class = "connection">
-        <ul>
-            <li><a href="traitSwitch.php"><img src="img/switch.png" style="margin-right: 20px;"/></a></li>
-            <li><a href=profil.php>Mon compte</a> |</li>
-            <li><a href="deconnection.php">Deconnexion</a></li>
-        </ul>
-
-    </div>
-    <?php
+    if (isset($_SESSION['SWITCH']) AND ($_SESSION['SWITCH'] == "pasdeprofilorganisateur" OR $_SESSION['SWITCH'] == "pasdeprofilparticipant") AND $_SESSION['ID'] != null) {
+        include("navSansProfil.php");
+    } else {
+        include("navConnect.php");
+    }
 } else {
-    ?>
-    <div class ="connection">
-        <ul>
-            <li><a href="index.php" >Accueil</a> |</li> 
-            <li><a href="inscription.php">Inscription</a> |</li>
-        </ul>
-
-    </div>
-
-<?php } ?>
+    include("navNonConnect.php");
+}
+?>
