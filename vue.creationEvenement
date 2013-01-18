@@ -27,7 +27,7 @@ function formDebEvent($lang) {
                                 <label for ="lieuEvent">Event\'s location :</label>
                                 <input type="text" name="lieuEvent" id="lieuEvent"  size="30" maxlength="50" required /><br/></br>
                                 <label for="description">Sum up of the event :</label><br />
-                                <textarea class="champDescriptionEvent" name="description" id="description" >How will be the event...</textarea><br/></br>
+                                <textarea class="champDescriptionEvent" name="description" id="descriptionn" >How will be the event...</textarea><br/></br>
                                 <label for="dateDebut">Event\'s beginning date (or happening date):</label>
                                 <input type="date" name="dateDebut" id="dateDebut" required /><br/>
                                 <label for="dateFin">Event\'s ending date (do not specify it if the event appears once):</label>

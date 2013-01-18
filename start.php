@@ -8,6 +8,7 @@
              <link rel="stylesheet" href="forumMan.css" />
              <link rel="stylesheet" href="parametre.css">
              <link rel="stylesheet" href="profil.css">
+             
              <link rel="shortcut icon" type="image/x-icon" href="img/icone.png" />
              <link rel="stylesheet" media="screen, print, handheld" href="assets/css/styles.css" />
 <?php
