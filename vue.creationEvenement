@@ -65,7 +65,7 @@ function formDebEvent($lang) {
                                 <textarea class="champDescriptionEvent" name="description" id="descriptionn" >Entrer la description de l\'&eacute;v&egrave;nement...</textarea><br/></br>
                                 <label for="dateDebut">Date de d&eacute;but de l'&eacute;v&egrave;nement (ou date unique) : </label>
                                 <input type="date" name="dateDebut" id="dateDebut" required /><br/>
-                                <label for="dateFin">Date de fin de l'&eacute;v&egrave;nement(ne pas sp&eacute;cifier si l\'&eacute;v&egrave;nement n\'a lieu qu\'une seule fois) :</label>
+                                <label for="dateFin">Date de fin de l'&eacute;v&egrave;nement(ne pas sp&eacute;cifier si l'&eacute;v&egrave;nement n'a lieu qu'une seule fois) :</label>
                                 <input type="date" name="dateFin" id="dateFin"/><br/>
                                 <label for="heureDebut">Heure de d&eacute;but :</label>
                                 <input type="time" name="heureDebut" id="heureDebut" required /><br/>
