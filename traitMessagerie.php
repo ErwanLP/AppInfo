@@ -23,7 +23,7 @@ if(isset($_POST['pseaudoAutre'])){
                     <input type="hidden" name="idAutre" value="<?php echo $idAutre ?>">
                     <input type="submit" value="Submit">
                 </form>
-            <?php } else { ?>
+            <?php //} else { ?>
                 <form action="traitMessagerie.php">
                      Destinataire : 
                     <input type="text" name="pseusoAutre" value=""><br/>
