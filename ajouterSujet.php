@@ -42,7 +42,7 @@ include("nav.php");
         ?>
         <article>
             <div>
-                <form method="post" action=".php">
+                <form method="post" action="souhait.php">
                     <table>
                         <caption class="titreNouveauSujet">Veuillez ajouter votre sujet :</caption>
                         <tr>
@@ -98,4 +98,4 @@ include("nav.php");
     </article>
 </section>
 <?php include('footer.php'); ?>  
-</html>
+

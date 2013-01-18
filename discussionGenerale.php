@@ -28,7 +28,7 @@ include("nav.php");
     </aside>
     <table class="pposition">
         <tr>
-            <th class="discutionGenerale1">Discution generale</th>
+            <th class="discussionGenerale1">Discussion générale</th>
         </tr>
         <tr>
             <td class="souhait"><a href="souhait.php">Souhait</a></td>
@@ -37,7 +37,7 @@ include("nav.php");
             <td class="taverne"><a href="taverne.php">Taverne</a></td>
         </tr>
         <tr>
-            <td class="presentation"><a href="presentation.php">Presentation</a></td>
+            <td class="presentation"><a href="presentation.php">Présentation</a></td>
         </tr>
     </table>
 

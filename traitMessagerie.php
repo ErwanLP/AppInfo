@@ -15,15 +15,12 @@ if(isset($_POST['pseaudoAutre'])){
     
 ?>
 
-
-
-
          <form action="traitMessagerie.php" method="post">
                      Nouveau message :<input type="text" name="message" class="message">
                     <input type="hidden" name="idAutre" value="<?php echo $idAutre ?>">
                     <input type="submit" value="Submit">
-                </form>
-            <?php } else { ?>
+         </form>
+           <?php  else {?>
                 <form action="traitMessagerie.php">
                      Destinataire : 
                     <input type="text" name="pseusoAutre" value=""><br/>
@@ -32,3 +29,4 @@ if(isset($_POST['pseaudoAutre'])){
                     
                     <input type="submit" value="Submit">
                 </form>
+<?php } ?>
