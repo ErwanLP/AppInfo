@@ -18,12 +18,24 @@
             </div>
             <?php
         }
-        ?>
+
+        if (isset($_GET['valider'])) {
+            $valeurInscription = $_GET['valider'];
+            if ($valeurInscription == 1) {
+                ?>
+                <div class="positionMessageInscription">
+                    <h2>Bonjour, votre inscription a bien été prise en compte!</h2>
+                </div>
+            <?php }
+        } ?>
+
+
+
 
     </aside>
 
     <aside class ="navg">
-        <?php include ("arbre.php"); ?>
+<?php include ("arbre.php"); ?>
     </aside>
 
     <aside class ="toporg">

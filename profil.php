@@ -280,10 +280,10 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 </section>
 <?php include("footer.php"); ?>
 <script type="text/javascript">
-    function afficherc(){ 
+    function afficherc(){
+        document.getElementById("mesEvents").style.display="none";
         document.getElementById("coordonnee").style.display="";
         document.getElementById("amis").style.display="none";
-        document.getElementById("mesEvents").style.display="none";
         document.getElementById("abonnement").style.display="none";
     }
     function affichera(){ 
