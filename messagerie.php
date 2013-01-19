@@ -30,48 +30,57 @@
             <?php
             $idProfil = $_SESSION['ID'];
             $typeProfil = $_SESSION['SWITCH'];
+            $sql = 'SELECT pseudo FROM ' . $typeProfil . ' WHERE ID =  "' . $idProfil . '"';
+            $result = $bdd->query($sql);
+            echo "<br/>" . $sql;
+            while ($data = $result->fetch()) {
+                $pseudoProfil = $data['pseudo'];
+            }$result->closeCursor();
 
-            if (isset($_GET['idAutre'])) {
-                $idAutre = $_GET['idAutre'];
-                $result = $bdd->query('SELECT  * FROM  messagerie WHERE (id_des =  "' . $idProfil . '" OR id_exp ="' . $idProfil . '") AND (id_des = "' . $idAutre . '" OR id_exp ="' . $idAutre . '") ORDER BY date');
+
+
+            if (isset($_GET['pseudoAutre'])) {
+                $pseudoAutre = $_GET['pseudoAutre'];
+                $sql = 'SELECT  * FROM  messagerie WHERE (pseudo_des =  "' . $pseudoProfil . '" OR pseudo_exp ="' . $pseudoProfil . '") AND (pseudo_exp = "' . $pseudoAutre . '" OR pseudo_exp ="' . $pseudoAutre . '") ORDER BY date';
+                $result = $bdd->query($sql);
+                echo "<br/>" . $sql;
             } else {
-                $result = $bdd->query('SELECT  * FROM  messagerie WHERE (id_des =  "' . $idProfil . '" OR id_exp ="' . $idProfil . '") ORDER BY date');
+                $sql = 'SELECT  * FROM  messagerie WHERE (pseudo_des =  "' . $pseudoProfil . '" OR pseudo_exp ="' . $pseudoProfil . '") ORDER BY date';
+                $result = $bdd->query($sql);
+                echo "<br/>" . $sql;
             }
 
 
             while ($data = $result->fetch()) {
-                $iddesCour = $data['id_des'];
-                if ($iddesCour == $idProfil) {
+                $pseudodesCour = $data['pseudo_des'];
+                if ($pseudodesCour == $pseudoProfil) {
                     $destinataire = "vous";
                 } else {
-                    $idAutre = $iddesCour;
-                    $typedesCour = $data['type_des'];
-                    $resultCour = $bdd->query('SELECT  pseudo FROM  ' . $typedesCour . ' WHERE ID =  "' . $iddesCour . '"');
-                    while ($dataCour = $resultCour->fetch()) {
-                        $destinataire = $dataCour['pseudo'];
-                    }
-                }$resultCour->closeCursor();
-                $idexpCour = $data['id_exp'];
-                if ($idexpCour == $idProfil) {
+                    $pseudoAutre = $pseudodesCour;
+                    $destinataire = $pseudoAutre;
+                }
+
+                $pseudoexpCour = $data['pseudo_exp'];
+                if ($pseudoexpCour == $pseudoProfil) {
                     $expediteur = "vous";
                 } else {
-                    $idAutre = $idexpCour;
-                    $typeexpCour = $data['type_exp'];
-                    $resultCour = $bdd->query('SELECT  pseudo FROM  ' . $typeexpCour . ' WHERE ID =  "' . $idexpCour . '"');
-                    while ($dataCour = $resultCour->fetch()) {
-                        $expediteur = $dataCour['pseudo'];
-                    }
-                }$resultCour->closeCursor();
+                    $pseudoAutre = $pseudoexpCour;
+                    $expediteur = $pseudoAutre;
+                }
                 ?> 
 
 
+                <?php
+                $date = $data['date'];
+                $date = substr($date, 0, 10)
+                ?>
+                <div class ="message"><h4>De <?php echo $expediteur ?> à <?php echo $destinataire ?> le <?php echo $date ?> :</h4>
 
-                <div class ="message"><h4>De <?php echo $expediteur ?> à <?php echo $destinataire ?> :</h4>
                     <?php
                     $message = $data['message'];
                     echo $message;
-                    if (!isset($_GET['idAutre'])) {
-                        ?> <br/><a href="messagerie.php?idAutre=<?php echo $idAutre ?>">Voir la conversation entière</a> 
+                    if (!isset($_GET['pseudodAutre'])) {
+                        ?> <br/><a href="messagerie.php?pseudodAutre=<?php echo $pseudoAutre ?>">Voir la conversation entière</a> 
                         <br/><br/>
                     <?php } ?>    
                 </div> 
@@ -79,22 +88,23 @@
                 <?php
             } $result->closeCursor();
 
+            //////////////////
 
-            if (isset($_GET['idAutre'])) {
+              if (isset($_GET['pseudodAutre'])) {
                 ?> 
-               
+
                 <form action="traitMessagerie.php" method="post">
-                     Nouveau message :<input type="text" name="message" class="message">
-                    <input type="hidden" name="idAutre" value="<?php echo $idAutre ?>">
+                    Nouveau message :<input type="text" name="message" class="message" required>
+                    <input type="hidden" name="pseudoAutre" value="<?php echo $pseudoAutre ?>">
                     <input type="submit" value="Submit">
                 </form>
             <?php } else { ?>
                 <form action="traitMessagerie.php" method="post">
-                     Destinataire : 
-                    <input type="text" name="pseudoAutre" value=""><br/>
+                    Destinataire : 
+                    <input type="text" name="pseudoAutre" value="" required><br/>
                     Nouveau message :
-                    <input type="text" name="message" class="message">
-                    
+                    <input type="text" name="message" class="message" required>
+
                     <input type="submit" value="Submit">
                 </form>
             <?php }
