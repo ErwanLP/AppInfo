@@ -116,6 +116,12 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
           $resulto->closeCursor();
           } */
 
+
+
+
+
+
+
         if (!isset($_POST['message']) || empty($_POST['message'])) {
             ?>
 
@@ -123,12 +129,18 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
                 <div class="containerMessageForum">
                     <?php
                     for ($a = 0; $a < count($tab_info_commentaire); $a++) {
+
+                        $resultt = $bdd->query('(SELECT ID FROM organisateur WHERE organisateur.pseudo = "' . $tab_info_commentaire[$a][2] . '") UNION (SELECT ID FROM participant WHERE participant.pseudo = "' . $tab_info_commentaire[$a][2] . '")');
+                        while ($data1 = $resultt->fetch()) {
+                            $IDProfil = $data1['ID'];
+                        }$reqP->closeCursor();
+
                         //while ($data = $req1->fetch()) {
                         ?>
                         <div class="positionMessageForum">
                             <div class="titreMessageForum">
                                 <p class="positionTitreForum">
-                                    <strong><a href="" ><?php echo $tab_info_commentaire[$a][2]; ?></a></strong>Posté le : <?php echo substr($tab_info_commentaire[$a][1], 0, 10); ?> &agrave; <?php echo substr($tab_info_commentaire[$a][1], 10); ?></p>
+                                    <strong><a href="profilBis.php?IDprofil=<?php echo $IDProfil ?>&Pseudo=<?php echo $tab_info_commentaire[$a][2]; ?>" ><?php echo $tab_info_commentaire[$a][2]; ?></a></strong>Posté le : <?php echo substr($tab_info_commentaire[$a][1], 0, 10); ?> &agrave; <?php echo substr($tab_info_commentaire[$a][1], 10); ?></p>
                             </div>
                             <?php echo' <img  style="position:relative;left:-325px;top:13px;" src="img/jerry.jpg" height="150" width="200" /> '; ?>
                             <div class="positionCommentaire">
