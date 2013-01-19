@@ -69,7 +69,7 @@
     <form method="post" action="traitementRecherche.php"> <!-- RECHERCHE  -->
         <label class="rechercheSimple" for="recherche">Recherche :</label>
         <input style="margin-left :10px;" type="search" name="recherche" id="recherche" size="30" maxlength="70" placeholder="Ex : 75006, bar, mairie de Paris"><input style="margin-left:5px;cursor:pointer;" type="submit" value="Go"/>
-        <a  style="color:#ff6040;padding-left:10px;font-family: Verdana, Trebuchet MS, Arial, sans-serif;" href="rechercheAvancee.php?RA=on">Recherche Avancée</a>
+        <a  style="color:#ff6040;padding-left:10px;font-family: Verdana, Trebuchet MS, Arial, sans-serif;" href="rechercheAvancee.php?RA=on">Recherche Avanc&eacute;e</a>
     </form>
 </div>
 

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
              <link rel="stylesheet" media="screen, print, handheld" type="text/css" href="index.css" />
              <link rel="shortcut icon" type="image/x-icon" href="img/icone.png" />
-              <link rel="stylesheet" href="assets/css/styles.css" />
+             <link rel="stylesheet" href="assets/css/styles.css" />
              <link rel="stylesheet" href="forumMan.css" />
              <link rel="stylesheet" href="parametre.css">
              <link rel="stylesheet" href="profil.css">
@@ -19,5 +19,6 @@ if (!empty($titre)) {
     echo '<title>Do You Event</title>';
 }
 ?>
+             
     </head>
     <body>

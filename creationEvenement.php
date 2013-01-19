@@ -30,17 +30,17 @@
             }
             ?>
 
-        </aside>
-        <aside class ="navg">
-            <?php include ("arbre.php"); ?>
-        </aside>
-        <article>
-            <?php
-            $lang = 'en';
-            titreFormEvent($lang);
-            $theme = $bdd->query('SELECT * FROM theme');
-            $lang = 'en';
-            formDebEvent($lang);
+                </aside>
+                <aside class ="navg">
+    <?php include ("arbre.php"); ?>
+                </aside>
+                <article>
+                    <?php
+                    $lang = 'fr';
+titreFormEvent($lang);
+$theme = $bdd->query('SELECT * FROM theme');
+$lang = 'fr';
+formDebEvent($lang);
 //print_r($theme);
             while ($donnees = $theme->fetch()) {
                 formMidThEvent($lang, $donnees);

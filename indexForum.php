@@ -48,7 +48,7 @@ include("nav.php");
 
         <div class="navigationForum">
             <div class="sousMenuBasculeForum">
-                <span>Discution g&eacute;n&eacute;rale</span>
+                <span>Discussion g&eacute;n&eacute;rale</span>
                 <div class="sousMenuForumAlpha">
                     <table class="affichageTableau">
                         <tr class="barreDeTitre">

@@ -62,7 +62,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
             <p id="infoPerso">
                 <!--<span class="titre">Informations Personnelles</span><br/><br/><br/>-->
                 <strong>Pseudo :</strong><?php echo " " . $data['pseudo']; ?><br/><br/>
-                <strong>Prénom :</strong><?php echo " " . $data['prenom']; ?><br/><br/>
+                <strong>Pr&ecute;nom :</strong><?php echo " " . $data['prenom']; ?><br/><br/>
                 <strong>Nom :</strong><?php echo " " . $data['nom']; ?><br/><br/>
                 <strong>Sexe :</strong><?php
             if ($data['sexe'] == 1) {
@@ -74,15 +74,15 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                 <strong>Date de naissance :</strong><?php echo " " . $data['dateDeNaissance']; ?><br/><br/>
                 <strong>Adresse :</strong><?php echo " " . $data['adresse'] . " - " . $data['codePostal'] . " - " . $data['villes']; ?><br/><br/>
                 <strong>E-mail :</strong><?php echo " " . $data['mail']; ?><br/><br/>
-                <strong>Téléphone fixe :</strong><?php echo " " . $data['telephoneFixe']; ?><br/><br/>
-                <strong>Téléphone mobile :</strong><?php echo " " . $data['telephoneMobile']; ?><br/><br/>
+                <strong>T&eacute;l&eacute;phone fixe :</strong><?php echo " " . $data['telephoneFixe']; ?><br/><br/>
+                <strong>T&eacute;l&eacute;phone mobile :</strong><?php echo " " . $data['telephoneMobile']; ?><br/><br/>
                 <strong>Site Web :</strong><?php echo " " . $data['siteWeb']; ?>
             </p>
 
             <p id="preference">
                 <strong>Profession :</strong><?php echo " " . $data['profession']; ?><br/><br/>
                 <strong>Loisirs :</strong><?php echo " " . $data['loisirs']; ?><br/><br/>
-                <strong>Préférence événements :</strong><?php echo " " . $data['preference']; ?><br/><br/>
+                <strong>Pr&eacute;f&eacute;rence &eacute;v&egrave;nements :</strong><?php echo " " . $data['preference']; ?><br/><br/>
                 <strong>Description :</strong><br/><br/>
                 <?php echo " " . $data['description']; ?>
 
@@ -208,18 +208,18 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
         <div id="coordonnee">
             <p id="infoPerso">
                 <strong>Pseudo :</strong><?php echo " " . $data['pseudo']; ?><br/><br/>
-                <strong>Prénom :</strong><?php echo " " . $data['prenom']; ?><br/><br/>
+                <strong>Pr&eacute;nom :</strong><?php echo " " . $data['prenom']; ?><br/><br/>
                 <strong>Nom :</strong><?php echo " " . $data['nom']; ?><br/><br/> 
                 <strong>E-mail :</strong><?php echo " " . $data['mail']; ?><br/><br/>                        
-                <strong>Téléphone mobile :</strong><?php echo " " . $data['telephoneMobile']; ?><br/><br/>
+                <strong>T&eacute;l&eacute;phone mobile :</strong><?php echo " " . $data['telephoneMobile']; ?><br/><br/>
 
             </p>
             <p id="preference">
-                <strong>Société :</strong><?php echo " " . $data['nomSociete']; ?><br/><br/>
-                <strong>Adresse de la société :</strong><?php echo " " . $data['adresseSociete'] . " - " . $data['codePostalSociete'] . " - " . $data['villeSociete']; ?><br/><br/>
+                <strong>Soci&eacute;t&eacute; :</strong><?php echo " " . $data['nomSociete']; ?><br/><br/>
+                <strong>Adresse de la oci&eacute;t&eacute; :</strong><?php echo " " . $data['adresseSociete'] . " - " . $data['codePostalSociete'] . " - " . $data['villeSociete']; ?><br/><br/>
                 <strong>Site Web :</strong><?php echo " " . $data['siteWeb']; ?><br/><br/>  
-                <strong>Téléphone societe :</strong><?php echo " " . $data['telephoneSociete']; ?><br/><br/>                        
-                <strong>Activité :</strong><?php echo " " . $data['activite']; ?><br/><br/>
+                <strong>T&eacute;l&eacute;phone soci&eacute;t&eacute; :</strong><?php echo " " . $data['telephoneSociete']; ?><br/><br/>                        
+                <strong>Activit&eacute; :</strong><?php echo " " . $data['activite']; ?><br/><br/>
                 <strong>Profession :</strong><?php echo " " . $data['profession']; ?><br/><br/>
 
             </p>
@@ -280,10 +280,10 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 </section>
 <?php include("footer.php"); ?>
 <script type="text/javascript">
-    function afficherc(){ 
+    function afficherc(){
+        document.getElementById("mesEvents").style.display="none";
         document.getElementById("coordonnee").style.display="";
         document.getElementById("amis").style.display="none";
-        document.getElementById("mesEvents").style.display="none";
         document.getElementById("abonnement").style.display="none";
     }
     function affichera(){ 
