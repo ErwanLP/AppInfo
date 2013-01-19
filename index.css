@@ -55,7 +55,52 @@ header
 }
 
 
+/*Event detaille*/
+.imageDetail
+{       text-align: left;
+        position : relative;
+	margin-left:40px;
+	margin-top:40px;
+}
+.titreDetailEvent
+{
+	position: relative;
+   	left: 320px;
+   	bottom: 440px;
+	font-size: 32px;
+	font-weight:bold;
+	color:#105CA0;
+	text-shadow: 2px 2px 2px gray;
+}
+.sousTitreThemeDetail
+{
+	position: relative;
+   	left: 320px;
+   	bottom: 460px;
+	font-size: 24px;
+	font-weight:bold;
+	color:#408CD0;
+}
 
+.sousTitreLieuDetail
+{
+	position: relative;
+   	left: 330px;
+   	bottom: 460px;
+	font-size: 24px;
+	font-weight:bold;
+	color:#006090;
+}
+
+.evenementDetailDescription
+{
+	max-width:800px;
+	position: relative;
+   	left: 40px;
+   	bottom: 440px;
+	font-size: 22px;
+	color:#003060;
+}
 
 /*NAVIGATION PRINCIPALE*/
 
@@ -623,7 +668,7 @@ article
 .evenement{
     text-align : left;
     width: 1400px;
-    height: 350px;
+    height: 450px;
     font-family: Comic Sans MS;
     background-color : white;
     box-shadow: 0px 0px 10px black;
