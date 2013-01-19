@@ -54,7 +54,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 
         if ($boubou1) {
 
-            $resultBis = $bdd->query('(SELECT * FROM organisateur WHERE oragnisateur.ID = "' . $idProfilAmi . '" AND organisateur.pseudo = "' . $pseudo . '") UNION (SELECT * FROM participant WHERE participant.ID = "' . $idProfilAmi . '" AND participant.pseudo = "' . $pseudo . '")');
+            $resultBis = $bdd->query('SELECT * FROM participant WHERE participant.ID = "' . $idProfilAmi . '" AND participant.pseudo = "' . $pseudo . '"');
             while ($dataBis = $resultBis->fetch()) {
                 ?>
 
@@ -120,7 +120,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 
         if ($boubou2) {
 
-            $resultBis = $bdd->query('(SELECT * FROM organisateur WHERE oragnisateur.ID = "' . $idProfilAmi . '" AND organisateur.pseudo = "' . $pseudo . '") UNION (SELECT * FROM participant WHERE participant.ID = "' . $idProfilAmi . '" AND participant.pseudo = "' . $pseudo . '")');
+            $resultBis = $bdd->query('SELECT * FROM organisateur WHERE organisateur.ID = "' . $idProfilAmi . '" AND organisateur.pseudo = "' . $pseudo . '"');
             while ($dataBis = $resultBis->fetch()) {
     
     
