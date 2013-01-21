@@ -550,8 +550,8 @@ section
 .positionBouton {
 
     position: absolute;
-    margin-left: 90px;
-
+    left: 90px;
+    top: 0px;
 }
 
 /*1-ARTICLE*/
@@ -999,13 +999,9 @@ article
 footer
 {
 
-    /*border-top-left-radius: 50px;
-    border-top-right-radius: 50px;*/
-    /*box-shadow: 0px 0px 10px black;*/
     width: 100%;
-    /*border: 2px solid white;*/
     position: absolute;
-    top: 1930px;
+    top: 1990px;
     height : 120px;
     background-color : #666;
     border-top: 1px solid black;
