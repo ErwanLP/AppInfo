@@ -8,13 +8,13 @@
     </div>
     <div class ="tofevent">
 
-        <?php
-        echo '<img class = "imageflottante" alt="Photo de évenement" src= "' . $data["photo"] . '" height="250" width="200"/>'
-        ?>
+        
+        <a href="eventDetaille.php?ID=<?php echo $data['ID'];?>"><img class = "imageflottante" alt="Photo de évenement" src= "<?php echo $data["photo"] ?>" height="250" width="200"/></a>
+        
     </div>
 <!-- <img class = "imageflottante" alt="Photo de évenement" src= "imgUser/gad_elmaleh.jpeg"/> -->
     <div class ="texteEvent">
-        <h1><?php echo $data['nom']; ?></h1>
+        <a href="eventDetaille.php?ID=<?php echo $data['ID'];?>"><h1 class="titreEventArticle"><?php echo $data['nom']; ?></h1></a>
         <strong>Adresse: </strong><?php echo $data['lieu']; ?><span><?php echo $data['lieu']; ?></span><br/>
         
         <?php 
@@ -51,9 +51,7 @@
         }
         
         ?>" class="etoile" alt="Note" /><p id="note">(<?php echo $data['note']; ?> sur 5)</p><br/>
-        <p id="bouton1"><a href="eventDetaille.php?ID=<?php echo $data['ID'];?>">Voir Plus de D&eacute;tails</a></p>
-        <p id="bouton2">Voir Commentaires</p>
-        <p id="bouton3">R&eacute;server</p>
+        
     </div>
 
 </div>
