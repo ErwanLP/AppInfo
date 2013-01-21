@@ -1,7 +1,6 @@
 <?php
 session_start();
-include("head.php");
-
+include("start.php");
 include("header.php");
 
 include("nav.php");
@@ -9,11 +8,9 @@ include("nav.php");
 
 <section>
     <aside class ="new">
-        <div class ="eventNew">
-            <img class ="photonew" src ="img/new.jpg"/>
-        </div>
+        <?php include('nouveauteEvenement.php'); 
 
-        <?php
+       
         if (!isset($_SESSION['ID'])) {
             include("connexion.php");
         }
@@ -85,7 +82,7 @@ include("nav.php");
                     ?>
                 </span>
                 <?php
-                echo 'a écrit le ' . $donnees['date'] . ' : ';
+                echo 'a &eacute;crit le ' . $donnees['date'] . ' : ';
                 ?>
                 <div class="com">
 
@@ -115,7 +112,7 @@ include("nav.php");
                     ?>
                 </span>
                 <?php
-                echo 'a écrit le ' . $donnees['date'] . ' : ';
+                echo 'a &eacute;crit le ' . $donnees['date'] . ' : ';
                 ?>
                 <div class="com">
 
@@ -133,7 +130,7 @@ include("nav.php");
             ?>
         </div>
     </div>
-    <?php if (isset($_SESSION['SWITCH']) AND $_SESSION['ID'] != null){ ?>
+    <?php if (isset($_SESSION['SWITCH']) AND ($_SESSION['SWITCH'] == "organisateur" OR $_SESSION['SWITCH'] == "participant") AND $_SESSION['ID'] != null){ ?>
     <form method="post" action="livredor.php">
         <p id="livrepost">
             <label for="commentaire">
@@ -142,7 +139,7 @@ include("nav.php");
             <br /><br />
             Pseudo : <input name="pseudo" required /><br /><br />
             
-            <textarea name="message" id="commentaire" rows="10" cols="50"placeholder="Ecrivez votre texte en 400 caractères maximum" onkeyup="javascript:MaxLengthTextarea(this, 400);" required></textarea><br/>
+            <textarea name="message" id="commentaire" rows="10" cols="50"placeholder="&Eacute;crivez votre texte en 400 caract&egrave;res maximum" onkeyup="javascript:MaxLengthTextarea(this, 400);" required></textarea><br/>
             <input type="submit" value="Envoyer" /> <input type="reset" value="Effacer" />
                
         </p>

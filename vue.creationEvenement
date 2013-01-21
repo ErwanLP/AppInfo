@@ -7,7 +7,7 @@ function titreFormEvent($lang) {
                     </div>';
     } else {
         echo '<div class="titreacticle">
-                        <h2><span>Cr&eacute;ation d\'un &eacute;v&egrave;nement</span></h2>
+                        <h2><span>Cr&eacute;ation d\'un &Eacute;v&eacute;nement</span></h2>
                         </div>';
     }
 }
@@ -56,16 +56,16 @@ function formDebEvent($lang) {
                         <form method="post" action=traitementEvenement.php">
 
                             <fieldset>
-                                <legend>Information sur l'Ev&egrave;nement </legend>
-                                <label for ="nomEvent">Nom de L'&eacute;v&egrave;nement :</label>
+                                <legend>Information sur l'&Eacute;v&eacute;nement </legend>
+                                <label for ="nomEvent">Nom de l'&Eacute;v&eacute;nement :</label>
                                 <input type="text" name="nomEvent" id="nomEvent"  size="30" maxlength="35" autofocus required /><br/>
-                                <label for ="lieuEvent">Lieu de l'&eacute;v&egrave;nement :</label>
+                                <label for ="lieuEvent">Lieu de l'&Eacute;v&eacute;nement :</label>
                                 <input type="text" name="lieuEvent" id="lieuEvent"  size="30" maxlength="50" required /><br/>
-                                <label for="description">Description Event:</label><br />
-                                <textarea class="champDescriptionEvent" name="description" id="descriptionn" >Entrer la description de l\'&eacute;v&egrave;nement...</textarea><br/></br>
-                                <label for="dateDebut">Date de d&eacute;but de l'&eacute;v&egrave;nement (ou date unique) : </label>
+                                <label for="description">Description de l'&Eacute;v&eacute;nement:</label><br />
+                                <textarea class="champDescriptionEvent" name="description" id="descriptionn" >Entrer la description de l\'&Eacute;v&eacute;nement...</textarea><br/></br>
+                                <label for="dateDebut">Date de d&eacute;but de l'&Eacute;v&eacute;nement (ou date unique) : </label>
                                 <input type="date" name="dateDebut" id="dateDebut" required /><br/>
-                                <label for="dateFin">Date de fin de l'&eacute;v&egrave;nement(ne pas sp&eacute;cifier si l'&eacute;v&egrave;nement n'a lieu qu'une seule fois) :</label>
+                                <label for="dateFin">Date de fin de l'&Eacute;v&eacute;nement(ne pas sp&eacute;cifier si l'&Eacute;v&eacute;nement n'a lieu qu'une seule fois) :</label>
                                 <input type="date" name="dateFin" id="dateFin"/><br/>
                                 <label for="heureDebut">Heure de d&eacute;but :</label>
                                 <input type="time" name="heureDebut" id="heureDebut" required /><br/>
@@ -83,7 +83,7 @@ function formDebEvent($lang) {
                                 <label for="vendredi">V</label><input type="checkbox" name="vendredi" id="vendredi" />
                                 <label for="samedi">S</label><input type="checkbox" name="samedi" id="samedi" /> 
                                 <label for="dimanche">D</label><input type="checkbox" name="dimanche" id="dimanche" /></br></br>
-                                <label for="typeEvent">Quel est le genre de l\'&eacute;v&egrave;nement</label><br />
+                                <label for="typeEvent">Quel est le genre de l'&Eacute;v&eacute;nement</label><br />
                                 <select name="themeEvent" id="themeEvent">
                                     <option value="NULL">- - - - - - - - - -</option>
     <?php }
@@ -125,7 +125,7 @@ Choose a picture for your event on your hard disk.</br>
                     </div>';
     } else {
         echo '</select></br></br>
-Choisissez une image pour votre &eacute;v&egrave;nement sur votre disque dur.</br>
+Choisissez une image pour votre &Eacute;v&eacute;nement sur votre disque dur.</br>
 <label for="image">Fichier :</label>
 <input id="image" name="image" type="file" size="30" required></br>
                             </fieldset>

@@ -1,18 +1,13 @@
 <?php session_start(); ?>
 <?php include("start.php"); ?>
 
-
-
-
 <?php include("header.php"); ?>
 
 <?php include("nav.php"); ?>
 
 <section>
     <aside class ="new">
-        <div class ="eventNew">
-            <img class ="photonew" src ="img/new.jpg"/>
-        </div>
+        <?php include('nouveauteEvenement.php'); ?>
 
         <?php
         if (!isset($_SESSION['ID'])) {

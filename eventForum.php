@@ -2,13 +2,10 @@
 session_start();
 $titre = 'Event';
 include('start.php');
-include('bddForum.php');
+include('BDD.php');
 ?>
 <?php /* include("head.php"); */ ?>
 <?php
-/* empty
- * header('Location:http://une.url.fr');
- */
 include("header.php");
 
 include("nav.php");
@@ -16,10 +13,7 @@ include("nav.php");
 
 <section>
     <aside class ="new">
-        <div class ="eventNew">
-            <img class ="photonew" src ="img/new.jpg"/>
-
-        </div>
+        <?php include('nouveauteEvenement.php'); ?>
     </aside>
 
     <aside class ="navg">
@@ -28,8 +22,8 @@ include("nav.php");
     <table class="pposition">
         <tr>
             <th>titre des sujets</th>
-            <th>createur</th>
-            <th>date de creation</th>
+            <th>cr&eacute;ateur</th>
+            <th>date de cr&eacute;ation</th>
             <th>dernier message</th>
 
         </tr>

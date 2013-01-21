@@ -1,4 +1,3 @@
-
         <div class="menuParametres">
             <h1>Configurer</h1>
             <ul id="menuParametre">
@@ -20,8 +19,8 @@
                 <fieldset id="infopersonnel" class="rollin">
                     <input type="hidden" id="bypass_email" name="bypass_email" value="0" />
 
-                    <legend><span>Mes données personnelles</span></legend>
-                    <div> <p class="clear_bloc msg_info">Bientôt tu pourras retrouver facilement tes amis sur Doyouevents en saisissant leur email, nom ou prénom. Pour les aider à te retrouver, choisis « oui » ou « non » en bas du formulaire et n'oublie pas de compléter tes informations</p>
+                    <legend><span>Mes donn&eacute;es personnelles</span></legend>
+                    <div> <p class="clear_bloc msg_info">Bient&ocirc;t tu pourras retrouver facilement tes amis sur Doyouevents en saisissant leur email, nom ou pr&eacute;nom. Pour les aider à te retrouver, choisis « oui » ou « non » en bas du formulaire et n'oublie pas de compl&eacute;ter tes informations</p>
                         <script type="text/javascript">
                             // <![CDATA[
 
@@ -54,7 +53,7 @@
                         </span>
 
                         <p class="infobulle msg_info" id="infobulle_genre">
-                            Ton sexe est une information privée, il ne sera pas affiché sur le site </p>
+                            Ton sexe est une information priv&eacute;e, il ne sera pas affich&eacute; sur le site </p>
 
                     </div>
                     <!-- Pseudo -->
@@ -64,7 +63,7 @@
                     </div>
                     <!-- Prénom -->
                     <div class="info">
-                        <label for="prenom" class="infoPerso">Prénom<sup>*</sup> :</label>
+                        <label for="prenom" class="infoPerso">Pr&eacute;nom<sup>*</sup> :</label>
                         <input type="text" id="prenom" name="prenom" class="text" value="florian" />
 
                         <p class="infobulle msg_info" id="infobulle_prenom">
@@ -111,7 +110,7 @@
                         <input type="text" id="année" name="année" maxlength="4" class="anneeAnniv" value="1992"/>
 
                             <p class="infobulle msg_info" id="infobulle_annee">
-                            Ta date de naissance ne sera pas affichée sur le site. En revanche, nous sommes obligés de te la demander pour des raisons légales. </p>
+                            Ta date de naissance ne sera pas affich&eacute;e sur le site. En revanche, nous sommes oblig&eacute;s de te la demander pour des raisons légales. </p>
 
                     </div>
 
@@ -126,7 +125,7 @@
                         <input type="text" id="email" name="email" class="text" value="florian.guitoger@gmail.com" />
 
                         <p class="infobulle msg_info" id="infobulle_email">
-                            Cette information nous sert à te renvoyer ton mot de passe en cas d'oubli. Elle n'est pas affichée sur le site. </p>
+                            Cette information nous sert &agrave; te renvoyer ton mot de passe en cas d'oubli. Elle n'est pas affich&eacute;e sur le site. </p>
 
                     </div>
 
@@ -420,7 +419,7 @@
 
                     <!-- Téléphone Fixe -->
                     <div class="info">
-                        <label for="telephoneFixe" class="infoPerso">Téléphone fixe :</label>
+                        <label for="telephoneFixe" class="infoPerso">T&eacute;l&eacute;phone fixe :</label>
                         <input type="text" id="telephonefixe" name="telephonefixe" class="text" value="0123456987" />
                     </div>
 
@@ -429,13 +428,13 @@
                         <label for="NumeroPortable" class="infoPerso">Mobile<sup>*</sup> :</label>
                         <input type="text" id="NumeroPortable" name="NumeroPortable" class="text" value="0612345789" />
                         <p class="infobulle msg_info" id="infobulle_portable">
-                            Pour recevoir des infos publicitaires sur ton téléphone mobile tu dois saisir ici ton numéro. </p>
+                            Pour recevoir des infos publicitaires sur ton t&eacute;l&eacute;phone mobile, tu dois saisir ici ton num&eacute;ro. </p>
 
                     </div>
                     <!-- Masquer Téléphone -->
                     <div class="info">
                         <input type="checkbox" name="MasquerNum" id="MasquerNum" value="0" />
-                        <label for="MasquerNum"><strong>Masquer mes numéro de téléphone</strong></label>
+                        <label for="MasquerNum"><strong>Masquer mes num&eacute;ro de t&eacute;l&eacute;phone</strong></label>
                     </div>
 
                     <br/>
@@ -447,7 +446,7 @@
                             <option value="en_GB">International (anglais)</option>
 
                         </select>
-                        <p class="infobulle msg_info" id="infobulle_langue">La langue qui sera utilisée sur l'ensemble des textes et contenu du site.</p>
+                        <p class="infobulle msg_info" id="infobulle_langue">La langue qui sera utilis&eacute;e sur l'ensemble des textes et contenu du site.</p>
                     </div>
 
                     <!-- Site Web -->
@@ -498,12 +497,12 @@
                             <input autocomplete="off" type="password" id="nouveauMdp" name="nouveauMdp" class="text" value="" />
 
                             <p class="infobulle msg_info" id="infobulle_nouveauMdp">
-                                Ton mot de passe doit contenir de 6 à 16 caractères et ne doit pas comporter d'espace. </p>
+                                Ton mot de passe doit contenir 6 à 16 caractères et ne doit pas comporter d'espace. </p>
                         </div>
 
                         <!-- Nouveau: Mot de passe Confirmation -->
                         <div class="mdp">
-                            <label class="infoPerso" for="Mdpconfimer"><span class="required">Vérifier le nouveau mot de passe<sup>*</sup> :</span></label>
+                            <label class="infoPerso" for="Mdpconfimer"><span class="required">V&eacute;rifier le nouveau mot de passe<sup>*</sup> :</span></label>
                             <input autocomplete="off" type="password" id="Mdpconfime" name="Mdpconfimer" class="text" value="" />
 
                             <p class="infobulle msg_info" id="infobulle_Mdpconfime">

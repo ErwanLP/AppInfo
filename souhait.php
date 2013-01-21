@@ -2,7 +2,7 @@
 session_start();
 $titre = 'souhait';
 include('start.php');
-include('bddForum.php');
+include('BDD.php');
 ?>
 <?php /* include("head.php"); */ ?>
 <?php
@@ -13,9 +13,7 @@ include("nav.php");
 
 <section>
     <aside class ="new">
-        <div class ="eventNew">
-            <img class ="photonew" src ="img/new.jpg"/>
-        </div>
+        <?php include('nouveauteEvenement.php'); ?>
 
         <?php
         if (!isset($_SESSION['ID'])) {
@@ -38,13 +36,13 @@ include("nav.php");
 
 
     <article>
-
-        <div class="creerTopic">
-            <a href="ajouterSujet.php" alt="ajouter un sujet" title="Créer un nouveau sujet"> Ajouter un sujet</a>
-        </div>
-
+        <?php if (isset($_SESSION['SWITCH']) AND ($_SESSION['SWITCH'] == "organisateur" OR $_SESSION['SWITCH'] == "participant" ) AND $_SESSION['ID'] != null) { ?>
+            <div class="creerTopic">
+                <a href="ajouterSujet.php" alt="ajouter un sujet" title="Créer un nouveau sujet"> Ajouter un sujet</a>
+            </div>
+        <?php } ?>
         <div class="backPage">
-            <a href="indexForum.php" alt="retour à l'accueil du forum" title="Retour à l'accueil du forum"> Retour à l'accueil</a>
+            <a href="indexForum.php" alt="retour à l'accueil du forum" title="Retour à l'accueil du forum"> Retour &agrave; l'accueil</a>
         </div>
 
         <?php
