@@ -127,7 +127,7 @@ if (isset($_POST['nomEvent']) && isset($_POST['lieuEvent']) && isset($_POST['des
     if ($booleantest == FALSE && $sousThemeEx == TRUE && $themeEx == TRUE && $imageSet==true) {
         move_uploaded_file($_FILES['image']['tmp_name'], 'imgUser/' . $t . $extImage);
         $chemin = 'imgUser/' . $t . $extImage;
-        $bdd->query("INSERT INTO event(nom,lieu,description,dateDebut,dateFin,heureDebut,heureFin,theme,type, photo, lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche, prix, nbDePersonne, placesRestantes) VALUES ('.$nomEvent.','.$lieuEvent.','.$description.','.$dateDebut.','.$dateFin.','.$heureDebut.','.$heureFin.','.$themeEvent.','.$sousThemeEvent.','.$chemin.','.$lundi.','.$mardi.','.$mercredi.','.$jeudi.','.$vendredi.','.$samedi.','.$dimanche.','.$prix.','.$nbDePersonne.','.$nbDePersonne)");
+        $bdd->query("INSERT INTO event(nom,lieu,description,dateDebut,dateFin,heureDebut,heureFin,theme,type, photo, lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche, prix, nbDePersonne, placesRestantes, nbVotes) VALUES ('.$nomEvent.','.$lieuEvent.','.$description.','.$dateDebut.','.$dateFin.','.$heureDebut.','.$heureFin.','.$themeEvent.','.$sousThemeEvent.','.$chemin.','.$lundi.','.$mardi.','.$mercredi.','.$jeudi.','.$vendredi.','.$samedi.','.$dimanche.','.$prix.','.$nbDePersonne.','.$nbDePersonne.',0)");
         
         
         header('Location:index.php');

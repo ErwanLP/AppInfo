@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html >
     <head >
         <meta charset="utf-8" />
         <link rel="stylesheet" href="index2.css" /> 
@@ -43,5 +41,4 @@
             <p class="sousTitreLieuDetail">Date de l'&eacute;v&egrave;nement : 12/12/12 </br>Budget : 15 €</p>
             <p class="sousTitrePlacesDetail"></p>
         </div>
-    </body>
-</html>
+

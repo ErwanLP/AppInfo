@@ -3,9 +3,6 @@
     $bdd->exec('SET NAMES utf8');
     ?>
     <aside class ="new">
-        <div class ="eventNew">
-            <img class ="photonew" src ="img/new.jpg"/>
-        </div>
 
         <?php
         if (!isset($_SESSION['ID'])) {
@@ -24,18 +21,20 @@
             if ($valeurInscription == 1) {
                 ?>
                 <div class="positionMessageInscription">
-                    <h2>Bonjour, votre inscription a bien été prise en compte!</h2>
+                    <h2>Bonjour, votre inscription a bien &eacute;t&eacute; prise en compte!</h2>
                 </div>
-            <?php }
-        } ?>
-
-
-
+                <?php
+            }
+        }
+        
+        include('nouveauteEvenement.php');
+        
+        ?>
 
     </aside>
 
     <aside class ="navg">
-<?php include ("arbre.php"); ?>
+        <?php include ("arbre.php"); ?>
     </aside>
 
     <aside class ="toporg">
@@ -136,8 +135,3 @@
         </div>
     </article>
 </section>
-
-
-
-
-

@@ -2,9 +2,7 @@
 include("start.php"); 
 include("BDD.php");?>
 <?php
-        /* empty
-         * header('Location:http://une.url.fr');
-         */
+        
 
         
 

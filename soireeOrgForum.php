@@ -3,7 +3,7 @@
 session_start();
 $titre = 'soirée';
 include('start.php');
-include('bddForum.php');
+include('BDD.php');
 ?>
 <?php /* include("head.php"); */ ?>
 <?php

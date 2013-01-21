@@ -2,7 +2,7 @@
 session_start();
 $titre = 'concert';
 include('start.php');
-include('bddForum.php');
+include('BDD.php');
 ?>
 <?php /* include("head.php"); */ ?>
 <?php

@@ -1,7 +1,5 @@
  <?php session_start(); ?>
     <?php include("start.php"); ?>
-    
-       
 
         <?php include("header.php"); ?>
 
@@ -9,9 +7,7 @@
 
         <section>
             <aside class ="new">
-                <div class ="eventNew">
-                    <img class ="photonew" src ="img/new.jpg"/>
-                </div>
+                <?php include('nouveauteEvenement.php'); ?>
 
                 <?php
                 if (!isset($_SESSION['ID'])) {
@@ -48,7 +44,7 @@
                             </select>
                             <label style="padding-left:30px;" for="ville"> Ville : </label><input type="text" name="ville" id="ville" placeholder="Ex : Paris" size="23" maxlength="20"><br/><br/>
                             <label style="color:#ff6040;text-decoration:underline;"for="heureDebut"> Tranche horaire : </label><br/><br/>
-                            <label style="padding-right:5px;"> Début : </label><select name="heureDebut" id="heureDebut">
+                            <label style="padding-right:5px;"> D&eacute;but : </label><select name="heureDebut" id="heureDebut">
                                 <option value="0">00h</option>
                                 <option value="1">01h</option>
                                 <option value="2">02h</option>
@@ -101,26 +97,9 @@
                                 <option value="23">23h</option>
                             </select><br/><br/>
                             <label style="color:#ff6040;text-decoration:underline;" for="date"> Date : </label><br/><br/><input type="date" name="date" placeholder="JJ/MM/AAAA" id="date" size="10" maxlength="10"><br/><br/>
-                            <!--<label style="margin-right:10px;" for="compare"> Notes </label><select name="compare" id="compare">
-                                <option value="egalplus">&#8805;</option>
-                                <option value="plus">></option>
-                                <option value="egal">=</option>
-                                <option value="moinsegal">&#8804;</option>
-                                <option value="moins"><</option>
-                            </select>
-                            <label style="margin-left:20px;margin-right:10px;" for="note"> &agrave; </label><select name="note" id="note">
-                                <option value="moins"> 0 </option>
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select><br/><br/>-->
                             <label style="padding-right:5px;margin-left:20px;" for="prix"> Prix :</label><input type="range" name="prix" id="prix" min="0" max="500" step="5" size="4" maxlength="4" placeholder="0"/> <div class="inline" id="prixDiv" value="10"></div> euros
                             <label style="margin-left:30px;"for="placeDispo"> Place(s) disponible(s) :</label>
                             <input type="number" name="placeDispo" id="placeDispo" maxlength="5" size="4"/><br/><br/>
-
                             <input type="submit" value="Envoyer" />
                             <input type="reset" value="Effacer" />
                             </p>

@@ -2,7 +2,7 @@
 session_start();
 $titre = 'exposition';
 include('start.php');
-include('bddForum.php');
+include('BDD.php');
 ?>
 <?php /* include("head.php"); */ ?>
 <?php
