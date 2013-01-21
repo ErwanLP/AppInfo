@@ -14,9 +14,7 @@ include("nav.php");
 
 <section>
     <aside class ="new">
-        <div class ="eventNew">
-            <img class ="photonew" src ="img/new.jpg"/>
-        </div>
+        <?php include('nouveauteEvenement.php'); ?>
 
         <?php
         if (!isset($_SESSION['ID'])) {
@@ -39,11 +37,11 @@ include("nav.php");
 
     <article>
         <div class="pagePréc">
-            <a href="souhait.php" alt="page précédente" title="retour à la page précédente">Page précédente</a>
+            <a href="souhait.php" alt="page précédente" title="retour à la page précédente">Page pr&eacute;c&eacute;dente</a>
         </div>
 
         <div class="backPage">
-            <a href="indexForum.php" alt="retour à l'accueil forum" title="Retour à l'accueil forum">Retour à Accueil </a>
+            <a href="indexForum.php" alt="retour à l'accueil forum" title="Retour à l'accueil forum">Retour &agrave; l'accueil </a>
         </div>
 
         <div class="titreTopic">
@@ -62,11 +60,7 @@ include("nav.php");
 
         $tab_info_commentaire = array();
         $var_tab_info_array = 0;
-        //$req = $bdd->query('SELECT * FROM participant, organisateur, topicforum WHERE ( topicforum.id_participant = participant.ID OR topicforum.id_organisateur = organisateur.ID ) AND topicforum.id ="' . $ID_topicforum . '"');
-        //$req = $bdd->query('SELECT * FROM topicforum WHERE topicforum.id = "' . $ID_topicforum . '" LEFT OUTER JOIN participant ON topicforum.id_participant = participant.ID LEFT OUTER JOIN organisateur ON topicforum.id_organisateur = organisateur.ID');
-        //$resultp = $bdd->query('SELECT forummessage.id_participant FROM forummessage, topicforum WHERE forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topicforum . '"');
-        //$resulto = $bdd->query('SELECT forummessage.id_organisateur FROM forummessage, topicforum WHERE forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topicforum . '"');
-        //$req = $bdd->query('SELECT forummessage.date_creation, forummessage.message, participant.pseudo FROM topicforum, forummessage, participant WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topicforum . '" ) AND  participant.ID = forummessage.id_participant');
+
         $req = $bdd->query('(
 SELECT participant.pseudo, forummessage.message, forummessage.date_creation 
 FROM forummessage, participant, topicforum 
@@ -143,11 +137,11 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
 
                                     <?php if (isset($_SESSION['ID'])) { ?>
 
-                                        <strong><a href="profilBis.php?IDprofil=<?php echo $IDProfil ?>&Pseudo=<?php echo $tab_info_commentaire[$a][2]; ?>" ><?php echo $tab_info_commentaire[$a][2]; ?></a></strong>Posté le : <?php echo substr($tab_info_commentaire[$a][1], 0, 10); ?> &agrave; <?php echo substr($tab_info_commentaire[$a][1], 10); ?></p>
+                                        <span><a href="profilBis.php?IDprofil=<?php echo $IDProfil ?>&Pseudo=<?php echo $tab_info_commentaire[$a][2]; ?>" ><?php echo $tab_info_commentaire[$a][2]; ?></a></span>Post&eacute; le : <?php echo substr($tab_info_commentaire[$a][1], 0, 10); ?> &agrave; <?php echo substr($tab_info_commentaire[$a][1], 10); ?></p>
 
                                 <?php } else { ?>
 
-                                    <strong><?php echo $tab_info_commentaire[$a][2]; ?></strong>Posté le : <?php echo substr($tab_info_commentaire[$a][1], 0, 10); ?> &agrave; <?php echo substr($tab_info_commentaire[$a][1], 10); ?></p>
+                                    <span><?php echo $tab_info_commentaire[$a][2]; ?></span>Post&eacute; le : <?php echo substr($tab_info_commentaire[$a][1], 0, 10); ?> &agrave; <?php echo substr($tab_info_commentaire[$a][1], 10); ?></p>
                                 <?php } ?>
 
                             </div>
@@ -160,7 +154,7 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
                 </div>
 
                 <?php
-                if (isset($_SESSION['SWITCH']) AND $_SESSION['ID'] != null) {
+                if (isset($_SESSION['SWITCH']) AND ($_SESSION['SWITCH'] == "organisateur" OR $_SESSION['SWITCH'] == "participant" ) AND $_SESSION['ID'] != null) {
                     include("nouveauCommentaire1.php");
                 }
                 ?>
@@ -198,5 +192,4 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
         ?>
     </article>
 </section>
-<?php include('footer.php');
-?>        
+<?php include('footer.php'); ?>        

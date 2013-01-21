@@ -59,47 +59,47 @@ header
 .imageDetail
 {       text-align: left;
         position : relative;
-	margin-left:40px;
-	margin-top:40px;
+        margin-left:40px;
+        margin-top:40px;
 }
 .titreDetailEvent
 {
-	position: relative;
-   	left: 320px;
-   	bottom: 440px;
-	font-size: 32px;
-	font-weight:bold;
-	color:#105CA0;
-	text-shadow: 2px 2px 2px gray;
+    position: relative;
+    left: 320px;
+    bottom: 440px;
+    font-size: 32px;
+    font-weight:bold;
+    color:#105CA0;
+    text-shadow: 2px 2px 2px gray;
 }
 .sousTitreThemeDetail
 {
-	position: relative;
-   	left: 320px;
-   	bottom: 460px;
-	font-size: 24px;
-	font-weight:bold;
-	color:#408CD0;
+    position: relative;
+    left: 320px;
+    bottom: 460px;
+    font-size: 24px;
+    font-weight:bold;
+    color:#408CD0;
 }
 
 .sousTitreLieuDetail
 {
-	position: relative;
-   	left: 330px;
-   	bottom: 460px;
-	font-size: 24px;
-	font-weight:bold;
-	color:#006090;
+    position: relative;
+    left: 330px;
+    bottom: 460px;
+    font-size: 24px;
+    font-weight:bold;
+    color:#006090;
 }
 
 .evenementDetailDescription
 {
-	max-width:800px;
-	position: relative;
-   	left: 40px;
-   	bottom: 440px;
-	font-size: 22px;
-	color:#003060;
+    max-width:800px;
+    position: relative;
+    left: 40px;
+    bottom: 440px;
+    font-size: 22px;
+    color:#003060;
 }
 
 /*NAVIGATION PRINCIPALE*/
@@ -210,7 +210,7 @@ border: 2px solid white;
 }
 
 .positionMessageInscription {
-    
+
     position: absolute;
     border: 1px solid #202020;
     background-color: #666;
@@ -226,13 +226,12 @@ border: 2px solid white;
 }
 
 .positionMessageInscription h2 {
-    
+
     text-align: center;
     color: white;
     padding: 50px;
     text-shadow: 0px 0px 15px white;
 }
-
 
 .fieldset {
     padding:0 20px 20px 20px;
@@ -842,9 +841,9 @@ article
 
 .eventNew{
     /*background-image: url("img/copie.png");*/
-    background-image : url("img/muse.png");
-    background-repeat: no-repeat;
-    background-position:right;
+    /*background-image : url("img/muse.png");
+    background-repeat: no-repeat;*/
+    /* background-position:right;*/
     position: absolute;
     height : 250px ;
     width: 50%;
@@ -852,9 +851,7 @@ article
     box-shadow: 0px 0px 10px black;
     border-radius: 10px 10px 10px 10px;
     background-color: white;
-
-
-
+    border: 1px solid black;
 }
 
 .photonew{
@@ -869,16 +866,61 @@ article
 
 }
 
+.babar {
+    position: absolute;
+    border: 1px solid #202020;
+    border-radius: 10px;
+    top:  2px;
+    left: -720px;
+    width: 400px;
+    height: 220px;
+    margin-left: 1460px;
+    margin-top:15px;
+    overflow:hidden;
+}
 
+
+
+#slider {
+    text-align:left;
+    position:relative;
+    width:5000px;
+    height: 219px;
+}
+
+.titreNews {
+    
+    position: absolute;
+    left: 500px;
+    top: 35px;
+    font-size: 50px;
+    text-shadow: 0px 10px 10px;
+}
+
+#bmoins {
+    
+    position: absolute;
+    left: 700px;
+    top: 110px;
+    background-color: white;
+    border-radius: 10px;
+    
+}
+
+#bplus {
+    
+    position: absolute;
+    left: 1154px;
+    top: 110px;
+    background-color: white;
+    border-radius: 10px;
+}
 
 .navg
 {
     position: absolute;
     left: 50px;
     top: 340px;
-
-
-
 }
 
 .EventsButton{
@@ -1006,18 +1048,18 @@ a:visited
 /*MESSAGERIE*/
 
 .message{
-    
+
     width : 700px;
     /*height: 150px;*/
     overflow : auto;
     padding : 20px;
     border:1px solid #cebd8b;
     margin :  20px;
-    
-    
-    
-    
-    
+
+
+
+
+
 }
 
 
@@ -1171,7 +1213,7 @@ a:visited
 }
 
 .backPage,.pagePréc {
-    
+
     border: 4px double black;
     width: 200px;
     height: 30px;
@@ -1211,7 +1253,7 @@ a:visited
 }
 
 .containerMessageForum {
-   margin-top: 130px;
+    margin-top: 130px;
 }
 
 .messageForum {
@@ -1265,10 +1307,11 @@ a:visited
 
 }
 
-.positionTitreForum strong {
+.positionTitreForum span {
 
     float: left;
     color: red;
+    font-size:17px;
 }
 /*RECHERCHE AVANCEE*/
 
@@ -1731,6 +1774,24 @@ a:hover{
 
 /****Profil*****/
 
+#description {
+    margin-top: 40px;
+    padding: 50px;
+    width : 76%;
+    height : 1200px;
+    position: absolute;
+    right : 50px;
+    top : 300px;
+    background-color: #ebe2d9;
+    overflow : auto;
+    box-shadow: 0px 0px 10px black; 
+    text-align: justify;
+}
+
+#description fieldset{
+    background: whitesmoke;
+}
+
 .description {
     padding: 50px;
     width : 76%;
@@ -1774,7 +1835,6 @@ a:hover{
 ul#simple-menu
 {
     list-style-type:none;
-    width:76%;
     position:relative;
     height:40px;
     font-family:"Trebuchet MS",Arial,sans-serif;
@@ -1935,5 +1995,5 @@ strong{
 #supprimer{
     position: absolute;
     right: 50px;
-    
+
 }

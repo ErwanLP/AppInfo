@@ -1,11 +1,4 @@
-<!DOCTYPE html>
 <?php include("profil.php"); ?>
-<html>
-    <head>
-        <title>Live</title>
-        <link rel="stylesheet" href="parametre.css">
-    </head>
-    <body>
         <div class="menuParametres">
             <h1>Configurer</h1>
             <ul id="menuParametre">
@@ -24,7 +17,7 @@
 
 
         <div class="titreParametre ">
-            <h2>Evénements/Mes réseaux</h2>
+            <h2>&Eacute;v&eacute;nements/Mes r&eacute;seaux</h2>
         </div>
 
         
@@ -33,7 +26,7 @@
             <fieldset class="rollin6">
 
 
-                <legend class="h3">Evénements profil</legend>
+                <legend class="h3">&Eacute;v&eacute;nements profil</legend>
 
                 <div>
                     <span class="ajout_photo">Ajout/modification d'une photo</span>
@@ -195,8 +188,3 @@
             }
 
         </script>
-
-
-
-    </body>
-</html>

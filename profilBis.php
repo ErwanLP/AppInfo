@@ -15,9 +15,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
         <?php include ("arbre.php"); ?>
     </aside>
     <aside class ="new">
-        <div class ="eventNew">
-            <img class ="photonew" src ="img/new.jpg"/>
-        </div>
+        <?php include('nouveauteEvenement.php'); ?>
 
         <?php
         if (!isset($_SESSION['ID'])) {
@@ -97,7 +95,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                     <p id="preference">
                         <strong>Profession :</strong><?php echo " " . $dataBis['profession']; ?><br/><br/>
                         <strong>Loisirs :</strong><?php echo " " . $dataBis['loisirs']; ?><br/><br/>
-                        <strong>Pr&eacute;f&eacute;rence &eacute;v&eacute;nements :</strong><?php echo " " . $dataBis['preference']; ?><br/><br/>
+                        <strong>&Eacute;v&eacute;nements pr&eacute;f&eacute;r&eacute;s :</strong><?php echo " " . $dataBis['preference']; ?><br/><br/>
                         <strong>Description :</strong><br/><br/>
                         <?php echo " " . $dataBis['description']; ?>
 

@@ -1,7 +1,4 @@
 <?php
-        /* empty
-         * header('Location:http://une.url.fr');
-         */
 
         session_start();
 
@@ -21,7 +18,7 @@
                 <li class="active rollin"><a class="menu-accordion" href="InfoPro.html" title="Mon compte">Mon compte</a>
                     <ul>
                         <li class="active"><a href="Mesinfosperso_pro.html" title="Mes infos persos">Mes infos persos</a></li>
-                        <li class="active"><a href="#Modificationmdp" title="Modification du mot de passe">Modification du mots de passe</a></li>
+                        <li class="active"><a href="#Modificationmdp" title="Modification du mot de passe">Modification du mot de passe</a></li>
                     </ul>
                 </li>
                 <li><a class="menu-accordion" href="parametreprofil_pro.html" title="Mon profil">Mon profil</a></li>
@@ -38,7 +35,7 @@
                 <fieldset id="personalData" class="rollin">
                     <input type="hidden" id="bypass_email" name="bypass_email" value="0" />
 
-                    <legend> class="h2"><span>Mes données personnelles</span></legend>
+                    <legend><span>Mes données personnelles</span></legend>
                     <div>
 
                         <script type="text/javascript">
@@ -91,7 +88,7 @@
 
                             <!-- Prénom -->
                             <div class="info">
-                                <label for="prénom" class="col_third floatleft">Prénom<sup>*</sup> :</label>
+                                <label for="prénom" class="col_third floatleft">Pr&eacute;nom<sup>*</sup> :</label>
                                 <input type="text" id="prenom" name="prenom" class="text" value="Mathieu" />
 
                             </div>
@@ -113,7 +110,7 @@
                             </br>
                             <!-- Représentant -->
                             <div class="info">
-                                <label for="representant" class="col_third floatleft">Représentant de<sup>*</sup> :</label>
+                                <label for="representant" class="col_third floatleft">Repr&eacute;sentant de<sup>*</sup> :</label>
                                 <input type="text" id="representant" name="representant" class="text" value="Over Games " />
                                 </br>
                                 <!-- Information sur la société -->
@@ -129,7 +126,7 @@
                                     <!-- Masquer Adresse -->
                                     <div class="info">
                                         <input type="checkbox" name="MasquerAdresse" id="MasquerAdresse" value="0" />
-                                        <label for="MasquerAdresse"><strong>Masquer mon numéro de téléphone</strong></label>
+                                        <label for="MasquerAdresse"><strong>Masquer mon numéro de t&eacute;l&eacute;phone</strong></label>
                                     </div>
                                     </br>
 
@@ -419,7 +416,7 @@
 
                                     <!-- Téléphone Fixe -->
                                     <div class="info">
-                                        <label for="telephone" class="col_third floatleft">Téléphone fixe :</label>
+                                        <label for="telephone" class="col_third floatleft">T&eacute;l&eacute;phone fixe :</label>
                                         <input type="text" id="telephone" name="telephone" class="text" value="0123456987" />
                                     </div>
                                     </br>
@@ -484,12 +481,12 @@
                                                     <input autocomplete="off" type="password" id="nouveauMdp" name="nouveauMdp" class="text" value="" />
 
                                                     <p class="infobulle msg_info msg_info_simple" id="infobulle_nouveauMdp">
-                                                        Ton mot de passe doit contenir de 6 à 16 caractères et ne doit pas comporter d'espace. </p>
+                                                        Ton mot de passe doit contenir 6 à 16 caract&egrave;res et ne doit pas comporter d'espace. </p>
                                                 </div>
 
                                                 <!-- Nouveau: Mot de passe Confirmation -->
                                                 <div class="row">
-                                                    <label class="col_third_floatleft" for="Mdpconfimer"><span class="required">Vérifier le nouveau mot de passe<sup>*</sup> :</span></label>
+                                                    <label class="col_third_floatleft" for="Mdpconfimer"><span class="required">V&eacute;rifier le nouveau mot de passe<sup>*</sup> :</span></label>
                                                     <input autocomplete="off" type="password" id="Mdpconfime" name="Mdpconfimer" class="text" value="" />
 
                                                     <p class="infobulle msg_info msg_info_simple" id="infobulle_Mdpconfime">

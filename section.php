@@ -3,9 +3,6 @@
     $bdd->exec('SET NAMES utf8');
     ?>
     <aside class ="new">
-        <div class ="eventNew">
-            <img class ="photonew" src ="img/new.jpg"/>
-        </div>
 
         <?php
         if (!isset($_SESSION['ID'])) {
@@ -24,18 +21,20 @@
             if ($valeurInscription == 1) {
                 ?>
                 <div class="positionMessageInscription">
-                    <h2>Bonjour, votre inscription a bien été prise en compte!</h2>
+                    <h2>Bonjour, votre inscription a bien &eacute;t&eacute; prise en compte!</h2>
                 </div>
-            <?php }
-        } ?>
-
-
-
+                <?php
+            }
+        }
+        
+        include('nouveauteEvenement.php');
+        
+        ?>
 
     </aside>
 
     <aside class ="navg">
-<?php include ("arbre.php"); ?>
+        <?php include ("arbre.php"); ?>
     </aside>
 
     <aside class ="toporg">
@@ -136,8 +135,43 @@
         </div>
     </article>
 </section>
+<script>
 
+    var v2 = $("#slider img").length;
+    var count1 = 0;
 
+    for(var i = 1; i <=v2; i++) 
+    {
+        $("#lien").append("<a class='slide' rel='"+i+"'><b>"+i+"</b></a> ");
+    }
 
+    $('a.slide').click(function() {
+        var image = $(this).attr("rel");
+        var animation = image*400-400;
+        $("#slider").animate({left: "-"+animation+"px"}, 300, 'swing');
+        var count1 = image-1;
+    });
 
+    $('#bplus').click(function() {
+        count1++;
+        if(count1 == v2){
+            $("#slider").animate({left: "0px"}, 300, 'swing');
+            count1 = 0;
+        }else{
+            $("#slider").animate({left: "-=400px"}, 300, 'swing');
+        }
+    }); 
 
+    $('#bmoins').click(function() {
+        var Left = parseInt($("#slider").css("left"));
+        if(Left == 0){
+            var fin = v2*400-400;
+            $("#slider").animate({left: "-"+fin+"px"}, 300);
+            count1 = v2-1;
+        }else{
+            count1--;
+            $("#slider").animate({left: "+=400px"}, 300);
+        }
+    });
+
+</script>

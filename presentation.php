@@ -13,9 +13,7 @@ include("nav.php");
 
 <section>
     <aside class ="new">
-        <div class ="eventNew">
-            <img class ="photonew" src ="img/new.jpg"/>
-        </div>
+        <?php include('nouveauteEvenement.php'); ?>
 
         <?php
         if (!isset($_SESSION['ID'])) {
@@ -38,12 +36,14 @@ include("nav.php");
 
     <article>
 
-        <div class="creerTopic">
-            <a href="ajouterSujet.php" alt="ajouter un sujet" title="Créer un nouveau sujet"> Ajouter un sujet</a>
-        </div>
+        <?php if (isset($_SESSION['SWITCH']) AND ($_SESSION['SWITCH'] == "organisateur" OR $_SESSION['SWITCH'] == "participant" ) AND $_SESSION['ID'] != null) { ?>
+            <div class="creerTopic">
+                <a href="ajouterSujet.php" alt="ajouter un sujet" title="Créer un nouveau sujet"> Ajouter un sujet</a>
+            </div>
+        <?php } ?>
 
         <div class="backPage">
-            <a href="indexForum.php" alt="retour à l'accueil du forum" title="Retour à l'accueil du forum"> Retour </a>
+            <a href="indexForum.php" alt="retour à l'accueil du forum" title="Retour à l'accueil du forum"> Retour &agrave; l'accueil</a>
         </div>
 
         <?php
@@ -55,6 +55,7 @@ include("nav.php");
             $tab_info_presentation[$var_tab_info_array][1] = $donnees["commentaire"];
 
             $tab_info_presentation[$var_tab_info_array][2] = $donnees["date_creation"];
+            $tab_info_presentation[$var_tab_info_array][3] = $donnees["id"];
             $var_tab_info_array++;
         }
         ?>
@@ -73,7 +74,7 @@ include("nav.php");
                         <?php for ($a = 0; $a < count($tab_info_presentation); $a++) {
                             ?>
                             <tr class="affichageSujet">
-                                <td class="contenuMessage"><a href="commentaireForum.php?titreTopic=<?php echo $tab_info_presentation[$a][0] ?>"><?php echo $tab_info_presentation[$a][0]; ?></a></td>
+                                <td class="contenuMessage"><a href="commentaireForum.php?idTopic=<?php echo $tab_info_presentation[$a][3] ?>&titreTopic=<?php echo $tab_info_presentation[$a][0] ?>"><?php echo $tab_info_presentation[$a][0]; ?></a></td>
                                 <td class="message"><?php echo $tab_info_presentation[$a][1]; ?></td>
                                 <td class="auteur">Mohamed</td>
                                 <td class="date"><?php echo $tab_info_presentation[$a][2]; ?></td>

@@ -15,9 +15,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
         <?php include ("arbre.php"); ?>
     </aside>
     <aside class ="new">
-        <div class ="eventNew">
-            <img class ="photonew" src ="img/new.jpg"/>
-        </div>
+        <?php include('nouveauteEvenement.php'); ?>
 
         <?php
         if (!isset($_SESSION['ID'])) {
@@ -53,9 +51,9 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                 <li><input type="button" onclick="afficherc();" value="Mes Infos"/></li>
                 <li><input type="button" onclick="affichera();" value="Mes Amis"/></li>
                 <li><input type="button" onclick="afficherab();" value="Mes Abonnements"/></li>
-                <li><input type="button" onclick="afficherme();" value="Mes Events"/></li>
+                <li><input type="button" onclick="afficherme();" value="Mes &Eacute;v&eacute;nements"/></li>
                 <li><input type="button" onclick="afficherm();" value="Ma Messagerie"/></li>
-                <li><input type="button" onclick="self.location.href='parametreparticipant.php';" value="Paramètres"/></li>
+                <li><input type="button" onclick="self.location.href='parametreparticipant.php';" value="Param&egrave;tres"/></li>
             </ul>
         </div>
         <div id="coordonnee">
@@ -82,7 +80,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
             <p id="preference">
                 <strong>Profession :</strong><?php echo " " . $data['profession']; ?><br/><br/>
                 <strong>Loisirs :</strong><?php echo " " . $data['loisirs']; ?><br/><br/>
-                <strong>Pr&eacute;f&eacute;rence &eacute;v&egrave;nements :</strong><?php echo " " . $data['preference']; ?><br/><br/>
+                <strong>&Eacute;v&eacute;nements pr&eacute;f&eacute;r&eacute;s :</strong><?php echo " " . $data['preference']; ?><br/><br/>
                 <strong>Description :</strong><br/><br/>
                 <?php echo " " . $data['description']; ?>
 
@@ -197,12 +195,13 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
             </fieldset>
 
         </div>
+    
         <div class="menu">
             <ul id="simple-menu">
                 <li><input type="button" onclick="afficherc();" value="Mes Infos"/></li>
-                <li><input type="button" onclick="afficherme();" value="Mes Events"/></li>
+                <li><input type="button" onclick="afficherme();" value="Mes &Eacute;v&eacute;nements"/></li>
                 <li><input type="button" onclick="afficherm();" value="Ma Messagerie"/></li>
-                <li><input type="button" onclick="self.location.href='parametreorganisateur.php';" value="Paramètres"/></li>
+                <li><input type="button" onclick="self.location.href='parametreorganisateur.php';" value="Param&egrave;tres"/></li>
             </ul>
         </div>
         <div id="coordonnee">
@@ -216,7 +215,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
             </p>
             <p id="preference">
                 <strong>Soci&eacute;t&eacute; :</strong><?php echo " " . $data['nomSociete']; ?><br/><br/>
-                <strong>Adresse de la oci&eacute;t&eacute; :</strong><?php echo " " . $data['adresseSociete'] . " - " . $data['codePostalSociete'] . " - " . $data['villeSociete']; ?><br/><br/>
+                <strong>Adresse de la oci&eacute;t&eacute; :</strong><?php echo " " . $data['adresseSociete'] . " - " . $data['codePostalSociete'] . " - " . $data['ville']; ?><br/><br/>
                 <strong>Site Web :</strong><?php echo " " . $data['siteWeb']; ?><br/><br/>  
                 <strong>T&eacute;l&eacute;phone soci&eacute;t&eacute; :</strong><?php echo " " . $data['telephoneSociete']; ?><br/><br/>                        
                 <strong>Activit&eacute; :</strong><?php echo " " . $data['activite']; ?><br/><br/>

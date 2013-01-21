@@ -14,9 +14,7 @@ include("nav.php");
 
 <section>
     <aside class ="new">
-        <div class ="eventNew">
-            <img class ="photonew" src ="img/new.jpg"/>
-        </div>
+        <?php include('nouveauteEvenement.php'); ?>
 
         <?php
         if (!isset($_SESSION['ID'])) {
@@ -96,4 +94,3 @@ include("nav.php");
     </article>
 </section>
 <?php include('footer.php'); ?>  
-</html>

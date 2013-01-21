@@ -1,3 +1,5 @@
+<?php header('Content-Type: text/html; charset=utf-8'); ?>
+
 <div class ="evenement"><br/>
 
 
@@ -26,9 +28,9 @@
         <strong>Prix: </strong>30€ <br/>
         <strong>Description: </strong> <?php echo $data['description']; ?><br/>
         <strong>Note: </strong><img src="img/etoile.png" class="etoile" alt="Note" /><p id="note">(<?php echo $data['note']; ?> sur 5)</p><br/>
-        <p id="bouton1"><a href="eventDetaille.php?ID=<?php echo $data['ID'];?>">Voir Plus de Détails</a></p>
-        <p id="bouton2">Voir Commentaires</p>
-        <p id="bouton3">Réserver</p>
+        <p id="bouton1"><a href="eventDetaille.php?ID=<?php echo $data['ID'];?>">Voir Plus de D&eacute;tails</a></p>
+        <p id="bouton2">Voir Commentaire(s)</p>
+        <p id="bouton3">R&eacute;server</p>
     </div>
 
 </div>
