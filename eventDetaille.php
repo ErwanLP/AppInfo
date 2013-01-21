@@ -13,7 +13,7 @@ include("nav.php");
 
 <section>
     <aside class ="navg">
-<?php include ("arbre.php"); ?>
+        <?php include ("arbre.php"); ?>
     </aside>
 
     <aside class ="new">
@@ -66,25 +66,26 @@ include("nav.php");
                         ?>
                         </br></br>Budget : <?php
                     if ($donnees['prix'] != 0 && $donnees['prix'] != null) {
-                        
+
                         echo $donnees['prix'];
                         echo '&euro;';
                     } else {
-                        if($donnees['prix']==0){
-                        echo 'Gratuit';}else{
+                        if ($donnees['prix'] == 0) {
+                            echo 'Gratuit';
+                        } else {
                             echo '-NC-';
                         }
                     }
                         ?> <span style="margin-left:50px;"><?php
                     if ($donnees['nbDePersonne'] != 0 && $donnees['nbDePersonne'] != null) {
-                        echo 'Places dispo :   ';
+                        echo 'Places disponibles :   ';
                         if ($donnees['placesRestantes'] > 0) {
                             echo $donnees['placesRestantes'];
                         } else {
                             echo 'Complet';
                         }
                     } else {
-                        echo 'Places dispo : -NC-';
+                        echo 'Places disponibles : -NC-';
                     }
                         ?>
                             </br></br><?php
@@ -154,6 +155,53 @@ include("nav.php");
                     }$reponse->closeCursor();
                     ?>
         </div>
+        <div class="imageDetail2">
+        <strong>Note des participants : </strong><img src="<?php 
+        if($donnees['note']<=0.5){
+            echo 'img/etoile0.png';
+        }
+        if($donnees['note']>0.5 &&$donnees['note']<=1.5){
+            echo 'img/etoile1.png';
+        }
+        if($donnees['note']>1.5 &&$donnees['note']<=2.5){
+            echo 'img/etoile2.png';
+        }
+        if($donnees['note']>2.5 &&$donnees['note']<=3.5){
+            echo 'img/etoile3.png';
+        }
+        if($donnees['note']>3.5 &&$donnees['note']<=4.5){
+            echo 'img/etoile4.png';
+        }
+        if($donnees['note']>4.5){
+            echo 'img/etoile5.png';
+        }
+        
+        ?>"  alt="Note" />(<?php echo $donnees['note']; ?> sur 5)<br/>
+        </div>
+        <div class="imageDetail">
+            <form method="post" action="traitementCommentaire.php">
+
+                <fieldset class="formulaireCommentaire">
+                    <legend class="">Commenter l'&eacute;v&eacute;nement :</legend>
+                    <label for ="commentaire">Commentaire :</label><br/>
+                    <textArea class="commenterEvent" type="text" name="commentaire" id="commentaire"  maxlength="400"/></textarea><br/>
+                    <label for ="note">Note :</label>
+                    <select name="note" id="note">
+                        <option value="NULL"> </option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select><br/><br/>
+                    <input type="submit" value="Envoyer" />
+                    
+                </fieldset>
+            </form>
+
+
+        </div>
 
 
 
@@ -162,7 +210,7 @@ include("nav.php");
 
 
 
-        </article>
+    </article>
 </section>
 
 

@@ -62,6 +62,12 @@ header
         margin-left:40px;
         margin-top:40px;
 }
+.imageDetail2
+{       text-align: left;
+        position : relative;
+        margin-left:40px;
+        top:400px;
+}
 .titreDetailEvent
 {
     position: relative;
@@ -715,9 +721,21 @@ article
 
 }
 
+.commenterEvent{
+    font-size: 18px;
+    width:600px;
+    height:300px;
+    resize: none;
+    color : #104090;
+}
 
-
-
+.formulaireCommentaire{
+    position : relative;
+    bottom : 400px;
+    font-size: 20px;
+    color : #1060B0;
+    text-align : left;
+}
 
 .evenement h1{
 

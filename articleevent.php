@@ -26,9 +26,6 @@
         <strong>Prix: </strong><?php echo $data['prix']; ?> &euro; <br/>
         <strong>Description: </strong> <?php echo $data['description']; ?><br/>
         <strong>Note: </strong><img src="<?php 
-        if($data['note']<1){
-            echo 'img/etoile0.png';
-        }
         if($data['note']<=0.5){
             echo 'img/etoile0.png';
         }
