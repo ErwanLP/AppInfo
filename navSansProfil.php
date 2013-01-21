@@ -41,7 +41,7 @@ if (isset($_SESSION['ID'])) {
         }
         ?>
 
-        <li><a href="deconnection.php">Deconnexion</a></li>
+        <li><a href="deconnection.php">D&eacute;connexion</a></li>
 
     </ul>
 

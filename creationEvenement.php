@@ -13,9 +13,7 @@
 
     <section>
         <aside class ="new">
-            <div class ="eventNew">
-                <img class ="photonew" src ="img/new.jpg"/>
-            </div>
+            <?php include('nouveauteEvenement.php'); ?>
 
             <?php
             if (!isset($_SESSION['ID'])) {
@@ -36,10 +34,10 @@
         </aside>
         <article>
             <?php
-            $lang = 'en';
+            $lang = 'fr';
             titreFormEvent($lang);
             $theme = $bdd->query('SELECT * FROM theme');
-            $lang = 'en';
+            $lang = 'fr';
             formDebEvent($lang);
 //print_r($theme);
             while ($donnees = $theme->fetch()) {

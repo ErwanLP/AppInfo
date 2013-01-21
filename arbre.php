@@ -1,6 +1,6 @@
 
 <ul class="navigation">
-    <li class="sousMenuBascule"><span>Ev&egrave;nement</span>
+    <li class="sousMenuBascule"><span>&Eacute;v&eacute;nement</span>
         <ul class="sousMenu">
             <li><a href="event.php?onglet=spectacle">Spectacle</a>
                 <ul>
@@ -41,7 +41,7 @@
             </li>
             <li><a href="event.php?onglet=soiree" >Soir&eacute;e</a>
                 <ul>
-                    <li><a href="event.php?onglet=soiree&sousOnglet=soireeEtudiante" >Soir&eacute;e Etudiante</a></li>
+                    <li><a href="event.php?onglet=soiree&sousOnglet=soireeEtudiante" >Soir&eacute;e &Eacute;tudiante</a></li>
                     <li><a href="event.php?onglet=soiree&sousOnglet=clubbing">Clubbing</a></li>
                     <li><a href="event.php?onglet=soiree&sousOnglet=afterworks">Afterworks</a></li>
                     <li><a href="event.php?onglet=soiree&sousOnglet=culturelle">Culturelle</a></li>
@@ -53,7 +53,7 @@
                 <ul>
                     <li><a href="event.php?onglet=bar&sousOnglet=cafe" >Caf&eacute;</a></li> <!-- Liste des liens du sous-menu -->
                     <li><a href="event.php?onglet=bar&sousOnglet=pub">Pub</a></li>
-                    <li><a href="event.php?onglet=bar&sousOnglet=barAVin">Bar &agrave;  Vin</a></li>
+                    <li><a href="event.php?onglet=bar&sousOnglet=barAVin">Bar &agrave; Vin</a></li>
                     <li><a href="event.php?onglet=bar&sousOnglet=brasserie">Brasserie</a></li>
                     <li><a href="event.php?onglet=bar&sousOnglet=salonDeThe">Salon de Th&eacute;</a></li>
                     <li><a href="event.php?onglet=bar&sousOnglet=lounge">Lounge</a></li>
@@ -68,16 +68,16 @@
             </li>
         </ul>
     </li>
-    <li class="sousMenuBascule"><span>Ev&egrave;nement r&eacute;cent</span>
+    <li class="sousMenuBascule"><span>&Eacute;v&eacute;nement r&eacute;cent</span>
         <ul class="sousMenu">
             <li><a href="#" title="Aller à la page #">La bal de Paris</a></li>
             <li><a href="#" title="Aller à la page #">La patinoire dansante</a></li>
             <li><a href="#" title="Aller à la page #">Gad en concert</a></li>
         </ul>
     </li>
-    <li class="sousMenuBascule"><span>Top Ev&egrave;nement</span>
+    <li class="sousMenuBascule"><span>Top &Eacute;v&eacute;nement</span>
         <ul class="sousMenu">
-            <li><a href="#" title="Aller à la page #">Le musée de l'horreur</a></li>
+            <li><a href="#" title="Aller à la page #">Le mus&eacute;e de l'horreur</a></li>
             <li><a href="#" title="Aller à la page #">Les restos du coeur</a></li>
         </ul>
     </li>

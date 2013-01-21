@@ -1,14 +1,4 @@
-<!DOCTYPE html>
 <?php include("profil.php"); ?>
-<html>
-   
-  <head>
-    <title>Ma Messagerie</title>
-    <link rel="stylesheet" href="parametre.css">
-  </head>
-<body>
-
-
 <div class="menuParametres">
 <h1>Configurer</h1>
     <ul id="menuParametre">
@@ -60,7 +50,7 @@
                 <legend class="h2"><span>Infos et alertes</span></legend>
 		<div>         		
 		<p class="clear_bloc row radio-checkbox important" id="option_alertes">
-                    <label for="option_persoinfo_recherche" id="lbl_recherche" onclick="showSearchAlert(document.getElementById('option_persoinfo_recherche').checked)">Je souhaite suivre les utilisateurs de Doyouevents grâce à mon email, à mon nom ou à mon prénom.</label><br />
+                    <label for="option_persoinfo_recherche" id="lbl_recherche" onclick="showSearchAlert(document.getElementById('option_persoinfo_recherche').checked)">Je souhaite suivre les utilisateurs de Doyouevents gr&acirc;ce &agrave; mon email, &agrave; mon nom ou &agrave; mon pr&eacute;nom.</label><br />
                      
             <input value="1" type="radio" id="option_persoinfo_recherche" name="option_persoinfo_recherche" onclick="showSearchAlert(true)" />
             <label for="optin_persoinfo_recherche">Oui</label>
@@ -73,11 +63,11 @@
                 <p>
             <span class="profil radio-checkbox">
                 <input value="1" type="checkbox" id="information" name="informationmail" class="checkbox" checked="checked"/>
-                <label for="information">Je souhaite être informé par email des informations de Doyouevents (Nouveautés, bons plans...)</label><br />
+                <label for="information">Je souhaite être inform&eacute; par email des informations de Doyouevents (Nouveaut&eacute;s, bons plans...)</label><br />
             </span>
             <span class="profil radio-checkbox">
                 <input value="1" type="checkbox" id="recommandation" name="recommandationmail" class="checkbox" checked="checked"/>
-                <label for="recommandation">Je souhaite être informé par email lorsque ma note devient faible</label><br />
+                <label for="recommandation">Je souhaite &ecirc;tre inform&eacute; par email lorsque ma note devient faible</label><br />
             </span>
            
            
@@ -88,7 +78,7 @@
     
  <script>
 
-//var modification_3
+
 
 function modification_3() {
  if (confirm('Voulez vous enregistrer vos modifications, cliquez sur "OK" si c\'est le cas.')) {
@@ -102,5 +92,3 @@ else {
 }
 }
 </script>
-</body>
-</html>

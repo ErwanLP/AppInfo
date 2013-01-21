@@ -15,9 +15,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
         <?php include ("arbre.php"); ?>
     </aside>
     <aside class ="new">
-        <div class ="eventNew">
-            <img class ="photonew" src ="img/new.jpg"/>
-        </div>
+        <?php include('nouveauteEvenement.php'); ?>
 
         <?php
         if (!isset($_SESSION['ID'])) {
@@ -53,9 +51,9 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                 <li><input type="button" onclick="afficherc();" value="Mes Infos"/></li>
                 <li><input type="button" onclick="affichera();" value="Mes Amis"/></li>
                 <li><input type="button" onclick="afficherab();" value="Mes Abonnements"/></li>
-                <li><input type="button" onclick="afficherme();" value="Mes Events"/></li>
+                <li><input type="button" onclick="afficherme();" value="Mes &Eacute;v&eacute;nements"/></li>
                 <li><input type="button" onclick="afficherm();" value="Ma Messagerie"/></li>
-                <li><input type="button" onclick="self.location.href='parametreparticipant.php';" value="Paramètres"/></li>
+                <li><input type="button" onclick="self.location.href='parametreparticipant.php';" value="Param&egrave;tres"/></li>
             </ul>
         </div>
         <div id="coordonnee">
@@ -74,15 +72,15 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                 <strong>Date de naissance :</strong><?php echo " " . $data['dateDeNaissance']; ?><br/><br/>
                 <strong>Adresse :</strong><?php echo " " . $data['adresse'] . " - " . $data['codePostal'] . " - " . $data['villes']; ?><br/><br/>
                 <strong>E-mail :</strong><?php echo " " . $data['mail']; ?><br/><br/>
-                <strong>Téléphone fixe :</strong><?php echo " " . $data['telephoneFixe']; ?><br/><br/>
-                <strong>Téléphone mobile :</strong><?php echo " " . $data['telephoneMobile']; ?><br/><br/>
+                <strong>T&eacute;l&eacute;phone fixe :</strong><?php echo " " . $data['telephoneFixe']; ?><br/><br/>
+                <strong>T&eacute;l&eacute;phone mobile :</strong><?php echo " " . $data['telephoneMobile']; ?><br/><br/>
                 <strong>Site Web :</strong><?php echo " " . $data['siteWeb']; ?>
             </p>
 
             <p id="preference">
                 <strong>Profession :</strong><?php echo " " . $data['profession']; ?><br/><br/>
                 <strong>Loisirs :</strong><?php echo " " . $data['loisirs']; ?><br/><br/>
-                <strong>Préférence événements :</strong><?php echo " " . $data['preference']; ?><br/><br/>
+                <strong>&Eacute;v&eacute;nements pr&eacute;f&eacute;r&eacute;s :</strong><?php echo " " . $data['preference']; ?><br/><br/>
                 <strong>Description :</strong><br/><br/>
                 <?php echo " " . $data['description']; ?>
 
@@ -197,12 +195,13 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
             </fieldset>
 
         </div>
+    
         <div class="menu">
             <ul id="simple-menu">
                 <li><input type="button" onclick="afficherc();" value="Mes Infos"/></li>
-                <li><input type="button" onclick="afficherme();" value="Mes Events"/></li>
+                <li><input type="button" onclick="afficherme();" value="Mes &Eacute;v&eacute;nements"/></li>
                 <li><input type="button" onclick="afficherm();" value="Ma Messagerie"/></li>
-                <li><input type="button" onclick="self.location.href='parametreorganisateur.php';" value="Paramètres"/></li>
+                <li><input type="button" onclick="self.location.href='parametreorganisateur.php';" value="Param&egrave;tres"/></li>
             </ul>
         </div>
         <div id="coordonnee">
@@ -211,15 +210,15 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                 <strong>Prénom :</strong><?php echo " " . $data['prenom']; ?><br/><br/>
                 <strong>Nom :</strong><?php echo " " . $data['nom']; ?><br/><br/> 
                 <strong>E-mail :</strong><?php echo " " . $data['mail']; ?><br/><br/>                        
-                <strong>Téléphone mobile :</strong><?php echo " " . $data['telephoneMobile']; ?><br/><br/>
+                <strong>T&eacute;l&eacute;phone mobile :</strong><?php echo " " . $data['telephoneMobile']; ?><br/><br/>
 
             </p>
             <p id="preference">
-                <strong>Société :</strong><?php echo " " . $data['nomSociete']; ?><br/><br/>
-                <strong>Adresse de la société :</strong><?php echo " " . $data['adresseSociete'] . " - " . $data['codePostalSociete'] . " - " . $data['villeSociete']; ?><br/><br/>
+                <strong>Soci&eacute;t&eacute; :</strong><?php echo " " . $data['nomSociete']; ?><br/><br/>
+                <strong>Adresse de la oci&eacute;t&eacute; :</strong><?php echo " " . $data['adresseSociete'] . " - " . $data['codePostalSociete'] . " - " . $data['ville']; ?><br/><br/>
                 <strong>Site Web :</strong><?php echo " " . $data['siteWeb']; ?><br/><br/>  
-                <strong>Téléphone societe :</strong><?php echo " " . $data['telephoneSociete']; ?><br/><br/>                        
-                <strong>Activité :</strong><?php echo " " . $data['activite']; ?><br/><br/>
+                <strong>T&eacute;l&eacute;phone soci&eacute;t&eacute; :</strong><?php echo " " . $data['telephoneSociete']; ?><br/><br/>                        
+                <strong>Activit&eacute; :</strong><?php echo " " . $data['activite']; ?><br/><br/>
                 <strong>Profession :</strong><?php echo " " . $data['profession']; ?><br/><br/>
 
             </p>
@@ -283,7 +282,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
     function afficherc(){
         document.getElementById("mesEvents").style.display="none";
         document.getElementById("coordonnee").style.display="";
-        document.getElementById("amis").style.display="none";        
+        document.getElementById("amis").style.display="none";
         document.getElementById("abonnement").style.display="none";
     }
     function affichera(){ 

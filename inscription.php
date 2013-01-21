@@ -1,28 +1,34 @@
 <?php session_start(); ?>
 <?php include("start.php"); ?>
 
-
-
-
 <?php include("header.php"); ?>
 
 <?php include("nav.php"); ?>
 
 <section>
     <aside class ="new">
-        <div class ="eventNew">
-            <img class ="photonew" src ="img/new.jpg"/>
-        </div>
+        <?php include('nouveauteEvenement.php'); ?>
 
         <?php
         if (!isset($_SESSION['ID'])) {
             include("connexion.php");
         }
-        ?>
 
+        if (isset($_GET['valider'])) {
+            $valeurInscription = $_GET['valider'];
+            if ($valeurInscription == 0) {
+                ?>
+
+                <div class="positionMessageInscription">
+                    <h2><strong style="font-size: 20px;">INSCRIPTION IMPOSSIBLE :</strong><br/>le compte existe d&eacute;j&agrave; ou le mot de passe est incorrect!</h2>
+                </div>
+
+            <?php }
+        } ?>
+        
     </aside>
     <aside class ="navg">
-        <?php include ("arbre.php"); ?>
+<?php include ("arbre.php"); ?>
     </aside>
     <article>
         <div class="titreArticleInscription">
@@ -35,7 +41,7 @@
                 <p> <span>*</span> Nom de compte : </p>
                 <input type="text" size="20" name="nomDeCompte" maxlength="40" id="nomDeCompte" autofocus required />
                 <p> <span>*</span> Votre mot de passe : </p>
-                <input type="password" size="20" name="mdp" maxlength="40" id="mdp" required />
+                <input type="password" size="20" name="mdp" title="Le mot de passe doit comporter au moins 6 caractères dont une Majuscule et un chiffre" maxlength="40" id="mdp" required />
                 <p> <span>*</span> Confirmer mot de passe : </p>
                 <input type="password" size="20" name="mdp2" maxlength="40" id="mdp2" required />
                 <p> <span>*</span> Votre adresse email : </p>
@@ -46,30 +52,6 @@
                 </p>
             </fieldset>
         </form>
-
-        <!-- <div class="page">
-
-             <form class="inscr" method="post" action="traitementInscription.php">                       
-                 <pre>
-                   <h1>Inscrivez-vous !</h1>
-                   <label for ="nomDeCompte"><span>Nom de compte:</span></label>
-                   <input style="alignment-baseline: before-edge;" type="text" name="nomDeCompte" id="nomDeCompte"  size="30" maxlength="15" autofocus required/><br/>
-
-                   <label for="mdp"><span>Votre mot de passe :</span></label>
-                   <input type="password" name="mdp" id="mdp" size="30" required/><br/>
-
-                   <label for="mdp2"><span>Confirmer mot de passe :</span></label>
-                   <input type="password" name="mdp2" id="mdp2" size="30" required/><br/>
-
-                   <label for="mailCompte"><span>Votre email :</span></label>
-                   <input type="email" name="mailCompte" placeholder="exemple@operateur.com" id="mailCompte" size="30"  required/><br/>
-
-                   <input style="position:relative;left:50px;" type="submit" value="Envoyer" />
-                 </pre>
-
-             </form>
-
-         </div>-->
 
     </article>
 </section>

@@ -12,7 +12,7 @@
         <section>
             <article>
                 <div class="titreacticle">
-                    <h2><span> Cr&eacute;ation &Eacute;v&egrave;nement :</span></h2>
+                    <h2><span> Cr&eacute;ation &Eacute;v&eacute;nement :</span></h2>
                 </div>
                 <div class="page">
 
@@ -20,8 +20,8 @@
 
                         <fieldset>
 
-                            <label for="description">Description Event:</label><br />
-                            <textarea name="description" id="description" >Comment va se passer l'Evenement...</textarea><br/>
+                            <label for="description">Description de l'&Eacute;v&eacute;nement:</label><br />
+                            <textarea name="description" id="description" >Comment va se passer l'&Eacute;v&eacute;nement...</textarea><br/>
 
                         </fieldset>
 
