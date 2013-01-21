@@ -40,10 +40,10 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                 while ($data = $result->fetch()) {
                     ?>
                     <p class="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];
-                    ?></p>
+            ?></p>
                     <p class="lieu4"><?php
-                echo $data['pays'] . ", " . $data['villes'];
-            }$result->closeCursor();
+            echo $data['pays'] . ", " . $data['villes'];
+        }$result->closeCursor();
                 ?></p>
             </fieldset>
 
@@ -133,15 +133,15 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                         <fieldset>
                             <a href="img/jerry.jpg"><img src="img/jerry_mini.jpg" alt="Jerry" title="Cliquez pour agrandir" style="border: solid black 2px"/></a>
                             <p class="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];
-                        ?></p>
+                ?></p>
                             <p class="lieu4"><?php echo $data['nomSociete'] . ", " . $data['pays'];
-                        ?></p>
-                            <?php
-                            $action = $_GET['action'];
-                            if ($action == "delete") {
-                                $bdd->query('DELETE FROM organisateur, abonnement WHERE organisateur.ID = abonnement.ID_organisateur AND abonnement.ID_participant = ' . $_SESSION['ID'] . '');
-                            }
-                            ?>
+                ?></p>
+                                <?php
+                                $action = $_GET['action'];
+                                if ($action == "delete") {
+                                    $bdd->query('DELETE FROM organisateur, abonnement WHERE organisateur.ID = abonnement.ID_organisateur AND abonnement.ID_participant = ' . $_SESSION['ID'] . '');
+                                }
+                                ?>
                             <a href="profil.php?target=abo&action=delete"><img src="img/croixsupp.png" alt="Supprimer" id="supprimer"/></a>
                         </fieldset>
                         <?php
@@ -165,8 +165,8 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
             if ($target == "messagerie") {
                 //messagerie
                 ?>
-                <div>
-                    
+                <div id="messagerie">
+
 
                     <h1>MESSAGERIE:</h1>
 
@@ -186,6 +186,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                         $pseudoAutre = $_GET['pseudoAutre'];
                         $sql = 'SELECT  * FROM  messagerie WHERE (pseudo_des =  "' . $pseudoProfil . '" OR pseudo_exp ="' . $pseudoProfil . '") AND (pseudo_exp = "' . $pseudoAutre . '" OR pseudo_exp ="' . $pseudoAutre . '") ORDER BY date';
                         $result = $bdd->query($sql);
+                        echo $sql;
                         echo "<br/>" . $sql;
                     } else {
                         $sql = 'SELECT  * FROM  messagerie WHERE (pseudo_des =  "' . $pseudoProfil . '" OR pseudo_exp ="' . $pseudoProfil . '") ORDER BY date';
@@ -217,7 +218,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                         $date = $data['date'];
                         $date = substr($date, 0, 10)
                         ?>
-                    <div <!--class ="message" -->><h4>De <?php echo $expediteur ?> à <?php echo $destinataire ?> le <?php echo $date ?> :</h4>
+                        <div><h4>De <?php echo $expediteur ?> à <?php echo $destinataire ?> le <?php echo $date ?> :</h4>
 
                             <?php
                             $message = $data['message'];
@@ -675,11 +676,13 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                     <img src="img/logo.png" width="200" height="200" alt="Logo" style="border: solid black 2px"/>                  
                                     <?php
                                     $result = $bdd->query('SELECT * FROM organisateur WHERE ID = ' . $_SESSION['ID'] . ' ');
-                                    $data = $result->fetch();
-                                    ?>
-                                    <p id="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];
-                                    ?></p>
-                                    <p id="lieu"><?php echo $data['nomSociete'] . ", " . $data['pays'];
+                                    while ($data = $result->fetch()) {
+                                        ?>
+                                        <p id="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];
+                                ?></p>
+                                        <p id="lieu"><?php
+                                echo $data['nomSociete'] . ", " . $data['pays'];
+                            }$result->closeCursor();
                                     ?></p>
                                 </fieldset>
 
@@ -698,83 +701,39 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                             if (isset($_GET['target'])) {
                                 $target = $_GET['target'];
                                 if ($target == "info") {
-                                    ?>
+                                    $result = $bdd->query('SELECT * FROM organisateur WHERE ID = ' . $_SESSION['ID'] . ' ');
+                                    while ($data = $result->fetch()) {
+                                        ?>
 
-                                    <div id="coordonnee">
-                                        <p id="infoPerso">
-                                            <strong>Pseudo :</strong><?php echo " " . $data['pseudo']; ?><br/><br/>
-                                            <strong>Prénom :</strong><?php echo " " . $data['prenom']; ?><br/><br/>
-                                            <strong>Nom :</strong><?php echo " " . $data['nom']; ?><br/><br/> 
-                                            <strong>E-mail :</strong><?php echo " " . $data['mail']; ?><br/><br/>                        
-                                            <strong>T&eacute;l&eacute;phone mobile :</strong><?php echo " " . $data['telephoneMobile']; ?><br/><br/>
+                                        <div id="coordonnee">
+                                            <p id="infoPerso">
+                                                <strong>Pseudo :</strong><?php echo " " . $data['pseudo']; ?><br/><br/>
+                                                <strong>Prénom :</strong><?php echo " " . $data['prenom']; ?><br/><br/>
+                                                <strong>Nom :</strong><?php echo " " . $data['nom']; ?><br/><br/> 
+                                                <strong>E-mail :</strong><?php echo " " . $data['mail']; ?><br/><br/>                        
+                                                <strong>T&eacute;l&eacute;phone mobile :</strong><?php echo " " . $data['telephoneMobile']; ?><br/><br/>
 
-                                        </p>
-                                        <p id="preference">
-                                            <strong>Soci&eacute;t&eacute; :</strong><?php echo " " . $data['nomSociete']; ?><br/><br/>
-                                            <strong>Adresse de la oci&eacute;t&eacute; :</strong><?php echo " " . $data['adresseSociete'] . " - " . $data['codePostalSociete'] . " - " . $data['ville']; ?><br/><br/>
-                                            <strong>Site Web :</strong><?php echo " " . $data['siteWeb']; ?><br/><br/>  
-                                            <strong>T&eacute;l&eacute;phone soci&eacute;t&eacute; :</strong><?php echo " " . $data['telephoneSociete']; ?><br/><br/>                        
-                                            <strong>Activit&eacute; :</strong><?php echo " " . $data['activite']; ?><br/><br/>
-                                            <strong>Profession :</strong><?php echo " " . $data['profession']; ?><br/><br/>
+                                            </p>
+                                            <p id="preference">
+                                                <strong>Soci&eacute;t&eacute; :</strong><?php echo " " . $data['nomSociete']; ?><br/><br/>
+                                                <strong>Adresse de la oci&eacute;t&eacute; :</strong><?php echo " " . $data['adresseSociete'] . " - " . $data['codePostalSociete'] . " - " . $data['ville']; ?><br/><br/>
+                                                <strong>Site Web :</strong><?php echo " " . $data['siteWeb']; ?><br/><br/>  
+                                                <strong>T&eacute;l&eacute;phone soci&eacute;t&eacute; :</strong><?php echo " " . $data['telephoneSociete']; ?><br/><br/>                        
+                                                <strong>Activit&eacute; :</strong><?php echo " " . $data['activite']; ?><br/><br/>
+                                                <strong>Profession :</strong><?php echo " " . $data['profession']; ?><br/><br/>
 
-                                        </p>
-                                    </div>      
-                                    <?php
+                                            </p>
+                                        </div>      
+                                        <?php
+                                    } $result->closeCursor();
                                 }
                                 if ($target == "event") {
                                     ?>
                                     <div id="mesEvents">
-                                        <?php
-                                        if (!isset($_GET['onglet'])) { //si ya rien
-                                            $result = $bdd->query('SELECT * FROM  event LIMIT 0 , 30');
-                                        }
-                                        if (isset($_GET['onglet']) && !isset($_GET['sousOnglet'])) { //si ya juste onglet
-                                            $result = $bdd->query('SELECT  * FROM  event WHERE theme =  "' . $_GET['onglet'] . '"');
-                                        }
 
 
-                                        if (isset($_GET['sousOnglet'])) { //si ya un sous onglet
-                                            $result = $bdd->query('SELECT  * FROM  event WHERE type =  "' . $_GET['sousOnglet'] . '"');
-                                        }
-
-
-                                        while ($data = $result->fetch()) {
-
-
-                                            include("articleevent.php");
-                                            ?>
-                                            <!--  <div class ="evenement">
-                                                  
-                                                  <div class="color">
-                                                     
-                                                  </div>
-                    
-                    
-                                            <?php
-                                            // echo '<img class = "imageflottante" alt="Photo de évenement" src= "'.$data["photo"].'"/>' 
-                                            ?>
-                                                  <img class = "imageflottante" alt="Photo de évenement" src= "imgUser/gad_elmaleh.jpeg"/>
-                                                  <div class ="texteEvent">
-                                                      <h1><?php echo $data['nom']; ?></h1>
-                                                      <strong>Adresse: </strong><?php echo $data['lieu']; ?><span><?php echo $data['lieu']; ?></span><br/>
-                                                      <strong>Date et Heure :</strong><?php echo $data['date']; ?><br/>
-                                                      <strong>Prix: </strong>30€ <br/>
-                                                      <strong>Description: </strong> <?php echo $data['description']; ?><br/>
-                                                      <strong>Note: </strong><img src="img/etoile.png" class="etoile" alt="Note" /><p id="note">(5,0 sur 5,0)</p><br/>
-                                                      <p id="bouton1">Voir Plus de Détails</p>
-                                                      <p id="bouton2">Voir Commentaires</p>
-                                                      <p id="bouton3">Réserver</p>
-                                                  </div>
-                    
-                                              </div> -->
-
-
-                                            <?php
-                                        }
-
-                                        $result->closeCursor();
-                                        ?>
                                     </div>
+
 
 
 
@@ -783,7 +742,94 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                 }
                                 if ($target == "messagerie") {
                                     ?>
-                                    <div id="messagerie" >
+                                    <div id="messagerie">
+
+
+                                        <h1>MESSAGERIE:</h1>
+
+                                        <?php
+                                        $idProfil = $_SESSION['ID'];
+                                        $typeProfil = $_SESSION['SWITCH'];
+                                        $sql = 'SELECT pseudo FROM ' . $typeProfil . ' WHERE ID =  "' . $idProfil . '"';
+                                        $result = $bdd->query($sql);
+                                        echo "<br/>" . $sql;
+                                        while ($data = $result->fetch()) {
+                                            $pseudoProfil = $data['pseudo'];
+                                        }$result->closeCursor();
+
+
+
+                                        if (isset($_GET['pseudoAutre'])) {
+                                            $pseudoAutre = $_GET['pseudoAutre'];
+                                            $sql = 'SELECT  * FROM  messagerie WHERE (pseudo_des =  "' . $pseudoProfil . '" OR pseudo_exp ="' . $pseudoProfil . '") AND (pseudo_exp = "' . $pseudoAutre . '" OR pseudo_exp ="' . $pseudoAutre . '") ORDER BY date';
+                                            $result = $bdd->query($sql);
+                                            echo $sql;
+                                            echo "<br/>" . $sql;
+                                        } else {
+                                            $sql = 'SELECT  * FROM  messagerie WHERE (pseudo_des =  "' . $pseudoProfil . '" OR pseudo_exp ="' . $pseudoProfil . '") ORDER BY date';
+                                            $result = $bdd->query($sql);
+                                            echo "<br/>" . $sql;
+                                        }
+
+
+                                        while ($data = $result->fetch()) {
+                                            $pseudodesCour = $data['pseudo_des'];
+                                            if ($pseudodesCour == $pseudoProfil) {
+                                                $destinataire = "vous";
+                                            } else {
+                                                $pseudoAutre = $pseudodesCour;
+                                                $destinataire = $pseudoAutre;
+                                            }
+
+                                            $pseudoexpCour = $data['pseudo_exp'];
+                                            if ($pseudoexpCour == $pseudoProfil) {
+                                                $expediteur = "vous";
+                                            } else {
+                                                $pseudoAutre = $pseudoexpCour;
+                                                $expediteur = $pseudoAutre;
+                                            }
+                                            ?> 
+
+
+                                            <?php
+                                            $date = $data['date'];
+                                            $date = substr($date, 0, 10)
+                                            ?>
+                                            <div><h4>De <?php echo $expediteur ?> à <?php echo $destinataire ?> le <?php echo $date ?> :</h4>
+
+                                                <?php
+                                                $message = $data['message'];
+                                                echo $message;
+                                                if (!isset($_GET['pseudodAutre'])) {
+                                                    ?> <br/><a href="profil.php?target=messagerie&pseudodAutre=<?php echo $pseudoAutre ?>#description">Voir la conversation enti&egrave;re</a> 
+                                                    <br/><br/>
+                                                <?php } ?>    
+                                            </div> 
+
+                                            <?php
+                                        } $result->closeCursor();
+
+                                        //////////////////
+
+                                        if (isset($_GET['pseudodAutre'])) {
+                                            ?> 
+
+                                            <form action="traitMessagerie.php" method="post">
+                                                Nouveau message :<input type="text" name="message" class="message" required>
+                                                <input type="hidden" name="pseudoAutre" value="<?php echo $pseudoAutre ?>">
+                                                <input type="submit" value="Submit">
+                                            </form>
+                                        <?php } else { ?>
+                                            <form action="traitMessagerie.php" method="post">
+                                                Destinataire : 
+                                                <input type="text" name="pseudoAutre" value="" required><br/>
+                                                Nouveau message :
+                                                <input type="text" name="message" class="message" required>
+
+                                                <input type="submit" value="Submit">
+                                            </form>
+                                        <?php }
+                                        ?>
 
                                     </div>
 
@@ -806,7 +852,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                                 <div> 		            
                                                     <script type="text/javascript">
                                                         // <![CDATA[
-                                                                                                                                            
+                                                                                                                                                                                                            
                                                         // Alerte sur la recherche au cas où certains champs ne seraient pas remplis
                                                         var message = document.getElementById("messageRecherche");
                                                         function showSearchAlert(isChecked)
@@ -818,7 +864,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                                             }        
                                                             message.style.display = (isChecked && (elm0.value == '' || elm1.value == '')) ? "block" : "none";
                                                         }
-                                                                                                                                            
+                                                                                                                                                                                                            
                                                         //]]>
                                                     </script><br/>
 
