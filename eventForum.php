@@ -1,6 +1,7 @@
+
 <?php
 session_start();
-$titre = 'Event';
+$titre = 'événement';
 include('start.php');
 include('BDD.php');
 ?>
@@ -21,18 +22,26 @@ include("nav.php");
     </aside>
     <table class="pposition">
         <tr>
-            <th>titre des sujets</th>
-            <th>cr&eacute;ateur</th>
-            <th>date de cr&eacute;ation</th>
-            <th>dernier message</th>
-
+            <th class="discussionGenerale1"> Evénement</th>
         </tr>
         <tr>
-            <td><a href="nouveauCommentaire.php">bar</a></td>
-            <td>erwan</td>
-            <td>12/12/12</td>
-            <td>j'aime le rugby</td>
+            <td class="souhait"><a href="spectacleForum.php">Spectacle</a></td>
+        </tr>
+        <tr>
+            <td class="taverne"><a href="expositionForum.php">Exposition</a></td>
+        </tr>
+        <tr>
+            <td class="presentation"><a href="restaurationForum.php">Restauration</a></td>
+        </tr>
+         <tr>
+            <td class="presentation"><a href="soireeForum.php">Soirée</a></td>
+        </tr>
+         <tr>
+            <td class="presentation"><a href="barForum.php">Bar</a></td>
+        </tr>
+         <tr>
+            <td class="presentation"><a href="concertForum.php">Concert</a></td>
         </tr>
     </table>
-</section>
-<?php include('footer.php'); ?>
+
+    <?php include('footer.php'); ?>
