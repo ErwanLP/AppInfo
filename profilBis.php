@@ -33,28 +33,28 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
         ?>
 
     </aside>
-    
+
     <?php
-    //if (isset($_GET['IDprofil']) AND isset($_GET['Pseudo'])) {
+    
+    if (isset($_GET['IDprofil']) AND isset($_GET['Pseudo'])) {
 
         $idProfilAmi = $_GET['IDprofil'];
         $pseudo = $_GET['Pseudo'];
 
         $boubou1 = false;
         $boubou2 = false;
-        
+
         $result1 = $bdd->query('SELECT pseudo FROM participant');
         while ($data1 = $result1->fetch()) {
-          
-            if($pseudo == $data1['pseudo']) {
+
+            if ($pseudo == $data1['pseudo']) {
                 $boubou1 = true;
             }
-            
         }$result1->closeCursor();
 
         if ($boubou1) {
 
-            $resultBis = $bdd->query('(SELECT * FROM organisateur WHERE oragnisateur.ID = "' . $idProfilAmi . '" AND organisateur.pseudo = "' . $pseudo . '") UNION (SELECT * FROM participant WHERE participant.ID = "' . $idProfilAmi . '" AND participant.pseudo = "' . $pseudo . '")');
+            $resultBis = $bdd->query('SELECT * FROM participant WHERE participant.ID = "' . $idProfilAmi . '" AND participant.pseudo = "' . $pseudo . '"');
             while ($dataBis = $resultBis->fetch()) {
                 ?>
 
@@ -77,7 +77,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                     <p id="infoPerso">
                         <!--<span class="titre">Informations Personnelles</span><br/><br/><br/>-->
                         <strong>Pseudo :</strong><?php echo " " . $pseudo; ?><br/><br/>
-                        <strong>Prénom :</strong><?php echo " " . $dataBis['prenom']; ?><br/><br/>
+                        <strong>Pr&eacute;nom :</strong><?php echo " " . $dataBis['prenom']; ?><br/><br/>
                         <strong>Nom :</strong><?php echo " " . $dataBis['nom']; ?><br/><br/>
                         <strong>Sexe :</strong><?php
                 if ($dataBis['sexe'] == 1) {
@@ -89,15 +89,15 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                         <strong>Date de naissance :</strong><?php echo " " . $dataBis['dateDeNaissance']; ?><br/><br/>
                         <strong>Adresse :</strong><?php echo " " . $dataBis['adresse'] . " - " . $dataBis['codePostal'] . " - " . $dataBis['villes']; ?><br/><br/>
                         <strong>E-mail :</strong><?php echo " " . $dataBis['mail']; ?><br/><br/>
-                        <strong>Téléphone fixe :</strong><?php echo " " . $dataBis['telephoneFixe']; ?><br/><br/>
-                        <strong>Téléphone mobile :</strong><?php echo " " . $dataBis['telephoneMobile']; ?><br/><br/>
+                        <strong>T&eacute;l&eacute;phone fixe :</strong><?php echo " " . $dataBis['telephoneFixe']; ?><br/><br/>
+                        <strong>T&eacute;l&eacute;phone mobile :</strong><?php echo " " . $dataBis['telephoneMobile']; ?><br/><br/>
                         <strong>Site Web :</strong><?php echo " " . $dataBis['siteWeb']; ?>
                     </p>
 
                     <p id="preference">
                         <strong>Profession :</strong><?php echo " " . $dataBis['profession']; ?><br/><br/>
                         <strong>Loisirs :</strong><?php echo " " . $dataBis['loisirs']; ?><br/><br/>
-                        <strong>Préférence événements :</strong><?php echo " " . $dataBis['preference']; ?><br/><br/>
+                        <strong>Pr&eacute;f&eacute;rence &eacute;v&eacute;nements :</strong><?php echo " " . $dataBis['preference']; ?><br/><br/>
                         <strong>Description :</strong><br/><br/>
                         <?php echo " " . $dataBis['description']; ?>
 
@@ -107,67 +107,61 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                 <?php
             }$resultBis->closeCursor();
         }
-     
-    
-    $result2 = $bdd->query('SELECT pseudo FROM organisateur');
+
+
+        $result2 = $bdd->query('SELECT pseudo FROM organisateur');
         while ($data2 = $result2->fetch()) {
-            
-            if($boubou2 == $data2['pseudo']){
+
+            if ($boubou2 == $data2['pseudo']) {
                 $boubou2 = true;
             }
-            
         }$result2->closeCursor();
 
         if ($boubou2) {
 
-            $resultBis = $bdd->query('(SELECT * FROM organisateur WHERE oragnisateur.ID = "' . $idProfilAmi . '" AND organisateur.pseudo = "' . $pseudo . '") UNION (SELECT * FROM participant WHERE participant.ID = "' . $idProfilAmi . '" AND participant.pseudo = "' . $pseudo . '")');
+            $resultBis = $bdd->query('SELECT * FROM organisateur WHERE organisateur.ID = "' . $idProfilAmi . '" AND organisateur.pseudo = "' . $pseudo . '"');
             while ($dataBis = $resultBis->fetch()) {
-    
-    
-    
-    
-    
-    ?>
-        <div id="description">
-            <fieldset>
-                <img src="img/logo.png" width="200" height="200" alt="Logo" style="border: solid black 2px"/>                  
-                <p id="nom4"><?php echo $dataBis['nom'] . "  " . $dataBis['prenom'];
+                ?>
+                <div id="description">
+                    <fieldset>
+                        <img src="img/logo.png" width="200" height="200" alt="Logo" style="border: solid black 2px"/>                  
+                        <p id="nom4"><?php echo $dataBis['nom'] . "  " . $dataBis['prenom'];
                 ?></p>
-                <p id="lieu"><?php echo $dataBis['nomSociete'] . ", " . $dataBis['pays'];
+                        <p id="lieu"><?php echo $dataBis['nomSociete'] . ", " . $dataBis['pays'];
                 ?></p>
-            </fieldset>
+                    </fieldset>
 
-        </div>
-        <div class="menu">
-            <ul id="simple-menu">
-                <li><input type="button" value="Mes Infos"/></li>
-            </ul>
-        </div>
-        <div id="coordonnee">
-            <p id="infoPerso">
-                <strong>Pseudo :</strong><?php echo " " . $dataBis['pseudo']; ?><br/><br/>
-                <strong>Prénom :</strong><?php echo " " . $dataBis['prenom']; ?><br/><br/>
-                <strong>Nom :</strong><?php echo " " . $dataBis['nom']; ?><br/><br/> 
-                <strong>E-mail :</strong><?php echo " " . $dataBis['mail']; ?><br/><br/>                        
-                <strong>Téléphone mobile :</strong><?php echo " " . $dataBis['telephoneMobile']; ?><br/><br/>
+                </div>
+                <div class="menu">
+                    <ul id="simple-menu">
+                        <li><input type="button" value="Mes Infos"/></li>
+                    </ul>
+                </div>
+                <div id="coordonnee">
+                    <p id="infoPerso">
+                        <strong>Pseudo :</strong><?php echo " " . $dataBis['pseudo']; ?><br/><br/>
+                        <strong>Pr&eacute;nom :</strong><?php echo " " . $dataBis['prenom']; ?><br/><br/>
+                        <strong>Nom :</strong><?php echo " " . $dataBis['nom']; ?><br/><br/> 
+                        <strong>E-mail :</strong><?php echo " " . $dataBis['mail']; ?><br/><br/>                        
+                        <strong>T&eacute;l&eacute;phone mobile :</strong><?php echo " " . $dataBis['telephoneMobile']; ?><br/><br/>
 
-            </p>
-            <p id="preference">
-                <strong>Société :</strong><?php echo " " . $dataBis['nomSociete']; ?><br/><br/>
-                <strong>Adresse de la société :</strong><?php echo " " . $dataBis['adresseSociete'] . " - " . $dataBis['codePostalSociete'] . " - " . $dataBis['villeSociete']; ?><br/><br/>
-                <strong>Site Web :</strong><?php echo " " . $dataBis['siteWeb']; ?><br/><br/>  
-                <strong>Téléphone societe :</strong><?php echo " " . $dataBis['telephoneSociete']; ?><br/><br/>                        
-                <strong>Activité :</strong><?php echo " " . $dataBis['activite']; ?><br/><br/>
-                <strong>Profession :</strong><?php echo " " . $dataBis['profession']; ?><br/><br/>
+                    </p>
+                    <p id="preference">
+                        <strong>Soci&eacute;t&eacute; :</strong><?php echo " " . $dataBis['nomSociete']; ?><br/><br/>
+                        <strong>Adresse de la soci&eacute;t&eacute; :</strong><?php echo " " . $dataBis['adresseSociete'] . " - " . $dataBis['codePostalSociete'] . " - " . $dataBis['villeSociete']; ?><br/><br/>
+                        <strong>Site Web :</strong><?php echo " " . $dataBis['siteWeb']; ?><br/><br/>  
+                        <strong>T&eacute;l&eacute;phone soci&eacute;t&eacute; :</strong><?php echo " " . $dataBis['telephoneSociete']; ?><br/><br/>                        
+                        <strong>Activit&eacute; :</strong><?php echo " " . $dataBis['activite']; ?><br/><br/>
+                        <strong>Profession :</strong><?php echo " " . $dataBis['profession']; ?><br/><br/>
 
-            </p>
-        </div>                
-        
+                    </p>
+                </div>                
+
                 <?php
             }$resultBis->closeCursor();
         }
-   // }
-            ?>
-    
+    }
+    ?>
+
 </section>
 <?php include("footer.php"); ?>
