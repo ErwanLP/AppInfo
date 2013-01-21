@@ -1957,7 +1957,7 @@ strong{
     top: 700px;
     font-size: 20px;
 }
-#amis, #abonnement{
+#amis, #abonnement, #messagerie{
     position: absolute;
     padding: 20px;
     width: 70%;
