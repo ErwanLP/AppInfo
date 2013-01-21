@@ -31,9 +31,6 @@
 <?php include ("arbre.php"); ?>
     </aside>
     <article>
-        <div class="titreArticleInscription">
-        </div>
-
 
         <form class="contenuInscription" action="traitementInscription.php" method="post" >
             <fieldset class="fieldset">

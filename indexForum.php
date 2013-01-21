@@ -72,16 +72,40 @@ include("nav.php");
                 <div class="sousMenuForumBeta">
                     <table class="affichageTableau">
                         <tr class="barreDeTitre">
-                            <th>Titre des sujets</th>
-                            <th>Cr&eacute;ateur</th>
-                            <th>Date de cr&eacute;ation</th>
+                            <th>Sections</th>
+                            <th>Nombre de sujets/messages</th>
+                       
                             <th>Dernier message</th>
 
                         </tr>
                         <tr class="affichageSujet">
-                            <td><a href="commentaireForum.php">bar</a></td>
+                            <td><a href="spectacleForum.php">Spectacle</a></td>
                             <td>erwan</td>
-                            <td>12/12/12</td>
+                            <td>j'aime le rugby</td>
+                        </tr>
+                         <tr class="affichageSujet">
+                            <td><a href="expositionForum.php">Exposition</a></td>
+                            <td>erwan</td>
+                            <td>j'aime le rugby</td>
+                        </tr>
+                         <tr class="affichageSujet">
+                            <td><a href="restaurationForum.php">Restauration</a></td>
+                            <td>erwan</td>
+                            <td>j'aime le rugby</td>
+                        </tr>
+                         <tr class="affichageSujet">
+                            <td><a href="soireeForum.php">Soiree</a></td>
+                            <td>erwan</td>
+                            <td>j'aime le rugby</td>
+                        </tr>
+                         <tr class="affichageSujet">
+                            <td><a href="barForum.php">Bar</a></td>
+                            <td>erwan</td>
+                            <td>j'aime le rugby</td>
+                        </tr>
+                         <tr class="affichageSujet">
+                            <td><a href="concertForum.php">Concert</a></td>
+                            <td>erwan</td>
                             <td>j'aime le rugby</td>
                         </tr>
                     </table>
@@ -90,21 +114,31 @@ include("nav.php");
             <div class="sousMenuBasculeForum">
                 <span>Organisateur</span>
                 <div class="sousMenuForumBeta">
-                    <table class="affichageTableau">
+                 <table class="affichageTableau">
                         <tr class="barreDeTitre">
-                            <th>Titre des sujets</th>
-                            <th>Cr&eacute;ateur</th>
-                            <th>Date de cr&eacute;ation</th>
+                            <th>Sections</th>
+                            <th>Nombre de sujets/messages</th>
+                       
                             <th>Dernier message</th>
 
                         </tr>
                         <tr class="affichageSujet">
-                            <td><a href="commentaireForum.php">bar</a></td>
-                            <td>Bolzastreet</td>
-                            <td>12/12/12</td>
-                            <td>la vie est un jeu</td>
+                            <td><a href="spectacleOrgForum.php">Spectacle</a></td>
+                            <td>erwan</td>
+                            <td>j'aime le rugby</td>
                         </tr>
-                    </table>
+                         <tr class="affichageSujet">
+                            <td><a href="expositionOrgForum.php">Exposition</a></td>
+                            <td>erwan</td>
+                            <td>j'aime le rugby</td>
+                        </tr>
+                       
+                         <tr class="affichageSujet">
+                            <td><a href="soireeOrgForum.php">Soirée</a></td>
+                            <td>erwan</td>
+                            <td>j'aime le rugby</td>
+                        </tr>
+                       </table>   
                 </div>
             </div>
             <div class="sousMenuBasculeForum">
