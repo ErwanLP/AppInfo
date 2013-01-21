@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 include("start.php");
 include("BDD.php");
