@@ -1,17 +1,12 @@
 
-<!DOCTYPE html>
-<html>
-    <?php include("head.php"); ?>
+        <?php session_start(); 
 
-    <body>
+         include("start.php"); 
+         include("BDD.php"); 
 
-        <?php session_start(); ?>
+         include("header.php"); 
 
-        <?php include("BDD.php"); ?>
-
-        <?php include("header.php"); ?>
-
-        <?php include("nav.php"); ?>
+         include("nav.php"); ?>
 
 
 
@@ -50,7 +45,7 @@
                     while ($donnees = $reponse->fetch()) {
                         ?><div class = "imageDetail" >
 
-                            <img alt="Photo de l'évènement" src= "<?php echo $donnees['photo'] ?>" title="Nom de l\'&eacute;v&egrave;nement." height="420" width="280"/>
+                            <img alt="Photo de l'évènement" src= "<?php echo $donnees['photo'] ?>" title="Nom de l'&eacute;v&egrave;nement." height="420" width="280"/>
 
                         </div>
                         <div class ="imageDetail">	
@@ -71,7 +66,7 @@
                                     ?> Ev&egrave;nement ayant lieu du  <?php echo $donnees['dateDebut']; ?> au <?php echo $donnees['dateFin']; ?>
                                 <?php }
                                 ?>
-                                </br></br>Budget : <?php echo $donnees['prix']; ?> €<span style="margin-left:50px;">Places dispo : <?php echo $donnees['placesRestantes']; ?></br></br>Lu - Ma - Me - Je - Ve - Sa - Di</p>         		
+                                </br></br>Budget : <?php echo $donnees['prix']; ?> &euro;<span style="margin-left:50px;">Places dispo : <?php echo $donnees['placesRestantes']; ?></br></br>Lu - Ma - Me - Je - Ve - Sa - Di</p>         		
                         </div>
 
                         <div class ="imageDetail">
@@ -92,8 +87,3 @@
 
 
         <?php include("footer.php"); ?>
-
-
-
-    </body> 
-</html>
