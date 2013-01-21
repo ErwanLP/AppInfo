@@ -34,7 +34,7 @@ include("nav.php");
 
     </aside>
 
-    <article class ="articleevent">                  
+    <article class ="eventDetaille">                  
 
         <div>
             <?php
