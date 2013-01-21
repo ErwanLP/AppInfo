@@ -86,7 +86,8 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 
             </p>
         </div>
-        <div id="amis"style="display:none;">
+        <div id="amis" style="display:none;">
+            <!-- php -->
             <fieldset>
                 <a href="img/jerry.jpg"><img src="img/jerry_mini.jpg" alt="Jerry" title="Cliquez pour agrandir" style="border: solid black 2px"/></a>
                 <p class="nom1">Jerry BOLZASTREET</p>
@@ -103,7 +104,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                 <p id="lieu3">France, Gonesse</p>
             </fieldset>
         </div>
-        <div id="abonnement"style="display:none;">
+        <div id="abonnement" style="display:none;">
             <?php
             $result2 = $bdd->query('SELECT * FROM organisateur,abonnement WHERE organisateur.ID = abonnement.ID_organisateur AND abonnement.ID_participant = ' . $_SESSION['ID'] . '');
             while ($data2 = $result2->fetch()) {
@@ -284,29 +285,35 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
         document.getElementById("coordonnee").style.display="";
         document.getElementById("amis").style.display="none";
         document.getElementById("abonnement").style.display="none";
+        document.getElementById("messagerie").style.display="none";
     }
     function affichera(){ 
         document.getElementById("amis").style.display="";
         document.getElementById("coordonnee").style.display="none";
         document.getElementById("mesEvents").style.display="none";
         document.getElementById("abonnement").style.display="none";
+        document.getElementById("messagerie").style.display="none";
     }
     function afficherab(){ 
         document.getElementById("abonnement").style.display="";
         document.getElementById("amis").style.display="none";
         document.getElementById("coordonnee").style.display="none";
         document.getElementById("mesEvents").style.display="none";
+        document.getElementById("messagerie").style.display="none";
     }
     function afficherme(){ 
         document.getElementById("mesEvents").style.display="";
         document.getElementById("coordonnee").style.display="none";
         document.getElementById("amis").style.display="none";
         document.getElementById("abonnement").style.display="none";
+        document.getElementById("messagerie").style.display="none";
     }
     function afficherm(){ 
         document.getElementById("mesEvents").style.display="none";
         document.getElementById("coordonnee").style.display="none";
         document.getElementById("amis").style.display="none";
         document.getElementById("abonnement").style.display="none";
+        document.getElementById("messagerie").style.display="none";
+        
     }
 </script>
