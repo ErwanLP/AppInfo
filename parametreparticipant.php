@@ -1,14 +1,14 @@
 
-<?php
-session_start();
-include("start.php");
-
-include("header.php");
+        <?php
+        session_start();
+        include("start.php");
+        include("BDD.php");
+        include("header.php");
 
 include("nav.php");
 
-$bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
-?>
+        
+        ?>
 
 
 <section>
@@ -73,7 +73,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 
                 <input type="hidden" id="Email_" name="Email_" value="0" />
 
-                <legend><div class="title">Informations personnelles</div></legend>
+                <legend> <div class="title">Informations personnelles</div></legend>
                 <div> 		            
                     <script type="text/javascript">
                         // <![CDATA[

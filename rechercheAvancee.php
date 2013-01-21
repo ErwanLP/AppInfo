@@ -27,7 +27,7 @@
                 <?php include ("arbre.php"); ?>
             </aside>
             <article>
-                <div id="titreacticle">
+                <div>
                     <h2><span style="color:#2040c0;"> Recherche avanc&eacute;e </span></h2>
                 </div>
                 <div class="page">
