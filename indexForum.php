@@ -2,13 +2,10 @@
 session_start();
 $titre = 'index du forum';
 include('start.php');
-include('bddForum.php');
+include('BDD.php');
 ?>
 <?php /* include("head.php"); */ ?>
 <?php
-/* empty
- * header('Location:http://une.url.fr');
- */
 include("header.php");
 
 include("nav.php");
@@ -16,9 +13,7 @@ include("nav.php");
 
 <section>
     <aside class ="new">
-        <div class ="eventNew">
-            <img class ="photonew" src ="img/new.jpg"/>
-        </div>
+        <?php include('nouveauteEvenement.php'); ?>
 
         <?php
         if (!isset($_SESSION['ID'])) {
@@ -38,9 +33,6 @@ include("nav.php");
     <aside class ="navg">
         <?php include ("arbre.php"); ?>
     </aside>
-
-    <?php /* if ($_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
-     */ ?>
 
     <article>
 
@@ -76,7 +68,7 @@ include("nav.php");
                 </div>
             </div>
             <div class="sousMenuBasculeForum">
-                <span>Ev&egrave;nement</span>
+                <span>&Eacute;v&eacute;nement</span>
                 <div class="sousMenuForumBeta">
                     <table class="affichageTableau">
                         <tr class="barreDeTitre">
@@ -123,80 +115,6 @@ include("nav.php");
             </div>
         </div>
     </article>
-
-
-
-
-
-
-
-
-<!--<table class="navigationForum "class="pposition">
-    <tr>
-        <th class="categorie">Categorie</th>
-    </tr>
-    <tr>
-        <td class="sousMenuBascule" class="discutionGenerale"><span>Discution general</span>
-
-            <table class="sousMenu">
-
-                <tr>
-                    <td class="souhait"><a href="souhait.php">Souhait</a></td>
-                </tr>
-                <tr>
-                    <td class="taverne"><a href="taverne.php">Taverne</a></td>
-                </tr>
-                <tr>
-                    <td class="presentation"><a href="presentation.php">Presentation</a></td>
-                </tr>
-
-            </table>
-
-        </td>
-    </tr>
-
-    <!--<a href="discutiongenerale.php">Discution generale</a>-->
-    <!--<tr class="sousMenu">
-        <td class="souhait"><a href="souhait.php">Souhait</a></td>
-    </tr>
-    <tr class="sousMenu">
-        <td class="taverne"><a href="taverne.php">Taverne</a></td>
-    </tr>
-    <tr class="sousMenu">
-        <td class="presentation"><a href="presentation.php">Presentation</a></td>
-    </tr>-->
-
-<!--<tr>
-    <td class="sousMenuBascule" class="event"><span>Event</span>
-
-        <table class="sousMenu" class="organisateur">
-            <tr>
-                <th>titre des sujets</th>
-                <th>createur</th>
-                <th>date de creation</th>
-                <th>dernier message</th>
-
-            </tr>
-            <tr>
-                <td><a href="nouveauCommentaire.php">bar</a></td>
-                <td>Bolzastreet</td>
-                <td>12/12/12</td>
-                <td>la vie est un jeu</td>
-            </tr>
-        </table>
-
-    </td>
-</tr>
-<tr>
-    <td class="sousMenuBascule" class="organisateur"><span>Organisateur</span></td>
-</tr>
-<tr>
-    <td class="sousMenuBascule" class="aideEtSujet"><span>Aide et Support</span></td>
-</tr>
-
-
-</table>-->
-
 </section>
 
 

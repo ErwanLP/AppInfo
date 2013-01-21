@@ -53,7 +53,7 @@ switch ($_GET['onglet']) {
         ?>
         <div class="navinter">
             <ul>
-                <li><a href="event.php?onglet=soiree&sousOnglet=soireeEtudiante" >Soir&eacute;e Etudiante</a></li>
+                <li><a href="event.php?onglet=soiree&sousOnglet=soireeEtudiante" >Soir&eacute;e &Eacute;tudiante</a></li>
                 <li><a href="event.php?onglet=soiree&sousOnglet=clubbing">Clubbing</a></li>
                 <li><a href="event.php?onglet=soiree&sousOnglet=afterworks">Afterworks</a></li>
                 <li><a href="event.php?onglet=soiree&sousOnglet=culturelle">Culturelle</a></li>

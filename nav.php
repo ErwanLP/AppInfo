@@ -40,7 +40,7 @@
         </li>
         <li><a href="event.php?onglet=soiree" >Soir&eacute;e</a>
             <ul>
-                <li><a href="event.php?onglet=soiree&sousOnglet=soireeEtudiante" >Soir&eacute;e Etudiante</a></li>
+                <li><a href="event.php?onglet=soiree&sousOnglet=soireeEtudiante" >Soir&eacute;e &Eacute;tudiante</a></li>
                 <li><a href="event.php?onglet=soiree&sousOnglet=clubbing">Clubbing</a></li>
                 <li><a href="event.php?onglet=soiree&sousOnglet=afterworks">Afterworks</a></li>
                 <li><a href="event.php?onglet=soiree&sousOnglet=culturelle">Culturelle</a></li>
@@ -80,7 +80,5 @@ if (!empty($_SESSION['ID'])) {
     } else {
         include("navConnect.php");
     }
-} else {
-    include("navNonConnect.php");
 }
 ?>

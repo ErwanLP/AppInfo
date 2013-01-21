@@ -1,18 +1,16 @@
-<?php include("profil.php"); ?>
-<html>
-    <body>   
+<?php include("profil.php"); ?>  
         <div id="coordonnee">
             <p id="infoPerso">
                 <!--<span class="titre">Informations Personnelles</span><br/><br/><br/>-->
                 <strong>Pseudo :</strong> alex95410<br/><br/>
-                <strong>Prénom :</strong> Alexis<br/><br/>
+                <strong>Pr&eacute;nom :</strong> Alexis<br/><br/>
                 <strong>Nom :</strong> MARTIN<br/><br/>
                 <strong>Sexe :</strong>  Masculin<br/><br/>
                 <strong>Date de naissance :</strong>  21/05/1992<br/><br/>
                 <strong>Adresse :</strong>  21 rue du bédo - 95410 - GROSLAY<br/><br/>
                 <strong>E-mail :</strong>  alex_du_95410@hotmail.fr<br/><br/>
-                <strong>Téléphone fixe :</strong>  0123456789<br/><br/>
-                <strong>Téléphone portable :</strong>  0669331681<br/><br/>
+                <strong>T&eacute;l&eacute;phone fixe :</strong>  0123456789<br/><br/>
+                <strong>T&eacute;l&eacute;phone portable :</strong>  0669331681<br/><br/>
                 <strong>Site Web :</strong>  http://alexlebgdu95410.skyrock.com
             </p>
             <!--<p id="infoPro">
@@ -25,7 +23,7 @@
             </p>-->
             <p id="preference">
                 <strong>Loisirs :</strong> Tennis, Foot, Basket<br/><br/>
-                <strong>Préférence événements :</strong> Soirée Etudiante, Tea Party, Son et Lumière, Sculpture<br/><br/>
+                <strong>&Eacute;v&eacute;nements pr&eacute;f&eacute;r&eacute;s :</strong> Soir&eacute;e Etudiante, Tea Party, Son et Lumi&egrave;re, Sculture<br/><br/>
                 <strong>Description :</strong><br/><br/>
                 Alex95410, la haine ! Alex95410 a 15 ans, en général. Si ce n'est dans la vie, c'est son âge mental. 
                 Alex95410 a les cheveux longs, il écoute de la techno et il ne conçoit pas un hiver sans sa semaine de ski aux Menuires.
@@ -35,6 +33,4 @@
                 Alors il met des smileys partout, et des !!! et des k, etc... Comme ça, non seulement Alex95410 n'a rien à dire, mais il le dit mal. 
                 Alex95410, c'est l'idiot du village global.  
             </p>
-        </div> 
-    </body>
-</html>
+        </div>
