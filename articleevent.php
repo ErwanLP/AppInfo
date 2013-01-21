@@ -23,11 +23,34 @@
             echo '<strong>L\'&eacute;v&egrave;nement &agrave; lieu du :</strong>';
             echo $data['dateDebut'].'<strong> au </strong>'.$data['dateFin'].'</br><strong>A partir de :</strong>'.$data['heureDebut'].'<strong> jusqu\'&agrave; :</strong>'.$data['heureFin'].'</br>';
         }?>
-        <strong>Prix: </strong>30€ <br/>
+        <strong>Prix: </strong><?php echo $data['prix']; ?> &euro; <br/>
         <strong>Description: </strong> <?php echo $data['description']; ?><br/>
-        <strong>Note: </strong><img src="img/etoile.png" class="etoile" alt="Note" /><p id="note">(<?php echo $data['note']; ?> sur 5)</p><br/>
+        <strong>Note: </strong><img src="<?php 
+        if($data['note']<1){
+            echo 'img/etoile0.png';
+        }
+        if($data['note']<=0.5){
+            echo 'img/etoile0.png';
+        }
+        if($data['note']>0.5 &&$data['note']<=1.5){
+            echo 'img/etoile1.png';
+        }
+        if($data['note']>1.5 &&$data['note']<=2.5){
+            echo 'img/etoile2.png';
+        }
+        if($data['note']>2.5 &&$data['note']<=3.5){
+            echo 'img/etoile3.png';
+        }
+        if($data['note']>3.5 &&$data['note']<=4.5){
+            echo 'img/etoile4.png';
+        }
+        if($data['note']>4.5){
+            echo 'img/etoile5.png';
+        }
+        
+        ?>" class="etoile" alt="Note" /><p id="note">(<?php echo $data['note']; ?> sur 5)</p><br/>
         <p id="bouton1"><a href="eventDetaille.php?ID=<?php echo $data['ID'];?>">Voir Plus de D&eacute;tails</a></p>
-        <p id="bouton2">Voir Commentaire(s)</p>
+        <p id="bouton2">Voir Commentaires</p>
         <p id="bouton3">R&eacute;server</p>
     </div>
 
