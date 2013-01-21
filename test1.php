@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html>
+
     <?php include("profil.php"); ?>
     <title>Mes paramétres</title>
     <link rel="stylesheet" href="profil.css">

@@ -215,7 +215,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
             </p>
             <p id="preference">
                 <strong>Soci&eacute;t&eacute; :</strong><?php echo " " . $data['nomSociete']; ?><br/><br/>
-                <strong>Adresse de la oci&eacute;t&eacute; :</strong><?php echo " " . $data['adresseSociete'] . " - " . $data['codePostalSociete'] . " - " . $data['ville']; ?><br/><br/>
+                <strong>Adresse de la soci&eacute;t&eacute; :</strong><?php echo " " . $data['adresseSociete'] . " - " . $data['codePostalSociete'] . " - " . $data['ville']; ?><br/><br/>
                 <strong>Site Web :</strong><?php echo " " . $data['siteWeb']; ?><br/><br/>  
                 <strong>T&eacute;l&eacute;phone soci&eacute;t&eacute; :</strong><?php echo " " . $data['telephoneSociete']; ?><br/><br/>                        
                 <strong>Activit&eacute; :</strong><?php echo " " . $data['activite']; ?><br/><br/>

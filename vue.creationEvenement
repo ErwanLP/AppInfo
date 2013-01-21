@@ -2,12 +2,12 @@
 
 function titreFormEvent($lang) {
     if ($lang == 'en') {
-        echo '<div class="titreacticle">              
-                        <h2><span>Create an Event</span></h2>
+        echo '<div>              
+                        <h2><span style="color:#2040c0;">Create an Event</span></h2>
                     </div>';
     } else {
-        echo '<div class="titreacticle">
-                        <h2><span>Cr&eacute;ation d\'un &Eacute;v&eacute;nement</span></h2>
+        echo '<div>
+                        <h2><span style="color:#2040c0;">Cr&eacute;ation d\'un &Eacute;v&eacute;nement</span></h2>
                         </div>';
     }
 }
@@ -15,106 +15,108 @@ function titreFormEvent($lang) {
 function formDebEvent($lang) {
 
     if ($lang == 'en') {
-        ?><div class="page">
-
-            <form method="post" action="traitementEvenement.php"  enctype="multipart/form-data" >
-
-                            <fieldset>
-                                <legend>Event's informations</legend>
-                                <label for ="nomEvent">Event's name :</label>
-                                <input type="text" name="nomEvent" id="nomEvent"  size="30" maxlength="35" autofocus required /><br/>
-                                <label for ="lieuEvent">Event's location :</label>
-                                <input type="text" name="lieuEvent" id="lieuEvent"  size="30" maxlength="50" required /><br/></br>
-                                <label for="description">Sum up of the event :</label><br />
-                                <textarea class="champDescriptionEvent" name="descriptionn" id="descriptionn" >How will be the event...</textarea><br/></br>
-                                <label for="dateDebut">Event's beginning date (or happening date):</label>
-                                <input type="date" name="dateDebut" id="dateDebut" required /><br/>
-                                <label for="dateFin">Event's ending date (do not specify it if the event appears once):</label>
-                                <input type="date" name="dateFin" id="dateFin"/><br/>
-                                <label for="heureDebut">Start time :</label>
-                                <input type="time" name="heureDebut" id="heureDebut" required /><br/>
-                                <label for="heureFin">End time :</label>
-                                <input type="time" name="heureFin" id="heureFin" required /><br/></br>
-                                <label for="prix">Price :</label>
-                                <input type="number" name="prix" id="prix" /><br/>
-                                <label for="nbDePersonne">Number of places :</label>
-                                <input type="number" name="nbDePersonne" id="nbDePersonne"/><br/><br/>
-                                <label>Opening weeks days</label></br>
-                                <label for="lundi">M</label><input type="checkbox" name="lundi" id="lundi" /> 
-                                <label for="mardi">Tu</label><input type="checkbox" name="mardi" id="mardi" />
-                                <label for="mercredi">W</label><input type="checkbox" name="mercredi" id="mercredi" /> 
-                                <label for="jeudi">Th</label><input type="checkbox" name="jeudi" id="jeudi" />
-                                <label for="vendredi">F</label><input type="checkbox" name="vendredi" id="vendredi" />
-                                <label for="samedi">Sa</label><input type="checkbox" name="samedi" id="samedi" /> 
-                                <label for="dimanche">So</label><input type="checkbox" name="dimanche" id="dimanche" /></br></br>
-                                <label for="typeEvent">What kind of event :</label><br />
-                                <select name="themeEvent" id="themeEvent">
-                                <option value="NULL">- - - - - - - - - -</option>
-    <?php } else { ?>
+        ?>
+        
         <div class="page">
 
-                        <form method="post" action=traitementEvenement.php">
+            <form class="contenuCreationEvenement" method="post" action="traitementEvenement.php"  enctype="multipart/form-data" >
+                <fieldset class="fieldset">
+                    <legend class="titreCreationEvenement"><p style="text-align:center;"> Event's informations </p></legend>
+                    <label for ="nomEvent">Event's name :</label>
+                    <input type="text" name="nomEvent" id="nomEvent"  size="30" maxlength="35" autofocus required /><br/><br/>
+                    <label for ="lieuEvent">Event's location :</label>
+                    <input type="text" name="lieuEvent" id="lieuEvent"  size="30" maxlength="50" required /><br/></br>
+                    <label for="description">Sum up of the event :</label><br />
+                    <textarea class="champDescriptionEvent" name="descriptionn" id="descriptionn" >How will be the event...</textarea><br/></br>
+                    <label for="dateDebut">Event's beginning date (or happening date):</label>
+                    <input type="date" name="dateDebut" id="dateDebut" required /><br/>
+                    <label for="dateFin">Event's ending date (do not specify it if the event appears once):</label>
+                    <input type="date" name="dateFin" id="dateFin"/><br/>
+                    <label for="heureDebut">Start time :</label>
+                    <input type="time" name="heureDebut" id="heureDebut" required /><br/>
+                    <label for="heureFin">End time :</label>
+                    <input type="time" name="heureFin" id="heureFin" required /><br/></br>
+                    <label for="prix">Price :</label>
+                    <input type="number" name="prix" id="prix" /><br/>
+                    <label for="nbDePersonne">Number of places :</label>
+                    <input type="number" name="nbDePersonne" id="nbDePersonne"/><br/><br/>
+                    <label>Opening weeks days</label></br>
+                    <label for="lundi">M</label><input type="checkbox" name="lundi" id="lundi" /> 
+                    <label for="mardi">Tu</label><input type="checkbox" name="mardi" id="mardi" />
+                    <label for="mercredi">W</label><input type="checkbox" name="mercredi" id="mercredi" /> 
+                    <label for="jeudi">Th</label><input type="checkbox" name="jeudi" id="jeudi" />
+                    <label for="vendredi">F</label><input type="checkbox" name="vendredi" id="vendredi" />
+                    <label for="samedi">Sa</label><input type="checkbox" name="samedi" id="samedi" /> 
+                    <label for="dimanche">So</label><input type="checkbox" name="dimanche" id="dimanche" /></br></br>
+                    <label for="typeEvent">What kind of event :</label><br />
+                    <select name="themeEvent" id="themeEvent">
+                        <option value="NULL">- - - - - - - - - -</option>
+                    <?php } else { ?>
+                        
+                        <div class="page">
 
-                            <fieldset>
-                                <legend>Information sur l'&Eacute;v&eacute;nement </legend>
-                                <label for ="nomEvent">Nom de l'&Eacute;v&eacute;nement :</label>
-                                <input type="text" name="nomEvent" id="nomEvent"  size="30" maxlength="35" autofocus required /><br/>
-                                <label for ="lieuEvent">Lieu de l'&Eacute;v&eacute;nement :</label>
-                                <input type="text" name="lieuEvent" id="lieuEvent"  size="30" maxlength="50" required /><br/>
-                                <label for="description">Description de l'&Eacute;v&eacute;nement:</label><br />
-                                <textarea class="champDescriptionEvent" name="description" id="descriptionn" >Entrer la description de l\'&Eacute;v&eacute;nement...</textarea><br/></br>
-                                <label for="dateDebut">Date de d&eacute;but de l'&Eacute;v&eacute;nement (ou date unique) : </label>
-                                <input type="date" name="dateDebut" id="dateDebut" required /><br/>
-                                <label for="dateFin">Date de fin de l'&Eacute;v&eacute;nement(ne pas sp&eacute;cifier si l'&Eacute;v&eacute;nement n'a lieu qu'une seule fois) :</label>
-                                <input type="date" name="dateFin" id="dateFin"/><br/>
-                                <label for="heureDebut">Heure de d&eacute;but :</label>
-                                <input type="time" name="heureDebut" id="heureDebut" required /><br/>
-                                <label for="heureFin">Heure de fin :</label>
-                                <input type="time" name="heureFin" id="heureFin" required /><br/></br>
-                                <label for="prix">Prix :</label>
-                                <input type="number" name="prix" id="prix" /><br/>
-                                <label for="nbDePersonne">Nombre de places :</label>
-                                <input type="number" name="nbDePersonne" id="nbDePersonne"/><br/><br/>
-                                <label>Jour(s) d'ouverture(s) pendant la semaine</label></br>
-                                <label for="lundi">L</label><input type="checkbox" name="lundi" id="lundi" /> 
-                                <label for="mardi">Ma</label><input type="checkbox" name="mardi" id="mardi" />
-                                <label for="mercredi">Me</label><input type="checkbox" name="mercredi" id="mercredi" /> 
-                                <label for="jeudi">J</label><input type="checkbox" name="jeudi" id="jeudi" />
-                                <label for="vendredi">V</label><input type="checkbox" name="vendredi" id="vendredi" />
-                                <label for="samedi">S</label><input type="checkbox" name="samedi" id="samedi" /> 
-                                <label for="dimanche">D</label><input type="checkbox" name="dimanche" id="dimanche" /></br></br>
-                                <label for="typeEvent">Quel est le genre de l'&Eacute;v&eacute;nement</label><br />
-                                <select name="themeEvent" id="themeEvent">
-                                    <option value="NULL">- - - - - - - - - -</option>
-    <?php }
-}
+                            <form class="contenuCreationEvenement" method="post" action=traitementEvenement.php">
+                                <fieldset class="fieldset">
+                                    <legend class="titreCreationEvenement" ><p style="text-align:center;"> Information sur l'&Eacute;v&eacute;nement </p></legend>
+                                    <label for ="nomEvent"></label>Nom de l'&Eacute;v&eacute;nement :</label><br/><br/>
+                                    <input type="text" name="nomEvent" id="nomEvent"  size="30" maxlength="35" autofocus required /><br/><br/>
+                                    <label for ="lieuEvent">Lieu de l'&Eacute;v&eacute;nement :</label><br/><br/>
+                                    <input type="text" name="lieuEvent" id="lieuEvent"  size="30" maxlength="50" required /><br/><br/>
+                                    <label for="description">Description de l'&Eacute;v&eacute;nement:</label><br/><br/>
+                                    <textarea class="champDescriptionEvent" name="description" id="descriptionn" placeholder="Entrer la description de l'&Eacute;v&eacute;nement..." ></textarea><br/></br>
+                                    <label for="dateDebut">Date de d&eacute;but de l'&Eacute;v&eacute;nement (ou date unique) : </label><br/><br/>
+                                    <input type="date" name="dateDebut" id="dateDebut" required /><br/><br/>
+                                    <label for="dateFin">Date de fin de l'&Eacute;v&eacute;nement(ne pas sp&eacute;cifier si l'&Eacute;v&eacute;nement n'a lieu qu'une seule fois) :</label><br/><br/>
+                                    <input type="date" name="dateFin" id="dateFin"/><br/><br/>
+                                    <label>Jour(s) d'ouverture(s) pendant la semaine :</label><br/><br/>
+                                    <label for="lundi">L</label><input type="checkbox" name="lundi" id="lundi" /> 
+                                    <label for="mardi">Ma</label><input type="checkbox" name="mardi" id="mardi" />
+                                    <label for="mercredi">Me</label><input type="checkbox" name="mercredi" id="mercredi" /> 
+                                    <label for="jeudi">J</label><input type="checkbox" name="jeudi" id="jeudi" />
+                                    <label for="vendredi">V</label><input type="checkbox" name="vendredi" id="vendredi" />
+                                    <label for="samedi">S</label><input type="checkbox" name="samedi" id="samedi" /> 
+                                    <label for="dimanche">D</label><input type="checkbox" name="dimanche" id="dimanche" /></br></br>
+                                    <label for="heureDebut">Heure de d&eacute;but :</label><br/><br/>
+                                    <input type="time" name="heureDebut" id="heureDebut" required /><br/><br/>
+                                    <label for="heureFin">Heure de fin :</label><br/><br/>
+                                    <input type="time" name="heureFin" id="heureFin" required /><br/></br>
+                                    <label for="prix">Prix :</label><br/><br/>
+                                    <input type="number" name="prix" id="prix" /><br/><br/>
+                                    <label for="nbDePersonne">Nombre de places :</label><br/><br/>
+                                    <input type="number" name="nbDePersonne" id="nbDePersonne"/><br/><br/>
+                                    <label for="typeEvent">Quel est le genre de l'&Eacute;v&eacute;nement</label><br/><br/>
+                                    <select name="themeEvent" id="themeEvent">
+                                        <option value="NULL">- - - - - - - - - -</option>
+                                    <?php
+                                    }
+                                }
 
-function formMidThEvent($lang, $donnees) {
-    if ($lang == 'en') {
-        echo'<optgroup label="' . $donnees['nomEn'] . '">';
-    } else {
-        echo'<optgroup label="' . $donnees['nom'] . '">';
-    }
-}
+                                function formMidThEvent($lang, $donnees) {
+                                    if ($lang == 'en') {
+                                        echo'<optgroup label="' . $donnees['nomEn'] . '">';
+                                    } else {
+                                        echo'<optgroup label="' . $donnees['nom'] . '">';
+                                    }
+                                }
 
-function formMidSThEvent($lang, $donnees2) {
+                                function formMidSThEvent($lang, $donnees2) {
 
-    if ($lang == 'en') {
-        echo'<option value="' . $donnees2['nomEn'] . '">' . $donnees2['nomEn'] . '</option>';
-    } else {
-        echo'<option value="' . $donnees2['nom'] . '">' . $donnees2['nom'] . '</option>';
-    }
-}
+                                    if ($lang == 'en') {
+                                        echo'<option value="' . $donnees2['nomEn'] . '">' . $donnees2['nomEn'] . '</option>';
+                                    } else {
+                                        echo'<option value="' . $donnees2['nom'] . '">' . $donnees2['nom'] . '</option>';
+                                    }
+                                }
 
-function formMidFEvent() {
-    echo '</optgroupe>';
-}
+                                function formMidFEvent() {
+                                    echo '</optgroupe>';
+                                }
 
-function formFinEvent($lang) {
+                                function formFinEvent($lang) {
 
-    if ($lang == 'en') {
-        echo' </select></br></br>
-Choose a picture for your event on your hard disk.</br>
+                                    if ($lang == 'en') {
+                                        echo' </select></br></br>
+Choose a picture for your event on your hard disk.</br><br/>
 <label for="image">File :</label>
 <INPUT id="image" name="image" TYPE="file" size="30" required></br>
                             </fieldset>
@@ -123,9 +125,9 @@ Choose a picture for your event on your hard disk.</br>
                         </form>
 
                     </div>';
-    } else {
-        echo '</select></br></br>
-Choisissez une image pour votre &Eacute;v&eacute;nement sur votre disque dur.</br>
+                                    } else {
+                                        echo '</select></br></br>
+Choisissez une image pour votre &Eacute;v&eacute;nement sur votre disque dur.<br/><br/>
 <label for="image">Fichier :</label>
 <input id="image" name="image" type="file" size="30" required></br>
                             </fieldset>
@@ -134,7 +136,6 @@ Choisissez une image pour votre &Eacute;v&eacute;nement sur votre disque dur.</b
                         </form>
 
                     </div>';
-    }
-}
-
-?>
+                                    }
+                                }
+                                ?>
