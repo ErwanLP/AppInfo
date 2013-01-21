@@ -151,12 +151,10 @@ include("nav.php");
 
                 <div class ="imageDetail">
                     <p class="evenementDetailDescription"><span style="margin-left:70px;"><?php echo $donnees['description']; ?></span></p>
-                </div> <?php
-                    }$reponse->closeCursor();
-                    ?>
-        </div>
-        <div class="imageDetail2">
-        <strong>Note des participants : </strong><img src="<?php 
+                </div>
+<div class="imageDetail2">
+        <?php if($donnees['note']!=0){
+            ?><strong>Note des participants : </strong><img src="<?php 
         if($donnees['note']<=0.5){
             echo 'img/etoile0.png';
         }
@@ -176,7 +174,11 @@ include("nav.php");
             echo 'img/etoile5.png';
         }
         
-        ?>"  alt="Note" />(<?php echo $donnees['note']; ?> sur 5)<br/>
+        ?>"  alt="Note" />(<?php echo $donnees['note']; ?> sur 5)<br/><?php
+            }else{
+            echo 'Aucune note pour le moment';
+        }
+        ?>
         </div>
         <div class="imageDetail">
             <form method="post" action="traitementCommentaire.php">
@@ -201,7 +203,12 @@ include("nav.php");
             </form>
 
 
+        </div> <?php
+                    }$reponse->closeCursor();
+                    ?>
+            
         </div>
+        
 
 
 
