@@ -39,12 +39,9 @@ if ($test == true) {
     echo "<br/>" . $sql;
 }
 
-if (isset($_GET['pseudoAutre'])) {
-    
-} else {
 
-    //header('Location:messagerie.php');
-}
+    header('Location:profil.php?target=messagerie#description');
+
 ?>
 
 
