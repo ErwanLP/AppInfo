@@ -224,7 +224,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 
             </p>
         </div>                
-        <div id="mesEvents" style="display:none;">
+        <div id="mesEvents" style=" display:none;">
             <?php
             if (!isset($_GET['onglet'])) { //si ya rien
                 $result = $bdd->query('SELECT * FROM  event LIMIT 0 , 30');
@@ -280,10 +280,10 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 </section>
 <?php include("footer.php"); ?>
 <script type="text/javascript">
-    function afficherc(){ 
-        document.getElementById("coordonnee").style.display="";
-        document.getElementById("amis").style.display="none";
+    function afficherc(){
         document.getElementById("mesEvents").style.display="none";
+        document.getElementById("coordonnee").style.display="";
+        document.getElementById("amis").style.display="none";        
         document.getElementById("abonnement").style.display="none";
     }
     function affichera(){ 
