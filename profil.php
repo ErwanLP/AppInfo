@@ -60,7 +60,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
             <p id="infoPerso">
                 <!--<span class="titre">Informations Personnelles</span><br/><br/><br/>-->
                 <strong>Pseudo :</strong><?php echo " " . $data['pseudo']; ?><br/><br/>
-                <strong>Pr&ecute;nom :</strong><?php echo " " . $data['prenom']; ?><br/><br/>
+                <strong>Prénom :</strong><?php echo " " . $data['prenom']; ?><br/><br/>
                 <strong>Nom :</strong><?php echo " " . $data['nom']; ?><br/><br/>
                 <strong>Sexe :</strong><?php
             if ($data['sexe'] == 1) {
@@ -207,7 +207,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
         <div id="coordonnee">
             <p id="infoPerso">
                 <strong>Pseudo :</strong><?php echo " " . $data['pseudo']; ?><br/><br/>
-                <strong>Pr&eacute;nom :</strong><?php echo " " . $data['prenom']; ?><br/><br/>
+                <strong>Prénom :</strong><?php echo " " . $data['prenom']; ?><br/><br/>
                 <strong>Nom :</strong><?php echo " " . $data['nom']; ?><br/><br/> 
                 <strong>E-mail :</strong><?php echo " " . $data['mail']; ?><br/><br/>                        
                 <strong>T&eacute;l&eacute;phone mobile :</strong><?php echo " " . $data['telephoneMobile']; ?><br/><br/>

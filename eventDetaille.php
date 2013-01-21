@@ -13,7 +13,7 @@ include("nav.php");
 
 <section>
     <aside class ="navg">
-        <?php include ("arbre.php"); ?>
+<?php include ("arbre.php"); ?>
     </aside>
 
     <aside class ="new">
@@ -162,7 +162,7 @@ include("nav.php");
 
 
 
-    </article>
+        </article>
 </section>
 
 

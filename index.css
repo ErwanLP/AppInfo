@@ -337,15 +337,15 @@ border: 2px solid white;
 /*CONNECTION*/
 
 .connec {
-    position: relative;
+    position: absolute;
     border: 1px solid #202020;
     background-color: #666;
     border-radius: 10px;
     text-align: left;
     width: 400px;
     height: 220px;
-    margin-left: 1460px;
-    margin-top:15px;
+    top: 15px;
+    left: 1460px;
     box-shadow: 0px 0px 15px #666;
 }
 
