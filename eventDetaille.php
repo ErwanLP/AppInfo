@@ -155,26 +155,27 @@ include("nav.php");
 <div class="imageDetail2">
         <?php if($donnees['note']!=0){
             ?><strong>Note des participants : </strong><img src="<?php 
-        if($donnees['note']<=0.5){
+            $notas=$donnees['note']/$donnees['nbVotes'];
+        if($notas<=0.5){
             echo 'img/etoile0.png';
         }
-        if($donnees['note']>0.5 &&$donnees['note']<=1.5){
+        if($notas>0.5 &&$notas<=1.5){
             echo 'img/etoile1.png';
         }
-        if($donnees['note']>1.5 &&$donnees['note']<=2.5){
+        if($notas>1.5 &&$notas<=2.5){
             echo 'img/etoile2.png';
         }
-        if($donnees['note']>2.5 &&$donnees['note']<=3.5){
+        if($notas>2.5 &&$notas<=3.5){
             echo 'img/etoile3.png';
         }
-        if($donnees['note']>3.5 &&$donnees['note']<=4.5){
+        if($notas>3.5 &&$notas<=4.5){
             echo 'img/etoile4.png';
         }
-        if($donnees['note']>4.5){
+        if($notas>4.5){
             echo 'img/etoile5.png';
         }
         
-        ?>"  alt="Note" />(<?php echo $donnees['note']; ?> sur 5)<br/><?php
+        ?>"  alt="Note" />(<?php echo $notas; ?> sur 5)  pour <?php echo $donnees['nbVotes']; ?> vote(s).<br/><?php
             }else{
             echo 'Aucune note pour le moment';
         }
