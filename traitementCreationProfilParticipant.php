@@ -18,7 +18,6 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['pseudo']) &
     $avatar = NULL;
     $profession = NULL;
     $loisir = NULL;
-    $preference = NULL;
     
     if (isset($_POST['lieuNaissance'])) {
         $lieuNaissance = $_POST['lieuNaissance'];
@@ -56,7 +55,7 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['pseudo']) &
         $mail = $data['mail'];
     }$result->closeCursor();
     
-    $bdd->query("INSERT INTO participant (ID, nom, prenom, pseudo, lieuNaissance, pays, villes, adresse, codePostal, description, sexe, telephoneFixe, telephoneMobile, dateDeNaissance, mail, siteWeb, avatar, profession, loisirs, preference ) VALUES ('$idSession','$nom','$prenom','$pseudo','$lieuNaissance','$pays','$ville','$adresse','$codePostal','$description','$personne','$telFixe','$telMobile','$date','$mail','$siteWeb','$avatar','$profession','$loisir','$preference')");
+    $bdd->query("INSERT INTO participant (ID, nom, prenom, pseudo, lieuNaissance, pays, villes, adresse, codePostal, description, sexe, telephoneFixe, telephoneMobile, dateDeNaissance, mail, siteWeb, avatar, profession, loisirs) VALUES ('$idSession','$nom','$prenom','$pseudo','$lieuNaissance','$pays','$ville','$adresse','$codePostal','$description','$personne','$telFixe','$telMobile','$date','$mail','$siteWeb','$avatar','$profession','$loisir')");
 
     $bdd->query('UPDATE compte SET profilParticipant = 1 WHERE ID = "' . $idSession . '"');
     
