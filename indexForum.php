@@ -231,7 +231,7 @@ include("nav.php");
                          <tr class="affichageSujet">
                             <td><a href="barForum.php">Bar</a></td>
                             <td><?php echo "Nombre de sujet(s) :  ".$numSujet8.  "/  Nombre de message(s) : "?></td>
-                            <td><?php echo $dernierSujet8;?>/td>
+                            <td><?php echo $dernierSujet8;?></td>
                         </tr>
                           <?php $req=$bdd->query('SELECT count(topicforum.id) FROM topicforum,souscategorieforum WHERE
     topicforum.id_souscategorie=souscategorieforum.id

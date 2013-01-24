@@ -46,6 +46,7 @@ include("nav.php");
                         <tr>
                             <td>
                                 <br/><p style="margin-top:30px;margin-left:300px;">Titre du sujet :</p><input style="margin-left:280px;width:500px;border-radius:5px;border: 1px solid #cebd8b;box-shadow: 1px 1px 2px #C0C0C0 inset;" type="text" name="titre" size="50" maxlength="500" style="height:30px;" required/>
+                                                                                                       <input name="id_souscategorie" id="id_souscategorie" type="hidden" value="<?php echo $id_souscategorie;?>"/>
                             </td>
                         </tr>
                         <tr>
@@ -71,7 +72,7 @@ include("nav.php");
             $date_creation = date("Y-m-d H:i:s");
             $commentaire = ($_POST['commentaire']);
             $nom = ($_POST['titre']);
-
+            $id_souscategorie = $_POST['id_souscategorie'];
 //vérification du titre du sujet et du commentaire
             if (strlen($nom) < 3) {
                 echo'erreurTitre="votre titre est trop court"';
@@ -81,12 +82,15 @@ include("nav.php");
                 $i++;
             } else if ($i == 0) {
 
-                $req = $bdd->prepare('INSERT INTO topicforum (nom,commentaire,date_creation) 
-     VALUES (:nom,:commentaire,:date_creation)');
+                $req = $bdd->prepare('INSERT INTO topicforum (nom,commentaire,date_creation,id_organisateur,id_participant,id_souscategorie) 
+     VALUES (:nom,:commentaire,:date_creation,:id_profil,:id_profil,:id_topic)');
                 $req->execute(array(
                     'nom' => $nom,
                     'commentaire' => $commentaire,
-                    'date_creation' => $date_creation
+                    'date_creation' => $date_creation,
+                    'id_organisateur' => $id_profil,
+                    'id_participant' => $id_profil,
+                    'id_souscategorie' => $id_souscategorie
                 ));
 
                 echo'votre commentaire a bien été pris en compte';

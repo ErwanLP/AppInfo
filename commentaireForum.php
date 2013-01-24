@@ -56,7 +56,7 @@ include("nav.php");
         $reqP = $bdd->query('SELECT id from topicforum WHERE id = "' . $id_topic . '"');
         while ($dataa = $reqP->fetch()) {
             $ID_topicforum = $dataa['id'];
-            echo $ID_topicforum;
+           
         }$reqP->closeCursor();
 
         $tab_info_commentaire = array();
@@ -157,7 +157,9 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
                 <?php
                 if (isset($_SESSION['SWITCH']) AND ($_SESSION['SWITCH'] == "organisateur" OR $_SESSION['SWITCH'] == "participant" ) AND $_SESSION['ID'] != null) {
                     include("nouveauCommentaire1.php");
+                   
                 }
+             
                 ?>
 
             </div>
@@ -168,8 +170,9 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
             $erreurCommentaire = 'NULL';
             $date_creation = date("Y-m-d H:i:s");
             $message = $_POST['message'];
-           // $ID_topicforum
-           // $IDProfil
+            $id_topic=$_POST['id_topic'];
+            $pseudo=$_POST['pseudo'];
+  
             if (strlen($_POST['message']) < 2) {
                 $erreurCommentaire = "Votre commentaire est trop court!";
                 ?>
@@ -180,13 +183,16 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
                 $i++;
             } else if ($i == 0) {
 
-                $req = $bdd->prepare('INSERT INTO forummessage (date_creation,message,id_topic,IDProfil )
-        VALUES (:date_creation,:message,:id_topic,:IDProfil)');
+                $req = $bdd->prepare('INSERT INTO forummessage (date_creation,message,id_participant,id_organisateur,id_topic)
+        VALUES (:date_creation,:message,:id_topic,:pseudo)');
                 $req->execute(array(
                     'date_creation' => $date_creation,
                     'message' => $message,
-                    'id_topic'=>$ID_topicforum,
-                    'IDProfil'=>$IDProfil));
+                    'id_participant' => $pseudo,
+                    'id_organisateur' => $pseudo,
+                    'id_topic'=>$id_topic
+                    
+                    ));
                 
                 ?>
                 <br/>
