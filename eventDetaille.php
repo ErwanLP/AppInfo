@@ -39,7 +39,7 @@ include("nav.php");
         <div>
             <?php
             $ID = $_GET['ID'];
-            $reponse = $bdd->query('SELECT * FROM event WHERE event.ID='.$ID);
+            $reponse = $bdd->query('SELECT * FROM event WHERE event.ID=' . $ID);
             while ($donnees = $reponse->fetch()) {
                 ?><div class = "imageDetail" >
 
@@ -152,91 +152,121 @@ include("nav.php");
                 <div class ="imageDetail">
                     <p class="evenementDetailDescription"><span style="margin-left:70px;"><?php echo $donnees['description']; ?></span></p>
                 </div>
-<div class="imageDetail2">
-        <?php if($donnees['nbVotes']!=0){
-            ?><strong>Note des participants : </strong><img src="<?php 
-            $notas=$donnees['note']/$donnees['nbVotes'];
-        if($notas<=0.5){
-            echo 'img/etoile0.png';
-        }
-        if($notas>0.5 &&$notas<=1.5){
-            echo 'img/etoile1.png';
-        }
-        if($notas>1.5 &&$notas<=2.5){
-            echo 'img/etoile2.png';
-        }
-        if($notas>2.5 &&$notas<=3.5){
-            echo 'img/etoile3.png';
-        }
-        if($notas>3.5 &&$notas<=4.5){
-            echo 'img/etoile4.png';
-        }
-        if($notas>4.5){
-            echo 'img/etoile5.png';
-        }
-        
-        ?>"  alt="Note" />(<?php echo $notas; ?> sur 5)  pour <?php echo $donnees['nbVotes']; ?> vote(s).<br/><?php
-            }else{
-            echo 'Aucune note pour le moment';
-        }
-        ?>
-        </div>
-            
-        <?php
-        $resultComment=$bdd->query('SELECT commentairesevent.note,commentairesevent.contenu, participant.pseudo FROM commentairesevent,event,compte,participant WHERE event.ID='.$_GET['ID'].' AND commentairesevent.id_event=event.ID AND commentairesevent.id_participant=compte.ID AND compte.ID=participant.ID');
-        while($donneesCom=$resultComment->fetch()){
-            ?> <div class="imageDetail2">
-                <p><?php echo $donneesCom['note']; ?>/5 : <?php echo $donneesCom['contenu']; ?><br/>
-                - <?php echo $donneesCom['pseudo']; ?> -</p>
-            </div>
-                <?php
-        }
-        
-        if(isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "participant"){
-            $reponse2=$bdd->query('SELECT * FROM commentairesevent,event,compte WHERE event.ID='.$_GET['ID'].' AND event.ID=commentairesevent.id_event AND commentairesevent.id_participant='.$_SESSION['ID']);
-            $comment=true;
-            while($donnees3=$reponse2->fetch()){
-                $comment=false;
-            }$reponse2->closeCursor();
-            if($comment==true){
-            ?><div class="imageDetail">
-            <form method="post" action="traitementCommentaire.php">
+                <?php $resu=$bdd->query('SELECT * FROM event,event_participant,participant WHERE event.ID='.$ID.' AND event.ID=event_participant.id_event AND event_participant.id_participant=participant.ID AND participant.ID='.$_SESSION['ID']);
+                echo 'SELECT * FROM event,event_participant,participant WHERE event.ID='.$ID.' AND event.ID=event_participant.id_event AND event_participant.id_participant=participant.ID AND participant.ID='.$_SESSION['ID'];
+                $haveReserve=false;
+                while($dat=$resu->fetch()){
+                    $haveReserve=true;
+                }$resu->closeCursor();
+                if($haveReserve==false){
+                    
+                ?>
+                <div class="imageDetail2">
+                    <form method="post" action="traitementReservation.php">
 
-                <fieldset class="formulaireCommentaire">
-                    <legend class="">Commenter l'&eacute;v&eacute;nement :</legend>
-                    <label for ="commentaire">Commentaire :</label><br/>
-                    <textArea class="commenterEvent" type="text" name="commentaire" id="commentaire"  maxlength="400"/></textarea><br/>
-                    <label for ="note">Note :</label>
-                    <select name="note" id="note">
-                        <option value="NULL"> </option>
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select><br/><br/>
-                    <select name="id_participant" id="id_participant" hidden>
+                        <fieldset >
+                            <select name="id_participant" id="id_participant" hidden>
                                         <option value="<?php echo $_SESSION['ID']; ?>"><?php echo $_SESSION['ID']; ?></option>
                                     </select>
-                    <select name="id_event" id="id_event" hidden>
+                                    <select name="id_event" id="id_event" hidden>
                                         <option value="<?php echo $ID; ?>"><?php echo $ID; ?></option>
                                     </select>
-                    <input type="submit" value="Envoyer" />
-                    
-                </fieldset>
-            </form>
+                                    <input type="submit" value="S'inscrire" />
+                        </fieldset>
+                    </form>
 
-
-        </div>
+                </div> <?php
+                   }else{
+                    ?>    <div class="imageDetail2">D&eacute;j&agrave; inscrit ;) !
+                    </div>
             <?php
-        }}?>
- <?php
-                    }$reponse->closeCursor();
+                   }
+                   ?>
+                <div class="imageDetail2">
+                    <?php if ($donnees['nbVotes'] != 0) {
+                        ?><strong>Note des participants : </strong><img src="<?php
+                $notas = $donnees['note'] / $donnees['nbVotes'];
+                if ($notas <= 0.5) {
+                    echo 'img/etoile0.png';
+                }
+                if ($notas > 0.5 && $notas <= 1.5) {
+                    echo 'img/etoile1.png';
+                }
+                if ($notas > 1.5 && $notas <= 2.5) {
+                    echo 'img/etoile2.png';
+                }
+                if ($notas > 2.5 && $notas <= 3.5) {
+                    echo 'img/etoile3.png';
+                }
+                if ($notas > 3.5 && $notas <= 4.5) {
+                    echo 'img/etoile4.png';
+                }
+                if ($notas > 4.5) {
+                    echo 'img/etoile5.png';
+                }
+                        ?>"  alt="Note" />(<?php echo $notas; ?> sur 5)  pour <?php echo $donnees['nbVotes']; ?> vote(s).<br/><?php
+            } else {
+                echo 'Aucune note pour le moment';
+            }
                     ?>
-            
+                </div>
+
+                <?php
+                $resultComment = $bdd->query('SELECT commentairesevent.note,commentairesevent.contenu, participant.pseudo FROM commentairesevent,event,compte,participant WHERE event.ID=' . $_GET['ID'] . ' AND commentairesevent.id_event=event.ID AND commentairesevent.id_participant=compte.ID AND compte.ID=participant.ID');
+                while ($donneesCom = $resultComment->fetch()) {
+                    ?> <div class="imageDetail2">
+                        <p><?php echo $donneesCom['note']; ?>/5 : <?php echo $donneesCom['contenu']; ?><br/>
+                            - <?php echo $donneesCom['pseudo']; ?> -</p>
+                    </div>
+                    <?php
+                }
+
+                if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "participant") {
+                    $reponse2 = $bdd->query('SELECT * FROM commentairesevent,event,compte WHERE event.ID=' . $_GET['ID'] . ' AND event.ID=commentairesevent.id_event AND commentairesevent.id_participant=' . $_SESSION['ID']);
+                    $comment = true;
+                    while ($donnees3 = $reponse2->fetch()) {
+                        $comment = false;
+                    }$reponse2->closeCursor();
+                    if ($comment == true) {
+                        ?><div class="imageDetail">
+                            <form method="post" action="traitementCommentaire.php">
+
+                                <fieldset class="formulaireCommentaire">
+                                    <legend class="">Commenter l'&eacute;v&eacute;nement :</legend>
+                                    <label for ="commentaire">Commentaire :</label><br/>
+                                    <textArea class="commenterEvent" type="text" name="commentaire" id="commentaire"  maxlength="400"/></textarea><br/>
+                                    <label for ="note">Note :</label>
+                                    <select name="note" id="note">
+                                        <option value="NULL"> </option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select><br/><br/>
+                                    <select name="id_participant" id="id_participant" hidden>
+                                        <option value="<?php echo $_SESSION['ID']; ?>"><?php echo $_SESSION['ID']; ?></option>
+                                    </select>
+                                    <select name="id_event" id="id_event" hidden>
+                                        <option value="<?php echo $ID; ?>"><?php echo $ID; ?></option>
+                                    </select>
+                                    <input type="submit" value="Envoyer" />
+
+                                </fieldset>
+                            </form>
+
+
+                        </div>
+                        <?php }
+                }
+                ?>
+                <?php
+            }$reponse->closeCursor();
+            ?>
+
         </div>
-        
+
 
 
 
