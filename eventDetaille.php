@@ -39,7 +39,7 @@ include("nav.php");
         <div>
             <?php
             $ID = $_GET['ID'];
-            $reponse = $bdd->query('SELECT * FROM event WHERE event.ID=' . $ID);
+            $reponse = $bdd->query('SELECT * FROM event WHERE event.ID='.$ID);
             while ($donnees = $reponse->fetch()) {
                 ?><div class = "imageDetail" >
 
@@ -180,14 +180,23 @@ include("nav.php");
         }
         ?>
         </div>
-        <?php 
+            
+        <?php
+        $resultComment=$bdd->query('SELECT commentairesevent.note,commentairesevent.contenu, participant.pseudo FROM commentairesevent,event,compte,participant WHERE event.ID='.$_GET['ID'].' AND commentairesevent.id_event=event.ID AND commentairesevent.id_participant=compte.ID AND compte.ID=participant.ID');
+        while($donneesCom=$resultComment->fetch()){
+            ?> <div class="imageDetail2">
+                <p><?php echo $donneesCom['note']; ?>/5 : <?php echo $donneesCom['contenu']; ?><br/>
+                - <?php echo $donneesCom['pseudo']; ?> -</p>
+            </div>
+                <?php
+        }
         
         if(isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "participant"){
-            $reponse2=$bdd->query('SELECT * FROM event, commentairesevent,compte WHERE event.ID=commentairesevent.id_event AND commentairesevent.id_participant=compte.ID');
+            $reponse2=$bdd->query('SELECT * FROM commentairesevent,event,compte WHERE event.ID='.$_GET['ID'].' AND event.ID=commentairesevent.id_event AND commentairesevent.id_participant='.$_SESSION['ID']);
             $comment=true;
-            while($donnees3=$reponse2->fetch){
+            while($donnees3=$reponse2->fetch()){
                 $comment=false;
-            }
+            }$reponse2->closeCursor();
             if($comment==true){
             ?><div class="imageDetail">
             <form method="post" action="traitementCommentaire.php">
@@ -206,6 +215,12 @@ include("nav.php");
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select><br/><br/>
+                    <select name="id_participant" id="id_participant" hidden>
+                                        <option value="<?php echo $_SESSION['ID']; ?>"><?php echo $_SESSION['ID']; ?></option>
+                                    </select>
+                    <select name="id_event" id="id_event" hidden>
+                                        <option value="<?php echo $ID; ?>"><?php echo $ID; ?></option>
+                                    </select>
                     <input type="submit" value="Envoyer" />
                     
                 </fieldset>

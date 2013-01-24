@@ -33,10 +33,11 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
     </aside>
 
     <?php
-    
     if (isset($_GET['IDprofil']) AND isset($_GET['Pseudo'])) {
 
         $idProfilAmi = $_GET['IDprofil'];
+        $idAutre = $_GET['IDprofil'];
+        $id = $_SESSION['ID'];
         $pseudo = $_GET['Pseudo'];
 
         $boubou1 = false;
@@ -63,8 +64,54 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                 ?></p>
                         <p class="lieu4"><?php echo $dataBis['pays'] . ", " . $dataBis['villes'];
                 ?></p>
+
+                        <?php
+                        // ici pour invite amis 
+
+                        $bf = false;
+                        $bdf = false;
+                        $sql1 = '(SELECT * FROM friend)';
+                        $result = $bdd->query($sql1);
+                        while ($data = $result->fetch()) {
+                            if ($data['id_f1'] == $id) {
+                                if ($data['id_f2'] == $idAutre) {
+                                    $bf = true;
+                                }
+                            }
+                            if ($data['id_f2'] == $id) {
+                                if ($data['id_f1'] == $idAutre) {
+                                    $bf = true;
+                                }
+                            }
+                        }$result->closeCursor();
+                        $sql2 = '(SELECT * FROM demandefriend WHERE id_demande="' . $id . '" AND id_demandeur="' . $idAutre . '")UNION (SELECT * FROM demandefriend WHERE id_demandeur="' . $id . '" AND id_demande="' . $idAutre . '")';
+                        $result = $bdd->query($sql2);
+                        while ($data = $result->fetch()) {
+                            if ($data['id_demandeur'] == $id) {
+                                if ($data['id_demande'] == $idAutre) {
+                                    $bdf = true;
+                                }
+                            }
+                            if ($data['id_demandeur'] == $id) {
+                                if ($data['id_demande'] == $idAutre) {
+                                    $bdf = true;
+                                }
+                            }
+                        }$result->closeCursor();
+
+                        // echo !$bf."<br/>".!$bdf;
+
+
+                        if (!$bf && !$bdf) {
+                            $lien = 'traitementFriend.php?target=dem&demandeur='.$id.'&demande='.$idAutre;
+                            echo '<a href="' . $lien . '" title="Ajout Ami" class ="imgAddF"><img src="img/addF.jpg" height="50" width="50"></a>';
+                        }
+                        ?>
+
+
                     </fieldset>
-                    <?php // ici pour invite amis ?>
+
+
 
                 </div>
                 <div class="menu">
@@ -73,34 +120,43 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                     </ul>
                 </div>
                 <div id="coordonnee">
-                    <p id="infoPerso">
-                        <!--<span class="titre">Informations Personnelles</span><br/><br/><br/>-->
-                        <strong>Pseudo :</strong><?php echo " " . $pseudo; ?><br/><br/>
-                        <strong>Pr&eacute;nom :</strong><?php echo " " . $dataBis['prenom']; ?><br/><br/>
-                        <strong>Nom :</strong><?php echo " " . $dataBis['nom']; ?><br/><br/>
-                        <strong>Sexe :</strong><?php
+                    <?php if ($bf) { ?>
+                        <p id="infoPerso">
+                            <!--<span class="titre">Informations Personnelles</span><br/><br/><br/>-->
+                            <strong>Pseudo :</strong><?php echo " " . $pseudo; ?><br/><br/>
+                            <strong>Pr&eacute;nom :</strong><?php echo " " . $dataBis['prenom']; ?><br/><br/>
+                            <strong>Nom :</strong><?php echo " " . $dataBis['nom']; ?><br/><br/>
+                            <strong>Sexe :</strong><?php
                 if ($dataBis['sexe'] == 1) {
                     echo " Homme";
                 } else {
                     echo " Femme";
                 }
-                ?><br/><br/>                    
-                        <strong>Date de naissance :</strong><?php echo " " . $dataBis['dateDeNaissance']; ?><br/><br/>
-                        <strong>Adresse :</strong><?php echo " " . $dataBis['adresse'] . " - " . $dataBis['codePostal'] . " - " . $dataBis['villes']; ?><br/><br/>
-                        <strong>E-mail :</strong><?php echo " " . $dataBis['mail']; ?><br/><br/>
-                        <strong>T&eacute;l&eacute;phone fixe :</strong><?php echo " " . $dataBis['telephoneFixe']; ?><br/><br/>
-                        <strong>T&eacute;l&eacute;phone mobile :</strong><?php echo " " . $dataBis['telephoneMobile']; ?><br/><br/>
-                        <strong>Site Web :</strong><?php echo " " . $dataBis['siteWeb']; ?>
-                    </p>
+                        ?><br/><br/>                    
+                            <strong>Date de naissance :</strong><?php echo " " . $dataBis['dateDeNaissance']; ?><br/><br/>
+                            <strong>Adresse :</strong><?php echo " " . $dataBis['adresse'] . " - " . $dataBis['codePostal'] . " - " . $dataBis['villes']; ?><br/><br/>
+                            <strong>E-mail :</strong><?php echo " " . $dataBis['mail']; ?><br/><br/>
+                            <strong>T&eacute;l&eacute;phone fixe :</strong><?php echo " " . $dataBis['telephoneFixe']; ?><br/><br/>
+                            <strong>T&eacute;l&eacute;phone mobile :</strong><?php echo " " . $dataBis['telephoneMobile']; ?><br/><br/>
+                            <strong>Site Web :</strong><?php echo " " . $dataBis['siteWeb']; ?>
+                        </p>
 
-                    <p id="preference">
-                        <strong>Profession :</strong><?php echo " " . $dataBis['profession']; ?><br/><br/>
-                        <strong>Loisirs :</strong><?php echo " " . $dataBis['loisirs']; ?><br/><br/>
-                        <strong>&Eacute;v&eacute;nements pr&eacute;f&eacute;r&eacute;s :</strong><?php echo " " . $dataBis['preference']; ?><br/><br/>
-                        <strong>Description :</strong><br/><br/>
-                        <?php echo " " . $dataBis['description']; ?>
+                        <p id="preference">
+                            <strong>Profession :</strong><?php echo " " . $dataBis['profession']; ?><br/><br/>
+                            <strong>Loisirs :</strong><?php echo " " . $dataBis['loisirs']; ?><br/><br/>
+                            <strong>&Eacute;v&eacute;nements pr&eacute;f&eacute;r&eacute;s :</strong><?php echo " " . $dataBis['preference']; ?><br/><br/>
+                            <strong>Description :</strong><br/><br/>
+                            <?php echo " " . $dataBis['description']; ?>
 
-                    </p>
+                        </p>
+
+                    <?php } else { ?>
+                        <p id="infoPerso">
+
+
+                            <strong>Vous devez être amis avec cette personne pour voir son profil</strong>
+                        </p>
+                    <?php } ?>
                 </div>
 
                 <?php
@@ -125,9 +181,9 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                     <fieldset>
                         <img src="img/logo.png" width="200" height="200" alt="Logo" style="border: solid black 2px"/>                  
                         <p id="nom4"><?php echo $dataBis['nom'] . "  " . $dataBis['prenom'];
-                ?></p>
+            ?></p>
                         <p id="lieu"><?php echo $dataBis['nomSociete'] . ", " . $dataBis['pays'];
-                ?></p>
+            ?></p>
                     </fieldset>
 
                 </div>

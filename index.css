@@ -67,6 +67,8 @@ header
         position : relative;
         margin-left:40px;
         top:-430px;
+        font-size: 22px;
+        color:#105CA0;
 }
 .titreDetailEvent
 {
@@ -1092,7 +1094,7 @@ a:visited
 
 
 #messagerieTotal{
-     
+
     position: absolute;
     padding: 20px;
     width: 70%;
@@ -1103,20 +1105,20 @@ a:visited
     overflow: hidden;
     position : relative;
     left: 700px;
-    
-    
-    
-    
-    
+
+
+
+
+
 }
 
 .titreMessagerie{
-    
+
     position : relative;
     left : 250px;  
-    
-    
-    
+
+
+
 }
 
 .divmessageCour{
@@ -1128,7 +1130,7 @@ a:visited
     margin :  10px;
     background-color: white;
     border-radius: 20px 0px 20px 0px;
-   
+
 }
 
 .messagerie{
@@ -1137,14 +1139,14 @@ a:visited
     overflow: auto;
     text-align: center;
     width :900px;
-    
+
 
 
 
 
 }
 .taperMessage{
-    
+
     width: 400px;
     height: 50px;
     padding: 3px;
@@ -1152,12 +1154,12 @@ a:visited
     border-radius: 5px;
     box-shadow: 1px 1px 2px #C0C0C0 inset;
     background-color:#F5FFED;
-    
-    
-    
+
+
+
 }
 .taperPseudo{
-     width: 400px;
+    width: 400px;
     height: 30px;
     padding: 3px;
     border: 1px solid  #cebd8b;
@@ -1166,8 +1168,29 @@ a:visited
     background-color:#F5FFED;  
     position : relative;
     left : 45px;
+
+
+}
+
+
+
+/*AMIS*/
+.imgAddF{
+
+    z-index:10;
+    position :absolute;
+    top: 100px;
+    right : 100px;
+    border: 3px solid  #cebd8b;
+    border-radius: 5px;
+
     
-    
+
+
+
+
+
+
 }
 
 
@@ -2106,3 +2129,5 @@ strong{
     right: 50px;
 
 }
+
+
