@@ -40,10 +40,10 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                 while ($data = $result->fetch()) {
                     ?>
                     <p class="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];
-            ?></p>
+                    ?></p>
                     <p class="lieu4"><?php
-            echo $data['pays'] . ", " . $data['villes'];
-        }$result->closeCursor();
+                echo $data['pays'] . ", " . $data['villes'];
+            }$result->closeCursor();
                 ?></p>
             </fieldset>
 
@@ -133,15 +133,15 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                         <fieldset>
                             <a href="img/jerry.jpg"><img src="img/jerry_mini.jpg" alt="Jerry" title="Cliquez pour agrandir" style="border: solid black 2px"/></a>
                             <p class="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];
-                ?></p>
+                        ?></p>
                             <p class="lieu4"><?php echo $data['nomSociete'] . ", " . $data['pays'];
-                ?></p>
-                                <?php
-                                $action = $_GET['action'];
-                                if ($action == "delete") {
-                                    $bdd->query('DELETE FROM organisateur, abonnement WHERE organisateur.ID = abonnement.ID_organisateur AND abonnement.ID_participant = ' . $_SESSION['ID'] . '');
-                                }
-                                ?>
+                        ?></p>
+                            <?php
+                            $action = $_GET['action'];
+                            if ($action == "delete") {
+                                $bdd->query('DELETE FROM organisateur, abonnement WHERE organisateur.ID = abonnement.ID_organisateur AND abonnement.ID_participant = ' . $_SESSION['ID'] . '');
+                            }
+                            ?>
                             <a href="profil.php?target=abo&action=delete"><img src="img/croixsupp.png" alt="Supprimer" id="supprimer"/></a>
                         </fieldset>
                         <?php
@@ -165,89 +165,92 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
             if ($target == "messagerie") {
                 //messagerie
                 ?>
-                <div id="messagerie">
+                <div id="messagerieTotal">
 
 
-                    <h1>MESSAGERIE:</h1>
+                    <h1 class="titreMessagerie">MESSAGERIE:</h1>
 
                     <?php
                     $idProfil = $_SESSION['ID'];
                     $typeProfil = $_SESSION['SWITCH'];
                     $sql = 'SELECT pseudo FROM ' . $typeProfil . ' WHERE ID =  "' . $idProfil . '"';
                     $result = $bdd->query($sql);
-                    echo "<br/>" . $sql;
-                    while ($data = $result->fetch()) {
-                        $pseudoProfil = $data['pseudo'];
-                    }$result->closeCursor();
+                    // echo "<br/>" . $sql;
+                    ?><div class="messagerie"> <?php
+            while ($data = $result->fetch()) {
+                $pseudoProfil = $data['pseudo'];
+            }$result->closeCursor();
 
 
 
-                    if (isset($_GET['pseudoAutre'])) {
-                        $pseudoAutre = $_GET['pseudoAutre'];
-                        $sql = 'SELECT  * FROM  messagerie WHERE (pseudo_des =  "' . $pseudoProfil . '" OR pseudo_exp ="' . $pseudoProfil . '") AND (pseudo_exp = "' . $pseudoAutre . '" OR pseudo_exp ="' . $pseudoAutre . '") ORDER BY date';
-                        $result = $bdd->query($sql);
-                        echo $sql;
-                        echo "<br/>" . $sql;
-                    } else {
-                        $sql = 'SELECT  * FROM  messagerie WHERE (pseudo_des =  "' . $pseudoProfil . '" OR pseudo_exp ="' . $pseudoProfil . '") ORDER BY date';
-                        $result = $bdd->query($sql);
-                        echo "<br/>" . $sql;
-                    }
+            if (isset($_GET['pseudoAutre'])) {
+                $pseudoAutre = $_GET['pseudoAutre'];
+                $sql = '(SELECT * FROM messagerie WHERE pseudo_des = "' . $pseudoProfil . '" AND pseudo_exp ="' . $pseudoAutre . '") UNION (SELECT * FROM messagerie WHERE pseudo_exp = "' . $pseudoProfil . '" AND pseudo_des ="' . $pseudoAutre . '") ORDER BY ID';
+                $result = $bdd->query($sql);
+
+                // echo "<br/>" . $sql;
+            } else {
+                $sql = 'SELECT  * FROM  messagerie WHERE (pseudo_des =  "' . $pseudoProfil . '" OR pseudo_exp ="' . $pseudoProfil . '") ORDER BY ID DESC';
+                $result = $bdd->query($sql);
+                //echo "<br/>" . $sql;
+            }
 
 
-                    while ($data = $result->fetch()) {
-                        $pseudodesCour = $data['pseudo_des'];
-                        if ($pseudodesCour == $pseudoProfil) {
-                            $destinataire = "vous";
-                        } else {
-                            $pseudoAutre = $pseudodesCour;
-                            $destinataire = $pseudoAutre;
-                        }
+            while ($data = $result->fetch()) {
+                $pseudodesCour = $data['pseudo_des'];
+                if ($pseudodesCour == $pseudoProfil) {
+                    $destinataire = "vous";
+                } else {
+                    $pseudoAutre = $pseudodesCour;
+                    $destinataire = $pseudoAutre;
+                }
 
-                        $pseudoexpCour = $data['pseudo_exp'];
-                        if ($pseudoexpCour == $pseudoProfil) {
-                            $expediteur = "vous";
-                        } else {
-                            $pseudoAutre = $pseudoexpCour;
-                            $expediteur = $pseudoAutre;
-                        }
+                $pseudoexpCour = $data['pseudo_exp'];
+                if ($pseudoexpCour == $pseudoProfil) {
+                    $expediteur = "vous";
+                } else {
+                    $pseudoAutre = $pseudoexpCour;
+                    $expediteur = $pseudoAutre;
+                }
                         ?> 
 
-
-                        <?php
-                        $date = $data['date'];
-                        $date = substr($date, 0, 10)
-                        ?>
-                        <div><h4>De <?php echo $expediteur ?> à <?php echo $destinataire ?> le <?php echo $date ?> :</h4>
 
                             <?php
-                            $message = $data['message'];
-                            echo $message;
-                            if (!isset($_GET['pseudodAutre'])) {
-                                ?> <br/><a href="profil.php?target=messagerie&pseudodAutre=<?php echo $pseudoAutre ?>#description">Voir la conversation enti&egrave;re</a> 
-                                <br/><br/>
-                            <?php } ?>    
-                        </div> 
+                            $date = $data['date'];
+                            $date = substr($date, 0, 10)
+                            ?>
+                            <div class="divmessageCour">
+                                <h4>De <?php echo $expediteur ?> à <?php echo $destinataire ?> le <?php echo $date ?> :</h4>
 
-                        <?php
-                    } $result->closeCursor();
+                                <?php
+                                $message = $data['message'];
+                                echo $message;
+                                if (!isset($_GET['pseudoAutre'])) {
+                                    ?> <br/><br/><a href="profil.php?target=messagerie&pseudoAutre=<?php echo $pseudoAutre ?>#description">Voir la conversation enti&egrave;re</a> 
 
-                    //////////////////
+                                <?php } ?>    
+                            </div> 
 
-                    if (isset($_GET['pseudodAutre'])) {
-                        ?> 
+                            <?php
+                        } $result->closeCursor();
+                        ?> </div><?php
+            //////////////////
+
+            if (isset($_GET['pseudoAutre'])) {
+                            ?> <br/><br/>
 
                         <form action="traitMessagerie.php" method="post">
-                            Nouveau message :<input type="text" name="message" class="message" required>
+                            Nouveau message :<input type="text" name="message" class="taperMessage" required>
                             <input type="hidden" name="pseudoAutre" value="<?php echo $pseudoAutre ?>">
                             <input type="submit" value="Submit">
                         </form>
                     <?php } else { ?>
+                        <br/>
                         <form action="traitMessagerie.php" method="post">
                             Destinataire : 
-                            <input type="text" name="pseudoAutre" value="" required><br/>
+                            <input type="text" name="pseudoAutre" value="" class="taperPseudo" required><br/><br/>
                             Nouveau message :
-                            <input type="text" name="message" class="message" required>
+                            <input type="text" name="message" class="taperMessage" required>
 
                             <input type="submit" value="Submit">
                         </form>
@@ -679,10 +682,10 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                     while ($data = $result->fetch()) {
                                         ?>
                                         <p id="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];
-                                ?></p>
+                                        ?></p>
                                         <p id="lieu"><?php
-                                echo $data['nomSociete'] . ", " . $data['pays'];
-                            }$result->closeCursor();
+                                    echo $data['nomSociete'] . ", " . $data['pays'];
+                                }$result->closeCursor();
                                     ?></p>
                                 </fieldset>
 
@@ -742,89 +745,92 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                 }
                                 if ($target == "messagerie") {
                                     ?>
-                                    <div id="messagerie">
+                                    <div id="messagerieTotal">
 
 
-                                        <h1>MESSAGERIE:</h1>
+                                        <h1 class="titreMessagerie">MESSAGERIE:</h1>
 
                                         <?php
                                         $idProfil = $_SESSION['ID'];
                                         $typeProfil = $_SESSION['SWITCH'];
                                         $sql = 'SELECT pseudo FROM ' . $typeProfil . ' WHERE ID =  "' . $idProfil . '"';
                                         $result = $bdd->query($sql);
-                                        echo "<br/>" . $sql;
-                                        while ($data = $result->fetch()) {
-                                            $pseudoProfil = $data['pseudo'];
-                                        }$result->closeCursor();
+                                        // echo "<br/>" . $sql;
+                                        ?><div class="messagerie"> <?php
+                            while ($data = $result->fetch()) {
+                                $pseudoProfil = $data['pseudo'];
+                            }$result->closeCursor();
 
 
 
-                                        if (isset($_GET['pseudoAutre'])) {
-                                            $pseudoAutre = $_GET['pseudoAutre'];
-                                            $sql = 'SELECT  * FROM  messagerie WHERE (pseudo_des =  "' . $pseudoProfil . '" OR pseudo_exp ="' . $pseudoProfil . '") AND (pseudo_exp = "' . $pseudoAutre . '" OR pseudo_exp ="' . $pseudoAutre . '") ORDER BY date';
-                                            $result = $bdd->query($sql);
-                                            echo $sql;
-                                            echo "<br/>" . $sql;
-                                        } else {
-                                            $sql = 'SELECT  * FROM  messagerie WHERE (pseudo_des =  "' . $pseudoProfil . '" OR pseudo_exp ="' . $pseudoProfil . '") ORDER BY date';
-                                            $result = $bdd->query($sql);
-                                            echo "<br/>" . $sql;
-                                        }
+                            if (isset($_GET['pseudoAutre'])) {
+                                $pseudoAutre = $_GET['pseudoAutre'];
+                                $sql = '(SELECT * FROM messagerie WHERE pseudo_des = "' . $pseudoProfil . '" AND pseudo_exp ="' . $pseudoAutre . '") UNION (SELECT * FROM messagerie WHERE pseudo_exp = "' . $pseudoProfil . '" AND pseudo_des ="' . $pseudoAutre . '") ORDER BY ID';
+                                $result = $bdd->query($sql);
+
+                                // echo "<br/>" . $sql;
+                            } else {
+                                $sql = 'SELECT  * FROM  messagerie WHERE (pseudo_des =  "' . $pseudoProfil . '" OR pseudo_exp ="' . $pseudoProfil . '") ORDER BY ID DESC';
+                                $result = $bdd->query($sql);
+                                //echo "<br/>" . $sql;
+                            }
 
 
-                                        while ($data = $result->fetch()) {
-                                            $pseudodesCour = $data['pseudo_des'];
-                                            if ($pseudodesCour == $pseudoProfil) {
-                                                $destinataire = "vous";
-                                            } else {
-                                                $pseudoAutre = $pseudodesCour;
-                                                $destinataire = $pseudoAutre;
-                                            }
+                            while ($data = $result->fetch()) {
+                                $pseudodesCour = $data['pseudo_des'];
+                                if ($pseudodesCour == $pseudoProfil) {
+                                    $destinataire = "vous";
+                                } else {
+                                    $pseudoAutre = $pseudodesCour;
+                                    $destinataire = $pseudoAutre;
+                                }
 
-                                            $pseudoexpCour = $data['pseudo_exp'];
-                                            if ($pseudoexpCour == $pseudoProfil) {
-                                                $expediteur = "vous";
-                                            } else {
-                                                $pseudoAutre = $pseudoexpCour;
-                                                $expediteur = $pseudoAutre;
-                                            }
+                                $pseudoexpCour = $data['pseudo_exp'];
+                                if ($pseudoexpCour == $pseudoProfil) {
+                                    $expediteur = "vous";
+                                } else {
+                                    $pseudoAutre = $pseudoexpCour;
+                                    $expediteur = $pseudoAutre;
+                                }
                                             ?> 
 
-
-                                            <?php
-                                            $date = $data['date'];
-                                            $date = substr($date, 0, 10)
-                                            ?>
-                                            <div><h4>De <?php echo $expediteur ?> à <?php echo $destinataire ?> le <?php echo $date ?> :</h4>
 
                                                 <?php
-                                                $message = $data['message'];
-                                                echo $message;
-                                                if (!isset($_GET['pseudodAutre'])) {
-                                                    ?> <br/><a href="profil.php?target=messagerie&pseudodAutre=<?php echo $pseudoAutre ?>#description">Voir la conversation enti&egrave;re</a> 
-                                                    <br/><br/>
-                                                <?php } ?>    
-                                            </div> 
+                                                $date = $data['date'];
+                                                $date = substr($date, 0, 10)
+                                                ?>
+                                                <div class="divmessageCour">
+                                                    <h4>De <?php echo $expediteur ?> à <?php echo $destinataire ?> le <?php echo $date ?> :</h4>
 
-                                            <?php
-                                        } $result->closeCursor();
+                                                    <?php
+                                                    $message = $data['message'];
+                                                    echo $message;
+                                                    if (!isset($_GET['pseudoAutre'])) {
+                                                        ?> <br/><br/><a href="profil.php?target=messagerie&pseudoAutre=<?php echo $pseudoAutre ?>#description">Voir la conversation enti&egrave;re</a> 
 
-                                        //////////////////
+                                                    <?php } ?>    
+                                                </div> 
 
-                                        if (isset($_GET['pseudodAutre'])) {
-                                            ?> 
+                                                <?php
+                                            } $result->closeCursor();
+                                            ?> </div><?php
+                                //////////////////
+
+                                if (isset($_GET['pseudoAutre'])) {
+                                                ?> <br/><br/>
 
                                             <form action="traitMessagerie.php" method="post">
-                                                Nouveau message :<input type="text" name="message" class="message" required>
+                                                Nouveau message :<input type="text" name="message" class="taperMessage" required>
                                                 <input type="hidden" name="pseudoAutre" value="<?php echo $pseudoAutre ?>">
                                                 <input type="submit" value="Submit">
                                             </form>
                                         <?php } else { ?>
+                                            <br/>
                                             <form action="traitMessagerie.php" method="post">
                                                 Destinataire : 
-                                                <input type="text" name="pseudoAutre" value="" required><br/>
+                                                <input type="text" name="pseudoAutre" value="" class="taperPseudo" required><br/><br/>
                                                 Nouveau message :
-                                                <input type="text" name="message" class="message" required>
+                                                <input type="text" name="message" class="taperMessage" required>
 
                                                 <input type="submit" value="Submit">
                                             </form>
@@ -852,7 +858,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                                 <div> 		            
                                                     <script type="text/javascript">
                                                         // <![CDATA[
-                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    
                                                         // Alerte sur la recherche au cas où certains champs ne seraient pas remplis
                                                         var message = document.getElementById("messageRecherche");
                                                         function showSearchAlert(isChecked)
@@ -864,7 +870,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                                             }        
                                                             message.style.display = (isChecked && (elm0.value == '' || elm1.value == '')) ? "block" : "none";
                                                         }
-                                                                                                                                                                                                            
+                                                                                                                                                                                                                                    
                                                         //]]>
                                                     </script><br/>
 

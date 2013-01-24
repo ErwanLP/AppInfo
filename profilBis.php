@@ -64,6 +64,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                         <p class="lieu4"><?php echo $dataBis['pays'] . ", " . $dataBis['villes'];
                 ?></p>
                     </fieldset>
+                    <?php // ici pour invite amis ?>
 
                 </div>
                 <div class="menu">

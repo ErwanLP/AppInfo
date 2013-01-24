@@ -180,7 +180,16 @@ include("nav.php");
         }
         ?>
         </div>
-        <div class="imageDetail">
+        <?php 
+        
+        if(isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "participant"){
+            $reponse2=$bdd->query('SELECT * FROM event, commentairesevent,compte WHERE event.ID=commentairesevent.id_event AND commentairesevent.id_participant=compte.ID');
+            $comment=true;
+            while($donnees3=$reponse2->fetch){
+                $comment=false;
+            }
+            if($comment==true){
+            ?><div class="imageDetail">
             <form method="post" action="traitementCommentaire.php">
 
                 <fieldset class="formulaireCommentaire">
@@ -203,7 +212,10 @@ include("nav.php");
             </form>
 
 
-        </div> <?php
+        </div>
+            <?php
+        }}?>
+ <?php
                     }$reponse->closeCursor();
                     ?>
             
