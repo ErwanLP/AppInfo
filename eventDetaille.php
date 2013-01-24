@@ -39,7 +39,7 @@ include("nav.php");
         <div>
             <?php
             $ID = $_GET['ID'];
-            $reponse = $bdd->query('SELECT * FROM event WHERE event.ID=' . $ID);
+            $reponse = $bdd->query('SELECT * FROM event WHERE event.ID =' . $ID);
             while ($donnees = $reponse->fetch()) {
                 ?><div class = "imageDetail" >
 
