@@ -126,7 +126,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                             $dfNom = $data2['pseudo'];
                         }$result2->closeCursor();
                         ?>
-                        <fieldset>
+                        <fieldset class ="dACour">
                             <?php echo $dfNom . " souhaite devenir votre ami(e)" ?></p>
                             <?php
                             echo "<a href ='traitementFriend.php?target=acp&accept=true&demandeur=" . $data['id_demandeur'] . "'>Accepter</a>";
@@ -159,7 +159,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                         }$result2->closeCursor();
                         ?>
 
-                        <fieldset>
+                        <fieldset class ="amiCour">
                             <?php
                             if ($dfTof == null) {
 
@@ -169,8 +169,8 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 
 
                             <a href="profilBis.php?IDprofil=<?php echo $dfIdAutre ?>&Pseudo=<?php echo $dfPseudo ?>" ><img src="<?php echo $dfTof ?>" alt="Jerry" title="Cliquez pour agrandir" style="border: solid black 2px"height="200" width="200"/></a>
-                            <p class="nom1"><?php echo $dfPrenom . " " . $dfNom ?></p>
-                            <p class="lieu1"><?php echo $dfPseudo ?></p>
+                            <a href="profilBis.php?IDprofil=<?php echo $dfIdAutre ?>&Pseudo=<?php echo $dfPseudo ?>" ><span class="nom1"><?php echo $dfPrenom . " " . $dfNom ?></span></a><br/>
+                            <span class="lieu1"><?php echo $dfPseudo ?></span>
                         </fieldset>
 
 
@@ -198,15 +198,15 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                         <fieldset>
                             <a href="img/jerry.jpg"><img src="img/jerry_mini.jpg" alt="Jerry" title="Cliquez pour agrandir" style="border: solid black 2px"/></a>
                             <p class="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];
-                        ?></p>
+                ?></p>
                             <p class="lieu4"><?php echo $data['nomSociete'] . ", " . $data['pays'];
-                        ?></p>
-                            <?php
-                            $action = $_GET['action'];
-                            if ($action == "delete") {
-                                $bdd->query('DELETE FROM organisateur, abonnement WHERE organisateur.ID = abonnement.ID_organisateur AND abonnement.ID_participant = ' . $_SESSION['ID'] . '');
-                            }
-                            ?>
+                ?></p>
+                                <?php
+                                $action = $_GET['action'];
+                                if ($action == "delete") {
+                                    $bdd->query('DELETE FROM organisateur, abonnement WHERE organisateur.ID = abonnement.ID_organisateur AND abonnement.ID_participant = ' . $_SESSION['ID'] . '');
+                                }
+                                ?>
                             <a href="profil.php?target=abo&action=delete"><img src="img/croixsupp.png" alt="Supprimer" id="supprimer"/></a>
                         </fieldset>
                         <?php
@@ -277,7 +277,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                     $pseudoAutre = $pseudoexpCour;
                     $expediteur = $pseudoAutre;
                 }
-                ?> 
+                        ?> 
 
 
                             <?php
@@ -293,7 +293,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                 if (!isset($_GET['pseudoAutre'])) {
                                     ?> <br/><br/><a href="profil.php?target=messagerie&pseudoAutre=<?php echo $pseudoAutre ?>#description">Voir la conversation enti&egrave;re</a> 
 
-                            <?php } ?>    
+                                <?php } ?>    
                             </div> 
 
                             <?php
@@ -302,14 +302,14 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
             //////////////////
 
             if (isset($_GET['pseudoAutre'])) {
-                ?> <br/><br/>
+                            ?> <br/><br/>
 
                         <form action="traitMessagerie.php" method="post">
                             Nouveau message :<input type="text" name="message" class="taperMessage" required>
                             <input type="hidden" name="pseudoAutre" value="<?php echo $pseudoAutre ?>">
                             <input type="submit" value="Submit">
                         </form>
-            <?php } else { ?>
+                    <?php } else { ?>
                         <br/>
                         <form action="traitMessagerie.php" method="post">
                             Destinataire : 
@@ -738,7 +738,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                         }
                         ?>
 
-                                <?php if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) { ?>
+                        <?php if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) { ?>
                             <div id="description">
                                 <fieldset>
                                     <?php
@@ -756,11 +756,11 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 
 
                                         <p id="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];
-                                        ?></p>
-                                        <p id="lieu"><?php
-                                    echo $data['nomSociete'] . ", " . $data['pays'];
-                                }$result->closeCursor();
                                 ?></p>
+                                        <p id="lieu"><?php
+                                echo $data['nomSociete'] . ", " . $data['pays'];
+                            }$result->closeCursor();
+                                    ?></p>
                                 </fieldset>
 
                             </div>
@@ -866,7 +866,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                     $pseudoAutre = $pseudoexpCour;
                                     $expediteur = $pseudoAutre;
                                 }
-                                ?> 
+                                            ?> 
 
 
                                                 <?php
@@ -882,23 +882,23 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                                     if (!isset($_GET['pseudoAutre'])) {
                                                         ?> <br/><br/><a href="profil.php?target=messagerie&pseudoAutre=<?php echo $pseudoAutre ?>#description">Voir la conversation enti&egrave;re</a> 
 
-                                                <?php } ?>    
+                                                    <?php } ?>    
                                                 </div> 
 
                                                 <?php
                                             } $result->closeCursor();
                                             ?> </div><?php
-                            //////////////////
+                                //////////////////
 
-                            if (isset($_GET['pseudoAutre'])) {
-                                ?> <br/><br/>
+                                if (isset($_GET['pseudoAutre'])) {
+                                                ?> <br/><br/>
 
                                             <form action="traitMessagerie.php" method="post">
                                                 Nouveau message :<input type="text" name="message" class="taperMessage" required>
                                                 <input type="hidden" name="pseudoAutre" value="<?php echo $pseudoAutre ?>">
                                                 <input type="submit" value="Submit">
                                             </form>
-            <?php } else { ?>
+                                        <?php } else { ?>
                                             <br/>
                                             <form action="traitMessagerie.php" method="post">
                                                 Destinataire : 
