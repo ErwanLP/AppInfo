@@ -678,7 +678,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                     <img src="img/logo.png" width="200" height="200" alt="Logo" style="border: solid black 2px"/>                  
                                     <?php
                                     
-                                    $result = $bdd->query('SELECT * FROM organisateur WHERE ID = "' . $_SESSION['ID'] . '"');
+                                    $result = $bdd->query('SELECT * FROM organisateur WHERE ID = "'.$_SESSION['ID'].'"');
                                     while ($data = $result->fetch()) {
                                         ?>
                                         <p id="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];
@@ -696,7 +696,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                     <li><input type="button" onclick="self.location.href='profil.php?target=info#description';" value="Mes Infos"/></li>        
                                     <li><input type="button" onclick="self.location.href='profil.php?target=event#description';" value="Mes &Eacute;v&eacute;nements"/></li>
                                     <li><input type="button" onclick="self.location.href='profil.php?target=messagerie#description';" value="Ma Messagerie"/></li>
-                                    <li><input type="button" onclick="self.location.href='profil.php?target=pp#description';" value="Param&egrave;tres"/></li>
+                                    <li><input type="button" onclick="self.location.href='profil.php?target=po#description';" value="Param&egrave;tres"/></li>
                                 </ul>
                             </div>
 
