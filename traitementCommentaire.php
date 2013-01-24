@@ -14,6 +14,12 @@ if (isset($_POST['commentaire']) && $havePost==false){
     $note=null;
     if(isset($_POST['note'])){
         $note=$_POST['note'];
+        $captNote=$bdd->query('SELECT * FROM event WHERE event.ID='.$idEvt);
+        while($nota=$captNote->fetch()){
+            $note2=$nota['note']+$note;
+            $nbVote=$nota['nbVotes']+1;
+            $bdd->query('UPDATE event SET note='.$note2.', nbVotes='.$nbVote.' WHERE event.ID='.$idEvt);
+        }
     }
     str_replace("'", "\'", $contenu);
     $bdd->query("INSERT INTO commentairesevent(id_participant,id_event,note,contenu) VALUES('".$idPart."','".$idEvt."','".$note."','".$contenu."')");
