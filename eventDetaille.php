@@ -219,7 +219,7 @@ include("nav.php");
                                         <option value="<?php echo $_SESSION['ID']; ?>"><?php echo $_SESSION['ID']; ?></option>
                                     </select>
                     <select name="id_event" id="id_event" hidden>
-                                        <option value="<?php echo $_SESSION['ID']; ?>"><?php echo $_GET['ID']; ?></option>
+                                        <option value="<?php echo $ID; ?>"><?php echo $ID; ?></option>
                                     </select>
                     <input type="submit" value="Envoyer" />
                     
