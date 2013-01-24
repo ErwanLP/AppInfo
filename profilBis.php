@@ -67,6 +67,8 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 
                         <?php
                         // ici pour invite amis 
+                        
+                        if($id != $idAutre){
 
                         $bf = false;
                         $bdf = false;
@@ -85,6 +87,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                             }
                         }$result->closeCursor();
                         $sql2 = '(SELECT * FROM demandefriend WHERE id_demande="' . $id . '" AND id_demandeur="' . $idAutre . '")UNION (SELECT * FROM demandefriend WHERE id_demandeur="' . $id . '" AND id_demande="' . $idAutre . '")';
+                        echo $sql2;
                         $result = $bdd->query($sql2);
                         while ($data = $result->fetch()) {
                             if ($data['id_demandeur'] == $id) {
@@ -105,6 +108,10 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                         if (!$bf && !$bdf) {
                             $lien = 'traitementFriend.php?target=dem&demandeur='.$id.'&demande='.$idAutre;
                             echo '<a href="' . $lien . '" title="Ajout Ami" class ="imgAddF"><img src="img/addF.jpg" height="50" width="50"></a>';
+                        }
+                        }else{
+                            header('Location:profil.php?target=info');
+                            
                         }
                         ?>
 
