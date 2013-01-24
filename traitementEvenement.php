@@ -4,30 +4,32 @@ if (isset($_POST['nomEvent']) && isset($_POST['lieuEvent']) && isset($_POST['des
     $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
     $imageSet = false;
     if (isset($_FILES['image']) AND $_FILES['image']['error'] == 0) {
-        echo '<strong>La taille du fichier est trop grande. Veuillez selectionner une image faisant moins de 100 Ko.';
 
-        if (isset($_FILES['image']) AND $_FILES['image']['error'] == 0 AND $_FILES['image']['size'] <= 102400) {
+        if (isset($_FILES['image']) AND $_FILES['image']['error'] == 0 AND $_FILES['image']['size'] <= 307200) {
             $infoImage = pathinfo($_FILES['image']['name']);
-            $extImage = $infosfichier['extension'];
+            $extImage = $infoImage['extension'];
             $extAccept = array('jpg', 'jpeg', 'png');
             if (in_array($extImage, $extAccept)) {
                 $t = 0;
                 $nbr = $bdd->query('SELECT photo FROM event');
                 while ($dataImage = $nbr->fetch()) {
                     $t = $t + 1;
-                }$nbr->closeCursor;
+                }$nbr->closeCursor();
                 $imageSet = true;
             } else {
-                echo '<strong>Veuillez choisir une photo au format jpeg ou png</strong>';
+                echo '<strong>Veuillez choisir une photo au format jpeg ou png</strong><br/>';
                 echo '<strong>Picture format are not allowed, please choose a jpeg or png picture</strong>';
             }
         } else {
-            echo '<strong>La taille du fichier est trop grande. Veuillez selectionner une image faisant moins de 100 Ko.</strong>';
-            echo '<strong>File size is bigger than authorized. Please choose a picture shorter than 100 KB</strong>';
+            echo '<strong>La taille du fichier est trop grande. Veuillez selectionner une image faisant moins de 300 Ko.</strong><br/>';
+            echo '<strong>File size is bigger than authorized. Please choose a picture shorter than 300 KB</strong>';
         }
     } else {
-        echo '<strong>Probl&egrave;me avec la r&eacute;ception du fichier</strong>';
+        echo '<strong>Probl&egrave;me avec la r&eacute;ception du fichier</strong><br/>';
         echo '<strong>File uploading failed.</strong>';
+    }
+    if($imageSet==false){
+        echo '<br/>Le fichier n\'a pas pu &ecirc;tre upload&eacute;<br/>The file haven\'t been uploaded';
     }
 
     $nomEvent = $_POST['nomEvent'];
@@ -39,6 +41,7 @@ if (isset($_POST['nomEvent']) && isset($_POST['lieuEvent']) && isset($_POST['des
     $dateFin = $_POST['dateFin'];
     $heureDebut = $_POST['heureDebut'];
     $heureFin = $_POST['heureFin'];
+    $id_organisateur=$_POST['id_organisateur'];
     $sousThemeEvent = $_POST['themeEvent'];
     $sousThemeExistants = $bdd->query('SELECT nom,nomEn FROM soustheme');
     $sousThemeEx = FALSE;
@@ -46,37 +49,37 @@ if (isset($_POST['nomEvent']) && isset($_POST['lieuEvent']) && isset($_POST['des
     $lang = 'fr';
 
     $lundi = false;
-    if ($_POST['lundi'] == 'on') {
+    if (!empty($_POST['lundi']) ) {
         $lundi = true;
     }
 
     $mardi = false;
-    if ($_POST['mardi'] == 'on') {
+    if (!empty($_POST['mardi'])) {
         $mardi = true;
     }
 
     $mercredi = false;
-    if ($_POST['mercredi'] == 'on') {
+    if (!empty($_POST['mercredi'])) {
         $mercredi = true;
     }
 
     $jeudi = false;
-    if ($_POST['jeudi'] == 'on') {
+    if (!empty($_POST['jeudi'])) {
         $jeudi = true;
     }
 
     $vendredi = false;
-    if ($_POST['vendredi'] == 'on') {
+    if (!empty($_POST['vendredi'])) {
         $vendredi = true;
     }
 
     $samedi = false;
-    if ($_POST['samedi'] == 'on') {
+    if (!empty($_POST['samedi'])) {
         $samedi = true;
     }
 
     $dimanche = false;
-    if ($_POST['dimanche'] == 'on') {
+    if (!empty($_POST['dimanche'])) {
         $dimanche = true;
     }
 
@@ -91,9 +94,9 @@ if (isset($_POST['nomEvent']) && isset($_POST['lieuEvent']) && isset($_POST['des
     }$sousThemeExistants->closeCursor();
 
 
-    $themeRel = $bdd->query('SELECT theme.nom,theme.nomEn From theme,soustheme WHERE soustheme.nom="' . $sousThemeEvent . '" AND soustheme.id_theme=theme.id');
-    if ($lang = 'en') {
-        $themeRel = $bdd->query('SELECT theme.nom,theme.nomEn From theme,soustheme WHERE soustheme.nomEn="' . $sousThemeEvent . '" AND soustheme.id_theme=theme.id');
+    $themeRel = $bdd->query('SELECT theme.nom From theme,soustheme WHERE soustheme.nom="' . $sousThemeEvent . '" AND soustheme.id_theme=theme.id');
+    if ($lang == 'en') {
+        $themeRel = $bdd->query('SELECT theme.nomEn From theme,soustheme WHERE soustheme.nomEn="' . $sousThemeEvent . '" AND soustheme.id_theme=theme.id');
     }
     $themeEx = FALSE;
     while ($dataTheme = $themeRel->fetch()) {
@@ -123,14 +126,19 @@ if (isset($_POST['nomEvent']) && isset($_POST['lieuEvent']) && isset($_POST['des
     $resultEVT->closeCursor();
     $resultEVT = null;
 
-
-    if ($booleantest == FALSE && $sousThemeEx == TRUE && $themeEx == TRUE && $imageSet==true) {
+    str_replace("'","\'", $description);
+    if ($booleantest == FALSE && $sousThemeEx == TRUE && $themeEx == TRUE && $imageSet==TRUE) {
         move_uploaded_file($_FILES['image']['tmp_name'], 'imgUser/' . $t . $extImage);
         $chemin = 'imgUser/' . $t . $extImage;
-        $bdd->query("INSERT INTO event(nom,lieu,description,dateDebut,dateFin,heureDebut,heureFin,theme,type, photo, lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche, prix, nbDePersonne, placesRestantes, nbVotes) VALUES ('.$nomEvent.','.$lieuEvent.','.$description.','.$dateDebut.','.$dateFin.','.$heureDebut.','.$heureFin.','.$themeEvent.','.$sousThemeEvent.','.$chemin.','.$lundi.','.$mardi.','.$mercredi.','.$jeudi.','.$vendredi.','.$samedi.','.$dimanche.','.$prix.','.$nbDePersonne.','.$nbDePersonne.',0)");
-        
-        
-        header('Location:index.php');
+        $bdd->query("INSERT INTO event(id_organisateur,nom,lieu,description,dateDebut,dateFin,heureDebut,heureFin,theme,type, lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche, prix, nbDePersonne, placesRestantes, nbVotes, photo) VALUES ('".$id_organisateur."','".$nomEvent."','".$lieuEvent."','".$description."','".$dateDebut."','".$dateFin."','".$heureDebut."','".$heureFin."','".$themeEvent."','".$sousThemeEvent."','".$lundi."','".$mardi."','".$mercredi."','".$jeudi."','".$vendredi."','".$samedi."','".$dimanche."','".$prix."','".$nbDePersonne."','".$nbDePersonne."',0,'".$chemin."')");
+        /*echo "INSERT INTO event(id_organisateur,nom,lieu,description,dateDebut,dateFin,heureDebut,heureFin,theme,type, lundi, mardi, mercredi, jeudi, vendredi, samedi, dimanche, prix, nbDePersonne, placesRestantes, nbVotes, photo) VALUES ('".$id_organisateur."','".$nomEvent."','".$lieuEvent."','".$description."','".$dateDebut."','".$dateFin."','".$heureDebut."','".$heureFin."','".$themeEvent."','".$sousThemeEvent."','".$lundi."','".$mardi."','".$mercredi."','".$jeudi."','".$vendredi."','".$samedi."','".$dimanche."','".$prix."','".$nbDePersonne."','".$nbDePersonne."',0,'".$chemin."')";
+        requete */
+        $IDEvent = $bdd->query('SELECT ID FROM event');
+        while ($data16 = $IDEvent->fetch()) {
+            $IDEventCree=$data16['ID'];
+        }$IDEvent->closeCursor();
+        /*echo $IDEventCree;*/
+        header('Location:eventDetaille.php?ID='.$IDEventCree);
     } else {
         if ($booleantest == TRUE) {
             echo 'Le nom de l\'&eacute;v&egrave;nement est d&eacute;j&aacute; utilis&eacute;.';
