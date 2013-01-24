@@ -2,7 +2,7 @@
 include('BDD.php');
     $tab = array();
     $var = 0;
-    $re = $bdd->query('SELECT photo FROM event ORDER BY date DESC LIMIT 10');
+    $re = $bdd->query('SELECT photo FROM event ORDER BY dateDebut DESC LIMIT 10');
     while ($donnees = $re->fetch()) {
             $tab[$var][0] = $donnees["photo"];
             $var++;

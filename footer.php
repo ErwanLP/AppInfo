@@ -6,6 +6,8 @@
 </body>
 </html>
 
+<!-- SCRIPT LIE AUX NEWS -->
+
 <script type="text/javascript">
 
     var v2 = $("#slider img").length;
