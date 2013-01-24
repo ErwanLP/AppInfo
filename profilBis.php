@@ -87,7 +87,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                             }
                         }$result->closeCursor();
                         $sql2 = '(SELECT * FROM demandefriend WHERE id_demande="' . $id . '" AND id_demandeur="' . $idAutre . '")UNION (SELECT * FROM demandefriend WHERE id_demandeur="' . $id . '" AND id_demande="' . $idAutre . '")';
-                        echo $sql2;
+                        //echo $sql2;
                         $result = $bdd->query($sql2);
                         while ($data = $result->fetch()) {
                             if ($data['id_demandeur'] == $id) {
