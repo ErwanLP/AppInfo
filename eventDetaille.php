@@ -153,7 +153,7 @@ include("nav.php");
                     <p class="evenementDetailDescription"><span style="margin-left:70px;"><?php echo $donnees['description']; ?></span></p>
                 </div>
 <div class="imageDetail2">
-        <?php if($donnees['note']!=0){
+        <?php if($donnees['nbVotes']!=0){
             ?><strong>Note des participants : </strong><img src="<?php 
             $notas=$donnees['note']/$donnees['nbVotes'];
         if($notas<=0.5){
