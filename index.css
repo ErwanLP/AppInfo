@@ -67,6 +67,8 @@ header
         position : relative;
         margin-left:40px;
         top:-430px;
+        font-size: 22px;
+        color:#105CA0;
 }
 .titreDetailEvent
 {
