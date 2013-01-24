@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include("start.php");
 include("BDD.php");
@@ -12,7 +13,7 @@ include("nav.php");
 
 <section>
     <aside class ="navg">
-<?php include ("arbre.php"); ?>
+        <?php include ("arbre.php"); ?>
     </aside>
 
     <aside class ="new">
@@ -33,12 +34,11 @@ include("nav.php");
 
     </aside>
 
-    <article class ="articleevent">                  
+    <article class ="eventDetaille">                  
 
         <div>
             <?php
             $ID = $_GET['ID'];
-            echo $ID;
             $reponse = $bdd->query('SELECT * FROM event WHERE event.ID=' . $ID);
             while ($donnees = $reponse->fetch()) {
                 ?><div class = "imageDetail" >
@@ -64,66 +64,160 @@ include("nav.php");
                             ?> &Eacute;v&eacute;nement ayant lieu du  <?php echo $donnees['dateDebut']; ?> au <?php echo $donnees['dateFin']; ?>
                         <?php }
                         ?>
-                        </br></br>Budget : <?php echo $donnees['prix']; ?> €<span style="margin-left:50px;">Places dispo : <?php echo $donnees['placesRestantes']; ?></br></br>Lu - Ma - Me - Je - Ve - Sa - Di</p>         		
+                        </br></br>Budget : <?php
+                    if ($donnees['prix'] != 0 && $donnees['prix'] != null) {
+
+                        echo $donnees['prix'];
+                        echo '&euro;';
+                    } else {
+                        if ($donnees['prix'] == 0) {
+                            echo 'Gratuit';
+                        } else {
+                            echo '-NC-';
+                        }
+                    }
+                        ?> <span style="margin-left:50px;"><?php
+                    if ($donnees['nbDePersonne'] != 0 && $donnees['nbDePersonne'] != null) {
+                        echo 'Places disponibles :   ';
+                        if ($donnees['placesRestantes'] > 0) {
+                            echo $donnees['placesRestantes'];
+                        } else {
+                            echo 'Complet';
+                        }
+                    } else {
+                        echo 'Places disponibles : -NC-';
+                    }
+                        ?>
+                            </br></br><?php
+                    $tiret = 0;
+                    if ($donnees['lundi'] == true) {
+                        echo 'Lu';
+                        $tiret = 1;
+                    }
+                    if ($donnees['mardi'] == true) {
+                        if ($tiret = 1) {
+                            echo ' - ';
+                        }
+                        echo 'Ma';
+                        $tiret = 1;
+                    }
+                    if ($donnees['mercredi'] == true) {
+                        if ($tiret = 1) {
+                            echo ' - ';
+                        }
+                        echo 'Me';
+                        $tiret = 1;
+                    }
+                    if ($donnees['jeudi'] == true) {
+                        if ($tiret = 1) {
+                            echo ' - ';
+                        }
+                        echo 'Je';
+                        $tiret = 1;
+                    }
+                    if ($donnees['vendredi'] == true) {
+                        if ($tiret = 1) {
+                            echo ' - ';
+                        }
+                        echo 'Ve';
+                        $tiret = 1;
+                    }
+                    if ($donnees['samedi'] == true) {
+                        if ($tiret = 1) {
+                            echo ' - ';
+                        }
+                        echo 'Sa';
+                        $tiret = 1;
+                    }
+                    if ($donnees['dimanche'] == true) {
+                        if ($tiret = 1) {
+                            echo ' - ';
+                        }
+                        echo 'Di';
+                        $tiret = 1;
+                    }
+
+                    if ($tiret == 0) {
+                        if ($donnees['dateFin'] != "0000-00-00") {
+                            echo 'Jour d\'ouverture : -NC-';
+                        } else {
+                            echo ' ';
+                        }
+                    }
+                        ?></p> 
+
+
                 </div>
 
                 <div class ="imageDetail">
                     <p class="evenementDetailDescription"><span style="margin-left:70px;"><?php echo $donnees['description']; ?></span></p>
-                </div> <?php
+                </div>
+<div class="imageDetail2">
+        <?php if($donnees['note']!=0){
+            ?><strong>Note des participants : </strong><img src="<?php 
+        if($donnees['note']<=0.5){
+            echo 'img/etoile0.png';
+        }
+        if($donnees['note']>0.5 &&$donnees['note']<=1.5){
+            echo 'img/etoile1.png';
+        }
+        if($donnees['note']>1.5 &&$donnees['note']<=2.5){
+            echo 'img/etoile2.png';
+        }
+        if($donnees['note']>2.5 &&$donnees['note']<=3.5){
+            echo 'img/etoile3.png';
+        }
+        if($donnees['note']>3.5 &&$donnees['note']<=4.5){
+            echo 'img/etoile4.png';
+        }
+        if($donnees['note']>4.5){
+            echo 'img/etoile5.png';
+        }
+        
+        ?>"  alt="Note" />(<?php echo $donnees['note']; ?> sur 5)<br/><?php
+            }else{
+            echo 'Aucune note pour le moment';
+        }
+        ?>
+        </div>
+        <div class="imageDetail">
+            <form method="post" action="traitementCommentaire.php">
+
+                <fieldset class="formulaireCommentaire">
+                    <legend class="">Commenter l'&eacute;v&eacute;nement :</legend>
+                    <label for ="commentaire">Commentaire :</label><br/>
+                    <textArea class="commenterEvent" type="text" name="commentaire" id="commentaire"  maxlength="400"/></textarea><br/>
+                    <label for ="note">Note :</label>
+                    <select name="note" id="note">
+                        <option value="NULL"> </option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select><br/><br/>
+                    <input type="submit" value="Envoyer" />
+                    
+                </fieldset>
+            </form>
+
+
+        </div> <?php
                     }$reponse->closeCursor();
                     ?>
+            
         </div>
-
-        </aside>
-
-        <article class ="articleevent">                  
-
-            <div>
-                <?php
-                $ID = $_GET['ID'];
-                echo $ID;
-                $reponse = $bdd->query('SELECT * FROM event WHERE event.ID=' . $ID);
-                while ($donnees = $reponse->fetch()) {
-                    ?><div class = "imageDetail" >
-
-                        <img alt="Photo de l'évènement" src= "<?php echo $donnees['photo'] ?>" title="Nom de l'&eacute;v&egrave;nement." height="420" width="280"/>
-
-                    </div>
-                    <div class ="imageDetail">	
-                        <p class="titreDetailEvent"><?php echo $donnees['nom']; ?></p>
-
-                        <p class="sousTitreThemeDetail"><?php echo $donnees['theme'] . ' - ' . $donnees['type']; ?></p>
-
-                        <p class="sousTitreLieuDetail">Adresse de l'&eacute;v&egrave;nement : </br><?php echo $donnees['lieu']; ?></p>
-
-                    </div>
-
-
-                    <div class ="imageDetail">
-
-                        <p class="sousTitreLieuDetail"><?php if ($donnees['dateFin'] == "0000-00-00") {
-                        ?> Ev&egrave;nement ayant lieu le : <?php echo $donnees['dateDebut']; ?>
-                            <?php } else {
-                                ?> Ev&egrave;nement ayant lieu du  <?php echo $donnees['dateDebut']; ?> au <?php echo $donnees['dateFin']; ?>
-                            <?php }
-                            ?>
-                            </br></br>Budget : <?php echo $donnees['prix']; ?> &euro;<span style="margin-left:50px;">Places dispo : <?php echo $donnees['placesRestantes']; ?></br></br>Lu - Ma - Me - Je - Ve - Sa - Di</p>         		
-                    </div>
-
-                    <div class ="imageDetail">
-                        <p class="evenementDetailDescription"><span style="margin-left:70px;"><?php echo $donnees['description']; ?></span></p>
-                    </div> <?php
-                        }$reponse->closeCursor();
-                        ?>
-            </div>
-
-            </div>
+        
 
 
 
 
 
-        </article>
+
+
+
+    </article>
 </section>
 
 

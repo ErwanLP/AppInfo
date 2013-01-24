@@ -62,6 +62,12 @@ header
         margin-left:40px;
         margin-top:40px;
 }
+.imageDetail2
+{       text-align: left;
+        position : relative;
+        margin-left:40px;
+        top:-430px;
+}
 .titreDetailEvent
 {
     position: relative;
@@ -588,11 +594,10 @@ article
 
 .articleevent{
     /*box-shadow: 0px 0px 10px azure;*/
-    width : 75%;
-    height : 1200px;
-    position: absolute;
-    right : 50px;
-    top : 400px;
+    width : 1500px;
+    position: relative;
+    left : 300px;
+    top : 320px;
     /* border: 2px solid white;	*/
     background-color: #ebe2d9;
     overflow : auto;
@@ -601,6 +606,18 @@ article
 
 
 
+}
+
+.eventDetaille{
+    /*box-shadow: 0px 0px 10px azure;*/
+    width : 1500px;
+    position: relative;
+    left : 300px;
+    top : 320px;
+    /* border: 2px solid white;	*/
+    background-color: #ebe2d9;
+    overflow : auto;
+    box-shadow: 0px 0px 10px black;
 }
 
 /* 1-2 NAV*/
@@ -681,7 +698,7 @@ article
 .evenement{
     text-align : left;
     width: 1400px;
-    height: 450px;
+    height: 370px;
     font-family: Comic Sans MS;
     background-color : white;
     box-shadow: 0px 0px 10px black;
@@ -693,7 +710,12 @@ article
     overflow : hidden;
 
 }
-
+.titreEventArticle{
+    font-size: 32px;
+    font-weight:bold;
+    color:#105CA0;
+    text-shadow: 2px 2px 2px gray;
+}
 .color {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -719,19 +741,31 @@ article
 }
 .tofevent{
     width : 100px;
-    height : 200px;
+    height : 160px;
 
 
 }
 
+.commenterEvent{
+    font-size: 18px;
+    width:600px;
+    height:300px;
+    resize: none;
+    color : #104090;
+}
 
-
-
+.formulaireCommentaire{
+    position : relative;
+    bottom : 400px;
+    font-size: 20px;
+    color : #1060B0;
+    text-align : left;
+}
 
 .evenement h1{
 
     height : 25px;
-    width: 550px;
+    width: 480px;
     text-decoration: underline;
     position: relative;
     left : 50px;
@@ -749,7 +783,6 @@ article
 
 .evenement .etoile {
 
-    border: 2px solid black;
     display: inline-block;
 
 }
@@ -1935,7 +1968,7 @@ strong{
     top: 700px;
     font-size: 20px;
 }
-#amis, #abonnement{
+#amis, #abonnement, #messagerie{
     position: absolute;
     padding: 20px;
     width: 70%;
