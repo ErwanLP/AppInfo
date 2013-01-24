@@ -177,7 +177,7 @@ include("nav.php");
 
                 </div> <?php
                    }else{
-                    ?>    <div class="imageDetail2">D&eacute;j&agrave; inscrit ;) !
+                    ?>    <div class="imageDetail2">Vous &ecirc;tes inscrit ;) !
                     </div>
             <?php
                    }
