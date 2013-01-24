@@ -696,7 +696,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                     <li><input type="button" onclick="self.location.href='profil.php?target=info#description';" value="Mes Infos"/></li>        
                                     <li><input type="button" onclick="self.location.href='profil.php?target=event#description';" value="Mes &Eacute;v&eacute;nements"/></li>
                                     <li><input type="button" onclick="self.location.href='profil.php?target=messagerie#description';" value="Ma Messagerie"/></li>
-                                    <li><input type="button" onclick="self.location.href='profil.php?target=pp#description';" value="Param&egrave;tres"/></li>
+                                    <li><input type="button" onclick="self.location.href='profil.php?target=po#description';" value="Param&egrave;tres"/></li>
                                 </ul>
                             </div>
 
