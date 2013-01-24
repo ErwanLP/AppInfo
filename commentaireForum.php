@@ -56,6 +56,7 @@ include("nav.php");
         $reqP = $bdd->query('SELECT id from topicforum WHERE id = "' . $id_topic . '"');
         while ($dataa = $reqP->fetch()) {
             $ID_topicforum = $dataa['id'];
+            echo $ID_topicforum;
         }$reqP->closeCursor();
 
         $tab_info_commentaire = array();
@@ -167,6 +168,8 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
             $erreurCommentaire = 'NULL';
             $date_creation = date("Y-m-d H:i:s");
             $message = $_POST['message'];
+           // $ID_topicforum
+           // $IDProfil
             if (strlen($_POST['message']) < 2) {
                 $erreurCommentaire = "Votre commentaire est trop court!";
                 ?>
@@ -177,11 +180,14 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
                 $i++;
             } else if ($i == 0) {
 
-                $req = $bdd->prepare('INSERT INTO forummessage (date_creation,message)
-        VALUES (:date_creation,:message)');
+                $req = $bdd->prepare('INSERT INTO forummessage (date_creation,message,id_topic,IDProfil )
+        VALUES (:date_creation,:message,:id_topic,:IDProfil)');
                 $req->execute(array(
                     'date_creation' => $date_creation,
-                    'message' => $message));
+                    'message' => $message,
+                    'id_topic'=>$ID_topicforum,
+                    'IDProfil'=>$IDProfil));
+                
                 ?>
                 <br/>
                 <br/>
@@ -192,4 +198,5 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
         ?>
     </article>
 </section>
-<?php include('footer.php'); ?>        
+<?php 
+include('footer.php'); ?>        

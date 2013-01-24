@@ -91,7 +91,6 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                         <p id="preference">
                             <strong>Profession :</strong><?php echo " " . $data['profession']; ?><br/><br/>
                             <strong>Loisirs :</strong><?php echo " " . $data['loisirs']; ?><br/><br/>
-                            <strong>&Eacute;v&eacute;nements pr&eacute;f&eacute;r&eacute;s :</strong><?php echo " " . $data['preference']; ?><br/><br/>
                             <strong>Description :</strong><br/><br/>
                             <?php echo " " . $data['description']; ?>
 
@@ -266,7 +265,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
             if ($target == "pp") {
                 ?>
                 <div class="titreParametre">          
-                    <form  method="post" action="/m/account/" id="gestioncompte"><br/><br/><br/>
+                    <form  method="post" action="traitementProfil" id="gestioncompte"><br/><br/><br/>
 
                         <fieldset id="fieldset1" >
 
@@ -336,7 +335,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                     <!-- Date de naissance -->
                                     <div class="info"><br/>
                                         <!--<label class="infoPerso" for="dateDeNaissance" data-fieldgroup="date"><span class="required">Date de naissance<sup>*</sup> :</span></label>-->
-                                        Date de naissance : &nbsp; <input type="text" id="nom" name="nom" class="text" value="<?php echo $data['dateDeNaissance']; ?>" />
+                                        Date de naissance : &nbsp; <input type="text" id="date" name="date" class="text" value="<?php echo $data['dateDeNaissance']; ?>" />
 
 
 
@@ -390,7 +389,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                         <div class="info"><br/>
                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             <!--<label class="infoPerso" for="pays"><span class="required">Pays<sup>*</sup> :</span></label>-->
-                                            Pays<sup>*</sup> :&nbsp;&nbsp; <select class="choix" id="country" name="pays">
+                                            Pays<sup>*</sup> :&nbsp;&nbsp; <select class="choix" id="pays" name="pays">
                                                 <option value="AF">Afghanistan</option>
                                                 <option value="ZA">Afrique du Sud</option>
                                                 <option value="AL">Albanie</option>
@@ -624,14 +623,14 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                         <div class="info"><br/>
                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             <!--<label for="telephoneFixe" class="infoPerso">Téléphone fixe :</label>-->
-                                            T&eacute;l&eacute;phone fixe : &nbsp; <input type="text" id="telephoneFixe" name="TelephoneFixe" class="text" value="<?php echo $data['telephoneFixe']; ?>"/>
+                                            T&eacute;l&eacute;phone fixe : &nbsp; <input type="text" id="telephoneFixe" name="telephoneFixe" class="text" value="<?php echo $data['telephoneFixe']; ?>"/>
                                         </div>
 
                                         <!-- Téléphone Mobile -->
                                         <div class="info"><br/>
                                             &nbsp;
                                              <!--<label for="NumeroPortable" class="infoPerso">Mobile<sup>*</sup> :</label>-->
-                                            T&eacute;l&eacute;phone Mobile<sup>*</sup> : &nbsp; <input type="text" id="numeroPortable" name="TelephoneMobile" class="text" value="<?php echo $data['telephoneMobile']; ?>"/>
+                                            T&eacute;l&eacute;phone Mobile<sup>*</sup> : &nbsp; <input type="text" id="numeroPortable" name="numeroPortable" class="text" value="<?php echo $data['telephoneMobile']; ?>"/>
 
 
 
@@ -678,7 +677,8 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                 <fieldset>
                                     <img src="img/logo.png" width="200" height="200" alt="Logo" style="border: solid black 2px"/>                  
                                     <?php
-                                    $result = $bdd->query('SELECT * FROM organisateur WHERE ID = ' . $_SESSION['ID'] . ' ');
+                                    
+                                    $result = $bdd->query('SELECT * FROM organisateur WHERE ID = "' . $_SESSION['ID'] . '"');
                                     while ($data = $result->fetch()) {
                                         ?>
                                         <p id="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];

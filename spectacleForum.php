@@ -75,7 +75,7 @@ include("nav.php");
                         <?php for ($a = 0; $a < count($tab_info_spectacle); $a++) {
                             ?>
                             <tr class="affichageSujet">
-                                <td class="contenuMessage"><a href="commentaireForum.php?idTopic=<?php echo $tab_info_spectacle[$a][3] ?>&titreTopic=<?php echo $tab_info_spectacle[$a][0] ?>"><?php echo $tab_info_spectacle[$a][0]; ?></a></td>
+                                <td class="contenuMessage"><a href="commentaireForum.php?idTopic=<?php echo $tab_info_spectacle[$a][3] ?>&titreTopic=<?php echo $tab_info_spectacle[$a][0]; ?>"><?php echo $tab_info_spectacle[$a][0]; ?></a></td>
                                 <td class="message"><?php echo $tab_info_spectacle[$a][1]; ?></td>
                                 <td class="auteur">Mohamed</td>
                                 <td class="date"><?php echo $tab_info_spectacle[$a][2]; ?></td>
