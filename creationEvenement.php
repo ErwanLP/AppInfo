@@ -32,8 +32,9 @@
         <aside class ="navg">
             <?php include ("arbre.php"); ?>
         </aside>
-        <article>
+        <article class="articleevent">
             <?php
+            if(isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur"){
             $lang = 'fr';
             titreFormEvent($lang);
             $theme = $bdd->query('SELECT * FROM theme');
@@ -49,6 +50,10 @@
                 formMidFEvent();
             }$theme->closeCursor();
             formFinEvent($lang);
+            }else{
+                echo 'Vous n\'avez pas les droits pour accéder à cette page !</br>';
+                echo 'Vous devez vous connecter en tant qu\'organisateur';
+            }
             ?>
 
         </article>

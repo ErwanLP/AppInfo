@@ -67,6 +67,8 @@ header
         position : relative;
         margin-left:40px;
         top:-430px;
+        font-size: 22px;
+        color:#105CA0;
 }
 .titreDetailEvent
 {
@@ -187,7 +189,7 @@ header
 /*CREATION EVENEMENT */
 
 .contenuCreationEvenement {
-    
+
     background-color: #ebe2d9;
     padding: 0px 10px 10px 10px;
     width: 400px;
@@ -196,7 +198,7 @@ header
 }
 
 .contenuCreationEvenement span {
-    
+
     color: red;
 }
 
@@ -936,7 +938,7 @@ article
 }
 
 .titreNews {
-    
+
     position: absolute;
     left: 500px;
     top: 35px;
@@ -945,17 +947,17 @@ article
 }
 
 #bmoins {
-    
+
     position: absolute;
     left: 700px;
     top: 110px;
     background-color: white;
     border-radius: 10px;
-    
+
 }
 
 #bplus {
-    
+
     position: absolute;
     left: 1154px;
     top: 110px;
@@ -1090,20 +1092,87 @@ a:visited
 
 /*MESSAGERIE*/
 
-.message{
+
+#messagerieTotal{
+     
+    position: absolute;
+    padding: 20px;
+    width: 70%;
+    right: 100px;
+    top: 703px;
+    font-size: 20px;    
+    text-align: justify;
+    overflow: hidden;
+    position : relative;
+    left: 700px;
+    
+    
+    
+    
+    
+}
+
+.titreMessagerie{
+    
+    position : relative;
+    left : 250px;  
+    
+    
+    
+}
+
+.divmessageCour{
 
     width : 700px;
     /*height: 150px;*/
-    overflow : auto;
-    padding : 20px;
-    border:1px solid #cebd8b;
-    margin :  20px;
 
+    border:3px solid #6780A6;
+    margin :  10px;
+    background-color: white;
+    border-radius: 20px 0px 20px 0px;
+   
+}
+
+.messagerie{
+
+    height : 580px;
+    overflow: auto;
+    text-align: center;
+    width :900px;
+    
 
 
 
 
 }
+.taperMessage{
+    
+    width: 400px;
+    height: 50px;
+    padding: 3px;
+    border: 1px solid  #cebd8b;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px #C0C0C0 inset;
+    background-color:#F5FFED;
+    
+    
+    
+}
+.taperPseudo{
+     width: 400px;
+    height: 30px;
+    padding: 3px;
+    border: 1px solid  #cebd8b;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px #C0C0C0 inset;
+    background-color:#F5FFED;  
+    position : relative;
+    left : 45px;
+    
+    
+}
+
+
 
 
 /*FORUM*/
@@ -1968,7 +2037,7 @@ strong{
     top: 700px;
     font-size: 20px;
 }
-#amis, #abonnement, #messagerie{
+#amis, #abonnement{
     position: absolute;
     padding: 20px;
     width: 70%;
