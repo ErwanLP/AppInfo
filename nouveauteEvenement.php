@@ -1,11 +1,12 @@
 <?php
+include('BDD.php');
     $tab = array();
     $var = 0;
-    $req = $bdd->query('SELECT photo FROM event ORDER BY date DESC LIMIT 10');
-    while ($donnees = $req->fetch()) {
+    $re = $bdd->query('SELECT photo FROM event ORDER BY date DESC LIMIT 10');
+    while ($donnees = $re->fetch()) {
             $tab[$var][0] = $donnees["photo"];
             $var++;
-    }$req->closeCursor();
+    }$re->closeCursor();
     ?>
 
     <div class="babar">
