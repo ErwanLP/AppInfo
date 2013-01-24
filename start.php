@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="parametre.css">
        
 
-        <link rel="shortcut icon" type="image/x-icon" href="img/icone.png" />
+        <link rel="shortcut icon" type="image/x-icon" href="img/dye_logo.jpg" />
         <link rel="stylesheet" media="screen, print, handheld" href="assets/css/styles.css" />
         <?php
         if (!empty($titre)) {
