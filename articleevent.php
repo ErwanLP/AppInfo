@@ -25,27 +25,33 @@
         }?>
         <strong>Prix: </strong><?php echo $data['prix']; ?> &euro; <br/>
         <strong>Description: </strong> <?php echo $data['description']; ?><br/>
-        <strong>Note: </strong><img src="<?php 
-        if($data['note']<=0.5){
+        <?php if($data['nbVotes']!=0){
+            ?><strong>Note des participants : </strong><img src="<?php 
+            $notas=$data['note']/$data['nbVotes'];
+        if($notas<=0.5){
             echo 'img/etoile0.png';
         }
-        if($data['note']>0.5 &&$data['note']<=1.5){
+        if($notas>0.5 &&$notas<=1.5){
             echo 'img/etoile1.png';
         }
-        if($data['note']>1.5 &&$data['note']<=2.5){
+        if($notas>1.5 &&$notas<=2.5){
             echo 'img/etoile2.png';
         }
-        if($data['note']>2.5 &&$data['note']<=3.5){
+        if($notas>2.5 &&$notas<=3.5){
             echo 'img/etoile3.png';
         }
-        if($data['note']>3.5 &&$data['note']<=4.5){
+        if($notas>3.5 &&$notas<=4.5){
             echo 'img/etoile4.png';
         }
-        if($data['note']>4.5){
+        if($notas>4.5){
             echo 'img/etoile5.png';
         }
         
-        ?>" class="etoile" alt="Note" /><p id="note">(<?php echo $data['note']; ?> sur 5)</p><br/>
+        ?>"  alt="Note" />(<?php echo $notas; ?> sur 5)  pour <?php echo $data['nbVotes']; ?> vote(s).<br/><?php
+            }else{
+            echo 'Aucune note pour le moment';
+        }
+        ?></div>
         
     </div>
 
