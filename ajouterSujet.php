@@ -40,7 +40,7 @@ include("nav.php");
         ?>
         <article>
             <div>
-                <form method="post" action="commentaireForum.php">
+                <form method="post" action="spectacle.php">
                     <table>
                         <caption class="titreNouveauSujet">Veuillez ajouter votre sujet :</caption>
                         <tr>

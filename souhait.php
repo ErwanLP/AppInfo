@@ -48,14 +48,15 @@ include("nav.php");
         <?php
         $tab_info_souhait = array();
         $var_tab_info_array = 0;
-        $req = $bdd->query(('SELECT organisateur.pseudo,topicforum.* FROM topicforum, souscategorieforum,organisateur WHERE souscategorieforum.ID = 1 
+        $req = $bdd->query('(SELECT organisateur.pseudo,topicforum.* FROM topicforum, souscategorieforum,organisateur WHERE souscategorieforum.ID = 1 
             AND topicforum.id_souscategorie = souscategorieforum.ID
             AND topicforum.id_organisateur = organisateur.id
             )
             UNION 
             (
             SELECT participant.pseudo,topicforum.* FROM topicforum,souscategorieforum,participant WHERE souscategorieforum.ID=1
-            AND topicforum.id_participant = participant.id'));
+             AND topicforum.id_souscategorie = souscategorieforum.ID
+            AND topicforum.id_participant = participant.id)');
         while ($donnees = $req->fetch()) {
             $tab_info_souhait[$var_tab_info_array][0] = $donnees["nom"];
             $tab_info_souhait[$var_tab_info_array][1] = $donnees["commentaire"];
