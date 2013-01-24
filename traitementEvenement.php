@@ -43,11 +43,11 @@ if (isset($_POST['nomEvent']) && isset($_POST['lieuEvent']) && isset($_POST['des
     $heureFin = $_POST['heureFin'];
     $id_organisateur=$_POST['id_organisateur'];
     $sousThemeEvent = $_POST['themeEvent'];
-    $sousThemeExistants = $bdd->query('SELECT nom,nomEn FROM soustheme');
+    $sousThemeExistants = $bdd->query('SELECT nomCamel FROM soustheme');
     $sousThemeEx = FALSE;
     $themeEx = FALSE;
     $lang = 'fr';
-
+    
     $lundi = false;
     if (!empty($_POST['lundi']) ) {
         $lundi = true;
@@ -82,19 +82,15 @@ if (isset($_POST['nomEvent']) && isset($_POST['lieuEvent']) && isset($_POST['des
     if (!empty($_POST['dimanche'])) {
         $dimanche = true;
     }
-
+    
     while ($dataSousTheme = $sousThemeExistants->fetch()) {
-        if ($sousThemeEvent == $dataSousTheme['nom']) {
-            $sousThemeEx = TRUE;
-        }
-        if ($sousThemeEvent == $dataSousTheme['nomEn']) {
-            $lang = 'en';
+        if ($sousThemeEvent == $dataSousTheme['nomCamel']) {
             $sousThemeEx = TRUE;
         }
     }$sousThemeExistants->closeCursor();
 
 
-    $themeRel = $bdd->query('SELECT theme.nom From theme,soustheme WHERE soustheme.nom="' . $sousThemeEvent . '" AND soustheme.id_theme=theme.id');
+    $themeRel = $bdd->query('SELECT theme.nom From theme,soustheme WHERE soustheme.nomCamel="' . $sousThemeEvent . '" AND soustheme.id_theme=theme.id');
     if ($lang == 'en') {
         $themeRel = $bdd->query('SELECT theme.nomEn From theme,soustheme WHERE soustheme.nomEn="' . $sousThemeEvent . '" AND soustheme.id_theme=theme.id');
     }
@@ -126,7 +122,7 @@ if (isset($_POST['nomEvent']) && isset($_POST['lieuEvent']) && isset($_POST['des
     $resultEVT->closeCursor();
     $resultEVT = null;
 
-    str_replace("'","\'", $description);
+    $description;
     if ($booleantest == FALSE && $sousThemeEx == TRUE && $themeEx == TRUE && $imageSet==TRUE) {
         move_uploaded_file($_FILES['image']['tmp_name'], 'imgUser/' . $t . $extImage);
         $chemin = 'imgUser/' . $t . $extImage;

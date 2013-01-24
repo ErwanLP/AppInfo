@@ -108,9 +108,9 @@ function formDebEvent($lang) {
                                 function formMidSThEvent($lang, $donnees2) {
 
                                     if ($lang == 'en') {
-                                        echo'<option value="' . $donnees2['nomEn'] . '">' . $donnees2['nomEn'] . '</option>';
+                                        echo'<option value="' . $donnees2['nomCamel'] . '">' . $donnees2['nomEn'] . '</option>';
                                     } else {
-                                        echo'<option value="' . $donnees2['nom'] . '">' . $donnees2['nom'] . '</option>';
+                                        echo'<option value="' . $donnees2['nomCamel'] . '">' . $donnees2['nom'] . '</option>';
                                     }
                                 }
 

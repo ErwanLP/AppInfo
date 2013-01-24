@@ -103,21 +103,78 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                 ?>
                 <div id="amis" >
                     <!-- php -->
-                    <fieldset>
-                        <a href="img/jerry.jpg"><img src="img/jerry_mini.jpg" alt="Jerry" title="Cliquez pour agrandir" style="border: solid black 2px"/></a>
-                        <p class="nom1">Jerry BOLZASTREET</p>
-                        <p class="lieu1">France, Paris</p>
+                    <?php
+                    $sql = 'SELECT * FROM demandefriend WHERE id_demande ="' . $_SESSION['ID'] . '"';
+                    //echo $sql;
+                    $result = $bdd->query($sql);
+                    while ($data = $result->fetch()) {
+                        $sql = 'SELECT * FROM participant WHERE ID ="' . $data['id_demandeur'] . '"';
+                        //echo $sql;
+                        $result2 = $bdd->query($sql);
+                        
+                        while ($data2 = $result2->fetch()) {
+                            $dfNom = $data2['pseudo'];
+                        }$result2->closeCursor();
+                        ?>
+                        <fieldset>
+                            <?php echo $dfNom . " souhaite devenir votre ami(e)" ?></p>
+                            <?php
+                            echo "<a href ='traitementFriend.php?target=acp&accept=true&demandeur=" . $data['id_demandeur'] . "'>Accepter</a>";
+                            echo " - ";
+                            echo "<a href ='traitementFriend.php?target=acp&accept=false&demandeur=" . $data['id_demandeur'] . "'>Refuser</a>";
+                            echo "<br/>"
+                            ?>
+                        </fieldset>
+                        <?php
+                    }$result->closeCursor();
+                    /**/
+                    $sql = '(SELECT * FROM friend WHERE id_f1 ="' . $_SESSION['ID'] . '") UNION (SELECT * FROM friend WHERE id_f2="'.$_SESSION['ID'].'")';
+                   // echo $sql;
+                    $result = $bdd->query($sql);
+                    while ($data = $result->fetch()) {
+                        if($data['id_f1']== $_SESSION['ID']){
+                            $dfIdAutre = $data['id_f2']; 
+                        }else{
+                           $dfIdAutre = $data['id_f1']; 
+                        }
+                        $sql = 'SELECT * FROM participant WHERE ID ="' .$dfIdAutre. '"';
+                        //echo $sql;
+                        $result2 = $bdd->query($sql);
+                        
+                        while ($data2 = $result2->fetch()) {
+                            $dfPseudo = $data2['pseudo'];
+                            $dfTof = $data2['avatar'];
+                            $dfNom = $data2['nom'];
+                            $dfPrenom = $data2['prenom'];
+                            
+                        }$result2->closeCursor(); ?>
+                        
+                        <fieldset>
+                            <?php if ($dfTof == null){
+                                
+                                $dfTof= "img/dye_logo.jpg";
+                                
+                                
+                            }
+?>
+                            
+                           
+                          <a href="profilBis.php?IDprofil=<?php echo $dfIdAutre ?>&Pseudo=<?php echo $dfPseudo ?>" ><img src="<?php echo $dfTof ?>" alt="Jerry" title="Cliquez pour agrandir" style="border: solid black 2px"height="200" width="200"/></a>
+                        <p class="nom1"><?php echo $dfPrenom." ".$dfNom ?></p>
+                        <p class="lieu1"><?php echo $dfPseudo ?></p>
                     </fieldset>
-                    <fieldset>
-                        <a href="img/momo.jpg"><img src="img/momo_mini.jpg" alt="Momo" title="Cliquez pour agrandir" style="border: solid black 2px"/></a>
-                        <p id="nom2">Mohammed LACHKHAB</p>
-                        <p id="lieu2">France, Versailles</p>
-                    </fieldset>
-                    <fieldset>
-                        <a href="img/flo.jpg"><img src="img/flo_mini.jpg" alt="Flo" title="Cliquez pour agrandir" style="border: solid black 2px"/></a>
-                        <p id="nom3">Florian GUITOGER</p>
-                        <p id="lieu3">France, Gonesse</p>
-                    </fieldset>
+                        
+                      
+                        
+                        
+                      <?php  
+                    }$result->closeCursor();
+                    ?>
+                    
+                    
+                    
+                    
+                  
                 </div>
 
                 <?php
@@ -211,7 +268,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                     $pseudoAutre = $pseudoexpCour;
                     $expediteur = $pseudoAutre;
                 }
-                        ?> 
+                ?> 
 
 
                             <?php
@@ -227,7 +284,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                 if (!isset($_GET['pseudoAutre'])) {
                                     ?> <br/><br/><a href="profil.php?target=messagerie&pseudoAutre=<?php echo $pseudoAutre ?>#description">Voir la conversation enti&egrave;re</a> 
 
-                                <?php } ?>    
+                <?php } ?>    
                             </div> 
 
                             <?php
@@ -236,14 +293,14 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
             //////////////////
 
             if (isset($_GET['pseudoAutre'])) {
-                            ?> <br/><br/>
+                ?> <br/><br/>
 
                         <form action="traitMessagerie.php" method="post">
                             Nouveau message :<input type="text" name="message" class="taperMessage" required>
                             <input type="hidden" name="pseudoAutre" value="<?php echo $pseudoAutre ?>">
                             <input type="submit" value="Submit">
                         </form>
-                    <?php } else { ?>
+            <?php } else { ?>
                         <br/>
                         <form action="traitMessagerie.php" method="post">
                             Destinataire : 
@@ -672,11 +729,10 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                         }
                         ?>
 
-                        <?php if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) { ?>
+<?php if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) { ?>
                             <div id="description">
                                 <fieldset>
                                     <?php
-                                    
                                     $result = $bdd->query('SELECT * FROM organisateur WHERE ID = "' . $_SESSION['ID'] . '"');
                                     while ($data = $result->fetch()) {
                                         $logo = $data['logo'];
@@ -687,8 +743,8 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                         <p id="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];
                                         ?></p>
                                         <p id="lieu"><?php
-                                    echo $data['nomSociete'] . ", " . $data['pays'];
-                                }$result->closeCursor();
+                                        echo $data['nomSociete'] . ", " . $data['pays'];
+                                    }$result->closeCursor();
                                     ?></p>
                                 </fieldset>
 
@@ -795,7 +851,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                     $pseudoAutre = $pseudoexpCour;
                                     $expediteur = $pseudoAutre;
                                 }
-                                            ?> 
+                                ?> 
 
 
                                                 <?php
@@ -811,23 +867,23 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                                     if (!isset($_GET['pseudoAutre'])) {
                                                         ?> <br/><br/><a href="profil.php?target=messagerie&pseudoAutre=<?php echo $pseudoAutre ?>#description">Voir la conversation enti&egrave;re</a> 
 
-                                                    <?php } ?>    
+                <?php } ?>    
                                                 </div> 
 
                                                 <?php
                                             } $result->closeCursor();
                                             ?> </div><?php
-                                //////////////////
+                            //////////////////
 
-                                if (isset($_GET['pseudoAutre'])) {
-                                                ?> <br/><br/>
+                            if (isset($_GET['pseudoAutre'])) {
+                                ?> <br/><br/>
 
                                             <form action="traitMessagerie.php" method="post">
                                                 Nouveau message :<input type="text" name="message" class="taperMessage" required>
                                                 <input type="hidden" name="pseudoAutre" value="<?php echo $pseudoAutre ?>">
                                                 <input type="submit" value="Submit">
                                             </form>
-                                        <?php } else { ?>
+            <?php } else { ?>
                                             <br/>
                                             <form action="traitMessagerie.php" method="post">
                                                 Destinataire : 
