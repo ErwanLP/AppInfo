@@ -677,7 +677,8 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                 <fieldset>
                                     <img src="img/logo.png" width="200" height="200" alt="Logo" style="border: solid black 2px"/>                  
                                     <?php
-                                    $result = $bdd->query('SELECT * FROM organisateur WHERE ID = ' . $_SESSION['ID'] . ' ');
+                                    
+                                    $result = $bdd->query('SELECT * FROM organisateur WHERE ID = "' . $_SESSION['ID'] . '"');
                                     while ($data = $result->fetch()) {
                                         ?>
                                         <p id="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];

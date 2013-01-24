@@ -17,7 +17,7 @@ if (isset($_POST['commentaire']) && $havePost==false){
     }
     str_replace("'", "\'", $contenu);
     $bdd->query("INSERT INTO commentairesevent(id_participant,id_event,note,contenu) VALUES('".$idPart."','".$idEvt."','".$note."','".$contenu."')");
-    header('Location:eventDetaille.php?ID='.$IDEvt);
+    header('Location:eventDetaille.php?ID='.$idEvt);
 }else{
     echo 'Vous ne pouvez poster de commentaire vide';
 }

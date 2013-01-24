@@ -2,7 +2,7 @@
 
 session_start();
 
-$ID = 6;
+$ID = $_SESSION['ID'];
 
 
 
@@ -42,5 +42,11 @@ if (isset($_GET['target'])) {
         $bdd->query("DELETE FROM demandefriend WHERE id_demandeur=".$demandeur." AND id_demande =".$ID."");
         echo "DELETE FROM demandefriend WHERE id_demandeur=".$demandeur." AND id_demande =".$ID."";
     }
+    
+    
+    header('Location:profil.php?target=amis');
+    
+    
+    
 }
 ?>
