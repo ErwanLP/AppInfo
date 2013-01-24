@@ -25,9 +25,9 @@ if (isset($_GET['target'])) {
         while ($data = $result->fetch()) {
             echo $data['id_demandeur'];
             echo " souhaite devenir votre ami(e)s" . "<br/>" ;
-            echo "<a href ='friend.php?target=acp&accept=true&demandeur=".$data['id_demandeur']."'>Accepter</a>" ;
+            echo "<a href ='traitementFriend.php?target=acp&accept=true&demandeur=".$data['id_demandeur']."'>Accepter</a>" ;
             echo "<br/>";
-            echo "<a href ='friend.php?target=acp&accept=false&demandeur=".$data['id_demandeur']."'>Refuser</a>";
+            echo "<a href ='traitementFriend.php?target=acp&accept=false&demandeur=".$data['id_demandeur']."'>Refuser</a>";
             echo "<br/><br/>";
         }$result->closeCursor();
     }
