@@ -32,7 +32,7 @@ $idSession = $_SESSION['ID'];
     header('Location:profil.php?target=info#description');
 
     }else if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) {
-        
+      
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
     $pseudo = $_POST['pseudo'];
@@ -41,7 +41,10 @@ $idSession = $_SESSION['ID'];
     $sexe = $_POST['genre'];
     $telSociete = $_POST['telephoneSociete'];
     $siteWeb = $_POST['siteWeb'];
-    $logo = $_POST['logo']; 
+    $logoDET = pathinfo($_FILES['logo']['name']);
+    $logoExt = $logoDET['extension'];
+    move_uploaded_file($_FILES['logo']['tmp_name'], 'img/test321' . $logoExt);
+    $chemin='img/test321'.$logoExt;
     $dateDeNaissance = $_POST['date'];
     $mail = $_POST['email'];
     $profession = $_POST['profession'];
@@ -52,7 +55,7 @@ $idSession = $_SESSION['ID'];
     $activite = $_POST['activite'];
         
         
-      $bdd->query('UPDATE organisateur SET nom = "' .$nom .'", prenom = "' .$prenom .'", pseudo = "' .$pseudo .'", nomSociete = "' .$nomSociete .'", pays = "' .$pays .'", ville = "' .$ville .'", adresseSociete = "' .$adresse .'", codePostalSociete = "' .$codePostal .'", sexe = "' .$sexe .'", telephoneSociete = "' .$telSociete .'", telephoneMobile = "' .$telMobile .'", dateDeNaissance = "' .$dateDeNaissance .'", mail = "' .$mail .'", siteWeb = "' .$siteWeb .'", logo = "' .$logo .'", profession = "' .$profession .'", activite = "' .$activite .'" WHERE ID = "' . $idSession . '"');
+      $bdd->query('UPDATE organisateur SET nom = "' .$nom .'", prenom = "' .$prenom .'", pseudo = "' .$pseudo .'", nomSociete = "' .$nomSociete .'", pays = "' .$pays .'", ville = "' .$ville .'", adresseSociete = "' .$adresse .'", codePostalSociete = "' .$codePostal .'", sexe = "' .$sexe .'", telephoneSociete = "' .$telSociete .'", telephoneMobile = "' .$telMobile .'", dateDeNaissance = "' .$dateDeNaissance .'", mail = "' .$mail .'", siteWeb = "' .$siteWeb .'", logo = "' .$chemin .'", profession = "' .$profession .'", activite = "' .$activite .'" WHERE ID = "' . $idSession . '"');
      
       header('Location:profil.php?target=info#description');
     }
