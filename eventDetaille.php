@@ -39,7 +39,7 @@ include("nav.php");
         <div>
             <?php
             $ID = $_GET['ID'];
-            $reponse = $bdd->query('SELECT * FROM event WHERE event.ID=' . $ID);
+            $reponse = $bdd->query('SELECT * FROM event WHERE event.ID='.$ID);
             while ($donnees = $reponse->fetch()) {
                 ?><div class = "imageDetail" >
 
@@ -182,10 +182,11 @@ include("nav.php");
         </div>
             
         <?php
-        $resultComment=$bdd->query('SELECT commentairesevent.note,commentairesevent.contenu FROM commentairesevent,event WHERE event.ID='.$_GET['ID'].' AND commentairesevent.id_event=event.ID');
+        $resultComment=$bdd->query('SELECT commentairesevent.note,commentairesevent.contenu, participant.pseudo FROM commentairesevent,event,compte,participant WHERE event.ID='.$_GET['ID'].' AND commentairesevent.id_event=event.ID AND commentairesevent.id_participant=compte.ID AND compte.ID=participant.ID');
         while($donneesCom=$resultComment->fetch()){
             ?> <div class="imageDetail2">
-                <p><?php echo $donneesCom['note']; ?>/5 : <?php echo $donneesCom['contenu']; ?></p>
+                <p><?php echo $donneesCom['note']; ?>/5 : <?php echo $donneesCom['contenu']; ?><br/>
+                - <?php echo $donneesCom['pseudo']; ?> -</p>
             </div>
                 <?php
         }
