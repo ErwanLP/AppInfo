@@ -9,45 +9,38 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 
 if (isset($_POST['pseudoAutre'])) {
     $pseudoDes = $_POST['pseudoAutre'];
-    $pseudoDes=str_replace(' ','',$pseudoDes);
-
-
-}else{
-    
-    
-    
-    
+    $pseudoDes = str_replace(' ', '', $pseudoDes);
+} else {
     
 }
 
-    $sql = 'SELECT pseudo FROM ' . $typeExp . ' WHERE ID =  "' . $idExp . '"';
-    echo "<br/>".$sql;
-    $result = $bdd->query($sql);
-    while ($data = $result->fetch()) {
-        $pseudoExp = $data['pseudo'];
-         $pseudoExp=str_replace(' ','',$pseudoExp);
-    }$result->closeCursor();
-
-$sql = 'INSERT INTO messagerie (ID, message, date, pseudo_exp, pseudo_des) VALUES (NULL, "'.$message.'","'.$date.'","'.$pseudoExp.'","'.$pseudoDes.'")';
-$bdd->query($sql);
-echo "<br/>".$sql;
-
-if (isset($_GET['pseudoAutre'])) {
-    
-    
- 
+$sql = 'SELECT pseudo FROM ' . $typeExp . ' WHERE ID =  "' . $idExp . '"';
+echo "<br/>" . $sql;
+$result = $bdd->query($sql);
+while ($data = $result->fetch()) {
+    $pseudoExp = $data['pseudo'];
+    $pseudoExp = str_replace(' ', '', $pseudoExp);
+}$result->closeCursor();
 
 
-}else{
-    
-    header('Location:messagerie.php');
-    
-    
-    
+$sql = '(SELECT pseudo FROM organisateur ) UNION ( SELECT pseudo FROM participant)';
+echo "<br/>" . $sql;
+$result2 = $bdd->query($sql);
+$test = false;
+while ($data2 = $result2->fetch()) {
+    if ($data2['pseudo'] == $pseudoDes) {
+        $test = true;
+    }
+}$result->closeCursor();
+
+if ($test == true) {
+    $sql = 'INSERT INTO messagerie (ID, message, date, pseudo_exp, pseudo_des) VALUES (NULL, "' . $message . '","' . $date . '","' . $pseudoExp . '","' . $pseudoDes . '")';
+    $bdd->query($sql);
+    echo "<br/>" . $sql;
 }
 
 
-
+    header('Location:profil.php?target=messagerie#description');
 
 ?>
 

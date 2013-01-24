@@ -15,7 +15,7 @@
         if (!empty($titre)) {
             echo '<title>' . $titre . '</title>';
         } else {
-            echo '<title>Do You Event</title>';
+            echo '<title>Do You Events</title>';
         }
         ?>
         <?php header('Content-Type: text/html; charset=utf-8'); ?>       

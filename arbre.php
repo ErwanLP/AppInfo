@@ -20,7 +20,7 @@
                 <ul>
                     <li><a href="event.php?onglet=exposition&sousOnglet=conference" >Conf&eacute;rence</a></li> <!-- Liste des liens du sous-menu -->
                     <li><a href="event.php?onglet=exposition&sousOnglet=salleDesVentes">Salle des Ventes</a></li>
-                    <li><a href="event.php?onglet=exposition&sousOnglet=sculture">Sculture</a></li>
+                    <li><a href="event.php?onglet=exposition&sousOnglet=sculture">Sculpture</a></li>
                     <li><a href="event.php?onglet=exposition&sousOnglet=expositionMusicale">Exposition Musicale</a></li>
                     <li><a href="event.php?onglet=exposition&sousOnglet=expositionCulturelle">Exposition Culturelle</a></li>
                     <li><a href="event.php?onglet=exposition&sousOnglet=expositionPeinture">Exposition Peinture</a></li>

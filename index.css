@@ -23,7 +23,7 @@ body
 .champDescriptionEvent{
     font-size: 18px;
     width:600px;
-    height:300px;
+    height:150px;
     resize: none;
 }
 
@@ -61,6 +61,12 @@ header
         position : relative;
         margin-left:40px;
         margin-top:40px;
+}
+.imageDetail2
+{       text-align: left;
+        position : relative;
+        margin-left:40px;
+        top:-430px;
 }
 .titreDetailEvent
 {
@@ -178,19 +184,33 @@ header
     left: auto;
 }
 
-/*.elementmenu
-{
-    padding-top: 10px;
-    box-shadow: 0px 0px 10px azure;
-    width: 450px;  /*Tr�s important : donner une taille au menu */
-/*position: absolute;
-top : 213px;
-left: 750px;
-height : 35px;
-border: 2px solid white;
-/*margin-bottom: 20px;*/ /* Pour �viter que les �l�ments du menu ne soient trop coll�s */
-/*background-color : tan;
-}*/
+/*CREATION EVENEMENT */
+
+.contenuCreationEvenement {
+    
+    background-color: #ebe2d9;
+    padding: 0px 10px 10px 10px;
+    width: 400px;
+    margin-left: 220px;
+    margin-top: 0px;
+}
+
+.contenuCreationEvenement span {
+    
+    color: red;
+}
+
+.fieldset {
+    padding:0 20px 20px 20px;
+    /*margin-bottom:10px;*/
+    border:5px double #666;
+    background-color: white;
+}
+.titreCreationEvenement {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
 
 /*INSCRIPTION*/
 
@@ -550,8 +570,8 @@ section
 .positionBouton {
 
     position: absolute;
-    margin-left: 90px;
-
+    left: 90px;
+    top: 0px;
 }
 
 /*1-ARTICLE*/
@@ -574,11 +594,10 @@ article
 
 .articleevent{
     /*box-shadow: 0px 0px 10px azure;*/
-    width : 75%;
-    height : 1200px;
-    position: absolute;
-    right : 50px;
-    top : 400px;
+    width : 1500px;
+    position: relative;
+    left : 300px;
+    top : 320px;
     /* border: 2px solid white;	*/
     background-color: #ebe2d9;
     overflow : auto;
@@ -587,6 +606,18 @@ article
 
 
 
+}
+
+.eventDetaille{
+    /*box-shadow: 0px 0px 10px azure;*/
+    width : 1500px;
+    position: relative;
+    left : 300px;
+    top : 320px;
+    /* border: 2px solid white;	*/
+    background-color: #ebe2d9;
+    overflow : auto;
+    box-shadow: 0px 0px 10px black;
 }
 
 /* 1-2 NAV*/
@@ -667,7 +698,7 @@ article
 .evenement{
     text-align : left;
     width: 1400px;
-    height: 450px;
+    height: 370px;
     font-family: Comic Sans MS;
     background-color : white;
     box-shadow: 0px 0px 10px black;
@@ -679,7 +710,12 @@ article
     overflow : hidden;
 
 }
-
+.titreEventArticle{
+    font-size: 32px;
+    font-weight:bold;
+    color:#105CA0;
+    text-shadow: 2px 2px 2px gray;
+}
 .color {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -705,19 +741,31 @@ article
 }
 .tofevent{
     width : 100px;
-    height : 200px;
+    height : 160px;
 
 
 }
 
+.commenterEvent{
+    font-size: 18px;
+    width:600px;
+    height:300px;
+    resize: none;
+    color : #104090;
+}
 
-
-
+.formulaireCommentaire{
+    position : relative;
+    bottom : 400px;
+    font-size: 20px;
+    color : #1060B0;
+    text-align : left;
+}
 
 .evenement h1{
 
     height : 25px;
-    width: 550px;
+    width: 480px;
     text-decoration: underline;
     position: relative;
     left : 50px;
@@ -735,7 +783,6 @@ article
 
 .evenement .etoile {
 
-    border: 2px solid black;
     display: inline-block;
 
 }
@@ -999,13 +1046,9 @@ article
 footer
 {
 
-    /*border-top-left-radius: 50px;
-    border-top-right-radius: 50px;*/
-    /*box-shadow: 0px 0px 10px black;*/
     width: 100%;
-    /*border: 2px solid white;*/
     position: absolute;
-    top: 1930px;
+    top: 1990px;
     height : 120px;
     background-color : #666;
     border-top: 1px solid black;
@@ -1925,7 +1968,7 @@ strong{
     top: 700px;
     font-size: 20px;
 }
-#amis, #abonnement{
+#amis, #abonnement, #messagerie{
     position: absolute;
     padding: 20px;
     width: 70%;
