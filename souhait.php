@@ -48,14 +48,22 @@ include("nav.php");
         <?php
         $tab_info_souhait = array();
         $var_tab_info_array = 0;
-        $req = $bdd->query('SELECT topicforum.* FROM topicforum, souscategorieforum WHERE souscategorieforum.ID = 1 AND topicforum.id_souscategorie = souscategorieforum.ID');
+        $req = $bdd->query('(SELECT organisateur.pseudo,topicforum.* FROM topicforum, souscategorieforum,organisateur WHERE souscategorieforum.ID = 1 
+            AND topicforum.id_souscategorie = souscategorieforum.ID
+            AND topicforum.id_organisateur = organisateur.id
+            )
+            UNION 
+            (
+            SELECT participant.pseudo,topicforum.* FROM topicforum,souscategorieforum,participant WHERE souscategorieforum.ID=1
+             AND topicforum.id_souscategorie = souscategorieforum.ID
+            AND topicforum.id_participant = participant.id)');
         while ($donnees = $req->fetch()) {
             $tab_info_souhait[$var_tab_info_array][0] = $donnees["nom"];
             $tab_info_souhait[$var_tab_info_array][1] = $donnees["commentaire"];
 
             $tab_info_souhait[$var_tab_info_array][2] = $donnees["date_creation"];
             $tab_info_souhait[$var_tab_info_array][3] = $donnees["id"];
-          //  $tab_info_souhait[$var_tab_info_array][4]=$donnees["nomDeCompte"];
+            $tab_info_souhait[$var_tab_info_array][4]=$donnees["pseudo"];
             $var_tab_info_array++;
         }
         ?>
@@ -76,7 +84,7 @@ include("nav.php");
                             <tr class="affichageSujet">
                                 <td class="contenuMessage"><a href="commentaireForum.php?idTopic=<?php echo $tab_info_souhait[$a][3] ?>&titreTopic=<?php echo $tab_info_souhait[$a][0] ?>"><?php echo $tab_info_souhait[$a][0]; ?></a></td>
                                 <td class="message"><?php echo $tab_info_souhait[$a][1]; ?></td>
-                                <td class="auteur">  nobody</td>
+                                <td class="auteur"><?php echo $tab_info_souhait[$a][4]; ?></td>
                                 <td class="date"><?php echo $tab_info_souhait[$a][2]; ?></td>
                             </tr>
                         <?php } ?>
