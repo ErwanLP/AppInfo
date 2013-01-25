@@ -813,7 +813,13 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                 if ($target == "event") {
                                     ?>
                                     <div id="mesEvents">
-
+                                        <?php $resultats=$bdd->query('SELECT event.nom,event.ID FROM event WHERE event.id_organisateur='.$_SESSION['ID']);
+                                        while($dat=$resultats->fetch()){
+                                        ?>
+                                        <a class="eventInscrit" href="eventDetaille.php?ID=<?php echo $dat['ID']; ?>" ><?php echo $dat['nom']; ?></a></br>
+                                  <?php
+                          }$resultats->closeCursor();
+                    ?>
 
                                     </div>
 
