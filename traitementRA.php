@@ -47,9 +47,7 @@ $result = $bdd->query('SELECT * FROM event WHERE theme = "' . $theme . '" AND li
             </aside>
 
             <aside class ="new">
-                <div class ="eventNew">
-                    <img class ="photonew" src ="img/new.jpg"/>
-                </div>
+                <?php include('nouveauteEvenement.php'); ?>
                 
                 <?php
                 if (!isset($_SESSION['ID'])) {
