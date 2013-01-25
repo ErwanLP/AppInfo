@@ -800,7 +800,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                             <p id="preference">
                                                 <strong>Soci&eacute;t&eacute; :</strong><?php echo " " . $data['nomSociete']; ?><br/><br/>
                                                 <strong>Adresse de la soci&eacute;t&eacute; :</strong><?php echo " " . $data['adresseSociete'] . " - " . $data['codePostalSociete'] . " - " . $data['ville']; ?><br/><br/>
-                                                <strong>Site Web :</strong><?php echo " " . $data['siteWeb']; ?><br/><br/>  
+                                                <strong>Site Web :</strong><a href="<?php echo " " . $data['siteWeb']; ?>"><?php echo " " . $data['siteWeb']; ?></a><br/><br/>  
                                                 <strong>T&eacute;l&eacute;phone soci&eacute;t&eacute; :</strong><?php echo " " . $data['telephoneSociete']; ?><br/><br/>                        
                                                 <strong>Activit&eacute; :</strong><?php echo " " . $data['activite']; ?><br/><br/>
                                                 <strong>Profession :</strong><?php echo " " . $data['profession']; ?><br/><br/>
@@ -961,7 +961,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                                         <!--<span class="infoPerso"><span class="required">Tu es<sup>*</sup> : </span></span>-->
                                                         <span class="radio-checkbox">
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                                            Vous êtes<sup>*</sup> : &nbsp;&nbsp;<input type="radio" id="femme" name="genre" class="radio" value="0" /> <label for="female" class="radio">Une femme</label>&nbsp;&nbsp;&nbsp;
+                                                            Vous êtes : &nbsp;&nbsp;<input type="radio" id="femme" name="genre" class="radio" value="0" /> <label for="female" class="radio">Une femme</label>&nbsp;&nbsp;&nbsp;
                                                         </span>
                                                         <span class="radio-checkbox">
                                                             <input type="radio" id="homme" name="genre" class="radio" value="1" checked="checked"/> <label for="male" class="radio">Un homme</label>
@@ -973,20 +973,20 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                                     <div class=info><br/>
                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                         <!--Pseudo<sup>*</sup><label for=pseudo class="infoPerso">Pseudo<sup>*</sup> :</label>-->
-                                                        Pseudo<sup>*</sup> :  &nbsp; <input type="text" id="pseudo" name="pseudo" class="text" value="<?php echo $data['pseudo']; ?>"/>
+                                                        Pseudo :  &nbsp; <input type="text" id="pseudo" name="pseudo" class="text" value="<?php echo $data['pseudo']; ?>"/>
                                                     </div>
 
                                                     <!--Logo-->
                                                     <div class=info><br/>
                                                         <!--<label for=avatar>Ajouter une photo(Jpeg,png,jpg)<sup>*</sup>:</label>-->
-                                                        Modifier l'image(jpeg,png)<sup>*</sup> :  &nbsp; <input type='file' id="logo" name='logo'/>
+                                                        Modifier l'image(jpeg,png) :  &nbsp; <input type='file' id="logo" name='logo'/>
                                                     </div>
 
                                                     <!-- Prenom -->
                                                     <div class="info"><br/>
                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                         <!--<label for="prenom" class="infoPerso">Prenom<sup>*</sup> :</label>-->
-                                                        Pr&eacute;nom<sup>*</sup> :  &nbsp; <input type="text" id="prenom" name="prenom" class="text" value="<?php echo $data['prenom']; ?>" />
+                                                        Pr&eacute;nom :  &nbsp; <input type="text" id="prenom" name="prenom" class="text" value="<?php echo $data['prenom']; ?>" />
 
 
                                                     </div>
@@ -995,7 +995,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                                     <div class="info"><br/>
                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                         <!--<label for="nom" class="infoPerso">Nom<sup>*</sup> :</label>-->
-                                                        Nom<sup>*</sup> :  &nbsp; <input type="text" id="nom" name="nom" class="text" value="<?php echo $data['nom']; ?>" />
+                                                        Nom :  &nbsp; <input type="text" id="nom" name="nom" class="text" value="<?php echo $data['nom']; ?>" />
                                                     </div>
 
 
@@ -1010,7 +1010,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                                         <div class="info"><br/>
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                             <!--<label class="infoPerso" for="email"><span class="required">Email<sup>*</sup> :</span></label>-->
-                                                            Email<sup>*</sup> : &nbsp; <input type="text" id="email" name="email" class="text" value="<?php echo $data['mail']; ?>" />
+                                                            Email : &nbsp; <input type="text" id="email" name="email" class="text" value="<?php echo $data['mail']; ?>" />
 
 
 
@@ -1050,14 +1050,14 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                                         <div class="info"><br/>
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                             <!--<label for="ville" class="infoPerso">Ville<sup>*</sup> :</label>-->
-                                                            Ville<sup>*</sup> : &nbsp; <input type="text" id="ville" name="ville" class="text" value="<?php echo $data['ville']; ?>" />
+                                                            Ville : &nbsp; <input type="text" id="ville" name="ville" class="text" value="<?php echo $data['ville']; ?>" />
                                                         </div>
 
                                                         <!-- Pays -->
                                                         <div class="info"><br/>
                                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                             <!--<label class="infoPerso" for="pays"><span class="required">Pays<sup>*</sup> :</span></label>-->
-                                                            Pays<sup>*</sup> :&nbsp;&nbsp; <select class="choix" id="country" name="pays">
+                                                            Pays :&nbsp;&nbsp; <select class="choix" id="country" name="pays">
                                                                 <option value="AF">Afghanistan</option>
                                                                 <option value="ZA">Afrique du Sud</option>
                                                                 <option value="AL">Albanie</option>
@@ -1298,7 +1298,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                                                         <div class="info"><br/>
                                                             &nbsp;
                                                              <!--<label for="NumeroPortable" class="infoPerso">Mobile<sup>*</sup> :</label>-->
-                                                            T&eacute;l&eacute;phone Mobile<sup>*</sup> : &nbsp; <input type="text" id="telephoneMobile" name="telephoneMobile" class="text" value="<?php echo $data['telephoneMobile']; ?>"/>
+                                                            T&eacute;l&eacute;phone Mobile : &nbsp; <input type="text" id="telephoneMobile" name="telephoneMobile" class="text" value="<?php echo $data['telephoneMobile']; ?>"/>
 
 
 
