@@ -160,7 +160,7 @@ include("nav.php");
                     $nomorg=$denees['pseudo'];
                     $idorg=$denees['ID'];
                 }$reqs->closeCursor();
-                if($nomorg!='aucun'){?><div class="imageDetail2">Organis&eacute; par : <a href="profilBis.php?IDprofil=<?php echo $idorg; ?>&pseudo=<?php echo $nomorg; ?>">- <?php echo $nomorg; ?> - </a>
+                if($nomorg!='aucun'){?><div class="imageDetail2">Organis&eacute; par : <a href="profilBis.php?IDprofil=<?php echo $idorg; ?>&Pseudo=<?php echo $nomorg; ?>">- <?php echo $nomorg; ?> - </a>
                     </div><?php
                     
                     }else{

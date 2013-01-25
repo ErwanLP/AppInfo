@@ -57,7 +57,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
     while ($dataBis = $resultBis->fetch()) {
     ?>
 
-    <div id="description">
+    <div class="description">
         <?php $result = $bdd->query('SELECT * FROM participant WHERE ID = ' . $idAutre . ' ');
         while ($data = $result->fetch()) {
         $avatar = $data['avatar'];
@@ -196,7 +196,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
     $resultBis = $bdd->query('SELECT * FROM organisateur WHERE organisateur.ID = "' . $idProfilAmi . '" AND organisateur.pseudo = "' . $pseudo . '"');
     while ($dataBis = $resultBis->fetch()) {
     ?>
-    <div id="description">
+    <div class="description">
         <fieldset>
 
             <?php
