@@ -51,6 +51,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
             }
         }$result1->closeCursor();
 
+
         if ($boubou1) {
 
             $resultBis = $bdd->query('SELECT * FROM participant WHERE participant.ID = "' . $idProfilAmi . '" AND participant.pseudo = "' . $pseudo . '"');
@@ -67,51 +68,50 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 
                         <?php
                         // ici pour invite amis 
-                        
-                        if($id != $idAutre){
 
-                        $bf = false;
-                        $bdf = false;
-                        $sql1 = '(SELECT * FROM friend)';
-                        $result = $bdd->query($sql1);
-                        while ($data = $result->fetch()) {
-                            if ($data['id_f1'] == $id) {
-                                if ($data['id_f2'] == $idAutre) {
-                                    $bf = true;
-                                }
-                            }
-                            if ($data['id_f2'] == $id) {
-                                if ($data['id_f1'] == $idAutre) {
-                                    $bf = true;
-                                }
-                            }
-                        }$result->closeCursor();
-                        $sql2 = '(SELECT * FROM demandefriend WHERE id_demande="' . $id . '" AND id_demandeur="' . $idAutre . '")UNION (SELECT * FROM demandefriend WHERE id_demandeur="' . $id . '" AND id_demande="' . $idAutre . '")';
-                        //echo $sql2;
-                        $result = $bdd->query($sql2);
-                        while ($data = $result->fetch()) {
-                            if ($data['id_demandeur'] == $id) {
-                                if ($data['id_demande'] == $idAutre) {
-                                    $bdf = true;
-                                }
-                            }
-                            if ($data['id_demandeur'] == $id) {
-                                if ($data['id_demande'] == $idAutre) {
-                                    $bdf = true;
-                                }
-                            }
-                        }$result->closeCursor();
+                        if ($id != $idAutre) {
 
-                        // echo !$bf."<br/>".!$bdf;
+                            $bf = false;
+                            $bdf = false;
+                            $sql1 = '(SELECT * FROM friend)';
+                            $result = $bdd->query($sql1);
+                            while ($data = $result->fetch()) {
+                                if ($data['id_f1'] == $id) {
+                                    if ($data['id_f2'] == $idAutre) {
+                                        $bf = true;
+                                    }
+                                }
+                                if ($data['id_f2'] == $id) {
+                                    if ($data['id_f1'] == $idAutre) {
+                                        $bf = true;
+                                    }
+                                }
+                            }$result->closeCursor();
+                            $sql2 = '(SELECT * FROM demandefriend WHERE id_demande="' . $id . '" AND id_demandeur="' . $idAutre . '")UNION (SELECT * FROM demandefriend WHERE id_demandeur="' . $id . '" AND id_demande="' . $idAutre . '")';
+                            //echo $sql2;
+                            $result = $bdd->query($sql2);
+                            while ($data = $result->fetch()) {
+                                if ($data['id_demandeur'] == $id) {
+                                    if ($data['id_demande'] == $idAutre) {
+                                        $bdf = true;
+                                    }
+                                }
+                                if ($data['id_demandeur'] == $id) {
+                                    if ($data['id_demande'] == $idAutre) {
+                                        $bdf = true;
+                                    }
+                                }
+                            }$result->closeCursor();
+
+                            // echo !$bf."<br/>".!$bdf;
 
 
-                        if (!$bf && !$bdf) {
-                            $lien = 'traitementFriend.php?target=dem&demandeur='.$id.'&demande='.$idAutre;
-                            echo '<a href="' . $lien . '" title="Ajout Ami" class ="imgAddF"><img src="img/addF.jpg" height="50" width="50"></a>';
-                        }
-                        }else{
+                            if (!$bf && !$bdf) {
+                                $lien = 'traitementFriend.php?target=dem&demandeur=' . $id . '&demande=' . $idAutre;
+                                echo '<a href="' . $lien . '" title="Ajout Ami" class ="imgAddF"><img src="img/addF.jpg" height="50" width="50"></a>';
+                            }
+                        } else {
                             header('Location:profil.php?target=info');
-                            
                         }
                         ?>
 
@@ -134,11 +134,11 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                             <strong>Pr&eacute;nom :</strong><?php echo " " . $dataBis['prenom']; ?><br/><br/>
                             <strong>Nom :</strong><?php echo " " . $dataBis['nom']; ?><br/><br/>
                             <strong>Sexe :</strong><?php
-                if ($dataBis['sexe'] == 1) {
-                    echo " Homme";
-                } else {
-                    echo " Femme";
-                }
+                        if ($dataBis['sexe'] == 1) {
+                            echo " Homme";
+                        } else {
+                            echo " Femme";
+                        }
                         ?><br/><br/>                    
                             <strong>Date de naissance :</strong><?php echo " " . $dataBis['dateDeNaissance']; ?><br/><br/>
                             <strong>Adresse :</strong><?php echo " " . $dataBis['adresse'] . " - " . $dataBis['codePostal'] . " - " . $dataBis['villes']; ?><br/><br/>
@@ -191,9 +191,33 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
             ?></p>
                         <p id="lieu"><?php echo $dataBis['nomSociete'] . ", " . $dataBis['pays'];
             ?></p>
-                    </fieldset>
+                        <?php
+                        
+                        if ($id != $idAutre) {
 
+                            $ba= false;
+                            $sql1 = '(SELECT * FROM abonnement)';
+                            $result = $bdd->query($sql1);
+                            while ($data = $result->fetch()) {
+                                if ($data['ID_participant'] == $id) {
+                                    if ($data['ID_organisateur'] == $idAutre) {
+                                        $ba = true;
+                                    }
+                                }
+                            }$result->closeCursor();
+
+                            if (!$ba) {
+                                $lien = 'traitementFollow.php?target=suivi&ID=' . $id . '&follow=' . $idAutre;
+                                echo '<a href="' . $lien . '" title="Suivre un organisateur" class ="imgAddF"><img src="img/addF.jpg" height="50" width="50"></a>';
+                            }
+                        } else {
+                            header('Location:profil.php?target=info');
+                        }
+                        ?>
+                        
+                    </fieldset>                    
                 </div>
+    
                 <div class="menu">
                     <ul id="simple-menu">
                         <li><input type="button" value="Mes Infos"/></li>
