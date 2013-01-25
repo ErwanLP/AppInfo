@@ -2159,3 +2159,40 @@ strong{
 }
 
 
+/* GODE MODE */
+
+
+.gmpageg{
+    position : absolute;
+    width: 50%;
+    top : 370px;
+    left : 0px;
+    text-align: left;
+    padding-left: 100px;
+
+}
+
+.gmpaged{
+    position : absolute;
+    width: 50%;
+    top : 370px;
+    left : 50%;
+    text-align: left;
+    padding-left: 100px;
+
+}
+
+.titregm{
+
+    position : absolute;
+    left : 40%;
+    top : 290px;
+
+
+
+
+
+}
+
+
+
