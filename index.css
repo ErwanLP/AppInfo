@@ -764,6 +764,11 @@ article
     text-align : left;
 }
 
+.eventInscrit{
+    font-size: 30px;
+    color : #1060B0;
+}
+
 .evenement h1{
 
     height : 25px;
