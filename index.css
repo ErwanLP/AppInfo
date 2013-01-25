@@ -1950,18 +1950,13 @@ a:hover{
     background: whitesmoke;
 }
 .nom4 {
-    position: absolute;
     font-size: 50px;
     font-weight: bold;
-    left: 350px;
-    top : 40px;        
 }
 .lieu4 {
-    position: absolute;
     font-size: 25px;
     font-style: italic;
-    left: 350px;
-    top : 130px;        
+    float: left;
 }
 .menu {
     position: absolute;
@@ -2081,7 +2076,11 @@ strong{
     margin: 10px;
 }
 .description img, #amis img, #abonnement img{
-    margin: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-right: 40px;
+    float: left;
 }
 
 

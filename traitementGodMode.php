@@ -99,4 +99,7 @@ switch ($action) {
 
         break;
 }
+
+
+header('Location:godMode.php');
 ?>
