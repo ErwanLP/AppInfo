@@ -55,7 +55,7 @@ include("nav.php");
                     <label for="url"> Votre num&eacute;ro de t&eacute;l&eacute;phone fixe:</label><br/><br/>
                     <input type="telFixe" name="telFixe" id="telFixe" size="23" maxlength="20"><br/><br/>
                     <label for="url"> Votre site web : </label><br/><br/>
-                    <input type="url" name="url" id="url" size="40" maxlength="40"><br/><br/>
+                    <input type="url" name="url" id="url" size="40" placeholder="http://www.exemple.com" maxlength="40"><br/><br/>
                     <label for="pays"> <span>*</span> Dans quel pays habitez-vous ? </label><br/><br/>
                     <select name="pays" id="pays" required>
                         <option value="AF">Afghanistan</option>
