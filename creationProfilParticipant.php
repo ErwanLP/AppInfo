@@ -49,7 +49,7 @@ include("nav.php");
                     <input type="radio" name="personne" value="1" id="homme" required> <label for="homme"> Homme</label><br/>
                     <input style="margin-right:4px;" type="radio" name="personne" value="0" id="femme" required> <label style="margin-right:5px; "for="femme">Femme</label><br/><br/>
                     <label for="date"> Votre date de naissance :</label><br/><br/>
-                    <input type="date" name="date" id="date" size="23" maxlength="20"><br/><br/>
+                    <input type="date" name="date" id="date" placeholder="AAAA-MM-JJ" size="23" maxlength="20"><br/><br/>
                     <label for="lieuNaissance"> Votre lieu de naissance : </label><br/><br/>
                     <input type="text" name="lieuNaissance" id="lieuNaissance" size="23" maxlength="20"><br/><br/>
                     <label for="url"> Votre num&eacute;ro de t&eacute;l&eacute;phone fixe:</label><br/><br/>
