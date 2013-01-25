@@ -38,11 +38,12 @@ include("nav.php");
 
 
     <article>
-
+<?php if (isset($_SESSION['SWITCH']) AND ($_SESSION['SWITCH'] == "organisateur" OR $_SESSION['SWITCH'] == "participant" ) 
+                AND $_SESSION['ID'] != null) { ?>
         <div class="creerTopic">
             <a href="ajouterSujet.php?idSouscategorie=5"> Ajouter un sujet</a>
         </div>
-
+<?php }?>
         <div class="backPage">
             <a href="indexForum.php" alt="retour à l'accueil du forum" title="Retour à l'accueil du forum"> Retour à l'accueil</a>
         </div>
