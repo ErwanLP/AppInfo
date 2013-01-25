@@ -59,7 +59,7 @@
         <!--  <div class ="topevent"> -->
         <div>
             <?php
-            $result = $bdd->query('SELECT nom,note,photo FROM event ORDER BY note DESC LIMIT 0 , 12');
+            $result = $bdd->query('SELECT ID,nom,note,photo FROM event ORDER BY note DESC LIMIT 0 , 12');
             $compte = 1;
             ?><br/><br><br/><img src="img/TitreTopEventv1.1.png"/> <br/><img src ="img/SousTopEventv1.1.png"/><br/><br/> <br/><?php
             $resultat = array();
@@ -72,11 +72,11 @@
             ?>
             <table style="margin-left : 100px;">
                 <tr>
-                    <td rowspan="3"><?php echo '<img src= "' . $resultat[0]["photo"] . '" height="200" width="160"/>'; ?></td>
+                <td rowspan="3"><a href="<?php echo 'eventDetaille.php?ID='.$resultat[0]["ID"] ; ?>"><img src= "<?php echo $resultat[0]["photo"] ; ?>" height="200" width="160"/></a></td>
                     <td><?php echo $compte++ ?></td>
-                    <td rowspan="3"><?php echo '<img src= "' . $resultat[1]["photo"] . '" height="200" width="160"/>'; ?></td>
+                    <td rowspan="3"><a href="<?php echo 'eventDetaille.php?ID='.$resultat[1]["ID"] ; ?>"><img src= "<?php echo $resultat[1]["photo"] ; ?>" height="200" width="160"/></a></td>
                     <td><?php echo $compte++ ?></td>
-                    <td rowspan="3"><?php echo '<img src= "' . $resultat[2]["photo"] . '" height="200" width="160"/>'; ?></td>
+                    <td rowspan="3"><a href="<?php echo 'eventDetaille.php?ID='.$resultat[2]["ID"] ; ?>"><img src= "<?php echo $resultat[2]["photo"] ; ?>" height="200" width="160"/></a></td>
                     <td><?php echo $compte++ ?></td>
 
                 </tr>
@@ -92,11 +92,11 @@
                     <td><?php echo $resultat[2]['note']; ?></td>
                 </tr>
                 <tr>
-                    <td rowspan="3"><?php echo '<img src= "' . $resultat[3]["photo"] . '" height="200" width="160"/>'; ?></td>
+                    <td rowspan="3"><a href="<?php echo 'eventDetaille.php?ID='.$resultat[3]["ID"] ; ?>"><img src= "<?php echo $resultat[3]["photo"] ; ?>" height="200" width="160"/></a></td>
                     <td><?php echo $compte++ ?></td>
-                    <td rowspan="3"><?php echo '<img src= "' . $resultat[4]["photo"] . '" height="200" width="160"/>'; ?></td>
+                    <td rowspan="3"><a href="<?php echo 'eventDetaille.php?ID='.$resultat[4]["ID"] ; ?>"><img src= "<?php echo $resultat[4]["photo"] ; ?>" height="200" width="160"/></a></td>
                     <td><?php echo $compte++ ?></td>
-                    <td rowspan="3"><?php echo '<img src= "' . $resultat[5]["photo"] . '" height="200" width="160"/>'; ?></td>
+                    <td rowspan="3"><a href="<?php echo 'eventDetaille.php?ID='.$resultat[5]["ID"] ; ?>"><img src= "<?php echo $resultat[5]["photo"] ; ?>" height="200" width="160"/></a></td>
                     <td><?php echo $compte++ ?></td>
 
                 </tr>
@@ -111,11 +111,11 @@
                     <td><?php echo $resultat[5]['note']; ?></td>
                 </tr>
                 <tr>
-                    <td rowspan="3"><?php echo '<img src= "' . $resultat[6]["photo"] . '" height="200" width="160"/>'; ?></td>
+                    <td rowspan="3"><a href="<?php echo 'eventDetaille.php?ID='.$resultat[6]["ID"] ; ?>"><img src= "<?php echo $resultat[6]["photo"] ; ?>" height="200" width="160"/></a></td>
                     <td><?php echo $compte++ ?></td>
-                    <td rowspan="3"><?php echo '<img src= "' . $resultat[7]["photo"] . '" height="200" width="160"/>'; ?></td>
+                    <td rowspan="3"><a href="<?php echo 'eventDetaille.php?ID='.$resultat[7]["ID"] ; ?>"><img src= "<?php echo $resultat[7]["photo"] ; ?>" height="200" width="160"/></a></td>
                     <td><?php echo $compte++ ?></td>
-                    <td rowspan="3"><?php echo '<img src= "' . $resultat[8]["photo"] . '" height="200" width="160"/>'; ?></td>
+                    <td rowspan="3"><a href="<?php echo 'eventDetaille.php?ID='.$resultat[8]["ID"] ; ?>"><img src= "<?php echo $resultat[8]["photo"] ; ?>" height="200" width="160"/></a></td>
                     <td><?php echo $compte++ ?></td>
 
                 </tr>

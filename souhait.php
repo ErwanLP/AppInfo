@@ -36,9 +36,10 @@ include("nav.php");
 
 
     <article>
-        <?php if (isset($_SESSION['SWITCH']) AND ($_SESSION['SWITCH'] == "organisateur" OR $_SESSION['SWITCH'] == "participant" ) AND $_SESSION['ID'] != null) { ?>
+        <?php if (isset($_SESSION['SWITCH']) AND ($_SESSION['SWITCH'] == "organisateur" OR $_SESSION['SWITCH'] == "participant" ) 
+                AND $_SESSION['ID'] != null) { ?>
             <div class="creerTopic">
-              <?php $req = $bdd->query('SELECT souscategorieforum.id FROM souscategorieforum WHERE ');?>
+              <?php //$req = $bdd->query('SELECT souscategorieforum.id FROM souscategorieforum WHERE ');?>
                 <a href="ajouterSujet.php?idSouscategorie=1"> Ajouter un sujet</a>
             </div>
         <?php } ?>

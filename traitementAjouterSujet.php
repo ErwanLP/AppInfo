@@ -12,7 +12,6 @@ $date_creation = date("Y-m-d H:i:s");
 $commentaire = ($_POST['commentaire']);
 $nom = ($_POST['titre']);
 $idSouscategorie = $_POST['idSouscategorie'];
-echo $idSouscategorie;
 $idPseudo = $_SESSION['ID'];
 //vérification du titre du sujet et du commentaire
             if (strlen($nom) < 3) {

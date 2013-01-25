@@ -765,6 +765,16 @@ article
     text-align : left;
 }
 
+.relativeAime{
+    position : relative;
+    bottom :40px;
+    left:400px;
+    width:80px;
+    font-size: 20px;
+    color : #1060B0;
+    text-align : left;
+}
+
 .eventInscrit{
     font-size: 30px;
     color : #1060B0;
