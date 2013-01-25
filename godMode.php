@@ -3,7 +3,7 @@ session_start();
 if (isset($_SESSION['ID'])) {
     $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
     $idgm = $_SESSION['ID'];
-    $sql = 'SELECT godMode FROM compte WHERE ID="' . $idgm.'"';
+    $sql = 'SELECT godMode FROM compte WHERE ID="' . $idgm . '"';
     //echo $sql;
     $result = $bdd->query($sql);
     $test = false;
@@ -87,29 +87,63 @@ if (isset($_SESSION['ID'])) {
         </div>
 
         <div class="gmpaged">
-            
+
+            <h3>SIGNALEMENT:</h3>
+
             <?php
-            
             $sql = 'SELECT * FROM signalement';
             $result = $bdd->query($sql);
-            while($data = $result->fetch()){
+            while ($data = $result->fetch()) {
+                $id = $data['ID'];
                 $idMessage = $data['id_message'];
-                $$idSignaleur = $data['id_signaleur'];
-                $date = $data['data'];
+                $idSignaleur = $data['id_signaleur'];
+                $date = $data['date'];
                 $idMotif = $data['id_motif'];
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-            }
+
+                $sql2 = 'SELECT nomDeCompte FROM compte WHERE ID ="' . $idSignaleur . '"';
+                $result2 = $bdd->query($sql2);
+                while ($data2 = $result2->fetch()) {
+                    $signaleur = $data2['nomDeCompte'];
+                }$result2->closeCursor();
+                $sql3 = 'SELECT message FROM forummessage WHERE ID ="' . $idMessage . '"';
+                $result3 = $bdd->query($sql3);
+                while ($data3 = $result3->fetch()) {
+                    $message = $data3['message'];
+                }$result3->closeCursor();
+                $sql4 = 'SELECT texte FROM motif WHERE ID ="' . $idMotif . '"';
+                $result4 = $bdd->query($sql4);
+                while ($data4 = $result4->fetch()) {
+                    $motif = $data4['texte'];
+                }$result2->closeCursor();
+                ?> 
+
+                <fieldset>
+                    <?php 
+                    echo "Ce message suivant &agrave; &eacute;t&eacute; signal&eacute; le : ".$date;
+                    echo "<br/>";
+                    echo $message;
+                    echo "<br/>";
+                    echo "Par : ".$signaleur;
+                    echo "<br/>";
+                    echo "Pour le motif suivant : ".$motif;
+                    echo "<br/>";
+                    echo "<br/>";
+                    $lientrue = 'traitementGodMode.php?action=sig&censure=true&id='.$id.'&message='.$idMessage;
+                    $lienfalse= 'traitementGodMode.php?action=sig&censure=false&id='.$id.'&message='.$idMessage;
+                    echo '<a href="'.$lientrue.'">Censurer</a> - <a href="'.$lienfalse.'">Non Censurer</a>'
+                    
+                    ?>
+                </fieldset>
+            <br/>
+
+
+
+
+
+                <?php
+            }$result->closeCursor();
             ?>
-            
+
 
         </div>
 
@@ -118,10 +152,10 @@ if (isset($_SESSION['ID'])) {
 
 
 
-    <?php
+        <?php
     } else {
         echo "SORTER D ICI !!!";
-         header('Location:index.php');
+        header('Location:index.php');
     }
 } else {
     "SORTER D ICI !!!";
