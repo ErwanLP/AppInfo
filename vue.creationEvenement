@@ -32,9 +32,9 @@ function formDebEvent($lang) {
                     <label for="description">Sum up of the event :</label><br />
                     <textarea class="champDescriptionEvent" name="descriptionn" id="descriptionn" >How will be the event...</textarea><br/></br>
                     <label for="dateDebut">Event's beginning date (or happening date):</label>
-                    <input type="date" name="dateDebut" id="dateDebut" required /><br/>
+                    <input type="date" name="dateDebut" placeholder="YYYY-MM-DD" id="dateDebut" required /><br/>
                     <label for="dateFin">Event's ending date (do not specify it if the event appears once):</label>
-                    <input type="date" name="dateFin" id="dateFin"/><br/>
+                    <input type="date" name="dateFin" placeholder="YYYY-MM-DD" id="dateFin"/><br/>
                     <label for="heureDebut">Start time :</label>
                     <input type="time" name="heureDebut" id="heureDebut" required /><br/>
                     <label for="heureFin">End time :</label>
@@ -71,9 +71,9 @@ function formDebEvent($lang) {
                                     <label for="description">Description de l'&Eacute;v&eacute;nement:</label><br/><br/>
                                     <textarea class="champDescriptionEvent" name="description" id="descriptionn" placeholder="Entrer la description de l'&Eacute;v&eacute;nement..." ></textarea><br/></br>
                                     <label for="dateDebut">Date de d&eacute;but de l'&Eacute;v&eacute;nement (ou date unique) : </label><br/><br/>
-                                    <input type="date" name="dateDebut" id="dateDebut" required /><br/><br/>
+                                    <input type="date" name="dateDebut" placeholder="AAAA-MM-JJ" id="dateDebut" required /><br/><br/>
                                     <label for="dateFin">Date de fin de l'&Eacute;v&eacute;nement(ne pas sp&eacute;cifier si l'&Eacute;v&eacute;nement n'a lieu qu'une seule fois) :</label><br/><br/>
-                                    <input type="date" name="dateFin" id="dateFin"/><br/><br/>
+                                    <input type="date" name="dateFin" placeholder="AAAA-MM-JJ" id="dateFin"/><br/><br/>
                                     <label>Jour(s) d'ouverture(s) pendant la semaine :</label><br/><br/>
                                     <label for="lundi">L</label><input type="checkbox" name="lundi" id="lundi" value="1"/> 
                                     <label for="mardi">Ma</label><input type="checkbox" name="mardi" id="mardi" value="1"/>
@@ -135,7 +135,7 @@ Choose a picture for your event on your hard disk.</br><br/>
                                         echo '</select></br></br>
 Choisissez une image pour votre &Eacute;v&eacute;nement sur votre disque dur.<br/><br/>
 <label for="image">Fichier :</label>
-<input id="image" name="image" type="file" size="30" required></br>*/
+<input id="image" name="image" type="file" size="30" required></br>
                             </fieldset>
 
                             <input type="submit" value="Envoyer" />

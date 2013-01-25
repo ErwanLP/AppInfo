@@ -51,7 +51,7 @@ include("nav.php");
             ?>
             <strong><?php echo $titre_topic; ?></strong>
         </div>
-
+        
         <?php
         $reqP = $bdd->query('SELECT id from topicforum WHERE id = "' . $id_topic . '"');
         while ($dataa = $reqP->fetch()) {
@@ -149,6 +149,19 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
                             <?php echo' <img  style="position:relative;left:-325px;top:13px;" src="img/jerry.jpg" height="150" width="200" /> '; ?>
                             <div class="positionCommentaire">
                                 <?php echo $tab_info_commentaire[$a][0]; ?> 
+                               <br/><br/>
+                                    <form method="post" action="traitementSignalement.php">
+                                        <select name="motif" id="motif">
+                                            <option value="0">Motif</option>
+                                            <option value="1">Injurieux</option>
+                                            <option value="2">Raciste</option>
+                                            <option value="3">Homophobe</option>
+                                            <option value="4">Flood</option>
+                                        </select>    
+                                        <input type="hidden" name ="IDsignaleur" value="<?php echo $_SESSION['ID'] ?>"/>
+                                        <input type="hidden" name =" IDmessage" value="<?php echo $a ?>" />
+                                        <input type="submit" value="Signaler" />
+                                    </form>                           
                             </div>
                         </div>
                     <?php } ?>
@@ -202,5 +215,4 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
         ?>
     </article>
 </section>
-<?php 
-include('footer.php'); ?>        
+<?php include('footer.php'); ?>        
