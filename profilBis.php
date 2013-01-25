@@ -223,7 +223,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                         ?></p>
                     </fieldset>
 
-                            $ba = false;
+                           <?php  $ba = false;
                             $sql1 = '(SELECT * FROM abonnement)';
                             $result = $bdd->query($sql1);
                             while ($data = $result->fetch()) {
@@ -237,7 +237,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                             if (!$ba) {
                                 $lien = 'traitementFollow.php?target=suivi&ID=' . $id . '&follow=' . $idAutre;
                                 echo '<a href="' . $lien . '" title="Suivre un organisateur" class ="imgAddF"><img src="img/addF.jpg" height="50" width="50"></a>';
-                            }
+                            
                         } else {
                             header('Location:profil.php?target=info');
                         }
