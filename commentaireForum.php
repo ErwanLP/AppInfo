@@ -146,7 +146,7 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
                                 <?php } ?>
 
                             </div>
-                            <?php echo' <img  style="position:relative;left:-325px;top:13px;" src="img/jerry.jpg" height="150" width="200" /> '; ?>
+                            <?php echo' <img  style="position:relative;left:-325px;top:13px;" src="img/dye_logo.jpg" height="150" width="200" /> '; ?>
                             <div class="positionCommentaire">
                                 <?php echo $tab_info_commentaire[$a][0]; ?> 
                                <br/><br/>
