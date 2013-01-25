@@ -135,7 +135,7 @@ Choose a picture for your event on your hard disk.</br><br/>
                                         echo '</select></br></br>
 Choisissez une image pour votre &Eacute;v&eacute;nement sur votre disque dur.<br/><br/>
 <label for="image">Fichier :</label>
-<input id="image" name="image" type="file" size="30" required></br>*/
+<input id="image" name="image" type="file" size="30" required></br>
                             </fieldset>
 
                             <input type="submit" value="Envoyer" />
