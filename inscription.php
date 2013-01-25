@@ -38,7 +38,7 @@
                 <p> <span>*</span> Nom de compte : </p>
                 <input type="text" size="20" name="nomDeCompte" maxlength="40" id="nomDeCompte" autofocus required />
                 <p> <span>*</span> Votre mot de passe : </p>
-                <input type="password" size="20" name="mdp" title="Le mot de passe doit comporter au moins 6 caractères dont une Majuscule et un chiffre" maxlength="40" id="mdp" required />
+                <input type="password" size="20" name="mdp" placeholder="6 caractères min, 1 Maj, 1 chiffre" title="Le mot de passe doit comporter au moins 6 caractères dont une Majuscule et un chiffre" maxlength="40" id="mdp" required />
                 <p> <span>*</span> Confirmer mot de passe : </p>
                 <input type="password" size="20" name="mdp2" maxlength="40" id="mdp2" required />
                 <p> <span>*</span> Votre adresse email : </p>
