@@ -38,28 +38,31 @@ include("nav.php");
     <?php
     if (!isset($_POST['titre']) && empty($_POST['titre'])) {
         ?>
-        <article>
-            <div>
-                <form method="post" action="spectacle.php">
-                    <table>
-                        <caption class="titreNouveauSujet">Veuillez ajouter votre sujet :</caption>
-                        <tr>
-                            <td>
-                                <br/><p style="margin-top:30px;margin-left:300px;">Titre du sujet :</p><input style="margin-left:280px;width:500px;border-radius:5px;border: 1px solid #cebd8b;box-shadow: 1px 1px 2px #C0C0C0 inset;" type="text" name="titre" size="50" maxlength="500" style="height:30px;" required/>
-                                                                                                       <input name="id_souscategorie" id="id_souscategorie" type="hidden" value="<?php echo $id_souscategorie;?>"/>
-                            </td>
-                        </tr>
-                        <tr>
-                        <td>
+     <article>
+        <div>
+       <form method="post" action="traitementAjouterSujet.php">
+            <table>
+              <caption class="titreNouveauSujet">Veuillez ajouter votre sujet :</caption>
+                  <tr>
+                     <td>
+                         <br/><p style="margin-top:30px;margin-left:300px;">Titre du sujet :</p>
+                          <input style="margin-left:280px;width:500px;border-radius:5px;border: 1px solid #cebd8b;box-shadow: 1px 1px 2px #C0C0C0 inset;" type="text" name="titre" size="50" maxlength="500" style="height:30px;" required/>
+                          <?php $idSouscategorie=$_GET['idSouscategorie'];?>
+                          <input name="idSouscategorie" id="idSouscategorie" type="hidden" value="<?php echo $idSouscategorie; ?>"/>
+                          <?php echo $idSouscategorie;?>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>
                             <p style="margin-top:30px;margin-left:300px;"> Commentaire :</p><textarea style="width:500px;height:100px;margin-left:280px;" name="commentaire" id="commentaire" rows="20" cols="100"></textarea>
-                        </td>
-                        </tr>
-                    </table>
+                      </td>
+                  </tr>
+               </table>
                     <input style="margin-left:-60px;" type="reset" value="Effacer">
                     <input type="submit" value="Valider" onclick="history.back()">
 
 
-                </form>
+       </form>
             </div>
             <?php
         } else {

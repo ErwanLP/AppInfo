@@ -166,40 +166,38 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
 
             <?php
         } else {
-            $i = 0;
-            $erreurCommentaire = 'NULL';
-            $date_creation = date("Y-m-d H:i:s");
-            $message = $_POST['message'];
-            $id_topic=$_POST['id_topic'];
-            $pseudo=$_POST['pseudo'];
+           // $i = 0;
+            //$erreurCommentaire = 'NULL';
+            //$date_creation = date("Y-m-d H:i:s");
+            //$message = $_POST['message'];
+            //$id_topic=$_POST['id_topic'];
+            //$pseudo=$_POST['pseudo'];
   
-            if (strlen($_POST['message']) < 2) {
-                $erreurCommentaire = "Votre commentaire est trop court!";
+            //if (strlen($_POST['message']) < 2) {
+              //  $erreurCommentaire = "Votre commentaire est trop court!";
                 ?>
-                <br/>
-                <br/>
+                
                 <?php
-                echo'Votre commentaire est trop court!';
-                $i++;
-            } else if ($i == 0) {
+              //  echo'Votre commentaire est trop court!';
+                //$i++;
+            //} else if ($i == 0) {
 
-                $req = $bdd->prepare('INSERT INTO forummessage (date_creation,message,id_participant,id_organisateur,id_topic)
-        VALUES (:date_creation,:message,:id_topic,:pseudo)');
-                $req->execute(array(
-                    'date_creation' => $date_creation,
-                    'message' => $message,
-                    'id_participant' => $pseudo,
-                    'id_organisateur' => $pseudo,
-                    'id_topic'=>$id_topic
+        //$req = $bdd->prepare('INSERT INTO forummessage (date_creation,message,id_participant,id_organisateur,id_topic)
+        //VALUES (:date_creation,:message,:pseudo,:pseudo,:id_topic)');
+          //      $req->execute(array(
+            //        'date_creation' => $date_creation,
+              //      'message' => $message,
+                //    'id_participant' => $pseudo,
+                  //  'id_organisateur' => $pseudo,
+                    //'id_topic'=>$id_topic
                     
-                    ));
+                    //));
                 
                 ?>
-                <br/>
-                <br/>
+                
                 <?php
-                echo "Votre commentaire a bien été pris en compte";
-            }
+              //  echo "Votre commentaire a bien été pris en compte";
+          //  }
         }
         ?>
     </article>

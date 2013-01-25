@@ -1,6 +1,6 @@
 <?php
 session_start();
-//$titre = 'souhait';
+$titre = 'souhait';
 include('start.php');
 include('BDD.php');
 ?>
@@ -38,7 +38,8 @@ include("nav.php");
     <article>
         <?php if (isset($_SESSION['SWITCH']) AND ($_SESSION['SWITCH'] == "organisateur" OR $_SESSION['SWITCH'] == "participant" ) AND $_SESSION['ID'] != null) { ?>
             <div class="creerTopic">
-                <a href="ajouterSujet.php" alt="ajouter un sujet" title="Créer un nouveau sujet"> Ajouter un sujet</a>
+              <?php $req = $bdd->query('SELECT souscategorieforum.id FROM souscategorieforum WHERE ');?>
+                <a href="ajouterSujet.php?idSouscategorie=1"> Ajouter un sujet</a>
             </div>
         <?php } ?>
         <div class="backPage">
@@ -82,7 +83,7 @@ include("nav.php");
                         <?php for ($a = 0; $a < count($tab_info_souhait); $a++) {
                             ?>
                             <tr class="affichageSujet">
-                                <td class="contenuMessage"><a href="commentaireForum.php?idTopic=<?php echo $tab_info_souhait[$a][3]; ?>&titreTopic=<?php echo $tab_info_souhait[$a][0]; ?>&pseudo=<?php echo $tab_info_souhait[$a][4]; ?>"><?php echo $tab_info_souhait[$a][0]; ?></a></td>
+                                <td class="contenuMessage"><a href="commentaireForum.php?idTopic=<?php echo $tab_info_souhait[$a][3]; ?>&titreTopic=<?php echo $tab_info_souhait[$a][0]; ?>"><?php echo $tab_info_souhait[$a][0]; ?></a></td>
                                 <td class="message"><?php echo $tab_info_souhait[$a][1]; ?></td>
                                 <td class="auteur"><?php echo $tab_info_souhait[$a][4]; ?></td>
                                 <td class="date"><?php echo $tab_info_souhait[$a][2]; ?></td>
