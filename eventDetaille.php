@@ -152,6 +152,24 @@ include("nav.php");
                 <div class ="imageDetail">
                     <p class="evenementDetailDescription"><span style="margin-left:70px;"><?php echo $donnees['description']; ?></span></p>
                 </div>
+            
+            <?php if($donnees['id_organisateur']!=0){
+                $reqs=$bdd->query('SELECT organisateur.pseudo,organisateur.ID FROM event,organisateur WHERE organisateur.ID=event.id_organisateur AND event.ID='.$ID);
+                $nomorg='aucun';
+                while($denees=$reqs->fetch()){
+                    $nomorg=$denees['pseudo'];
+                    $idorg=$denees['ID'];
+                }$reqs->closeCursor();
+                if($nomorg!='aucun'){?><div class="imageDetail2">Organis&eacute; par : <a href="profilBis.php?IDprofil=<?php echo $idorg; ?>&Pseudo=<?php echo $nomorg; ?>">- <?php echo $nomorg; ?> - </a>
+                    </div><?php
+                    
+                    }else{
+                        ?><div class="imageDetail2">Oups! L'organisateur est introuvable...
+                    </div><?php
+                    }
+            } ?>
+            
+            
                 <?php $resu=$bdd->query('SELECT * FROM event,event_participant,participant WHERE event.ID='.$ID.' AND event.ID=event_participant.id_event AND event_participant.id_participant=participant.ID AND participant.ID='.$_SESSION['ID']);
                 
                 $haveReserve=false;
@@ -184,6 +202,9 @@ include("nav.php");
                    
                    }
                    ?>
+            
+            
+            
                 <div class="imageDetail2">
                     <?php if ($donnees['nbVotes'] != 0) {
                         ?><strong>Note des participants : </strong><img src="<?php
@@ -210,7 +231,44 @@ include("nav.php");
             } else {
                 echo 'Aucune note pour le moment';
             }
-                    ?>
+            if($donnees['nbAime']!=0){?><br/><?php echo $donnees['nbAime']; ?> personne(s) aime(nt)  cet &eacute;v&egrave;nement.<?php
+            
+            }else{
+                ?><br/>Personne n'aime cet &eacute;v&egrave;nement...<?php
+            }
+                    //Debut forme j'aime
+            
+                    if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "participant") {
+                    $reponse2 = $bdd->query('SELECT * FROM aime,event,compte WHERE event.ID=' . $_GET['ID'] . ' AND event.ID=aime.id_event AND aime.id_participant=' . $_SESSION['ID']);
+                    $comment = true;
+                    while ($donnees3 = $reponse2->fetch()) {
+                        $comment = false;
+                    }$reponse2->closeCursor();
+                    if ($comment == true) {
+                        ?><div class="relativeAime">
+                            <form method="post" action="traitementAime.php">
+
+                                <fieldset class="">
+                                    <!--<legend class="">J'aime :</legend>-->
+                                    <select name="id_participant" id="id_participant" hidden>
+                                        <option value="<?php echo $_SESSION['ID']; ?>"><?php echo $_SESSION['ID']; ?></option>
+                                    </select>
+                                    <select name="id_event" id="id_event" hidden>
+                                        <option value="<?php echo $ID; ?>"><?php echo $ID; ?></option>
+                                    </select>
+                                    <input type="submit" value="J'aime" />
+
+                                </fieldset>
+                            </form>
+
+
+                        </div>
+                        <?php }
+                }
+                
+                    //Fin forme j'aime
+            ?>
+                        
                 </div>
 
                 <?php

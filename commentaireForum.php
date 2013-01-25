@@ -51,7 +51,7 @@ include("nav.php");
             ?>
             <strong><?php echo $titre_topic; ?></strong>
         </div>
-        
+
         <?php
         $reqP = $bdd->query('SELECT id from topicforum WHERE id = "' . $id_topic . '"');
         while ($dataa = $reqP->fetch()) {
@@ -63,13 +63,13 @@ include("nav.php");
         $var_tab_info_array = 0;
 
         $req = $bdd->query('(
-SELECT participant.pseudo, forummessage.message, forummessage.date_creation 
+SELECT participant.pseudo, forummessage.message, forummessage.date_creation, forummessage.ID
 FROM forummessage, participant, topicforum 
 WHERE  ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topicforum . '" ) AND participant.ID = forummessage.id_participant
 ) 
 UNION
 (
-SELECT organisateur.pseudo, forummessage.message, forummessage.date_creation 
+SELECT organisateur.pseudo, forummessage.message, forummessage.date_creation, forummessage.ID
 FROM forummessage, organisateur, topicforum 
 WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topicforum . '" ) AND organisateur.ID = forummessage.id_organisateur
 ) ORDER BY date_creation');
@@ -87,6 +87,7 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
             $tab_info_commentaire[$var_tab_info_array][0] = $donnees["message"];
             $tab_info_commentaire[$var_tab_info_array][1] = $donnees["date_creation"];
             $tab_info_commentaire[$var_tab_info_array][2] = $donnees["pseudo"];
+            $tab_info_commentaire[$var_tab_info_array][5] = $donnees["ID"];
             $var_tab_info_array++;
         }
 
@@ -149,22 +150,33 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
                             <?php echo' <img  style="position:relative;left:-325px;top:13px;" src="img/dye_logo.jpg" height="150" width="200" /> '; ?>
                             <div class="positionCommentaire">
                                 <?php echo $tab_info_commentaire[$a][0]; ?> 
-                               <br/><br/>
+                                <br/><br/>
+
+                                <?php
+                                if (isset($_SESSION['ID'])) {
+
+                                    $adresse = $_SERVER['REQUEST_URI'];
+                                    
+                                    ?>
                                     <form method="post" action="traitementSignalement.php">
                                         <select name="motif" id="motif">
                                             <option value="0">Motif</option>
                                             <option value="1">Injurieux</option>
                                             <option value="2">Raciste</option>
                                             <option value="3">Homophobe</option>
-                                            <option value="4">Flood</option>
+                                            <option value="4">Discrimination</option>
+                                            <option value="5">Flood</option>
+                                            <option value="6">Autre</option>
                                         </select>    
                                         <input type="hidden" name ="IDsignaleur" value="<?php echo $_SESSION['ID'] ?>"/>
-                                        <input type="hidden" name =" IDmessage" value="<?php echo $a ?>" />
+                                        <input type="hidden" name ="URL" value="<?php echo $adresse ?>"/>
+                                        <input type="hidden" name =" IDmessage" value="<?php echo $tab_info_commentaire[$a][5]; ?>" />
                                         <input type="submit" value="Signaler" />
-                                    </form>                           
+                                    </form>    
+        <?php } ?>
                             </div>
                         </div>
-                    <?php } ?>
+                            <?php } ?>
                 </div>
 
                 <?php
@@ -215,4 +227,4 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
         ?>
     </article>
 </section>
-<?php include('footer.php'); ?>        
+        <?php include('footer.php'); ?>        

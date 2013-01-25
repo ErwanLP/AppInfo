@@ -32,7 +32,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 
     </aside>
     <?php if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "participant" AND $_SESSION['ID'] != null) { ?>
-        <div id="description">
+        <div class="description">
             <fieldset>
 
                 <?php
@@ -169,8 +169,8 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 
 
                             <a href="profilBis.php?IDprofil=<?php echo $dfIdAutre ?>&Pseudo=<?php echo $dfPseudo ?>" ><img src="<?php echo $dfTof ?>" alt="Jerry" title="Cliquez pour agrandir" style="border: solid black 2px"height="200" width="200"/></a>
-                            <a href="profilBis.php?IDprofil=<?php echo $dfIdAutre ?>&Pseudo=<?php echo $dfPseudo ?>" ><span class="nom1"><?php echo $dfPrenom . " " . $dfNom ?></span></a><br/>
-                            <span class="lieu1"><?php echo $dfPseudo ?></span>
+                            <a href="profilBis.php?IDprofil=<?php echo $dfIdAutre ?>&Pseudo=<?php echo $dfPseudo ?>" ><span class="PAPA1"><?php echo $dfPrenom . " " . $dfNom ?></span></a><br/>
+                            <span class="PAPA2"><?php echo $dfPseudo ?></span>
                         </fieldset>
 
 
@@ -745,7 +745,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                         ?>
 
                         <?php if (isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur" AND $_SESSION['ID'] != null) { ?>
-                            <div id="description">
+                            <div class="description">
                                 <fieldset>
                                     <?php
                                     $result = $bdd->query('SELECT * FROM organisateur WHERE ID = "' . $_SESSION['ID'] . '"');

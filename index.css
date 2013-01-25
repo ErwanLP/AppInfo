@@ -765,6 +765,16 @@ article
     text-align : left;
 }
 
+.relativeAime{
+    position : relative;
+    bottom :40px;
+    left:400px;
+    width:80px;
+    font-size: 20px;
+    color : #1060B0;
+    text-align : left;
+}
+
 .eventInscrit{
     font-size: 30px;
     color : #1060B0;
@@ -1950,18 +1960,13 @@ a:hover{
     background: whitesmoke;
 }
 .nom4 {
-    position: absolute;
     font-size: 50px;
     font-weight: bold;
-    left: 350px;
-    top : 40px;        
 }
 .lieu4 {
-    position: absolute;
     font-size: 25px;
     font-style: italic;
-    left: 350px;
-    top : 130px;        
+    float: left;
 }
 .menu {
     position: absolute;
@@ -2081,7 +2086,11 @@ strong{
     margin: 10px;
 }
 .description img, #amis img, #abonnement img{
-    margin: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-right: 40px;
+    float: left;
 }
 
 
@@ -2101,6 +2110,23 @@ strong{
 
 
 }
+
+.PAPA1 {
+    font-size: 35px;
+    font-weight: bold;
+    position : relative;
+    left : 100px;
+    bottom: -80px;
+}
+
+.PAPA2 {
+    font-size: 20px;
+    font-style: italic;
+    position : relative;
+    left : 230px;
+    bottom: -90px;
+}
+
 
 .nom1 {
 
@@ -2182,7 +2208,7 @@ strong{
     position : absolute;
     width: 50%;
     top : 370px;
-    left : 50%;
+    left : 40%;
     text-align: left;
     padding-left: 100px;
 
