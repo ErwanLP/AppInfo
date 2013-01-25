@@ -158,7 +158,7 @@ include("nav.php");
                 while($dat=$resu->fetch()){
                     $haveReserve=true;
                 }$resu->closeCursor();
-                if($haveReserve==false){
+                if($haveReserve==false && $_SESSION['SWITCH']=='participant'){
                     
                 ?>
                 <div class="imageDetail2">
@@ -176,10 +176,12 @@ include("nav.php");
                     </form>
 
                 </div> <?php
-                   }else{
+                   }else{if($_SESSION['SWITCH']=='participant'){
                     ?>    <div class="imageDetail2">Vous &ecirc;tes inscrit ;) !
                     </div>
             <?php
+                   }
+                   
                    }
                    ?>
                 <div class="imageDetail2">

@@ -35,10 +35,15 @@
         <article class="articleevent">
             <?php
             if(isset($_SESSION['SWITCH']) AND $_SESSION['SWITCH'] == "organisateur"){
-            $lang = 'fr';
+              
+              if(isset($_GET['lang']) AND $_GET['lang']=='en'){
+                  ?>  <a href="creationEvenement.php">Français</a><?php
+            $lang = 'en';}else{
+                ?><a href="creationEvenement.php?lang=en">English</a><?php
+                $lang = 'fr';
+            }
             titreFormEvent($lang);
             $theme = $bdd->query('SELECT * FROM theme');
-            $lang = 'fr';
             formDebEvent($lang);
 //print_r($theme);
             while ($donnees = $theme->fetch()) {
