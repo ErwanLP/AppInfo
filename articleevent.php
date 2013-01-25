@@ -12,7 +12,7 @@
     </div>
 <!-- <img class = "imageflottante" alt="Photo de évenement" src= "imgUser/gad_elmaleh.jpeg"/> -->
     <div class ="texteEvent">
-        <a href="eventDetaille.php?ID=<?php echo $data['ID'];?>"><h1 class="titreEventArticle"><?php echo $data['nom']; ?></h1></a>
+        <a href="eventDetaille.php?ID=<?php echo $data['ID'];?>"><p class="titreEventArticle"><?php echo $data['nom']; ?></p></a>
         <strong>Adresse: </strong><?php echo $data['lieu']; ?><span><?php echo $data['lieu']; ?></span><br/>
         
         <?php 
