@@ -98,6 +98,23 @@ switch ($action) {
         $bdd->query('DELETE FROM soustheme WHERE nom = "' . $stheme . '"');
 
         break;
+    
+    
+    
+    case "sig":
+        $censure = $_GET['censure'];
+        $idSig = $_GET['id'];
+        $idMessage = $_GET['message'];
+        if($censure){
+            $bdd->query('DELETE FROM forummessage WHERE ID ="' . $idMessage . '"');   
+            
+            
+            
+            
+        }         
+            $bdd->query('DELETE FROM signalement WHERE ID ="' . $idSig . '"');
+            
+        
 }
 
 
