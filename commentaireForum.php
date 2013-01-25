@@ -51,12 +51,12 @@ include("nav.php");
             ?>
             <strong><?php echo $titre_topic; ?></strong>
         </div>
-
+        
         <?php
         $reqP = $bdd->query('SELECT id from topicforum WHERE id = "' . $id_topic . '"');
         while ($dataa = $reqP->fetch()) {
             $ID_topicforum = $dataa['id'];
-           // echo $ID_topicforum;
+            
         }$reqP->closeCursor();
 
         $tab_info_commentaire = array();

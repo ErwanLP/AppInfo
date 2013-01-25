@@ -193,7 +193,7 @@ header
     background-color: #ebe2d9;
     padding: 0px 10px 10px 10px;
     width: 400px;
-    margin-left: 220px;
+    margin-left: 380px;
     margin-top: 0px;
 }
 
@@ -762,6 +762,11 @@ article
     font-size: 20px;
     color : #1060B0;
     text-align : left;
+}
+
+.eventInscrit{
+    font-size: 30px;
+    color : #1060B0;
 }
 
 .evenement h1{
