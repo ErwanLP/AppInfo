@@ -1,16 +1,18 @@
-<h1> Vous &ecirc;tes dans le mode administrateur: </h1>
+<?php
+include('start.php');
+?>
+
+<h1 class="titregm"> Vous &ecirc;tes dans le mode administrateur: </h1>
 
 <!-- censuré topiuc message, bannir qqh, rajouter new, lancé avertissement , chnager le type de session, chnager les theme et sous theme, supprimer photo de profil? , 
 rajouter pub, supprimer un event, chnager thme event -->
 
-
+<div class="gmpageg">
 <h3>BANNIR:</h3>
 <p>Inscriver le pseudo de profil de la personne &agrave; bannir</p>
 <form method="post" action="traitementGodMode.php?action=ban">
     <input type="text" name="pseudo" />
-    <input type="submit" value="Bannir" /><br/>
-    <input type="radio" name="choix" value="profil" checked>Supprimer uniquement le profil<br/>
-    <input type="radio" name="choix" value="compte">Supprimer le compte
+    <input type="submit" value="Bannir" />
 </form>
 
 <h3>SUPPRIMER TOPIC</h3>
@@ -39,14 +41,18 @@ rajouter pub, supprimer un event, chnager thme event -->
 </form>
 
 <h3>THEME ET SOUS THEME</h3>
-<p>Cr&eacute;er un th&egrave;me</p>
+<p>Cr&eacute;er un th&egrave;me(sp&eacute;cifier le th&egrave;me en CamelCase et le th&egrave;me en anglais)</p>
 <form method="post" action="traitementGodMode.php?action=addth">
     <input type="text" name="theme" />
+    <input type="text" name="themeCamel" />
+    <input type="text" name="themeEn" />
     <input type="submit" value="Ajouter" />
 </form>
-<p>Créer un sous th&egrave;me (sp&eacute;cifier le th&egrave;me)</p>
+<p>Créer un sous th&egrave;me (sp&eacute;cifier le sousth&egrave;me en CamelCase, le sousth&egrave;me en anglaisle et le th&egrave;me associ&eacute;)</p>
 <form method="post" action="traitementGodMode.php?action=addsth">
     <input type="text" name="stheme" />
+        <input type="text" name="sthemeCamel" />
+    <input type="text" name="sthemeEn" />
     <input type="text" name="theme" />
     <input type="submit" value="Ajouter" />
 </form>
@@ -60,4 +66,14 @@ rajouter pub, supprimer un event, chnager thme event -->
     <input type="text" name="stheme" />
     <input type="submit" value="Ajouter" />
 </form>
+</div>
+
+<div class="gmpaged">
+
+</div>
+
+
+
+
+
 
