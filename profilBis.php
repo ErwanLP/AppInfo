@@ -134,11 +134,11 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                             <strong>Pr&eacute;nom :</strong><?php echo " " . $dataBis['prenom']; ?><br/><br/>
                             <strong>Nom :</strong><?php echo " " . $dataBis['nom']; ?><br/><br/>
                             <strong>Sexe :</strong><?php
-                        if ($dataBis['sexe'] == 1) {
-                            echo " Homme";
-                        } else {
-                            echo " Femme";
-                        }
+                if ($dataBis['sexe'] == 1) {
+                    echo " Homme";
+                } else {
+                    echo " Femme";
+                }
                         ?><br/><br/>                    
                             <strong>Date de naissance :</strong><?php echo " " . $dataBis['dateDeNaissance']; ?><br/><br/>
                             <strong>Adresse :</strong><?php echo " " . $dataBis['adresse'] . " - " . $dataBis['codePostal'] . " - " . $dataBis['villes']; ?><br/><br/>
@@ -174,7 +174,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
         $result2 = $bdd->query('SELECT pseudo FROM organisateur');
         while ($data2 = $result2->fetch()) {
 
-            if ($boubou2 == $data2['pseudo']) {
+            if ($pseudo == $data2['pseudo']) {
                 $boubou2 = true;
             }
         }$result2->closeCursor();
@@ -187,15 +187,15 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                 <div id="description">
                     <fieldset>
                         <img src="img/logo.png" width="200" height="200" alt="Logo" style="border: solid black 2px"/>                  
-                        <p id="nom4"><?php echo $dataBis['nom'] . "  " . $dataBis['prenom'];
-            ?></p>
-                        <p id="lieu"><?php echo $dataBis['nomSociete'] . ", " . $dataBis['pays'];
-            ?></p>
+                        <p class="nom4"><?php echo $data['nom'] . "  " . $data['prenom'];
+                ?></p>
+                        <p class="lieu4"><?php
+                echo $data['pays'] . ", " . $data['ville'];
+                ?></p>
                         <?php
-                        
                         if ($id != $idAutre) {
 
-                            $ba= false;
+                            $ba = false;
                             $sql1 = '(SELECT * FROM abonnement)';
                             $result = $bdd->query($sql1);
                             while ($data = $result->fetch()) {
@@ -214,10 +214,10 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
                             header('Location:profil.php?target=info');
                         }
                         ?>
-                        
+
                     </fieldset>                    
                 </div>
-    
+
                 <div class="menu">
                     <ul id="simple-menu">
                         <li><input type="button" value="Mes Infos"/></li>
