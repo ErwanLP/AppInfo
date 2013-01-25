@@ -56,6 +56,7 @@ include("nav.php");
         $reqP = $bdd->query('SELECT id from topicforum WHERE id = "' . $id_topic . '"');
         while ($dataa = $reqP->fetch()) {
             $ID_topicforum = $dataa['id'];
+           
         }$reqP->closeCursor();
 
         $tab_info_commentaire = array();
@@ -146,7 +147,7 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
                                 <?php } ?>
 
                             </div>
-                            <?php echo' <img  style="position:relative;left:-325px;top:13px;" src="img/jerry.jpg" height="150" width="200" /> '; ?>
+                            <?php echo' <img  style="position:relative;left:-325px;top:13px;" src="img/dye_logo.jpg" height="150" width="200" /> '; ?>
                             <div class="positionCommentaire">
                                 <?php echo $tab_info_commentaire[$a][0]; ?> 
                                 <br/><br/>
@@ -178,45 +179,50 @@ WHERE ( forummessage.id_topic = topicforum.id AND topicforum.id = "' . $ID_topic
                             <?php } ?>
                 </div>
 
-                    <?php
-                    if (isset($_SESSION['SWITCH']) AND ($_SESSION['SWITCH'] == "organisateur" OR $_SESSION['SWITCH'] == "participant" ) AND $_SESSION['ID'] != null) {
-                        include("nouveauCommentaire1.php");
-                    }
-                    ?>
+                <?php
+                if (isset($_SESSION['SWITCH']) AND ($_SESSION['SWITCH'] == "organisateur" OR $_SESSION['SWITCH'] == "participant" ) AND $_SESSION['ID'] != null) {
+                    include("nouveauCommentaire1.php");
+                   
+                }
+             
+                ?>
 
             </div>
 
-    <?php
-} else {
-    $i = 0;
-    $erreurCommentaire = 'NULL';
-    $date_creation = date("Y-m-d H:i:s");
-    $message = $_POST['message'];
-    // $ID_topicforum
-    // $IDProfil
-    if (strlen($_POST['message']) < 2) {
-        $erreurCommentaire = "Votre commentaire est trop court!";
-        ?>
-                <br/>
-                <br/>
-                <?php
-                echo'Votre commentaire est trop court!';
-                $i++;
-            } else if ($i == 0) {
-
-                $req = $bdd->prepare('INSERT INTO forummessage (date_creation,message,id_topic,IDProfil )
-        VALUES (:date_creation,:message,:id_topic,:IDProfil)');
-                $req->execute(array(
-                    'date_creation' => $date_creation,
-                    'message' => $message,
-                    'id_topic' => $ID_topicforum,
-                    'IDProfil' => $IDProfil));
+            <?php
+        } else {
+           // $i = 0;
+            //$erreurCommentaire = 'NULL';
+            //$date_creation = date("Y-m-d H:i:s");
+            //$message = $_POST['message'];
+            //$id_topic=$_POST['id_topic'];
+            //$pseudo=$_POST['pseudo'];
+  
+            //if (strlen($_POST['message']) < 2) {
+              //  $erreurCommentaire = "Votre commentaire est trop court!";
                 ?>
-                <br/>
-                <br/>
+                
                 <?php
-                echo "Votre commentaire a bien été pris en compte";
-            }
+              //  echo'Votre commentaire est trop court!';
+                //$i++;
+            //} else if ($i == 0) {
+
+        //$req = $bdd->prepare('INSERT INTO forummessage (date_creation,message,id_participant,id_organisateur,id_topic)
+        //VALUES (:date_creation,:message,:pseudo,:pseudo,:id_topic)');
+          //      $req->execute(array(
+            //        'date_creation' => $date_creation,
+              //      'message' => $message,
+                //    'id_participant' => $pseudo,
+                  //  'id_organisateur' => $pseudo,
+                    //'id_topic'=>$id_topic
+                    
+                    //));
+                
+                ?>
+                
+                <?php
+              //  echo "Votre commentaire a bien été pris en compte";
+          //  }
         }
         ?>
     </article>

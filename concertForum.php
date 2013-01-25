@@ -40,7 +40,7 @@ include("nav.php");
     <article>
 
         <div class="creerTopic">
-            <a href="ajouterSujet.php" alt="ajouter un sujet" title="Créer un nouveau sujet"> Ajouter un sujet</a>
+               <a href="ajouterSujet.php?idSouscategorie=9"> Ajouter un sujet</a>
         </div>
 
         <div class="backPage">
@@ -50,13 +50,22 @@ include("nav.php");
         <?php
         $tab_info_concert = array();
         $var_tab_info_array = 0;
-        $req = $bdd->query('SELECT topicforum.* FROM topicforum, souscategorieforum WHERE souscategorieforum.ID = 9 AND topicforum.id_souscategorie = souscategorieforum.ID');
+        $req = $bdd->query('(SELECT organisateur.pseudo,topicforum.* FROM topicforum, souscategorieforum,organisateur WHERE souscategorieforum.ID = 9 
+            AND topicforum.id_souscategorie = souscategorieforum.ID
+            AND topicforum.id_organisateur = organisateur.id
+            )
+            UNION 
+            (
+            SELECT participant.pseudo,topicforum.* FROM topicforum,souscategorieforum,participant WHERE souscategorieforum.ID=9
+             AND topicforum.id_souscategorie = souscategorieforum.ID
+            AND topicforum.id_participant = participant.id)');
         while ($donnees = $req->fetch()) {
             $tab_info_concert[$var_tab_info_array][0] = $donnees["nom"];
             $tab_info_concert[$var_tab_info_array][1] = $donnees["commentaire"];
 
             $tab_info_concert[$var_tab_info_array][2] = $donnees["date_creation"];
             $tab_info_concert[$var_tab_info_array][3] = $donnees["id"];
+            $tab_info_concert[$var_tab_info_array][4] = $donnees["pseudo"];
             $var_tab_info_array++;
         }
         ?>

@@ -47,7 +47,16 @@ include("nav.php");
    
    while ($donnees = $req->fetch()) {
           $dernierSujet1 = $donnees['nom'];
-   }?> 
+   }?>
+    
+    <?php $req=$bdd->query('SELECT count(forummessage.id) FROM forummessage,topicforum,souscategorieforum WHERE
+    forummessage.id_topic=topicforum.id AND topicforum.id_souscategorie = souscategorieforum.id
+    AND souscategorieforum.ID=1');
+           
+      while ($donnees = $req->fetch()) {
+            $numMess1=$donnees["count(forummessage.id)"];
+           }?>
+    
     <article>
 
         <h2><span style="color:#2040c0;"> Forum </span></h2>
@@ -64,7 +73,7 @@ include("nav.php");
                         </tr>
                         <tr class="affichageSujet">
                             <td><a href="souhait.php">Souhait</a></td>
-                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet1.  "/  Nombre de message(s) : "?></td>
+                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet1.  "/  Nombre de message(s) : $numMess1 "?></td>
                             <td><?php echo $dernierSujet1;?></td>
                         </tr>
                         <?php $req=$bdd->query('SELECT count(topicforum.id) FROM topicforum,souscategorieforum WHERE
@@ -83,9 +92,17 @@ include("nav.php");
    while ($donnees = $req->fetch()) {
           $dernierSujet2 = $donnees['nom'];
    }?> 
+                        
+                         <?php $req=$bdd->query('SELECT count(forummessage.id) FROM forummessage,topicforum,souscategorieforum WHERE
+    forummessage.id_topic=topicforum.id AND topicforum.id_souscategorie = souscategorieforum.id
+    AND souscategorieforum.ID=2');
+           
+      while ($donnees = $req->fetch()) {
+            $numMess2=$donnees["count(forummessage.id)"];
+           }?>
                         <tr class="affichageSujet">
                             <td><a href="taverne.php">Taverne</a></td>
-                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet2.  "/  Nombre de message(s) : "?></td>
+                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet2.  "/  Nombre de message(s) : $numMess2"?></td>
                             <td><?php echo $dernierSujet2;?></td>
                         </tr>
                                    
@@ -105,9 +122,17 @@ include("nav.php");
           $dernierSujet3 = $donnees['nom'];
    }?> 
                         
+                         <?php $req=$bdd->query('SELECT count(forummessage.id) FROM forummessage,topicforum,souscategorieforum WHERE
+    forummessage.id_topic=topicforum.id AND topicforum.id_souscategorie = souscategorieforum.id
+    AND souscategorieforum.ID=3');
+           
+      while ($donnees = $req->fetch()) {
+            $numMess3=$donnees["count(forummessage.id)"];
+           }?>
+                        
                         <tr class="affichageSujet">
                             <td><a href="presentation.php">Pr&eacute;sentation</a></td>
-                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet3.  "/  Nombre de message(s) : "?></td>
+                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet3.  "/  Nombre de message(s) : $numMess3"?></td>
                             <td><?php echo $dernierSujet3;?></td>
                         </tr>
 
@@ -142,9 +167,17 @@ include("nav.php");
           $dernierSujet4 = $donnees['nom'];
    }?> 
                         
+                         <?php $req=$bdd->query('SELECT count(forummessage.id) FROM forummessage,topicforum,souscategorieforum WHERE
+    forummessage.id_topic=topicforum.id AND topicforum.id_souscategorie = souscategorieforum.id
+    AND souscategorieforum.ID=4');
+           
+      while ($donnees = $req->fetch()) {
+            $numMess4=$donnees["count(forummessage.id)"];
+           }?>
+                        
                         <tr class="affichageSujet">
                             <td><a href="spectacleForum.php">Spectacle</a></td>
-                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet4.  "/  Nombre de message(s) : "?></td>
+                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet4.  "/  Nombre de message(s) : $numMess4"?></td>
                             <td><?php echo $dernierSujet4;?></td>
                         </tr>
                         
@@ -164,9 +197,17 @@ include("nav.php");
    while ($donnees = $req->fetch()) {
           $dernierSujet5 = $donnees['nom'];
    }?> 
+                        
+                         <?php $req=$bdd->query('SELECT count(forummessage.id) FROM forummessage,topicforum,souscategorieforum WHERE
+    forummessage.id_topic=topicforum.id AND topicforum.id_souscategorie = souscategorieforum.id
+    AND souscategorieforum.ID=5');
+           
+      while ($donnees = $req->fetch()) {
+            $numMess5=$donnees["count(forummessage.id)"];
+           }?>
                          <tr class="affichageSujet">
                             <td><a href="expositionForum.php">Exposition</a></td>
-                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet5.  "/  Nombre de message(s) : "?></td>
+                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet5.  "/  Nombre de message(s) : $numMess5"?></td>
                             <td><?php echo $dernierSujet5;?></td>
                         </tr>
                           <?php $req=$bdd->query('SELECT count(topicforum.id) FROM topicforum,souscategorieforum WHERE
@@ -184,9 +225,17 @@ include("nav.php");
    while ($donnees = $req->fetch()) {
           $dernierSujet6 = $donnees['nom'];
    }?> 
+                        
+                         <?php $req=$bdd->query('SELECT count(forummessage.id) FROM forummessage,topicforum,souscategorieforum WHERE
+    forummessage.id_topic=topicforum.id AND topicforum.id_souscategorie = souscategorieforum.id
+    AND souscategorieforum.ID=6');
+           
+      while ($donnees = $req->fetch()) {
+            $numMess6=$donnees["count(forummessage.id)"];
+           }?>
                          <tr class="affichageSujet">
                             <td><a href="restaurationForum.php">Restauration</a></td>
-                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet6.  "/  Nombre de message(s) : "?></td>
+                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet6.  "/  Nombre de message(s) : $numMess6"?></td>
                             <td><?php echo $dernierSujet6;?></td>
                         </tr>
                           <?php $req=$bdd->query('SELECT count(topicforum.id) FROM topicforum,souscategorieforum WHERE
@@ -199,7 +248,7 @@ include("nav.php");
             $numSujet7=$donnees["count(topicforum.id)"];
   }?>
                         
-                                            <?php $req=$bdd->query('SELECT topicforum.nom FROM topicforum,souscategorieforum WHERE
+          <?php $req=$bdd->query('SELECT topicforum.nom FROM topicforum,souscategorieforum WHERE
        topicforum.id_souscategorie=souscategorieforum.id
        AND souscategorieforum.ID=7 ');
    
@@ -207,9 +256,17 @@ include("nav.php");
           $dernierSujet7 = $donnees['nom'];
    }?>
                         
+                         <?php $req=$bdd->query('SELECT count(forummessage.id) FROM forummessage,topicforum,souscategorieforum WHERE
+    forummessage.id_topic=topicforum.id AND topicforum.id_souscategorie = souscategorieforum.id
+    AND souscategorieforum.ID=7');
+           
+      while ($donnees = $req->fetch()) {
+            $numMess7=$donnees["count(forummessage.id)"];
+           }?>
+                        
                          <tr class="affichageSujet">
                             <td><a href="soireeForum.php">Soiree</a></td>
-                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet7.  "/  Nombre de message(s) : "?></td>
+                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet7.  "/  Nombre de message(s) : $numMess7"?></td>
                             <td><?php echo $dernierSujet7;?></td>
                         </tr>
                           <?php $req=$bdd->query('SELECT count(topicforum.id) FROM topicforum,souscategorieforum WHERE
@@ -228,10 +285,18 @@ include("nav.php");
           $dernierSujet8 = $donnees['nom'];
    }?> 
                         
+                         <?php $req=$bdd->query('SELECT count(forummessage.id) FROM forummessage,topicforum,souscategorieforum WHERE
+    forummessage.id_topic=topicforum.id AND topicforum.id_souscategorie = souscategorieforum.id
+    AND souscategorieforum.ID=8');
+           
+      while ($donnees = $req->fetch()) {
+            $numMess8=$donnees["count(forummessage.id)"];
+           }?>
+                        
                          <tr class="affichageSujet">
                             <td><a href="barForum.php">Bar</a></td>
-                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet8.  "/  Nombre de message(s) : "?></td>
-                            <td><?php echo $dernierSujet8;?>/td>
+                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet8.  "/  Nombre de message(s) : $numMess8"?></td>
+                            <td><?php echo $dernierSujet8;?></td>
                         </tr>
                           <?php $req=$bdd->query('SELECT count(topicforum.id) FROM topicforum,souscategorieforum WHERE
     topicforum.id_souscategorie=souscategorieforum.id
@@ -248,10 +313,17 @@ include("nav.php");
    while ($donnees = $req->fetch()) {
           $dernierSujet9 = $donnees['nom'];
    }?> 
-                        
+              
+            <?php $req=$bdd->query('SELECT count(forummessage.id) FROM forummessage,topicforum,souscategorieforum WHERE
+    forummessage.id_topic=topicforum.id AND topicforum.id_souscategorie = souscategorieforum.id
+    AND souscategorieforum.ID=9');
+           
+      while ($donnees = $req->fetch()) {
+            $numMess9=$donnees["count(forummessage.id)"];
+           }?>             
                          <tr class="affichageSujet">
                             <td><a href="concertForum.php">Concert</a></td>
-                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet9.  "/  Nombre de message(s) : "?></td>
+                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet9.  "/  Nombre de message(s) : $numMess9"?></td>
                             <td><?php echo $dernierSujet9;?></td>
                         </tr>
                     </table>
@@ -284,9 +356,17 @@ include("nav.php");
    while ($donnees = $req->fetch()) {
           $dernierSujet10 = $donnees['nom'];
    }?> 
+                        
+                         <?php $req=$bdd->query('SELECT count(forummessage.id) FROM forummessage,topicforum,souscategorieforum WHERE
+    forummessage.id_topic=topicforum.id AND topicforum.id_souscategorie = souscategorieforum.id
+    AND souscategorieforum.ID=10');
+           
+      while ($donnees = $req->fetch()) {
+            $numMess10=$donnees["count(forummessage.id)"];
+           }?>
                         <tr class="affichageSujet">
                             <td><a href="spectacleOrgForum.php">Spectacle</a></td>
-                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet10.  "/  Nombre de message(s) : "?></td>
+                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet10.  "/  Nombre de message(s) : $numMess10"?></td>
                             <td><?php echo $dernierSujet10;?></td>
                         </tr>
                           <?php $req=$bdd->query('SELECT count(topicforum.id) FROM topicforum,souscategorieforum WHERE
@@ -304,9 +384,17 @@ include("nav.php");
    while ($donnees = $req->fetch()) {
           $dernierSujet11 = $donnees['nom'];
    }?> 
+                        
+                         <?php $req=$bdd->query('SELECT count(forummessage.id) FROM forummessage,topicforum,souscategorieforum WHERE
+    forummessage.id_topic=topicforum.id AND topicforum.id_souscategorie = souscategorieforum.id
+    AND souscategorieforum.ID=11');
+           
+      while ($donnees = $req->fetch()) {
+            $numMess11=$donnees["count(forummessage.id)"];
+           }?>
                          <tr class="affichageSujet">
                             <td><a href="expositionOrgForum.php">Exposition</a></td>
-                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet11.  "/  Nombre de message(s) : "?></td>
+                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet11.  "/  Nombre de message(s) : $numMess11"?></td>
                             <td><?php echo $dernierSujet11;?></td>
                         </tr>
                           <?php $req=$bdd->query('SELECT count(topicforum.id) FROM topicforum,souscategorieforum WHERE
@@ -324,10 +412,17 @@ include("nav.php");
    while ($donnees = $req->fetch()) {
           $dernierSujet12 = $donnees['nom'];
    }?> 
-                       
+                      
+          <?php $req=$bdd->query('SELECT count(forummessage.id) FROM forummessage,topicforum,souscategorieforum WHERE
+    forummessage.id_topic=topicforum.id AND topicforum.id_souscategorie = souscategorieforum.id
+    AND souscategorieforum.ID=12');
+           
+      while ($donnees = $req->fetch()) {
+            $numMess12=$donnees["count(forummessage.id)"];
+           }?>               
                          <tr class="affichageSujet">
                             <td><a href="soireeOrgForum.php">Soirée</a></td>
-                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet12.  "/  Nombre de message(s) : "?></td>
+                            <td><?php echo "Nombre de sujet(s) :  ".$numSujet12.  "/  Nombre de message(s) : $numMess12"?></td>
                             <td><?php echo $dernierSujet12;?></td>
                         </tr>
                        </table>   

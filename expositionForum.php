@@ -40,23 +40,34 @@ include("nav.php");
     <article>
 
         <div class="creerTopic">
-            <a href="ajouterSujet.php" alt="ajouter un sujet" title="Créer un nouveau sujet"> Ajouter un sujet</a>
+            <a href="ajouterSujet.php?idSouscategorie=5"> Ajouter un sujet</a>
         </div>
 
         <div class="backPage">
             <a href="indexForum.php" alt="retour à l'accueil du forum" title="Retour à l'accueil du forum"> Retour à l'accueil</a>
         </div>
+       <?php//SELECT topicforum.* FROM topicforum, souscategorieforum WHERE souscategorieforum.ID = 5
+        //    AND topicforum.id_souscategorie = souscategorieforum.ID?>
 
         <?php
         $tab_info_exposition = array();
         $var_tab_info_array = 0;
-        $req = $bdd->query('SELECT topicforum.* FROM topicforum, souscategorieforum WHERE souscategorieforum.ID = 5 AND topicforum.id_souscategorie = souscategorieforum.ID');
+        $req = $bdd->query('(SELECT organisateur.pseudo,topicforum.* FROM topicforum, souscategorieforum,organisateur WHERE souscategorieforum.ID = 5 
+            AND topicforum.id_souscategorie = souscategorieforum.ID
+            AND topicforum.id_organisateur = organisateur.id
+            )
+            UNION 
+            (
+            SELECT participant.pseudo,topicforum.* FROM topicforum,souscategorieforum,participant WHERE souscategorieforum.ID=5
+             AND topicforum.id_souscategorie = souscategorieforum.ID
+            AND topicforum.id_participant = participant.id)');
         while ($donnees = $req->fetch()) {
             $tab_info_exposition[$var_tab_info_array][0] = $donnees["nom"];
             $tab_info_exposition[$var_tab_info_array][1] = $donnees["commentaire"];
 
             $tab_info_exposition[$var_tab_info_array][2] = $donnees["date_creation"];
             $tab_info_exposition[$var_tab_info_array][3] = $donnees["id"];
+            $tab_info_exposition[$var_tab_info_array][4] = $donnees["pseudo"];
             $var_tab_info_array++;
         }
         ?>
@@ -77,7 +88,7 @@ include("nav.php");
                             <tr class="affichageSujet">
                                 <td class="contenuMessage"><a href="commentaireForum.php?idTopic=<?php echo $tab_info_exposition[$a][3] ?>&titreTopic=<?php echo $tab_info_exposition[$a][0] ?>"><?php echo $tab_info_exposition[$a][0]; ?></a></td>
                                 <td class="message"><?php echo $tab_info_exposition[$a][1]; ?></td>
-                                <td class="auteur">Mohamed</td>
+                                <td class="auteur"><?php echo $tab_info_exposition[$a][4]; ?></td>
                                 <td class="date"><?php echo $tab_info_exposition[$a][2]; ?></td>
                             </tr>
                         <?php } ?>
