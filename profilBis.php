@@ -186,7 +186,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
     $result2 = $bdd->query('SELECT pseudo FROM organisateur');
     while ($data2 = $result2->fetch()) {
 
-    if ($boubou2 == $data2['pseudo']) {
+    if ($pseudo == $data2['pseudo']) {
     $boubou2 = true;
     }
     }$result2->closeCursor();
@@ -212,9 +212,9 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
 
             <img src="<?php echo $logo; ?>" width="200" height="200" alt="Logo" title="Logo" style="border: solid black 2px"/>
 
-            <p id="nom4"><?php echo $dataBis['nom'] . "  " . $dataBis['prenom'];
+            <p class="nom4"><?php echo $dataBis['nom'] . "  " . $dataBis['prenom'];
             ?></p>
-            <p id="lieu"><?php
+            <p class="lieu4"><?php
                 echo $dataBis['pays'] . ", " . $dataBis['ville'];
                 }$result->closeCursor();
             ?></p>
@@ -237,7 +237,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=appinfo', 'root', '');
         </p>
         <p id="preference">
             <strong>Soci&eacute;t&eacute; :</strong><?php echo " " . $dataBis['nomSociete']; ?><br/><br/>
-            <strong>Adresse de la soci&eacute;t&eacute; :</strong><?php echo " " . $dataBis['adresseSociete'] . " - " . $dataBis['codePostalSociete'] . " - " . $dataBis['villeSociete']; ?><br/><br/>
+            <strong>Adresse de la soci&eacute;t&eacute; :</strong><?php echo " " . $dataBis['adresseSociete'] . " - " . $dataBis['codePostalSociete'] . " - " . $dataBis['ville']; ?><br/><br/>
             <strong>Site Web :</strong><a href="<?php echo " " . $dataBis['siteWeb']; ?>"><?php echo " " . $dataBis['siteWeb']; ?></a><br/><br/>  
             <strong>T&eacute;l&eacute;phone soci&eacute;t&eacute; :</strong><?php echo " " . $dataBis['telephoneSociete']; ?><br/><br/>                        
             <strong>Activit&eacute; :</strong><?php echo " " . $dataBis['activite']; ?><br/><br/>

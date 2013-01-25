@@ -152,6 +152,24 @@ include("nav.php");
                 <div class ="imageDetail">
                     <p class="evenementDetailDescription"><span style="margin-left:70px;"><?php echo $donnees['description']; ?></span></p>
                 </div>
+            
+            <?php if($donnees['id_organisateur']!=0){
+                $reqs=$bdd->query('SELECT organisateur.pseudo,organisateur.ID FROM event,organisateur WHERE organisateur.ID=event.id_organisateur AND event.ID='.$ID);
+                $nomorg='aucun';
+                while($denees=$reqs->fetch()){
+                    $nomorg=$denees['pseudo'];
+                    $idorg=$denees['ID'];
+                }$reqs->closeCursor();
+                if($nomorg!='aucun'){?><div class="imageDetail2">Organis&eacute; par : <a href="profilBis.php?IDprofil=<?php echo $idorg; ?>&pseudo=<?php echo $nomorg; ?>">- <?php echo $nomorg; ?> - </a>
+                    </div><?php
+                    
+                    }else{
+                        ?><div class="imageDetail2">Oups! L'organisateur est introuvable...
+                    </div><?php
+                    }
+            } ?>
+            
+            
                 <?php $resu=$bdd->query('SELECT * FROM event,event_participant,participant WHERE event.ID='.$ID.' AND event.ID=event_participant.id_event AND event_participant.id_participant=participant.ID AND participant.ID='.$_SESSION['ID']);
                 
                 $haveReserve=false;
@@ -184,6 +202,9 @@ include("nav.php");
                    
                    }
                    ?>
+            
+            
+            
                 <div class="imageDetail2">
                     <?php if ($donnees['nbVotes'] != 0) {
                         ?><strong>Note des participants : </strong><img src="<?php
