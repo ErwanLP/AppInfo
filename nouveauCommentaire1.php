@@ -5,8 +5,8 @@
             <textarea name="message" id="message" rows="10" cols="30" required></textarea>
             <?php $id_topic=$_GET['idTopic'];
                   $titreTopic=$_GET['titreTopic'];
-            echo $titreTopic;
-            echo $id_topic; ?>
+            
+            ?>
             <input name="id_topic" id="id_topic" type="hidden" value="<?php echo $id_topic;?>"/>
             <select name="titreTopic" id="titreTopic" hidden>
                                         <option value="<?php echo $titreTopic; ?>"> </option>
