@@ -169,9 +169,11 @@ include("nav.php");
                     }
             } ?>
             
-            
-                <?php $resu=$bdd->query('SELECT * FROM event,event_participant,participant WHERE event.ID='.$ID.' AND event.ID=event_participant.id_event AND event_participant.id_participant=participant.ID AND participant.ID='.$_SESSION['ID']);
                 
+                <?php 
+                if(isset($_SESSION['SWITCH']) AND $_SESSION['ID']!=null){
+                $resu=$bdd->query('SELECT * FROM event,event_participant,participant WHERE event.ID='.$ID.' AND event.ID=event_participant.id_event AND event_participant.id_participant=participant.ID AND participant.ID='.$_SESSION['ID']);
+                echo 'SELECT * FROM event,event_participant,participant WHERE event.ID='.$ID.' AND event.ID=event_participant.id_event AND event_participant.id_participant=participant.ID AND participant.ID='.$_SESSION['ID'];
                 $haveReserve=false;
                 while($dat=$resu->fetch()){
                     $haveReserve=true;
@@ -201,7 +203,7 @@ include("nav.php");
                    }
                    
                    }
-                   ?>
+                }?>
             
             
             
